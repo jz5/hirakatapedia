@@ -114,7 +114,7 @@ TSUTAYA のサイトの店の一覧では、2004年12月まで駅前本店の住
 <div data-photo="TSUTAYA_Hirakata_Ekimae_Honten.JPG"></div>
 
 - **レンタル館：** 北口の駅前デパートのビルの2・3階。CD や DVD のレンタル[^hira2move]
-- **物販館：** 南口の岡東町18-20、もと枚方三越のビル。本などを売る店で、同じビルにスターバックスも入っていました[^hira2mitsukoshi][^hira2osdrug]
+- **物販館：** 南口の岡東町18-20、もと枚方三越のビル。本などを売る店で、同じビルにスターバックスも入っていました[^hira2mitsukoshi][^hira2osdrug]。1968年に開店したころの三越 枚方店の写真は、ひらつーの記事[^hira2mitsukoshi]と、三井住友トラスト不動産の「[6：団地の建設、戦後の街づくり ～ 枚方 | このまちアーカイブス](https://smtrc.jp/town-archives/city/hirakata/p06.html)」で見られます
 - **GAME館：** 南口の高架下の「エル枚方食遊館」（岡東町19-20）の入口。ゲームや DVD・CD の販売と買い取りの店で、2010年10月にブックオフの跡に開店しました[^hira2gameclose][^hira2gamequiz][^hira2shokuyukan]
 
 レンタル館と物販館は、2016年5月15日まで営業して T-SITE に移りました[^hira2move]。物販館の場所はそのあと「コミック館」になり、2017年2月に T-SITE のアネックスへ移って、いまはオーエスドラッグです[^hira2osdrug]。GAME館は T-SITE に移らず、2017年4月24日に閉店しました[^hira2gameclose]。

@@ -77,6 +77,11 @@ links:
 
 <div data-photo="Hirakata_municipal_Korigaoka_library.jpg"></div>
 
+2016年ごろの各館の外観と中の写真は、『枚方市立図書館四十年誌』の資料で見られます。
+
+- [中央図書館と分館（PDF）](https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000003/3483/79352.pdf)
+- [分室（PDF）](https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000003/3483/79353.pdf)
+
 | | 場所 |
 |---|---|
 | 中央図書館 | 車塚 |
