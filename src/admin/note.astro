@@ -1,0 +1,23 @@
+---
+/** 調べもののメモ（docs/notes/<name>.md）を見るページ。/admin/ と同じく開発サーバーだけ */
+import Base from "../layouts/Base.astro";
+
+export function getStaticPaths() {
+  const notes = import.meta.glob<{ Content: any }>("../../docs/notes/*.md", { eager: true });
+  return Object.entries(notes).map(([p, mod]) => ({
+    params: { note: p.split("/").pop()!.replace(/\.md$/, "") },
+    props: { Content: mod.Content },
+  }));
+}
+const { note } = Astro.params;
+const { Content } = Astro.props;
+---
+
+<Base title={`メモ: ${note}`} path={`/admin/notes/${note}/`} noindex>
+  <article class="entry">
+    <header class="entry-header">
+      <p class="entry-meta"><a href="/admin/">← 管理者ページ</a>（docs/notes/{note}.md）</p>
+    </header>
+    <div class="entry-body admin"><Content /></div>
+  </article>
+</Base>

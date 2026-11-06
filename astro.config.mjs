@@ -3,7 +3,24 @@ import { defineConfig } from "astro/config";
 import rehypeSummary from "./src/lib/rehype-summary.mjs";
 import rehypeCharts from "./src/lib/rehype-charts.mjs";
 
+/**
+ * 管理者ページ（/admin/）。調べもののメモと確認リストを見る。
+ * 開発サーバー（pnpm dev）のときだけ足すので、公開用のビルドには入らない
+ */
+/** @type {import("astro").AstroIntegration} */
+const admin = {
+  name: "hirakatapedia-admin",
+  hooks: {
+    "astro:config:setup": ({ command, injectRoute }) => {
+      if (command !== "dev") return;
+      injectRoute({ pattern: "/admin", entrypoint: "./src/admin/index.astro" });
+      injectRoute({ pattern: "/admin/notes/[note]", entrypoint: "./src/admin/note.astro" });
+    },
+  },
+};
+
 export default defineConfig({
+  integrations: [admin],
   site: "https://hirakata.pronama.jp",
 
   // 記事の URL は /slug/ で末尾スラッシュあり。一度出したら変えない（CLAUDE.md）

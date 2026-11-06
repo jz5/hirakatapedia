@@ -545,3 +545,9 @@ button { font: inherit; color: inherit; }
 .entry-body .chart-table table { display: table; font-size: .8125rem; }
 .entry-body .chart-table td { text-align: right; font-weight: 400; }
 .entry-body .chart-table td:first-child { text-align: left; }
+
+/* 管理者ページ（/admin/、開発サーバーだけ）。チェックボックスの一覧を読みやすく */
+.admin .contains-task-list { list-style: none; padding-left: 0; }
+.admin .task-list-item { margin-bottom: var(--sp-2); }
+.admin .task-list-item input { margin-right: .4em; }
+.admin .task-list-item:has(> input:checked) { color: var(--mut); }
