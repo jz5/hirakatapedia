@@ -1,6 +1,7 @@
 import type { APIRoute } from "astro";
 import { allArticles, articlePath, lastModified } from "../lib/articles";
 import { SITE } from "../lib/site";
+import { publicGallery, galleryPath } from "../lib/photos.mjs";
 
 export const GET: APIRoute = async () => {
   const list = await allArticles();
@@ -10,6 +11,7 @@ export const GET: APIRoute = async () => {
     { loc: "/privacy/", lastmod: undefined },
     { loc: "/license/", lastmod: undefined },
     ...list.map((e) => ({ loc: articlePath(e.id), lastmod: lastModified(e) })),
+    ...list.filter((e) => publicGallery(e.id).length > 0).map((e) => ({ loc: galleryPath(e.id), lastmod: undefined })),
   ];
   const body =
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +

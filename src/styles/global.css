@@ -312,14 +312,22 @@ button { font: inherit; color: inherit; }
    トップ
    ========================================================================= */
 
-.hero { padding-bottom: var(--sp-5); margin-bottom: var(--sp-6); border-bottom: 1px solid var(--line); }
+.hero { margin-bottom: var(--sp-6); }
 .hero-lead { margin: 0 0 var(--sp-1); }
 .hero-sub { margin: 0; color: var(--mut); font-size: .875rem; }
 
 /* 記事は日付の流れではなく、題名と説明の索引で並べる */
 .card-list { list-style: none; margin: 0; padding: 0; }
-.card-list li { border-bottom: 1px solid var(--line); }
-.card-list a { display: grid; gap: 2px; padding-block: var(--sp-4); text-decoration: none; }
+.card-list li + li { border-top: 1px solid var(--line); }
+.card-list a { display: grid; gap: var(--sp-4); padding-block: var(--sp-4); text-decoration: none; }
+/* アイキャッチのサムネイル。一覧では 4:3 に切りそろえて見せる（画像のファイルはそのまま） */
+.card-list a.has-thumb { grid-template-columns: 180px 1fr; align-items: start; }
+.card-thumb { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); background: var(--bg-sub); }
+.card-text { display: grid; gap: 2px; min-width: 0; }
+@media (max-width: 520px) {
+  .card-list a.has-thumb { grid-template-columns: 96px 1fr; gap: var(--sp-3); }
+  .card-desc { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+}
 .card-list li:first-child a { padding-top: 0; }
 .card-title { font-size: var(--step-1); font-weight: 700; color: var(--fg-strong); line-height: 1.5; }
 .card-list a:hover .card-title { color: var(--accent); }
@@ -404,6 +412,52 @@ button { font: inherit; color: inherit; }
 .entry-body .summary li:last-child { margin-bottom: 0; }
 @media (max-width: 520px) {
   .entry-body .summary { padding-inline: var(--sp-4); }
+}
+
+/* 写真（rehype-photos.mjs）。説明と、作者・ライセンスの表記 */
+.photo { margin: var(--sp-5) 0; }
+.photo img { display: block; width: 100%; height: auto; border-radius: var(--radius); background: var(--bg-sub); }
+.photo figcaption { margin-top: var(--sp-2); font-size: .875rem; line-height: 1.6; color: var(--mut); }
+.photo .photo-caption { display: block; color: var(--fg); }
+.photo .photo-credit { display: block; font-size: .75rem; color: var(--mut-soft); }
+.photo .photo-credit a { color: inherit; }
+
+/* 写真ギャラリー（/<記事>/photos/） */
+.gallery-back { margin: 0 0 var(--sp-2); font-size: .875rem; }
+.gallery-note { font-size: .875rem; line-height: 1.7; color: var(--mut); }
+.entry-body .gallery-grid { list-style: none; padding: 0; margin: var(--sp-5) 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--sp-5) var(--sp-4); }
+.entry-body .gallery-item { margin: 0; scroll-margin-top: var(--sp-6); }
+.gallery-img img { display: block; width: 100%; height: auto; border-radius: var(--radius); background: var(--bg-sub); }
+.gallery-item p { margin: var(--sp-2) 0 0; font-size: .8125rem; line-height: 1.6; }
+.gallery-caption { color: var(--fg); }
+.gallery-credit, .gallery-links { color: var(--mut); }
+.gallery-howto { margin-top: var(--sp-1); font-size: .75rem; color: var(--mut); }
+.gallery-howto code { font-size: .75rem; overflow-wrap: anywhere; }
+
+/* 関連リンクのカード（rehype-link-cards.mjs）。サムネイルは元の比率のまま。縦長（本の書影など）は細く */
+.entry-body .link-cards { margin-top: var(--sp-7); }
+.entry-body .link-card-list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--sp-4); }
+.entry-body .link-card { margin: 0; }
+.entry-body .link-card-main {
+  display: flex; gap: var(--sp-4); align-items: flex-start;
+  padding: var(--sp-3); border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--bg); color: inherit; text-decoration: none;
+}
+.entry-body .link-card-main:hover { border-color: var(--accent); background: var(--bg-sub); }
+.entry-body .link-card-main:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.entry-body .link-card-img { flex: none; width: 160px; height: auto; border-radius: 2px; background: var(--bg-sub); }
+.entry-body .link-card-img-tall { width: 72px; }
+.entry-body .link-card-text { display: flex; flex-direction: column; gap: var(--sp-1); min-width: 0; }
+.entry-body .link-card-title { font-weight: 700; line-height: 1.5; color: var(--fg-strong); }
+.entry-body .link-card-main:hover .link-card-title { text-decoration: underline; }
+.entry-body .link-card-desc { font-size: .8125rem; line-height: 1.6; color: var(--mut); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.entry-body .link-card-site { font-size: .75rem; color: var(--mut-soft); overflow-wrap: anywhere; }
+.entry-body .link-card-note { margin-top: var(--sp-1); font-size: .875rem; line-height: 1.6; color: var(--fg); }
+.entry-body .link-card-note::before { content: "→ "; color: var(--accent); }
+@media (max-width: 520px) {
+  .entry-body .link-card-img { width: 96px; }
+  .entry-body .link-card-img-tall { width: 56px; }
+  .entry-body .link-card-desc { -webkit-line-clamp: 2; }
 }
 
 /* 脚注（出典）。本文の番号は小さく、出典の一覧は本文より一段小さく */

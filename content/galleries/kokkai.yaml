@@ -1,0 +1,5 @@
+# /kokkai/ の写真（Wikimedia Commons）。node scripts/photos.mjs で取ってくる。書き方は scripts/photos.mjs の先頭
+- file: "DX_Field,_Osaka_Institute_of_Technology_-_Mar_29,_2026.jpg"
+  caption: "大阪工業大学 枚方キャンパスの DXフィールド（2026年）"
+  seen: true
+  note: "1号館（国会議事堂に似た建物）の写真ではない"

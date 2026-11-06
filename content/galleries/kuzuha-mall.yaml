@@ -1,0 +1,68 @@
+# /kuzuha-mall/ の写真（Wikimedia Commons）。node scripts/photos.mjs で取ってくる。書き方は scripts/photos.mjs の先頭
+- file: "Kuzuha_Mall_20160823.jpg"
+  caption: "くずはモール。左がハナノモール、正面がミドリノモール（2016年）"
+  pick: true
+  seen: true
+  edit:
+    levels: true
+    saturation: 1.06
+- file: "Keihan3000_at_KUZUHA_MALL.jpeg"
+  caption: "SANZEN-HIROBA のテレビカー 3505号車（2019年）"
+  pick: true
+  seen: true
+- file: "Keihan3503kuzuha.JPG"
+  caption: "SANZEN-HIROBA の 3505号車（2014年）"
+  seen: true
+  note: "ファイル名は 3503 だが、写っているのは 3505号車"
+- file: "Keihan_3505_8531_Last_Run.jpg"
+  caption: "走っていたころの 3505号車（2013年）"
+  seen: true
+- file: "Keihan5551kuzuhamall1.jpg"
+  caption: "SANZEN-HIROBA の 5000系 5551号車（2024年）"
+  seen: true
+- file: "Kuzuha_Mall_hikari_no_mall.jpg"
+  caption: "くずはモールのヒカリノモール（2016年）"
+  seen: true
+- file: "KUZUHA_MALL-Main.jpg"
+  caption: "くずはモール本館（2007年）"
+  seen: true
+- file: "Kuzuha_Mall_Grand_Atrium.jpg"
+  caption: "くずはモールのグランドアトリウムの天井（2006年）"
+  seen: true
+- file: "KH-KuzuhaStation.jpg"
+  caption: "樟葉駅（2007年）"
+  seen: true
+- file: "Keihan2600_FrontCut.jpg"
+  caption: "SANZEN-HIROBA の 2600系 カットモデル（2024年）"
+  seen: true
+  hide: true
+  note: "アニメのヘッドマークが写るのでギャラリーには出さない"
+- file: "2010-11-17_D51_51_steam_locomotive_at_Torokko_Saga_Station.jpg"
+  caption: "トロッコ嵯峨駅に置かれていた D51 51号機（2010年）。くずはモール街の汽車の広場にあった機関車が、ここへ移されたとされる"
+  seen: true
+- file: "Japan_Railways_Class_51_Daigochi_D5151_(8062061267).jpg"
+  caption: "トロッコ嵯峨駅の D51 51号機（2007年）"
+  seen: true
+- file: "D51namekuzi.jpg"
+  caption: "トロッコ嵯峨駅の D51 51号機（2006年）"
+  seen: true
+- file: "KUZUHA_MALL_-_panoramio.jpg"
+  caption: "くずはモールと歩道橋（2010年）"
+  seen: true
+- file: "樟葉モール_-_panoramio.jpg"
+  caption: "夜のくずはモール（2007年）"
+  seen: true
+- file: "Keihan5551-kuzuha.jpg"
+  caption: "SANZEN-HIROBA の 5551号車（2023年）"
+  seen: true
+- file: "flickr-22247110441.jpg"
+  caption: "トロッコ嵯峨駅の19世紀ホール前の D51 51号機（2006年）"
+  seen: true
+  source:
+    name: Flickr
+    page: https://www.flickr.com/photos/sodaigomi/22247110441/
+    image: https://live.staticflickr.com/770/22247110441_2c3671e8da_b.jpg
+    author: "sodai gomi"
+    license: CC BY 2.0
+    licenseUrl: https://creativecommons.org/licenses/by/2.0/
+    date: "2006-04-04"

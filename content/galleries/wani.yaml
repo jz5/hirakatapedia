@@ -1,0 +1,15 @@
+# /wani/ の写真（Wikimedia Commons）。node scripts/photos.mjs で取ってくる。書き方は scripts/photos.mjs の先頭
+# 記事はまだない
+- file: "伝王仁墓_01.jpg"
+  caption: "伝王仁墓（2006年）"
+  pick: true
+  seen: true
+- file: "伝王仁墓_02.jpg"
+  caption: "伝王仁墓（2006年）"
+  seen: true
+- file: "伝王仁墓入口石碑.jpg"
+  caption: "伝王仁墓の入口の石碑（2017年）"
+  seen: true
+- file: "王仁公園.jpg"
+  caption: "王仁公園の入口（2017年）"
+  seen: true

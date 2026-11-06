@@ -1,0 +1,490 @@
+{
+ "_source": "気象庁「過去の気象データ検索」年ごとの値（日数） https://www.data.jma.go.jp/stats/etrn/view/annually_a.php?prec_no=62&block_no=1065&year=&month=&day=&view=a2 / https://www.data.jma.go.jp/stats/etrn/view/annually_s.php?prec_no=62&block_no=47772&year=&month=&day=&view=a2 / https://www.data.jma.go.jp/stats/etrn/view/annually_s.php?prec_no=61&block_no=47759&year=&month=&day=&view=a2",
+ "stations": [
+  "枚方",
+  "大阪",
+  "京都"
+ ],
+ "years": [
+  {
+   "year": 1994,
+   "枚方": {
+    "mosho": 28,
+    "nettaiya": 42
+   },
+   "大阪": {
+    "mosho": 28,
+    "nettaiya": 59
+   },
+   "京都": {
+    "mosho": 33,
+    "nettaiya": 41
+   }
+  },
+  {
+   "year": 1995,
+   "枚方": {
+    "mosho": 30,
+    "nettaiya": 33
+   },
+   "大阪": {
+    "mosho": 18,
+    "nettaiya": 42
+   },
+   "京都": {
+    "mosho": 30,
+    "nettaiya": 32
+   }
+  },
+  {
+   "year": 1996,
+   "枚方": {
+    "mosho": 15,
+    "nettaiya": 15
+   },
+   "大阪": {
+    "mosho": 7,
+    "nettaiya": 30
+   },
+   "京都": {
+    "mosho": 23,
+    "nettaiya": 20
+   }
+  },
+  {
+   "year": 1997,
+   "枚方": {
+    "mosho": 1,
+    "nettaiya": 13
+   },
+   "大阪": {
+    "mosho": 1,
+    "nettaiya": 25
+   },
+   "京都": {
+    "mosho": 3,
+    "nettaiya": 14
+   }
+  },
+  {
+   "year": 1998,
+   "枚方": {
+    "mosho": 5,
+    "nettaiya": 29
+   },
+   "大阪": {
+    "mosho": 6,
+    "nettaiya": 46
+   },
+   "京都": {
+    "mosho": 14,
+    "nettaiya": 29
+   }
+  },
+  {
+   "year": 1999,
+   "枚方": {
+    "mosho": 4,
+    "nettaiya": 17
+   },
+   "大阪": {
+    "mosho": 10,
+    "nettaiya": 37
+   },
+   "京都": {
+    "mosho": 6,
+    "nettaiya": 26
+   }
+  },
+  {
+   "year": 2000,
+   "枚方": {
+    "mosho": 25,
+    "nettaiya": 27
+   },
+   "大阪": {
+    "mosho": 26,
+    "nettaiya": 57
+   },
+   "京都": {
+    "mosho": 27,
+    "nettaiya": 28
+   }
+  },
+  {
+   "year": 2001,
+   "枚方": {
+    "mosho": 22,
+    "nettaiya": 36
+   },
+   "大阪": {
+    "mosho": 21,
+    "nettaiya": 48
+   },
+   "京都": {
+    "mosho": 24,
+    "nettaiya": 32
+   }
+  },
+  {
+   "year": 2002,
+   "枚方": {
+    "mosho": 19,
+    "nettaiya": 40
+   },
+   "大阪": {
+    "mosho": 22,
+    "nettaiya": 48
+   },
+   "京都": {
+    "mosho": 23,
+    "nettaiya": 34
+   }
+  },
+  {
+   "year": 2003,
+   "枚方": {
+    "mosho": 7,
+    "nettaiya": 18
+   },
+   "大阪": {
+    "mosho": 7,
+    "nettaiya": 30
+   },
+   "京都": {
+    "mosho": 11,
+    "nettaiya": 15
+   }
+  },
+  {
+   "year": 2004,
+   "枚方": {
+    "mosho": 13,
+    "nettaiya": 31
+   },
+   "大阪": {
+    "mosho": 20,
+    "nettaiya": 51
+   },
+   "京都": {
+    "mosho": 19,
+    "nettaiya": 26
+   }
+  },
+  {
+   "year": 2005,
+   "枚方": {
+    "mosho": 6,
+    "nettaiya": 21
+   },
+   "大阪": {
+    "mosho": 8,
+    "nettaiya": 46
+   },
+   "京都": {
+    "mosho": 17,
+    "nettaiya": 22
+   }
+  },
+  {
+   "year": 2006,
+   "枚方": {
+    "mosho": 18,
+    "nettaiya": 27
+   },
+   "大阪": {
+    "mosho": 17,
+    "nettaiya": 44
+   },
+   "京都": {
+    "mosho": 18,
+    "nettaiya": 23
+   }
+  },
+  {
+   "year": 2007,
+   "枚方": {
+    "mosho": 13,
+    "nettaiya": 22
+   },
+   "大阪": {
+    "mosho": 16,
+    "nettaiya": 44
+   },
+   "京都": {
+    "mosho": 20,
+    "nettaiya": 22
+   }
+  },
+  {
+   "year": 2008,
+   "枚方": {
+    "mosho": 13,
+    "nettaiya": 22
+   },
+   "大阪": {
+    "mosho": 13,
+    "nettaiya": 42
+   },
+   "京都": {
+    "mosho": 21,
+    "nettaiya": 27
+   }
+  },
+  {
+   "year": 2009,
+   "枚方": {
+    "mosho": 5,
+    "nettaiya": 15
+   },
+   "大阪": {
+    "mosho": 3,
+    "nettaiya": 27
+   },
+   "京都": {
+    "mosho": 6,
+    "nettaiya": 15
+   }
+  },
+  {
+   "year": 2010,
+   "枚方": {
+    "mosho": 37,
+    "nettaiya": 43
+   },
+   "大阪": {
+    "mosho": 31,
+    "nettaiya": 55
+   },
+   "京都": {
+    "mosho": 35,
+    "nettaiya": 42
+   }
+  },
+  {
+   "year": 2011,
+   "枚方": {
+    "mosho": 21,
+    "nettaiya": 26
+   },
+   "大阪": {
+    "mosho": 7,
+    "nettaiya": 51
+   },
+   "京都": {
+    "mosho": 17,
+    "nettaiya": 34
+   }
+  },
+  {
+   "year": 2012,
+   "枚方": {
+    "mosho": 18,
+    "nettaiya": 30
+   },
+   "大阪": {
+    "mosho": 12,
+    "nettaiya": 43
+   },
+   "京都": {
+    "mosho": 21,
+    "nettaiya": 30
+   }
+  },
+  {
+   "year": 2013,
+   "枚方": {
+    "mosho": 29,
+    "nettaiya": 29
+   },
+   "大阪": {
+    "mosho": 23,
+    "nettaiya": 47
+   },
+   "京都": {
+    "mosho": 30,
+    "nettaiya": 31
+   }
+  },
+  {
+   "year": 2014,
+   "枚方": {
+    "mosho": 7,
+    "nettaiya": 19
+   },
+   "大阪": {
+    "mosho": 5,
+    "nettaiya": 29
+   },
+   "京都": {
+    "mosho": 13,
+    "nettaiya": 23
+   }
+  },
+  {
+   "year": 2015,
+   "枚方": {
+    "mosho": 15,
+    "nettaiya": 14
+   },
+   "大阪": {
+    "mosho": 11,
+    "nettaiya": 25
+   },
+   "京都": {
+    "mosho": 21,
+    "nettaiya": 23
+   }
+  },
+  {
+   "year": 2016,
+   "枚方": {
+    "mosho": 23,
+    "nettaiya": 16
+   },
+   "大阪": {
+    "mosho": 26,
+    "nettaiya": 47
+   },
+   "京都": {
+    "mosho": 27,
+    "nettaiya": 31
+   }
+  },
+  {
+   "year": 2017,
+   "枚方": {
+    "mosho": 14,
+    "nettaiya": 27
+   },
+   "大阪": {
+    "mosho": 15,
+    "nettaiya": 47
+   },
+   "京都": {
+    "mosho": 18,
+    "nettaiya": 36
+   }
+  },
+  {
+   "year": 2018,
+   "枚方": {
+    "mosho": 29,
+    "nettaiya": 35
+   },
+   "大阪": {
+    "mosho": 27,
+    "nettaiya": 53
+   },
+   "京都": {
+    "mosho": 32,
+    "nettaiya": 49
+   }
+  },
+  {
+   "year": 2019,
+   "枚方": {
+    "mosho": 20,
+    "nettaiya": 27
+   },
+   "大阪": {
+    "mosho": 19,
+    "nettaiya": 38
+   },
+   "京都": {
+    "mosho": 24,
+    "nettaiya": 31
+   }
+  },
+  {
+   "year": 2020,
+   "枚方": {
+    "mosho": 22,
+    "nettaiya": 26
+   },
+   "大阪": {
+    "mosho": 22,
+    "nettaiya": 47
+   },
+   "京都": {
+    "mosho": 26,
+    "nettaiya": 39
+   }
+  },
+  {
+   "year": 2021,
+   "枚方": {
+    "mosho": 20,
+    "nettaiya": 12
+   },
+   "大阪": {
+    "mosho": 15,
+    "nettaiya": 37
+   },
+   "京都": {
+    "mosho": 18,
+    "nettaiya": 29
+   }
+  },
+  {
+   "year": 2022,
+   "枚方": {
+    "mosho": 22,
+    "nettaiya": 28
+   },
+   "大阪": {
+    "mosho": 14,
+    "nettaiya": 51
+   },
+   "京都": {
+    "mosho": 25,
+    "nettaiya": 41
+   }
+  },
+  {
+   "year": 2023,
+   "枚方": {
+    "mosho": 42,
+    "nettaiya": 41
+   },
+   "大阪": {
+    "mosho": 27,
+    "nettaiya": 61
+   },
+   "京都": {
+    "mosho": 43,
+    "nettaiya": 57
+   }
+  },
+  {
+   "year": 2024,
+   "枚方": {
+    "mosho": 51,
+    "nettaiya": 59
+   },
+   "大阪": {
+    "mosho": 41,
+    "nettaiya": 72
+   },
+   "京都": {
+    "mosho": 54,
+    "nettaiya": 64
+   }
+  },
+  {
+   "year": 2025,
+   "枚方": {
+    "mosho": 51,
+    "nettaiya": 64
+   },
+   "大阪": {
+    "mosho": 45,
+    "nettaiya": 81
+   },
+   "京都": {
+    "mosho": 61,
+    "nettaiya": 68
+   }
+  }
+ ]
+}

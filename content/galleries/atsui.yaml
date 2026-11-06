@@ -1,0 +1,65 @@
+# /atsui/ の写真（Wikimedia Commons）。node scripts/photos.mjs で取ってくる。書き方は scripts/photos.mjs の先頭
+- file: "Landsat-Kyoto-Katsuragawa,_Yodogawa,_Kizugawa_2015.jpg"
+  caption: "桂川・宇治川・木津川が合わさって淀川になるところ（2015年の衛星写真）"
+  pick: true
+  seen: true
+- file: "Yodogawa_Riverside_Park_Hirakata_Chiku_20220504_055301773.jpg"
+  caption: "淀川河川公園 枚方地区（2022年）"
+  pick: true
+  seen: true
+- file: "Hirakata_Port_20111029.jpg"
+  caption: "淀川の枚方の船着場（2011年）"
+  seen: true
+- file: "枚方大橋01.jpg"
+  caption: "枚方大橋（2007年）"
+  seen: true
+- file: "gsi-sansen.jpg"
+  caption: "桂川・宇治川・木津川が合わさって淀川になるあたり。真ん中の山は男山（石清水八幡宮）。左下へ流れるのが淀川で、この先に枚方がある"
+  gsi:
+    layer: seamlessphoto
+    name: 全国最新写真（シームレス）
+    zoom: 15
+    north: 34.905
+    south: 34.865
+    west: 135.665
+    east: 135.735
+- file: "gsi-osakawan-hirakata.jpg"
+  caption: "大阪湾から枚方まで。淀川の河口から枚方までは25kmほどある（ランドサットの衛星画像）"
+  gsi:
+    layer: lndst
+    name: 全国ランドサットモザイク画像
+    ext: png
+    credit: "データソース：Landsat8画像（GSI,TSIC,GEO Grid/AIST）, Landsat8画像（courtesy of the U.S. Geological Survey）, 海底地形（GEBCO）"
+    zoom: 13
+    north: 34.86
+    south: 34.62
+    west: 135.38
+    east: 135.72
+    labels:
+      - [34.632, 135.418, "大阪湾"]
+      - [34.815, 135.672, "枚方市"]
+      - [34.757, 135.590, "淀川"]
+      - [34.672, 135.526, "大阪城"]
+      - [34.700, 135.680, "生駒山地"]
+- file: "flickr-54690040776.jpg"
+  caption: "枚方市出口の淀川の河川敷。夏の青空と雲（2025年7月）"
+  seen: true
+  source:
+    name: Flickr
+    page: https://www.flickr.com/photos/200118688@N04/54690040776/
+    image: https://live.staticflickr.com/65535/54690040776_be2e9a24d2_b.jpg
+    author: "Ivan P"
+    license: CC0
+    licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/
+    date: "2025-07-26"
+- file: "flickr-54690267113.jpg"
+  caption: "枚方市出口の淀川の堤防。夏草と送電鉄塔（2025年7月）"
+  seen: true
+  source:
+    name: Flickr
+    page: https://www.flickr.com/photos/200118688@N04/54690267113/
+    image: https://live.staticflickr.com/65535/54690267113_e158c1a5a2_b.jpg
+    author: "Ivan P"
+    license: CC0
+    licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/
+    date: "2025-07-26"

@@ -4,6 +4,7 @@ import { allArticles, articlePath, jaDate } from "../lib/articles";
 import Base from "../layouts/Base.astro";
 import ArticleBody from "../components/ArticleBody.astro";
 import Toc from "../components/Toc.astro";
+import { photo } from "../lib/photos.mjs";
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 
 /** URL はファイル名（entry.id）。tsutaya.md → /tsutaya/ */
@@ -18,6 +19,8 @@ const d = entry.data;
 const { Content, headings } = await render(entry);
 // 事典なので、いつ書いたかより、いつの情報かを出す
 const last = d.updated ?? d.published;
+// frontmatter の cover は og:image にだけ使う（本文には出さない）
+const cover = d.cover ? photo(entry.id, d.cover) : undefined;
 ---
 
 <Base
@@ -25,13 +28,15 @@ const last = d.updated ?? d.published;
   description={d.description}
   path={articlePath(entry.id)}
   article={{ published: d.published, modified: d.updated }}
-  wip={d.wip}
+  image={cover?.large.src}
 >
   <article class="entry">
     <header class="entry-header">
       <h1>{d.title}</h1>
       <p class="entry-meta">最終更新 <time datetime={last.toISOString()}>{jaDate(last)}</time></p>
     </header>
+
+
 
     {/* 目次は 2 か所に置く。広い画面では右の列（slot="toc"）、それ以外は題名の下 */}
     <div class="toc-inline"><Toc headings={headings} /></div>

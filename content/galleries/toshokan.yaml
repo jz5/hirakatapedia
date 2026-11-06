@@ -1,0 +1,31 @@
+# /toshokan/ の写真（Wikimedia Commons）。node scripts/photos.mjs で取ってくる。書き方は scripts/photos.mjs の先頭
+- file: "Hirakatashiritu-chuo-toshokann-for-wiki.jpg"
+  caption: "枚方市立中央図書館（2007年）。もとは関西外国語大学の図書館"
+  pick: true
+  seen: true
+  edit:
+    upright: 0.05
+    levels: true
+- file: "Hirakata_municipal_Korigaoka_library.jpg"
+  caption: "香里ケ丘図書館（2006年、建て替える前）。1979年にできた最初の分館"
+  seen: true
+  edit:
+    levels: true
+- file: "Hirakata_City_Sugahara_Library.jpg"
+  caption: "菅原図書館（2026年）"
+  seen: true
+- file: "Hirakata_City_Tsuda_Library.jpg"
+  caption: "津田図書館（2026年）"
+  seen: true
+- file: "Makino_library.jpg"
+  caption: "牧野図書館（2023年）"
+  seen: true
+- file: "Station_hill_Hirakata_20240911.jpg"
+  caption: "ステーションヒル枚方（2024年）。5階に市駅前図書館がある"
+  seen: true
+- file: "Hirakata_Civic_Hall_-_panoramio.jpg"
+  caption: "枚方市民会館（2013年ごろまでの写真）。右側の建物（本館）の3階に、2005年まで中心の図書館（枚方図書館）があった"
+  seen: true
+  edit:
+    levels: true
+    brightness: 1.05

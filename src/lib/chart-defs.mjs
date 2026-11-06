@@ -178,4 +178,115 @@ export const charts = {
       },
     });
   },
+
+  /** 枚方市立図書館の1年の貸出冊数（1989〜2025年度） */
+  "library-lending": () => {
+    const d = data("library.json");
+    const pts = d.lending.map((r) => [r.year, r.books]);
+    const at = (y) => d.lending.find((r) => r.year === y)?.books;
+    const peak = d.lending.reduce((a, r) => (r.books > a.books ? r : a));
+    const last = d.lending[d.lending.length - 1];
+    return lineChart({
+      id: "chart-library-lending",
+      title: `枚方市立図書館の1年の貸出冊数（${d.lending[0].year}〜${last.year}年度）`,
+      desc: `${d.lending[0].year}年度は約${Math.round(d.lending[0].books / 10000)}万冊。2005年度に中央図書館が開館して増え、${peak.year}年度の${peak.books.toLocaleString("ja-JP")}冊がいちばん多い。2020年度は新型コロナで約${Math.round(at(2020) / 10000)}万冊に減り、${last.year}年度は${last.books.toLocaleString("ja-JP")}冊。`,
+      x: { min: 1987, max: 2027, ticks: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2025] },
+      y: { min: 0, max: 5000000, ticks: [0, 1000000, 2000000, 3000000, 4000000, 5000000], format: man },
+      unit: "冊",
+      series: [{ name: "貸出冊数", color: 1, points: pts }],
+      notes: [
+        { x: 2005, y: at(2005), text: "2005年\n中央図書館が開館", dx: -10, dy: 46, anchor: "end" },
+        { x: peak.year, y: peak.books, text: `${peak.year}年度 ${peak.books.toLocaleString("ja-JP")}冊`, dx: -20, dy: -24, anchor: "end" },
+        { x: 2020, y: at(2020), text: "2020年度\n新型コロナ", dx: 0, dy: 44, anchor: "middle" },
+      ],
+      table: { head: ["年度", "貸出冊数"], rows: d.lending.map((r) => [`${r.year}年度`, r.books]) },
+    });
+  },
+
+  /** 市民1人あたりの貸出冊数。大阪府内の上位10市町村と、府・全国 */
+  "library-per-capita": () => {
+    const d = data("library.json");
+    // perCapita は小数2けたに丸めてあるので、並べ替えと表示は割り算し直した値で
+    const per = (c) => c.lending / c.population;
+    const ranked = [...d.cities].sort((a, b) => per(b) - per(a));
+    const rank = ranked.findIndex((c) => c.name === "枚方市") + 1;
+    const rows = [
+      ...ranked.slice(0, 10).map((c) => ({ label: c.name, value: per(c), kind: c.name === "枚方市" ? "hl" : undefined })),
+      { label: "大阪府", value: per(d.osaka), kind: "ref" },
+      { label: "全国", value: d.japan.perCapita, kind: "ref" },
+    ];
+    return barChart({
+      id: "chart-library-per-capita",
+      title: "住民1人あたりの貸出冊数（2024年度）：大阪府内の上位10市町村",
+      desc: `大阪府内43市町村のうち、枚方市は${rank}位（${per(ranked[rank - 1]).toFixed(1)}冊）。1位は箕面市、2位は茨木市。大阪府全体は${d.osaka.perCapita}冊、全国は${d.japan.perCapita}冊（${d.japan.year}年度）。`,
+      rows,
+      format: (n) => `${n.toFixed(1)}冊`,
+      table: {
+        head: ["", "人口（2025年1月1日）", "貸出冊数（2024年度）", "1人あたり"],
+        rows: [
+          ...ranked.map((c, i) => [`${i + 1}. ${c.name}`, c.population, c.lending, `${per(c).toFixed(2)}冊`]),
+          ["大阪府（府立図書館を含む）", d.osaka.population, d.osaka.lending, `${d.osaka.perCapita.toFixed(2)}冊`],
+          [`全国（${d.japan.year}年度）`, "", "", `${d.japan.perCapita}冊`],
+        ],
+      },
+    });
+  },
+
+  /** 蔵書回転率（1年の貸出 ÷ 蔵書）。大阪府内の上位10市町村 */
+  "library-turnover": () => {
+    const d = data("library.json");
+    const turn = (c) => c.lending / c.books;
+    const ranked = d.cities.filter((c) => c.books > 0).sort((a, b) => turn(b) - turn(a));
+    return barChart({
+      id: "chart-library-turnover",
+      title: "蔵書回転率（2024年度）：大阪府内の上位10市町村",
+      desc: `1年に貸し出した本の数を、持っている本の数で割った数。枚方市は${turn(ranked[0]).toFixed(2)}回で府内1位。2位は${ranked[1].name}（${turn(ranked[1]).toFixed(2)}回）。`,
+      rows: ranked.slice(0, 10).map((c) => ({ label: c.name, value: turn(c), kind: c.name === "枚方市" ? "hl" : undefined })),
+      format: (n) => `${n.toFixed(2)}回`,
+      table: {
+        head: ["", "蔵書冊数", "貸出冊数（2024年度）", "回転率", "表に載っている館の数"],
+        rows: ranked.map((c, i) => [`${i + 1}. ${c.name}`, c.books, c.lending, `${turn(c).toFixed(2)}回`, c.halls]),
+      },
+    });
+  },
+
+  /** 猛暑日（最高気温 35℃以上）の日数。枚方・大阪・京都（1994〜2025年） */
+  "atsui-mosho": () => heatDays("mosho"),
+
+  /** 最低気温が 25℃以上の日（熱帯夜の目安）の日数。枚方・大阪・京都（1994〜2025年） */
+  "atsui-nettaiya": () => heatDays("nettaiya"),
 };
+
+/** 暑さの記事の、3地点を比べる折れ線グラフ */
+function heatDays(key) {
+  const d = data("atsui.json");
+  const pts = (n) => d.years.map((r) => [r.year, r[n][key]]);
+  const avg = (n) => {
+    const last5 = d.years.slice(-5);
+    return (last5.reduce((a, r) => a + r[n][key], 0) / 5).toFixed(1);
+  };
+  const [y0, y1] = [d.years[0].year, d.years[d.years.length - 1].year];
+  const mosho = key === "mosho";
+  const more = d.years.filter((r) => r.枚方[key] > r.大阪[key]).length;
+  return lineChart({
+    id: `chart-atsui-${key}`,
+    title: mosho
+      ? `猛暑日（最高気温 35℃以上）の日数：枚方・大阪・京都（${y0}〜${y1}年）`
+      : `最低気温が 25℃以上の日（熱帯夜の目安）の日数：枚方・大阪・京都（${y0}〜${y1}年）`,
+    desc: mosho
+      ? `${d.years.length}年のうち${more}年は枚方のほうが大阪より猛暑日が多い。${y1 - 4}〜${y1}年の平均は、枚方${avg("枚方")}日、大阪${avg("大阪")}日、京都${avg("京都")}日。`
+      : `どの年も、枚方は大阪より少ない。${y1 - 4}〜${y1}年の平均は、枚方${avg("枚方")}日、大阪${avg("大阪")}日、京都${avg("京都")}日。`,
+    x: { min: y0 - 1, max: y1 + 1, ticks: [1995, 2000, 2005, 2010, 2015, 2020, 2025] },
+    y: { min: 0, max: mosho ? 70 : 90, ticks: mosho ? [0, 10, 20, 30, 40, 50, 60] : [0, 20, 40, 60, 80], format: (n) => `${n}日` },
+    unit: "日",
+    series: [
+      { name: "枚方（アメダス）", color: 1, points: pts("枚方") },
+      { name: "大阪（大阪市中央区）", color: 2, points: pts("大阪") },
+      { name: "京都（京都市中京区）", color: "mut", points: pts("京都"), dashed: true, muted: true },
+    ],
+    table: {
+      head: ["年", "枚方", "大阪", "京都"],
+      rows: d.years.map((r) => [`${r.year}年`, r.枚方[key], r.大阪[key], r.京都[key]]),
+    },
+  });
+}

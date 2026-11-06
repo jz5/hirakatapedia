@@ -2,8 +2,14 @@
 import { allArticles, articlePath } from "../lib/articles";
 import { SITE } from "../lib/site";
 import Base from "../layouts/Base.astro";
+import { photo } from "../lib/photos.mjs";
 
 const list = await allArticles();
+// アイキャッチ（frontmatter の cover）の小さい画像。cover がない記事は、本文の最初の写真。どちらもなければ文字だけ
+const thumb = (e: (typeof list)[number]) => {
+  const file = e.data.cover ?? e.body?.match(/<div data-photo="([^"]+)"><\/div>/)?.[1];
+  return file ? photo(e.id, file) : undefined;
+};
 ---
 
 <Base path="/">
@@ -19,9 +25,14 @@ const list = await allArticles();
     {
       list.map((e) => (
         <li>
-          <a href={articlePath(e.id)}>
-            <span class="card-title">{e.data.title}</span>
-            <span class="card-desc">{e.data.description}</span>
+          <a href={articlePath(e.id)} class:list={[{ "has-thumb": !!thumb(e) }]}>
+            {thumb(e) && (
+              <img class="card-thumb" src={thumb(e)!.small.src} width={thumb(e)!.small.width} height={thumb(e)!.small.height} alt="" loading="lazy" decoding="async" />
+            )}
+            <span class="card-text">
+              <span class="card-title">{e.data.title}</span>
+              <span class="card-desc">{e.data.description}</span>
+            </span>
           </a>
         </li>
       ))

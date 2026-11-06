@@ -1,0 +1,86 @@
+# /jinko/ の写真（Wikimedia Commons）。node scripts/photos.mjs で取ってくる。書き方は scripts/photos.mjs の先頭
+- file: "Kori_housing_complex_D50_ridge_whole_view.jpg"
+  caption: "香里団地の D50棟（2006年）"
+  pick: true
+  seen: true
+  edit:
+    upright: 0.1
+    levels: true
+- file: "Map_by_the_US_Army_Map_Service_-_Hirakata_-_japan_city_plans_-_txu-oclc-6565454.jpg"
+  caption: "アメリカ陸軍の枚方の地図（1945〜46年）。人口が増える前の枚方"
+  pick: true
+  seen: true
+- file: "Hirakata_city_center_area_Aerial_photograph.1985.jpg"
+  caption: "枚方市の中心の空中写真（1985年、国土交通省）"
+  pick: true
+  seen: true
+- file: "Traditional_scenery_in_Kori_housing_complex.jpg"
+  caption: "香里団地の住棟（2007年）"
+  seen: true
+- file: "Roof_of_star-shaped_ridges_in_Kori_housing_complex.jpg"
+  caption: "香里団地のスターハウス（星形の住棟、2007年）"
+  seen: true
+- file: "The_D-51_ridge_which_has_a_piloti_in_Kori_housing_complex.jpg"
+  caption: "香里団地の D51棟（2007年）"
+  seen: true
+- file: "Hirakata_hakkei_Koridanchi_no_namiki_20061109.jpg"
+  caption: "枚方八景「香里団地の並木」（2006年）"
+  seen: true
+- file: "Row_of_cherry_blossom_trees_in_Kori_housing_complex_20070404.jpg"
+  caption: "香里団地の桜並木（2007年）"
+  seen: true
+- file: "Hirakatashi_sta._North_building.jpg"
+  caption: "枚方市駅の北側（2016年）"
+  seen: true
+- file: "Hirakata-shi_Station_Minami_Entrance.jpg"
+  caption: "枚方市駅の南口（2006年）"
+  seen: true
+- file: "枚方市役所庁舎.jpg"
+  caption: "枚方市役所（2014年）"
+  seen: true
+- file: "Hirakata_in_Osaka_Prefecture_Ja.svg"
+  caption: "大阪府の中の枚方市の位置"
+  seen: true
+- file: "OSAKA-JYOSIISEN.png"
+  caption: "1948年の空中写真（いまの関西医大の前身、大阪女子医専のあたり）"
+  seen: true
+- file: "中振交差点空中写真01.jpg"
+  caption: "中振交差点のあたりの空中写真（1985年、国土交通省）"
+  seen: true
+- file: "Komorebi_Seikatsukan.jpg"
+  caption: "香里ヶ丘のもとの公設市場の建物（2006年）"
+  seen: true
+- file: "DaimaruPeacock_Kori_shop.jpg"
+  caption: "香里団地のピーコック（2006年）"
+  seen: true
+- file: "Hirakata_city_hall_Korigaoka_branch.jpg"
+  caption: "もとの市役所香里ケ丘支所（2006年）"
+  seen: true
+- file: "A_spiral_staircase_of_a_star-shaped_ridge_in_a_Kori_housing_complex.jpg"
+  caption: "香里団地のスターハウスのらせん階段（2007年）"
+  seen: true
+- file: "The_single-family_house_area_of_Kori_housing_complex.jpg"
+  caption: "香里団地の中の一戸建ての区域（2007年）"
+  seen: true
+- file: "flickr-53499426071.jpg"
+  caption: "淀川越しに見た枚方の市街地と、関西医科大学附属病院のタワー（2023年）"
+  seen: true
+  source:
+    name: Flickr
+    page: https://www.flickr.com/photos/m-louis/53499426071/
+    image: https://live.staticflickr.com/65535/53499426071_307d281588_b.jpg
+    author: "m-louis .®"
+    license: CC BY-SA 2.0
+    licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/
+    date: "2023-02-12"
+- file: "flickr-54690290944.jpg"
+  caption: "枚方市新町の関西医科大学附属病院のタワーと鉄塔（2025年）"
+  seen: true
+  source:
+    name: Flickr
+    page: https://www.flickr.com/photos/200118688@N04/54690290944/
+    image: https://live.staticflickr.com/65535/54690290944_50d147e040_b.jpg
+    author: "Ivan P"
+    license: CC0
+    licenseUrl: https://creativecommons.org/publicdomain/zero/1.0/
+    date: "2025-07-26"

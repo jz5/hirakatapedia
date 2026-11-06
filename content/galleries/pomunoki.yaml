@@ -1,0 +1,65 @@
+# /pomunoki/ の写真（Wikimedia Commons）。node scripts/photos.mjs で取ってくる。書き方は scripts/photos.mjs の先頭
+- file: "Pomme_de_terre_main_store_2007-07-22.jpg"
+  caption: "ポム・ド・テール本店（田口山、2007年）"
+  pick: true
+  seen: true
+- file: "Pomunoki_doria_omeletrice.jpg"
+  caption: "ポムの樹のドリアオムライス（2019年）"
+  pick: true
+  seen: true
+- file: "KINTETSU_Hirakata.JPG"
+  caption: "近鉄百貨店枚方店（2012年）。ポムの樹の1号店はこの中にあった"
+  seen: true
+  edit:
+    upright: 0.1
+    levels: true
+    saturation: 1.08
+- file: "Pomme_no_Ki_LaLaport_Kadoma.jpg"
+  caption: "ポムの樹 ららぽーと門真店（2023年）"
+  seen: true
+  hide: true
+  note: "門真の店で枚方ではない。人も写る"
+- file: "flickr-22755443684.jpg"
+  caption: "ポムの樹 枚方店（田口山）の看板（2015年）"
+  seen: true
+  source:
+    name: Flickr
+    page: https://www.flickr.com/photos/kennejima/22755443684/
+    image: https://live.staticflickr.com/5806/22755443684_67dd1b92fd_b.jpg
+    author: "kennejima"
+    license: CC BY 2.0
+    licenseUrl: https://creativecommons.org/licenses/by/2.0/
+    date: "2015-11-28"
+- file: "flickr-23015850659.jpg"
+  caption: "ポムの樹 枚方店の入口（2015年）"
+  seen: true
+  source:
+    name: Flickr
+    page: https://www.flickr.com/photos/kennejima/23015850659/
+    image: https://live.staticflickr.com/781/23015850659_a005b770e8_b.jpg
+    author: "kennejima"
+    license: CC BY 2.0
+    licenseUrl: https://creativecommons.org/licenses/by/2.0/
+    date: "2015-11-28"
+- file: "flickr-23301229681.jpg"
+  caption: "ポムの樹 枚方店のオムライス（2015年）"
+  seen: true
+  source:
+    name: Flickr
+    page: https://www.flickr.com/photos/kennejima/23301229681/
+    image: https://live.staticflickr.com/5831/23301229681_59c0154f14_b.jpg
+    author: "kennejima"
+    license: CC BY 2.0
+    licenseUrl: https://creativecommons.org/licenses/by/2.0/
+    date: "2015-11-28"
+- file: "flickr-23015854769.jpg"
+  caption: "ポムの樹 枚方店のメニュー（2015年）"
+  seen: true
+  source:
+    name: Flickr
+    page: https://www.flickr.com/photos/kennejima/23015854769/
+    image: https://live.staticflickr.com/778/23015854769_6349f982b4_b.jpg
+    author: "kennejima"
+    license: CC BY 2.0
+    licenseUrl: https://creativecommons.org/licenses/by/2.0/
+    date: "2015-11-28"

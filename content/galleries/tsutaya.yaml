@@ -1,0 +1,99 @@
+# /tsutaya/ の写真（Wikimedia Commons）。node scripts/photos.mjs で取ってくる。書き方は scripts/photos.mjs の先頭
+- file: "Hirakata_T-SITE_at_Night_2025.jpg"
+  caption: "夜の枚方T-SITE（2025年）"
+  pick: true
+  seen: true
+- file: "Yamato_Building.jpg"
+  caption: "餃子の王将が入っていたビル（2019年）。1983年に蔦屋書店の1号店があったところで、2024年に建て替わった"
+  pick: true
+  seen: true
+  note: "テナントの看板が写る"
+  edit:
+    upright: 0.08
+    levels: true
+    brightness: 1.06
+- file: "TSUTAYA_Hirakata_Ekimae_Honten.JPG"
+  caption: "TSUTAYA 枚方駅前本店の物販館（2012年、岡東町18-20）"
+  pick: true
+  seen: true
+- file: "KINTETSU_Hirakata.JPG"
+  caption: "近鉄百貨店枚方店（2012年）。閉店のあと、跡地に枚方T-SITE が建った"
+  seen: true
+  edit:
+    upright: 0.1
+    levels: true
+    saturation: 1.08
+- file: "HIRAKATA_T-SITE.jpg"
+  caption: "枚方T-SITE（2018年）"
+  seen: true
+- file: "Hirakata-T-SITE.jpg"
+  caption: "枚方T-SITE（2016年）"
+  seen: true
+- file: "Hirakata_T-Site.jpg"
+  caption: "枚方T-SITE と駅前のバスのりば（2019年）"
+  seen: true
+- file: "HIRAKATA_TSUTAYA_BOOKS.jpg"
+  caption: "枚方T-SITE（2019年）"
+  seen: true
+  note: "名前は BOOKS だが、写っているのは T-SITE の外観"
+- file: "Hirakata_T-SITE_Atrium_2025.jpg"
+  caption: "枚方T-SITE の吹き抜けとエスカレーター（2025年）"
+  seen: true
+- file: "Hirakata_T-SITE_Level_3_Bookstore_2025.jpg"
+  caption: "枚方T-SITE の蔦屋書店（2025年）"
+  seen: true
+- file: "Hirakata_TSUTAYA_BOOKS.jpg"
+  caption: "枚方 蔦屋書店の本棚の吹き抜け"
+  seen: true
+- file: "KINTETSU_Hirakata_close1.JPG"
+  caption: "閉店の日の近鉄百貨店枚方店（2012年2月29日）"
+  seen: true
+  hide: true
+  note: "人がたくさん写っているのでギャラリーには出さない"
+- file: "Station_hill_Hirakata_20240911.jpg"
+  caption: "ステーションヒル枚方（2024年）"
+  seen: true
+- file: "枚方市駅.jpg"
+  caption: "枚方市駅のホーム"
+  seen: true
+- file: "KINTETSU_Hirakata2.JPG"
+  caption: "近鉄百貨店枚方店（2012年）。閉店を知らせる垂れ幕"
+  seen: true
+  edit:
+    upright: 0.1
+    levels: true
+    saturation: 1.08
+- file: "KINTETSU_Hirakata_Countdown.JPG"
+  caption: "近鉄百貨店枚方店の閉店までの日数の看板（2012年）"
+  seen: true
+- file: "枚方市駅_-_panoramio.jpg"
+  caption: "枚方市駅とタクシー乗り場（2006年）"
+  seen: true
+- file: "HIRAKATA_SUN_PLAZA.jpg"
+  caption: "ひらかたサンプラザ（2018年）"
+  seen: true
+- file: "Hirakata_Sunplaza_No.1.jpg"
+  caption: "ひらかたサンプラザ1号館（2025年）"
+  seen: true
+- file: "flickr-7919668972.jpg"
+  caption: "夜の枚方市駅前のロータリーと歩道橋。左にひらかたサンプラザ1号館の看板（2012年）"
+  seen: true
+  source:
+    name: Flickr
+    page: https://www.flickr.com/photos/philmoyer/7919668972/
+    image: https://live.staticflickr.com/8030/7919668972_784c54444d_b.jpg
+    author: "Phil Moyer"
+    license: CC BY 2.0
+    licenseUrl: https://creativecommons.org/licenses/by/2.0/
+    date: "2012-08-31"
+- file: "flickr-55043276105.jpg"
+  caption: "京阪枚方市駅の改札前の券売機（2026年）"
+  seen: true
+  source:
+    name: Flickr
+    page: https://www.flickr.com/photos/kzaral/55043276105/
+    image: https://live.staticflickr.com/65535/55043276105_474b2e8020_b.jpg
+    author: "Kzaral"
+    license: CC BY 4.0
+    licenseUrl: https://creativecommons.org/licenses/by/4.0/
+    date: "2026-01-16"

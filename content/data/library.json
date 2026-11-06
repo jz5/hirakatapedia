@@ -1,0 +1,508 @@
+{
+ "_source": "大阪府統計年鑑 令和7年版 表18-1（令和6年度）、総務省 住民基本台帳人口（2025年1月1日）、枚方市立図書館『四十年誌』『図書館年報』",
+ "lending": [
+  {
+   "year": 1989,
+   "books": 1974859
+  },
+  {
+   "year": 1990,
+   "books": 2218706
+  },
+  {
+   "year": 1991,
+   "books": 2282487
+  },
+  {
+   "year": 1992,
+   "books": 2388797
+  },
+  {
+   "year": 1993,
+   "books": 2469365
+  },
+  {
+   "year": 1994,
+   "books": 2482370
+  },
+  {
+   "year": 1995,
+   "books": 2493950
+  },
+  {
+   "year": 1996,
+   "books": 2383787
+  },
+  {
+   "year": 1997,
+   "books": 2434783
+  },
+  {
+   "year": 1998,
+   "books": 2533036
+  },
+  {
+   "year": 1999,
+   "books": 2489054
+  },
+  {
+   "year": 2000,
+   "books": 2532182
+  },
+  {
+   "year": 2001,
+   "books": 2541898
+  },
+  {
+   "year": 2002,
+   "books": 3073075
+  },
+  {
+   "year": 2003,
+   "books": 3374671
+  },
+  {
+   "year": 2004,
+   "books": 3236096
+  },
+  {
+   "year": 2005,
+   "books": 3534713
+  },
+  {
+   "year": 2006,
+   "books": 3891967
+  },
+  {
+   "year": 2007,
+   "books": 4061932
+  },
+  {
+   "year": 2008,
+   "books": 4298454
+  },
+  {
+   "year": 2009,
+   "books": 4419687
+  },
+  {
+   "year": 2010,
+   "books": 4284668
+  },
+  {
+   "year": 2011,
+   "books": 4055660
+  },
+  {
+   "year": 2012,
+   "books": 3912063
+  },
+  {
+   "year": 2013,
+   "books": 3737454
+  },
+  {
+   "year": 2014,
+   "books": 3666276
+  },
+  {
+   "year": 2015,
+   "books": 3638370
+  },
+  {
+   "year": 2016,
+   "books": 3403142
+  },
+  {
+   "year": 2017,
+   "books": 3442647
+  },
+  {
+   "year": 2018,
+   "books": 3392614
+  },
+  {
+   "year": 2019,
+   "books": 3332283
+  },
+  {
+   "year": 2020,
+   "books": 2659430
+  },
+  {
+   "year": 2021,
+   "books": 3841278
+  },
+  {
+   "year": 2022,
+   "books": 3816054
+  },
+  {
+   "year": 2023,
+   "books": 3874892
+  },
+  {
+   "year": 2024,
+   "books": 4103346
+  },
+  {
+   "year": 2025,
+   "books": 4413171
+  }
+ ],
+ "cities": [
+  {
+   "name": "大阪市",
+   "population": 2778917,
+   "lending": 9585348,
+   "perCapita": 3.45,
+   "books": 4427692,
+   "halls": 24
+  },
+  {
+   "name": "堺市",
+   "population": 811993,
+   "lending": 3836330,
+   "perCapita": 4.72,
+   "books": 1938975,
+   "halls": 15
+  },
+  {
+   "name": "東大阪市",
+   "population": 477700,
+   "lending": 1603890,
+   "perCapita": 3.36,
+   "books": 791236,
+   "halls": 3
+  },
+  {
+   "name": "豊中市",
+   "population": 405955,
+   "lending": 2756867,
+   "perCapita": 6.79,
+   "books": 926504,
+   "halls": 9
+  },
+  {
+   "name": "枚方市",
+   "population": 392328,
+   "lending": 4103346,
+   "perCapita": 10.46,
+   "books": 1240119,
+   "halls": 9
+  },
+  {
+   "name": "吹田市",
+   "population": 384506,
+   "lending": 3674607,
+   "perCapita": 9.56,
+   "books": 1199264,
+   "halls": 9
+  },
+  {
+   "name": "高槻市",
+   "population": 345589,
+   "lending": 2655154,
+   "perCapita": 7.68,
+   "books": 1395928,
+   "halls": 5
+  },
+  {
+   "name": "茨木市",
+   "population": 286042,
+   "lending": 3419437,
+   "perCapita": 11.95,
+   "books": 1293326,
+   "halls": 5
+  },
+  {
+   "name": "八尾市",
+   "population": 259158,
+   "lending": 1553828,
+   "perCapita": 6.0,
+   "books": 743879,
+   "halls": 4
+  },
+  {
+   "name": "寝屋川市",
+   "population": 224378,
+   "lending": 904693,
+   "perCapita": 4.03,
+   "books": 592210,
+   "halls": 3
+  },
+  {
+   "name": "岸和田市",
+   "population": 186596,
+   "lending": 682144,
+   "perCapita": 3.66,
+   "books": 571982,
+   "halls": 6
+  },
+  {
+   "name": "和泉市",
+   "population": 182481,
+   "lending": 994253,
+   "perCapita": 5.45,
+   "books": 607847,
+   "halls": 5
+  },
+  {
+   "name": "守口市",
+   "population": 140923,
+   "lending": 370208,
+   "perCapita": 2.63,
+   "books": 225752,
+   "halls": 1
+  },
+  {
+   "name": "箕面市",
+   "population": 139527,
+   "lending": 1706755,
+   "perCapita": 12.23,
+   "books": 861826,
+   "halls": 6
+  },
+  {
+   "name": "松原市",
+   "population": 116259,
+   "lending": 540396,
+   "perCapita": 4.65,
+   "books": 451902,
+   "halls": 6
+  },
+  {
+   "name": "門真市",
+   "population": 116179,
+   "lending": 223614,
+   "perCapita": 1.92,
+   "books": 282979,
+   "halls": 2
+  },
+  {
+   "name": "大東市",
+   "population": 115687,
+   "lending": 669411,
+   "perCapita": 5.79,
+   "books": 533935,
+   "halls": 3
+  },
+  {
+   "name": "羽曳野市",
+   "population": 107406,
+   "lending": 606446,
+   "perCapita": 5.65,
+   "books": 530483,
+   "halls": 6
+  },
+  {
+   "name": "富田林市",
+   "population": 105715,
+   "lending": 573753,
+   "perCapita": 5.43,
+   "books": 298003,
+   "halls": 2
+  },
+  {
+   "name": "池田市",
+   "population": 102636,
+   "lending": 735802,
+   "perCapita": 7.17,
+   "books": 383686,
+   "halls": 2
+  },
+  {
+   "name": "泉佐野市",
+   "population": 99318,
+   "lending": 487726,
+   "perCapita": 4.91,
+   "books": 649225,
+   "halls": 1
+  },
+  {
+   "name": "河内長野市",
+   "population": 97912,
+   "lending": 811263,
+   "perCapita": 8.29,
+   "books": 512877,
+   "halls": 1
+  },
+  {
+   "name": "摂津市",
+   "population": 86344,
+   "lending": 322698,
+   "perCapita": 3.74,
+   "books": 225140,
+   "halls": 2
+  },
+  {
+   "name": "貝塚市",
+   "population": 81420,
+   "lending": 213043,
+   "perCapita": 2.62,
+   "books": 310170,
+   "halls": 1
+  },
+  {
+   "name": "交野市",
+   "population": 77191,
+   "lending": 445870,
+   "perCapita": 5.78,
+   "books": 234010,
+   "halls": 4
+  },
+  {
+   "name": "泉大津市",
+   "population": 72762,
+   "lending": 325128,
+   "perCapita": 4.47,
+   "books": 178232,
+   "halls": 1
+  },
+  {
+   "name": "柏原市",
+   "population": 66500,
+   "lending": 329775,
+   "perCapita": 4.96,
+   "books": 215749,
+   "halls": 2
+  },
+  {
+   "name": "藤井寺市",
+   "population": 62304,
+   "lending": 218232,
+   "perCapita": 3.5,
+   "books": 157222,
+   "halls": 1
+  },
+  {
+   "name": "泉南市",
+   "population": 58145,
+   "lending": 256620,
+   "perCapita": 4.41,
+   "books": 311235,
+   "halls": 1
+  },
+  {
+   "name": "大阪狭山市",
+   "population": 57746,
+   "lending": 338311,
+   "perCapita": 5.86,
+   "books": 231636,
+   "halls": 1
+  },
+  {
+   "name": "高石市",
+   "population": 55968,
+   "lending": 279304,
+   "perCapita": 4.99,
+   "books": 291548,
+   "halls": 2
+  },
+  {
+   "name": "四條畷市",
+   "population": 53749,
+   "lending": 263324,
+   "perCapita": 4.9,
+   "books": 259635,
+   "halls": 2
+  },
+  {
+   "name": "阪南市",
+   "population": 50080,
+   "lending": 293869,
+   "perCapita": 5.87,
+   "books": 222777,
+   "halls": 1
+  },
+  {
+   "name": "熊取町",
+   "population": 42544,
+   "lending": 304346,
+   "perCapita": 7.15,
+   "books": 383819,
+   "halls": 1
+  },
+  {
+   "name": "島本町",
+   "population": 32247,
+   "lending": 307992,
+   "perCapita": 9.55,
+   "books": 101836,
+   "halls": 1
+  },
+  {
+   "name": "豊能町",
+   "population": 17804,
+   "lending": 183389,
+   "perCapita": 10.3,
+   "books": 142210,
+   "halls": 1
+  },
+  {
+   "name": "忠岡町",
+   "population": 16317,
+   "lending": 31802,
+   "perCapita": 1.95,
+   "books": 80808,
+   "halls": 1
+  },
+  {
+   "name": "河南町",
+   "population": 14556,
+   "lending": 80830,
+   "perCapita": 5.55,
+   "books": 77229,
+   "halls": 1
+  },
+  {
+   "name": "岬町",
+   "population": 14295,
+   "lending": 6613,
+   "perCapita": 0.46,
+   "books": 20873,
+   "halls": 1
+  },
+  {
+   "name": "太子町",
+   "population": 12673,
+   "lending": 41797,
+   "perCapita": 3.3,
+   "books": 54459,
+   "halls": 1
+  },
+  {
+   "name": "能勢町",
+   "population": 8940,
+   "lending": 30515,
+   "perCapita": 3.41,
+   "books": 36722,
+   "halls": 1
+  },
+  {
+   "name": "田尻町",
+   "population": 8484,
+   "lending": 14901,
+   "perCapita": 1.76,
+   "books": 14235,
+   "halls": 1
+  },
+  {
+   "name": "千早赤阪村",
+   "population": 4687,
+   "lending": 12765,
+   "perCapita": 2.72,
+   "books": 27384,
+   "halls": 1
+  }
+ ],
+ "osaka": {
+  "population": 8771961,
+  "lending": 47385724,
+  "perCapita": 5.4
+ },
+ "japan": {
+  "year": 2023,
+  "perCapita": 4.8
+ }
+}

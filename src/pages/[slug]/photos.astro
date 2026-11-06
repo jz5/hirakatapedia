@@ -1,0 +1,68 @@
+---
+/**
+ * 記事の写真ギャラリー（/<記事>/photos/）。記事に使った写真も、使わなかった写真も並べる。
+ * 写真は Wikimedia Commons の自由ライセンスのもの。一覧は content/galleries/<記事>.yaml（hide のものは出さない）
+ */
+import { allArticles, articlePath } from "../../lib/articles";
+import { publicGallery, galleryPath, licenseLabel, creditText, sourceName } from "../../lib/photos.mjs";
+import Base from "../../layouts/Base.astro";
+import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
+
+export const getStaticPaths = (async () => {
+  const list = await allArticles();
+  return list
+    .map((entry) => ({ entry, photos: publicGallery(entry.id) }))
+    .filter((x) => x.photos.length > 0)
+    .map(({ entry, photos }) => ({ params: { slug: entry.id }, props: { entry, photos } }));
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { entry, photos } = Astro.props as Props;
+const d = entry.data;
+const title = `写真ギャラリー：${d.title}`;
+---
+
+<Base
+  title={title}
+  description={`記事「${d.title}」に関係する写真 ${photos.length}枚。Wikimedia Commons の自由なライセンスの写真で、条件を守ればだれでも使えます。`}
+  path={galleryPath(entry.id)}
+  image={photos[0].large.src}
+>
+  <article class="entry">
+    <header class="entry-header">
+      <p class="gallery-back"><a href={articlePath(entry.id)}>← 記事に戻る</a></p>
+      <h1>写真ギャラリー（{photos.length}枚）</h1>
+      <p class="entry-meta">記事「<a href={articlePath(entry.id)}>{d.title}</a>」に関係する写真です。</p>
+    </header>
+
+    <div class="entry-body">
+      <p class="gallery-note">
+        ここの写真は、撮った人や国の機関が、だれでも使える条件で公開しているものです。Wikimedia Commons や Flickr の写真のほか、国土地理院の空中写真などもあります。<strong>それぞれの条件を守れば、だれでも使えます</strong>。CC BY・CC BY-SA は「作者名とライセンスを書く」ことが条件で、CC BY-SA は手を加えた画像も同じライセンスで公開します。CC0 とパブリックドメインは条件なし、国土地理院の画像は出典を書けば使えます。このサイトで傾きや明るさを調整したり、つなぎ合わせたりした画像には「加工あり」と書いています。元の画像とくわしい条件は、それぞれの「〜で見る」から確かめてください。
+      </p>
+
+      <ul class="gallery-grid">
+        {
+          photos.map((p) => (
+            <li class="gallery-item" id={p.file}>
+              <a class="gallery-img" href={p.large.src}>
+                <img src={p.small.src} width={p.small.width} height={p.small.height} alt={p.caption} loading="lazy" decoding="async" />
+              </a>
+              <p class="gallery-caption">{p.caption}</p>
+              <p class="gallery-credit">
+                {p.kind ?? "写真"}：{p.author} / {p.licenseUrl ? <a href={p.licenseUrl} rel="license noopener">{licenseLabel(p)}</a> : licenseLabel(p)}
+                {p.edited && <>（加工あり）</>}
+              </p>
+              <p class="gallery-links">
+                <a href={p.page} rel="noopener">{sourceName(p)}で見る</a>{p.original.width > 0 && <>（元の大きさ {p.original.width}×{p.original.height}）</>}
+              </p>
+              <details class="gallery-howto">
+                <summary>使うときの表記の例</summary>
+                <p><code>{creditText(p)}</code></p>
+              </details>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </article>
+</Base>

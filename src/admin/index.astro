@@ -27,6 +27,7 @@ const notes = Object.keys(import.meta.glob("../../docs/notes/*.md"))
       <p class="entry-meta">開発サーバーだけで見えるページです（公開されません）。まだ {open} 件、済み {done} 件。</p>
     </header>
     <div class="entry-body admin">
+      <p><a href="/admin/photos/">写真の候補（自由ライセンス）</a></p>
       <h2>調べもののメモ</h2>
       <ul>
         {notes.map((n) => <li><a href={`/admin/notes/${n}/`}>{n}</a></li>)}

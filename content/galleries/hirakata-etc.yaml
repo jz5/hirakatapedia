@@ -1,0 +1,56 @@
+# 記事はまだない。枚方らしい写真（ひらかたパーク、枚方宿 鍵屋、長尾駅）
+- file: "flickr-4403676790.jpg"
+  caption: "夜のひらかたパークの正面ゲート（2009年）"
+  seen: true
+  source:
+    name: Flickr
+    page: https://www.flickr.com/photos/masatsu/4403676790/
+    image: https://live.staticflickr.com/4034/4403676790_e76c5b7bd1_b.jpg
+    author: "masatsu"
+    license: CC BY-SA 2.0
+    licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/
+    date: "2009-12-26"
+- file: "flickr-4403678380.jpg"
+  caption: "ライトアップしたひらかたパークの観覧車（2009年）"
+  seen: true
+  source:
+    name: Flickr
+    page: https://www.flickr.com/photos/masatsu/4403678380/
+    image: https://live.staticflickr.com/4044/4403678380_a2d84e66c5_b.jpg
+    author: "masatsu"
+    license: CC BY-SA 2.0
+    licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/
+    date: "2009-12-26"
+- file: "flickr-9276049656.jpg"
+  caption: "ひらかたパークの木製コースター（2013年）"
+  seen: true
+  source:
+    name: Flickr
+    page: https://www.flickr.com/photos/milst1/9276049656/
+    image: https://live.staticflickr.com/7370/9276049656_d2550eb2fd_b.jpg
+    author: "Martin Lewison"
+    license: CC BY-SA 2.0
+    licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/
+    date: "2013-06-26"
+- file: "flickr-53506556110.jpg"
+  caption: "枚方宿鍵屋資料館の外観（2023年）"
+  seen: true
+  source:
+    name: Flickr
+    page: https://www.flickr.com/photos/m-louis/53506556110/
+    image: https://live.staticflickr.com/65535/53506556110_78ae48a3b3_b.jpg
+    author: "m-louis .®"
+    license: CC BY-SA 2.0
+    licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/
+    date: "2023-02-12"
+- file: "flickr-53502288129.jpg"
+  caption: "鍵屋資料館の大広間（2023年）"
+  seen: true
+  source:
+    name: Flickr
+    page: https://www.flickr.com/photos/m-louis/53502288129/
+    image: https://live.staticflickr.com/65535/53502288129_f33112aa79_b.jpg
+    author: "m-louis .®"
+    license: CC BY-SA 2.0
+    licenseUrl: https://creativecommons.org/licenses/by-sa/2.0/
+    date: "2023-02-12"
