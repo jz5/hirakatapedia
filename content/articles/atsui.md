@@ -152,7 +152,7 @@ links:
 
 [^jma-rank]: 気象庁「[歴代全国ランキング](https://www.data.jma.go.jp/stats/etrn/view/rankall.php)」… 最高気温の1位は伊勢崎 41.8℃（2025年8月5日）
 
-[^jma-station]: 気象庁「地域気象観測所一覧」… 枚方（62046）、枚方市星丘、標高26m、1977年から
+[^jma-station]: 気象庁「[地域気象観測所一覧](https://www.jma.go.jp/jma/kishou/know/amedas/ame_master.pdf)」（PDF、37ページ）… 枚方（62046）、枚方市星丘、標高26m、1977年から
 
 
 [^set333]: set333「[幻の40℃台が5回、1994年8月のアメダス枚方](https://set333.net/2020/08/hirakata/)」2020年 … 10分値と、正時の値だけを日最高気温にするルール。1994年8月5日・7日・8日に40℃台が5回。公式の8月8日は39.6℃。観測所のまわりは緑地
