@@ -22,6 +22,9 @@
   --accent-hover: #0b4a58;
   --mark: #cdedf1;
   --wave: #126e82;
+  /* グラフの色。dataviz の validate_palette で確かめた（明度・彩度・色覚の違い・コントラスト） */
+  --chart-1: #00809e;
+  --chart-2: #c9541a;
 
   --system: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", system-ui, -apple-system, Meiryo, sans-serif;
   --sans: "LINE Seed JP", var(--system);
@@ -56,6 +59,7 @@
     --fg: #d6dde0; --fg-strong: #f0f4f6; --mut: #9eaab0; --mut-soft: #7f8b91;
     --line: #2b3539; --line-soft: #222a2e; --rule: #7fd0de;
     --accent: #7fd0de; --accent-hover: #b5e6ee; --mark: #1c4549; --wave: #7fd0de;
+    --chart-1: #1f9ab5; --chart-2: #d46f30;
     color-scheme: dark;
   }
 }
@@ -64,6 +68,7 @@
   --fg: #d6dde0; --fg-strong: #f0f4f6; --mut: #9eaab0; --mut-soft: #7f8b91;
   --line: #2b3539; --line-soft: #222a2e; --rule: #7fd0de;
   --accent: #7fd0de; --accent-hover: #b5e6ee; --mark: #1c4549; --wave: #7fd0de;
+  --chart-1: #1f9ab5; --chart-2: #d46f30;
   color-scheme: dark;
 }
 
@@ -474,3 +479,69 @@ button { font: inherit; color: inherit; }
   border-radius: var(--radius);
   padding: .1em .35em;
 }
+
+/* =========================================================================
+   グラフ（src/lib/charts.mjs が作る SVG）
+   ========================================================================= */
+
+.entry-body .chart { margin: var(--sp-6) 0; }
+.chart-title { font-weight: 700; color: var(--fg-strong); margin-bottom: var(--sp-2); line-height: 1.5; }
+.chart-legend { display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-4); list-style: none; margin: 0 0 var(--sp-2); padding: 0; font-size: .8125rem; color: var(--mut); }
+.chart-legend li { display: flex; align-items: center; gap: var(--sp-2); margin: 0; }
+.chart-key { display: inline-block; width: 18px; height: 0; border-top: 2px solid; }
+.chart-key.chart-s1 { border-color: var(--chart-1); }
+.chart-key.chart-s2 { border-color: var(--chart-2); }
+.chart-key.chart-smut { border-color: var(--mut); }
+.chart-key-dashed { border-top-style: dashed; }
+.chart-key-dot { width: 8px; height: 8px; border: 0; border-radius: 50%; }
+.chart-key-dot.chart-s1 { background: var(--chart-1); }
+.chart-key-dot.chart-s2 { background: var(--chart-2); }
+
+/* 狭い画面では字が小さくなりすぎないよう、グラフだけ横にスクロールさせる */
+.chart-scroll { position: relative; overflow-x: auto; }
+.chart-svg { display: block; width: 100%; min-width: 520px; height: auto; font-family: var(--sans); }
+.chart-tick { font-size: 12px; fill: var(--mut); font-variant-numeric: tabular-nums; }
+.chart-note, .chart-label { font-size: 12px; fill: var(--fg); }
+.chart-grid { stroke: var(--line-soft); stroke-width: 1; }
+.chart-axis { stroke: var(--line); stroke-width: 1; }
+.chart-ref { stroke: var(--mut-soft); stroke-width: 1; stroke-dasharray: 4 4; }
+.chart-leader { stroke: var(--mut-soft); stroke-width: 1; }
+.chart-mark { fill: var(--bg); stroke: var(--fg); stroke-width: 1.5; }
+.chart-line { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.chart-line.chart-s1 { stroke: var(--chart-1); }
+.chart-line.chart-s2 { stroke: var(--chart-2); }
+.chart-line.chart-smut { stroke: var(--mut); }
+/* 背景にする線（1 本だけ色を付けるグラフ） */
+.chart-line.chart-muted { stroke: var(--mut-soft); stroke-width: 1.5; }
+.chart-key.chart-key-dot.chart-smut { background: var(--mut-soft); }
+.chart-bar { fill: color-mix(in srgb, var(--mut-soft) 45%, var(--bg)); }
+.chart-bar-ref { fill: var(--mut); }
+.chart-bar-hl { fill: var(--chart-1); }
+.chart-tick-hl { fill: var(--fg-strong); font-weight: 700; }
+.chart-dashed { stroke-dasharray: 6 5; }
+/* 点は地の色の輪で囲んで、線と重なっても見えるように */
+.chart-dot { stroke: var(--bg); stroke-width: 2; }
+.chart-dot.chart-s1 { fill: var(--chart-1); }
+.chart-dot.chart-s2 { fill: var(--chart-2); }
+
+/* マウスを乗せたときの縦線と吹き出し（ArticleBody.astro の script） */
+.chart-cursor { stroke: var(--mut); stroke-width: 1; }
+.chart-tip {
+  position: absolute; z-index: 5; pointer-events: none;
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--bg); color: var(--fg);
+  border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgb(0 0 0 / .08);
+  font-size: .8125rem; line-height: 1.6; white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.chart-tip[hidden] { display: none; }
+.chart-tip b { color: var(--fg-strong); }
+.chart-tip i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+
+.chart-table { margin-top: var(--sp-2); font-size: .875rem; }
+.chart-table summary { cursor: pointer; color: var(--mut); }
+.chart-table .table-scroll { max-height: 22rem; overflow: auto; margin-top: var(--sp-2); }
+.entry-body .chart-table table { display: table; font-size: .8125rem; }
+.entry-body .chart-table td { text-align: right; font-weight: 400; }
+.entry-body .chart-table td:first-child { text-align: left; }

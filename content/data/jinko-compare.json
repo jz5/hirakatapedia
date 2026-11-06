@@ -1,0 +1,596 @@
+{
+ "_source": {
+  "ranks": "国勢調査。1980〜2020年は e-Stat 時系列データ 第6表（大阪府、2015・2020年は原数値）、2025年は大阪府「令和7年国勢調査（確定値）」付表。その年の市町村の境界のまま",
+  "foreign": "総務省「住民基本台帳に基づく人口、人口動態及び世帯数（令和8年1月1日現在）」市区町村別（総計・外国人住民）。増減は2025年1〜12月"
+ },
+ "ranks": [
+  {
+   "year": 1980,
+   "count": 44,
+   "cities": {
+    "八尾市": {
+     "rank": 8,
+     "population": 272706
+    },
+    "吹田市": {
+     "rank": 7,
+     "population": 332418
+    },
+    "堺市": {
+     "rank": 2,
+     "population": 810106
+    },
+    "大阪市": {
+     "rank": 1,
+     "population": 2648180
+    },
+    "寝屋川市": {
+     "rank": 9,
+     "population": 255859
+    },
+    "東大阪市": {
+     "rank": 3,
+     "population": 521558
+    },
+    "枚方市": {
+     "rank": 5,
+     "population": 353358
+    },
+    "茨木市": {
+     "rank": 10,
+     "population": 234062
+    },
+    "豊中市": {
+     "rank": 4,
+     "population": 403174
+    },
+    "高槻市": {
+     "rank": 6,
+     "population": 340720
+    }
+   }
+  },
+  {
+   "year": 1985,
+   "count": 44,
+   "cities": {
+    "八尾市": {
+     "rank": 8,
+     "population": 276394
+    },
+    "吹田市": {
+     "rank": 6,
+     "population": 348948
+    },
+    "堺市": {
+     "rank": 2,
+     "population": 818271
+    },
+    "大阪市": {
+     "rank": 1,
+     "population": 2636249
+    },
+    "寝屋川市": {
+     "rank": 9,
+     "population": 258228
+    },
+    "東大阪市": {
+     "rank": 3,
+     "population": 522805
+    },
+    "枚方市": {
+     "rank": 5,
+     "population": 382257
+    },
+    "茨木市": {
+     "rank": 10,
+     "population": 250463
+    },
+    "豊中市": {
+     "rank": 4,
+     "population": 413213
+    },
+    "高槻市": {
+     "rank": 7,
+     "population": 348784
+    }
+   }
+  },
+  {
+   "year": 1990,
+   "count": 44,
+   "cities": {
+    "八尾市": {
+     "rank": 8,
+     "population": 277568
+    },
+    "吹田市": {
+     "rank": 7,
+     "population": 345206
+    },
+    "堺市": {
+     "rank": 2,
+     "population": 807765
+    },
+    "大阪市": {
+     "rank": 1,
+     "population": 2623801
+    },
+    "寝屋川市": {
+     "rank": 9,
+     "population": 256524
+    },
+    "東大阪市": {
+     "rank": 3,
+     "population": 518319
+    },
+    "枚方市": {
+     "rank": 5,
+     "population": 390788
+    },
+    "茨木市": {
+     "rank": 10,
+     "population": 254078
+    },
+    "豊中市": {
+     "rank": 4,
+     "population": 409837
+    },
+    "高槻市": {
+     "rank": 6,
+     "population": 359867
+    }
+   }
+  },
+  {
+   "year": 1995,
+   "count": 44,
+   "cities": {
+    "八尾市": {
+     "rank": 8,
+     "population": 276664
+    },
+    "吹田市": {
+     "rank": 7,
+     "population": 342760
+    },
+    "堺市": {
+     "rank": 2,
+     "population": 802993
+    },
+    "大阪市": {
+     "rank": 1,
+     "population": 2602421
+    },
+    "寝屋川市": {
+     "rank": 9,
+     "population": 258443
+    },
+    "東大阪市": {
+     "rank": 3,
+     "population": 517232
+    },
+    "枚方市": {
+     "rank": 4,
+     "population": 400144
+    },
+    "茨木市": {
+     "rank": 10,
+     "population": 258233
+    },
+    "豊中市": {
+     "rank": 5,
+     "population": 398908
+    },
+    "高槻市": {
+     "rank": 6,
+     "population": 362270
+    }
+   }
+  },
+  {
+   "year": 2000,
+   "count": 44,
+   "cities": {
+    "八尾市": {
+     "rank": 8,
+     "population": 274777
+    },
+    "吹田市": {
+     "rank": 7,
+     "population": 347929
+    },
+    "堺市": {
+     "rank": 2,
+     "population": 792018
+    },
+    "大阪市": {
+     "rank": 1,
+     "population": 2598774
+    },
+    "寝屋川市": {
+     "rank": 10,
+     "population": 250806
+    },
+    "東大阪市": {
+     "rank": 3,
+     "population": 515094
+    },
+    "枚方市": {
+     "rank": 4,
+     "population": 402563
+    },
+    "茨木市": {
+     "rank": 9,
+     "population": 260648
+    },
+    "豊中市": {
+     "rank": 5,
+     "population": 391726
+    },
+    "高槻市": {
+     "rank": 6,
+     "population": 357438
+    }
+   }
+  },
+  {
+   "year": 2005,
+   "count": 43,
+   "cities": {
+    "八尾市": {
+     "rank": 8,
+     "population": 273487
+    },
+    "吹田市": {
+     "rank": 6,
+     "population": 353885
+    },
+    "堺市": {
+     "rank": 2,
+     "population": 830966
+    },
+    "大阪市": {
+     "rank": 1,
+     "population": 2628811
+    },
+    "寝屋川市": {
+     "rank": 10,
+     "population": 241816
+    },
+    "東大阪市": {
+     "rank": 3,
+     "population": 513821
+    },
+    "枚方市": {
+     "rank": 4,
+     "population": 404044
+    },
+    "茨木市": {
+     "rank": 9,
+     "population": 267961
+    },
+    "豊中市": {
+     "rank": 5,
+     "population": 386623
+    },
+    "高槻市": {
+     "rank": 7,
+     "population": 351826
+    }
+   }
+  },
+  {
+   "year": 2010,
+   "count": 43,
+   "cities": {
+    "八尾市": {
+     "rank": 9,
+     "population": 271460
+    },
+    "吹田市": {
+     "rank": 7,
+     "population": 355798
+    },
+    "堺市": {
+     "rank": 2,
+     "population": 841966
+    },
+    "大阪市": {
+     "rank": 1,
+     "population": 2665314
+    },
+    "寝屋川市": {
+     "rank": 10,
+     "population": 238204
+    },
+    "東大阪市": {
+     "rank": 3,
+     "population": 509533
+    },
+    "枚方市": {
+     "rank": 4,
+     "population": 407978
+    },
+    "茨木市": {
+     "rank": 8,
+     "population": 274822
+    },
+    "豊中市": {
+     "rank": 5,
+     "population": 389341
+    },
+    "高槻市": {
+     "rank": 6,
+     "population": 357359
+    }
+   }
+  },
+  {
+   "year": 2015,
+   "count": 43,
+   "cities": {
+    "八尾市": {
+     "rank": 9,
+     "population": 268800
+    },
+    "吹田市": {
+     "rank": 6,
+     "population": 374468
+    },
+    "堺市": {
+     "rank": 2,
+     "population": 839310
+    },
+    "大阪市": {
+     "rank": 1,
+     "population": 2691185
+    },
+    "寝屋川市": {
+     "rank": 10,
+     "population": 237518
+    },
+    "東大阪市": {
+     "rank": 3,
+     "population": 502784
+    },
+    "枚方市": {
+     "rank": 4,
+     "population": 404152
+    },
+    "茨木市": {
+     "rank": 8,
+     "population": 280033
+    },
+    "豊中市": {
+     "rank": 5,
+     "population": 395479
+    },
+    "高槻市": {
+     "rank": 7,
+     "population": 351829
+    }
+   }
+  },
+  {
+   "year": 2020,
+   "count": 43,
+   "cities": {
+    "八尾市": {
+     "rank": 9,
+     "population": 264642
+    },
+    "吹田市": {
+     "rank": 6,
+     "population": 385567
+    },
+    "堺市": {
+     "rank": 2,
+     "population": 826161
+    },
+    "大阪市": {
+     "rank": 1,
+     "population": 2752412
+    },
+    "寝屋川市": {
+     "rank": 10,
+     "population": 229733
+    },
+    "東大阪市": {
+     "rank": 3,
+     "population": 493940
+    },
+    "枚方市": {
+     "rank": 5,
+     "population": 397289
+    },
+    "茨木市": {
+     "rank": 8,
+     "population": 287730
+    },
+    "豊中市": {
+     "rank": 4,
+     "population": 401558
+    },
+    "高槻市": {
+     "rank": 7,
+     "population": 352698
+    }
+   }
+  },
+  {
+   "year": 2025,
+   "count": 43,
+   "cities": {
+    "八尾市": {
+     "rank": 9,
+     "population": 257579
+    },
+    "吹田市": {
+     "rank": 5,
+     "population": 394516
+    },
+    "堺市": {
+     "rank": 2,
+     "population": 802648
+    },
+    "大阪市": {
+     "rank": 1,
+     "population": 2805371
+    },
+    "寝屋川市": {
+     "rank": 10,
+     "population": 221975
+    },
+    "東大阪市": {
+     "rank": 3,
+     "population": 482700
+    },
+    "枚方市": {
+     "rank": 6,
+     "population": 388860
+    },
+    "茨木市": {
+     "rank": 8,
+     "population": 287688
+    },
+    "豊中市": {
+     "rank": 4,
+     "population": 404015
+    },
+    "高槻市": {
+     "rank": 7,
+     "population": 344998
+    }
+   }
+  }
+ ],
+ "foreign": [
+  {
+   "name": "全国",
+   "population": 123767642,
+   "foreign": 4031159,
+   "share": 3.26,
+   "foreignChange": 353696,
+   "foreignChangeRate": 9.62,
+   "foreignSocial": 339970
+  },
+  {
+   "name": "大阪府",
+   "population": 8775326,
+   "foreign": 369529,
+   "share": 4.21,
+   "foreignChange": 41401,
+   "foreignChangeRate": 12.62,
+   "foreignSocial": 41299
+  }
+ ],
+ "foreignCities": [
+  {
+   "name": "大阪市",
+   "population": 2798782,
+   "foreign": 214337,
+   "share": 7.66,
+   "foreignChange": 25056,
+   "foreignChangeRate": 13.24,
+   "foreignSocial": 25084,
+   "shareRank": 1
+  },
+  {
+   "name": "堺市",
+   "population": 809032,
+   "foreign": 21773,
+   "share": 2.69,
+   "foreignChange": 2152,
+   "foreignChangeRate": 10.97,
+   "foreignSocial": 2116,
+   "shareRank": 14
+  },
+  {
+   "name": "豊中市",
+   "population": 405958,
+   "foreign": 8742,
+   "share": 2.15,
+   "foreignChange": 965,
+   "foreignChangeRate": 12.41,
+   "foreignSocial": 960,
+   "shareRank": 24
+  },
+  {
+   "name": "吹田市",
+   "population": 386317,
+   "foreign": 8285,
+   "share": 2.14,
+   "foreignChange": 871,
+   "foreignChangeRate": 11.75,
+   "foreignSocial": 874,
+   "shareRank": 25
+  },
+  {
+   "name": "高槻市",
+   "population": 343943,
+   "foreign": 5262,
+   "share": 1.53,
+   "foreignChange": 501,
+   "foreignChangeRate": 10.52,
+   "foreignSocial": 500,
+   "shareRank": 33
+  },
+  {
+   "name": "枚方市",
+   "population": 390926,
+   "foreign": 7107,
+   "share": 1.82,
+   "foreignChange": 720,
+   "foreignChangeRate": 11.27,
+   "foreignSocial": 695,
+   "shareRank": 29
+  },
+  {
+   "name": "茨木市",
+   "population": 286089,
+   "foreign": 5593,
+   "share": 1.95,
+   "foreignChange": 407,
+   "foreignChangeRate": 7.85,
+   "foreignSocial": 404,
+   "shareRank": 26
+  },
+  {
+   "name": "八尾市",
+   "population": 257840,
+   "foreign": 9880,
+   "share": 3.83,
+   "foreignChange": 599,
+   "foreignChangeRate": 6.45,
+   "foreignSocial": 596,
+   "shareRank": 5
+  },
+  {
+   "name": "寝屋川市",
+   "population": 223224,
+   "foreign": 4222,
+   "share": 1.89,
+   "foreignChange": 380,
+   "foreignChangeRate": 9.89,
+   "foreignSocial": 392,
+   "shareRank": 27
+  },
+  {
+   "name": "東大阪市",
+   "population": 478689,
+   "foreign": 24998,
+   "share": 5.22,
+   "foreignChange": 2643,
+   "foreignChangeRate": 11.82,
+   "foreignSocial": 2680,
+   "shareRank": 2
+  }
+ ],
+ "hirakata2025": {
+  "social": 1170,
+  "natural": -2572,
+  "foreignSocial": 695,
+  "muniCount": 43
+ }
+}

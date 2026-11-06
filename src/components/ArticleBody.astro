@@ -86,4 +86,48 @@
     }, { passive: true });
     update();
   }
+
+  /* グラフにマウスを乗せたら、いちばん近い年に縦線を引いて、その年の数字を吹き出しで出す。
+     データは SVG の data-chart（src/lib/charts.mjs が埋め込む） */
+  for (const svg of document.querySelectorAll<SVGSVGElement>("svg[data-chart]")) {
+    type Row = { x: number; px: number; v: { n: string; c: string | number; y: number; t?: string }[] };
+    const d = JSON.parse(svg.dataset.chart!) as { unit: string; plot: { top: number; bottom: number; width: number; height: number }; rows: Row[] };
+    const box = svg.parentElement!;
+    const ns = "http://www.w3.org/2000/svg";
+    const cursor = document.createElementNS(ns, "line");
+    cursor.setAttribute("class", "chart-cursor");
+    cursor.setAttribute("y1", String(d.plot.top));
+    cursor.setAttribute("y2", String(d.plot.bottom));
+    cursor.style.display = "none";
+    svg.appendChild(cursor);
+    const tip = document.createElement("div");
+    tip.className = "chart-tip";
+    tip.hidden = true;
+    box.appendChild(tip);
+    const color = (c: string | number) => (c === "mut" ? "var(--mut)" : `var(--chart-${c})`);
+
+    const show = (clientX: number) => {
+      const rect = svg.getBoundingClientRect();
+      const px = ((clientX - rect.left) / rect.width) * d.plot.width;
+      let best = d.rows[0];
+      for (const r of d.rows) if (Math.abs(r.px - px) < Math.abs(best.px - px)) best = r;
+      cursor.setAttribute("x1", String(best.px));
+      cursor.setAttribute("x2", String(best.px));
+      cursor.style.display = "";
+      tip.innerHTML =
+        `<b>${best.x}年</b>` +
+        best.v.map((v) => `<br><i style="background:${color(v.c)}"></i>${v.n}　${v.t ?? v.y.toLocaleString("ja-JP") + d.unit}`).join("");
+      tip.hidden = false;
+      const x = (best.px / d.plot.width) * rect.width + rect.left - box.getBoundingClientRect().left + box.scrollLeft;
+      const left = x + 12 + tip.offsetWidth > box.scrollLeft + box.clientWidth ? x - 12 - tip.offsetWidth : x + 12;
+      tip.style.left = `${left}px`;
+      tip.style.top = `${(d.plot.top / d.plot.height) * rect.height}px`;
+    };
+    const hide = () => {
+      cursor.style.display = "none";
+      tip.hidden = true;
+    };
+    svg.addEventListener("pointermove", (e) => show(e.clientX));
+    svg.addEventListener("pointerleave", hide);
+  }
 </script>

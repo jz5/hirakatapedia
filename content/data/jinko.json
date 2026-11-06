@@ -1,0 +1,1116 @@
+{
+ "_source": {
+  "annual": "枚方市「人口の推移・動態・外国人人口」R8.11.xlsx「人口の推移」（住民基本台帳、各年末。2016年分からは翌年1月1日現在）。2011年以前は日本人だけなので、1999〜2011年は同じ表の「外国人人口」を足して total にした。1998年以前の total は日本人だけ",
+  "vital": "同上「人口の動態」（各年1〜12月）。2013年以降の転入・転出は「その他」（職権記載など）を含まない",
+  "census": "国勢調査（各年10月1日）。1950〜2020年は枚方市「令和2年国勢調査 人口等基本集計結果の概要」表1-1、2025年は大阪府「令和7年国勢調査 大阪府の人口及び世帯数（確定値）」付表",
+  "foreign": "同上「外国人人口」（各年12月末）。2011年までは外国人登録、2012年からは住民基本台帳。korea は「朝鮮・韓国」（2024年からは「韓国」と「朝鮮」の和）",
+  "projection": "枚方市「枚方市将来人口推計調査報告書」令和5年11月、p.12 ケース4（出生低位・社会移動を見込む）。年齢3区分の人口の和"
+ },
+ "annual": [
+  {
+   "year": 1947,
+   "households": 10112,
+   "registered": 41887,
+   "japaneseOnly": true,
+   "total": 41887
+  },
+  {
+   "year": 1948,
+   "households": 9995,
+   "registered": 42682,
+   "japaneseOnly": true,
+   "total": 42682
+  },
+  {
+   "year": 1949,
+   "households": 10277,
+   "registered": 43368,
+   "japaneseOnly": true,
+   "total": 43368
+  },
+  {
+   "year": 1950,
+   "households": 10080,
+   "registered": 44640,
+   "japaneseOnly": true,
+   "total": 44640
+  },
+  {
+   "year": 1951,
+   "households": 9979,
+   "registered": 45448,
+   "japaneseOnly": true,
+   "total": 45448
+  },
+  {
+   "year": 1952,
+   "households": 9421,
+   "registered": 46263,
+   "japaneseOnly": true,
+   "total": 46263
+  },
+  {
+   "year": 1953,
+   "households": 11241,
+   "registered": 46110,
+   "japaneseOnly": true,
+   "total": 46110
+  },
+  {
+   "year": 1954,
+   "households": 11473,
+   "registered": 47045,
+   "japaneseOnly": true,
+   "total": 47045
+  },
+  {
+   "year": 1955,
+   "households": 13931,
+   "registered": 58906,
+   "japaneseOnly": true,
+   "total": 58906
+  },
+  {
+   "year": 1956,
+   "households": 14204,
+   "registered": 62678,
+   "japaneseOnly": true,
+   "total": 62678
+  },
+  {
+   "year": 1957,
+   "households": 14988,
+   "registered": 65191,
+   "japaneseOnly": true,
+   "total": 65191
+  },
+  {
+   "year": 1958,
+   "households": 15481,
+   "registered": 66185,
+   "japaneseOnly": true,
+   "total": 66185
+  },
+  {
+   "year": 1959,
+   "households": 17900,
+   "registered": 73826,
+   "japaneseOnly": true,
+   "total": 73826
+  },
+  {
+   "year": 1960,
+   "households": 19496,
+   "registered": 79668,
+   "japaneseOnly": true,
+   "total": 79668
+  },
+  {
+   "year": 1961,
+   "households": 22293,
+   "registered": 89170,
+   "japaneseOnly": true,
+   "total": 89170
+  },
+  {
+   "year": 1962,
+   "households": 24681,
+   "registered": 98041,
+   "japaneseOnly": true,
+   "total": 98041
+  },
+  {
+   "year": 1963,
+   "households": 27521,
+   "registered": 108342,
+   "japaneseOnly": true,
+   "total": 108342
+  },
+  {
+   "year": 1964,
+   "households": 30829,
+   "registered": 119272,
+   "japaneseOnly": true,
+   "total": 119272
+  },
+  {
+   "year": 1965,
+   "households": 33451,
+   "registered": 129291,
+   "japaneseOnly": true,
+   "total": 129291
+  },
+  {
+   "year": 1966,
+   "households": 36496,
+   "registered": 139046,
+   "japaneseOnly": true,
+   "total": 139046
+  },
+  {
+   "year": 1967,
+   "households": 40201,
+   "registered": 152390,
+   "japaneseOnly": true,
+   "total": 152390
+  },
+  {
+   "year": 1968,
+   "households": 44279,
+   "registered": 167840,
+   "japaneseOnly": true,
+   "total": 167840
+  },
+  {
+   "year": 1969,
+   "households": 52450,
+   "registered": 195983,
+   "japaneseOnly": true,
+   "total": 195983
+  },
+  {
+   "year": 1970,
+   "households": 59203,
+   "registered": 219759,
+   "japaneseOnly": true,
+   "total": 219759
+  },
+  {
+   "year": 1971,
+   "households": 64692,
+   "registered": 240728,
+   "japaneseOnly": true,
+   "total": 240728
+  },
+  {
+   "year": 1972,
+   "households": 68716,
+   "registered": 256341,
+   "japaneseOnly": true,
+   "total": 256341
+  },
+  {
+   "year": 1973,
+   "households": 72852,
+   "registered": 272377,
+   "japaneseOnly": true,
+   "total": 272377
+  },
+  {
+   "year": 1974,
+   "households": 77017,
+   "registered": 287698,
+   "japaneseOnly": true,
+   "total": 287698
+  },
+  {
+   "year": 1975,
+   "households": 80262,
+   "registered": 299563,
+   "japaneseOnly": true,
+   "total": 299563
+  },
+  {
+   "year": 1976,
+   "households": 83566,
+   "registered": 311807,
+   "japaneseOnly": true,
+   "total": 311807
+  },
+  {
+   "year": 1977,
+   "households": 86768,
+   "registered": 323527,
+   "japaneseOnly": true,
+   "total": 323527
+  },
+  {
+   "year": 1978,
+   "households": 90023,
+   "registered": 335307,
+   "japaneseOnly": true,
+   "total": 335307
+  },
+  {
+   "year": 1979,
+   "households": 92903,
+   "registered": 345953,
+   "japaneseOnly": true,
+   "total": 345953
+  },
+  {
+   "year": 1980,
+   "households": 95756,
+   "registered": 355457,
+   "japaneseOnly": true,
+   "total": 355457
+  },
+  {
+   "year": 1981,
+   "households": 97909,
+   "registered": 362340,
+   "japaneseOnly": true,
+   "total": 362340
+  },
+  {
+   "year": 1982,
+   "households": 100344,
+   "registered": 369820,
+   "japaneseOnly": true,
+   "total": 369820
+  },
+  {
+   "year": 1983,
+   "households": 101945,
+   "registered": 373998,
+   "japaneseOnly": true,
+   "total": 373998
+  },
+  {
+   "year": 1984,
+   "households": 104095,
+   "registered": 379058,
+   "japaneseOnly": true,
+   "total": 379058
+  },
+  {
+   "year": 1985,
+   "households": 121785,
+   "registered": 379751,
+   "japaneseOnly": true,
+   "total": 379751
+  },
+  {
+   "year": 1986,
+   "households": 123627,
+   "registered": 383232,
+   "japaneseOnly": true,
+   "total": 383232
+  },
+  {
+   "year": 1987,
+   "households": 125270,
+   "registered": 385946,
+   "japaneseOnly": true,
+   "total": 385946
+  },
+  {
+   "year": 1988,
+   "households": 126950,
+   "registered": 388126,
+   "japaneseOnly": true,
+   "total": 388126
+  },
+  {
+   "year": 1989,
+   "households": 128432,
+   "registered": 389030,
+   "japaneseOnly": true,
+   "total": 389030
+  },
+  {
+   "year": 1990,
+   "households": 130166,
+   "registered": 389326,
+   "japaneseOnly": true,
+   "total": 389326
+  },
+  {
+   "year": 1991,
+   "households": 132101,
+   "registered": 390459,
+   "japaneseOnly": true,
+   "total": 390459
+  },
+  {
+   "year": 1992,
+   "households": 134513,
+   "registered": 392912,
+   "japaneseOnly": true,
+   "total": 392912
+  },
+  {
+   "year": 1993,
+   "households": 136762,
+   "registered": 394924,
+   "japaneseOnly": true,
+   "total": 394924
+  },
+  {
+   "year": 1994,
+   "households": 137987,
+   "registered": 394627,
+   "japaneseOnly": true,
+   "total": 394627
+  },
+  {
+   "year": 1995,
+   "households": 140784,
+   "registered": 397841,
+   "japaneseOnly": true,
+   "total": 397841
+  },
+  {
+   "year": 1996,
+   "households": 142650,
+   "registered": 399374,
+   "japaneseOnly": true,
+   "total": 399374
+  },
+  {
+   "year": 1997,
+   "households": 144444,
+   "registered": 399957,
+   "japaneseOnly": true,
+   "total": 399957
+  },
+  {
+   "year": 1998,
+   "households": 146994,
+   "registered": 402651,
+   "japaneseOnly": true,
+   "total": 402651
+  },
+  {
+   "year": 1999,
+   "households": 148268,
+   "registered": 402032,
+   "japaneseOnly": true,
+   "foreign": 3853,
+   "total": 405885
+  },
+  {
+   "year": 2000,
+   "households": 149624,
+   "registered": 401714,
+   "japaneseOnly": true,
+   "foreign": 4012,
+   "total": 405726
+  },
+  {
+   "year": 2001,
+   "households": 151760,
+   "registered": 402556,
+   "japaneseOnly": true,
+   "foreign": 4092,
+   "total": 406648
+  },
+  {
+   "year": 2002,
+   "households": 153629,
+   "registered": 403265,
+   "japaneseOnly": true,
+   "foreign": 4232,
+   "total": 407497
+  },
+  {
+   "year": 2003,
+   "households": 155613,
+   "registered": 404187,
+   "japaneseOnly": true,
+   "foreign": 4301,
+   "total": 408488
+  },
+  {
+   "year": 2004,
+   "households": 157401,
+   "registered": 404666,
+   "japaneseOnly": true,
+   "foreign": 4327,
+   "total": 408993
+  },
+  {
+   "year": 2005,
+   "households": 158910,
+   "registered": 404134,
+   "japaneseOnly": true,
+   "foreign": 4451,
+   "total": 408585
+  },
+  {
+   "year": 2006,
+   "households": 161446,
+   "registered": 404909,
+   "japaneseOnly": true,
+   "foreign": 4205,
+   "total": 409114
+  },
+  {
+   "year": 2007,
+   "households": 163654,
+   "registered": 406224,
+   "japaneseOnly": true,
+   "foreign": 4259,
+   "total": 410483
+  },
+  {
+   "year": 2008,
+   "households": 165572,
+   "registered": 406308,
+   "japaneseOnly": true,
+   "foreign": 4330,
+   "total": 410638
+  },
+  {
+   "year": 2009,
+   "households": 167728,
+   "registered": 407418,
+   "japaneseOnly": true,
+   "foreign": 4359,
+   "total": 411777
+  },
+  {
+   "year": 2010,
+   "households": 169008,
+   "registered": 407148,
+   "japaneseOnly": true,
+   "foreign": 4113,
+   "total": 411261
+  },
+  {
+   "year": 2011,
+   "households": 170402,
+   "registered": 406739,
+   "japaneseOnly": true,
+   "foreign": 3995,
+   "total": 410734
+  },
+  {
+   "year": 2012,
+   "households": 173344,
+   "registered": 409964,
+   "total": 409964
+  },
+  {
+   "year": 2013,
+   "households": 174419,
+   "registered": 408610,
+   "total": 408610
+  },
+  {
+   "year": 2014,
+   "households": 175717,
+   "registered": 407528,
+   "total": 407528
+  },
+  {
+   "year": 2015,
+   "households": 176645,
+   "registered": 406133,
+   "total": 406133
+  },
+  {
+   "year": 2016,
+   "households": 177735,
+   "registered": 404963,
+   "total": 404963
+  },
+  {
+   "year": 2017,
+   "households": 178811,
+   "registered": 403989,
+   "total": 403989
+  },
+  {
+   "year": 2018,
+   "households": 180043,
+   "registered": 402579,
+   "total": 402579
+  },
+  {
+   "year": 2019,
+   "households": 181062,
+   "registered": 401074,
+   "total": 401074
+  },
+  {
+   "year": 2020,
+   "households": 182333,
+   "registered": 399690,
+   "total": 399690
+  },
+  {
+   "year": 2021,
+   "households": 183075,
+   "registered": 397681,
+   "total": 397681
+  },
+  {
+   "year": 2022,
+   "households": 184691,
+   "registered": 396252,
+   "total": 396252
+  },
+  {
+   "year": 2023,
+   "households": 185778,
+   "registered": 394221,
+   "total": 394221
+  },
+  {
+   "year": 2024,
+   "households": 186991,
+   "registered": 392328,
+   "total": 392328
+  },
+  {
+   "year": 2025,
+   "households": 188456,
+   "registered": 390926,
+   "total": 390926
+  }
+ ],
+ "vital": [
+  {
+   "year": 1999,
+   "births": 4040,
+   "deaths": 2187,
+   "natural": 1853,
+   "movedIn": 18466,
+   "movedOut": 21299,
+   "social": -2733
+  },
+  {
+   "year": 2000,
+   "births": 4003,
+   "deaths": 2265,
+   "natural": 1738,
+   "movedIn": 18200,
+   "movedOut": 20503,
+   "social": -2303
+  },
+  {
+   "year": 2001,
+   "births": 3854,
+   "deaths": 2374,
+   "natural": 1480,
+   "movedIn": 18522,
+   "movedOut": 19370,
+   "social": -848
+  },
+  {
+   "year": 2002,
+   "births": 3844,
+   "deaths": 2275,
+   "natural": 1569,
+   "movedIn": 17562,
+   "movedOut": 18669,
+   "social": -1107
+  },
+  {
+   "year": 2003,
+   "births": 3651,
+   "deaths": 2414,
+   "natural": 1237,
+   "movedIn": 17591,
+   "movedOut": 18168,
+   "social": -577
+  },
+  {
+   "year": 2004,
+   "births": 3631,
+   "deaths": 2401,
+   "natural": 1230,
+   "movedIn": 16164,
+   "movedOut": 17214,
+   "social": -1050
+  },
+  {
+   "year": 2005,
+   "births": 3539,
+   "deaths": 2580,
+   "natural": 959,
+   "movedIn": 14843,
+   "movedOut": 16596,
+   "social": -1753
+  },
+  {
+   "year": 2006,
+   "births": 3495,
+   "deaths": 2663,
+   "natural": 832,
+   "movedIn": 15827,
+   "movedOut": 16105,
+   "social": -278
+  },
+  {
+   "year": 2007,
+   "births": 3594,
+   "deaths": 2741,
+   "natural": 853,
+   "movedIn": 15736,
+   "movedOut": 15547,
+   "social": 189
+  },
+  {
+   "year": 2008,
+   "births": 3544,
+   "deaths": 2817,
+   "natural": 727,
+   "movedIn": 14462,
+   "movedOut": 15385,
+   "social": -923
+  },
+  {
+   "year": 2009,
+   "births": 3554,
+   "deaths": 2924,
+   "natural": 630,
+   "movedIn": 14823,
+   "movedOut": 14574,
+   "social": 249
+  },
+  {
+   "year": 2010,
+   "births": 3453,
+   "deaths": 3035,
+   "natural": 418,
+   "movedIn": 13137,
+   "movedOut": 14443,
+   "social": -1306
+  },
+  {
+   "year": 2011,
+   "births": 3288,
+   "deaths": 3153,
+   "natural": 135,
+   "movedIn": 12786,
+   "movedOut": 13677,
+   "social": -891
+  },
+  {
+   "year": 2012,
+   "births": 3263,
+   "deaths": 3117,
+   "natural": 146,
+   "movedIn": 13003,
+   "movedOut": 13561,
+   "social": -558
+  },
+  {
+   "year": 2013,
+   "births": 3178,
+   "deaths": 3251,
+   "natural": -73,
+   "movedIn": 13096,
+   "movedOut": 14194,
+   "social": -1281
+  },
+  {
+   "year": 2014,
+   "births": 3061,
+   "deaths": 3236,
+   "natural": -175,
+   "movedIn": 13113,
+   "movedOut": 14082,
+   "social": -907
+  },
+  {
+   "year": 2015,
+   "births": 2998,
+   "deaths": 3464,
+   "natural": -466,
+   "movedIn": 13171,
+   "movedOut": 14197,
+   "social": -929
+  },
+  {
+   "year": 2016,
+   "births": 2905,
+   "deaths": 3464,
+   "natural": -559,
+   "movedIn": 13045,
+   "movedOut": 13757,
+   "social": -611
+  },
+  {
+   "year": 2017,
+   "births": 2814,
+   "deaths": 3565,
+   "natural": -751,
+   "movedIn": 13291,
+   "movedOut": 13638,
+   "social": -223
+  },
+  {
+   "year": 2018,
+   "births": 2731,
+   "deaths": 3821,
+   "natural": -1090,
+   "movedIn": 13612,
+   "movedOut": 14032,
+   "social": -320
+  },
+  {
+   "year": 2019,
+   "births": 2616,
+   "deaths": 3746,
+   "natural": -1130,
+   "movedIn": 13604,
+   "movedOut": 13911,
+   "social": -375
+  },
+  {
+   "year": 2020,
+   "births": 2448,
+   "deaths": 3886,
+   "natural": -1438,
+   "movedIn": 13085,
+   "movedOut": 13133,
+   "social": 54
+  },
+  {
+   "year": 2021,
+   "births": 2520,
+   "deaths": 4190,
+   "natural": -1670,
+   "movedIn": 12225,
+   "movedOut": 12616,
+   "social": -339
+  },
+  {
+   "year": 2022,
+   "births": 2408,
+   "deaths": 4529,
+   "natural": -2121,
+   "movedIn": 13989,
+   "movedOut": 13350,
+   "social": 692
+  },
+  {
+   "year": 2023,
+   "births": 2419,
+   "deaths": 4718,
+   "natural": -2299,
+   "movedIn": 14048,
+   "movedOut": 13784,
+   "social": 268
+  },
+  {
+   "year": 2024,
+   "births": 2296,
+   "deaths": 4707,
+   "natural": -2411,
+   "movedIn": 14112,
+   "movedOut": 13653,
+   "social": 518
+  },
+  {
+   "year": 2025,
+   "births": 2182,
+   "deaths": 4754,
+   "natural": -2572,
+   "movedIn": 12527,
+   "movedOut": 11059,
+   "social": 1170
+  }
+ ],
+ "foreign": [
+  {
+   "year": 1999,
+   "total": 3853,
+   "korea": 1745,
+   "china": 857,
+   "vietnam": 11
+  },
+  {
+   "year": 2000,
+   "total": 4012,
+   "korea": 1730,
+   "china": 912,
+   "vietnam": 11
+  },
+  {
+   "year": 2001,
+   "total": 4092,
+   "korea": 1710,
+   "china": 988,
+   "vietnam": 11
+  },
+  {
+   "year": 2002,
+   "total": 4232,
+   "korea": 1667,
+   "china": 1055,
+   "vietnam": 13
+  },
+  {
+   "year": 2003,
+   "total": 4301,
+   "korea": 1647,
+   "china": 1107,
+   "vietnam": 19
+  },
+  {
+   "year": 2004,
+   "total": 4327,
+   "korea": 1599,
+   "china": 1175,
+   "vietnam": 23
+  },
+  {
+   "year": 2005,
+   "total": 4451,
+   "korea": 1562,
+   "china": 1258,
+   "vietnam": 42
+  },
+  {
+   "year": 2006,
+   "total": 4205,
+   "korea": 1542,
+   "china": 1220,
+   "vietnam": 52
+  },
+  {
+   "year": 2007,
+   "total": 4259,
+   "korea": 1508,
+   "china": 1297,
+   "vietnam": 52
+  },
+  {
+   "year": 2008,
+   "total": 4330,
+   "korea": 1472,
+   "china": 1370,
+   "vietnam": 75
+  },
+  {
+   "year": 2009,
+   "total": 4359,
+   "korea": 1448,
+   "china": 1448,
+   "vietnam": 62
+  },
+  {
+   "year": 2010,
+   "total": 4113,
+   "korea": 1423,
+   "china": 1428,
+   "vietnam": 71
+  },
+  {
+   "year": 2011,
+   "total": 3995,
+   "korea": 1395,
+   "china": 1433,
+   "vietnam": 60
+  },
+  {
+   "year": 2012,
+   "total": 3814,
+   "korea": 1305,
+   "china": 1450,
+   "vietnam": 79
+  },
+  {
+   "year": 2013,
+   "total": 3763,
+   "korea": 1278,
+   "china": 1450,
+   "vietnam": 81
+  },
+  {
+   "year": 2014,
+   "total": 3815,
+   "korea": 1250,
+   "china": 1465,
+   "vietnam": 110
+  },
+  {
+   "year": 2015,
+   "total": 3910,
+   "korea": 1251,
+   "china": 1473,
+   "vietnam": 166
+  },
+  {
+   "year": 2016,
+   "total": 4015,
+   "korea": 1239,
+   "china": 1488,
+   "vietnam": 201
+  },
+  {
+   "year": 2017,
+   "total": 4128,
+   "korea": 1217,
+   "china": 1484,
+   "vietnam": 339
+  },
+  {
+   "year": 2018,
+   "total": 4374,
+   "korea": 1189,
+   "china": 1523,
+   "vietnam": 515
+  },
+  {
+   "year": 2019,
+   "total": 4659,
+   "korea": 1185,
+   "china": 1578,
+   "vietnam": 657
+  },
+  {
+   "year": 2020,
+   "total": 4564,
+   "korea": 1160,
+   "china": 1503,
+   "vietnam": 749
+  },
+  {
+   "year": 2021,
+   "total": 4458,
+   "korea": 1149,
+   "china": 1428,
+   "vietnam": 771
+  },
+  {
+   "year": 2022,
+   "total": 5270,
+   "korea": 1133,
+   "china": 1482,
+   "vietnam": 1065
+  },
+  {
+   "year": 2023,
+   "total": 5841,
+   "korea": 1131,
+   "china": 1550,
+   "vietnam": 1224
+  },
+  {
+   "year": 2024,
+   "total": 6387,
+   "china": 1629,
+   "vietnam": 1432,
+   "korea": 1130
+  },
+  {
+   "year": 2025,
+   "total": 7107,
+   "china": 1770,
+   "vietnam": 1594,
+   "korea": 1099
+  }
+ ],
+ "census": [
+  {
+   "year": 1950,
+   "population": 52817
+  },
+  {
+   "year": 1955,
+   "population": 59327
+  },
+  {
+   "year": 1960,
+   "population": 80312
+  },
+  {
+   "year": 1965,
+   "population": 127520
+  },
+  {
+   "year": 1970,
+   "population": 217369
+  },
+  {
+   "year": 1975,
+   "population": 297618
+  },
+  {
+   "year": 1980,
+   "population": 353358
+  },
+  {
+   "year": 1985,
+   "population": 382257
+  },
+  {
+   "year": 1990,
+   "population": 390788
+  },
+  {
+   "year": 1995,
+   "population": 400144
+  },
+  {
+   "year": 2000,
+   "population": 402563
+  },
+  {
+   "year": 2005,
+   "population": 404044
+  },
+  {
+   "year": 2010,
+   "population": 407978
+  },
+  {
+   "year": 2015,
+   "population": 404152
+  },
+  {
+   "year": 2020,
+   "population": 397289
+  },
+  {
+   "year": 2025,
+   "population": 388860
+  }
+ ],
+ "projection": [
+  {
+   "year": 2023,
+   "population": 395460,
+   "under15": 47378,
+   "age15to64": 234012,
+   "over65": 114070
+  },
+  {
+   "year": 2028,
+   "population": 387533,
+   "under15": 40933,
+   "age15to64": 226459,
+   "over65": 120141
+  },
+  {
+   "year": 2033,
+   "population": 375594,
+   "under15": 35373,
+   "age15to64": 213630,
+   "over65": 126591
+  },
+  {
+   "year": 2038,
+   "population": 360755,
+   "under15": 31559,
+   "age15to64": 192982,
+   "over65": 136214
+  },
+  {
+   "year": 2043,
+   "population": 342932,
+   "under15": 30537,
+   "age15to64": 172210,
+   "over65": 140185
+  },
+  {
+   "year": 2048,
+   "population": 324499,
+   "under15": 28896,
+   "age15to64": 157430,
+   "over65": 138173
+  },
+  {
+   "year": 2053,
+   "population": 306409,
+   "under15": 26476,
+   "age15to64": 145698,
+   "over65": 134235
+  }
+ ]
+}
