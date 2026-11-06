@@ -1,0 +1,48 @@
+---
+import { allArticles, popularArticles, articlePath } from "../lib/articles";
+
+interface Props {
+  /** 書きかけの記事 */
+  wip?: boolean;
+}
+
+/**
+ * 右のサイドメニュー。よく読まれている記事と、すべての記事。
+ * いちばん下の塊（目次と情報募集）だけが追いかけてくる。
+ * その下に何も置かないので、追いかけても重ならない。
+ * 目次は記事ページだけ（slot）。
+ */
+const { wip = false } = Astro.props;
+const popular = await popularArticles(5);
+const all = (await allArticles()).sort((a, b) => a.data.title.localeCompare(b.data.title, "ja"));
+---
+
+<aside class="sidebar" aria-label="サイドメニュー">
+  {
+    popular.length > 0 && (
+      <section class="side-box">
+        <h2>よく読まれている記事</h2>
+        <ol class="side-list side-rank">
+          {popular.map((e) => <li><a href={articlePath(e.id)}>{e.data.title}</a></li>)}
+        </ol>
+      </section>
+    )
+  }
+
+  <section class="side-box">
+    <h2>すべての記事</h2>
+    <ul class="side-list">
+      {all.map((e) => <li><a href={articlePath(e.id)}>{e.data.title}</a></li>)}
+    </ul>
+  </section>
+
+  <div class="side-sticky">
+    {Astro.slots.has("default") && <div class="side-toc"><slot /></div>}
+    <section class="wanted">
+      <p class="wanted-title">{wip ? "この記事は、まだ書きかけです" : "写真・情報を募集しています"}</p>
+      <p>
+        {wip ? "写真や情報を募集しています。" : ""}枚方の昔の写真や、覚えていることがあれば、<a href="/about/#contact">教えてください</a>。
+      </p>
+    </section>
+  </div>
+</aside>

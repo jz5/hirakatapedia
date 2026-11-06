@@ -1,0 +1,39 @@
+---
+import { SITE } from "../lib/site";
+import Base from "../layouts/Base.astro";
+
+/*
+ * Amazon アソシエイトを始めたら、「広告について」に次の一文を足す（規約で表示が必要）:
+ *   Amazonのアソシエイトとして、枚方pedia は適格販売により収入を得ています。*/
+---
+
+<Base title="プライバシーポリシー" path="/privacy/">
+  <article class="entry">
+    <header class="entry-header">
+      <h1>プライバシーポリシー</h1>
+    </header>
+    <div class="entry-body">
+      <p>{SITE.title}（{SITE.url.replace("https://", "")}）での、アクセス情報の扱いについて説明します。</p>
+
+      <h2>アクセス解析</h2>
+      <p>
+        このサイトは、Google によるアクセス解析ツール「Google アナリティクス」を使っています。Google アナリティクスは、データを集めるために Cookie を使います。集めるデータは匿名で、個人を特定するものではありません。
+      </p>
+      <p>
+        Cookie はブラウザの設定で無効にできます。Google によるデータの使われ方は、<a href="https://policies.google.com/technologies/partner-sites?hl=ja">Google のサービスを使うサイトやアプリから収集した情報の Google による使用</a>をご覧ください。
+      </p>
+
+      <h2>広告について</h2>
+      <p>
+        記事の中で紹介する本や商品へのリンクに、アフィリエイトのリンクを使うことがあります。リンクから商品が購入されると、このサイトに紹介料が支払われることがあります。
+      </p>
+
+      <h2>お問い合わせ</h2>
+      <p>このポリシーについてのお問い合わせは、<a href="/about/#contact">連絡先</a>までお願いします。</p>
+
+      <h2>改定</h2>
+      <p>このポリシーは、必要に応じて変えることがあります。変えたときは、このページで知らせます。</p>
+      <p>2026年11月6日 制定</p>
+    </div>
+  </article>
+</Base>

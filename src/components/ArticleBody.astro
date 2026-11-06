@@ -1,0 +1,89 @@
+---
+/** 記事の本文の入れ物。中身は呼び出し側で render() したものを slot で受け取る */
+---
+
+<div class="entry-body"><slot /></div>
+
+<script>
+  /* 脚注の番号にマウスを乗せたら、出典の中身を吹き出しで出す。飾りなので、
+     押せばいつもどおり下の一覧へ飛ぶ。吹き出しの中のリンクも押せるよう、
+     番号から吹き出しへマウスを動かすあいだは少し待ってから消す（jz5.jp と同じ作り） */
+  const refs = document.querySelectorAll<HTMLAnchorElement>(".entry-body a[data-footnote-ref]");
+  if (refs.length > 0) {
+    const tip = document.createElement("div");
+    tip.className = "footnote-tip";
+    tip.setAttribute("role", "tooltip");
+    tip.hidden = true;
+    document.body.append(tip);
+
+    let timer: number | undefined;
+    const hide = () => { timer = window.setTimeout(() => { tip.hidden = true; }, 200); };
+    const keep = () => window.clearTimeout(timer);
+
+    const show = (ref: HTMLAnchorElement) => {
+      keep();
+      const li = document.getElementById(decodeURIComponent(ref.hash.slice(1)));
+      if (!li) return;
+      const body = li.cloneNode(true) as HTMLElement;
+      body.querySelectorAll("[data-footnote-backref]").forEach((a) => a.remove());
+      tip.innerHTML = body.innerHTML;
+      tip.hidden = false;
+
+      // 番号の下に出す。画面の下にはみ出すなら上に出す
+      const r = ref.getBoundingClientRect();
+      const w = tip.offsetWidth;
+      const left = Math.max(8, Math.min(r.left + window.scrollX - w / 2, window.scrollX + document.documentElement.clientWidth - w - 8));
+      const below = r.bottom + 6 + tip.offsetHeight <= window.innerHeight;
+      const top = below ? r.bottom + window.scrollY + 6 : r.top + window.scrollY - tip.offsetHeight - 6;
+      tip.style.left = `${left}px`;
+      tip.style.top = `${top}px`;
+    };
+
+    for (const ref of refs) {
+      ref.addEventListener("mouseenter", () => show(ref));
+      ref.addEventListener("focus", () => show(ref));
+      ref.addEventListener("mouseleave", hide);
+      ref.addEventListener("blur", hide);
+    }
+    tip.addEventListener("mouseenter", keep);
+    tip.addEventListener("mouseleave", hide);
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") tip.hidden = true; });
+  }
+
+  /* 目次で、いま読んでいる見出しに印を付ける。見出しが画面の上から 120px を
+     過ぎたら、その節を読んでいるとみなす。目次は 2 か所（右の列と題名の下）にあるので両方に付ける */
+  const tocLinks = [...document.querySelectorAll<HTMLAnchorElement>(".toc a[href^='#']")];
+  const heads = [...new Set(tocLinks.map((a) => decodeURIComponent(a.hash.slice(1))))]
+    .map((id) => document.getElementById(id))
+    .filter((h): h is HTMLElement => h !== null);
+  if (heads.length > 0) {
+    let current = "";
+    const update = () => {
+      let id = "";
+      for (const h of heads) {
+        if (h.getBoundingClientRect().top <= 120) id = h.id;
+        else break;
+      }
+      if (id === current) return;
+      current = id;
+      for (const a of tocLinks) {
+        const on = decodeURIComponent(a.hash.slice(1)) === id;
+        if (on) a.setAttribute("aria-current", "location");
+        else a.removeAttribute("aria-current");
+        // 右の列の目次は、長いと中でスクロールする。印の付いた項目が見えるように動かす
+        const box = a.closest<HTMLElement>(".side-toc");
+        if (on && box && box.scrollHeight > box.clientHeight) {
+          const top = a.offsetTop - box.offsetTop;
+          if (top < box.scrollTop || top > box.scrollTop + box.clientHeight - 40) box.scrollTop = top - box.clientHeight / 3;
+        }
+      }
+    };
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => { ticking = false; update(); });
+    }, { passive: true });
+    update();
+  }
+</script>

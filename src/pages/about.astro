@@ -1,0 +1,35 @@
+---
+import { SITE } from "../lib/site";
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="このサイトについて" path="/about/">
+  <article class="entry">
+    <header class="entry-header">
+      <h1>このサイトについて</h1>
+    </header>
+    <div class="entry-body">
+      <p>
+        {SITE.title}（{SITE.reading}）は、枚方市のことを調べてまとめるサイトです。枚方市の人が、人に話すときに「ここに書いてある」と見せられるページを目指しています。
+      </p>
+
+      <h2 id="contact">写真・情報・要望の募集</h2>
+      <p>
+        枚方の昔の写真や、覚えていることがあれば教えてください。記事の間違いの指摘や、「こんなことを調べてほしい」という要望も歓迎です。
+      </p>
+      <ul>
+        <li>X：<a href="https://x.com/jz5">@jz5</a></li>
+        <li>Discord：準備中</li>
+      </ul>
+
+      <h2>書いている人</h2>
+      <p>jz5（<a href="https://jz5.jp/">jz5.jp</a>）が書いています。</p>
+
+      <h2>ほかのページ</h2>
+      <ul>
+        <li><a href="/privacy/">プライバシーポリシー</a></li>
+        <li><a href="/license/">ライセンス</a></li>
+      </ul>
+    </div>
+  </article>
+</Base>

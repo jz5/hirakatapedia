@@ -1,0 +1,30 @@
+---
+import { allArticles, articlePath } from "../lib/articles";
+import { SITE } from "../lib/site";
+import Base from "../layouts/Base.astro";
+
+const list = await allArticles();
+---
+
+<Base path="/">
+  <section class="hero">
+    {/* サイト名はヘッダーにあるので、見出しは読み上げ用にだけ置く */}
+    <h1 class="visually-hidden">{SITE.title}（{SITE.reading}）</h1>
+    <p class="hero-lead">{SITE.description}</p>
+    <p class="hero-sub">「それ、どこに書いてあるの？」と聞かれても答えられるように、ひとつひとつの話に出典を付けています。</p>
+  </section>
+
+  <h2 class="visually-hidden">記事</h2>
+  <ul class="card-list">
+    {
+      list.map((e) => (
+        <li>
+          <a href={articlePath(e.id)}>
+            <span class="card-title">{e.data.title}</span>
+            <span class="card-desc">{e.data.description}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

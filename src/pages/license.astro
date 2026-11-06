@@ -1,0 +1,46 @@
+---
+import { SITE, LICENSE } from "../lib/site";
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="ライセンス" path="/license/">
+  <article class="entry">
+    <header class="entry-header">
+      <h1>ライセンス</h1>
+    </header>
+    <div class="entry-body">
+      <p>
+        {SITE.title} の記事の文章は、Wikipedia と同じ
+        <a href={LICENSE.url} rel="license">クリエイティブ・コモンズ 表示 - 継承 4.0 国際（{LICENSE.name}）</a>
+        で公開しています。
+      </p>
+
+      <h2>できること</h2>
+      <ul>
+        <li>記事の文章を、コピー・転載・改変して使えます。商用でもかまいません</li>
+      </ul>
+
+      <h2>条件</h2>
+      <ul>
+        <li><strong>表示：</strong>「{SITE.title}」と記事の URL を書いてください</li>
+        <li><strong>継承：</strong>改変したものを公開するときは、同じ {LICENSE.name} で公開してください</li>
+      </ul>
+
+      <h2>ライセンスの対象外のもの</h2>
+      <ul>
+        <li>記事の中で引用した、本・雑誌・新聞・ウェブページの文章。それぞれの著作権者のものです</li>
+        <li>リンク先のページや写真</li>
+        <li>{SITE.title} の名前とロゴ</li>
+      </ul>
+
+      <p>
+        記事に書いた事実（いつ、どこに、何があったか）は、もともと著作権の対象ではありません。出典をたどって、ご自由にお使いください。
+      </p>
+
+      <h2>サイトで使っている地図のデータ</h2>
+      <p>
+        アイコン（favicon）の枚方市の形は、<a href="https://www.openstreetmap.org/relation/358609">OpenStreetMap</a> の市の境界を簡単にして作りました。地図のデータは © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>（ODbL）です。
+      </p>
+    </div>
+  </article>
+</Base>

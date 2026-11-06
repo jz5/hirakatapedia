@@ -1,0 +1,43 @@
+---
+import { render } from "astro:content";
+import { allArticles, articlePath, jaDate } from "../lib/articles";
+import Base from "../layouts/Base.astro";
+import ArticleBody from "../components/ArticleBody.astro";
+import Toc from "../components/Toc.astro";
+import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
+
+/** URL はファイル名（entry.id）。tsutaya.md → /tsutaya/ */
+export const getStaticPaths = (async () => {
+  const list = await allArticles();
+  return list.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { entry } = Astro.props as Props;
+const d = entry.data;
+const { Content, headings } = await render(entry);
+// 事典なので、いつ書いたかより、いつの情報かを出す
+const last = d.updated ?? d.published;
+---
+
+<Base
+  title={d.title}
+  description={d.description}
+  path={articlePath(entry.id)}
+  article={{ published: d.published, modified: d.updated }}
+  wip={d.wip}
+>
+  <article class="entry">
+    <header class="entry-header">
+      <h1>{d.title}</h1>
+      <p class="entry-meta">最終更新 <time datetime={last.toISOString()}>{jaDate(last)}</time></p>
+    </header>
+
+    {/* 目次は 2 か所に置く。広い画面では右の列（slot="toc"）、それ以外は題名の下 */}
+    <div class="toc-inline"><Toc headings={headings} /></div>
+
+    <ArticleBody><Content /></ArticleBody>
+  </article>
+
+  <Toc slot="toc" headings={headings} />
+</Base>

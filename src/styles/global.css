@@ -1,0 +1,476 @@
+/* =========================================================================
+   枚方pedia
+
+   ブログではなく事典の見た目にする。日付の流れで並べず、記事は題名で並べる。
+   淀川の青緑 1 色。ヘッダーの下にゆるい波の線を 1 本。
+   書体は LINE Seed JP 1 本。飾り（グラデーション・影・左の太い罫）は足さず、
+   罫線と余白と文字の太さで組む。枠の角だけ、ほんの少し丸める（--radius）。2 ペイン（本文＋右の列）。
+
+   ========================================================================= */
+
+:root {
+  --bg: #ffffff;
+  --bg-sub: #f1f6f6;
+  --fg: #24282c;
+  --fg-strong: #0f1215;
+  --mut: #5d666e;
+  --mut-soft: #79838b;
+  --line: #d9e4e5;
+  --line-soft: #e8efef;
+  --rule: #126e82;
+  --accent: #126e82;
+  --accent-hover: #0b4a58;
+  --mark: #cdedf1;
+  --wave: #126e82;
+
+  --system: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", system-ui, -apple-system, Meiryo, sans-serif;
+  --sans: "LINE Seed JP", var(--system);
+  --radius: 4px;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  --sp-1: .25rem;
+  --sp-2: .5rem;
+  --sp-3: .75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+
+  --step-0: 1rem;
+  --step-1: 1.125rem;
+  --step-2: 1.25rem;
+  --step-3: 1.5rem;
+  --step-4: 1.875rem;
+
+  --lh: 1.9;
+  --lh-tight: 1.45;
+
+  color-scheme: light;
+}
+
+/* --- ダーク ---
+   OS の設定に従う（自動）。ThemeSelect で選ぶと data-theme で上書きする */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14191b; --bg-sub: #1b2225;
+    --fg: #d6dde0; --fg-strong: #f0f4f6; --mut: #9eaab0; --mut-soft: #7f8b91;
+    --line: #2b3539; --line-soft: #222a2e; --rule: #7fd0de;
+    --accent: #7fd0de; --accent-hover: #b5e6ee; --mark: #1c4549; --wave: #7fd0de;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14191b; --bg-sub: #1b2225;
+  --fg: #d6dde0; --fg-strong: #f0f4f6; --mut: #9eaab0; --mut-soft: #7f8b91;
+  --line: #2b3539; --line-soft: #222a2e; --rule: #7fd0de;
+  --accent: #7fd0de; --accent-hover: #b5e6ee; --mark: #1c4549; --wave: #7fd0de;
+  color-scheme: dark;
+}
+
+/* =========================================================================
+   土台
+   ========================================================================= */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+/* 目次から飛ぶときはなめらかに。動きを減らす設定の人には付けない */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: var(--step-0);
+  line-height: var(--lh);
+  overflow-wrap: break-word;
+}
+
+/* リンクは本文の色のまま、下線だけ色を付ける。目立たせすぎない */
+a {
+  color: inherit;
+  text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  text-underline-offset: .22em;
+}
+a:hover { color: var(--accent); text-decoration-color: currentColor; }
+
+h1, h2, h3 { line-height: var(--lh-tight); }
+
+img { max-width: 100%; height: auto; }
+
+button { font: inherit; color: inherit; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* 画面には出さず、読み上げにだけ使う */
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.skip {
+  position: absolute;
+  left: var(--sp-4);
+  top: -3rem;
+  background: var(--bg);
+  padding: var(--sp-2) var(--sp-4);
+  z-index: 10;
+}
+.skip:focus { top: var(--sp-2); }
+
+/* 端は 16px。スマートフォンで本文が端に張り付かないように */
+.wrap {
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+/* =========================================================================
+   ヘッダー・フッター
+   ========================================================================= */
+
+.site-header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3) var(--sp-5);
+  padding-block: var(--sp-4);
+}
+/* ロゴは文字だけ。「枚方」を太く、「pedia」は細く */
+.site-brand { display: flex; align-items: baseline; gap: var(--sp-3); text-decoration: none; color: var(--fg-strong); }
+.site-name { font-size: 1.5rem; line-height: 1; letter-spacing: .02em; }
+.site-name-ja { font-weight: 700; }
+.site-name-en { font-weight: 400; color: var(--mut); margin-left: .08em; }
+.site-reading { font-size: .6875rem; letter-spacing: .12em; color: var(--mut); }
+.site-brand:hover { color: var(--accent); }
+
+.site-nav { display: flex; align-items: center; gap: var(--sp-4); font-size: .875rem; }
+.site-nav > a { text-decoration: none; color: var(--mut); }
+.site-nav > a:hover { color: var(--accent); }
+
+.theme-select {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px;
+}
+.theme-select button {
+  display: grid;
+  place-items: center;
+  width: 26px; height: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: var(--mut-soft);
+  cursor: pointer;
+}
+.theme-select button svg { width: 14px; height: 14px; }
+.theme-select button:hover { color: var(--fg); }
+.theme-select button[aria-pressed="true"] { color: var(--fg-strong); background: var(--bg-sub); }
+
+/* ヘッダーの下に、ゆるい波の線を 1 本。淀川。色は --wave（ダークでは明るく）なので mask で描く */
+.site-header { position: relative; border-bottom: 0; padding-bottom: 6px; }
+.site-header::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 8px;
+  background: var(--wave);
+  opacity: .55;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="8" viewBox="0 0 80 8"><path d="M0 4c10 0 10-3 20-3s10 3 20 3 10-3 20-3 10 3 20 3" fill="none" stroke="black" stroke-width="1.2"/></svg>') repeat-x left center;
+          mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="8" viewBox="0 0 80 8"><path d="M0 4c10 0 10-3 20-3s10 3 20 3 10-3 20-3 10 3 20 3" fill="none" stroke="black" stroke-width="1.2"/></svg>') repeat-x left center;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding-block: var(--sp-5) var(--sp-6);
+  color: var(--mut);
+  font-size: .8125rem;
+  line-height: 1.7;
+}
+.site-footer p { margin: 0 0 var(--sp-2); }
+.footer-links { display: flex; flex-wrap: wrap; gap: var(--sp-4); }
+.site-footer a { color: var(--mut); text-decoration: none; }
+.site-footer a:hover { color: var(--accent); text-decoration: underline; }
+.copyright { font-variant-numeric: tabular-nums; }
+
+/* =========================================================================
+   段組み。2 ペイン（本文＋右の列）。狭い画面では右の列を本文の下に回す
+   ========================================================================= */
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--sp-7);
+  padding-block: var(--sp-6) var(--sp-7);
+}
+.layout-main, .sidebar { min-width: 0; }
+@media (min-width: 960px) {
+  .layout { grid-template-columns: minmax(0, 720px) 280px; justify-content: space-between; column-gap: 56px; }
+}
+
+/* --- 右の列 --- */
+.sidebar { font-size: .875rem; line-height: 1.6; }
+.sidebar { gap: var(--sp-6); }
+.side-box h2, .toc-title {
+  margin: 0 0 var(--sp-2);
+  font-size: .8125rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--mut);
+}
+.side-list { list-style: none; margin: 0; padding: 0; }
+.side-list li { padding-block: 6px; }
+.side-list a { text-decoration: none; color: var(--fg); }
+.side-list a:hover { color: var(--accent); text-decoration: underline; }
+.side-rank { counter-reset: rank; }
+.side-rank li { counter-increment: rank; display: grid; grid-template-columns: 1.5em 1fr; }
+.side-rank li::before { content: counter(rank); color: var(--mut-soft); font-variant-numeric: tabular-nums; }
+
+/* --- 追いかけてくる塊（目次と情報募集） ---
+   右の列のいちばん下に置いて、そこだけ追いかけてくる。下に何も無いので重ならない。
+   目次が長いときは目次の中だけスクロールして、情報募集はいつも見えるようにする。
+   狭い画面では右の列ごと本文の下に回る。目次は代わりに題名の下に出し、
+   情報募集は本文のすぐ下に来るよう右の列の先頭に出す */
+.sidebar { display: flex; flex-direction: column; }
+.side-sticky { order: -1; }
+.side-toc { display: none; }
+@media (min-width: 960px) {
+  .side-sticky {
+    order: 0;
+    position: sticky;
+    top: var(--sp-5);
+    max-height: calc(100vh - 3rem);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-5);
+  }
+  .side-toc {
+    display: block;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .toc-inline { display: none; }
+}
+
+/* 情報募集 */
+.wanted {
+  flex: none;
+  padding: var(--sp-3) var(--sp-4);
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
+  border-radius: var(--radius);
+  font-size: .875rem;
+  line-height: 1.7;
+  color: var(--mut);
+}
+.wanted p { margin: 0; }
+.wanted .wanted-title { margin-bottom: var(--sp-1); font-weight: 700; color: var(--fg-strong); }
+
+.toc { font-size: .875rem; line-height: 1.5; }
+.toc-list { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--line); }
+.toc-list li a {
+  display: block;
+  padding: 5px 0 5px var(--sp-3);
+  margin-left: -1px;
+  border-left: 2px solid transparent;
+  color: var(--mut);
+  text-decoration: none;
+}
+.toc-list li.d3 a { padding-left: calc(var(--sp-3) + 1em); font-size: .8125rem; }
+.toc-list a:hover { color: var(--fg-strong); }
+/* いま読んでいる節 */
+.toc-list a[aria-current] { color: var(--fg-strong); font-weight: 700; border-left-color: var(--accent); }
+@media (prefers-reduced-motion: no-preference) {
+  .toc-list a { transition: color .15s, border-color .15s; }
+}
+.toc-inline { margin-bottom: var(--sp-6); padding: var(--sp-3) var(--sp-4); background: var(--bg-sub); border-radius: var(--radius); }
+.toc-inline .toc-list { border-left: 0; }
+.toc-inline .toc-list li a { border-left: 0; padding-left: 0; margin-left: 0; }
+.toc-inline .toc-list li.d3 a { padding-left: 1em; }
+
+/* =========================================================================
+   トップ
+   ========================================================================= */
+
+.hero { padding-bottom: var(--sp-5); margin-bottom: var(--sp-6); border-bottom: 1px solid var(--line); }
+.hero-lead { margin: 0 0 var(--sp-1); }
+.hero-sub { margin: 0; color: var(--mut); font-size: .875rem; }
+
+/* 記事は日付の流れではなく、題名と説明の索引で並べる */
+.card-list { list-style: none; margin: 0; padding: 0; }
+.card-list li { border-bottom: 1px solid var(--line); }
+.card-list a { display: grid; gap: 2px; padding-block: var(--sp-4); text-decoration: none; }
+.card-list li:first-child a { padding-top: 0; }
+.card-title { font-size: var(--step-1); font-weight: 700; color: var(--fg-strong); line-height: 1.5; }
+.card-list a:hover .card-title { color: var(--accent); }
+.card-desc { color: var(--mut); font-size: .875rem; line-height: 1.7; }
+
+/* =========================================================================
+   記事
+   ========================================================================= */
+
+.entry-header { margin-bottom: var(--sp-6); }
+.entry-header h1 { margin: 0 0 var(--sp-2); font-size: var(--step-4); font-weight: 700; color: var(--fg-strong); letter-spacing: .01em; }
+@media (max-width: 520px) {
+  .entry-header h1 { font-size: var(--step-3); }
+}
+.entry-meta { margin: 0; color: var(--mut); font-size: .8125rem; }
+.entry-meta time { font-variant-numeric: tabular-nums; }
+
+.entry-body > * { margin-block: 0 var(--sp-5); }
+.entry-body > *:last-child { margin-bottom: 0; }
+
+/* 目次から飛んだとき、見出しが画面のふちに張り付かないように */
+.entry-body :is(h2, h3, h4) { scroll-margin-top: var(--sp-5); }
+
+.entry-body h2, .entry-body h3, .entry-body h4 {
+  line-height: var(--lh-tight);
+  color: var(--fg-strong);
+  margin-top: var(--sp-7);
+  margin-bottom: var(--sp-4);
+  font-weight: 700;
+}
+.entry-body h2 { font-size: var(--step-3); padding-bottom: var(--sp-2); border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line)); }
+.entry-body h3 { font-size: var(--step-2); }
+.entry-body h4 { font-size: var(--step-1); }
+
+
+.entry-body p { margin-block: 0 var(--sp-5); }
+
+/* 箇条書きは本文より行を詰める */
+.entry-body ul, .entry-body ol { padding-left: 1.6em; line-height: 1.7; }
+.entry-body li { margin-bottom: var(--sp-1); }
+.entry-body li > ul, .entry-body li > ol { margin-top: var(--sp-2); }
+
+/* マーカー。「ここだけ読めば話せる」ところに引く。文字全体を淡い水色で塗る。
+   下線は付けない（リンクの下線と見分けが付かなくなる）。
+   地の色と文字の色のコントラストは、ライトで 12:1、ダークで 7:1 ほど（どちらも AAA）。
+   ハイコントラスト（強制カラー）では作者の背景色が消えるので、OS のマーカーの色に任せる */
+.entry-body mark {
+  background-color: var(--mark);
+  color: inherit;
+  padding: .05em .1em;
+  border-radius: 2px;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+}
+@media (forced-colors: active) {
+  .entry-body mark { forced-color-adjust: none; background: Mark; color: MarkText; }
+}
+
+/* まとめ（rehype-summary.mjs が「## まとめ」の節を囲む）。
+   枠の上の線に「まとめ」の見出しを乗せる */
+.entry-body .summary {
+  position: relative;
+  margin-top: calc(var(--sp-6) + .75em);
+  padding: var(--sp-5) var(--sp-5) var(--sp-4);
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line));
+  border-radius: var(--radius);
+}
+.entry-body .summary > h2 {
+  position: absolute;
+  top: 0; left: var(--sp-4);
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 0 var(--sp-2);
+  border: 0;
+  background: var(--bg);
+  font-size: var(--step-1);
+  letter-spacing: .08em;
+  color: var(--accent);
+}
+.entry-body .summary > ul { margin: 0; padding-left: 1.2em; }
+.entry-body .summary li { margin-bottom: var(--sp-2); }
+.entry-body .summary li:last-child { margin-bottom: 0; }
+@media (max-width: 520px) {
+  .entry-body .summary { padding-inline: var(--sp-4); }
+}
+
+/* 脚注（出典）。本文の番号は小さく、出典の一覧は本文より一段小さく */
+.entry-body sup > a[data-footnote-ref] { font-size: .8em; padding: .2em .15em; text-decoration: none; color: var(--accent); }
+.entry-body sup > a[data-footnote-ref]::before { content: "["; }
+.entry-body sup > a[data-footnote-ref]::after { content: "]"; }
+.entry-body .footnotes { margin-top: var(--sp-7); font-size: .875rem; line-height: 1.7; color: var(--mut); }
+.entry-body .footnotes li { margin-bottom: var(--sp-3); }
+.entry-body .footnotes p { margin: 0; }
+.entry-body .data-footnote-backref { text-decoration: none; margin-left: .3em; }
+/* 脚注の番号に乗せたときの吹き出し（ArticleBody.astro の script が作る） */
+.footnote-tip {
+  position: absolute; z-index: 10;
+  max-width: min(28rem, calc(100vw - 16px));
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--bg); color: var(--fg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgb(0 0 0 / .08);
+  font-size: .8125rem; line-height: 1.6;
+}
+.footnote-tip[hidden] { display: none; }
+.footnote-tip p { margin: 0; }
+
+/* 記事の中のお知らせ（情報募集など）。<aside class="callout"> で囲む */
+.entry-body .callout {
+  margin: var(--sp-6) 0;
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--bg-sub);
+  border-radius: var(--radius);
+}
+.entry-body .callout > :first-child { margin-top: 0; }
+.entry-body .callout > :last-child { margin-bottom: 0; }
+
+.entry-body blockquote {
+  margin-inline: 0;
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--bg-sub);
+  border-radius: var(--radius);
+  color: var(--mut);
+}
+
+.entry-body hr { border: 0; border-top: 1px solid var(--line); margin-block: var(--sp-7); }
+
+.entry-body img { display: block; }
+.entry-body figure { margin-inline: 0; }
+.entry-body figcaption { font-size: .875rem; color: var(--mut); margin-top: var(--sp-2); line-height: 1.6; }
+
+/* 表（年表など）。広い表は表の中でスクロールさせ、ページは横に流さない */
+.entry-body table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: .875rem;
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+  line-height: 1.6;
+}
+.entry-body th, .entry-body td {
+  border-bottom: 1px solid var(--line);
+  padding: var(--sp-2) var(--sp-3);
+  text-align: left;
+  vertical-align: top;
+}
+.entry-body th { border-bottom: 2px solid var(--fg); font-weight: 700; white-space: nowrap; }
+/* 年表の 1 列目（年月）は折り返さない */
+.entry-body td:first-child { white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 600; }
+
+.entry-body :not(pre) > code {
+  font-family: var(--mono);
+  font-size: .9em;
+  background: var(--bg-sub);
+  border-radius: var(--radius);
+  padding: .1em .35em;
+}

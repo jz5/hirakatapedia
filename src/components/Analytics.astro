@@ -1,0 +1,24 @@
+---
+import { ANALYTICS } from "../lib/site";
+
+/**
+ * Google Analytics（GA4）。測定 ID が無ければ何も出さない。
+ * async で読み込むので描画をブロックしない。
+ */
+const { gaId, disabled } = ANALYTICS;
+const useGa = !disabled && Boolean(gaId);
+---
+
+{
+  useGa && (
+    <Fragment>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
+      <script is:inline define:vars={{ gaId }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        gtag("js", new Date());
+        gtag("config", gaId);
+      </script>
+    </Fragment>
+  )
+}
