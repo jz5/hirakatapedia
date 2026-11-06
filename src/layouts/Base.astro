@@ -1,5 +1,5 @@
 ---
-import { SITE, LICENSE } from "../lib/site";
+import { SITE, LICENSE, OPERATOR, AUTHOR } from "../lib/site";
 import ThemeSelect from "../components/ThemeSelect.astro";
 import Sidebar from "../components/Sidebar.astro";
 import Analytics from "../components/Analytics.astro";
@@ -36,8 +36,8 @@ const jsonLd = article
       description: desc,
       datePublished: article.published.toISOString(),
       dateModified: (article.modified ?? article.published).toISOString(),
-      author: { "@type": "Person", name: "jz5", url: "https://jz5.jp/" },
-      publisher: { "@type": "Organization", name: SITE.title, url: SITE.url },
+      author: { "@type": "Person", name: AUTHOR.name, url: AUTHOR.url },
+      publisher: { "@type": "Organization", name: OPERATOR.name, alternateName: OPERATOR.nameEn, url: OPERATOR.url },
       license: LICENSE.url,
     }
   : null;
@@ -114,7 +114,7 @@ const jsonLd = article
           <a href="/license/">ライセンス</a>
         </p>
         {/* 年は毎年直すのを忘れるのでビルド時に入れる */}
-        <p class="copyright">© {new Date().getFullYear() > 2026 ? `2026-${new Date().getFullYear()}` : "2026"} jz5</p>
+        <p class="copyright">© {new Date().getFullYear() > 2026 ? `2026-${new Date().getFullYear()}` : "2026"} {OPERATOR.nameEn}</p>
       </div>
     </footer>
   </body>

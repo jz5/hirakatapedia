@@ -1,5 +1,5 @@
 ---
-import { SITE } from "../lib/site";
+import { SITE, OPERATOR, AUTHOR } from "../lib/site";
 import Base from "../layouts/Base.astro";
 ---
 
@@ -22,8 +22,8 @@ import Base from "../layouts/Base.astro";
         <li>Discord：準備中</li>
       </ul>
 
-      <h2>書いている人</h2>
-      <p>jz5（<a href="https://jz5.jp/">jz5.jp</a>）が書いています。</p>
+      <h2>運営者</h2>
+      <p><a href={OPERATOR.url}>{OPERATOR.name}</a>が運営しています。記事は {AUTHOR.name}（<a href={AUTHOR.url}>jz5.jp</a>）が書いています。</p>
 
       <h2>ほかのページ</h2>
       <ul>

@@ -6,6 +6,22 @@ export const SITE = {
   lang: "ja",
 } as const;
 
+/**
+ * 運営者。きちんと書くところ（このサイトについて・プライバシーポリシー・構造化データ）は「合同会社プロ生」、
+ * コピーライトの表記は「Pronama LLC」
+ */
+export const OPERATOR = {
+  name: "合同会社プロ生",
+  nameEn: "Pronama LLC",
+  url: "https://pronama.jp/",
+} as const;
+
+/** 記事を書いている人 */
+export const AUTHOR = {
+  name: "jz5",
+  url: "https://jz5.jp/",
+} as const;
+
 /** 記事のライセンス。Wikipedia と同じ CC BY-SA 4.0 */
 export const LICENSE = {
   name: "CC BY-SA 4.0",

@@ -1,10 +1,10 @@
 ---
-import { SITE } from "../lib/site";
+import { SITE, OPERATOR } from "../lib/site";
 import Base from "../layouts/Base.astro";
 
 /*
  * Amazon アソシエイトを始めたら、「広告について」に次の一文を足す（規約で表示が必要）:
- *   Amazonのアソシエイトとして、枚方pedia は適格販売により収入を得ています。*/
+ *   Amazonのアソシエイトとして、合同会社プロ生は適格販売により収入を得ています。*/
 ---
 
 <Base title="プライバシーポリシー" path="/privacy/">
@@ -14,6 +14,9 @@ import Base from "../layouts/Base.astro";
     </header>
     <div class="entry-body">
       <p>{SITE.title}（{SITE.url.replace("https://", "")}）での、アクセス情報の扱いについて説明します。</p>
+
+      <h2>運営者</h2>
+      <p><a href={OPERATOR.url}>{OPERATOR.name}</a></p>
 
       <h2>アクセス解析</h2>
       <p>
