@@ -3,6 +3,12 @@
 # 見つからないページ
 ErrorDocument 404 /404.html
 
+# 親（public_html/）の .htaccess の書き換え（WordPress の「無ければ index.php へ」など）を、
+# このサイトに持ち込まない。ここで RewriteEngine を書くと、親の規則は引き継がれない
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+</IfModule>
+
 # 文字コードと、Apache が知らないことがある形式
 AddDefaultCharset UTF-8
 AddType image/avif .avif
@@ -15,17 +21,16 @@ AddType application/manifest+json .webmanifest
 </IfModule>
 
 # キャッシュ。ファイル名にハッシュが入るもの（/_astro/）と、番号で名前が決まる写真は長く、HTML と JSON は短く
+# （FilesMatch の中の Header は外の Header より後に効くので、/_astro/ の分も同じ FilesMatch の中で分ける）
+SetEnvIf Request_URI "^/_astro/" ASTRO_ASSET
 <IfModule mod_headers.c>
   <FilesMatch "\.(html|xml|json|txt)$">
     Header set Cache-Control "public, max-age=600"
   </FilesMatch>
-  <FilesMatch "\.(avif|webp|jpg|jpeg|png|svg|woff2|css|js)$">
-    Header set Cache-Control "public, max-age=604800"
+  <FilesMatch "\.(avif|webp|jpg|jpeg|png|svg|woff2?|css|js)$">
+    Header set Cache-Control "public, max-age=604800" env=!ASTRO_ASSET
+    Header set Cache-Control "public, max-age=31536000, immutable" env=ASTRO_ASSET
   </FilesMatch>
-</IfModule>
-<IfModule mod_headers.c>
-  SetEnvIf Request_URI "^/_astro/" ASTRO_ASSET
-  Header set Cache-Control "public, max-age=31536000, immutable" env=ASTRO_ASSET
 </IfModule>
 
 # このファイルなど、ドットで始まるファイルは見せない
