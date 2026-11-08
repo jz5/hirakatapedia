@@ -41,7 +41,7 @@ const description = `枚方市の写真 ${n(photos.length)} 枚。${sites.map((x
     </header>
 
     <div class="entry-body">
-      <p class="gallery-lead">枚方市の写真 {n(photos.length)} 枚。どれも <strong>出典を書けば商用でも使える写真</strong>です（<a href="#about-h">このページについて</a>）。</p>
+      <p class="gallery-lead">枚方市の写真 {n(photos.length)} 枚。どれも <strong>出典を書けば商用でも使える写真</strong>です（<a href="#about-h">このページについて</a>・<a href="/gallery/contribute/">写真を増やすには</a>）。</p>
 
       <div class="data-panel" data-gallery>
         <div class="data-tools">
@@ -129,6 +129,9 @@ const description = `枚方市の写真 ${n(photos.length)} 枚。${sites.map((x
           {has("ndl") && <li><a href={LINKS.ndl}>国立国会図書館</a>：インターネット公開の昔の本（1956年までの発行）から、写真の部分を切り抜いたもの</li>}
           {has("mapillary") && <li><a href={LINKS.mapillary}>Mapillary</a>：駅などの近くの写真を 1 枚ずつ見て選んだもの</li>}
         </ul>
+
+        <h3>写真を増やすには</h3>
+        <p>自分で撮った枚方の写真を、Wikimedia Commons に CC ライセンスで上げると、このページにも載ります。手順は<a href="/gallery/contribute/">枚方の写真を、みんなが使える形で公開しよう</a>にまとめました。</p>
 
         <h3>ご注意</h3>
         <ul>

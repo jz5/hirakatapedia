@@ -920,6 +920,8 @@ tr[hidden] { display: none; }
 .gallery-pop-more { margin: 6px 0 0; font-size: .75rem; color: var(--mut); }
 .entry-body .gallery-about { margin-top: var(--sp-7); }
 .entry-body .gallery-about table { margin-bottom: var(--sp-4); }
+/* 手順の画面写真（白い画面がページの地と混ざらないよう枠を付ける） */
+.entry-body img.shot { max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius); }
 
 /* 写真 1 枚のページ */
 .gphoto-figure { margin: 0 0 var(--sp-5); }

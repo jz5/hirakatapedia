@@ -10,6 +10,7 @@ export const GET: APIRoute = async () => {
   return urlset([
     { loc: "/", lastmod: list[0] ? lastModified(list[0]) : undefined },
     { loc: "/gallery/" },
+    { loc: "/gallery/contribute/" },
     { loc: "/data/" },
     ...datasets.map((d) => ({ loc: dataPath(d.id) })),
     { loc: "/data/city/" },
