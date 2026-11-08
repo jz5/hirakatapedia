@@ -1,0 +1,34 @@
+# エックスサーバー（Apache）用。dist/ にそのままコピーされ、scripts/deploy.sh で上げる
+
+# 見つからないページ
+ErrorDocument 404 /404.html
+
+# 文字コードと、Apache が知らないことがある形式
+AddDefaultCharset UTF-8
+AddType image/avif .avif
+AddType image/webp .webp
+AddType application/manifest+json .webmanifest
+
+# 圧縮
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/json application/javascript image/svg+xml
+</IfModule>
+
+# キャッシュ。ファイル名にハッシュが入るもの（/_astro/）と、番号で名前が決まる写真は長く、HTML と JSON は短く
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|xml|json|txt)$">
+    Header set Cache-Control "public, max-age=600"
+  </FilesMatch>
+  <FilesMatch "\.(avif|webp|jpg|jpeg|png|svg|woff2|css|js)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
+<IfModule mod_headers.c>
+  SetEnvIf Request_URI "^/_astro/" ASTRO_ASSET
+  Header set Cache-Control "public, max-age=31536000, immutable" env=ASTRO_ASSET
+</IfModule>
+
+# このファイルなど、ドットで始まるファイルは見せない
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
