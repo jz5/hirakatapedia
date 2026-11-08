@@ -269,7 +269,7 @@ button { font: inherit; color: inherit; }
    狭い画面では右の列ごと本文の下に回る。目次は代わりに題名の下に出し、
    情報募集は本文のすぐ下に来るよう右の列の先頭に出す */
 .sidebar { display: flex; flex-direction: column; }
-.side-sticky { order: -1; }
+.side-sticky { order: -1; display: flex; flex-direction: column; gap: var(--sp-5); }
 .side-toc { display: none; }
 @media (min-width: 960px) {
   .side-sticky {
