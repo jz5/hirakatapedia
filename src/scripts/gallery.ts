@@ -47,15 +47,18 @@ export async function startGallery() {
   const $count = $<HTMLElement>("[data-count]"), $grid = $<HTMLElement>("[data-grid]"), $pager = $<HTMLElement>("[data-pager]");
   const $mapBtn = $<HTMLButtonElement>("[data-mapbtn]"), $map = $<HTMLElement>("[data-map]");
   const $view = $<HTMLSelectElement>("[data-view]"), $size = $<HTMLSelectElement>("[data-tile]"), $years = $<HTMLInputElement>("[data-years]");
+  const $caps = $<HTMLInputElement>("[data-caps]");
 
-  // 見せ方（元の比率・正方形、大きさ、年の見出し）は、この人のブラウザに覚えておく
+  // 見せ方（元の比率・正方形、大きさ、年の見出し、説明）は、この人のブラウザに覚えておく
   const setView = () => {
     $grid.classList.toggle("is-ratio", $view.value === "ratio");
+    $grid.classList.toggle("show-caps", $caps.checked);
     $grid.dataset.size = $size.value;
   };
   $view.value = store.get("gallery-view") === "square" ? "square" : "ratio";
   $size.value = ["s", "m", "l", "xl"].includes(store.get("gallery-size") ?? "") ? store.get("gallery-size")! : "m";
   $years.checked = store.get("gallery-years") === "1";
+  $caps.checked = store.get("gallery-caps") === "1";
   setView();
 
   // URL の絞り込みから始める
@@ -172,10 +175,11 @@ export async function startGallery() {
     store.set("gallery-years", $years.checked ? "1" : "0");
     render();
   });
-  for (const el of [$view, $size])
+  for (const el of [$view, $size, $caps])
     el.addEventListener("change", () => {
       store.set("gallery-view", $view.value);
       store.set("gallery-size", $size.value);
+      store.set("gallery-caps", $caps.checked ? "1" : "0");
       setView();
     });
   $pager.addEventListener("click", (e) => {

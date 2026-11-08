@@ -41,7 +41,7 @@ const description = `枚方市の写真 ${n(photos.length)} 枚。${sites.map((x
     </header>
 
     <div class="entry-body">
-      <p class="gallery-lead">枚方市の写真 {n(photos.length)} 枚。どれも <strong>出典を書けば商用でも使える写真</strong>です。</p>
+      <p class="gallery-lead">枚方市の写真 {n(photos.length)} 枚。どれも <strong>出典を書けば商用でも使える写真</strong>です（<a href="#about-h">このページについて</a>）。</p>
 
       <div class="data-panel" data-gallery>
         <div class="data-tools">
@@ -75,6 +75,7 @@ const description = `枚方市の写真 ${n(photos.length)} 枚。${sites.map((x
             <p class="data-count" aria-live="polite" data-count>読み込み中…</p>
             <span class="gallery-bar-right">
               <label class="chip-toggle"><input type="checkbox" data-years /><span>年の見出し</span></label>
+              <label class="chip-toggle"><input type="checkbox" data-caps /><span>説明</span></label>
               <select data-view aria-label="表示">
                 <option value="ratio">元の比率</option>
                 <option value="square">正方形</option>
@@ -115,7 +116,7 @@ const description = `枚方市の写真 ${n(photos.length)} 枚。${sites.map((x
             <tr><td>CC BY-SA</td><td>必要</td><td>同じ CC BY-SA で公開する（継承）</td></tr>
           </tbody>
         </table>
-        <p>どれも商用利用・改変ができます。非営利（NC）と改変禁止（ND）の写真は載せていません（一覧の縮小・切り抜きも改変にあたるため）。このサイトの画像は縮小したものなので、元の大きさの画像は写真のページの「出典」から取ってください。</p>
+        <p>どれも商用利用・改変ができます。非営利（NC）と改変禁止（ND）の写真は載せていません（一覧の縮小・切り抜きも改変にあたるため）。このサイトの画像は縮小したものです。元の大きさの画像は、写真のページの「出典」のリンク先からダウンロードしてください。</p>
 
         <h3>出どころ</h3>
         <ul>

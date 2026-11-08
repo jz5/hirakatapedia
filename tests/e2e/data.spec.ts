@@ -337,10 +337,15 @@ test.describe("写真ギャラリー", () => {
     await expect(page.locator(".gallery-year")).toHaveCount(0);
     await page.locator("[data-view]").selectOption("square");
     await expect(page.locator("[data-grid]")).not.toHaveClass(/is-ratio/);
+    // 説明は、オンにしたときだけ出る
+    await expect(page.locator("[data-grid] .gallery-cap").first()).toBeHidden();
+    await page.locator("[data-caps]").check();
+    await expect(page.locator("[data-grid] .gallery-cap").first()).toBeVisible();
     // 切り替えはブラウザに覚えておく
     await page.reload();
     await expect(page.locator("[data-view]")).toHaveValue("square");
     await expect(page.locator("[data-years]")).toBeChecked();
+    await expect(page.locator("[data-caps]")).toBeChecked();
   });
 
   test("一覧：撮影年不明で絞り込む", async ({ page }) => {
