@@ -1,6 +1,6 @@
 {
  "_source": "大阪市立図書館デジタルアーカイブで選んだ資料（gallery-config.yaml の omlib）",
- "fetched": "2026-11-08",
+ "fetched": "2026-11-09",
  "photos": [
   {
    "id": "2c20fa80bf",
@@ -188,7 +188,8 @@
     "歴史"
    ],
    "places": [
-    "枚方宿"
+    "枚方宿",
+    "淀川"
    ],
    "thumb": "https://image.oml.city.osaka.lg.jp/da/download/?id=0000000021-OSK0186932&size=view&type=image&file=%2F%E5%86%99%E7%9C%9F%E3%83%BB%E7%B5%B5%E3%81%AF%E3%81%8C%E3%81%8D%E3%83%BB%E5%8F%A4%E6%96%87%E6%9B%B8%E3%83%BB%E5%9C%B0%E5%9B%B3%2F0z0006027.jpg",
    "site": "omlib",

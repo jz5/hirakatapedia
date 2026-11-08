@@ -6,7 +6,7 @@
  *   node scripts/gallery.mjs [出どころ…]           両方
  *
  * 出どころ：commons（Wikimedia Commons）・flickr・city（枚方市のオープンデータの画像）・gsi（国土地理院の空中写真）・
- * jpsearch（Japan Search で選んだ資料）・omlib（大阪市立図書館デジタルアーカイブで選んだ資料）・ndl（国立国会図書館デジタルコレクションの本から選んだ写真）・mapillary。集め方はそれぞれ scripts/gallery/<出どころ>.mjs、設定は content/data/gallery-config.yaml。
+ * jpsearch（Japan Search で選んだ資料）・omlib（大阪市立図書館デジタルアーカイブで選んだ資料）・ndl（国立国会図書館デジタルコレクションの本から選んだ写真）・mapillary。集め方はそれぞれ scripts/gallery/<出どころ>.mjs（omlib だけは公開せず docs/scripts/gallery-omlib.mjs）、設定は content/data/gallery-config.yaml。
  * 使うのは商用利用でき、改変もできるもの（CC BY・CC BY-SA・CC0・パブリックドメイン、国土地理院の利用規約）。NC・ND は使わない
  * （一覧のサムネイルは縮小・切り抜きなので、改変禁止の写真には使えないとみる）。
  * Flickr と Mapillary はキーが要る（.env の FLICKR_API_KEY・MAPILLARY_TOKEN。Git に入れない）。キーが無いときは前に集めた分を残す。
@@ -23,6 +23,8 @@ import { ROOT, UA, env, getJson, readSite, sleep, writeSite } from "./gallery/co
 import { gsiImage } from "./lib/gsi-image.mjs";
 
 const SITES = ["commons", "flickr", "city", "gsi", "jpsearch", "omlib", "ndl", "mapillary"];
+/** 集め方を公開していない出どころ（手元だけの docs/ リポジトリにある） */
+const PRIVATE = { omlib: join(ROOT, "docs/scripts/gallery-omlib.mjs") };
 const DIR = join(ROOT, "public/gallery/i");
 const SIZES = { s: 480, l: 1600 };
 /** サイトごとの、次に取るまでの間（ミリ秒） */
@@ -33,7 +35,13 @@ export const imagePath = (id, size) => join(DIR, id.slice(0, 2), `${id}-${size}.
 async function collect(sites) {
   let commonsFlickrIds = new Set(readSite("commons")?.flickrIds ?? []);
   for (const site of sites) {
-    const mod = await import(`./gallery/${site}.mjs`);
+    // 大阪市立図書館は、サイトの内部の窓口を使うので、集め方を公開していない（手元の docs/ にある）。無ければ前の分を残す
+    const file = PRIVATE[site] ?? join(ROOT, `scripts/gallery/${site}.mjs`);
+    if (!existsSync(file)) {
+      console.log(`${site}：集め方のファイルが無いので集めない（前に集めた分を残す）`);
+      continue;
+    }
+    const mod = await import(file);
     const r = await mod.collect({ commonsFlickrIds });
     if (!r) continue; // キーが無いなど。前の分を残す
     if (site === "commons") commonsFlickrIds = new Set(r.flickrIds);
