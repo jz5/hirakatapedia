@@ -119,8 +119,8 @@ const jsonLd = article
           <a href="/data/">データ</a>
           <a href="/sns/">SNS</a>
           <a href="/about/">このサイトについて</a>
-          <ThemeSelect />
         </nav>
+        <ThemeSelect />
       </div>
     </header>
     <script is:inline>
@@ -150,10 +150,9 @@ const jsonLd = article
           <a href="/about/">このサイトについて</a>
           <a href="/privacy/">プライバシーポリシー</a>
           <a href="/license/">ライセンス</a>
-          <a href={githubUrl} class="footer-github" aria-label={githubLabel} title={githubLabel}><svg viewBox={github.viewBox} aria-hidden="true" focusable="false"><path d={github.d} /></svg></a>
         </p>
         {/* 年は毎年直すのを忘れるのでビルド時に入れる */}
-        <p class="copyright">© {new Date().getFullYear() > 2026 ? `2026-${new Date().getFullYear()}` : "2026"} {OPERATOR.nameEn}</p>
+        <p class="copyright"><span>© {new Date().getFullYear() > 2026 ? `2026-${new Date().getFullYear()}` : "2026"} {OPERATOR.nameEn}</span><a href={githubUrl} class="footer-github" aria-label={githubLabel} title={githubLabel}><svg viewBox={github.viewBox} aria-hidden="true" focusable="false"><path d={github.d} /></svg></a></p>
       </div>
     </footer>
   </body>

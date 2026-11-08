@@ -163,9 +163,21 @@ button { font: inherit; color: inherit; }
 .site-reading { font-size: .6875rem; letter-spacing: .12em; color: var(--mut); }
 .site-brand:hover { color: var(--accent); }
 
+.site-brand { margin-right: auto; }
 .site-nav { display: flex; align-items: center; gap: var(--sp-4); font-size: .875rem; }
-.site-nav > a { text-decoration: none; color: var(--mut); }
+.site-nav > a { text-decoration: none; color: var(--mut); white-space: nowrap; }
 .site-nav > a:hover { color: var(--accent); }
+/* 狭い画面：1 段目にロゴと配色の切り替え、2 段目にリンク（折り返さず、入りきらなければ横に送る） */
+@media (max-width: 640px) {
+  .site-header-inner { gap: var(--sp-2) var(--sp-3); padding-block: var(--sp-3) var(--sp-2); }
+  .site-name { font-size: 1.375rem; }
+  .site-nav {
+    order: 3; width: 100%; gap: var(--sp-5); font-size: .9375rem;
+    overflow-x: auto; scrollbar-width: none;
+  }
+  .site-nav::-webkit-scrollbar { display: none; }
+  .site-nav > a { padding-block: 6px; }
+}
 
 .theme-select {
   display: inline-flex;
@@ -211,7 +223,7 @@ button { font: inherit; color: inherit; }
 .footer-links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-4); }
 .site-footer a { color: var(--mut); text-decoration: none; }
 .site-footer a:hover { color: var(--accent); text-decoration: underline; }
-.copyright { font-variant-numeric: tabular-nums; }
+.copyright { display: flex; align-items: center; gap: var(--sp-3); font-variant-numeric: tabular-nums; }
 
 /* =========================================================================
    段組み。2 ペイン（本文＋右の列）。狭い画面では右の列を本文の下に回す
@@ -222,6 +234,11 @@ button { font: inherit; color: inherit; }
   grid-template-columns: minmax(0, 1fr);
   gap: var(--sp-7);
   padding-block: var(--sp-6) var(--sp-7);
+}
+@media (max-width: 959px) {
+  .layout { gap: var(--sp-6); padding-block: var(--sp-5) var(--sp-6); }
+  /* ホームでは、写真・データ・SNS のカードを右の列の先頭（本文のすぐ下）に */
+  .side-home { order: -2; }
 }
 .layout-main, .sidebar { min-width: 0; }
 @media (min-width: 960px) {
@@ -336,6 +353,12 @@ button { font: inherit; color: inherit; }
   .toc-list a { transition: color .15s, border-color .15s; }
 }
 .toc-inline { margin-bottom: var(--sp-6); padding: var(--sp-3) var(--sp-4); background: var(--bg-sub); border-radius: var(--radius); }
+/* 題名の下の目次は折りたたみ */
+.toc-inline details > summary { cursor: pointer; margin: 0; list-style: none; display: flex; align-items: center; gap: var(--sp-2); }
+.toc-inline details > summary::-webkit-details-marker { display: none; }
+.toc-inline details > summary::before { content: ""; width: .45em; height: .45em; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(-45deg); transition: transform .15s; }
+.toc-inline details[open] > summary::before { transform: rotate(45deg); }
+.toc-inline details[open] > summary { margin-bottom: var(--sp-2); }
 .toc-inline .toc-list { border-left: 0; }
 .toc-inline .toc-list li a { border-left: 0; padding-left: 0; margin-left: 0; }
 .toc-inline .toc-list li.d3 a { padding-left: 1em; }

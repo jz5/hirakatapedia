@@ -40,7 +40,7 @@ const cover = d.cover ? photo(entry.id, d.cover) : undefined;
 
 
     {/* 目次は 2 か所に置く。広い画面では右の列（slot="toc"）、それ以外は題名の下 */}
-    <div class="toc-inline"><Toc headings={headings} /></div>
+    <div class="toc-inline"><Toc headings={headings} inline /></div>
 
     <ArticleBody><Content /></ArticleBody>
   </article>

@@ -3,25 +3,42 @@ import type { MarkdownHeading } from "astro";
 
 /**
  * 記事の目次。h2 と h3 だけ。
- * 広い画面では右の列のいちばん下に置いて追いかけてくる（Sidebar.astro）。狭い画面では題名の下に出す（[slug].astro）
+ * 広い画面では右の列のいちばん下に置いて追いかけてくる（Sidebar.astro）。狭い画面では題名の下に出す（[slug].astro）。
+ * 題名の下のもの（inline）は、本文が遠くならないように折りたたみにする（初めは閉じる）
  */
 interface Props {
   headings: MarkdownHeading[];
+  inline?: boolean;
 }
 const items = Astro.props.headings.filter((h) => h.depth === 2 || h.depth === 3);
+const inline = Astro.props.inline ?? false;
 ---
 
 {
-  items.length > 2 && (
-    <nav class="toc" aria-label="目次">
-      <p class="toc-title">目次</p>
-      <ol class="toc-list">
-        {items.map((h) => (
-          <li class={`d${h.depth}`}>
-            <a href={`#${h.slug}`}>{h.text}</a>
-          </li>
-        ))}
-      </ol>
-    </nav>
-  )
+  items.length > 2 &&
+    (inline ? (
+      <details class="toc">
+        <summary class="toc-title">目次</summary>
+        <nav aria-label="目次">
+          <ol class="toc-list">
+            {items.map((h) => (
+              <li class={`d${h.depth}`}>
+                <a href={`#${h.slug}`}>{h.text}</a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      </details>
+    ) : (
+      <nav class="toc" aria-label="目次">
+        <p class="toc-title">目次</p>
+        <ol class="toc-list">
+          {items.map((h) => (
+            <li class={`d${h.depth}`}>
+              <a href={`#${h.slug}`}>{h.text}</a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    ))
 }
