@@ -145,7 +145,9 @@ for (const [slug, fm] of Object.entries(articles)) {
     const key = link.isbn ? `isbn:${link.isbn}` : link.url;
     used.add(key);
     // ほかの記事は題名が変わるので毎回作り直す（ネットには行かない）
-    if (cache[key] && !refresh && !link.url?.startsWith("/")) continue;
+    // サムネイルは Git に入れていないので、手元に無ければ取り直す
+    const thumbMissing = cache[key]?.image && !existsSync(join(ROOT, "public", cache[key].image.src));
+    if (cache[key] && !refresh && !thumbMissing && !link.url?.startsWith("/")) continue;
     try {
       const card = link.isbn
         ? await book(link.isbn)

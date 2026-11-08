@@ -12,3 +12,11 @@ public/gallery/
 
 # API キー（Flickr など）。scripts/gallery.mjs が読む
 .env
+
+# 調べもののメモと確認リスト（有料・館内限定の資料の書き写しや、確かめていない下書きを含むので公開しない）。
+# docs/ は手元だけの別の Git リポジトリ（ここでコミットする）
+docs/
+
+# 関連リンクのカードのサムネイル（ほかのサイトの画像・本の書影を縮小したもの。配り直さない）。
+# node scripts/link-cards.mjs で作り直せる
+public/link-thumbs/
