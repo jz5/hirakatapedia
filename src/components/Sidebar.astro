@@ -1,16 +1,52 @@
 ---
 import { popularArticles, articlePath } from "../lib/articles";
+import { photos, thumbSrc } from "../lib/gallery";
 
 /**
  * 右のサイドメニュー。よく読まれている記事。記事の一覧はホームにある。
  * いちばん下の塊（目次と情報募集）だけが追いかけてくる。
  * その下に何も置かないので、追いかけても重ならない。
  * 目次は記事ページだけ（slot）。
+ * ホームだけ、記事ではないページ（写真・データ・SNS）のカードを先頭に出す（home）。
  */
+interface Props {
+  home?: boolean;
+}
+const { home = false } = Astro.props;
 const popular = await popularArticles(5);
+// 写真のカードに並べる小さい写真（撮影日の新しいものから、位置情報のあるもの 3 枚）
+const strip = home ? photos.filter((p) => p.lat !== null).slice(0, 3) : [];
 ---
 
 <aside class="sidebar" aria-label="サイドメニュー">
+  {
+    home && (
+      <section class="side-box">
+        <h2>写真・データ・SNS</h2>
+        <ul class="side-cards">
+          <li>
+            <a href="/gallery/">
+              <span class="side-card-strip" aria-hidden="true">{strip.map((p) => <img src={thumbSrc(p.id)} alt="" width="80" height="60" loading="lazy" decoding="async" />)}</span>
+              <strong>枚方の写真</strong>
+              <span>商用でも使える写真 {photos.length.toLocaleString()} 枚。場所・年代・地図で探せる</span>
+            </a>
+          </li>
+          <li>
+            <a href="/data/">
+              <strong>枚方のデータ</strong>
+              <span>公園・トイレ・AED・避難所など、市のオープンデータを表と地図で</span>
+            </a>
+          </li>
+          <li>
+            <a href="/sns/">
+              <strong>枚方の SNS</strong>
+              <span>市議会議員や市・施設・地域メディアの SNS アカウントの一覧</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    )
+  }
   {
     popular.length > 0 && (
       <section class="side-box">
@@ -25,10 +61,11 @@ const popular = await popularArticles(5);
   <div class="side-sticky">
     {Astro.slots.has("default") && <div class="side-toc"><slot /></div>}
     <section class="wanted">
-      <p class="wanted-title">写真・情報を募集しています</p>
+      <p class="wanted-title">枚方の写真を公開しませんか</p>
       <p>
-        枚方の昔の写真や、覚えていることがあれば、<a href="/about/#contact">教えてください</a>。
+        撮った写真を、だれでも使えるライセンス（CC）で Wikimedia Commons にアップロードすると、枚方の記録として残ります（<a href="/gallery/contribute/">アップロードの方法</a>）。
       </p>
+      <p class="wanted-more">覚えていることや記事の誤りは、<a href="/about/#contact">こちら</a>から教えてください。</p>
     </section>
   </div>
 </aside>

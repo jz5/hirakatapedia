@@ -105,7 +105,7 @@ const jsonLd = article
       <main id="main" class="layout-main">
         <slot />
       </main>
-      {!wide && <Sidebar>{hasToc && <slot name="toc" />}</Sidebar>}
+      {!wide && <Sidebar home={path === "/"}>{hasToc && <slot name="toc" />}</Sidebar>}
     </div>
 
     <footer class="site-footer">
