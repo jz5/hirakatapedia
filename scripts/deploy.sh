@@ -33,6 +33,8 @@ echo "== 写真ギャラリーの画像（まだ無いものだけ取ってく�
 node scripts/gallery.mjs images
 echo "== 関連リンクのカード（サムネイルが無ければ取り直す）"
 node scripts/link-cards.mjs
+echo "== よく読まれている記事（GA の設定があれば作り直す）"
+node scripts/popular.mjs
 echo "== ビルド"
 pnpm build
 
