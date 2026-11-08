@@ -28,7 +28,7 @@ const ARTICLES = join(ROOT, "content/articles");
 const CACHE = join(ROOT, "content/data/link-cards.json");
 const THUMBS = join(ROOT, "public/link-thumbs");
 const refresh = process.argv.includes("--refresh");
-const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130 Safari/537.36 hirakatapedia-linkcards";
+const UA = "hirakatapedia-linkcards/1.0 (+https://hirakata.pronama.jp)";
 
 const frontmatter = (file) => parse(readFileSync(join(ARTICLES, file), "utf8").split(/^---$/m)[1]);
 const articles = Object.fromEntries(
