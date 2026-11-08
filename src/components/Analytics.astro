@@ -1,24 +1,30 @@
 ---
-import { ANALYTICS } from "../lib/site";
+import { ANALYTICS, SITE } from "../lib/site";
 
 /**
  * Google Analytics（GA4）。測定 ID が無ければ何も出さない。
+ * 本番のホスト（hirakata.pronama.jp）で開いたときだけ読み込む。
+ * 手元の pnpm dev・pnpm preview・e2e テストのアクセスは数えない。
  * async で読み込むので描画をブロックしない。
  */
 const { gaId, disabled } = ANALYTICS;
 const useGa = !disabled && Boolean(gaId);
+const host = new URL(SITE.url).hostname;
 ---
 
 {
   useGa && (
-    <Fragment>
-      <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
-      <script is:inline define:vars={{ gaId }}>
+    <script is:inline define:vars={{ gaId, host }}>
+      if (location.hostname === host) {
+        const s = document.createElement("script");
+        s.async = true;
+        s.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+        document.head.appendChild(s);
         window.dataLayer = window.dataLayer || [];
-        function gtag() { window.dataLayer.push(arguments); }
-        gtag("js", new Date());
-        gtag("config", gaId);
-      </script>
-    </Fragment>
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag("js", new Date());
+        window.gtag("config", gaId);
+      }
+    </script>
   )
 }

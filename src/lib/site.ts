@@ -30,12 +30,13 @@ export const LICENSE = {
 
 /**
  * アクセス解析（GA4）。測定 ID が空なら何も出さない。
- * ID はページのソースに出るので秘密ではない。決まったら既定値に書く。
+ * ID はページのソースに出るので秘密ではない。GA の「pronama」アカウントの、プロパティ「枚方pedia」（563218344）。
+ * 本番のホストで開いたときだけ読み込む（src/components/Analytics.astro）。
  *
- *   PUBLIC_GA_ID=G-XXXXXXXXXX pnpm build
+ *   PUBLIC_GA_ID=G-XXXXXXXXXX pnpm build   別の ID で試すとき
  */
 export const ANALYTICS = {
-  gaId: import.meta.env.PUBLIC_GA_ID ?? "",
+  gaId: import.meta.env.PUBLIC_GA_ID ?? "G-3BC49ZS80R",
   /** true のとき計測しない（手元で見るときなど） */
   disabled: import.meta.env.PUBLIC_NO_TRACKING === "1",
 } as const;
