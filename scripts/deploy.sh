@@ -39,9 +39,13 @@ pnpm build
 RSYNC=(rsync -az --delete --human-readable --exclude=".DS_Store" -e ssh)
 
 echo "== 変わるファイル（rsync --dry-run）"
-"${RSYNC[@]}" --dry-run --itemize-changes --stats dist/ "$HOST:$DEST" | tee /tmp/hirakatapedia-deploy.txt | grep -E '^(<|\*deleting)' | head -40 || true
-echo "（全部は /tmp/hirakatapedia-deploy.txt）"
-grep -E "Number of (regular )?files transferred|Number of deleted files|Total transferred file size" /tmp/hirakatapedia-deploy.txt || true
+# 一覧を先にファイルへ書き切ってから見る（パイプで head すると、途中で切れる）
+LOG=/tmp/hirakatapedia-deploy.txt
+"${RSYNC[@]}" --dry-run --itemize-changes dist/ "$HOST:$DEST" > "$LOG"
+grep -E '^\*deleting' "$LOG" | head -20 || true
+grep -E '^<f' "$LOG" | grep -v '/index\.html$' | head -30 || true
+echo "（全部は $LOG）"
+echo "上げるファイル：$(grep -cE '^<f' "$LOG" || true) 件（新しい $(grep -cE '^<f\+' "$LOG" || true) 件）／サーバーから消すファイル：$(grep -cE '^\*deleting' "$LOG" || true) 件"
 
 if [ "$DRY" = 1 ]; then
   echo "== --dry-run なので上げない"
@@ -52,5 +56,5 @@ read -r -p "本番（https://hirakata.pronama.jp/）に上げますか？ [y/N] 
 [ "$ans" = "y" ] || [ "$ans" = "Y" ] || { echo "やめた"; exit 1; }
 
 echo "== 上げる"
-"${RSYNC[@]}" --stats dist/ "$HOST:$DEST" | grep -E "Number of (regular )?files transferred|Number of deleted files|Total transferred file size"
+"${RSYNC[@]}" dist/ "$HOST:$DEST"
 echo "== 終わり：https://hirakata.pronama.jp/"
