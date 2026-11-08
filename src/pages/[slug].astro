@@ -29,6 +29,7 @@ const cover = d.cover ? photo(entry.id, d.cover) : undefined;
   path={articlePath(entry.id)}
   article={{ published: d.published, modified: d.updated }}
   image={cover?.large.src}
+  source={`content/articles/${entry.id}.md`}
 >
   <article class="entry">
     <header class="entry-header">

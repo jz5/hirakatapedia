@@ -21,15 +21,35 @@ interface Props {
   image?: string;
   /** 右の列（サイドバー）なしの、広い 1 列。表の大きいページ（SNS・データ）に使う */
   wide?: boolean;
+  /** このページのもとになっているファイル（リポジトリの中のパス）。フッターの GitHub のアイコンを、そのファイルの変更の履歴へのリンクにする */
+  source?: string;
 }
 
-const { title, description, path, article, noindex = false, image, wide = false } = Astro.props;
+const { title, description, path, article, noindex = false, image, wide = false, source } = Astro.props;
 const hasToc = Astro.slots.has("toc");
 
 const fullTitle = title ? `${title} | ${SITE.title}` : `${SITE.title}（${SITE.reading}）`;
 const desc = description || SITE.description;
 const canonical = new URL(path, SITE.url).href;
-// フッターの GitHub のアイコン（Font Awesome Free、Icons: CC BY 4.0）
+// フッターの GitHub のアイコン。ページのもとのファイルが分かれば、そのファイルの変更の履歴へ、分からなければリポジトリへ
+const REPO = "https://github.com/jz5/hirakatapedia";
+const SOURCES: Record<string, string> = {
+  "/": "src/pages/index.astro",
+  "/about/": "src/pages/about.astro",
+  "/privacy/": "src/pages/privacy.astro",
+  "/license/": "src/pages/license.astro",
+  "/sns/": "content/data/sns.yaml",
+  "/gallery/": "src/pages/gallery/index.astro",
+  "/gallery/contribute/": "src/pages/gallery/contribute.astro",
+  "/data/": "src/pages/data/index.astro",
+  "/data/gomi/": "src/pages/data/gomi.astro",
+  "/data/city/": "src/pages/data/city.astro",
+  "/data/links/": "src/pages/data/links.astro",
+};
+const sourceFile = source ?? SOURCES[path];
+const githubUrl = sourceFile ? `${REPO}/commits/main/${sourceFile}` : REPO;
+const githubLabel = sourceFile ? "GitHub（このページの変更の履歴）" : "GitHub（記事とプログラム）";
+// アイコンは Font Awesome Free（Icons: CC BY 4.0）
 const github = { viewBox: githubSvg.match(/viewBox="([^"]+)"/)![1], d: githubSvg.match(/<path d="([^"]+)"/)![1] };
 
 const jsonLd = article
@@ -120,7 +140,7 @@ const jsonLd = article
           <a href="/about/">このサイトについて</a>
           <a href="/privacy/">プライバシーポリシー</a>
           <a href="/license/">ライセンス</a>
-          <a href="https://github.com/jz5/hirakatapedia" class="footer-github" aria-label="GitHub（記事とプログラム）" title="GitHub（記事とプログラム）"><svg viewBox={github.viewBox} aria-hidden="true" focusable="false"><path d={github.d} /></svg></a>
+          <a href={githubUrl} class="footer-github" aria-label={githubLabel} title={githubLabel}><svg viewBox={github.viewBox} aria-hidden="true" focusable="false"><path d={github.d} /></svg></a>
         </p>
         {/* 年は毎年直すのを忘れるのでビルド時に入れる */}
         <p class="copyright">© {new Date().getFullYear() > 2026 ? `2026-${new Date().getFullYear()}` : "2026"} {OPERATOR.nameEn}</p>

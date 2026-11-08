@@ -27,6 +27,7 @@ const title = `写真ギャラリー：${d.title}`;
   description={`記事「${d.title}」に関係する写真 ${photos.length}枚。Wikimedia Commons の自由なライセンスの写真で、条件を守ればだれでも使えます。`}
   path={galleryPath(entry.id)}
   image={photos[0].large.src}
+  source={`content/galleries/${entry.id}.yaml`}
 >
   <article class="entry">
     <header class="entry-header">
