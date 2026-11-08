@@ -1,0 +1,49 @@
+---
+/**
+ * このページを SNS で共有するボタン（右の列）。記念日ラボ（anniv.pronama.jp）と同じ 5 つ。
+ * アイコン：Font Awesome Free（Icons: CC BY 4.0）。Misskey は misskey-dev/assets の mi.svg（CC BY-SA 4.0）を色だけ変えて使う。
+ * 表示は /license/ に書いている
+ */
+import xSvg from "@fortawesome/fontawesome-free/svgs/brands/x-twitter.svg?raw";
+import mastodonSvg from "@fortawesome/fontawesome-free/svgs/brands/mastodon.svg?raw";
+import blueskySvg from "@fortawesome/fontawesome-free/svgs/brands/bluesky.svg?raw";
+import threadsSvg from "@fortawesome/fontawesome-free/svgs/brands/threads.svg?raw";
+
+interface Props {
+  title: string;
+  url: string;
+}
+const { title, url } = Astro.props;
+const icon = (svg: string) => ({
+  viewBox: svg.match(/viewBox="([^"]+)"/)![1],
+  d: [...svg.matchAll(/<path d="([^"]+)"/g)].map((m) => m[1]).join(" "),
+});
+const q = (o: Record<string, string>) => new URLSearchParams(o).toString();
+const text = `${title}\n${url}`;
+const items = [
+  { name: "X", href: `https://x.com/intent/post?${q({ text: title, url })}`, svg: icon(xSvg) },
+  { name: "Misskey", href: `https://misskey-hub.net/share/?${q({ text, visibility: "public", localOnly: "0" })}`, mi: true },
+  { name: "Mastodon", href: `https://pronama.jp/share-to-mastodon.html?${q({ text })}`, svg: icon(mastodonSvg) },
+  { name: "Bluesky", href: `https://bsky.app/intent/compose?${q({ text })}`, svg: icon(blueskySvg) },
+  { name: "Threads", href: `https://www.threads.net/intent/post?${q({ text })}`, svg: icon(threadsSvg) },
+];
+---
+
+<section class="share" aria-label="このページを共有">
+  <p class="share-title">このページを共有</p>
+  <ul class="share-list">
+    {
+      items.map((it) => (
+        <li>
+          <a href={it.href} target="_blank" rel="noopener" aria-label={`${it.name}で共有`} title={`${it.name}で共有`}>
+            {it.mi ? (
+              <span class="share-mi" aria-hidden="true" />
+            ) : (
+              <svg viewBox={it.svg!.viewBox} aria-hidden="true" focusable="false"><path d={it.svg!.d} /></svg>
+            )}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>

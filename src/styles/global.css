@@ -208,7 +208,7 @@ button { font: inherit; color: inherit; }
   line-height: 1.7;
 }
 .site-footer p { margin: 0 0 var(--sp-2); }
-.footer-links { display: flex; flex-wrap: wrap; gap: var(--sp-4); }
+.footer-links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-4); }
 .site-footer a { color: var(--mut); text-decoration: none; }
 .site-footer a:hover { color: var(--accent); text-decoration: underline; }
 .copyright { font-variant-numeric: tabular-nums; }
@@ -286,6 +286,21 @@ button { font: inherit; color: inherit; }
 .wanted p { margin: 0; }
 .wanted .wanted-title { margin-bottom: var(--sp-1); font-weight: 700; color: var(--fg-strong); }
 .wanted .wanted-more { margin-top: var(--sp-2); }
+
+/* このページを共有（右の列）。記念日ラボと同じく、淡い色の角丸にアイコンだけ */
+.share { flex: none; }
+.share .share-title { margin: 0 0 var(--sp-2); font-size: .8125rem; font-weight: 700; letter-spacing: .12em; color: var(--mut); }
+.share-list { list-style: none; margin: 0; padding: 0; display: flex; gap: 6px; }
+.share-list a {
+  display: grid; place-items: center; width: 34px; height: 34px; border-radius: var(--radius);
+  color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+.share-list a:hover { background: color-mix(in srgb, var(--accent) 22%, transparent); }
+.share-list svg { width: 16px; height: 16px; fill: currentColor; }
+.share-mi { display: block; width: 18px; height: 13px; background: currentColor; -webkit-mask: url(/icons/misskey-mi.svg) center / contain no-repeat; mask: url(/icons/misskey-mi.svg) center / contain no-repeat; }
+/* フッターの GitHub */
+.footer-github { display: inline-flex; align-items: center; }
+.footer-github svg { width: 16px; height: 16px; fill: currentColor; }
 
 /* ホームの右の列：写真・データ・SNS のカード */
 .side-cards { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-2); }

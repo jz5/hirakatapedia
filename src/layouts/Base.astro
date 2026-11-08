@@ -2,6 +2,7 @@
 import { SITE, LICENSE, OPERATOR, AUTHOR } from "../lib/site";
 import ThemeSelect from "../components/ThemeSelect.astro";
 import Sidebar from "../components/Sidebar.astro";
+import githubSvg from "@fortawesome/fontawesome-free/svgs/brands/github.svg?raw";
 import Analytics from "../components/Analytics.astro";
 // 本文の書体（LINE Seed JP）。自分のサーバーから配る（Google Fonts から読まない）
 import "@fontsource/line-seed-jp/400.css";
@@ -28,6 +29,8 @@ const hasToc = Astro.slots.has("toc");
 const fullTitle = title ? `${title} | ${SITE.title}` : `${SITE.title}（${SITE.reading}）`;
 const desc = description || SITE.description;
 const canonical = new URL(path, SITE.url).href;
+// フッターの GitHub のアイコン（Font Awesome Free、Icons: CC BY 4.0）
+const github = { viewBox: githubSvg.match(/viewBox="([^"]+)"/)![1], d: githubSvg.match(/<path d="([^"]+)"/)![1] };
 
 const jsonLd = article
   ? {
@@ -105,7 +108,7 @@ const jsonLd = article
       <main id="main" class="layout-main">
         <slot />
       </main>
-      {!wide && <Sidebar home={path === "/"}>{hasToc && <slot name="toc" />}</Sidebar>}
+      {!wide && <Sidebar home={path === "/"} shareTitle={fullTitle} shareUrl={canonical}>{hasToc && <slot name="toc" />}</Sidebar>}
     </div>
 
     <footer class="site-footer">
@@ -117,6 +120,7 @@ const jsonLd = article
           <a href="/about/">このサイトについて</a>
           <a href="/privacy/">プライバシーポリシー</a>
           <a href="/license/">ライセンス</a>
+          <a href="https://github.com/jz5/hirakatapedia" class="footer-github" aria-label="GitHub（記事とプログラム）" title="GitHub（記事とプログラム）"><svg viewBox={github.viewBox} aria-hidden="true" focusable="false"><path d={github.d} /></svg></a>
         </p>
         {/* 年は毎年直すのを忘れるのでビルド時に入れる */}
         <p class="copyright">© {new Date().getFullYear() > 2026 ? `2026-${new Date().getFullYear()}` : "2026"} {OPERATOR.nameEn}</p>

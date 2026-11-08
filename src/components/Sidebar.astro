@@ -1,6 +1,7 @@
 ---
 import { popularArticles, articlePath } from "../lib/articles";
 import { photos, thumbSrc } from "../lib/gallery";
+import ShareButtons from "./ShareButtons.astro";
 
 /**
  * 右のサイドメニュー。よく読まれている記事。記事の一覧はホームにある。
@@ -11,8 +12,11 @@ import { photos, thumbSrc } from "../lib/gallery";
  */
 interface Props {
   home?: boolean;
+  /** 共有ボタンに使う、ページの題名と URL */
+  shareTitle: string;
+  shareUrl: string;
 }
-const { home = false } = Astro.props;
+const { home = false, shareTitle, shareUrl } = Astro.props;
 const popular = await popularArticles(5);
 // 写真のカードに並べる小さい写真（撮影日の新しいものから、位置情報のあるもの 3 枚）
 const strip = home ? photos.filter((p) => p.lat !== null).slice(0, 3) : [];
@@ -60,6 +64,7 @@ const strip = home ? photos.filter((p) => p.lat !== null).slice(0, 3) : [];
 
   <div class="side-sticky">
     {Astro.slots.has("default") && <div class="side-toc"><slot /></div>}
+    <ShareButtons title={shareTitle} url={shareUrl} />
     <section class="wanted">
       <p class="wanted-title">枚方の写真を公開しませんか</p>
       <p>
