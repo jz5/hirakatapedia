@@ -1,0 +1,10 @@
+---
+/** SNS のアイコンの定義（<symbol>）。ページに 1 回だけ置き、SnsIcon で <use> する */
+import { ICONS } from "../lib/sns-icons";
+---
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  {Object.entries(ICONS).map(([k, i]) => (
+    <symbol id={`sns-${k}`} viewBox={i.viewBox}><path d={i.d} /></symbol>
+  ))}
+</svg>

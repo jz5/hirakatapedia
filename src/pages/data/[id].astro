@@ -1,0 +1,63 @@
+---
+/**
+ * データ 1 つのページ（/data/aed/ など）。ごみは専用のページ（gomi.astro）。
+ * 中身は public/opendata/<id>.json、説明と関連リンクは src/lib/datasets.ts
+ */
+import Base from "../../layouts/Base.astro";
+import DataViewer from "../../components/DataViewer.astro";
+import { datasets, PAGES, dataPath, jaDay, type Meta } from "../../lib/datasets";
+import type { GetStaticPaths } from "astro";
+import { charts } from "../../lib/chart-defs.mjs";
+const chart = (n: string) => (charts as Record<string, () => string>)[n]();
+
+export const getStaticPaths = (() =>
+  datasets.filter((d) => d.id !== "gomi").map((d) => ({ params: { id: d.id }, props: { d } }))) satisfies GetStaticPaths;
+
+const { d } = Astro.props as { d: Meta };
+const p = PAGES[d.id] ?? { lead: d.title, links: [] };
+const placeholder = `${d.search.filter((c) => c !== "読み").join("・")}で検索`;
+---
+
+<Base wide title={`${d.title}（枚方市）`} description={p.lead} path={dataPath(d.id)}>
+  <article class="entry">
+    <header class="entry-header">
+      <p class="gallery-back"><a href="/data/">← 枚方のデータ</a></p>
+      <h1>{d.title}</h1>
+      <p class="entry-meta">データ取得日 <time datetime={d.fetched}>{jaDay(d.fetched)}</time></p>
+    </header>
+
+    <div class="entry-body">
+      <p>{p.lead}</p>
+      {p.examples && (
+        <p class="data-examples-line">
+          例：{p.examples.map((e) => (
+            <button type="button" class="data-example" data-example-q={e.q} data-example-sort={e.sort?.join(":")}>{e.label}</button>
+          ))}
+        </p>
+      )}
+      <p class="data-hint">表の見出しを押すと、その列で並べ替えられます（もう一度押すと逆の順）。</p>
+
+      <DataViewer d={d} placeholder={placeholder} />
+
+      {p.charts?.map((n) => (
+        <div class="data-graph">
+          <Fragment set:html={chart(n)} />
+          <p class="data-src">
+            出典：このグラフは、以下の著作物を改変して利用しています。<a href={d.page}>{d.credit}</a>、枚方市、<a href="https://creativecommons.org/licenses/by/2.1/jp/">クリエイティブ・コモンズ・ライセンス　表示 2.1</a>
+          </p>
+        </div>
+      ))}
+
+      {p.links.length > 0 && (
+        <section aria-labelledby="links-h">
+          <h2 id="links-h">関連リンク</h2>
+          <ul class="data-links">
+            {p.links.map((l) => (
+              <li><a href={l.url}>{l.title}</a>{l.note && <span>{l.note}</span>}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </div>
+  </article>
+</Base>

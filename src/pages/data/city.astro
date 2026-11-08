@@ -1,0 +1,118 @@
+---
+/**
+ * 市が公開しているデータの一覧（/data/city/）。
+ * 中身は content/data/opendata-catalog.json（python3 scripts/opendata-catalog.py で作る。
+ * 題名・説明・注意は content/data/opendata-pages.yaml に手で書く）
+ */
+import Base from "../../layouts/Base.astro";
+import catalog from "../../../content/data/opendata-catalog.json";
+import { dataPath } from "../../lib/datasets";
+
+// ページが消えたもの（status: gone）は出さない
+type Ds = (typeof catalog.datasets)[number];
+const list = (catalog.datasets as Ds[]).filter((d) => d.status !== "gone");
+/** 使える条件。CC BY は「自由に使える」、ND は「改変できない」、書いてないものは「記載なし」 */
+const terms = (d: Ds) => (/ND/.test(d.license ?? "") ? "nd" : d.license ? "by" : "none");
+const TERMS = { by: "オープンデータ（CC BY）", nd: "改変できない（CC BY-ND）", none: "利用条件の記載なし" } as const;
+const cats = [...new Set(list.map((d) => d.category))];
+const formatsOf = (d: Ds) => [...new Set((d.files ?? []).map((f) => f.format))].filter(Boolean);
+const ymd = (s?: string | null) => (s ? s.replace(/-/g, "/") : "");
+/** 1 ページのファイルが多いとき（月ごと・章ごと）は、開いたときに見える一覧を短く */
+const FILES_MAX = 12;
+const description = `枚方市がサイトで公開しているデータ（CSV・Excel・PDF）${list.length} 件の一覧。分野・利用条件・形式で絞り込め、ファイルを直接開ける。`;
+---
+
+<Base title="市が公開しているデータ" description={description} path="/data/city/">
+  <article class="entry">
+    <header class="entry-header">
+      <p class="gallery-back"><a href="/data/">← 枚方のデータ</a></p>
+      <h1>市が公開しているデータ</h1>
+      <p class="entry-meta">調査日 <time datetime={catalog.generated}>{ymd(catalog.generated)}</time></p>
+    </header>
+
+    <div class="entry-body">
+        <p>
+          枚方市のサイトでデータ（CSV・Excel・PDF など）を置いているページの一覧です。市のオープンデータのページに載っているものに、統計・財政・防災のページを足しました。題名を押すと市のページが開きます。<strong>オープンデータ（CC BY）</strong>のものは、出典を書けば自由に使えます（<a href="https://www.city.hirakata.osaka.jp/0000017270.html">市の「オープンデータについて」</a>）。<strong>利用条件の記載なし</strong>のものは、市のサイトの決まり（<a href="https://www.city.hirakata.osaka.jp/0000010379.html">著作権・リンク等について</a>）が当てはまるとみられます。
+        </p>
+
+        <form class="filter" role="search" aria-label="一覧の絞り込み" data-cat-filter>
+          <label class="filter-search">
+            <span class="visually-hidden">一覧を検索</span>
+            <input type="search" name="q" placeholder="データ名で検索（例：人口、AED、駐輪場）" autocomplete="off" />
+          </label>
+          <div class="data-filters">
+            <label>分野
+              <select name="cat"><option value="">すべて</option>{cats.map((c) => <option value={c}>{c}</option>)}</select>
+            </label>
+            <label>利用条件
+              <select name="terms"><option value="">すべて</option>{Object.entries(TERMS).map(([k, v]) => <option value={k}>{v}</option>)}</select>
+            </label>
+            <label>形式
+              <select name="fmt"><option value="">すべて</option>{["CSV", "XLSX", "XLS", "XLSM", "PDF", "ZIP"].map((f) => <option value={f}>{f}</option>)}</select>
+            </label>
+          </div>
+          <p class="filter-count" aria-live="polite" data-cat-count></p>
+        </form>
+
+        <ul class="od-list">
+          {list.map((d) => (
+            <li class="od-item" data-cat-item data-cat={d.category} data-terms={terms(d)} data-fmt={formatsOf(d).join(" ")} data-text={`${d.title} ${d.desc ?? ""} ${d.category} ${d.cityTitle ?? ""}`}>
+              <p class="od-title">
+                <a href={d.page}>{d.title}</a>
+                {d.view && <a class="od-view" href={dataPath(d.view)}>{d.view === "gomi" ? "このサイトで検索" : "このサイトで表と地図"} →</a>}
+              </p>
+              {d.desc && <p class="od-desc">{d.desc}</p>}
+              {d.note && <p class="od-note">{d.note}</p>}
+              <p class="od-meta">
+                <span class={`od-terms od-terms-${terms(d)}`}>{TERMS[terms(d)]}</span>
+                <span>{d.category}</span>
+                {d.updated && <span>市のページの更新 {ymd(d.updated)}</span>}
+              </p>
+              {(d.files ?? []).length > 0 && (
+                <details class="od-files">
+                  <summary>ファイル {d.files.length} 件{formatsOf(d).map((f) => <span class="od-fmt">{f}</span>)}</summary>
+                  <ul>
+                    {d.files.slice(0, FILES_MAX).map((f) => (
+                      <li><a href={f.url}>{f.label ?? f.url.split("/").pop()}</a><span class="od-fmt">{f.format}</span>{f.size && <span class="od-size">{f.size}</span>}</li>
+                    ))}
+                    {d.files.length > FILES_MAX && <li class="od-more">ほか {d.files.length - FILES_MAX} 件は<a href={d.page}>市のページ</a>で</li>}
+                  </ul>
+                </details>
+              )}
+            </li>
+          ))}
+        </ul>
+    </div>
+  </article>
+</Base>
+
+<script>
+
+  // 一覧の絞り込み
+  const form = document.querySelector<HTMLFormElement>("[data-cat-filter]");
+  const items = [...document.querySelectorAll<HTMLElement>("[data-cat-item]")];
+  const count = document.querySelector<HTMLElement>("[data-cat-count]");
+  const norm = (s: string) => s.normalize("NFKC").toLowerCase().replace(/\s+/g, "");
+  const apply = () => {
+    if (!form) return;
+    const fd = new FormData(form);
+    const q = norm(String(fd.get("q") ?? ""));
+    const cat = String(fd.get("cat") ?? "");
+    const terms = String(fd.get("terms") ?? "");
+    const fmt = String(fd.get("fmt") ?? "");
+    let n = 0;
+    for (const el of items) {
+      const ok =
+        (!q || norm(el.dataset.text ?? "").includes(q)) &&
+        (!cat || el.dataset.cat === cat) &&
+        (!terms || el.dataset.terms === terms) &&
+        (!fmt || (el.dataset.fmt ?? "").split(" ").includes(fmt));
+      el.hidden = !ok;
+      if (ok) n++;
+    }
+    if (count) count.textContent = n === items.length ? `${n} 件` : `${n} 件（全 ${items.length} 件）`;
+  };
+  form?.addEventListener("input", apply);
+  form?.addEventListener("submit", (e) => e.preventDefault());
+  apply();
+</script>

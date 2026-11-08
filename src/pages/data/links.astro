@@ -1,0 +1,28 @@
+---
+/** 国・府などのデータ（/data/links/）。中身は content/data/opendata-pages.yaml の external（リンクだけ） */
+import Base from "../../layouts/Base.astro";
+import catalog from "../../../content/data/opendata-catalog.json";
+const description = "枚方市のことが分かる、国・大阪府などのデータ（e-Stat、RESAS、国土数値情報、ハザードマップなど）の一覧。";
+---
+
+<Base title="国・府などのデータ" description={description} path="/data/links/">
+  <article class="entry">
+    <header class="entry-header">
+      <p class="gallery-back"><a href="/data/">← 枚方のデータ</a></p>
+      <h1>国・府などのデータ</h1>
+    </header>
+
+    <div class="entry-body">
+        <p>枚方市のことが分かる、国や大阪府のデータです。ほかの市と比べるときは、こちらのほうが同じ形でそろっています。</p>
+        <ul class="od-list">
+          {catalog.external.map((x) => (
+            <li class="od-item">
+              <p class="od-title"><a href={x.url}>{x.title}</a></p>
+              {x.desc && <p class="od-desc">{x.desc}</p>}
+              <p class="od-meta"><span>{x.publisher}</span></p>
+            </li>
+          ))}
+        </ul>
+    </div>
+  </article>
+</Base>

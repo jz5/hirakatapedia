@@ -605,3 +605,340 @@ button { font: inherit; color: inherit; }
 .admin .task-list-item { margin-bottom: var(--sp-2); }
 .admin .task-list-item input { margin-right: .4em; }
 .admin .task-list-item:has(> input:checked) { color: var(--mut); }
+
+/* =========================================================================
+   SNS の一覧（/sns/）とデータ（/data/）。記事ではない、調べもの用のページ
+   ========================================================================= */
+
+/* 絞り込みの欄 */
+.filter {
+  display: grid; gap: var(--sp-3);
+  padding: var(--sp-4); background: var(--bg-sub); border-radius: var(--radius);
+}
+.filter input[type="search"], .filter select, .filter-kaiha select, .data-tools input, .data-tools select {
+  width: 100%; font: inherit; font-size: .9375rem; color: var(--fg);
+  background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: var(--sp-2) var(--sp-3);
+}
+.filter input[type="search"]:focus, .data-tools input:focus, .data-tools select:focus, .filter-kaiha select:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 1px var(--accent); }
+.filter-types { display: flex; flex-wrap: wrap; gap: var(--sp-2); border: 0; margin: 0; padding: 0; }
+.entry-body .filter-count { margin: 0; font-size: .8125rem; line-height: 1.4; color: var(--mut); font-variant-numeric: tabular-nums; }
+.filter-empty { color: var(--mut); }
+
+/* 押すと色が付くボタン（チェックボックス） */
+.chip-toggle { position: relative; cursor: pointer; font-size: .8125rem; }
+.chip-toggle input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.chip-toggle span {
+  display: inline-block; padding: 3px 10px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--bg); color: var(--fg); line-height: 1.6;
+}
+.chip-toggle input:checked + span { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.chip-toggle input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.filter-kaiha { display: flex; align-items: center; gap: var(--sp-2); font-size: .875rem; white-space: nowrap; }
+.filter-kaiha select { width: auto; max-width: 100%; }
+
+/* アカウントへのリンク */
+.entry-body .acc-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-2); }
+.entry-body .acc-list li { margin: 0; display: inline-flex; align-items: baseline; gap: 4px; flex-wrap: wrap; }
+.acc {
+  display: inline-flex; align-items: baseline; gap: 6px;
+  padding: 2px 9px; border: 1px solid var(--line); border-radius: var(--radius);
+  font-size: .8125rem; line-height: 1.6; text-decoration: none; color: var(--fg-strong); background: var(--bg);
+}
+.acc:hover { border-color: var(--accent); color: var(--accent); }
+.acc { align-items: center; }
+/* 議員の表はアイコンだけ。押しやすい大きさに */
+.acc-only { width: 32px; height: 32px; padding: 0; justify-content: center; box-sizing: border-box; }
+.acc-only .sns-icon { width: 17px; height: 17px; }
+
+/* SNS のアイコン（Font Awesome Free）。色は各サービスのブランドの色。黒いものは文字の色 */
+.sns-icon { width: 1.05em; height: 1.05em; flex: none; fill: currentColor; vertical-align: -.15em; }
+.sns-icon-instagram { fill: #e1306c; }
+.sns-icon-facebook { fill: #0866ff; }
+.sns-icon-youtube { fill: #ff0033; }
+.sns-icon-line { fill: #06c755; }
+.sns-icon-bluesky { fill: #1185fe; }
+.sns-icon-note, .sns-icon-blog, .sns-icon-site, .sns-icon-app, .sns-icon-mail { fill: var(--mut); }
+.chip-toggle span { display: inline-flex; align-items: center; gap: 5px; }
+/* 選んだボタンの中は白抜き */
+.chip-toggle input:checked + span .sns-icon { fill: currentColor; }
+.sns-stats-label { display: inline-flex; align-items: center; gap: 6px; }
+.acc-handle { color: var(--mut); font-size: .75rem; overflow-wrap: anywhere; }
+.acc-note { font-size: .75rem; color: var(--mut); }
+.acc-none { font-size: .8125rem; color: var(--mut-soft); }
+
+/* 公式・民間のアカウントのカード */
+.entry-body .sns-cards { list-style: none; padding: 0; display: grid; gap: var(--sp-3); grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.entry-body .sns-card { margin: 0; padding: var(--sp-3) var(--sp-4); border: 1px solid var(--line); border-radius: var(--radius); display: flex; flex-direction: column; gap: var(--sp-1); }
+.entry-body .sns-card p { margin: 0; }
+.sns-card-name { font-weight: 700; color: var(--fg-strong); line-height: 1.5; }
+.sns-card-op, .sns-card-note, .sns-card-src { font-size: .75rem; color: var(--mut); line-height: 1.5; }
+.entry-body .sns-card-about { font-size: .8125rem; line-height: 1.6; margin-bottom: var(--sp-1); }
+.entry-body .sns-card .acc-list { margin-top: auto; padding-top: var(--sp-1); }
+.sns-card[hidden], .sns-section[hidden] { display: none; }
+
+/* 表（議員・データ）。表の中でスクロール */
+.table-wrap { overflow-x: auto; max-width: 100%; }
+.entry-body .table-wrap > table { display: table; }
+.entry-body .giin-table td:first-child { white-space: normal; min-width: 7em; }
+.giin-kana { display: block; font-size: .6875rem; font-weight: 400; color: var(--mut); }
+.giin-kaiha { font-size: .8125rem; min-width: 6em; }
+.entry-body .giin-note { margin: var(--sp-1) 0 0; font-size: .75rem; color: var(--mut); line-height: 1.5; }
+tr[hidden] { display: none; }
+
+/* 議員が使っている SNS の人数（横棒） */
+.sns-stats { padding: var(--sp-3) var(--sp-4); border: 1px solid var(--line); border-radius: var(--radius); }
+.entry-body .sns-stats-title { margin: 0 0 var(--sp-2); font-size: .875rem; font-weight: 700; color: var(--fg-strong); }
+.entry-body .sns-stats ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.entry-body .sns-stats li { margin: 0; display: grid; grid-template-columns: 6.5em 1fr 3.5em; align-items: center; gap: var(--sp-3); font-size: .8125rem; }
+.sns-stats-bar { height: 12px; background: var(--line-soft); border-radius: 2px; overflow: hidden; }
+.sns-stats-bar > span { display: block; height: 100%; background: var(--chart-1); }
+.sns-stats-none .sns-stats-bar > span { background: var(--mut-soft); }
+.sns-stats-n { text-align: right; font-variant-numeric: tabular-nums; color: var(--mut); }
+
+/* --- データのページ（/data/） --- */
+.data-tabs { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-bottom: var(--sp-3); }
+.data-tabs button {
+  display: inline-flex; align-items: baseline; gap: 6px;
+  padding: 6px 12px; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--bg); color: var(--fg); font-size: .875rem; cursor: pointer; line-height: 1.5;
+}
+.data-tabs button:hover { border-color: var(--accent); color: var(--accent); }
+.data-tabs button[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 700; }
+.data-tab-n { font-size: .6875rem; opacity: .75; font-variant-numeric: tabular-nums; font-weight: 400; }
+.entry-body .data-panel > * { margin-block: 0 var(--sp-3); }
+.data-tools { display: grid; gap: var(--sp-3); padding: var(--sp-4); background: var(--bg-sub); border-radius: var(--radius); }
+.data-filters { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2) var(--sp-4); font-size: .875rem; }
+.data-filters:empty { display: none; }
+.data-filters > label:not(.chip-toggle) { display: inline-flex; align-items: center; gap: var(--sp-2); }
+.data-filters select { width: auto; max-width: 14em; font: inherit; font-size: .875rem; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 4px var(--sp-2); }
+.data-bar { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); }
+.entry-body .data-count { margin: 0; font-size: .8125rem; color: var(--mut); font-variant-numeric: tabular-nums; }
+.data-mapbtn, .data-more {
+  font-size: .8125rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: var(--radius);
+  background: var(--bg); color: var(--accent); cursor: pointer;
+}
+.data-mapbtn[aria-pressed="true"] { background: var(--accent); color: var(--bg); }
+.data-more-wrap { text-align: center; }
+.data-map { height: min(60vh, 460px); border-radius: var(--radius); border: 1px solid var(--line); z-index: 0; }
+.data-map[hidden] { display: none; }
+.data-table-wrap { max-height: 70vh; overflow: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+.entry-body .data-table { font-size: .8125rem; display: table; width: max-content; min-width: 100%; }
+/* 文字の列は細くなりすぎないように。表が広くなったら横にスクロール */
+.entry-body .data-table td.t-text { min-width: 7em; max-width: 18em; }
+.entry-body .data-table td.t-long { min-width: 16em; max-width: 28em; }
+.entry-body .data-table th { position: sticky; top: 0; background: var(--bg); z-index: 1; padding: 0; }
+.entry-body .data-table th:last-child:not(:has(button)) { padding: var(--sp-2) var(--sp-3); }
+.data-table th button {
+  all: unset; box-sizing: border-box; display: flex; gap: 4px; width: 100%; padding: var(--sp-2) var(--sp-3);
+  cursor: pointer; font-weight: 700; white-space: nowrap;
+}
+.data-table th button:hover { color: var(--accent); }
+.data-table th button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.sort-mark { font-size: .625rem; color: var(--accent); align-self: center; }
+.entry-body .data-table td:first-child { font-weight: 600; white-space: normal; min-width: 8em; }
+.entry-body .data-table .t-num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.entry-body .data-table .t-flag { text-align: center; }
+.entry-body .data-table .t-long { min-width: 16em; color: var(--mut); }
+.data-credit, .data-note { font-size: .75rem; line-height: 1.6; color: var(--mut); }
+.entry-body .data-credit p { margin: 0 0 var(--sp-1); }
+.entry-body .data-note { color: var(--fg); }
+/* 地図のふきだしの文字を本文の書体に */
+.leaflet-container { font-family: var(--sans); }
+.leaflet-popup-content { font-size: .8125rem; line-height: 1.6; }
+
+/* 市のデータの一覧 */
+.entry-body .od-list { list-style: none; padding: 0; }
+.entry-body .od-item { margin: 0; padding-block: var(--sp-3); border-bottom: 1px solid var(--line); }
+.entry-body .od-item[hidden] { display: none; }
+.entry-body .od-item p { margin: 0; }
+.od-title { font-weight: 700; line-height: 1.5; }
+.od-meta { display: flex; flex-wrap: wrap; gap: 2px var(--sp-3); font-size: .75rem; color: var(--mut); margin-top: 2px !important; }
+.od-fmt { font-family: var(--mono); font-size: .6875rem; padding: 0 5px; border: 1px solid var(--line); border-radius: 2px; }
+.od-terms { font-weight: 700; }
+.od-terms-by { color: var(--accent); }
+.od-terms-nd { color: var(--chart-2); }
+.od-desc { font-size: .8125rem; line-height: 1.6; margin-top: var(--sp-1) !important; }
+
+/* ドロップダウン。矢印を自前で描いて、右に余白を取る */
+.filter select, .filter-kaiha select, .data-filters select {
+  -webkit-appearance: none; appearance: none;
+  padding-right: 2em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%2379838b' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .65em center;
+  background-size: .7em auto;
+  cursor: pointer;
+}
+/* 会派のドロップダウンは、上の棒グラフとの間を空ける */
+.filter-kaiha { margin: var(--sp-4) 0 var(--sp-3); }
+
+/* データの入口（/data/）のカード */
+.entry-body .data-cards { list-style: none; padding: 0; display: grid; gap: var(--sp-3); grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.entry-body .data-cards li { margin: 0; }
+.data-cards a {
+  display: flex; flex-direction: column; gap: var(--sp-1); height: 100%; box-sizing: border-box;
+  padding: var(--sp-3) var(--sp-4); border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; color: var(--fg);
+}
+.data-cards a:hover { border-color: var(--accent); background: var(--bg-sub); }
+.data-card-title { display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-2); font-weight: 700; color: var(--fg-strong); }
+.data-cards a:hover .data-card-title { color: var(--accent); }
+.data-card-n { font-size: .75rem; font-weight: 400; color: var(--mut); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.data-card-desc { font-size: .8125rem; line-height: 1.6; }
+.data-card-meta { margin-top: auto; font-size: .75rem; color: var(--mut); }
+
+/* データのページ：例のボタン、関連リンク、出典 */
+.entry-body .data-examples { list-style: none; padding: 0; font-size: .875rem; color: var(--mut); }
+.data-examples button, .data-example {
+  font-size: .8125rem; padding: 2px 10px; margin-right: 6px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--bg); color: var(--accent); cursor: pointer;
+}
+.data-examples button:hover, .data-example:hover { border-color: var(--accent); }
+.entry-body .data-examples-line { font-size: .875rem; color: var(--mut); display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.entry-body .data-examples-line .data-example { margin: 0; }
+.entry-body .data-links { list-style: none; padding: 0; }
+.entry-body .data-links li { margin: 0; padding-block: var(--sp-2); border-bottom: 1px solid var(--line-soft); line-height: 1.6; }
+.data-links li > span { display: block; font-size: .8125rem; color: var(--mut); }
+.entry-body .data-src { font-size: .75rem; color: var(--mut); }
+.data-empty { color: var(--mut); padding: var(--sp-4) 0; }
+
+/* ごみの一覧 */
+.entry-body .gomi-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+.entry-body .gomi-list li { margin: 0; padding: var(--sp-3) 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; gap: 2px var(--sp-3); }
+.entry-body .gomi-list p { margin: 0; }
+.gomi-name { font-weight: 700; color: var(--fg-strong); line-height: 1.5; }
+.gomi-kind { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px; }
+.gomi-kind a { font-size: .75rem; padding: 1px 8px; border-radius: 999px; background: var(--mark); color: var(--fg-strong); white-space: nowrap; text-decoration: none; }
+.gomi-kind a:hover { text-decoration: underline; }
+.entry-body .data-hint-top { font-size: .8125rem; color: var(--mut); }
+.gomi-note { grid-column: 1 / -1; font-size: .8125rem; line-height: 1.6; color: var(--mut); }
+.entry-body .gomi-kinds dt { font-weight: 700; color: var(--fg-strong); margin-top: var(--sp-4); }
+.entry-body .gomi-kinds dd { margin: var(--sp-1) 0 0; line-height: 1.8; }
+.entry-body .data-search input { font-size: 1rem; }
+.gomi-note a { overflow-wrap: anywhere; }
+
+/* --- 広い 1 列（右の列なし。データ・写真のページ） ---
+   表・カード・地図も文章も横いっぱい（右の列の分を空けると、そこだけ抜けて見える）。絞り込みの箱だけ 720px まで */
+@media (min-width: 960px) {
+  .layout.layout-wide { grid-template-columns: minmax(0, 1fr); }
+}
+.layout-wide .entry-header,
+.layout-wide .entry-body > p,
+.layout-wide .entry-body > ul,
+.layout-wide .entry-body section > p,
+.layout-wide .entry-body section > ul,
+.layout-wide .entry-body section > dl { max-width: none; }
+.layout-wide .filter,
+.layout-wide .sns-stats { max-width: 720px; }
+.layout-wide .data-table-wrap { max-height: 75vh; }
+/* SNS の章（h2）と節（h3） */
+.sns-chapter[hidden] { display: none; }
+.entry-body .sns-chapter + .sns-chapter, .entry-body .sns-chapter + .filter-empty + section { margin-top: var(--sp-7); }
+.entry-body .sns-section { margin-top: var(--sp-6); }
+.entry-body .data-hint { font-size: .8125rem; color: var(--mut); margin-top: calc(-1 * var(--sp-3)); }
+/* 人口ピラミッド（charts.mjs の pyramidChart） */
+.chart-bar-s1 { fill: var(--chart-1); }
+.chart-bar-s2 { fill: var(--chart-2); }
+.entry-body .data-graph { margin-block: var(--sp-6); }
+.entry-body .data-graph .chart { margin: 0 0 var(--sp-2); }
+/* 市のデータの一覧：注意・ファイル・このサイトのページへのリンク */
+.od-view { margin-left: var(--sp-3); font-size: .8125rem; font-weight: 400; white-space: nowrap; }
+.entry-body .od-note { font-size: .8125rem; color: var(--chart-2); margin-top: 2px; }
+.od-files { margin-top: var(--sp-1); font-size: .8125rem; }
+.od-files summary { cursor: pointer; color: var(--mut); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.entry-body .od-files ul { list-style: none; padding: 0; margin: var(--sp-2) 0 0; }
+.entry-body .od-files li { margin: 0 0 4px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; line-height: 1.5; }
+.od-size { color: var(--mut-soft); font-size: .75rem; font-variant-numeric: tabular-nums; }
+.entry-body .od-files .od-more { color: var(--mut); }
+
+/* =========================================================================
+   枚方の写真（/gallery/）
+   ========================================================================= */
+.gallery-bar-right { display: inline-flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: var(--sp-2); }
+.gallery-bar-right .chip-toggle { font-size: .8125rem; }
+.gallery-bar-right select { width: auto; }
+.gallery-bar-right select { font: inherit; font-size: .8125rem; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 4px 2em 4px var(--sp-2);
+  -webkit-appearance: none; appearance: none; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%2379838b' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right .65em center; background-size: .7em auto; }
+/* 一覧の画像の大きさ（小・中・大・特大）。--tile は 1 行の高さのめやす（正方形のときは 1 枚の幅のめやす）。画像の解像度は同じ */
+.entry-body .gallery-grid-all { --tile: 130px; list-style: none; padding: 0; margin: var(--sp-4) 0 0; display: grid; gap: 6px; grid-template-columns: repeat(auto-fill, minmax(calc(var(--tile) * 1.2), 1fr)); }
+.entry-body .gallery-grid-all[data-size="s"] { --tile: 84px; }
+.entry-body .gallery-grid-all[data-size="l"] { --tile: 200px; }
+.entry-body .gallery-grid-all[data-size="xl"] { --tile: 300px; }
+.entry-body .gallery-grid-all[data-size="s"] .gallery-cap { display: none; }
+.entry-body .gallery-grid-all li { margin: 0; }
+.gallery-grid-all a { position: relative; display: block; aspect-ratio: 1; overflow: hidden; border-radius: var(--radius); background: var(--bg-sub); }
+.gallery-grid-all img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .2s; }
+.gallery-grid-all a:hover img { transform: scale(1.04); }
+/* 元の比率：1 行の高さをそろえて、写真の横幅を比率に合わせる（--r は 横÷縦）。最後の行は広げない */
+.entry-body .gallery-grid-all.is-ratio { display: flex; flex-wrap: wrap; }
+.entry-body .gallery-grid-all.is-ratio::after { content: ""; flex-grow: 999999; }
+.gallery-grid-all.is-ratio li { flex: calc(var(--r) * 100) 1 calc(var(--r) * var(--tile)); }
+.gallery-grid-all.is-ratio a { aspect-ratio: var(--r); }
+/* 年の見出し（一覧の横いっぱい） */
+.entry-body .gallery-grid-all li.gallery-year { grid-column: 1 / -1; flex: 0 0 100%; margin: var(--sp-4) 0 2px; }
+.entry-body .gallery-grid-all li.gallery-year:nth-child(2) { margin-top: 0; }
+/* 年の見出しの前の行を広げないための詰め物（元の比率のとき）。正方形のときは使わない */
+.entry-body .gallery-grid-all li.gallery-fill { display: none; }
+.entry-body .gallery-grid-all.is-ratio li.gallery-fill { display: block; flex: 999999 1 0; height: 0; margin: 0; }
+.entry-body .gallery-year h3 { margin: 0; font-size: 1rem; color: var(--fg-strong); }
+/* 説明は 2 行まで。行を切る箱（-t）と余白のある箱を分ける（同じ箱に padding を付けると、3 行目の頭が下の余白に見えてしまう） */
+.gallery-cap {
+  position: absolute; inset: auto 0 0 0; padding: 18px 8px 6px; font-size: .6875rem; line-height: 1.4; color: #fff;
+  background: linear-gradient(transparent, rgba(0,0,0,.65)); display: flex; flex-direction: column;
+  opacity: 0; transition: opacity .15s;
+}
+.gallery-cap-t { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
+.gallery-cap small { opacity: .8; font-size: inherit; }
+.gallery-grid-all a:hover .gallery-cap, .gallery-grid-all a:focus-visible .gallery-cap { opacity: 1; }
+@media (hover: none) { .gallery-cap { opacity: 1; } }
+@media (max-width: 520px) {
+  .entry-body .gallery-grid-all { gap: 3px; --tile: 80px; }
+  .entry-body .gallery-grid-all[data-size="s"] { --tile: 56px; }
+  .entry-body .gallery-grid-all[data-size="l"] { --tile: 130px; }
+  .entry-body .gallery-grid-all[data-size="xl"] { --tile: 220px; }
+  .gallery-cap { display: none; }
+}
+/* ページ送り */
+.entry-body .data-panel > .gallery-pager { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px; margin: var(--sp-6) 0 0; }
+.entry-body .data-panel > .gallery-pager:empty { display: none; }
+.gallery-pager button { font: inherit; font-size: .875rem; min-width: 2.4em; padding: 4px 10px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); color: var(--fg); cursor: pointer; font-variant-numeric: tabular-nums; }
+.gallery-pager button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.gallery-pager button[aria-current="page"] { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 700; }
+.gallery-pager button:disabled { opacity: .4; cursor: default; }
+.gallery-pager-gap { color: var(--mut); padding: 0 2px; }
+/* 地図：近い写真をまとめた印（枚数） */
+.gmap-cluster { display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--chart-2); color: #fff; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.35); font: 700 12px/1 system-ui, sans-serif; font-variant-numeric: tabular-nums; }
+.gmap-cluster span { pointer-events: none; }
+.gallery-map { height: min(72vh, 680px); }
+.gallery-pop { display: block; text-decoration: none; color: var(--fg); font-size: .75rem; line-height: 1.5; }
+.gallery-pop img { display: block; width: 200px; height: auto; border-radius: 2px; margin-bottom: 4px; }
+.gallery-pop-many { display: grid; grid-template-columns: repeat(2, 96px); gap: 6px; }
+.gallery-pop-many .gallery-pop { font-size: .6875rem; line-height: 1.35; }
+.gallery-pop-many .gallery-pop img { width: 96px; height: 72px; object-fit: cover; }
+.gallery-pop-many .gallery-pop span { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.gallery-pop-more { margin: 6px 0 0; font-size: .75rem; color: var(--mut); }
+.entry-body .gallery-about { margin-top: var(--sp-7); }
+
+/* 写真 1 枚のページ */
+.gphoto-figure { margin: 0 0 var(--sp-5); }
+.gphoto-figure img { display: block; width: auto; max-width: 100%; max-height: 80vh; height: auto; margin: 0 auto; border-radius: var(--radius); background: var(--bg-sub); }
+.entry-body .gphoto-meta { display: grid; grid-template-columns: 7em 1fr; gap: var(--sp-2) var(--sp-4); font-size: .875rem; }
+.entry-body .gphoto-meta dt { color: var(--mut); }
+.entry-body .gphoto-meta dd { margin: 0; overflow-wrap: anywhere; }
+.entry-body .gphoto-use { font-size: .8125rem; line-height: 1.7; }
+.entry-body .gphoto-use p { margin: 0; }
+.entry-body .gphoto-use p + p { margin-top: var(--sp-2); }
+.gphoto-credit { display: flex; flex-wrap: wrap; align-items: center; gap: 4px var(--sp-2); }
+.entry-body .gphoto-credit code { font-family: inherit; font-size: inherit; white-space: normal; overflow-wrap: anywhere; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 2px 8px; }
+.copy-btn { font: inherit; font-size: .8125rem; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 4px var(--sp-3); cursor: pointer; white-space: nowrap; }
+.copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+.entry-body .gphoto-desc { font-size: .875rem; color: var(--mut); }
+.gphoto-nav { display: flex; justify-content: space-between; gap: var(--sp-4); margin-top: var(--sp-6); font-size: .875rem; }
+.gphoto-nav a { display: inline-flex; align-items: center; gap: var(--sp-2); text-decoration: none; }
+.gphoto-nav a[hidden] { display: none; }
+.gphoto-nav a[rel="next"] { margin-left: auto; }
+.gphoto-nav img { width: 64px; height: 64px; object-fit: cover; border-radius: var(--radius); background: var(--bg-sub); }
+.data-mapbtn { white-space: nowrap; }

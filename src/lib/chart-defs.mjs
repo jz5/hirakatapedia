@@ -4,14 +4,77 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { lineChart, barChart } from "./charts.mjs";
+import { lineChart, barChart, pyramidChart } from "./charts.mjs";
 
 const data = (name) => JSON.parse(readFileSync(join(process.cwd(), "content/data", name), "utf8"));
+/** データのページの表のデータ（public/opendata/<id>.json。scripts/opendata-data.py が作る） */
+const opendata = (id) => JSON.parse(readFileSync(join(process.cwd(), "public/opendata", `${id}.json`), "utf8"));
+const col = (d, name) => d.columns.findIndex((c) => c[0] === name);
 
 /** 人の数の目盛り。10万 / 20万 … */
 const man = (n) => (n === 0 ? "0" : `${n / 10000}万`);
 
 export const charts = {
+  /** 年齢ごとの人口（人口ピラミッド）。住民基本台帳の月ごとの表 */
+  "data-age-pyramid": () => {
+    const d = data("age.json");
+    const [y, mo] = d.date.split("-").map(Number);
+    const pct = (n) => ((n / d.total) * 100).toFixed(1);
+    const top = [...d.bands].sort((a, b) => b.male + b.female - (a.male + a.female)).slice(0, 2);
+    return pyramidChart({
+      id: "chart-data-age",
+      title: `枚方市の年齢ごとの人口（${y}年${mo}月1日）`,
+      desc: `5歳ごとの男女の人口。いちばん多いのは${top[0].label}（${(top[0].male + top[0].female).toLocaleString("ja-JP")}人）、次が${top[1].label}。65歳以上は${d.groups["65+"].toLocaleString("ja-JP")}人で${pct(d.groups["65+"])}%、15歳未満は${d.groups["0-14"].toLocaleString("ja-JP")}人で${pct(d.groups["0-14"])}%。`,
+      leftName: "男性",
+      rightName: "女性",
+      unit: "人",
+      ticks: [0, 5000, 10000, 15000],
+      format: (n) => (n === 0 ? "0" : `${n / 10000}万`),
+      rows: d.bands.map((b) => ({ label: b.label.replace("100歳以上", "100歳〜"), left: b.male, right: b.female })),
+      table: {
+        head: ["年齢", "男性", "女性", "計"],
+        rows: d.bands.map((b) => [b.label, b.male, b.female, b.male + b.female]),
+      },
+    });
+  },
+
+  /** 市の公共施設が設置された年（10年ごと）。市のオープンデータ「公共施設一覧」 */
+  "data-shisetsu-decade": () => {
+    const d = opendata("shisetsu");
+    const yi = col(d, "設置年");
+    const years = d.rows.map((r) => r[yi]).filter(Boolean);
+    const buckets = [
+      { label: "1949年まで", test: (y) => y < 1950 },
+      ...[1950, 1960, 1970, 1980, 1990, 2000, 2010, 2020].map((dec) => ({ label: `${dec}年代`, test: (y) => y >= dec && y < dec + 10 })),
+    ];
+    const rows = buckets.map((b) => ({ label: b.label, value: years.filter(b.test).length, kind: "hl" }));
+    const n7080 = years.filter((y) => y >= 1970 && y < 1990).length;
+    return barChart({
+      id: "chart-data-shisetsu",
+      title: "市の公共施設が設置された年（10年ごと）",
+      desc: `市の公共施設${years.length}か所のうち、${n7080}か所（${Math.round((n7080 / years.length) * 100)}%）が1970年代と1980年代に設置された。人口が急に増えた時期（1960年代の終わりから1970年代）と重なる。`,
+      format: (n) => `${n}か所`,
+      rows,
+      table: { head: ["設置年", "施設数"], rows: rows.map((r) => [r.label, r.value]) },
+    });
+  },
+
+  /** 桜の多い公園（上位10）。市のオープンデータ「都市公園情報」 */
+  "data-park-sakura": () => {
+    const d = opendata("park");
+    const si = col(d, "桜の本数");
+    const top = [...d.rows].sort((a, b) => b[si] - a[si]).slice(0, 10);
+    const all = d.rows.reduce((a, r) => a + r[si], 0);
+    return barChart({
+      id: "chart-data-sakura",
+      title: "桜の多い市の公園（上位10）",
+      desc: `市の都市公園${d.rows.length}か所の桜は合わせて${all.toLocaleString("ja-JP")}本。いちばん多いのは${top[0][0]}の${top[0][si]}本で、2番目の${top[1][0]}（${top[1][si]}本）の4倍以上。`,
+      format: (n) => `${n}本`,
+      rows: top.map((r) => ({ label: r[0].replace(/（.*）/, ""), value: r[si], kind: "hl" })),
+      table: { head: ["公園名", "桜の本数"], rows: top.map((r) => [r[0], r[si]]) },
+    });
+  },
+
   /** 枚方市の人口の移り変わり（1947〜2025年）と、市の推計（〜2053年） */
   "jinko-population": () => {
     const d = data("jinko.json");

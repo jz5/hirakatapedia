@@ -1,0 +1,1011 @@
+# 枚方の SNS アカウントの一覧（/sns/）。src/pages/sns.astro が読む。
+# 調べもののメモ：docs/notes/sns-giin.md（議員・市長・府議・国会）、docs/notes/sns-accounts.md（市の公式・公的機関・民間）
+# 載せるのは、運営している人・組織が自分のサイト（党のページ・市のページを含む）で載せているものだけ。
+# 章（市・公的機関／政治家・議会／民間）の分け方と並びは src/pages/sns.astro の CHAPTERS。
+# type は src/lib/yaml-data.ts の SNS_TYPES。source はそのアカウントを載せている運営者のページ
+checked: '2026-11-08'
+groups:
+- id: city
+  title: 枚方市の公式
+  lead: 市の公式 SNS は、市のページ「<a href="https://www.city.hirakata.osaka.jp/vod/0000006842.html">市役所にしてはオモロイ！？―枚方市公式SNS</a>」にまとまっています。ただ、そこには部署ごとのアカウントが載っていないので、市のサイトの中から探して足しました。
+  items:
+  - name: こちら、枚方市です！
+    operator: 枚方市（広報プロモーション課）
+    about: イベントや制度のお知らせ。災害のときの緊急情報も
+    accounts:
+    - type: x
+      url: https://x.com/hirakata_city
+      handle: '@hirakata_city'
+    source: https://www.city.hirakata.osaka.jp/vod/0000006842.html
+  - name: 枚方市 LINE 公式アカウント
+    operator: 枚方市
+    about: 緊急情報やお知らせが届く。受け取る分野を選べる。道路の傷みなどを知らせる「ひらレポ」も
+    accounts:
+    - type: line
+      url: https://page.line.me/327kouhi
+      handle: '@327kouhi'
+    source: https://www.city.hirakata.osaka.jp/0000030141.html
+    note: 友だちは 103,286 人（2026年11月8日）
+  - name: 枚方市（Instagram）
+    operator: 枚方市
+    about: 若手職員の「インスタ隊」が撮る、枚方の写真と動画
+    accounts:
+    - type: instagram
+      url: https://www.instagram.com/i_am_in_hirakata/
+      handle: '@i_am_in_hirakata'
+    source: https://www.city.hirakata.osaka.jp/vod/0000006842.html
+  - name: マイカタちゃいます、ひらかたです。
+    operator: 枚方市（広報プロモーション課）
+    about: 市のイベント、広報の取材記事、災害のときの情報
+    accounts:
+    - type: facebook
+      url: https://www.facebook.com/city.hirakata.osaka/
+    source: https://www.city.hirakata.osaka.jp/vod/0000006842.html
+  - name: 枚方市公式チャンネル
+    operator: 枚方市
+    about: 職員が作った動画など
+    accounts:
+    - type: youtube
+      url: https://www.youtube.com/user/hirakatacity
+    source: https://www.city.hirakata.osaka.jp/vod/0000006842.html
+  - name: この街が好き
+    operator: 枚方市
+    about: 市のテーマソング「この街が好き」の情報
+    accounts:
+    - type: facebook
+      url: https://www.facebook.com/konomachigasuki
+    source: https://www.city.hirakata.osaka.jp/vod/0000006842.html
+  - name: ひこぼしくん
+    operator: 枚方市
+    about: 市のマスコット「ひこぼしくん」
+    accounts:
+    - type: x
+      url: https://x.com/hikoboshi_kunn
+      handle: '@hikoboshi_kunn'
+    source: https://www.city.hirakata.osaka.jp/vod/0000006842.html
+    note: 市のページの右の列にリンクがある
+  - name: ひらかた万博
+    operator: 枚方市（政策推進課）
+    about: 「ひらかた万博」と、企業・団体といっしょにする取り組み
+    accounts:
+    - type: instagram
+      url: https://www.instagram.com/we_love_hirakata/
+      handle: '@we_love_hirakata'
+    source: https://www.city.hirakata.osaka.jp/0000053369.html
+  - name: ひらいろ
+    operator: 枚方市・枚方T-SITE・枚方文化観光協会
+    about: 観光のフリーペーパー。店の紹介など
+    accounts:
+    - type: instagram
+      url: https://www.instagram.com/hirairo.hirakata/
+      handle: '@hirairo.hirakata'
+    - type: facebook
+      url: https://www.facebook.com/hirairo.hirakata/
+    - type: youtube
+      url: https://www.youtube.com/channel/UCE7i8OdbEEWrk206J8ybz6w
+      note: 動画は2023年3月まで
+    source: https://www.city.hirakata.osaka.jp/0000048793.html
+  - name: 枚方市立図書館
+    operator: 枚方市立中央図書館
+    about: 休館日、イベント、本の紹介
+    accounts:
+    - type: x
+      url: https://x.com/hirakata_lib
+      handle: '@hirakata_lib'
+    source: https://www.city.hirakata.osaka.jp/0000026498.html
+  - name: 中央図書館 こどものフロア
+    operator: 枚方市立中央図書館
+    about: 子どもの本の紹介とイベント
+    accounts:
+    - type: instagram
+      url: https://www.instagram.com/hiralib_kodomo/
+      handle: '@hiralib_kodomo'
+    source: https://www.city.hirakata.osaka.jp/0000046640.html
+  - name: 牧野図書館 自習コーナーの空席
+    operator: 枚方市立図書館
+    about: 牧野図書館のラーニングルームの空席
+    accounts:
+    - type: x
+      url: https://x.com/makinomakikita
+      handle: '@makinomakikita'
+    source: https://www.city.hirakata.osaka.jp/0000036141.html
+    note: 市のページが「空席情報をXで発信」と案内している
+  - name: 枚方市ひとり親相談
+    operator: 枚方市（ひとり親家庭相談支援センター）
+    about: ひとり親家庭の相談を LINE で受ける
+    accounts:
+    - type: line
+      url: https://lin.ee/mG5VrJr
+      handle: '@606krshy'
+    source: https://www.city.hirakata.osaka.jp/0000038116.html
+  - name: SPRINGひらかた
+    operator: 枚方市（健康づくり課）
+    about: 介護予防のイベントと講座
+    accounts:
+    - type: line
+      url: https://lin.ee/1mpXUmV
+      handle: '@259dluao'
+    source: https://www.city.hirakata.osaka.jp/kourei/0000046306.html
+  - name: だから、枚方
+    operator: 枚方市（広報プロモーション課）
+    about: 市の子育て環境を紹介する広告のためのアカウント
+    accounts:
+    - type: instagram
+      url: https://www.instagram.com/dakara_hirakata/
+      handle: '@dakara_hirakata'
+    source: https://www.city.hirakata.osaka.jp/kosodate/0000048394.html
+  - name: マチイロ（広報ひらかた）
+    operator: 枚方市
+    about: 『広報ひらかた』をスマートフォンで。13 の言語とやさしい日本語でも読める（2026年4月号から）
+    accounts:
+    - type: app
+      url: https://www.city.hirakata.osaka.jp/0000033448.html
+    source: https://www.city.hirakata.osaka.jp/0000033448.html
+  - name: ひら☆はぐ
+    operator: 枚方市（子ども未来部）
+    about: 子育て応援のアプリ（2026年10月から）
+    accounts:
+    - type: app
+      url: https://www.city.hirakata.osaka.jp/0000016649.html
+    source: https://www.city.hirakata.osaka.jp/0000016649.html
+  - name: さんあ～る（ごみ分別アプリ）
+    operator: 枚方市（環境事業課）
+    about: ごみの収集日と分け方。収集日の前に知らせてくれる
+    accounts:
+    - type: app
+      url: https://www.city.hirakata.osaka.jp/0000017278.html
+    source: https://www.city.hirakata.osaka.jp/0000017278.html
+  - name: おおさか防災ネット（防災情報メール）
+    operator: 大阪府
+    about: 気象や避難の情報をメールで
+    accounts:
+    - type: mail
+      url: http://www.osaka-bousai.net/pref/PreventInfoMail.html
+    source: https://www.city.hirakata.osaka.jp/0000019971.html
+    note: 市のページが案内している大阪府のしくみ
+- id: kokyo
+  title: 消防・病院・図書館などの公的な機関
+  items:
+  - name: 枚方寝屋川消防組合
+    operator: 枚方寝屋川消防組合
+    about: 枚方市と寝屋川市の消防。火災予防や消防車の紹介
+    accounts:
+    - type: x
+      url: https://x.com/hirane119
+      handle: '@hirane119'
+    - type: instagram
+      url: https://www.instagram.com/hirakataneyagawafd/
+      handle: '@hirakataneyagawafd'
+    - type: youtube
+      url: https://www.youtube.com/c/hirane119
+    - type: line
+      url: https://lin.ee/rMzBKRr
+      handle: '@248mohqi'
+    source: https://hnfd119.jp/?p=34748
+  - name: 市立ひらかた病院
+    operator: 市立ひらかた病院
+    about: 市の病院のお知らせ
+    accounts:
+    - type: instagram
+      url: https://www.instagram.com/hirakatacityhospital
+      handle: '@hirakatacityhospital'
+    - type: instagram
+      url: https://www.instagram.com/hhp_yurikago
+      handle: '@hhp_yurikago'
+      note: 産婦人科
+    - type: youtube
+      url: https://youtube.com/@Hirakatacityhospital
+    source: https://hirakatacity-hp.osaka.jp/
+  - name: 楠葉図書館
+    operator: 枚方まなびつながりプロジェクト（指定管理者）
+    about: 図書館のお知らせ
+    accounts:
+    - type: x
+      url: https://x.com/hirakuzuha_lib
+      handle: '@hirakuzuha_lib'
+    - type: instagram
+      url: https://www.instagram.com/kuzuha_lib/
+      handle: '@kuzuha_lib'
+    - type: facebook
+      url: https://www.facebook.com/hirakuzuhalibrary/
+    source: https://hira-manatsuna-library.jp/kuzuha/
+  - name: 御殿山図書館
+    operator: 枚方まなびつながりプロジェクト（指定管理者）
+    about: 図書館のお知らせ
+    accounts:
+    - type: x
+      url: https://x.com/hiragoten_lib
+      handle: '@hiragoten_lib'
+    - type: instagram
+      url: https://www.instagram.com/hiragoten_lib/
+      handle: '@hiragoten_lib'
+    - type: facebook
+      url: https://www.facebook.com/gotenyamalibrary
+    source: https://hira-manatsuna-library.jp/gotenyama/
+  - name: 菅原図書館
+    operator: 枚方まなびつながりプロジェクト（指定管理者）
+    about: 図書館のお知らせ
+    accounts:
+    - type: x
+      url: https://x.com/hirasuga_lib
+      handle: '@hirasuga_lib'
+    - type: instagram
+      url: https://www.instagram.com/hirasugalib/
+      handle: '@hirasugalib'
+    - type: facebook
+      url: https://www.facebook.com/profile.php?id=100089032247786
+    source: https://hira-manatsuna-library.jp/sugawara/
+  - name: 津田図書館
+    operator: 枚方まなびつながりプロジェクト（指定管理者）
+    about: 図書館のお知らせ
+    accounts:
+    - type: instagram
+      url: https://www.instagram.com/tsuda_library/
+      handle: '@tsuda_library'
+    - type: facebook
+      url: https://www.facebook.com/tsudalibrary2019
+    source: https://hira-manatsuna-library.jp/tsuda/
+  - name: 枚方市社会福祉協議会
+    operator: 社会福祉法人 枚方市社会福祉協議会
+    about: 社協の活動、ボランティア
+    accounts:
+    - type: x
+      url: https://x.com/hirakatashakyo
+      handle: '@hirakatashakyo'
+    - type: facebook
+      url: https://www.facebook.com/hirakata.shakyo/
+    source: https://www.hirakata-shakyo.net/
+  - name: 枚方文化観光協会
+    operator: 枚方文化観光協会
+    about: 観光と催し
+    accounts:
+    - type: x
+      url: https://x.com/Hirakata_kanko
+      handle: '@Hirakata_kanko'
+    - type: instagram
+      url: https://www.instagram.com/hirakatacultureassociation/
+      handle: '@hirakatacultureassociation'
+    source: https://hirakata-kanko.org/
+  - name: 枚方宿鍵屋資料館
+    operator: 鍵屋資料館
+    about: 枚方宿の資料館の展示と催し
+    accounts:
+    - type: x
+      url: https://x.com/Tahei_Kagiya06
+      handle: '@Tahei_Kagiya06'
+    - type: instagram
+      url: https://www.instagram.com/kagiyamuseum/
+      handle: '@kagiyamuseum'
+    source: https://kagiya.hirakata-kanko.org/
+  - name: 枚方市観光案内所 Syuku56
+    operator: 一般社団法人くらわんか観光マネジメント
+    about: 観光案内所と観光の情報
+    accounts:
+    - type: instagram
+      url: https://www.instagram.com/syuku56_hirakata/
+      handle: '@syuku56_hirakata'
+    - type: facebook
+      url: https://www.facebook.com/syuku56
+    - type: tiktok
+      url: https://www.tiktok.com/@syuku56_hirakata
+      handle: '@syuku56_hirakata'
+    - type: youtube
+      url: https://www.youtube.com/channel/UCz_WxUCH5E0Gq4nn-iJyY5Q
+      note: Discover HIRAKATA
+    source: https://hirakata-kankou.jp/
+  - name: 枚方市総合文化芸術センター
+    operator: 枚方市総合文化芸術センター
+    about: 公演と催し
+    accounts:
+    - type: x
+      url: https://x.com/hirakata_arts
+      handle: '@hirakata_arts'
+    source: https://web.archive.org/web/20261002075028/https://hirakata-arts.jp/
+    note: センターのサイトのトップにあるリンク（Web アーカイブの 2026年10月の版で確かめた）
+  - name: ひらっく（枚方市立地域活性化支援センター）
+    operator: 枚方市立地域活性化支援センター
+    about: 創業と経営の支援
+    accounts:
+    - type: x
+      url: https://x.com/HirakataHirac
+      handle: '@HirakataHirac'
+    - type: instagram
+      url: https://www.instagram.com/hirakatahirac/
+      handle: '@hirakatahirac'
+    - type: facebook
+      url: https://www.facebook.com/hirakatasougyou/
+    source: https://www.hirakata-kassei.jp/
+  - name: ひらかた市民活動支援センター
+    operator: ひらかた市民活動支援センター
+    about: 市民活動とボランティアの情報
+    accounts:
+    - type: x
+      url: https://x.com/hiracen_info
+      handle: '@hiracen_info'
+    - type: instagram
+      url: https://instagram.com/hiracen_info
+      handle: '@hiracen_info'
+    - type: facebook
+      url: https://facebook.com/hiracen
+    source: https://hirakatanpo-c.net/
+  - name: 枚方市野外活動センター
+    operator: 枚方市野外活動センター
+    about: 穂谷のキャンプ場
+    accounts:
+    - type: x
+      url: https://x.com/HAOcamp
+      handle: '@HAOcamp'
+    - type: instagram
+      url: https://www.instagram.com/haocamp/
+      handle: '@haocamp'
+    - type: facebook
+      url: https://www.facebook.com/枚方市野外活動センター-133552366818003
+    source: https://hotani-camp.com/
+  - name: 枚方フェスティバル協議会
+    operator: 枚方フェスティバル協議会
+    about: 市内の祭りと催し
+    accounts:
+    - type: instagram
+      url: https://www.instagram.com/hirakata_festival_kyogikai/
+      handle: '@hirakata_festival_kyogikai'
+    - type: facebook
+      url: https://www.facebook.com/www.ganbaruzocom/
+    source: https://www.hirakata-festival.com/
+  - name: 枚方市平和の燈火実行委員会
+    operator: 枚方市平和の燈火実行委員会
+    about: 毎年の「平和の燈火」
+    accounts:
+    - type: x
+      url: https://x.com/heiwa_akari
+      handle: '@heiwa_akari'
+    - type: instagram
+      url: https://www.instagram.com/heiwa_akari_hirakata/
+      handle: '@heiwa_akari_hirakata'
+    source: https://www.city.hirakata.osaka.jp/0000053097.html
+  - name: 枚方市スポーツ協会
+    operator: 公益財団法人 枚方市スポーツ協会
+    about: スポーツの大会と教室
+    accounts:
+    - type: facebook
+      url: https://www.facebook.com/公益財団法人-枚方体育協会-137347349931718/
+    source: http://hirakata-taikyo.org/
+    note: Facebook の名前は前の名前の「枚方体育協会」
+  - name: 淀川河川事務所
+    operator: 国土交通省 近畿地方整備局
+    about: 淀川の管理と催し（枚方だけの話ではない）
+    accounts:
+    - type: facebook
+      url: https://www.facebook.com/yodogawa.mlit/
+    - type: youtube
+      url: https://www.youtube.com/channel/UCmg6regeaw2qkdKTLVkX9zg
+    source: https://www.kkr.mlit.go.jp/yodogawa/
+- id: shicho
+  title: 市長
+  items:
+  - name: 伏見隆（枚方市長）
+    operator: 本人
+    about: 2015年から市長（3期目、2023年9月の選挙で当選）。大阪維新の会
+    accounts:
+    - type: x
+      url: https://x.com/fushimiofficial
+      handle: '@fushimiofficial'
+    - type: instagram
+      url: https://www.instagram.com/takashi.fushimi.39/
+    - type: facebook
+      url: https://www.facebook.com/takashi.fushimi.39
+    - type: site
+      url: https://tfushimi.net/
+    source: https://tfushimi.net/
+  - name: 市長室（市のページ）
+    operator: 枚方市
+    about: 市長の予定、「情熱日記」、フォト便り
+    accounts:
+    - type: site
+      url: https://www.city.hirakata.osaka.jp/soshiki/26-4-0-0-0_1.html
+    - type: blog
+      url: https://www.city.hirakata.osaka.jp/soshiki/26-4-0-0-0_3.html
+      note: 情熱日記
+    source: https://www.city.hirakata.osaka.jp/0000004030.html
+- id: gikai
+  title: 市議会
+  items:
+  - name: 枚方市議会
+    operator: 枚方市議会
+    about: 議会の広報。本会議は YouTube で生中継している
+    accounts:
+    - type: instagram
+      url: https://www.instagram.com/hirakatashigikai/
+      handle: '@hirakatashigikai'
+    - type: youtube
+      url: https://www.youtube.com/@hirakatashigikai
+      handle: '@hirakatashigikai'
+      note: 本会議の生中継と録画
+    - type: site
+      url: https://www.city.hirakata.osaka.jp/0000011280.html
+    source: https://www.city.hirakata.osaka.jp/soshiki/27-1-0-0-0_21.html
+    note: 議会の X・Facebook・LINE は無い（市議会の公式 SNS のページに載っているのは 2 つだけ）
+- id: media
+  title: ニュース・地域の情報
+  items:
+  - name: 枚方つーしん（ひらつー）
+    operator: 株式会社morondo
+    about: 店の開店・閉店、催し、地域の話題
+    accounts:
+    - type: x
+      url: https://x.com/hira2shin
+      handle: '@hira2shin'
+    - type: instagram
+      url: https://www.instagram.com/hira2shin
+      handle: '@hira2shin'
+    - type: facebook
+      url: https://www.facebook.com/hira2.jp
+    - type: tiktok
+      url: https://www.tiktok.com/@hira2shin
+      handle: '@hira2shin'
+    - type: youtube
+      url: https://www.youtube.com/user/hira2shin
+    - type: line
+      url: https://line.me/ti/p/%40oa-hira2
+      handle: '@oa-hira2'
+    - type: site
+      url: https://www.hira2.jp/
+    source: https://www.hira2.jp/
+  - name: まいぷれ[枚方市]
+    operator: 北大阪商工会議所・株式会社フューチャーリンクネットワーク
+    about: 枚方・寝屋川・交野の店と催し
+    accounts:
+    - type: instagram
+      url: https://www.instagram.com/kcci.mypl
+      handle: '@kcci.mypl'
+    - type: facebook
+      url: https://www.facebook.com/mypl.kcci
+    - type: site
+      url: https://hirakata.mypl.net/
+    source: https://hirakata.mypl.net/
+  - name: 号外NET 枚方市
+    operator: 号外NET
+    about: 枚方の店や催しの記事
+    accounts:
+    - type: site
+      url: https://hirakata.goguynet.jp/
+    - type: x
+      url: https://x.com/goguynet_osaka
+      handle: '@goguynet_osaka'
+      note: 大阪府全体のアカウント
+    source: https://hirakata.goguynet.jp/
+    note: 枚方市だけの SNS アカウントは無い
+- id: shisetsu
+  title: 施設・企業
+  items:
+  - name: ひらかたパーク
+    operator: 株式会社京阪レジャーサービス
+    about: イベントと営業の案内
+    accounts:
+    - type: x
+      url: https://x.com/hirapar_pr
+      handle: '@hirapar_pr'
+    - type: instagram
+      url: https://www.instagram.com/hirakatapark/
+      handle: '@hirakatapark'
+    - type: tiktok
+      url: https://www.tiktok.com/@hirapar_pr
+      handle: '@hirapar_pr'
+    - type: youtube
+      url: https://www.youtube.com/channel/UCcgFrdvVnmIqCEOkeG7SilA
+    source: https://www.hirakatapark.co.jp/
+  - name: 京阪電車 運行情報
+    operator: 京阪グループ
+    about: 電車の遅れや運休
+    accounts:
+    - type: x
+      url: https://x.com/keihan_traffic
+      handle: '@keihan_traffic'
+    source: https://www.keihan.co.jp/
+  - name: 京阪電車 おでかけ情報
+    operator: 京阪グループ
+    about: 沿線のおでかけ情報
+    accounts:
+    - type: x
+      url: https://x.com/okeihan_net
+      handle: '@okeihan_net'
+    - type: instagram
+      url: https://www.instagram.com/keihan_railway/
+      handle: '@keihan_railway'
+    - type: facebook
+      url: https://www.facebook.com/okeihan.net
+    - type: line
+      url: https://page.line.me/888iduak
+      handle: '@888iduak'
+    - type: youtube
+      url: https://www.youtube.com/@keihan_odekake
+      handle: '@keihan_odekake'
+    source: https://www.keihan.co.jp/
+  - name: SANZEN-HIROBA
+    operator: 京阪グループ
+    about: くずはモールにある京阪の展示施設
+    accounts:
+    - type: x
+      url: https://x.com/sanzenhiroba
+      handle: '@sanzenhiroba'
+    source: https://www.keihan.co.jp/
+  - name: くずはモール
+    operator: くずはモール
+    about: 店と催し
+    accounts:
+    - type: x
+      url: https://x.com/KUZUHA_MALL
+      handle: '@KUZUHA_MALL'
+    - type: instagram
+      url: https://www.instagram.com/kuzuhamall_official/
+      handle: '@kuzuhamall_official'
+    - type: line
+      url: https://lin.ee/0us7XO1
+      handle: '@785sabgv'
+    source: https://www.kuzuha-mall.com/
+  - name: 枚方T-SITE
+    operator: 枚方T-SITE
+    about: 店と催し
+    accounts:
+    - type: x
+      url: https://x.com/hirakata_tsite
+      handle: '@hirakata_tsite'
+    - type: instagram
+      url: https://www.instagram.com/hirakata_tsite/
+      handle: '@hirakata_tsite'
+    - type: facebook
+      url: https://www.facebook.com/hirakatatsite/
+    source: https://store.tsite.jp/hirakata/
+  - name: 枚方モール
+    operator: 枚方モール
+    about: 店と催し
+    accounts:
+    - type: instagram
+      url: https://www.instagram.com/hirakatamall/
+      handle: '@hirakatamall'
+    source: https://hirakata-mall.jp/
+giin:
+  source: https://www.city.hirakata.osaka.jp/0000000172.html
+  sourceTitle: 枚方市議会の議員名簿（2026年10月30日現在）
+  checked: '2026-11-08'
+  teisu: 32
+  note: 32 人とも 2023年4月の選挙で当選した人で、任期は 2027年4月まで。議長は大地正広、副議長は妹尾正信（2026年5月から）。
+  members:
+  - name: 田口敬規
+    kana: たぐち よしのり
+    kaiha: 自由民主党・無所属の会
+    accounts:
+    - type: x
+      url: https://x.com/drasticmermaids
+      handle: '@drasticmermaids'
+    - type: youtube
+      url: https://www.youtube.com/channel/UC6Hy42AG3ztMSaNQXmMcI5A
+    - type: blog
+      url: https://ameblo.jp/hirakata55ace/
+  - name: 漆原周義
+    kana: うるしはら ちかよし
+    kaiha: 命を守る政治の会
+    accounts: []
+  - name: 松本佑介
+    kana: まつもと ゆうすけ
+    kaiha: 自由民主党・無所属の会
+    accounts:
+    - type: x
+      url: https://x.com/matumoto_yusuke
+      handle: '@matumoto_yusuke'
+    - type: instagram
+      url: https://www.instagram.com/matsumoto_yusuke_desu
+    - type: facebook
+      url: https://www.facebook.com/profile.php?id=100080644603380
+    - type: site
+      url: https://www.matsumoto-yusuke.jp/
+    - type: note
+      url: https://note.com/matsumoto_yusuke
+    - type: line
+      url: https://page.line.me/021uzerw
+  - name: 松岡ちひろ
+    kana: まつおか ちひろ
+    kaiha: 日本共産党議員団
+    accounts: []
+  - name: 堤幸子
+    kana: つつみ さちこ
+    kaiha: 日本共産党議員団
+    accounts:
+    - type: x
+      url: https://x.com/chibe223
+      handle: '@chibe223'
+    - type: blog
+      url: http://tutumi-s.sblo.jp/
+      note: 2024年9月から更新なし
+  - name: 広瀬ひとみ
+    kana: ひろせ ひとみ
+    kaiha: 日本共産党議員団
+    accounts:
+    - type: x
+      url: https://x.com/kokohaha
+      handle: '@kokohaha'
+    - type: instagram
+      url: https://www.instagram.com/hitomihirose/
+    - type: facebook
+      url: https://www.facebook.com/tudanohitomi
+    - type: tiktok
+      url: https://www.tiktok.com/@hitomi.hirose
+    - type: blog
+      url: https://ameblo.jp/kokohaha753
+    - type: line
+      url: https://lin.ee/KFeBxSa
+  - name: 三和智之
+    kana: みわ ともゆき
+    kaiha: 日本共産党議員団
+    accounts:
+    - type: x
+      url: https://x.com/1975_miwa
+      handle: '@1975_miwa'
+    - type: youtube
+      url: https://www.youtube.com/@みわ智之
+    - type: blog
+      url: http://shoot128.exblog.jp/
+  - name: 番匠映仁
+    kana: ばんしょう てるひと
+    kaiha: 連合市民の会
+    accounts:
+    - type: x
+      url: https://x.com/bansho_teruhito
+      handle: '@bansho_teruhito'
+    - type: instagram
+      url: https://www.instagram.com/bansho_teruhito/
+    - type: facebook
+      url: https://www.facebook.com/hirakata.bansho
+    - type: site
+      url: https://www.ban-teru.com/
+    - type: blog
+      url: https://ameblo.jp/bansho-teruhito
+    - type: note
+      url: https://note.com/teruhito_bansho
+  - name: 大津真沙樹
+    kana: おおつ まさき
+    kaiha: 連合市民の会
+    accounts:
+    - type: x
+      url: https://x.com/masakiohtsu
+      handle: '@masakiohtsu'
+      note: 2026年1月から投稿なし
+    - type: instagram
+      url: https://www.instagram.com/ohtsu_masaki/
+    - type: facebook
+      url: https://m.facebook.com/masaki.ohtsu.56
+    - type: youtube
+      url: https://www.youtube.com/@masakiohtsu
+    - type: site
+      url: https://www.ohtsumasaki-hirakata.com/
+    - type: line
+      url: https://lin.ee/0uc8hwn
+  - name: 野村生代
+    kana: のむら いくよ
+    kaiha: 連合市民の会
+    accounts:
+    - type: x
+      url: https://x.com/194nomura
+      handle: '@194nomura'
+      note: 最近はリポストだけ
+    - type: facebook
+      url: https://www.facebook.com/profile.php?id=100003186941234
+    - type: site
+      url: https://nomura-ikuyo.com/
+    - type: blog
+      url: https://ameblo.jp/nomura-ikuyo/
+  - name: 奥野美佳
+    kana: おくの みか
+    kaiha: 連合市民の会
+    accounts:
+    - type: x
+      url: https://x.com/okuno_mika
+      handle: '@okuno_mika'
+    - type: facebook
+      url: https://www.facebook.com/mika.okuno.338
+    - type: site
+      url: https://okuno-mika.com/
+  - name: 八尾善之
+    kana: やお よしゆき
+    kaiha: 連合市民の会
+    accounts: []
+  - name: 前田富枝
+    kana: まえだ とみえ
+    kaiha: 自由民主党・無所属の会
+    accounts:
+    - type: site
+      url: http://www.maeda-tomie.jp/
+      note: お知らせは2025年5月まで
+  - name: 長友克由
+    kana: ながとも かつよし
+    kaiha: 自由民主党・無所属の会
+    accounts: []
+  - name: 門川紘幸
+    kana: かどかわ ひろゆき
+    kaiha: 大阪維新の会枚方市議会議員団
+    accounts:
+    - type: x
+      url: https://x.com/h_kadokawa
+      handle: '@h_kadokawa'
+    - type: instagram
+      url: https://www.instagram.com/h_kadokawa
+    - type: facebook
+      url: https://www.facebook.com/h.kadokawa
+    - type: youtube
+      url: https://www.youtube.com/@h.kadokawa
+    - type: site
+      url: https://h-kadokawa.jp/
+    note: Instagram は党のページのもの。本人のサイトでは別の ID（kadokawahiroyuki）になっている
+  - name: 大濱暢祐
+    kana: おおはま ようすけ
+    kaiha: 大阪維新の会枚方市議会議員団
+    accounts:
+    - type: x
+      url: https://x.com/ohama_yosuke
+      handle: '@ohama_yosuke'
+    - type: instagram
+      url: https://www.instagram.com/ohama_yosuke/
+    - type: facebook
+      url: https://www.facebook.com/profile.php?id=100089487421725
+    - type: youtube
+      url: https://www.youtube.com/@ohama-yosuke
+    - type: site
+      url: https://ohama-yosuke.net/
+  - name: 小池晶子
+    kana: こいけ あきこ
+    kaiha: 大阪維新の会枚方市議会議員団
+    accounts:
+    - type: x
+      url: https://x.com/akikokoike1
+      handle: '@akikokoike1'
+    - type: instagram
+      url: https://www.instagram.com/akikoi0207/
+    - type: facebook
+      url: https://www.facebook.com/akiko.koike.562
+    - type: youtube
+      url: https://www.youtube.com/@koike-akiko
+    - type: site
+      url: https://www.a-koike.com/
+    - type: blog
+      url: https://ameblo.jp/koikeofficial/
+    - type: line
+      url: https://lin.ee/K1LMRFk
+  - name: 高野寿陛
+    kana: たかの ひさのり
+    kaiha: 大阪維新の会枚方市議会議員団
+    accounts:
+    - type: site
+      url: http://takanohisanori.jp/
+      note: 2024年3月から更新なし
+  - name: 岡市栄次郎
+    kana: おかいち えいじろう
+    kaiha: 大阪維新の会枚方市議会議員団
+    accounts:
+    - type: instagram
+      url: https://www.instagram.com/eijiro3_8/
+    - type: facebook
+      url: https://www.facebook.com/elgra.eijiro
+    - type: site
+      url: https://okaichi-eijiro.com
+  - name: 志甫直哉
+    kana: しほ なおや
+    kaiha: 大阪維新の会枚方市議会議員団
+    accounts:
+    - type: x
+      url: https://x.com/shiho_naoya
+      handle: '@shiho_naoya'
+      note: 2026年2月から投稿なし
+    - type: instagram
+      url: https://www.instagram.com/shiho_naoya/
+    - type: facebook
+      url: https://www.facebook.com/profile.php?id=100088729159827
+    - type: site
+      url: https://shihonaoya.com/
+  - name: 妹尾正信
+    kana: せのお まさのぶ
+    kaiha: 自由民主党・無所属の会
+    accounts: []
+    note: 副議長。2023年の当選のときは維新の会派
+  - name: 鍜治谷知宏
+    kana: かじや ともひろ
+    kaiha: 大阪維新の会枚方市議会議員団
+    accounts:
+    - type: x
+      url: https://x.com/kajiya_tomohiro
+      handle: '@kajiya_tomohiro'
+    - type: instagram
+      url: https://www.instagram.com/kajiyatomohiro/
+    - type: facebook
+      url: https://www.facebook.com/kajiya.tomohiro/
+    - type: youtube
+      url: https://www.youtube.com/@tomohirokajiya7441
+    - type: site
+      url: https://www.t-kajiya.com/
+    - type: line
+      url: https://lin.ee/WyKoiNF
+  - name: 佐田あゆ美
+    kana: さた あゆみ
+    kaiha: やさしい未来の会
+    accounts:
+    - type: x
+      url: https://x.com/sata_ayumi
+      handle: '@sata_ayumi'
+    - type: instagram
+      url: https://www.instagram.com/sata_ayumi
+    - type: facebook
+      url: https://www.facebook.com/sataayumi573
+    - type: site
+      url: https://sata-ayumi.com/
+    - type: line
+      url: https://line.me/R/ti/p/@654qewdp
+    note: 2023年の当選のときは維新の会派
+  - name: 泉大介
+    kana: いずみ だいすけ
+    kaiha: 大阪維新の会枚方市議会議員団
+    accounts:
+    - type: x
+      url: https://x.com/izm_daisuke
+      handle: '@izm_daisuke'
+    - type: instagram
+      url: https://www.instagram.com/izumidicek/
+    - type: facebook
+      url: https://www.facebook.com/DiceKizm
+    - type: site
+      url: https://www.izumi-daisuke.net/
+  - name: 峠賢一
+    kana: とうげ けんいち
+    kaiha: 公明党議員団
+    accounts:
+    - type: x
+      url: https://x.com/Touge_Kenichi
+      handle: '@Touge_Kenichi'
+    - type: facebook
+      url: https://www.facebook.com/profile.php?id=100003693213261
+    - type: site
+      url: https://hirakata-komei.jp/touge/
+  - name: 東実名子
+    kana: ひがし みなこ
+    kaiha: 公明党議員団
+    accounts:
+    - type: x
+      url: https://x.com/azuki20221125
+      handle: '@azuki20221125'
+    - type: facebook
+      url: https://www.facebook.com/profile.php?id=100070728252998
+    - type: site
+      url: https://hirakata-komei.jp/higashi/
+  - name: 千葉雅民
+    kana: ちば まさひと
+    kaiha: 公明党議員団
+    accounts:
+    - type: site
+      url: https://hirakata-komei.jp/chiba/
+    - type: line
+      url: https://lin.ee/1rcIn0y
+  - name: 一原明美
+    kana: いちはら あけみ
+    kaiha: 公明党議員団
+    accounts:
+    - type: x
+      url: https://x.com/mukumuku0114
+      handle: '@mukumuku0114'
+    - type: facebook
+      url: https://www.facebook.com/profile.php?id=100032238919570
+    - type: youtube
+      url: https://www.youtube.com/@ichihara-hirakata
+      note: 2024年1月から動画なし
+    - type: site
+      url: https://hirakata-komei.jp/ichihara/
+    - type: line
+      url: https://lin.ee/UQDspKK
+  - name: 田中優子
+    kana: たなか ゆうこ
+    kaiha: 公明党議員団
+    accounts:
+    - type: site
+      url: https://hirakata-komei.jp/tanaka/
+  - name: 丹生真人
+    kana: にふ まこと
+    kaiha: 公明党議員団
+    accounts:
+    - type: x
+      url: https://x.com/makoto_nifu
+      handle: '@makoto_nifu'
+    - type: facebook
+      url: https://www.facebook.com/makoto.nifu
+    - type: site
+      url: https://hirakata-komei.jp/nifu/
+  - name: 藤田幸久
+    kana: ふじた ゆきひさ
+    kaiha: 公明党議員団
+    accounts:
+    - type: site
+      url: https://www.komei.or.jp/km/hirakata-fujita-yukihisa/
+  - name: 大地正広
+    kana: おおじ まさひろ
+    kaiha: 公明党議員団
+    accounts:
+    - type: x
+      url: https://x.com/OziMasahiro
+      handle: '@OziMasahiro'
+    - type: site
+      url: https://www.komei.or.jp/km/hirakata-oji-masahiro/
+    note: 議長
+politics:
+- id: fugi
+  title: 大阪府議会議員（枚方市選挙区）
+  lead: 枚方市選挙区の定数は 4 人です。2023年4月の選挙で当選した 4 人です（<a href="https://www.pref.osaka.lg.jp/o170010/gikai_somu/sugatami20/index_senkyoku.html">大阪府議会「議員すがたみ」</a>）。任期は 2027年4月まで。
+  items:
+  - name: 岩本ゆうすけ
+    operator: 本人
+    about: 大阪維新の会（1期）
+    accounts:
+    - type: x
+      url: https://x.com/ysk_iwmt
+      handle: '@ysk_iwmt'
+    - type: instagram
+      url: https://www.instagram.com/yusuke.18610/
+    - type: facebook
+      url: https://www.facebook.com/yusuke.iwamoto.963
+    - type: youtube
+      url: https://www.youtube.com/@user-18610ysk
+    - type: line
+      url: https://lin.ee/iN8iAuL
+    - type: site
+      url: https://www.ganpon.net/
+    source: https://www.pref.osaka.lg.jp/o170010/gikai_somu/sugatami20/iwamoto.html
+  - name: 山田けんた
+    operator: 本人
+    about: 民主ネット（2期）
+    accounts:
+    - type: x
+      url: https://x.com/YamaKen_HiraP
+      handle: '@YamaKen_HiraP'
+    - type: site
+      url: https://www.yamada-kenta.jp/
+    source: https://www.pref.osaka.lg.jp/o170010/gikai_somu/sugatami20/yamada.html
+  - name: 大橋章夫
+    operator: 本人
+    about: 公明党（4期）
+    accounts:
+    - type: x
+      url: https://x.com/akio_ohashi812
+      handle: '@akio_ohashi812'
+    - type: facebook
+      url: https://www.facebook.com/akio.ohashi.9
+    - type: site
+      url: https://ohashi-a.com/
+    source: https://www.pref.osaka.lg.jp/o170010/gikai_somu/sugatami20/oohashia.html
+  - name: 岡沢龍一
+    operator: 本人
+    about: 大阪維新の会（2期）
+    accounts:
+    - type: x
+      url: https://x.com/okazawa_ryuichi
+      handle: '@okazawa_ryuichi'
+    - type: instagram
+      url: https://www.instagram.com/okazawa.ryuichi/
+    - type: facebook
+      url: https://www.facebook.com/ryu7oka/
+    - type: youtube
+      url: https://www.youtube.com/@ABC12345A12345A
+    source: https://www.pref.osaka.lg.jp/o170010/gikai_somu/sugatami20/okazawa.html
+- id: shugi
+  title: 衆議院議員（大阪11区）
+  lead: 大阪11区は枚方市と交野市です。2026年2月8日の選挙で当選した人です（<a href="https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000000/61/R8.2.8_syu.pdf">枚方市の選挙結果</a>）。
+  items:
+  - name: 中司宏
+    operator: 本人
+    about: 日本維新の会。元枚方市長
+    accounts:
+    - type: x
+      url: https://x.com/nakatsuka_h
+      handle: '@nakatsuka_h'
+    - type: instagram
+      url: https://www.instagram.com/nakatsuka.hiroshi/
+    - type: facebook
+      url: https://www.facebook.com/nakatsukahiroshireport/
+    - type: youtube
+      url: https://www.youtube.com/channel/UChHcaMEIl03KYMtLVyGGGEA
+    - type: site
+      url: http://nakatsukahiroshi.jp/
+    source: https://oneosaka.jp/member/detail/nakatsuka_hiroshi.html

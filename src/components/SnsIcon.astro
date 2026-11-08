@@ -1,0 +1,10 @@
+---
+/** SNS のアイコン 1 つ。色は CSS（.sns-icon-<type>）。飾りなので読み上げない（名前は隣の文字か aria-label で） */
+import type { SnsType } from "../lib/yaml-data";
+interface Props {
+  type: SnsType;
+}
+const { type } = Astro.props;
+---
+
+<svg class={`sns-icon sns-icon-${type}`} aria-hidden="true" focusable="false"><use href={`#sns-${type}`} /></svg>

@@ -3,7 +3,7 @@
  *
  * - 色は CSS の変数（--chart-1 など）で塗るので、ダークモードでも変わる
  * - 線は 2px、点は半径 4px、罫線は 1px の実線
- * - 2 本以上の線には凡例を付ける。数字の表（<details>）も一緒に出す
+ * - 2 本以上の線には凡例を付ける。数値の表（<details>）も一緒に出す
  * - マウスを乗せたときの縦線と吹き出しは ArticleBody.astro の script が作る（data-chart の JSON を使う）
  */
 
@@ -112,7 +112,7 @@ export function lineChart(o) {
           .join("")}</ul>`
       : "";
 
-  const table = `<details class="chart-table"><summary>数字の表</summary><div class="table-scroll"><table><thead><tr>${o.table.head
+  const table = `<details class="chart-table"><summary>数値の表</summary><div class="table-scroll"><table><thead><tr>${o.table.head
     .map((h) => `<th>${esc(h)}</th>`)
     .join("")}</tr></thead><tbody>${o.table.rows
     .map((row) => `<tr>${row.map((c) => `<td>${typeof c === "number" ? fmt(c) : esc(c)}</td>`).join("")}</tr>`)
@@ -162,7 +162,50 @@ export function barChart(o) {
         .map((s) => `<li><span class="chart-key chart-key-dot chart-s${s.color}" aria-hidden="true"></span>${esc(s.name)}</li>`)
         .join("")}</ul>`
     : "";
-  const table = `<details class="chart-table"><summary>数字の表</summary><div class="table-scroll"><table><thead><tr>${o.table.head
+  const table = `<details class="chart-table"><summary>数値の表</summary><div class="table-scroll"><table><thead><tr>${o.table.head
+    .map((h) => `<th>${esc(h)}</th>`)
+    .join("")}</tr></thead><tbody>${o.table.rows
+    .map((row) => `<tr>${row.map((c) => `<td>${typeof c === "number" ? fmt(c) : esc(c)}</td>`).join("")}</tr>`)
+    .join("")}</tbody></table></div></details>`;
+  return `<figure class="chart" id="${esc(o.id)}">
+<figcaption class="chart-title">${esc(o.title)}</figcaption>
+${legend}
+<div class="chart-scroll"><svg class="chart-svg chart-svg-bar" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="${esc(o.id)}-desc"><desc id="${esc(o.id)}-desc">${esc(o.desc)}</desc>${parts.join("")}</svg></div>
+${table}
+</figure>`;
+}
+
+/**
+ * 人口ピラミッド。左に男性（--chart-1）、右に女性（--chart-2）、真ん中に年齢。
+ * rows は上から 若い順に渡す（描くときは上を高い年齢にする）
+ */
+export function pyramidChart(o) {
+  const W = 640, rowH = 18, barH = 13, mid = 76;
+  const m = { top: 8, right: 8, bottom: 24, left: 8 };
+  const rows = [...o.rows].reverse();
+  const H = m.top + m.bottom + rows.length * rowH;
+  const half = (W - m.left - m.right - mid) / 2;
+  const max = o.max ?? Math.max(...rows.flatMap((r) => [r.left, r.right]));
+  const sx = (v) => (v / max) * half;
+  const cx = m.left + half; // 左の棒の根元（右端）
+  const r1 = (n) => Math.round(n * 10) / 10;
+  const parts = [];
+  // 目盛り（左右とも 0 から外へ）
+  for (const t of o.ticks) {
+    for (const x of [cx - sx(t), cx + mid + sx(t)]) {
+      parts.push(`<line class="chart-grid" x1="${r1(x)}" x2="${r1(x)}" y1="${m.top}" y2="${H - m.bottom}"/>`);
+      parts.push(`<text class="chart-tick" x="${r1(x)}" y="${H - 6}" text-anchor="middle">${esc(o.format(t))}</text>`);
+    }
+  }
+  rows.forEach((row, i) => {
+    const y = r1(m.top + i * rowH + (rowH - barH) / 2);
+    const wl = r1(sx(row.left)), wr = r1(sx(row.right));
+    parts.push(`<rect class="chart-bar-s1" x="${r1(cx - wl)}" y="${y}" width="${wl}" height="${barH}" rx="1.5"><title>${esc(row.label)} ${esc(o.leftName)} ${fmt(row.left)}${esc(o.unit)}</title></rect>`);
+    parts.push(`<rect class="chart-bar-s2" x="${r1(cx + mid)}" y="${y}" width="${wr}" height="${barH}" rx="1.5"><title>${esc(row.label)} ${esc(o.rightName)} ${fmt(row.right)}${esc(o.unit)}</title></rect>`);
+    parts.push(`<text class="chart-tick${row.hl ? " chart-tick-hl" : ""}" x="${r1(cx + mid / 2)}" y="${r1(y + barH / 2)}" text-anchor="middle" dominant-baseline="middle">${esc(row.label)}</text>`);
+  });
+  const legend = `<ul class="chart-legend"><li><span class="chart-key chart-key-dot chart-s1" aria-hidden="true"></span>${esc(o.leftName)}</li><li><span class="chart-key chart-key-dot chart-s2" aria-hidden="true"></span>${esc(o.rightName)}</li></ul>`;
+  const table = `<details class="chart-table"><summary>数値の表</summary><div class="table-scroll"><table><thead><tr>${o.table.head
     .map((h) => `<th>${esc(h)}</th>`)
     .join("")}</tr></thead><tbody>${o.table.rows
     .map((row) => `<tr>${row.map((c) => `<td>${typeof c === "number" ? fmt(c) : esc(c)}</td>`).join("")}</tr>`)

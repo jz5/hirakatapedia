@@ -18,9 +18,11 @@ interface Props {
   noindex?: boolean;
   /** og:image にする画像のパス（/photos/… の大きい jpg）。あれば twitter:card も大きい画像に */
   image?: string;
+  /** 右の列（サイドバー）なしの、広い 1 列。表の大きいページ（SNS・データ）に使う */
+  wide?: boolean;
 }
 
-const { title, description, path, article, noindex = false, image } = Astro.props;
+const { title, description, path, article, noindex = false, image, wide = false } = Astro.props;
 const hasToc = Astro.slots.has("toc");
 
 const fullTitle = title ? `${title} | ${SITE.title}` : `${SITE.title}（${SITE.reading}）`;
@@ -90,17 +92,20 @@ const jsonLd = article
           <span class="site-reading">{SITE.reading}</span>
         </a>
         <nav class="site-nav" aria-label="サイト">
+          <a href="/gallery/">写真</a>
+          <a href="/data/">データ</a>
+          <a href="/sns/">SNS</a>
           <a href="/about/">このサイトについて</a>
           <ThemeSelect />
         </nav>
       </div>
     </header>
 
-    <div class="wrap layout">
+    <div class:list={["wrap layout", { "layout-wide": wide }]}>
       <main id="main" class="layout-main">
         <slot />
       </main>
-      <Sidebar>{hasToc && <slot name="toc" />}</Sidebar>
+      {!wide && <Sidebar>{hasToc && <slot name="toc" />}</Sidebar>}
     </div>
 
     <footer class="site-footer">

@@ -1,0 +1,248 @@
+---
+/**
+ * 枚方の SNS アカウントの一覧（/sns/）。記事とは別の、調べもの用のページ。
+ * 中身は content/data/sns.yaml。運営者のサイトに載っている（本人のものと確かめられた）ものだけを書く。
+ * 下の絞り込みはブラウザだけで動く（JavaScript が無くても全部見える）。
+ */
+import Base from "../layouts/Base.astro";
+import Toc from "../components/Toc.astro";
+import SnsSprite from "../components/SnsSprite.astro";
+import SnsIcon from "../components/SnsIcon.astro";
+import { readSns, SNS_TYPES, sortAccounts, type SnsData, type SnsType, type Account, type SnsGroup } from "../lib/yaml-data";
+
+const data = readSns<SnsData>();
+const g = data.giin;
+
+const label = (t: SnsType) => SNS_TYPES[t] ?? t;
+// 出典のサイトの名前。よく出てくるものは名前で、ほかはドメイン
+const SITE_NAMES: Record<string, string> = {
+  "city.hirakata.osaka.jp": "枚方市",
+  "pref.osaka.lg.jp": "大阪府議会",
+  "oneosaka.jp": "大阪維新の会",
+  "komei.or.jp": "公明党",
+  "web.archive.org": "Web アーカイブ",
+};
+const siteName = (u: string) => {
+  const host = new URL(u).hostname.replace(/^www\./, "");
+  return SITE_NAMES[host] ?? host;
+};
+const typesOf = (a: Account[]) => [...new Set(a.map((x) => x.type))].join(" ");
+const jaDay = (s: string) => {
+  const [y, m, d] = s.split("-").map(Number);
+  return `${y}年${m}月${d}日`;
+};
+
+// 議員が使っている SNS の数（人数）。多い順
+const giinCount = Object.keys(SNS_TYPES)
+  .map((t) => ({ t: t as SnsType, n: g.members.filter((m) => m.accounts.some((a) => a.type === t)).length }))
+  .filter((x) => x.n > 0)
+  .sort((a, b) => b.n - a.n);
+const noneCount = g.members.filter((m) => m.accounts.length === 0).length;
+const kaihaList = [...new Set(g.members.map((m) => m.kaiha))];
+
+// 絞り込みのボタンに出す種類（ページのどこかに出てくるものだけ）
+const allAccounts = [
+  ...data.groups.flatMap((x) => x.items.flatMap((i) => i.accounts)),
+  ...g.members.flatMap((m) => m.accounts),
+  ...data.politics.flatMap((x) => x.items.flatMap((i) => i.accounts)),
+];
+const usedTypes = (Object.keys(SNS_TYPES) as SnsType[]).filter((t) => allAccounts.some((a) => a.type === t));
+
+// 章と、その中の節の並び。節の id は sns.yaml の groups・politics の id（giin は議員の表）
+const CHAPTERS = [
+  { id: "gyosei", title: "市・公的機関", ids: ["city", "kokyo"] },
+  { id: "seiji", title: "政治家・議会", ids: ["shicho", "gikai", "giin", "fugi", "shugi"] },
+  { id: "minkan", title: "民間", ids: ["media", "shisetsu"] },
+];
+const GIIN: SnsGroup = { id: "giin", title: "市議会議員", items: [] };
+const groups = new Map([...data.groups, ...data.politics].map((x) => [x.id, x]));
+const section = (id: string): SnsGroup => (id === "giin" ? GIIN : groups.get(id)!);
+// 使っていない節があれば気づけるように
+for (const id of groups.keys()) if (!CHAPTERS.some((c) => c.ids.includes(id))) throw new Error(`sns.yaml の ${id} がどの章にも入っていない`);
+const headings = [
+  ...CHAPTERS.flatMap((c) => [{ depth: 2, slug: c.id, text: c.title }, ...c.ids.map((id) => ({ depth: 3, slug: id, text: section(id).title }))]),
+  { depth: 2, slug: "notes", text: "このページについて" },
+];
+const description = "枚方市の公式アカウント、市長と市議会議員全員の SNS、府議・国会議員、消防や図書館などの公的な機関、枚方のニュースを出している民間のアカウントの一覧。";
+---
+
+<Base title="枚方の SNS アカウント" description={description} path="/sns/">
+  <SnsSprite />
+  <article class="entry">
+    <header class="entry-header">
+      <h1>枚方の SNS アカウント</h1>
+      <p class="entry-meta">調査日 <time datetime={data.checked}>{jaDay(data.checked)}</time></p>
+    </header>
+
+    <div class="toc-inline"><Toc headings={headings} /></div>
+
+    <div class="entry-body">
+      <p>
+        枚方市の公式アカウント、市議会議員の SNS、枚方のニュースを流しているアカウントを集めました。<strong>運営している人・組織が、自分のサイトで載せているもの</strong>だけを書いています（同じ名前のアカウントでも、本人のものと確かめられないものは載せていません）。
+      </p>
+
+      <form class="filter" role="search" aria-label="絞り込み" data-filter>
+        <label class="filter-search">
+          <span class="visually-hidden">名前・会派・内容で検索</span>
+          <input type="search" name="q" placeholder="名前・会派・内容で検索（例：防災、ひらつー、公明党）" autocomplete="off" />
+        </label>
+        <fieldset class="filter-types">
+          <legend class="visually-hidden">SNS の種類</legend>
+          {usedTypes.map((t) => (
+            <label class="chip-toggle"><input type="checkbox" name="type" value={t} /><span><SnsIcon type={t} />{label(t)}</span></label>
+          ))}
+        </fieldset>
+        <p class="filter-count" aria-live="polite" data-count></p>
+      </form>
+
+      {CHAPTERS.map((c) => (
+        <section class="sns-chapter" id={c.id} aria-labelledby={`${c.id}-h`}>
+          <h2 id={`${c.id}-h`}>{c.title}</h2>
+          {c.ids.map(section).map((s) =>
+        s.id === "giin" ? (
+          <section class="sns-section" id="giin" aria-labelledby="giin-h">
+            <h3 id="giin-h">市議会議員</h3>
+            <p>
+              枚方市議会の議員は定数 {g.teisu} 人です。<a href={g.source}>{g.sourceTitle}</a>の {g.members.length} 人について、本人のサイト・政党のページ・市議会のページから SNS を探しました。
+              {g.note && <span> {g.note}</span>}
+            </p>
+
+            <div class="sns-stats" aria-label="議員の SNS 利用状況">
+              <p class="sns-stats-title">利用している議員の数（{g.members.length} 人中）</p>
+              <ul>
+                {giinCount.map((c) => (
+                  <li>
+                    <span class="sns-stats-label"><SnsIcon type={c.t} />{label(c.t)}</span>
+                    <span class="sns-stats-bar"><span style={`width:${(c.n / g.members.length) * 100}%`}></span></span>
+                    <span class="sns-stats-n">{c.n} 人</span>
+                  </li>
+                ))}
+                {noneCount > 0 && (
+                  <li class="sns-stats-none">
+                    <span class="sns-stats-label">確認できず</span>
+                    <span class="sns-stats-bar"><span style={`width:${(noneCount / g.members.length) * 100}%`}></span></span>
+                    <span class="sns-stats-n">{noneCount} 人</span>
+                  </li>
+                )}
+              </ul>
+            </div>
+
+            <label class="filter-kaiha">
+              会派
+              <select data-kaiha>
+                <option value="">すべて</option>
+                {kaihaList.map((k) => <option value={k}>{k}</option>)}
+              </select>
+            </label>
+
+            <div class="table-wrap">
+              <table class="giin-table">
+                <thead>
+                  <tr><th scope="col">議員</th><th scope="col">会派</th><th scope="col">SNS・サイト</th></tr>
+                </thead>
+                <tbody>
+                  {g.members.map((m) => (
+                    <tr data-item data-types={typesOf(m.accounts)} data-kaiha={m.kaiha} data-text={`${m.name} ${m.kana} ${m.kaiha} ${m.note ?? ""}`}>
+                      <td>
+                        {m.profile ? <a href={m.profile}>{m.name}</a> : m.name}
+                        <span class="giin-kana">{m.kana}</span>
+                      </td>
+                      <td class="giin-kaiha">{m.kaiha}</td>
+                      <td>
+                        {m.accounts.length > 0 ? (
+                          <ul class="acc-list">
+                            {sortAccounts(m.accounts).map((a) => (
+                              <li><a class="acc acc-only" href={a.url} rel="nofollow noopener" aria-label={label(a.type)} title={`${label(a.type)}${a.note ? `（${a.note}）` : ""}`}><SnsIcon type={a.type} /></a>{a.note && <span class="acc-note">{a.note}</span>}</li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <span class="acc-none">確認できず</span>
+                        )}
+                        {m.note && <p class="giin-note">{m.note}</p>}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        ) : (
+          <section class="sns-section" id={s.id} aria-labelledby={`${s.id}-h`}>
+            <h3 id={`${s.id}-h`}>{s.title}</h3>
+            {"lead" in s && s.lead && <p set:html={s.lead} />}
+            <ul class="sns-cards">
+              {"items" in s && s.items.map((i) => (
+                <li class="sns-card" data-item data-types={typesOf(i.accounts)} data-text={`${i.name} ${i.operator ?? ""} ${i.about ?? ""} ${i.note ?? ""}`}>
+                  <p class="sns-card-name">{i.name}</p>
+                  {(i.operator && i.operator !== i.name) && <p class="sns-card-op">運営：{i.operator}</p>}
+                  {i.about && <p class="sns-card-about">{i.about}</p>}
+                  <ul class="acc-list">
+                    {sortAccounts(i.accounts).map((a) => (
+                      <li><a class="acc" href={a.url} rel="noopener" title={label(a.type)}><SnsIcon type={a.type} /><span>{a.handle ?? label(a.type)}</span></a>{a.note && <span class="acc-note">{a.note}</span>}</li>
+                    ))}
+                  </ul>
+                  {i.note && <p class="sns-card-note">{i.note}</p>}
+                  {i.source && <p class="sns-card-src">出典：<a href={i.source}>{siteName(i.source)}</a></p>}
+                </li>
+              ))}
+            </ul>
+          </section>
+        ),
+          )}
+        </section>
+      ))}
+
+      <p class="filter-empty" hidden data-empty>当てはまるアカウントはありません。</p>
+
+      <section id="notes" aria-labelledby="notes-h">
+        <h2 id="notes-h">このページについて</h2>
+        <ul>
+          <li>「確認できず」は、本人のサイト・政党のページ・市議会のページと検索で探して、本人のものと確かめられるアカウントが無かった、という意味です。アカウントが無いとは限りません</li>
+          <li>アカウントの名前（@〜）は変わることがあります。消えていたり、別の人のものになっていたりしたら、<a href="/about/#contact">教えてください</a></li>
+          <li>議員の会派は、議会の中のグループです。政党と同じとは限りません</li>
+          <li>議員・政治家の発信の中身について、このサイトは何も評価していません。並びは市議会の名簿の順です</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+
+  <Toc slot="toc" headings={headings} />
+</Base>
+
+<script>
+  // 絞り込み。文字（名前・会派・内容）と、SNS の種類（どれかを持っているもの）と、会派
+  const form = document.querySelector<HTMLFormElement>("[data-filter]");
+  const kaiha = document.querySelector<HTMLSelectElement>("[data-kaiha]");
+  const items = [...document.querySelectorAll<HTMLElement>("[data-item]")];
+  const count = document.querySelector<HTMLElement>("[data-count]");
+  const empty = document.querySelector<HTMLElement>("[data-empty]");
+  const norm = (s: string) => s.normalize("NFKC").toLowerCase().replace(/\s+/g, "");
+
+  const apply = () => {
+    if (!form) return;
+    const fd = new FormData(form);
+    const q = norm(String(fd.get("q") ?? ""));
+    const types = fd.getAll("type").map(String);
+    const k = kaiha?.value ?? "";
+    let n = 0;
+    for (const el of items) {
+      const okQ = !q || norm(el.dataset.text ?? "").includes(q);
+      const have = (el.dataset.types ?? "").split(" ");
+      const okT = types.length === 0 || types.some((t) => have.includes(t));
+      const okK = !k || el.dataset.kaiha === undefined || el.dataset.kaiha === k;
+      el.hidden = !(okQ && okT && okK);
+      if (!el.hidden) n++;
+    }
+    // 中身が全部隠れた節と章は、見出しごと隠す
+    for (const sec of document.querySelectorAll<HTMLElement>(".sns-section, .sns-chapter")) {
+      sec.hidden = ![...sec.querySelectorAll<HTMLElement>("[data-item]")].some((el) => !el.hidden);
+    }
+    // 全件のときも件数を出す（空けておくと、何もない隙間に見える）
+    if (count) count.textContent = n === items.length ? `${n} 件` : `${n} 件（全 ${items.length} 件）`;
+    if (empty) empty.hidden = n > 0;
+  };
+  form?.addEventListener("input", apply);
+  form?.addEventListener("submit", (e) => e.preventDefault());
+  kaiha?.addEventListener("change", apply);
+  apply();
+</script>

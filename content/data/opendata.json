@@ -1,0 +1,488 @@
+{
+ "_source": "枚方市のオープンデータ（CC BY 2.1 JP、https://www.city.hirakata.osaka.jp/0000017270.html）。scripts/opendata-data.py で取ってきた",
+ "datasets": {
+  "gomi": {
+   "title": "ごみの分別",
+   "credit": "ごみの分別一覧表（50音順）",
+   "page": "https://www.city.hirakata.osaka.jp/0000024067.html",
+   "files": [
+    "https://www.city.hirakata.osaka.jp./cmsfiles/contents/0000024/24067/gomibunbetuichiranopendata_260819.xlsm"
+   ],
+   "columns": [
+    [
+     "品名",
+     "text"
+    ],
+    [
+     "読み",
+     "hidden"
+    ],
+    [
+     "出し方",
+     "text"
+    ],
+    [
+     "注意",
+     "long"
+    ]
+   ],
+   "filters": [
+    "出し方"
+   ],
+   "search": [
+    "品名",
+    "読み",
+    "注意"
+   ],
+   "filterOptions": {
+    "出し方": [
+     [
+      "一般ごみ",
+      "一般ごみ"
+     ],
+     [
+      "粗ごみ",
+      "粗ごみ"
+     ],
+     [
+      "大型ごみ",
+      "大型"
+     ],
+     [
+      "ペットボトル・プラ",
+      "ペットボトル"
+     ],
+     [
+      "空き缶・びん・ガラス",
+      "空き缶"
+     ],
+     [
+      "紙類",
+      "紙類"
+     ],
+     [
+      "処理困難物",
+      "処理困難物"
+     ],
+     [
+      "家電リサイクル",
+      "家電リサイクル"
+     ],
+     [
+      "パソコン",
+      "ＰＣ"
+     ],
+     [
+      "市で集めないもの",
+      "市で"
+     ],
+     [
+      "臨時ごみ",
+      "臨時"
+     ],
+     [
+      "分別回収",
+      "分別回収"
+     ]
+    ]
+   },
+   "geoFixed": [],
+   "id": "gomi",
+   "fetched": "2026-11-08",
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "count": 1763
+  },
+  "aed": {
+   "title": "AED の場所",
+   "credit": "自動体外式除細動器（AED）の設置情報 オープンデータ",
+   "page": "https://www.city.hirakata.osaka.jp/0000010080.html",
+   "files": [
+    "https://www.city.hirakata.osaka.jp./cmsfiles/contents/0000010/10080/AED_koukyou250912.csv",
+    "https://www.city.hirakata.osaka.jp./cmsfiles/contents/0000010/10080/AED_convenience2601101.csv"
+   ],
+   "columns": [
+    [
+     "名称",
+     "text"
+    ],
+    [
+     "種類",
+     "text"
+    ],
+    [
+     "読み",
+     "hidden"
+    ],
+    [
+     "所在地",
+     "text"
+    ],
+    [
+     "設置場所",
+     "text"
+    ],
+    [
+     "利用可能時間",
+     "text"
+    ],
+    [
+     "緯度",
+     "lat"
+    ],
+    [
+     "経度",
+     "lon"
+    ]
+   ],
+   "filters": [
+    "種類"
+   ],
+   "search": [
+    "名称",
+    "読み",
+    "所在地",
+    "利用可能時間"
+   ],
+   "geoFixed": [
+    "枚方市保健所：座標が市の外（34.491006, 135.3933874）を指していたので地図に出さない",
+    "枚方市上下水道局北部別館：座標が市の外（34.519738, 135.4040172）を指していたので地図に出さない"
+   ],
+   "id": "aed",
+   "fetched": "2026-11-08",
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "count": 245
+  },
+  "park": {
+   "title": "都市公園",
+   "credit": "都市公園情報",
+   "page": "https://www.city.hirakata.osaka.jp/0000004691.html",
+   "files": [
+    "https://www.city.hirakata.osaka.jp./cmsfiles/contents/0000004/4691/toshikouen_jyouhou.csv"
+   ],
+   "note": "市のデータは 2021年8月時点",
+   "columns": [
+    [
+     "公園名",
+     "text"
+    ],
+    [
+     "所在地",
+     "text"
+    ],
+    [
+     "面積（㎡）",
+     "num"
+    ],
+    [
+     "遊具",
+     "text"
+    ],
+    [
+     "トイレ",
+     "flag"
+    ],
+    [
+     "駐車場",
+     "flag"
+    ],
+    [
+     "桜の本数",
+     "num"
+    ],
+    [
+     "一時避難地",
+     "flag"
+    ],
+    [
+     "景色が良い",
+     "flag"
+    ],
+    [
+     "緯度",
+     "lat"
+    ],
+    [
+     "経度",
+     "lon"
+    ]
+   ],
+   "filters": [
+    "トイレ",
+    "駐車場",
+    "一時避難地",
+    "景色が良い"
+   ],
+   "search": [
+    "公園名",
+    "所在地",
+    "遊具"
+   ],
+   "sort": [
+    "面積（㎡）",
+    "desc"
+   ],
+   "geoFixed": [],
+   "id": "park",
+   "fetched": "2026-11-08",
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "count": 200
+  },
+  "toilet": {
+   "title": "公衆トイレ",
+   "credit": "公衆トイレ一覧",
+   "page": "https://www.city.hirakata.osaka.jp/0000023432.html",
+   "files": [
+    "https://www.city.hirakata.osaka.jp./cmsfiles/contents/0000023/23432/hirakata_public_toilet.csv"
+   ],
+   "note": "市のデータは 2022年3月時点",
+   "columns": [
+    [
+     "名称",
+     "text"
+    ],
+    [
+     "住所",
+     "text"
+    ],
+    [
+     "設置場所",
+     "text"
+    ],
+    [
+     "車椅子",
+     "flag"
+    ],
+    [
+     "乳幼児",
+     "flag"
+    ],
+    [
+     "おむつ替え",
+     "flag"
+    ],
+    [
+     "オストメイト",
+     "flag"
+    ],
+    [
+     "利用時間",
+     "text"
+    ],
+    [
+     "休業日・備考",
+     "text"
+    ],
+    [
+     "緯度",
+     "lat"
+    ],
+    [
+     "経度",
+     "lon"
+    ]
+   ],
+   "filters": [
+    "車椅子",
+    "乳幼児",
+    "おむつ替え",
+    "オストメイト"
+   ],
+   "search": [
+    "名称",
+    "住所",
+    "設置場所"
+   ],
+   "geoFixed": [
+    "市民ふれあいセンター：緯度と経度が逆だったので入れ替えた"
+   ],
+   "id": "toilet",
+   "fetched": "2026-11-08",
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "count": 171
+  },
+  "hinanjo": {
+   "title": "避難所",
+   "credit": "避難所情報",
+   "page": "https://www.city.hirakata.osaka.jp/0000036168.html",
+   "files": [
+    "https://www.city.hirakata.osaka.jp./cmsfiles/contents/0000036/36168/opendate.csv"
+   ],
+   "note": "市のデータは 2022年4月時点。避難所は変わることがあるので、いざというときは市の防災のページ（防災ガイド）で確かめてください。地図の位置は、市のデータの座標（平面直角座標）を緯度・経度に直したもの",
+   "columns": [
+    [
+     "施設名",
+     "text"
+    ],
+    [
+     "種類",
+     "text"
+    ],
+    [
+     "読み",
+     "hidden"
+    ],
+    [
+     "住所",
+     "text"
+    ],
+    [
+     "電話",
+     "text"
+    ],
+    [
+     "緯度",
+     "lat"
+    ],
+    [
+     "経度",
+     "lon"
+    ]
+   ],
+   "filters": [
+    "種類"
+   ],
+   "search": [
+    "施設名",
+    "読み",
+    "住所"
+   ],
+   "geoFixed": [],
+   "id": "hinanjo",
+   "fetched": "2026-11-08",
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "count": 72
+  },
+  "kosodate": {
+   "title": "子育て施設",
+   "credit": "子育て施設一覧",
+   "page": "https://www.city.hirakata.osaka.jp/0000047660.html",
+   "files": [
+    "https://www.city.hirakata.osaka.jp./cmsfiles/contents/0000047/47660/272108_preschool_202301.xlsx"
+   ],
+   "note": "市のデータは 2023年1月時点。住所が非公開の個人のベビーシッター（認可外保育所）は載せていない",
+   "columns": [
+    [
+     "名称",
+     "text"
+    ],
+    [
+     "読み",
+     "hidden"
+    ],
+    [
+     "種別",
+     "text"
+    ],
+    [
+     "住所",
+     "text"
+    ],
+    [
+     "アクセス",
+     "text"
+    ],
+    [
+     "電話",
+     "text"
+    ],
+    [
+     "緯度",
+     "lat"
+    ],
+    [
+     "経度",
+     "lon"
+    ]
+   ],
+   "filters": [
+    "種別"
+   ],
+   "search": [
+    "名称",
+    "読み",
+    "住所",
+    "アクセス"
+   ],
+   "geoFixed": [],
+   "id": "kosodate",
+   "fetched": "2026-11-08",
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "count": 187
+  },
+  "shisetsu": {
+   "title": "公共施設",
+   "credit": "【オープンデータ】枚方市公共施設一覧",
+   "page": "https://www.city.hirakata.osaka.jp/0000023332.html",
+   "files": [
+    "https://www.city.hirakata.osaka.jp./cmsfiles/contents/0000023/23332/shisetsu.csv"
+   ],
+   "columns": [
+    [
+     "施設名",
+     "text"
+    ],
+    [
+     "読み",
+     "hidden"
+    ],
+    [
+     "分類",
+     "text"
+    ],
+    [
+     "小分類",
+     "text"
+    ],
+    [
+     "住所",
+     "text"
+    ],
+    [
+     "設置年",
+     "num"
+    ],
+    [
+     "設置年（元の表記）",
+     "hidden"
+    ],
+    [
+     "利用時間",
+     "text"
+    ],
+    [
+     "休館日",
+     "text"
+    ],
+    [
+     "バリアフリー",
+     "text"
+    ]
+   ],
+   "filters": [
+    "分類"
+   ],
+   "search": [
+    "施設名",
+    "読み",
+    "小分類",
+    "住所"
+   ],
+   "sort": [
+    "設置年",
+    "asc"
+   ],
+   "geoFixed": [],
+   "id": "shisetsu",
+   "fetched": "2026-11-08",
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "count": 263
+  }
+ }
+}

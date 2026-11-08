@@ -1,0 +1,4120 @@
+{
+ "_source": "枚方市の各ページ（content/data/opendata-pages.yaml の id）から scripts/opendata-catalog.py で取ってきた。題名と説明は yaml に手で書いたもの",
+ "generated": "2026-11-08",
+ "datasets": [
+  {
+   "id": "0000036168",
+   "category": "防災・安全",
+   "title": "避難所",
+   "desc": "災害のときの避難所の名前・住所・電話",
+   "inList": true,
+   "view": "hinanjo",
+   "note": "2022年4月から更新されていない。最新は防災ガイドで",
+   "page": "https://www.city.hirakata.osaka.jp/0000036168.html",
+   "cityTitle": "避難所情報",
+   "published": "2021-04-01",
+   "updated": "2022-04-01",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000036/36168/opendate.csv",
+     "label": "避難所情報",
+     "format": "CSV",
+     "size": "8.96KB"
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000028191",
+   "category": "防災・安全",
+   "title": "消防水利施設",
+   "desc": "消火に使う水利施設の場所",
+   "inList": true,
+   "note": "平成31年度版",
+   "page": "https://www.city.hirakata.osaka.jp/0000028191.html",
+   "cityTitle": "消防水利施設一覧(オープンデータ）の更新について",
+   "published": "2020-03-23",
+   "updated": "2022-03-18",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000028/28191/272108_fire_hydrant.pdf",
+     "label": "消防水利一覧（平成31年度版）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000028/28191/272108_fire_hydrant.csv",
+     "label": "消防水利一覧（平成31年度版）",
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000017941",
+   "category": "防災・安全",
+   "title": "防災ガイド（ハザードマップ）",
+   "desc": "洪水・土砂災害などの危ないところと避難所の地図（PDF）",
+   "inList": false,
+   "page": "https://www.city.hirakata.osaka.jp/0000017941.html",
+   "cityTitle": "令和8年度版　防災ガイド（ハザードマップ）について",
+   "published": "2026-04-01",
+   "updated": "2026-06-01",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_H1.pdf",
+     "label": "表紙",
+     "format": "PDF",
+     "size": "483.94KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P001.pdf",
+     "label": "目次",
+     "format": "PDF",
+     "size": "442.79KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P002_P015.pdf",
+     "label": "P1から15 発刊にあたって・風水害・土砂災害編",
+     "format": "PDF",
+     "size": "9.12MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P016_P027.pdf",
+     "label": "P16から27 地震編",
+     "format": "PDF",
+     "size": "13.04MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P028_P032.pdf",
+     "label": "P28から32 日頃からの備え",
+     "format": "PDF",
+     "size": "3.72MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P033_P040.pdf",
+     "label": "P33から40 共通編",
+     "format": "PDF",
+     "size": "20.09MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P041_P045.pdf",
+     "label": "P41から45 ハザードマップの使い方 ・種類・説明",
+     "format": "PDF",
+     "size": "9.81MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P142_P143.pdf",
+     "label": "P142から143 巻末（防災タイムライン）",
+     "format": "PDF",
+     "size": "1.18MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_H4.pdf",
+     "label": "表紙裏",
+     "format": "PDF",
+     "size": "542.90KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P046_P048.pdf",
+     "label": "P46から48 枚方市索引図・凡例",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_0.pdf",
+     "label": "P49 木津川洪水ハザードマップ",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_1.pdf",
+     "label": "P50から52 ハザードマップ1",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_2.pdf",
+     "label": "P53から56 ハザードマップ2",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_3.pdf",
+     "label": "P57から59 ハザードマップ3",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_4.pdf",
+     "label": "P60から64 ハザードマップ4",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_5.pdf",
+     "label": "P65から69 ハザードマップ5",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_6.pdf",
+     "label": "P70から73 ハザードマップ6",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_7.pdf",
+     "label": "P74から75 ハザードマップ7",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_8.pdf",
+     "label": "P76から80 ハザードマップ8",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_9.pdf",
+     "label": "P81から84 ハザードマップ9",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_10.pdf",
+     "label": "P85から86 ハザードマップ10",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_11.pdf",
+     "label": "P87から88 ハザードマップ11",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_12.pdf",
+     "label": "P89から90 ハザードマップ12",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_13.pdf",
+     "label": "P91から93 ハザードマップ13",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_14.pdf",
+     "label": "P94から96 ハザードマップ14",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_15.pdf",
+     "label": "P97から100 ハザードマップ15",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_16.pdf",
+     "label": "P101から106 ハザードマップ16",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_17.pdf",
+     "label": "P107から109 ハザードマップ17",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_18.pdf",
+     "label": "P110から111 ハザードマップ18",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_19.pdf",
+     "label": "P112 ハザードマップ19",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_20.pdf",
+     "label": "P113 ハザードマップ20",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_21.pdf",
+     "label": "P114 ハザードマップ21",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_22.pdf",
+     "label": "P115 ハザードマップ22",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_23.pdf",
+     "label": "P116 ハザードマップ23",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_24.pdf",
+     "label": "P117から119 ハザードマップ24",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P049_P123_25.pdf",
+     "label": "P120から123 浸水継続時間",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P124_P125.pdf",
+     "label": "P124から125 ため池ハザードマップ（中宮大池）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P126_P127.pdf",
+     "label": "P126から127 ため池ハザードマップ（最早池）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P128_P129.pdf",
+     "label": "P128から129 ため池ハザードマップ（招提新大池）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P130.pdf",
+     "label": "P130 ため池ハザードマップ（小倉池・御堂池）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P131.pdf",
+     "label": "P131 ため池ハザードマップ（下谷池・林池）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P132.pdf",
+     "label": "P132 ため池ハザードマップ（今池）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P133.pdf",
+     "label": "P133 ため池ハザードマップ（長尾大池）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P134.pdf",
+     "label": "P134 ため池ハザードマップ（津田地蔵池）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P135.pdf",
+     "label": "P135 ため池ハザードマップ（黒土池）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P136.pdf",
+     "label": "P136 ため池ハザードマップ（津田大池）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P137.pdf",
+     "label": "P137 ため池ハザードマップ（新池）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P138.pdf",
+     "label": "P138 ため池ハザードマップ（古池）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P139.pdf",
+     "label": "P139 ため池ハザードマップ（惣喜池）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P140.pdf",
+     "label": "P140 ため池ハザードマップ（トンボ池）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/bousaiguide2026_P141.pdf",
+     "label": "P141 ため池ハザードマップ（大壺池）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/hirakata_chubu_15000_A1_260226_outline.pdf",
+     "label": "中部",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/hirakata_tobu_15000_A1_260226_outline.pdf",
+     "label": "東部",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/hirakata_nanbu_15000_A1_260226_outline.pdf",
+     "label": "南部",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17941/hirakata_hokubu_15000_A1_260226_outline.pdf",
+     "label": "北部",
+     "format": "PDF",
+     "size": null
+    }
+   ],
+   "license": null,
+   "status": "ok",
+   "licenseUrl": null
+  },
+  {
+   "id": "0000047660",
+   "category": "子育て・教育",
+   "title": "子育て施設",
+   "desc": "保育所・幼稚園・こども園・放課後児童クラブなどの場所と連絡先",
+   "inList": true,
+   "view": "kosodate",
+   "note": "2023年1月時点",
+   "page": "https://www.city.hirakata.osaka.jp/0000047660.html",
+   "cityTitle": "子育て施設一覧",
+   "published": "2023-04-04",
+   "updated": "2023-04-04",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47660/272108_preschool_202301.xlsx",
+     "label": "子育て施設一覧202301",
+     "format": "XLSX",
+     "size": "60.29KB"
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000007970",
+   "category": "子育て・教育",
+   "title": "市立小中学校の通学区域",
+   "desc": "町名ごとに、どの小学校・中学校に通うか",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000007970.html",
+   "cityTitle": "市立小中学校通学区域表オープンデータ",
+   "published": "2025-03-27",
+   "updated": "2025-03-27",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000007/7970/50onnbetuR70325.pdf",
+     "label": "市立小中学校通学区域表",
+     "format": "PDF",
+     "size": "177KB"
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000010080",
+   "category": "健康・福祉・衛生",
+   "title": "AED の設置場所",
+   "desc": "AED を置いている市の施設とコンビニ。使える時間つき",
+   "inList": true,
+   "view": "aed",
+   "page": "https://www.city.hirakata.osaka.jp/0000010080.html",
+   "cityTitle": "自動体外式除細動器（AED）の設置情報 オープンデータ",
+   "published": "2021-07-16",
+   "updated": "2026-11-06",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000010/10080/AED_koukyou250912.csv",
+     "label": "AED設置情報 公共施設",
+     "format": "CSV",
+     "size": "22.07KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000010/10080/AED_convenience2601101.csv",
+     "label": "AED設置状況 コンビニエンスストア",
+     "format": "CSV",
+     "size": "11.20KB"
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000002695",
+   "category": "健康・福祉・衛生",
+   "title": "薬局",
+   "desc": "市内の薬局の一覧",
+   "inList": true,
+   "note": "2024年2月時点",
+   "page": "https://www.city.hirakata.osaka.jp/0000002695.html",
+   "cityTitle": "薬事関係施設一覧",
+   "published": "2024-02-15",
+   "updated": "2024-02-15",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000002/2695/yakkyokur20240202.pdf",
+     "label": "薬局一覧（令和6年2月2日現在）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000002/2695/yakkyoku20240202.csv",
+     "label": "薬局一覧（令和6年2月2日現在）",
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000001686",
+   "category": "健康・福祉・衛生",
+   "title": "委託動物病院",
+   "desc": "市が業務を委託している動物病院の一覧",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000001686.html",
+   "cityTitle": "委託動物病院名簿",
+   "published": "2026-04-01",
+   "updated": "2026-04-01",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1686/itakudoubutubyouin(R4.4).xlsx",
+     "label": "枚方市委託動物病院一覧",
+     "format": "XLSX",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000023479",
+   "category": "健康・福祉・衛生",
+   "title": "食品の営業許可を受けた施設",
+   "desc": "飲食店などの営業許可を受けた施設の一覧。毎月更新",
+   "inList": true,
+   "note": "営業者の個人名を含むので、このサイトでは表にしていない",
+   "page": "https://www.city.hirakata.osaka.jp/0000023479.html",
+   "cityTitle": "食品等営業許可施設について",
+   "published": "2026-10-30",
+   "updated": "2026-10-30",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000023/23479/272108_food_business_all_202609_end.csv",
+     "label": "2026年9月末日時点 全ての許可施設",
+     "format": "CSV",
+     "size": "431.88KB"
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000025284",
+   "category": "健康・福祉・衛生",
+   "title": "理容所・美容所・旅館・公衆浴場など",
+   "desc": "理容所、美容所、クリーニング所、旅館業、民泊、公衆浴場などの施設の一覧",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000025284.html",
+   "cityTitle": "環境衛生営業施設について",
+   "published": "2026-10-15",
+   "updated": "2026-10-15",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/kougyouzyouall.pdf",
+     "label": "興行場施設一覧（令和8年3月末時点）",
+     "format": "PDF",
+     "size": "251.25KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/kougyouzyouall.xlsx",
+     "label": "興行場施設一覧（令和8年3月末時点）",
+     "format": "XLSX",
+     "size": "12.23KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/ryokanall.pdf",
+     "label": "旅館業施設一覧（令和8年3月末時点）",
+     "format": "PDF",
+     "size": "358.21KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/ryokanall.xlsx",
+     "label": "旅館業施設一覧（令和8年3月末時点）",
+     "format": "XLSX",
+     "size": "13.10KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/yokuzyoall.pdf",
+     "label": "公衆浴場施設一覧（令和8年3月末時点）",
+     "format": "PDF",
+     "size": "415.56KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/yokuzyoall.xlsx",
+     "label": "公衆浴場施設一覧（令和8年3月末時点）",
+     "format": "XLSX",
+     "size": "13.69KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/riyouall.pdf",
+     "label": "理容所施設一覧（令和8年3月末）",
+     "format": "PDF",
+     "size": "964.10KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/riyouall.xlsx",
+     "label": "理容所施設一覧（令和8年3月末）",
+     "format": "XLSX",
+     "size": "28.73KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/biyouall.pdf",
+     "label": "美容所施設一覧（令和8年3月末）",
+     "format": "PDF",
+     "size": "1.32MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/biyouall.xlsx",
+     "label": "美容所施設一覧（令和8年3月末）",
+     "format": "XLSX",
+     "size": "68.03KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/cleaningall.pdf",
+     "label": "クリーニング所施設一覧（令和8年3月末）",
+     "format": "PDF",
+     "size": "791.99KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/cleaningall.xlsx",
+     "label": "クリーニング所施設一覧（令和8年3月末）",
+     "format": "XLSX",
+     "size": "26.01KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/zyuhakuall.pdf",
+     "label": "住宅宿泊事業施設一覧（令和8年3月末時点）",
+     "format": "PDF",
+     "size": "121.08KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/zyuhakuall.xlsx",
+     "label": "住宅宿泊事業施設一覧（令和8年3月末時点）",
+     "format": "XLSX",
+     "size": "10.26KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/onsenall.pdf",
+     "label": "温泉施設一覧（令和8年3月末時点）",
+     "format": "PDF",
+     "size": "63.16KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/onsenall.xlsx",
+     "label": "温泉施設一覧（令和8年3月末時点）",
+     "format": "XLSX",
+     "size": "12.08KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/zyuuhakuapr.pdf",
+     "label": "住宅宿泊事業新規一覧（令和8年4月）",
+     "format": "PDF",
+     "size": "13.70KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/zyuuhakuapr.xlsx",
+     "label": "住宅宿泊事業新規一覧（令和8年4月）",
+     "format": "XLSX",
+     "size": "11.26KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/biyouapr.pdf",
+     "label": "美容所新規一覧（令和8年4月）",
+     "format": "PDF",
+     "size": "28.09KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/biyouapr.xlsx",
+     "label": "美容所新規一覧（令和8年4月）",
+     "format": "XLSX",
+     "size": "11.63KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/beautymay.pdf",
+     "label": "美容所新規一覧（令和8年5月）",
+     "format": "PDF",
+     "size": "30.47KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/beautymay.xlsx",
+     "label": "美容所新規一覧（令和8年5月）",
+     "format": "XLSX",
+     "size": "11.82KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/zyuhaku6.pdf",
+     "label": "住宅宿泊事業新規一覧（令和8年6月）",
+     "format": "PDF",
+     "size": "54.89KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/zyuhaku6.xlsx",
+     "label": "住宅宿泊事業新規一覧（令和8年6月）",
+     "format": "XLSX",
+     "size": "9.77KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/beauty6.pdf",
+     "label": "美容所新規一覧（令和8年6月）",
+     "format": "PDF",
+     "size": "32.37KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/beauty6.xlsx",
+     "label": "美容所新規一覧（令和8年6月）",
+     "format": "XLSX",
+     "size": "11.87KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/bbjul.pdf",
+     "label": "理容所新規一覧（令和8年7月）",
+     "format": "PDF",
+     "size": "135.34KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/bbjul.xlsx",
+     "label": "理容所新規一覧（令和8年7月）",
+     "format": "XLSX",
+     "size": "11.45KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/btjul.pdf",
+     "label": "美容所新規一覧（令和8年7月）",
+     "format": "PDF",
+     "size": "170.99KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/btjul.xlsx",
+     "label": "美容所新規一覧（令和8年7月）",
+     "format": "XLSX",
+     "size": "11.66KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/8barber.pdf",
+     "label": "理容所新規一覧（令和8年8月）",
+     "format": "PDF",
+     "size": "123.67KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/8barber.xlsx",
+     "label": "理容所新規一覧（令和8年8月）",
+     "format": "XLSX",
+     "size": "9.97KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/8beauty.pdf",
+     "label": "美容所新規一覧（令和8年8月）",
+     "format": "PDF",
+     "size": "138.36KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/8beauty.xlsx",
+     "label": "美容所新規一覧（令和8年8月）",
+     "format": "XLSX",
+     "size": "10.03KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/9barber.pdf",
+     "label": "理容所新規一覧（令和8年9月）",
+     "format": "PDF",
+     "size": "133.71KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/9barber.xlsx",
+     "label": "理容所新規一覧（令和8年9月）",
+     "format": "XLSX",
+     "size": "11.54KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/9beauty.pdf",
+     "label": "美容所新規一覧（令和8年9月）",
+     "format": "PDF",
+     "size": "272.02KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000025/25284/9beauty.xlsx",
+     "label": "美容所新規一覧（令和8年9月）",
+     "format": "XLSX",
+     "size": "12.39KB"
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000037120",
+   "category": "健康・福祉・衛生",
+   "title": "介護サービス事業所",
+   "desc": "市内の介護サービス事業所の一覧。毎月更新",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000037120.html",
+   "cityTitle": "【オープンデータ】介護サービス事業所一覧",
+   "published": "2026-11-04",
+   "updated": "2026-11-04",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000037/37120/272104_care_service_202611.xlsx",
+     "label": "介護サービス事業所一覧",
+     "format": "XLSX",
+     "size": "114.83KB"
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000002693",
+   "category": "健康・福祉・衛生",
+   "title": "歯科技工所",
+   "desc": "市内の歯科技工所の一覧（PDF）",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000002693.html",
+   "cityTitle": "歯科技工所一覧",
+   "published": "2018-01-18",
+   "updated": "2026-09-07",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000002/2693/gikosho.pdf",
+     "label": "歯科技工所一覧",
+     "format": "PDF",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000046697",
+   "category": "健康・福祉・衛生",
+   "title": "国民健康保険の統計",
+   "desc": "国民健康保険の保険料率・医療費・収支など",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000046697.html",
+   "cityTitle": "【オープンデータ】国民健康保険事業に関する統計",
+   "published": "2024-08-26",
+   "updated": "2024-08-22",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000046/46697/1iryouhisyushiR05.csv",
+     "label": "枚方市・国民健康保険・医療費・収支・R05",
+     "format": "CSV",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000046/46697/2syunouiryouR05.csv",
+     "label": "枚方市・国民健康保険・収納状況・保険料率（医療）R05",
+     "format": "CSV",
+     "size": "2.07KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000046/46697/3syunoukaigoR05.csv",
+     "label": "枚方市・国民健康保険・収納状況・保険料率（介護）R05",
+     "format": "CSV",
+     "size": "1.91KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000046/46697/4syunoushienR05.csv",
+     "label": "枚方市・国民健康保険・収納状況・保険料率（支援）",
+     "format": "CSV",
+     "size": "2.03KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000046/46697/5tainouR05.csv",
+     "label": "枚方市・国民健康保険・滞納・R05",
+     "format": "CSV",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000046/46697/6honsaniryouR05.csv",
+     "label": "枚方市・国民健康保険・保険料率・本算定（医療）R06",
+     "format": "CSV",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000046/46697/7honsankaigoR05.csv",
+     "label": "枚方市・国民健康保険・保険料率・本算定（介護）R06",
+     "format": "CSV",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000046/46697/8honsanshienR05.csv",
+     "label": "枚方市・国民健康保険・保険料率・本算定（支援）R06",
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000022463",
+   "category": "観光・文化・イベント",
+   "title": "桜の名所",
+   "desc": "市内の桜の主な名所。場所と写真のリンクつき",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000022463.html",
+   "cityTitle": "「桜の主な名所」のオープンデータ",
+   "published": "2020-03-12",
+   "updated": "2025-01-15",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22463/sakuraopendata.csv",
+     "label": null,
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000022161",
+   "category": "観光・文化・イベント",
+   "title": "観光におすすめの公園と、そのトイレ",
+   "desc": "観光向けの公園と公園のトイレ、観光ステーションの場所",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000022161.html",
+   "cityTitle": "観光関連のオープンデータ",
+   "published": "2021-08-31",
+   "updated": "2025-01-15",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22161/Hirakata_Tourism_Bureau.csv",
+     "label": null,
+     "format": "CSV",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22161/tourism_park.csv",
+     "label": null,
+     "format": "CSV",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22161/tourism_park_restroom.csv",
+     "label": null,
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000016255",
+   "category": "観光・文化・イベント",
+   "title": "市の花と枚方八景",
+   "desc": "市の花と、枚方八景の場所",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000016255.html",
+   "cityTitle": "観光情報オープンデータ（市の花・枚方八景）",
+   "published": "2021-08-31",
+   "updated": "2025-01-15",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000016/16255/shinohana.csv",
+     "label": "観光情報（市の花）",
+     "format": "CSV",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000016/16255/hakkeiopendata.csv",
+     "label": "観光情報（枚方八景）",
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000027756",
+   "category": "観光・文化・イベント",
+   "title": "指定文化財・登録文化財",
+   "desc": "市内の国・府・市の指定文化財と登録文化財の一覧",
+   "inList": true,
+   "note": "改変できない条件（CC BY-ND）なので、このサイトでは表にしていない",
+   "page": "https://www.city.hirakata.osaka.jp/0000027756.html",
+   "cityTitle": "（オープンデータ）枚方市内の指定文化財・登録文化財一覧",
+   "published": "2020-03-19",
+   "updated": "2023-05-18",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000027/27756/hira-siteibun.csv",
+     "label": "枚方市内の指定文化財・登録文化財一覧",
+     "format": "CSV",
+     "size": "30.93KB"
+    }
+   ],
+   "license": "CC BY-ND 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by-nd/2.1/jp/"
+  },
+  {
+   "id": "0000047672",
+   "category": "観光・文化・イベント",
+   "title": "文化財の画像",
+   "desc": "市内の文化財の写真",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000047672.html",
+   "cityTitle": "（オープンデータ）枚方市の文化財画像データ",
+   "published": "2023-05-18",
+   "updated": "2024-09-12",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47672/20210705kudara1.JPG",
+     "label": "別ウィンドウで開く",
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47672/210609kudara5.jpg",
+     "label": "別ウィンドウで開く",
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47672/202100609kudara4.JPG",
+     "label": "別ウィンドウで開く",
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47672/20230502kuzuha-daiba1.JPG",
+     "label": "別ウィンドウで開く",
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47672/20230502kuzuha-daiba2.JPG",
+     "label": "別ウィンドウで開く",
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47672/20230502kuzuha-daiba3.JPG",
+     "label": "別ウィンドウで開く",
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47672/20230502kuzuha-daiba4.JPG",
+     "label": "別ウィンドウで開く",
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47672/20230329tanaka-mu1.jpg",
+     "label": "別ウィンドウで開く",
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47672/20230428tanaka-mu2.jpg",
+     "label": "別ウィンドウで開く",
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47672/20230428tanaka-mu3.jpg",
+     "label": "別ウィンドウで開く",
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47672/230428tanaka-mu4.jpg",
+     "label": "別ウィンドウで開く",
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47672/20171209tanaka-mu4.jpg",
+     "label": "別ウィンドウで開く",
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47672/230428tanaka-mu6.jpg",
+     "label": "別ウィンドウで開く",
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47672/&#9;20230428tanaka-mu7.jpg",
+     "label": "別ウィンドウで開く",
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47672/20221018tanaka-mu8.png",
+     "label": "別ウィンドウで開く",
+     "format": "PNG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47672/220516tanaka-muku1.JPG",
+     "label": "別ウィンドウで開く",
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47672/&#9;200405tanaka-muku2.JPG",
+     "label": "別ウィンドウで開く",
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47672/201311kagiya1.jpg",
+     "label": "別ウィンドウで開く",
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47672/20120507kagiya2.jpg",
+     "label": "別ウィンドウで開く",
+     "format": "JPEG",
+     "size": null
+    }
+   ],
+   "license": "CC BY-ND 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by-nd/2.1/jp/"
+  },
+  {
+   "id": "0000021947",
+   "category": "観光・文化・イベント",
+   "title": "観光・文化財の画像集",
+   "desc": "文化財、桜の名所、公園、観光ステーションの写真",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "cityTitle": "ひらかた市 オープンデータ画像集",
+   "published": "2021-08-20",
+   "updated": "2021-08-24",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/makinokurumadukakofun1.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/makinokurumadukakofun2.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/makinokurumadukakofun3.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/makinokurumadukakofun4.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/makinokurumadukakofun5.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/makinokurumadukakofun6.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/minamokairousakura1.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/minamokairousakura2.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/rakujyusousakura1.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/shiminnomorisakura1.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/irakupark1.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/irakupark2.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/irakupark3.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/irakupark4.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/irakupark5.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/okahigashichuopark1.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/okahigashichuopark2.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kannonyamapark1.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kannonyamapark2.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kitayamapark1.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kitayamapark2.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kitayamapark3.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kitayamapark4.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kitayamapark5.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/shiminnomori1.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/shiminnomori2.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kinyakurumadukapark1.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kuzuhachuopark1.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kuzuhahigashipark1_s.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kuzuhahigashipark2.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kuniminookapark1.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kuniminookapark2.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/koorigaokachuopark1.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/gotenyamapark1.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/gotenyamapark2.jpeg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/sakaimaikepark1.jpeg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/sakurapark1.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/jinjyapark1.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/jinjyapark2.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/soraminookapark1.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/soraminookapark2.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/soraminookapark3_s.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/soraminookapark4.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/tobupark1.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/tobupark2.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/tobupark3.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/tobupark4.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/nakanoikepark1.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/mitsuyapark1.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yodomipark1.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/wanipark1.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yodogawakasenpark1.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yodogawakasenpark2.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yamadaikepark1.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yamadaikepark2.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yamadaikepark3.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yamadaikepark4.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yamadaikepark5.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yamadaikepark6.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yamadaikepark7.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yamadaikepark8.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yamadaikepark9.JPG",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kankostation1.jpg",
+     "label": null,
+     "format": "JPEG",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000002629",
+   "category": "観光・文化・イベント",
+   "title": "鍵屋資料館・旧田中家鋳物民俗資料館",
+   "desc": "2つの資料館の開館時間・入館料など",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000002629.html",
+   "cityTitle": "（オープンデータ）文化財課情報",
+   "published": "2020-03-09",
+   "updated": "2020-03-09",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000002/2629/200228tanaka-m.zip",
+     "label": "旧田中家鋳物民俗資料館情報",
+     "format": "ZIP",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000002/2629/20200309kagiya-m.zip",
+     "label": "枚方宿鍵屋資料館情報",
+     "format": "ZIP",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000002673",
+   "category": "観光・文化・イベント",
+   "title": "市史資料室の本",
+   "desc": "『新版郷土枚方の歴史』の目次と、市史資料室の本の値段",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000002673.html",
+   "cityTitle": "（オープンデータ）市史資料室情報",
+   "published": "2016-01-04",
+   "updated": "2021-09-02",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000002/2673/175387_892477_misc.zip",
+     "label": "『新版郷土枚方の歴史』目次",
+     "format": "ZIP",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000002/2673/Publication.zip",
+     "label": "市史資料室刊行物販売価格表",
+     "format": "ZIP",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000000377",
+   "category": "観光・文化・イベント",
+   "title": "ひらかた検定の問題と答え",
+   "desc": "2013年2月3日に行われたご当地検定の問題と答え",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000000377.html",
+   "cityTitle": "ひらかた検定問題、解答（平成25年2月3日実施）",
+   "published": "2015-11-30",
+   "updated": "2025-01-17",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000000/377/173297_870231_misc.zip",
+     "label": "ひらかた検定問題、解答（平成25年2月3日実施）",
+     "format": "ZIP",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000022340",
+   "category": "観光・文化・イベント",
+   "title": "月ごとのイベント",
+   "desc": "市の催しの月ごとの予定",
+   "inList": true,
+   "note": "2022年10月で更新が止まっている",
+   "page": "https://www.city.hirakata.osaka.jp/0000022340.html",
+   "cityTitle": "月間スケジュール（イベント一覧）",
+   "published": "2022-10-04",
+   "updated": "2022-10-04",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2201.xls",
+     "label": "2022年1月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2202.xls",
+     "label": "2022年2月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2203.xls",
+     "label": "2022年3月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2204.xlsx",
+     "label": "2022年4月の月間スケジュール",
+     "format": "XLSX",
+     "size": "16.69KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/202205.xlsx",
+     "label": "2022年5月の月間スケジュール",
+     "format": "XLSX",
+     "size": "22.73KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2206.xlsx",
+     "label": "2022年6月の月間スケジュール",
+     "format": "XLSX",
+     "size": "22.84KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2207.xlsx",
+     "label": "2022年7月の月間スケジュール",
+     "format": "XLSX",
+     "size": "22.05KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/202208.xlsx",
+     "label": "2022年8月の月間スケジュール",
+     "format": "XLSX",
+     "size": "22.06KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/202209.xlsx",
+     "label": "2022年9月の月間スケジュール",
+     "format": "XLSX",
+     "size": "24.29KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/202210.xlsx",
+     "label": "2022年10月の月間スケジュール",
+     "format": "XLSX",
+     "size": "23.48KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2101.xls",
+     "label": "2021年1月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2102.xls",
+     "label": "2021年2月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2103.xls",
+     "label": "2021年3月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2104.xls",
+     "label": "2021年4月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2105.xls",
+     "label": "2021年5月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2106.xls",
+     "label": "2021年6月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2107.xls",
+     "label": "2021年7月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2108.xls",
+     "label": "2021年8月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2109.xls",
+     "label": "2021年9月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2110.xls",
+     "label": "2021年10月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2111.xls",
+     "label": "2021年11月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2112.xls",
+     "label": "2021年12月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2001.xls",
+     "label": "2020年1月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2002.xls",
+     "label": "2020年2月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2003.xls",
+     "label": "2020年3月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2004.xls",
+     "label": "2020年4月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2005.xls",
+     "label": "2020年5月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2006.xls",
+     "label": "2020年6月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2007.xls",
+     "label": "2020年7月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2008.xls",
+     "label": "2020年8月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2009.xls",
+     "label": "2020年9月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2010.xls",
+     "label": "2020年10月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2011.xls",
+     "label": "2020年11月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/2012.xls",
+     "label": "2020年12月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/1901.xls",
+     "label": "2019年1月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/1902.xls",
+     "label": "2019年2月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/1903.xls",
+     "label": "2019年3月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/1904.xls",
+     "label": "2019年4月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/1905.xls",
+     "label": "2019年5月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/1906.xls",
+     "label": "2019年6月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/1907.xls",
+     "label": "2019年7月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/1908.xls",
+     "label": "2019年8月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/1909.xls",
+     "label": "2019年9月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/1910.xls",
+     "label": "2019年10月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/1911.xls",
+     "label": "2019年11月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22340/1912.xls",
+     "label": "2019年12月の月間スケジュール",
+     "format": "XLS",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000024067",
+   "category": "まちづくり・環境",
+   "title": "ごみの分別",
+   "desc": "品目ごとの、ごみの出し方（50音順）",
+   "inList": true,
+   "view": "gomi",
+   "page": "https://www.city.hirakata.osaka.jp/0000024067.html",
+   "cityTitle": "ごみの分別一覧表（50音順）",
+   "published": "2022-05-30",
+   "updated": "2026-08-20",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000024/24067/gomibunbetuichiranopendata_260819.xlsm",
+     "label": "ごみの分別一覧表50音順オープンデータ",
+     "format": "XLSM",
+     "size": "187.02KB"
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000003049",
+   "category": "まちづくり・環境",
+   "title": "家庭ごみの地域別収集日程",
+   "desc": "地域ごとの、ごみの収集日（PDF）",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000003049.html",
+   "cityTitle": "家庭ごみ地域別収集日程",
+   "published": "2019-06-01",
+   "updated": "2024-11-04",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000003/3049/R6tiikibetusyuusyuunittei.pdf",
+     "label": "家庭ごみの地域別収集日程表",
+     "format": "PDF",
+     "size": "744.58KB"
+    }
+   ],
+   "license": null,
+   "status": "ok",
+   "licenseUrl": null
+  },
+  {
+   "id": "0000004701",
+   "category": "まちづくり・環境",
+   "title": "路線価図・標準宅地",
+   "desc": "固定資産税の路線価図、状況類似地域図、標準宅地の情報",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000004701.html",
+   "cityTitle": "固定資産税情報",
+   "published": "2021-03-31",
+   "updated": "2026-07-01",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000004/4701/272108_kotei_r8rosennka.zip",
+     "label": "令和8年度 路線価図",
+     "format": "ZIP",
+     "size": "2.83MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000004/4701/272108_kotei_r8zyourui.zip",
+     "label": "令和8年度 状況類似地域図",
+     "format": "ZIP",
+     "size": "17.37KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000004/4701/272108_kotei_r8hyoutaku.zip",
+     "label": "令和8年度 標準宅地情報",
+     "format": "ZIP",
+     "size": "10.18KB"
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000023332",
+   "category": "施設",
+   "title": "公共施設",
+   "desc": "市の公共施設の住所・設置年・開館時間・バリアフリー",
+   "inList": true,
+   "view": "shisetsu",
+   "page": "https://www.city.hirakata.osaka.jp/0000023332.html",
+   "cityTitle": "【オープンデータ】枚方市公共施設一覧",
+   "published": "2024-05-10",
+   "updated": "2024-05-10",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000023/23332/shisetsu.csv",
+     "label": "公共施設一覧",
+     "format": "CSV",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000023/23332/shisetsu.xlsx",
+     "label": "公共施設一覧",
+     "format": "XLSX",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000004691",
+   "category": "施設",
+   "title": "都市公園",
+   "desc": "公園ごとの広さ・遊具・トイレ・駐車場・桜の本数",
+   "inList": true,
+   "view": "park",
+   "note": "2021年8月時点",
+   "page": "https://www.city.hirakata.osaka.jp/0000004691.html",
+   "cityTitle": "都市公園情報",
+   "published": "2021-08-23",
+   "updated": "2021-08-23",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000004/4691/toshikouen_jyouhou.csv",
+     "label": "都市公園情報",
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000023432",
+   "category": "施設",
+   "title": "公衆トイレ",
+   "desc": "市の公衆トイレの場所と、車椅子用・おむつ替え・オストメイトの有無",
+   "inList": true,
+   "view": "toilet",
+   "note": "2022年3月時点",
+   "page": "https://www.city.hirakata.osaka.jp/0000023432.html",
+   "cityTitle": "公衆トイレ一覧",
+   "published": "2022-03-17",
+   "updated": "2022-03-17",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000023/23432/hirakata_public_toilet.csv",
+     "label": "公衆トイレ一覧",
+     "format": "CSV",
+     "size": "31.28KB"
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000000073",
+   "category": "施設",
+   "title": "投票所",
+   "desc": "選挙の投票所の名前と場所",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000000073.html",
+   "cityTitle": "投票所一覧",
+   "published": "2021-08-30",
+   "updated": "2024-10-09",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000000/73/touhyousyo.csv",
+     "label": "投票所一覧",
+     "format": "CSV",
+     "size": "6.20KB"
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000000847",
+   "category": "施設",
+   "title": "市立幼稚園・小学校・中学校",
+   "desc": "市立の幼稚園・小学校・中学校の名前・住所・場所",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000000847.html",
+   "cityTitle": "市立幼稚園・小学校・中学校一覧",
+   "published": "2022-04-01",
+   "updated": "2022-03-25",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000000/847/146137_616689_misc.zip",
+     "label": "市立幼稚園一覧",
+     "format": "ZIP",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000000/847/146137_616690_misc.zip",
+     "label": "市立小学校一覧",
+     "format": "ZIP",
+     "size": "1.79KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000000/847/146137_616691_misc.zip",
+     "label": "市立中学校一覧",
+     "format": "ZIP",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000013138",
+   "category": "施設",
+   "title": "市営の自転車駐車場・自動車駐車場",
+   "desc": "市営の駐輪場・駐車場と、自転車の保管場所",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000013138.html",
+   "cityTitle": "枚方市営自転車駐車場、自転車保管場所、自動車駐車場",
+   "published": "2024-02-05",
+   "updated": "2024-02-05",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000013/13138/20402_opendata.csv",
+     "label": "枚方市自転車駐車場、自転車保管場所、自動車駐車場",
+     "format": "CSV",
+     "size": "2.39KB"
+    }
+   ],
+   "license": null,
+   "status": "ok",
+   "licenseUrl": null
+  },
+  {
+   "id": "0000021530",
+   "category": "施設",
+   "title": "公衆無線 LAN（Wi-Fi）",
+   "desc": "公衆無線 LAN のアクセスポイントの場所",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000021530.html",
+   "cityTitle": "公衆無線LANアクセスポイント一覧",
+   "published": "2018-10-26",
+   "updated": "2024-10-02",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21530/hirakata_public_wireless_lan.csv",
+     "label": null,
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000004645",
+   "category": "施設",
+   "title": "生涯学習市民センター",
+   "desc": "市立の生涯学習市民センターの住所と場所",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000004645.html",
+   "cityTitle": "市立生涯学習市民センターの所在地等一覧",
+   "published": "2016-02-24",
+   "updated": "2025-02-12",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000004/4645/181405_953813_misc2.zip",
+     "label": "市立生涯学習市民センターの所在地等一覧",
+     "format": "ZIP",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000022576",
+   "category": "施設",
+   "title": "市立図書館",
+   "desc": "市立図書館の住所・電話（PDF）",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000022576.html",
+   "cityTitle": "枚方市立図書館 施設・連絡先",
+   "published": "2026-03-19",
+   "updated": "2026-03-19",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000022/22576/202604sisetuichiran.pdf",
+     "label": "施設・連絡先一覧",
+     "format": "PDF",
+     "size": "156.78KB"
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000000207",
+   "category": "施設",
+   "title": "市営住宅",
+   "desc": "市営住宅の一覧",
+   "inList": true,
+   "note": "2017年から更新されていない",
+   "page": "https://www.city.hirakata.osaka.jp/0000000207.html",
+   "cityTitle": "市営住宅一覧",
+   "published": "2015-07-27",
+   "updated": "2017-08-09",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000000/207/159866_733620_misc.zip",
+     "label": "市営住宅一覧",
+     "format": "ZIP",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000017953",
+   "category": "市政情報・アンケート",
+   "title": "市民意識調査（〜2021年）",
+   "desc": "市の印象・施策の重要度などを市民にたずねた調査の集計",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000017953.html",
+   "cityTitle": "市民意識調査結果",
+   "published": "2021-09-06",
+   "updated": "2021-09-06",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17953/R1siminisikityousa.pdf",
+     "label": "枚方市市民意識調査報告書",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17953/houkokusyo.pdf",
+     "label": "市民意識調査結果報告書",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17953/siminisikityousa1.csv",
+     "label": "CSVデータ(枚方市の印象などについて)",
+     "format": "CSV",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17953/siminisikityousa2.csv",
+     "label": "CSVデータ(枚方市の取り組みに感じていることについて)",
+     "format": "CSV",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17953/siminisikityousa3.csv",
+     "label": "CSVデータ(枚方市の相談窓口の認知度について)",
+     "format": "CSV",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000017/17953/siminisikityousa4.csv",
+     "label": "CSVデータ(枚方市が進める施策の重要度について)",
+     "format": "CSV",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000047223",
+   "category": "市政情報・アンケート",
+   "title": "市民意識調査（2023年度）",
+   "desc": "2023年度の市民意識調査の報告書（PDF）",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000047223.html",
+   "cityTitle": "令和5年度枚方市市民意識調査の結果について",
+   "published": "2023-09-01",
+   "updated": "2024-04-15",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47223/houkokusho.pdf",
+     "label": "令和5年度枚方市市民意識調査報告書",
+     "format": "PDF",
+     "size": "2.29MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000047/47223/bessatsu.pdf",
+     "label": "令和5年度枚方市市民意識調査報告書【別冊】",
+     "format": "PDF",
+     "size": "12.89MB"
+    }
+   ],
+   "license": null,
+   "status": "ok",
+   "licenseUrl": null
+  },
+  {
+   "id": "0000050715",
+   "category": "市政情報・アンケート",
+   "title": "市民意識調査（2024年度）",
+   "desc": "2024年度の市民意識調査の報告書と、回答のデータ",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000050715.html",
+   "cityTitle": "令和6年度枚方市市民意識調査の結果について",
+   "published": "2024-09-02",
+   "updated": "2024-08-30",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000050/50715/R6tyousa.pdf",
+     "label": "令和6年度枚方市市民意識調査報告書",
+     "format": "PDF",
+     "size": "5.44MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000050/50715/R6tyousa.csv",
+     "label": "令和6年度枚方市市民意識調査データ",
+     "format": "CSV",
+     "size": "2.44MB"
+    }
+   ],
+   "license": null,
+   "status": "ok",
+   "licenseUrl": null
+  },
+  {
+   "id": "0000052523",
+   "category": "市政情報・アンケート",
+   "title": "市民意識調査（2025年度）",
+   "desc": "2025年度の市民意識調査の報告書（PDF）",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000052523.html",
+   "cityTitle": "令和7年度枚方市市民意識調査の結果について",
+   "published": "2025-08-20",
+   "updated": "2025-08-20",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000052/52523/20250820.pdf",
+     "label": "枚方市市民意識調査報告書",
+     "format": "PDF",
+     "size": "32.82MB"
+    }
+   ],
+   "license": null,
+   "status": "ok",
+   "licenseUrl": null
+  },
+  {
+   "id": "0000054160",
+   "category": "市政情報・アンケート",
+   "title": "市民意識調査（2026年度）",
+   "desc": "2026年度の市民意識調査の報告書（PDF）",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000054160.html",
+   "cityTitle": "令和8年度枚方市市民意識調査の結果について",
+   "published": "2026-08-14",
+   "updated": "2026-08-14",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000054/54160/R8shiminishikityousahoukokusyo.pdf",
+     "label": "令和8年度市民意識調査報告書",
+     "format": "PDF",
+     "size": null
+    }
+   ],
+   "license": null,
+   "status": "ok",
+   "licenseUrl": null
+  },
+  {
+   "id": "0000054202",
+   "category": "市政情報・アンケート",
+   "title": "次の総合計画に向けたアンケート",
+   "desc": "市の次の総合計画を作るために、市民・市を訪れた人・NPO にたずねたアンケート",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000054202.html",
+   "cityTitle": "枚方市次期総合計画策定に向けたアンケートの結果について",
+   "published": "2026-10-05",
+   "updated": "2026-10-05",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000054/54202/shimin.pdf",
+     "label": "市民アンケート報告書",
+     "format": "PDF",
+     "size": "9.38MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000054/54202/kodomo.pdf",
+     "label": "子どもアンケート報告書",
+     "format": "PDF",
+     "size": "1.93MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000054/54202/wakamono.pdf",
+     "label": "若者アンケート報告書",
+     "format": "PDF",
+     "size": "5.66MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000054/54202/jigyosya.pdf",
+     "label": "事業者アンケート報告書",
+     "format": "PDF",
+     "size": "4.75MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000054/54202/npo.pdf",
+     "label": "NPO法人アンケート報告書",
+     "format": "PDF",
+     "size": "3.68MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000054/54202/net.pdf",
+     "label": "インターネットアンケート報告書",
+     "format": "PDF",
+     "size": "2.50MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000054/54202/shiminn_chosahyo.pdf",
+     "label": "【市民無作為編】アンケート調査票",
+     "format": "PDF",
+     "size": "203.94KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000054/54202/kodomo_chosahyo.pdf",
+     "label": "【子ども編】アンケート調査票",
+     "format": "PDF",
+     "size": "123.12KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000054/54202/wakamono_chosahyo.pdf",
+     "label": "【若者編】アンケート調査票",
+     "format": "PDF",
+     "size": "238.84KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000054/54202/jigyosya_chosahyo.pdf",
+     "label": "【事業者編】アンケート調査票",
+     "format": "PDF",
+     "size": "230.37KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000054/54202/npo_chosahyo.pdf",
+     "label": "【NPO編】アンケート調査票",
+     "format": "PDF",
+     "size": "217.54KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000054/54202/net_ninchisya_chosahyo.pdf",
+     "label": "【ネット編_認知者】アンケート調査票",
+     "format": "PDF",
+     "size": "133.21KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000054/54202/net_tukintugaku_chosahyo.pdf",
+     "label": "【ネット編_通勤・通学】アンケート調査票",
+     "format": "PDF",
+     "size": "150.62KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000054/54202/net_shimin_chosahyo.pdf",
+     "label": "【ネット編_市民】アンケート調査票",
+     "format": "PDF",
+     "size": "146.83KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000054/54202/net_kihosya_chosahyo.pdf",
+     "label": "【ネット編_既訪者】アンケート調査票",
+     "format": "PDF",
+     "size": "143.21KB"
+    }
+   ],
+   "license": null,
+   "status": "ok",
+   "licenseUrl": null
+  },
+  {
+   "id": "0000008765",
+   "category": "市政情報・アンケート",
+   "title": "市長への提言",
+   "desc": "市民から市長に寄せられた提言（年度ごと）",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000008765.html",
+   "cityTitle": "広聴事業情報",
+   "published": "2026-04-22",
+   "updated": "2026-04-22",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000008/8765/h28teigen.zip",
+     "label": "市長への提言（平成28年度）",
+     "format": "ZIP",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000008/8765/h29teigen.zip",
+     "label": "市長への提言（平成29年度）",
+     "format": "ZIP",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000008/8765/h30teigen.zip",
+     "label": "市長への提言（平成30年度）",
+     "format": "ZIP",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000008/8765/h31teigen.zip",
+     "label": "市長への提言（平成31年度）",
+     "format": "ZIP",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000008/8765/R2teigen.zip",
+     "label": "市長への提言（令和2年度）",
+     "format": "ZIP",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000008/8765/R3teigen.zip",
+     "label": "市長への提言（令和3年度）",
+     "format": "ZIP",
+     "size": "21.83KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000008/8765/R4teigen.zip",
+     "label": "市長への提言（令和4年度）",
+     "format": "ZIP",
+     "size": "23.59KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000008/8765/R5teigen.zip",
+     "label": "市長への提言（令和5年度）",
+     "format": "ZIP",
+     "size": "19.39KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000008/8765/R6teigen.zip",
+     "label": "市長への提言（令和6年度）",
+     "format": "ZIP",
+     "size": "8.66KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000008/8765/R7teigen.zip",
+     "label": "市長への提言（令和7年度）",
+     "format": "ZIP",
+     "size": "13.71KB"
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000009177",
+   "category": "市政情報・アンケート",
+   "title": "市民相談",
+   "desc": "市の市民相談コーナーの相談の一覧（年ごと）",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000009177.html",
+   "cityTitle": "市民相談情報",
+   "published": "2025-04-23",
+   "updated": "2025-04-23",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000009/9177/R7soudan.zip",
+     "label": "市民相談コーナー相談一覧（令和7年）",
+     "format": "ZIP",
+     "size": "1.61KB"
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000048776",
+   "category": "市政情報・アンケート",
+   "title": "事務概要",
+   "desc": "市の仕事の概要（年度ごと、PDF）",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000048776.html",
+   "cityTitle": "事務概要について",
+   "published": "2026-09-01",
+   "updated": "2026-09-01",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p0-hyoushioyobimokuji.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "1.23MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/P1-shisei.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "339.44KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p21-kessannogaiyou.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "430.29KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p47-kikikanribu.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "572.05KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p61-shityoukoushitsu.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "672.35KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p83-sougouseisakubu.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "431.44KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p95shiekisyuhenmachikasseikabu.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "128.17KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p97-soumubu.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "1.77MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p150-kankounigiwaibu.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "1.76MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p207-kaikeika.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "156.27KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p210-gikaikyoku.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "654.83KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p227-senkyokanriiinkaijimukyoku.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "247.96KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p232-kansaiinjimukyoku.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "175.42KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p235-nougyouiinkaijimukyoku.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "151.84KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p237-kouheiiinkaijimukyoku.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "87.14KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p239-kodomomiraibu.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "1.11MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p277-sougoukyouikubu.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "1.34MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p312-gakkoukyouikubu.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "1.23MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p341-shiminseikatsubu.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "1.25MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p385-kenkoufukushibu.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "2.32MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p475-shiritsuhirakatabyouin.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "649.96KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p491-kankyoubu.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "960.75KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p522-toshiseibibu.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "765.66KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p550-dobokubu.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "841.60KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000048/48776/p576-jyougesuidoukyoku.pdf",
+     "label": null,
+     "format": "PDF",
+     "size": "1.20MB"
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000000041",
+   "category": "市政情報・アンケート",
+   "title": "情報化計画",
+   "desc": "市の情報化（デジタル化）の計画（PDF）",
+   "inList": true,
+   "page": "https://www.city.hirakata.osaka.jp/0000000041.html",
+   "cityTitle": "情報化計画",
+   "published": "2021-04-09",
+   "updated": "2023-04-05",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000000/41/kihonkeikaku2_honpen.zip",
+     "label": "【第2次枚方市情報化計画】情報化基本計画＜本編＞",
+     "format": "ZIP",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000000/41/kihonkeikaku2_gaiyouban.zip",
+     "label": "【第2次枚方市情報化計画】情報化基本計画＜概要版＞",
+     "format": "ZIP",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000000/41/R05_JISSIKEIKAKU.zip",
+     "label": "【第2次枚方市情報化計画】情報化実施計画（令和5年度版）",
+     "format": "ZIP",
+     "size": null
+    }
+   ],
+   "license": "CC BY 2.1 JP",
+   "status": "ok",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/"
+  },
+  {
+   "id": "0000018550",
+   "category": "統計",
+   "title": "人口の推移・動態・外国人人口",
+   "desc": "年ごとの人口と世帯数、生まれた人・亡くなった人・転入・転出、外国人の人口（Excel）",
+   "inList": false,
+   "page": "https://www.city.hirakata.osaka.jp/0000018550.html",
+   "cityTitle": "人口の推移・動態・外国人人口",
+   "published": "2026-11-05",
+   "updated": "2026-11-05",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000018/18550/R8.11.xlsx",
+     "label": "人口の推移・動態・外国人人口",
+     "format": "XLSX",
+     "size": "68.86KB"
+    }
+   ],
+   "license": null,
+   "status": "ok",
+   "licenseUrl": null
+  },
+  {
+   "id": "0000053215",
+   "category": "統計",
+   "title": "年齢別の人口（毎月）",
+   "desc": "1歳ごとの男女の人口。毎月1日現在",
+   "inList": false,
+   "page": "https://www.city.hirakata.osaka.jp/0000053215.html",
+   "cityTitle": "2026年（令和8年）",
+   "published": "2026-11-05",
+   "updated": "2026-11-05",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53215/R8.1.pdf",
+     "label": "枚方市性別年齢別人口表（2026年1月）",
+     "format": "PDF",
+     "size": "45.56KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53215/R8.2.pdf",
+     "label": "枚方市性別年齢別人口表（2026年2月）",
+     "format": "PDF",
+     "size": "45.56KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53215/R8.3.pdf",
+     "label": "枚方市性別年齢別人口表（2026年3月）",
+     "format": "PDF",
+     "size": "45.56KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53215/R8.4.pdf",
+     "label": "枚方市性別年齢別人口表（2026年4月）",
+     "format": "PDF",
+     "size": "45.52KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53215/R8.5.pdf",
+     "label": "枚方市性別年齢別人口表（2026年5月）",
+     "format": "PDF",
+     "size": "45.54KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53215/R8.6.pdf",
+     "label": "枚方市性別年齢別人口表（2026年6月）",
+     "format": "PDF",
+     "size": "42.68KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53215/R8.7.pdf",
+     "label": "枚方市性別年齢別人口表（2026年7月）",
+     "format": "PDF",
+     "size": "45.55KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53215/8.8.pdf",
+     "label": "枚方市性別年齢別人口表（2026年8月）",
+     "format": "PDF",
+     "size": "37.77KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53215/R8.9.pdf",
+     "label": "枚方市性別年齢別人口表（2026年9月）",
+     "format": "PDF",
+     "size": "37.91KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53215/R8.10.pdf",
+     "label": "枚方市性別年齢別人口表（2026年10月）",
+     "format": "PDF",
+     "size": "37.85KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53215/R8.11.pdf",
+     "label": "枚方市性別年齢別人口表（2026年11月）",
+     "format": "PDF",
+     "size": "37.80KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53215/R8.1.xls",
+     "label": "枚方市性別年齢別人口表（2026年1月）",
+     "format": "XLS",
+     "size": "20.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53215/R8.2.xls",
+     "label": "枚方市性別年齢別人口表（2026年2月）",
+     "format": "XLS",
+     "size": "20.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53215/R8.3.xls",
+     "label": "枚方市性別年齢別人口表（2026年3月）",
+     "format": "XLS",
+     "size": "20.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53215/R8.4.xls",
+     "label": "枚方市性別年齢別人口表（2026年4月）",
+     "format": "XLS",
+     "size": "20.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53215/R8.5.xls",
+     "label": "枚方市性別年齢別人口表（2026年5月）",
+     "format": "XLS",
+     "size": "20.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53215/R8.6.xls",
+     "label": "枚方市性別年齢別人口表（2026年6月）",
+     "format": "XLS",
+     "size": "20.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53215/R8.7.xls",
+     "label": "枚方市性別年齢別人口表（2026年7月）",
+     "format": "XLS",
+     "size": "20.00KB"
+    }
+   ],
+   "license": null,
+   "status": "ok",
+   "licenseUrl": null
+  },
+  {
+   "id": "0000053220",
+   "category": "統計",
+   "title": "町名別の人口（毎月）",
+   "desc": "町名ごとの男女の人口と世帯数。毎月1日現在",
+   "inList": false,
+   "page": "https://www.city.hirakata.osaka.jp/0000053220.html",
+   "cityTitle": "2026年（令和8年）",
+   "published": "2026-11-05",
+   "updated": "2026-11-05",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53220/R8.01.pdf",
+     "label": "枚方市町名別性別人口表（2026年1月）",
+     "format": "PDF",
+     "size": "218.75KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53220/R8.2.pdf",
+     "label": "枚方市町名別性別人口表（2026年2月）",
+     "format": "PDF",
+     "size": "218.76KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53220/R8.3.pdf",
+     "label": "枚方市町名別性別人口表（2026年3月）",
+     "format": "PDF",
+     "size": "218.79KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53220/R0.4.pdf",
+     "label": "枚方市町名別性別人口表（2026年4月）",
+     "format": "PDF",
+     "size": "217.45KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53220/R8.5.pdf",
+     "label": "枚方市町名別性別人口表（2026年5月）",
+     "format": "PDF",
+     "size": "218.72KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53220/R8.6.pdf",
+     "label": "枚方市町名別性別人口表（2026年6月）",
+     "format": "PDF",
+     "size": "215.33KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53220/R8.7.pdf",
+     "label": "枚方市町名別性別人口表（2026年7月）",
+     "format": "PDF",
+     "size": "218.74KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53220/8.8.pdf",
+     "label": "枚方市町名別性別人口表（2026年8月）",
+     "format": "PDF",
+     "size": "161.59KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53220/R8.9.pdf",
+     "label": "枚方市町名別性別人口表（2026年9月）",
+     "format": "PDF",
+     "size": "161.60KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53220/R8.10.pdf",
+     "label": "枚方市町名別性別人口表（2026年10月）",
+     "format": "PDF",
+     "size": "161.67KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53220/R8.11.pdf",
+     "label": "枚方市町名別性別人口表（2026年11月）",
+     "format": "PDF",
+     "size": "161.67KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53220/R8.1.xls",
+     "label": "枚方市町名別性別人口表（2026年1月）",
+     "format": "XLS",
+     "size": "74.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53220/R8.2.xls",
+     "label": "枚方市町名別性別人口表（2026年2月）",
+     "format": "XLS",
+     "size": "74.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53220/R8.3.xls",
+     "label": "枚方市町名別性別人口表（2026年3月）",
+     "format": "XLS",
+     "size": "74.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53220/R8.4.xls",
+     "label": "枚方市町名別性別人口表（2026年4月）",
+     "format": "XLS",
+     "size": "74.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53220/R8.5.xls",
+     "label": "枚方市町名別性別人口表（2026年5月）",
+     "format": "XLS",
+     "size": "74.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53220/R8.6.xls",
+     "label": "枚方市町名別性別人口表（2026年6月）",
+     "format": "XLS",
+     "size": "74.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53220/R8.7.xls",
+     "label": "枚方市町名別性別人口表（2026年7月）",
+     "format": "XLS",
+     "size": "74.00KB"
+    }
+   ],
+   "license": null,
+   "status": "ok",
+   "licenseUrl": null
+  },
+  {
+   "id": "0000053218",
+   "category": "統計",
+   "title": "町名別・年齢別の人口（毎月）",
+   "desc": "町名ごとの、5歳ごとの男女の人口。毎月1日現在",
+   "inList": false,
+   "page": "https://www.city.hirakata.osaka.jp/0000053218.html",
+   "cityTitle": "2026年（令和8年）",
+   "published": "2026-11-05",
+   "updated": "2026-11-05",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53218/R8.01.pdf",
+     "label": "枚方市町名別5歳階級年齢別性別人口表（2026年1月）",
+     "format": "PDF",
+     "size": "1.81MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53218/R8.2.pdf",
+     "label": "枚方市町名別5歳階級年齢別性別人口表（2026年2月）",
+     "format": "PDF",
+     "size": "1.81MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53218/R8.3.pdf",
+     "label": "枚方市町名別5歳階級年齢別性別人口表（2026年3月）",
+     "format": "PDF",
+     "size": "1.81MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53218/R8.4.pdf",
+     "label": "枚方市町名別5歳階級年齢別性別人口表（2026年4月）",
+     "format": "PDF",
+     "size": "1.81MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53218/R8.5.pdf",
+     "label": "枚方市町名別5歳階級年齢別性別人口表（2026年5月）",
+     "format": "PDF",
+     "size": "1.81MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53218/R8.6.pdf",
+     "label": "枚方市町名別5歳階級年齢別性別人口表（2026年6月）",
+     "format": "PDF",
+     "size": "1.81MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53218/R8.7.pdf",
+     "label": "枚方市町名別5歳階級年齢別性別人口表（2026年7月）",
+     "format": "PDF",
+     "size": "1.81MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53218/8.8.pdf",
+     "label": "枚方市町名別5歳階級年齢別性別人口表（2026年8月）",
+     "format": "PDF",
+     "size": "1.81MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53218/R8.9.pdf",
+     "label": "枚方市町名別5歳階級年齢別性別人口表（2026年9月）",
+     "format": "PDF",
+     "size": "1.81MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53218/R8.10.pdf",
+     "label": "枚方市町名別5歳階級年齢別性別人口表（2026年10月）",
+     "format": "PDF",
+     "size": "1.81MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53218/R8.11.pdf",
+     "label": "枚方市町名別5歳階級年齢別性別人口表（2026年11月）",
+     "format": "PDF",
+     "size": "1.81MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53218/R8.1.xls",
+     "label": "枚方市町名別5歳階級年齢別性別人口表（2026年1月）",
+     "format": "XLS",
+     "size": "415.50KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53218/R8.2.xls",
+     "label": "枚方市町名別5歳階級年齢別性別人口表（2026年2月）",
+     "format": "XLS",
+     "size": "416.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53218/R8.3.xls",
+     "label": "枚方市町名別5歳階級年齢別性別人口表（2026年3月）",
+     "format": "XLS",
+     "size": "416.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53218/R8.4.xls",
+     "label": "枚方市町名別5歳階級年齢別性別人口表（2026年4月）",
+     "format": "XLS",
+     "size": "416.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53218/R8.5.xls",
+     "label": "枚方市町名別5歳階級年齢別性別人口表（2026年5月）",
+     "format": "XLS",
+     "size": "415.50KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53218/R8.6.xls",
+     "label": "枚方市町名別5歳階級年齢別性別人口表（2026年6月）",
+     "format": "XLS",
+     "size": "416.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53218/R8.7.xls",
+     "label": "枚方市町名別5歳階級年齢別性別人口表（2026年7月）",
+     "format": "XLS",
+     "size": "416.00KB"
+    }
+   ],
+   "license": null,
+   "status": "ok",
+   "licenseUrl": null
+  },
+  {
+   "id": "0000053221",
+   "category": "統計",
+   "title": "小学校区別の人口（毎月）",
+   "desc": "小学校区ごとの男女の人口。毎月1日現在",
+   "inList": false,
+   "page": "https://www.city.hirakata.osaka.jp/0000053221.html",
+   "cityTitle": "2026年（令和8年）",
+   "published": "2026-11-05",
+   "updated": "2026-11-05",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53221/R8.01.pdf",
+     "label": "小学校区別男女別人口（2026年1月）",
+     "format": "PDF",
+     "size": "114.09KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53221/R8.2.pdf",
+     "label": "小学校区別男女別人口（2026年2月）",
+     "format": "PDF",
+     "size": "114.09KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53221/R8.3.pdf",
+     "label": "小学校区別男女別人口（2026年3月）",
+     "format": "PDF",
+     "size": "114.10KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53221/R8.4.pdf",
+     "label": "小学校区別男女別人口（2026年4月）",
+     "format": "PDF",
+     "size": "114.11KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53221/R8.5.pdf",
+     "label": "小学校区別男女別人口（2026年5月）",
+     "format": "PDF",
+     "size": "114.03KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53221/R8.6.pdf",
+     "label": "小学校区別男女別人口（2026年6月）",
+     "format": "PDF",
+     "size": "114.10KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53221/R8.7.pdf",
+     "label": "小学校区別男女別人口（2026年7月）",
+     "format": "PDF",
+     "size": "114.07KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53221/8.8.pdf",
+     "label": "小学校区別男女別人口（2026年8月）",
+     "format": "PDF",
+     "size": "807.33KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53221/R8.9.pdf",
+     "label": "小学校区別男女別人口（2026年9月）",
+     "format": "PDF",
+     "size": "807.27KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53221/R8.10.pdf",
+     "label": "小学校区別男女別人口（2026年10月）",
+     "format": "PDF",
+     "size": "807.26KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53221/R8.11.pdf",
+     "label": "小学校区別男女別人口（2026年11月）",
+     "format": "PDF",
+     "size": "807.34KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53221/R8.1.xls",
+     "label": "小学校区別男女別人口（2026年1月）",
+     "format": "XLS",
+     "size": "39.50KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53221/R8.2.xls",
+     "label": "小学校区別男女別人口（2026年2月）",
+     "format": "XLS",
+     "size": "39.50KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53221/R8.3.xls",
+     "label": "小学校区別男女別人口（2026年3月）",
+     "format": "XLS",
+     "size": "39.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53221/R8.4.xls",
+     "label": "小学校区別男女別人口（2026年4月）",
+     "format": "XLS",
+     "size": "39.50KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53221/R8.5.xls",
+     "label": "小学校区別男女別人口（2026年5月）",
+     "format": "XLS",
+     "size": "39.50KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53221/R8.6.xls",
+     "label": "小学校区別男女別人口（2026年6月）",
+     "format": "XLS",
+     "size": "39.50KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53221/R8.7.xls",
+     "label": "小学校区別男女別人口（2026年7月）",
+     "format": "XLS",
+     "size": "39.50KB"
+    }
+   ],
+   "license": null,
+   "status": "ok",
+   "licenseUrl": null
+  },
+  {
+   "id": "0000053836",
+   "category": "統計",
+   "title": "枚方市統計書",
+   "desc": "土地・人口・産業・教育・福祉などの数字をまとめた年1回の本（章ごとの PDF と Excel）",
+   "inList": false,
+   "page": "https://www.city.hirakata.osaka.jp/0000053836.html",
+   "cityTitle": "第55回枚方市統計書（令和7年版）",
+   "published": "2026-06-30",
+   "updated": "2026-06-30",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/001.pdf",
+     "label": "(1)あゆみ・市民憲章",
+     "format": "PDF",
+     "size": "194.40KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/002.pdf",
+     "label": "(2)はしがき",
+     "format": "PDF",
+     "size": "66.50KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/003.pdf",
+     "label": "(3)表の見方",
+     "format": "PDF",
+     "size": "93.27KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/004.pdf",
+     "label": "(4)目次",
+     "format": "PDF",
+     "size": "297.69KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/005.pdf",
+     "label": "(5)位置図",
+     "format": "PDF",
+     "size": "235.33KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/006.pdf",
+     "label": "(6) 市民生活",
+     "format": "PDF",
+     "size": "232.89KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/01.xls",
+     "label": "01 土地及び気象",
+     "format": "XLS",
+     "size": "1.06MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/01.pdf",
+     "label": "01 土地及び気象",
+     "format": "PDF",
+     "size": "827.23KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/27210.xls",
+     "label": "02 人口",
+     "format": "XLS",
+     "size": "244.50KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/01272.pdf",
+     "label": "02 人口",
+     "format": "PDF",
+     "size": "1.18MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/03.xls",
+     "label": "03 国勢調査概要",
+     "format": "XLS",
+     "size": "178.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/03.pdf",
+     "label": "03 国勢調査概要",
+     "format": "PDF",
+     "size": "804.22KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/04.xls",
+     "label": "04 事業所",
+     "format": "XLS",
+     "size": "295.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/04.pdf",
+     "label": "04 事業所",
+     "format": "PDF",
+     "size": "1.38MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/05.xls",
+     "label": "05 農業",
+     "format": "XLS",
+     "size": "112.50KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/05.pdf",
+     "label": "05 農業",
+     "format": "PDF",
+     "size": "491.51KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/06.xls",
+     "label": "06 工業",
+     "format": "XLS",
+     "size": "45.50KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/06.pdf",
+     "label": "06 工業",
+     "format": "PDF",
+     "size": "469.06KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/07.xls",
+     "label": "07 商業",
+     "format": "XLS",
+     "size": "45.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/07.pdf",
+     "label": "07 商業",
+     "format": "PDF",
+     "size": "445.91KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/08.xls",
+     "label": "08 電気・ガス及び水道",
+     "format": "XLS",
+     "size": "41.50KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/08.pdf",
+     "label": "08 電気・ガス及び水道",
+     "format": "PDF",
+     "size": "405.52KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/09.xls",
+     "label": "09 運輸",
+     "format": "XLS",
+     "size": "88.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/09.pdf",
+     "label": "09 運輸",
+     "format": "PDF",
+     "size": "527.45KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/10.xls",
+     "label": "10 金融及び通信",
+     "format": "XLS",
+     "size": "24.50KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/10.pdf",
+     "label": "10 金融及び通信",
+     "format": "PDF",
+     "size": "326.25KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/11.xls",
+     "label": "11 消費・物価及び家計",
+     "format": "XLS",
+     "size": "52.50KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/11.pdf",
+     "label": "11 消費・物価及び家計",
+     "format": "PDF",
+     "size": "387.63KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/12.xls",
+     "label": "12 住宅及び建設",
+     "format": "XLS",
+     "size": "114.50KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/12.pdf",
+     "label": "12 住宅及び建設",
+     "format": "PDF",
+     "size": "591.49KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/13-1.xls",
+     "label": "13-1 教育及び文化",
+     "format": "XLS",
+     "size": "165.50KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/13-2.xls",
+     "label": "13-2 教育及び文化",
+     "format": "XLS",
+     "size": "177.50KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/13.pdf",
+     "label": "13 教育及び文化",
+     "format": "PDF",
+     "size": "818.99KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/14.xls",
+     "label": "14 社会保険",
+     "format": "XLS",
+     "size": "179.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/14.pdf",
+     "label": "14 社会保険",
+     "format": "PDF",
+     "size": "835.13KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/15.xls",
+     "label": "15 保健及び衛生",
+     "format": "XLS",
+     "size": "243.50KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/15.pdf",
+     "label": "15 保健及び衛生",
+     "format": "PDF",
+     "size": "935.24KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/16.xls",
+     "label": "16 治安及び災害",
+     "format": "XLS",
+     "size": "152.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/16.pdf",
+     "label": "16 治安および災害",
+     "format": "PDF",
+     "size": "841.76KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/17.xls",
+     "label": "17 財政",
+     "format": "XLS",
+     "size": "65.50KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/17.pdf",
+     "label": "17 財政",
+     "format": "PDF",
+     "size": "475.13KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/18.xls",
+     "label": "18 議会・選挙及び市職員",
+     "format": "XLS",
+     "size": "177.00KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/18.pdf",
+     "label": "第18章 議会・選挙及び市職員",
+     "format": "PDF",
+     "size": "803.57KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000053/53836/12345.pdf",
+     "label": "和暦西暦早見表",
+     "format": "PDF",
+     "size": "46.94KB"
+    }
+   ],
+   "license": null,
+   "status": "ok",
+   "licenseUrl": null
+  },
+  {
+   "id": "0000000711",
+   "category": "統計",
+   "title": "国勢調査",
+   "desc": "国勢調査の枚方市の人口・世帯数などの結果",
+   "inList": false,
+   "page": "https://www.city.hirakata.osaka.jp/0000000711.html",
+   "cityTitle": "国勢調査による人口・世帯数等の統計",
+   "published": "2022-04-01",
+   "updated": "2022-04-01",
+   "files": [],
+   "license": null,
+   "status": "ok",
+   "licenseUrl": null
+  },
+  {
+   "id": "0000012335",
+   "category": "財政",
+   "title": "財政状況資料集",
+   "desc": "ほかの市と比べられる形の、決算の数字（年度ごと）",
+   "inList": false,
+   "page": "https://www.city.hirakata.osaka.jp/0000012335.html",
+   "cityTitle": "他の市町村と比較可能な財政状況資料等の開示",
+   "published": "2021-03-29",
+   "updated": "2026-03-24",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/11hirakata_2024.xlsx",
+     "label": "令和6年度決算",
+     "format": "XLSX",
+     "size": "551.46KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/11hirakata2023.xlsx",
+     "label": "令和5年度決算",
+     "format": "XLSX",
+     "size": "556.60KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/11hirakata.xlsx",
+     "label": "令和4年度決算",
+     "format": "XLSX",
+     "size": "552.97KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/zaiseijoukyou2021.xlsx",
+     "label": "令和3年度決算",
+     "format": "XLSX",
+     "size": "427.21KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/zaiseijyoukyouR2.xlsx",
+     "label": "令和2年度決算",
+     "format": "XLSX",
+     "size": "425.19KB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/zaiseijoukyour1.xlsx",
+     "label": "令和元年度決算",
+     "format": "XLSX",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/11hirakata_2018.pdf",
+     "label": "平成30年度決算",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/zaiseijyoukyou29.pdf",
+     "label": "平成29年度決算",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/zaiseizyoukyou28.pdf",
+     "label": "平成28年度決算",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/zaiseijyoukyou27.pdf",
+     "label": "平成27年度決算",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/86796.pdf",
+     "label": "平成26年度決算",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/67048.pdf",
+     "label": "平成25年度決算",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/51710.pdf",
+     "label": "平成24年度決算",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/39818.pdf",
+     "label": "平成23年度決算",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/39817.pdf",
+     "label": "平成22年度決算",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/19733.pdf",
+     "label": "平成21年度財政比較分析表",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/19734.pdf",
+     "label": "平成20年度財政比較分析表",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/19735.pdf",
+     "label": "平成19年度財政比較分析表",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/19736.pdf",
+     "label": "平成18年度財政比較分析表",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/19737.pdf",
+     "label": "平成17年度財政比較分析表",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/19738.pdf",
+     "label": "平成16年度財政比較分析表",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/19739.pdf",
+     "label": "平成21年度歳出比較分析表",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/19740.pdf",
+     "label": "平成20年度歳出比較分析表",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/19741.pdf",
+     "label": "平成19年度歳出比較分析表",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/19742.pdf",
+     "label": "平成18年度歳出比較分析表",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/19745.pdf",
+     "label": "平成21年度財政状況等一覧表",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/19746.pdf",
+     "label": "平成20年度財政状況等一覧表",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/19747.pdf",
+     "label": "平成19年度財政状況等一覧表",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/19748.pdf",
+     "label": "平成18年度財政状況等一覧表",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000012/12335/19749.pdf",
+     "label": "平成17年度財政状況等一覧表",
+     "format": "PDF",
+     "size": null
+    }
+   ],
+   "license": null,
+   "status": "ok",
+   "licenseUrl": null
+  },
+  {
+   "id": "0000001154",
+   "category": "財政",
+   "title": "枚方市の財政事情",
+   "desc": "市の財政を市民向けに説明した冊子（年度ごと、PDF）",
+   "inList": false,
+   "page": "https://www.city.hirakata.osaka.jp/0000001154.html",
+   "cityTitle": "枚方市の財政事情",
+   "published": "2024-09-27",
+   "updated": "2026-09-24",
+   "files": [
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/0924zaiseijijyou.pdf",
+     "label": "枚方市の財政事情（令和8年度版第一部）",
+     "format": "PDF",
+     "size": "9.60MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/0331zaiseijijyou.pdf",
+     "label": "枚方市の財政事情（令和7年度版第二部）",
+     "format": "PDF",
+     "size": "2.48MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/0925zaiseijijyou.pdf",
+     "label": "枚方市の財政事情（令和7年度版第一部）",
+     "format": "PDF",
+     "size": "9.05MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/R6-2zaiseijijou.pdf",
+     "label": "枚方市の財政事情（令和6年度版第二部）",
+     "format": "PDF",
+     "size": "2.52MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/R6-1zaiseijijou.pdf",
+     "label": "枚方市の財政事情（令和6年度版第一部）",
+     "format": "PDF",
+     "size": "14.35MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/R5zaiseijijyo02.pdf",
+     "label": "枚方市の財政事情（令和5年度版第二部）",
+     "format": "PDF",
+     "size": "2.23MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/R5zaiseijijyo01.pdf",
+     "label": "枚方市の財政事情（令和5年度版第一部）",
+     "format": "PDF",
+     "size": "22.09MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/R4zaiseijijyou2.pdf",
+     "label": "枚方市の財政事情（令和4年度版第二部）",
+     "format": "PDF",
+     "size": "2.31MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/R4zaiseijijyou1.pdf",
+     "label": "枚方市の財政事情（令和4年度版第一部）",
+     "format": "PDF",
+     "size": "9.13MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/R3zaiseijijyou02.pdf",
+     "label": "枚方市の財政事情（令和3年度版第二部）",
+     "format": "PDF",
+     "size": "1.40MB"
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/R3zaiseijijyou01-2.pdf",
+     "label": "枚方市の財政事情（令和3年度版第一部）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/r2zaiseijijou02.pdf",
+     "label": "枚方市の財政事情（令和2年度版第二部）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/r2zaiseijijou01.pdf",
+     "label": "枚方市の財政事情（令和2年度版第一部）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/zaiseijijou02.pdf",
+     "label": "枚方市の財政事情（令和元年度版第二部）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/zaiseijijou01.pdf",
+     "label": "枚方市の財政事情（令和元年度版第一部）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/h30zaiseijijou2.pdf",
+     "label": "枚方市の財政事情（平成30年度版第二部）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/h30zaiseijijou.pdf",
+     "label": "枚方市の財政事情（平成30年度版第一部）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/h29zaiseijijyou2.pdf",
+     "label": "枚方市の財政事情（平成29年度版第二部）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/h29zaiseijijyou.pdf",
+     "label": "枚方市の財政事情（平成29年度版第一部）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/h28zaiseijijyo.pdf",
+     "label": "枚方市の財政事情（平成28年度版）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/73882.pdf",
+     "label": "枚方市の財政事情(平成27年度版)",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/58012.pdf",
+     "label": "枚方市の財政事情(平成26年度版)",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/45225.pdf",
+     "label": "枚方市の財政事情（平成25年度版）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/30695.pdf",
+     "label": "枚方市の財政事情（平成24年度版）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/19728.pdf",
+     "label": "枚方市の財政事情（平成23年度版）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/19718.pdf",
+     "label": "枚方市の財政事情（平成22年度版）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/19719.pdf",
+     "label": "枚方市の財政事情（平成22年度版）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/19720.pdf",
+     "label": "枚方市の財政事情（平成22年度版）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/19721.pdf",
+     "label": "枚方市の財政事情（平成22年度版）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/19722.pdf",
+     "label": "枚方市の財政事情（平成22年度版）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/19723.pdf",
+     "label": "枚方市の財政事情（平成21年度版）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/19724.pdf",
+     "label": "枚方市の財政事情（平成20年度版）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/19725.pdf",
+     "label": "枚方市の財政事情（平成19年度版）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/19726.pdf",
+     "label": "枚方市の財政事情（平成18年度版）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/19729.pdf",
+     "label": "枚方市の財政事情（平成17年度版）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/19731.pdf",
+     "label": "枚方市の財政事情（平成16年度版）",
+     "format": "PDF",
+     "size": null
+    },
+    {
+     "url": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000001/1154/19732.pdf",
+     "label": "枚方市の財政事情（平成15年度版）",
+     "format": "PDF",
+     "size": null
+    }
+   ],
+   "license": null,
+   "status": "ok",
+   "licenseUrl": null
+  }
+ ],
+ "external": [
+  {
+   "title": "e-Stat 市区町村のデータ（枚方市）",
+   "publisher": "総務省統計局ほか",
+   "url": "https://www.e-stat.go.jp/municipalities/cities/areacode?selectedAreaCode=27210",
+   "desc": "国勢調査などの国の統計の、枚方市の数字。ほかの市と同じ形で比べられる"
+  },
+  {
+   "title": "地図で見る統計（jSTAT MAP）",
+   "publisher": "総務省統計局",
+   "url": "https://www.e-stat.go.jp/gis/statmap-search?type=2",
+   "desc": "国勢調査の町丁ごとの人口などを地図にできる。境界のデータも落とせる"
+  },
+  {
+   "title": "e-Stat 地域統計データベース",
+   "publisher": "総務省統計局",
+   "url": "https://www.e-stat.go.jp/regional-statistics/ssdsview/municipality",
+   "desc": "人口・経済・教育・福祉などの数字を、市町村ごとに並べて比べられる"
+  },
+  {
+   "title": "財政状況資料集（全国の市町村）",
+   "publisher": "総務省",
+   "url": "https://www.soumu.go.jp/iken/zaisei/jyoukyou_shiryou/index.html",
+   "desc": "全国の市町村の決算を同じ形でまとめたもの。ほかの市と比べるならこちら"
+  },
+  {
+   "title": "RESAS 地域経済分析システム",
+   "publisher": "経済産業省・内閣官房",
+   "url": "https://resas.go.jp/",
+   "desc": "人口・産業・観光などを地図とグラフで見られる"
+  },
+  {
+   "title": "国土数値情報",
+   "publisher": "国土交通省",
+   "url": "https://nlftp.mlit.go.jp/ksj/",
+   "desc": "行政区域・駅・学校・浸水想定区域などの地図のデータ"
+  },
+  {
+   "title": "地理院地図・地理院タイル",
+   "publisher": "国土地理院",
+   "url": "https://maps.gsi.go.jp/development/ichiran.html",
+   "desc": "地図・航空写真・昔の地形図。このサイトの地図もこれを使っている"
+  },
+  {
+   "title": "重ねるハザードマップ",
+   "publisher": "国土交通省・国土地理院",
+   "url": "https://disaportal.gsi.go.jp/",
+   "desc": "洪水・土砂災害・津波などの危ないところを地図に重ねて見られる"
+  },
+  {
+   "title": "不動産情報ライブラリ",
+   "publisher": "国土交通省",
+   "url": "https://www.reinfolib.mlit.go.jp/",
+   "desc": "土地の取引価格・地価公示・都市計画などを地図で見られる"
+  },
+  {
+   "title": "大阪府の毎月推計人口",
+   "publisher": "大阪府",
+   "url": "https://www.pref.osaka.lg.jp/fuseiunei/toukeijouhou/toukeikajisshinochousa/maitsukisuikeijinkou/index.html",
+   "desc": "府内の市町村の人口を毎月推計したもの。ほかの市と比べられる"
+  },
+  {
+   "title": "大阪府の統計（分野別）",
+   "publisher": "大阪府",
+   "url": "https://www.pref.osaka.lg.jp/o040090/toukei/top_portal/bunya.html",
+   "desc": "大阪府の統計の入口"
+  },
+  {
+   "title": "大阪府都市計画基礎調査（枚方市）",
+   "publisher": "大阪府",
+   "url": "https://www.geospatial.jp/ckan/dataset/osaka-r7-hirakata",
+   "desc": "土地の使い方・建物などの都市計画の調査のデータ（G空間情報センター）"
+  },
+  {
+   "title": "登記所備付地図データ（枚方市）",
+   "publisher": "法務省",
+   "url": "https://www.geospatial.jp/ckan/dataset/houmusyouchizu-2026-1-1303",
+   "desc": "法務局の地図（公図）のデータ（G空間情報センター）"
+  },
+  {
+   "title": "きてみてひらかたマップ",
+   "publisher": "枚方市",
+   "url": "https://www2.wagmap.jp/hirakata/Portal",
+   "desc": "市の地図のサイト。都市計画・道路・上下水道などの地図"
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+{
+ "_note": "市のオープンデータ以外のデータ（市内のチェーン店の数など）。データのページ（/data/<id>/）に出す。書き方は CLAUDE.md の「/data/」と src/lib/datasets.ts の先頭。表のデータは public/opendata/<id>.json に置く（市のデータと同じ形）",
+ "datasets": {}
+}

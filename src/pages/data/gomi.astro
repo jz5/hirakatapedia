@@ -1,0 +1,124 @@
+---
+/**
+ * ごみの分別（/data/gomi/）。品名で探す一覧と、区分ごとの出し方、市の案内へのリンク。
+ * 一覧のデータは public/opendata/gomi.json（市のオープンデータ「ごみの分別一覧表（50音順）」）。
+ * 出し方の説明は市の冊子から（下の SRC）。冊子が新しくなったら見直す。
+ * 『粗大ごみマニュアル』は画像だけの PDF なので、ページ番号は PDF のページ（印刷のページ番号より 1 つ大きい）。
+ */
+import Base from "../../layouts/Base.astro";
+import DataViewer from "../../components/DataViewer.astro";
+import Toc from "../../components/Toc.astro";
+import { datasets, PAGES, dataPath, jaDay } from "../../lib/datasets";
+
+const d = datasets.find((x) => x.id === "gomi")!;
+const C = "https://www.city.hirakata.osaka.jp/";
+const F = `${C}cmsfiles/contents/0000010/10757/`;
+const SRC = {
+  kani: { title: "『家庭ごみの分け方・出し方（簡易版）』", url: `${F}2026_kanigominowakekata.pdf` },
+  sodai: { title: "『粗大ごみマニュアル』", url: `${F}2026_sodai.pdf` },
+};
+const headings = [
+  { depth: 2, slug: "search", text: "品名で検索" },
+  { depth: 2, slug: "kihon", text: "出し方の基本" },
+  { depth: 2, slug: "kinds", text: "区分ごとの出し方" },
+  { depth: 2, slug: "links", text: "市の案内" },
+  { depth: 2, slug: "others", text: "ほかの検索方法" },
+];
+const examples = ["電池", "フライパン", "スプレー", "ふとん", "パソコン", "傘"];
+
+---
+
+<Base title="ごみの分別（枚方市）" description={`枚方市のごみの分別を品名で調べられるページ。${d.count.toLocaleString()} の品目の出し方と注意、粗ごみ・大型ごみの申し込み、収集日程表へのリンク。`} path={dataPath("gomi")}>
+  <article class="entry">
+    <header class="entry-header">
+      <p class="gallery-back"><a href="/data/">← 枚方のデータ</a></p>
+      <h1>ごみの分別</h1>
+      <p class="entry-meta">データ取得日 <time datetime={d.fetched}>{jaDay(d.fetched)}</time></p>
+    </header>
+
+    <div class="toc-inline"><Toc headings={headings} /></div>
+
+
+    <div class="entry-body">
+      <p>{PAGES.gomi.lead}枚方市が公開している「ごみの分別一覧表」をもとにしています。</p>
+
+      <section id="search" aria-labelledby="search-h">
+        <h2 id="search-h">品名で検索</h2>
+        <p class="data-hint-top">区分（「粗ごみ」など）を押すと、その出し方の説明（<a href="#kinds">区分ごとの出し方</a>）に飛びます。収集日・申し込みは<a href="#links">市の案内</a>へ。</p>
+        <p class="data-examples-line">
+          例：{examples.map((q) => <button type="button" class="data-example" data-example-q={q}>{q}</button>)}
+        </p>
+        <DataViewer d={d} layout="list" placeholder="品名で検索（ひらがなも可）" />
+      </section>
+
+      <section id="kihon" aria-labelledby="kihon-h">
+        <h2 id="kihon-h">出し方の基本</h2>
+        <ul>
+          <li>収集日の<strong>午前8時45分まで</strong>に出す</li>
+          <li>袋は<strong>無色透明か白色半透明の、45リットル以下のポリ袋</strong></li>
+          <li>収集日は地域ごとに決まっている。<a href={`${F}2026_syuusyuunitei.pdf`}>家庭ごみの地域別収集日程表</a>（PDF）か、アプリ「さんあ～る」で調べられる</li>
+        </ul>
+        <p class="data-src">出典：枚方市<a href={SRC.kani.url}>{SRC.kani.title}</a>、<a href={`${C}0000010757.html`}>ごみに関する冊子</a>のページ</p>
+      </section>
+
+      <section id="kinds" aria-labelledby="kinds-h">
+        <h2 id="kinds-h">区分ごとの出し方</h2>
+        <dl class="gomi-kinds">
+          <dt>一般ごみ</dt>
+          <dd>生ごみ、古着・布類、ティッシュや汚れた紙、プラスチックの食器・歯ブラシ・ハンガー、ゴム製品、紙おむつなど。プラスチックでも、容器包装でない製品は一般ごみ</dd>
+
+          <dt>ペットボトル・プラスチック製容器包装</dt>
+          <dd>ペットボトルと、プラスチック製容器包装のマークが付いたもの（カップ・パック、トレイ、袋・ラップ）。「プラスチックの日」ではなく「プラスチック製容器包装の日」</dd>
+
+          <dt>空き缶、びん・ガラス類／紙類</dt>
+          <dd>月に2回。スプレー缶・カセットボンベは中身を使い切ってから。紙類（新聞紙・段ボール・雑誌・雑がみ）はポリ袋に入れず、ひもでくくる</dd>
+
+          <dt>粗ごみ（無料・申し込み）</dt>
+          <dd>幅・奥行き・高さが<strong>どれも1m未満</strong>で、金属・木・陶磁器などが入っているもの（家電製品、茶碗、鍋、フライパンなど）。<strong>1辺でも1m以上なら大型ごみ</strong>。1世帯で月1回、6点まで無料</dd>
+
+          <dt>大型ごみ（有料・申し込み）</dt>
+          <dd>市が決めた「指定品目」と、1辺が1m以上の「サイズ判断品目」。手数料は品目と大きさで<strong>300円〜1,800円</strong>。市証紙「ごみ・動物処理手数料」（処理券）を買って貼る</dd>
+
+          <dt>粗ごみ・大型ごみの申し込み</dt>
+          <dd>
+            「粗大ごみ予約センター」<a href="tel:0120668153">0120-66-8153</a>（月〜金、祝日も。午前9時〜午後7時）か、<a href={`${C}0000010721.html`}>インターネット予約</a>（24時間）。収集はふつう申し込みの次の週の水曜日。月1回・6点を超えるときは<a href={`${C}0000046952.html`}>臨時ごみ（有料）</a>
+          </dd>
+
+          <dt>処理困難物・市で集めないもの</dt>
+          <dd>販売店・製造元・専門の業者に相談する（タイヤ、バッテリー、建築廃材など）。一覧の「注意」に相談先が書いてあるものもある</dd>
+
+          <dt>家電リサイクル品目</dt>
+          <dd>エアコン・テレビ・冷蔵庫・洗濯機・衣類乾燥機は、市では集めない</dd>
+        </dl>
+        <p class="data-src">
+          出典：枚方市<a href={SRC.kani.url}>{SRC.kani.title}</a>、<a href={SRC.sodai.url}>{SRC.sodai.title}</a>（2026年版。PDF の 2〜4・8・16・18 ページ）
+        </p>
+      </section>
+
+      <section id="links" aria-labelledby="links-h">
+        <h2 id="links-h">市の案内</h2>
+        <ul class="data-links">
+          <li><a href={`${F}2026_syuusyuunitei.pdf`}>家庭ごみの地域別収集日程表</a><span>何曜日に何を出すか（PDF）</span></li>
+          <li><a href={`${C}0000010757.html`}>ごみの分け方・出し方や粗大ごみマニュアルなどの冊子</a><span>このページの説明のもとの冊子</span></li>
+          <li><a href={`${C}0000010721.html`}>粗大ごみ収集インターネット予約</a><span>粗ごみ・大型ごみの申し込み</span></li>
+          <li><a href={`${C}0000003054.html`}>リチウムイオン電池等の正しい出し方</a><span>ごみ収集車の火事の原因になる</span></li>
+          <li><a href={`${C}0000051651.html`}>蛍光管・電池類の拠点回収</a><span>持って行ける回収場所</span></li>
+          <li><a href={`${C}0000010718.html`}>使用済小型家電の拠点回収</a></li>
+          <li><a href={`${C}0000053816.html`}>枚方市リサイクルセンター</a><span>捨てる前にリユース</span></li>
+          <li><a href={`${C}soshiki/19-11-0-0-0_21.html`}>家庭から出るごみについて</a><span>市の環境事業課のお知らせ</span></li>
+        </ul>
+      </section>
+
+      <section id="others" aria-labelledby="others-h">
+        <h2 id="others-h">ほかの検索方法</h2>
+        <ul class="data-links">
+          <li><a href={`${C}0000017278.html`}>ごみ分別アプリ「さんあ～る」</a><span>枚方市の公式アプリ。品目の検索（ごみ分別辞典）のほか、住んでいる地域の収集日のカレンダーと通知がある。毎週使うならこちらが便利</span></li>
+          <li><a href={`${C}0000024179.html`}>【50音順で探せる】ごみの分別一覧表</a><span>市のページ。頭文字（あ〜わ）を押して探す。このページと同じデータ</span></li>
+        </ul>
+        <p>このページは、品名の一部やひらがなで探せること、区分で絞り込めること、検索した結果をそのまま人に送れること（URL に検索の言葉が入る）が違いです。</p>
+      </section>
+    </div>
+  </article>
+
+  <Toc slot="toc" headings={headings} />
+</Base>

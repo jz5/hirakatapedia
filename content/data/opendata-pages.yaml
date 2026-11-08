@@ -1,0 +1,391 @@
+# データのページ（/data/）の「市のデータの一覧」に載せる、枚方市のページ。
+# 題名（title）と説明（desc）は、読む人向けに書く（何が分かるデータか、1 行で）。
+# ファイルのリンク・更新日・利用条件は、python3 scripts/opendata-catalog.py が市のページから取ってきて
+# content/data/opendata-catalog.json に書く。市の一覧に新しいページが増えていたら、スクリプトが知らせるので、ここに足す。
+#
+#   id:       市のページ番号（https://www.city.hirakata.osaka.jp/<id>.html）
+#   category: 分野（市の分け方に合わせる）
+#   inList:   市の「オープンデータ一覧」やオープンデータのカテゴリに載っているか（false は統計・財政・防災など、一覧の外）
+#   view:     このサイトで表や地図にしているもの（/data/<view>/）
+#   note:     読む人に知らせたい注意（古い、個人名を含む、など）
+
+pages:
+  # --- 防災・安全 ---
+  - id: "0000036168"
+    category: 防災・安全
+    title: 避難所
+    desc: 災害のときの避難所の名前・住所・電話
+    inList: true
+    view: hinanjo
+    note: 2022年4月から更新されていない。最新は防災ガイドで
+  - id: "0000028191"
+    category: 防災・安全
+    title: 消防水利施設
+    desc: 消火に使う水利施設の場所
+    inList: true
+    note: 平成31年度版
+  - id: "0000017941"
+    category: 防災・安全
+    title: 防災ガイド（ハザードマップ）
+    desc: 洪水・土砂災害などの危ないところと避難所の地図（PDF）
+    inList: false
+
+  # --- 子育て・教育 ---
+  - id: "0000047660"
+    category: 子育て・教育
+    title: 子育て施設
+    desc: 保育所・幼稚園・こども園・放課後児童クラブなどの場所と連絡先
+    inList: true
+    view: kosodate
+    note: 2023年1月時点
+  - id: "0000007970"
+    category: 子育て・教育
+    title: 市立小中学校の通学区域
+    desc: 町名ごとに、どの小学校・中学校に通うか
+    inList: true
+
+  # --- 健康・福祉・衛生 ---
+  - id: "0000010080"
+    category: 健康・福祉・衛生
+    title: AED の設置場所
+    desc: AED を置いている市の施設とコンビニ。使える時間つき
+    inList: true
+    view: aed
+  - id: "0000002695"
+    category: 健康・福祉・衛生
+    title: 薬局
+    desc: 市内の薬局の一覧
+    inList: true
+    note: 2024年2月時点
+  - id: "0000001686"
+    category: 健康・福祉・衛生
+    title: 委託動物病院
+    desc: 市が業務を委託している動物病院の一覧
+    inList: true
+  - id: "0000023479"
+    category: 健康・福祉・衛生
+    title: 食品の営業許可を受けた施設
+    desc: 飲食店などの営業許可を受けた施設の一覧。毎月更新
+    inList: true
+    note: 営業者の個人名を含むので、このサイトでは表にしていない
+  - id: "0000025284"
+    category: 健康・福祉・衛生
+    title: 理容所・美容所・旅館・公衆浴場など
+    desc: 理容所、美容所、クリーニング所、旅館業、民泊、公衆浴場などの施設の一覧
+    inList: true
+  - id: "0000037120"
+    category: 健康・福祉・衛生
+    title: 介護サービス事業所
+    desc: 市内の介護サービス事業所の一覧。毎月更新
+    inList: true
+  - id: "0000002693"
+    category: 健康・福祉・衛生
+    title: 歯科技工所
+    desc: 市内の歯科技工所の一覧（PDF）
+    inList: true
+  - id: "0000046697"
+    category: 健康・福祉・衛生
+    title: 国民健康保険の統計
+    desc: 国民健康保険の保険料率・医療費・収支など
+    inList: true
+
+  # --- 観光・文化・イベント ---
+  - id: "0000022463"
+    category: 観光・文化・イベント
+    title: 桜の名所
+    desc: 市内の桜の主な名所。場所と写真のリンクつき
+    inList: true
+  - id: "0000022161"
+    category: 観光・文化・イベント
+    title: 観光におすすめの公園と、そのトイレ
+    desc: 観光向けの公園と公園のトイレ、観光ステーションの場所
+    inList: true
+  - id: "0000016255"
+    category: 観光・文化・イベント
+    title: 市の花と枚方八景
+    desc: 市の花と、枚方八景の場所
+    inList: true
+  - id: "0000027756"
+    category: 観光・文化・イベント
+    title: 指定文化財・登録文化財
+    desc: 市内の国・府・市の指定文化財と登録文化財の一覧
+    inList: true
+    note: 改変できない条件（CC BY-ND）なので、このサイトでは表にしていない
+  - id: "0000047672"
+    category: 観光・文化・イベント
+    title: 文化財の画像
+    desc: 市内の文化財の写真
+    inList: true
+  - id: "0000021947"
+    category: 観光・文化・イベント
+    title: 観光・文化財の画像集
+    desc: 文化財、桜の名所、公園、観光ステーションの写真
+    inList: true
+  - id: "0000002629"
+    category: 観光・文化・イベント
+    title: 鍵屋資料館・旧田中家鋳物民俗資料館
+    desc: 2つの資料館の開館時間・入館料など
+    inList: true
+  - id: "0000002673"
+    category: 観光・文化・イベント
+    title: 市史資料室の本
+    desc: 『新版郷土枚方の歴史』の目次と、市史資料室の本の値段
+    inList: true
+  - id: "0000000377"
+    category: 観光・文化・イベント
+    title: ひらかた検定の問題と答え
+    desc: 2013年2月3日に行われたご当地検定の問題と答え
+    inList: true
+  - id: "0000022340"
+    category: 観光・文化・イベント
+    title: 月ごとのイベント
+    desc: 市の催しの月ごとの予定
+    inList: true
+    note: 2022年10月で更新が止まっている
+
+  # --- まちづくり・環境 ---
+  - id: "0000024067"
+    category: まちづくり・環境
+    title: ごみの分別
+    desc: 品目ごとの、ごみの出し方（50音順）
+    inList: true
+    view: gomi
+  - id: "0000003049"
+    category: まちづくり・環境
+    title: 家庭ごみの地域別収集日程
+    desc: 地域ごとの、ごみの収集日（PDF）
+    inList: true
+  - id: "0000004701"
+    category: まちづくり・環境
+    title: 路線価図・標準宅地
+    desc: 固定資産税の路線価図、状況類似地域図、標準宅地の情報
+    inList: true
+
+  # --- 施設 ---
+  - id: "0000023332"
+    category: 施設
+    title: 公共施設
+    desc: 市の公共施設の住所・設置年・開館時間・バリアフリー
+    inList: true
+    view: shisetsu
+  - id: "0000004691"
+    category: 施設
+    title: 都市公園
+    desc: 公園ごとの広さ・遊具・トイレ・駐車場・桜の本数
+    inList: true
+    view: park
+    note: 2021年8月時点
+  - id: "0000023432"
+    category: 施設
+    title: 公衆トイレ
+    desc: 市の公衆トイレの場所と、車椅子用・おむつ替え・オストメイトの有無
+    inList: true
+    view: toilet
+    note: 2022年3月時点
+  - id: "0000000073"
+    category: 施設
+    title: 投票所
+    desc: 選挙の投票所の名前と場所
+    inList: true
+  - id: "0000000847"
+    category: 施設
+    title: 市立幼稚園・小学校・中学校
+    desc: 市立の幼稚園・小学校・中学校の名前・住所・場所
+    inList: true
+  - id: "0000013138"
+    category: 施設
+    title: 市営の自転車駐車場・自動車駐車場
+    desc: 市営の駐輪場・駐車場と、自転車の保管場所
+    inList: true
+  - id: "0000021530"
+    category: 施設
+    title: 公衆無線 LAN（Wi-Fi）
+    desc: 公衆無線 LAN のアクセスポイントの場所
+    inList: true
+  - id: "0000004645"
+    category: 施設
+    title: 生涯学習市民センター
+    desc: 市立の生涯学習市民センターの住所と場所
+    inList: true
+  - id: "0000022576"
+    category: 施設
+    title: 市立図書館
+    desc: 市立図書館の住所・電話（PDF）
+    inList: true
+  - id: "0000000207"
+    category: 施設
+    title: 市営住宅
+    desc: 市営住宅の一覧
+    inList: true
+    note: 2017年から更新されていない
+
+  # --- 市政情報・アンケート ---
+  - id: "0000017953"
+    category: 市政情報・アンケート
+    title: 市民意識調査（〜2021年）
+    desc: 市の印象・施策の重要度などを市民にたずねた調査の集計
+    inList: true
+  - id: "0000047223"
+    category: 市政情報・アンケート
+    title: 市民意識調査（2023年度）
+    desc: 2023年度の市民意識調査の報告書（PDF）
+    inList: true
+  - id: "0000050715"
+    category: 市政情報・アンケート
+    title: 市民意識調査（2024年度）
+    desc: 2024年度の市民意識調査の報告書と、回答のデータ
+    inList: true
+  - id: "0000052523"
+    category: 市政情報・アンケート
+    title: 市民意識調査（2025年度）
+    desc: 2025年度の市民意識調査の報告書（PDF）
+    inList: true
+  - id: "0000054160"
+    category: 市政情報・アンケート
+    title: 市民意識調査（2026年度）
+    desc: 2026年度の市民意識調査の報告書（PDF）
+    inList: true
+  - id: "0000054202"
+    category: 市政情報・アンケート
+    title: 次の総合計画に向けたアンケート
+    desc: 市の次の総合計画を作るために、市民・市を訪れた人・NPO にたずねたアンケート
+    inList: true
+  - id: "0000008765"
+    category: 市政情報・アンケート
+    title: 市長への提言
+    desc: 市民から市長に寄せられた提言（年度ごと）
+    inList: true
+  - id: "0000009177"
+    category: 市政情報・アンケート
+    title: 市民相談
+    desc: 市の市民相談コーナーの相談の一覧（年ごと）
+    inList: true
+  - id: "0000048776"
+    category: 市政情報・アンケート
+    title: 事務概要
+    desc: 市の仕事の概要（年度ごと、PDF）
+    inList: true
+  - id: "0000000041"
+    category: 市政情報・アンケート
+    title: 情報化計画
+    desc: 市の情報化（デジタル化）の計画（PDF）
+    inList: true
+
+  # --- 統計（オープンデータの一覧の外） ---
+  - id: "0000018550"
+    category: 統計
+    title: 人口の推移・動態・外国人人口
+    desc: 年ごとの人口と世帯数、生まれた人・亡くなった人・転入・転出、外国人の人口（Excel）
+    inList: false
+  - id: "0000053215"
+    category: 統計
+    title: 年齢別の人口（毎月）
+    desc: 1歳ごとの男女の人口。毎月1日現在
+    inList: false
+  - id: "0000053220"
+    category: 統計
+    title: 町名別の人口（毎月）
+    desc: 町名ごとの男女の人口と世帯数。毎月1日現在
+    inList: false
+  - id: "0000053218"
+    category: 統計
+    title: 町名別・年齢別の人口（毎月）
+    desc: 町名ごとの、5歳ごとの男女の人口。毎月1日現在
+    inList: false
+  - id: "0000053221"
+    category: 統計
+    title: 小学校区別の人口（毎月）
+    desc: 小学校区ごとの男女の人口。毎月1日現在
+    inList: false
+  - id: "0000053836"
+    category: 統計
+    title: 枚方市統計書
+    desc: 土地・人口・産業・教育・福祉などの数字をまとめた年1回の本（章ごとの PDF と Excel）
+    inList: false
+  - id: "0000000711"
+    category: 統計
+    title: 国勢調査
+    desc: 国勢調査の枚方市の人口・世帯数などの結果
+    inList: false
+
+  # --- 財政（オープンデータの一覧の外） ---
+  - id: "0000012335"
+    category: 財政
+    title: 財政状況資料集
+    desc: ほかの市と比べられる形の、決算の数字（年度ごと）
+    inList: false
+  - id: "0000001154"
+    category: 財政
+    title: 枚方市の財政事情
+    desc: 市の財政を市民向けに説明した冊子（年度ごと、PDF）
+    inList: false
+
+# 市の一覧やカテゴリに出てくるが、載せないページ（スクリプトが「新しいページ」として知らせないように）
+ignore:
+  # 市の「オープンデータ一覧」の CSV（2022年）に残っているが、ページが無いもの
+  - "0000018227" # 人口統計情報（統計情報のカテゴリに移った）
+  - "0000021829" # 保健センター便利帳
+  - "0000021830" # がん検診
+  - "0000036814" # 令和2年度事務概要（事務概要は 0000048776）
+  - "0000037178" # デザインマンホール蓋
+  # データではないお知らせ
+  - "0000054427" # 図書館の臨時休館のお知らせ
+
+# 国・府などのデータ（このサイトでは取ってこない。リンクだけ）
+external:
+  - title: e-Stat 市区町村のデータ（枚方市）
+    publisher: 総務省統計局ほか
+    url: https://www.e-stat.go.jp/municipalities/cities/areacode?selectedAreaCode=27210
+    desc: 国勢調査などの国の統計の、枚方市の数字。ほかの市と同じ形で比べられる
+  - title: 地図で見る統計（jSTAT MAP）
+    publisher: 総務省統計局
+    url: https://www.e-stat.go.jp/gis/statmap-search?type=2
+    desc: 国勢調査の町丁ごとの人口などを地図にできる。境界のデータも落とせる
+  - title: e-Stat 地域統計データベース
+    publisher: 総務省統計局
+    url: https://www.e-stat.go.jp/regional-statistics/ssdsview/municipality
+    desc: 人口・経済・教育・福祉などの数字を、市町村ごとに並べて比べられる
+  - title: 財政状況資料集（全国の市町村）
+    publisher: 総務省
+    url: https://www.soumu.go.jp/iken/zaisei/jyoukyou_shiryou/index.html
+    desc: 全国の市町村の決算を同じ形でまとめたもの。ほかの市と比べるならこちら
+  - title: RESAS 地域経済分析システム
+    publisher: 経済産業省・内閣官房
+    url: https://resas.go.jp/
+    desc: 人口・産業・観光などを地図とグラフで見られる
+  - title: 国土数値情報
+    publisher: 国土交通省
+    url: https://nlftp.mlit.go.jp/ksj/
+    desc: 行政区域・駅・学校・浸水想定区域などの地図のデータ
+  - title: 地理院地図・地理院タイル
+    publisher: 国土地理院
+    url: https://maps.gsi.go.jp/development/ichiran.html
+    desc: 地図・航空写真・昔の地形図。このサイトの地図もこれを使っている
+  - title: 重ねるハザードマップ
+    publisher: 国土交通省・国土地理院
+    url: https://disaportal.gsi.go.jp/
+    desc: 洪水・土砂災害・津波などの危ないところを地図に重ねて見られる
+  - title: 不動産情報ライブラリ
+    publisher: 国土交通省
+    url: https://www.reinfolib.mlit.go.jp/
+    desc: 土地の取引価格・地価公示・都市計画などを地図で見られる
+  - title: 大阪府の毎月推計人口
+    publisher: 大阪府
+    url: https://www.pref.osaka.lg.jp/fuseiunei/toukeijouhou/toukeikajisshinochousa/maitsukisuikeijinkou/index.html
+    desc: 府内の市町村の人口を毎月推計したもの。ほかの市と比べられる
+  - title: 大阪府の統計（分野別）
+    publisher: 大阪府
+    url: https://www.pref.osaka.lg.jp/o040090/toukei/top_portal/bunya.html
+    desc: 大阪府の統計の入口
+  - title: 大阪府都市計画基礎調査（枚方市）
+    publisher: 大阪府
+    url: https://www.geospatial.jp/ckan/dataset/osaka-r7-hirakata
+    desc: 土地の使い方・建物などの都市計画の調査のデータ（G空間情報センター）
+  - title: 登記所備付地図データ（枚方市）
+    publisher: 法務省
+    url: https://www.geospatial.jp/ckan/dataset/houmusyouchizu-2026-1-1303
+    desc: 法務局の地図（公図）のデータ（G空間情報センター）
+  - title: きてみてひらかたマップ
+    publisher: 枚方市
+    url: https://www2.wagmap.jp/hirakata/Portal
+    desc: 市の地図のサイト。都市計画・道路・上下水道などの地図

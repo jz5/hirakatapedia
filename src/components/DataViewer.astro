@@ -1,0 +1,51 @@
+---
+/**
+ * データ 1 つの検索・絞り込み・表（または一覧）・地図。動かすのは src/scripts/data-viewer.ts。
+ * 下に、市のデータの出典（CC BY 2.1 の表示例 (2) の形）を出す。
+ */
+import { jaDay, hasMap, type Meta } from "../lib/datasets";
+
+interface Props {
+  d: Meta;
+  /** list：ごみのように、表ではなく縦に並べる */
+  layout?: "table" | "list";
+  placeholder: string;
+}
+const { d, layout = "table", placeholder } = Astro.props;
+const geo = hasMap(d);
+---
+
+<div class="data-panel" data-viewer={d.id} data-layout={layout}>
+  <div class="data-tools">
+    <label class="data-search">
+      <span class="visually-hidden">検索</span>
+      <input type="search" placeholder={placeholder} autocomplete="off" enterkeyhint="search" data-q />
+    </label>
+    <div class="data-filters" data-filters></div>
+    <div class="data-bar">
+      <p class="data-count" aria-live="polite" data-count>読み込み中…</p>
+      {geo && <button type="button" class="data-mapbtn" aria-pressed="false" data-mapbtn>地図で見る</button>}
+    </div>
+  </div>
+  {geo && <div class="data-map" data-map hidden></div>}
+  <div data-out></div>
+  <p class="data-more-wrap"><button type="button" class="data-more" data-more hidden></button></p>
+  <noscript><p>検索と地図は JavaScript を使います。<a href={d.page}>もとのページ</a>で同じデータを見られます。</p></noscript>
+  <div class="data-credit">
+    {d.note && <p class="data-note">{d.note}</p>}
+    {d.geoFixed && d.geoFixed.length > 0 && <p>市のデータの座標で、おかしいところを直しました。{d.geoFixed.join("。")}</p>}
+    {d.creditHtml ? (
+      <p>出典：<Fragment set:html={d.creditHtml} />（データ取得日：{jaDay(d.fetched)}）</p>
+    ) : (
+      <p>
+        この{layout === "list" ? "一覧" : geo ? "表と地図" : "表"}は、以下の著作物を改変して利用しています。<a href={d.page}>{d.credit}</a>、枚方市、<a href="https://creativecommons.org/licenses/by/2.1/jp/">クリエイティブ・コモンズ・ライセンス　表示 2.1</a>（データ取得日：{jaDay(d.fetched)}）
+      </p>
+    )}
+    {geo && <p>「地図で見る」の地図は国土地理院の地理院タイルです。表の「地図」は Google マップでその場所を開きます。</p>}
+  </div>
+</div>
+
+<script>
+  import { startViewer } from "../scripts/data-viewer";
+  startViewer();
+</script>

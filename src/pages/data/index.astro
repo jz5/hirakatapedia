@@ -1,0 +1,124 @@
+---
+/**
+ * 枚方のデータ（/data/）。記事とは別の、調べもの用のページ。
+ * 1. 市のオープンデータのうちいくつかへのカード。中身はデータごとのページ（/data/<id>/、ごみは /data/gomi/）
+ * 2. 市のオープンデータ・公開データの一覧（content/data/opendata-catalog.json。python3 scripts/opendata-catalog.py で作る。
+ *    題名・説明・注意は content/data/opendata-pages.yaml に手で書く）
+ * 3. 国・府などのデータ（同じ yaml の external）
+ */
+import Base from "../../layouts/Base.astro";
+import Toc from "../../components/Toc.astro";
+import ArticleBody from "../../components/ArticleBody.astro";
+import { charts } from "../../lib/chart-defs.mjs";
+import catalog from "../../../content/data/opendata-catalog.json";
+import { datasets as sets, PAGES, dataPath, hasMap, jaDay } from "../../lib/datasets";
+import { allArticles, articlePath } from "../../lib/articles";
+
+
+
+const description = "枚方市のオープンデータ（ごみの分別・AED・公園・公衆トイレ・避難所・子育て施設・公共施設）を表と地図で検索できるページ。市が公開しているデータと、国・府の統計の一覧つき。";
+// グラフのある記事（本文に data-chart があるもの）。カードにはグラフの題を並べる
+const graphArticles = (await allArticles())
+  .map((a) => ({ ...a, charts: [...(a.body ?? "").matchAll(/data-chart="([^"]+)"/g)].map((m) => m[1]) }))
+  .filter((a) => a.charts.length > 0)
+  .map((a) => ({ ...a, charts: a.charts.map((n) => (charts as Record<string, () => string>)[n]?.().match(/<figcaption class="chart-title">([^<]+)</)?.[1]?.replace(/（[^）]*）$/, "") ?? n) }));
+/** 市のデータ以外があるときだけ、カードを「市のオープンデータから」「そのほかのデータ」に分ける */
+const hasOther = sets.some((d) => d.group === "other");
+const cityCount = catalog.datasets.filter((d) => d.status !== "gone").length;
+const extCount = catalog.external.length;
+
+const headings = [
+  { depth: 2, slug: "view", text: "検索できるデータ" },
+  { depth: 2, slug: "graphs", text: "グラフで見る" },
+  { depth: 2, slug: "more", text: "提供されているデータの一覧" },
+  { depth: 2, slug: "notes", text: "このページについて" },
+];
+---
+
+<Base title="枚方のデータ" description={description} path="/data/">
+  <article class="entry">
+    <header class="entry-header">
+      <h1>枚方のデータ</h1>
+      <p class="entry-meta">データ取得日 <time datetime={sets[0]?.fetched}>{sets[0] && jaDay(sets[0].fetched)}</time></p>
+    </header>
+
+    <div class="toc-inline"><Toc headings={headings} /></div>
+
+
+    <ArticleBody>
+      <p>
+        枚方市が公開しているデータを、探しやすい形にしました。「これは何ごみ？」「近くの AED は？」「桜の多い公園は？」を調べられます。もとのデータは市のサイトにあり、このサイトはそれを並べ替えて見せているだけです。
+      </p>
+
+      <section id="view" aria-labelledby="view-h">
+        <h2 id="view-h">検索できるデータ</h2>
+        {(["city", "other"] as const).map((grp) => {
+          const items = sets.filter((d) => d.group === grp);
+          return items.length > 0 && (
+            <>
+              {hasOther && <h3>{grp === "city" ? "市のオープンデータから" : "そのほかのデータ"}</h3>}
+        <ul class="data-cards">
+                {items.map((d) => (
+                  <li>
+                    <a href={dataPath(d.id)}>
+                      <span class="data-card-title">{d.title}<span class="data-card-n">{d.count.toLocaleString()} 件</span></span>
+                      <span class="data-card-desc">{PAGES[d.id]?.lead ?? ""}</span>
+                      <span class="data-card-meta">{hasMap(d) ? "表と地図" : d.id === "gomi" ? "品名で検索" : "表"}・{d.note?.match(/\d{4}年\d+月時点/)?.[0] ?? `データ取得日 ${jaDay(d.fetched)}`}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          );
+        })}
+      </section>
+
+      <section id="graphs" aria-labelledby="graphs-h">
+        <h2 id="graphs-h">グラフで見る</h2>
+        <p>グラフのある記事です。グラフの下の「数値の表」を開くと、元の数値を確認できます。</p>
+        <ul class="data-cards">
+          {graphArticles.map((a) => (
+            <li>
+              <a href={articlePath(a.id)}>
+                <span class="data-card-title">{a.data.title}</span>
+                <span class="data-card-desc">{a.charts.join("、")}</span>
+                <span class="data-card-meta">グラフ {a.charts.length} つ</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section id="more" aria-labelledby="more-h">
+        <h2 id="more-h">提供されているデータの一覧</h2>
+        <ul class="data-cards">
+          <li>
+            <a href="/data/city/">
+              <span class="data-card-title">市が公開しているデータ<span class="data-card-n">{cityCount} 件</span></span>
+              <span class="data-card-desc">市のサイトにある CSV・Excel・PDF の一覧。人口・統計・財政・施設・アンケートなど。分野や利用条件で絞り込めます</span>
+            </a>
+          </li>
+          <li>
+            <a href="/data/links/">
+              <span class="data-card-title">国・府などのデータ<span class="data-card-n">{extCount} 件</span></span>
+              <span class="data-card-desc">e-Stat、RESAS、国土数値情報、ハザードマップなど。ほかの市と比べるときに</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="notes" aria-labelledby="notes-h">
+        <h2 id="notes-h">このページについて</h2>
+        <ul>
+          <li>表と地図のデータは、枚方市のオープンデータ（<a href="https://creativecommons.org/licenses/by/2.1/jp/">CC BY 2.1 JP</a>）です。このサイトの記事のライセンス（CC BY-SA 4.0）とは別です。使うときは、もとのデータの出典を書いてください</li>
+          <li>市のデータは更新されることがあります。古いデータ（データ取得日・データの日付）のまま載っていることがあるので、大事なことは市のページで確かめてください。とくに避難所は、市の<a href="https://www.city.hirakata.osaka.jp/0000017941.html">防災ガイド</a>を見てください</li>
+          <li>表の見出しは、分かりやすいように言い換えています（たとえば「施設名称」を「名前」に）。遊具の数やバリアフリーの項目は、市のデータの列をまとめたものです</li>
+          <li>地図は国土地理院の地理院タイル（淡色地図）です。「地図で見る」を押したときだけ、国土地理院のサーバーから地図の画像を読み込みます</li>
+          <li>表の「地図」のリンクは、Google マップでその場所（緯度・経度）を開きます</li>
+        </ul>
+      </section>
+    </ArticleBody>
+  </article>
+
+  <Toc slot="toc" headings={headings} />
+</Base>
