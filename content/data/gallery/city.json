@@ -1,0 +1,1835 @@
+{
+ "_source": "枚方市のオープンデータの画像（gallery-config.yaml の city）",
+ "fetched": "2026-11-08",
+ "photos": [
+  {
+   "id": "a3e427d7df",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-10-05",
+   "year": 2012,
+   "lat": 34.829433,
+   "lon": 135.656538,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "御殿山公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/gotenyamapark1.jpg",
+   "site": "city",
+   "file": "city-0000021947-gotenyamapark1.jpg",
+   "title": "御殿山公園1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "御殿山公園1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2048,
+   "height": 1536
+  },
+  {
+   "id": "87ee643708",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2018-09-25",
+   "year": 2018,
+   "lat": 34.829433,
+   "lon": 135.656538,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "御殿山公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/gotenyamapark2.jpeg",
+   "site": "city",
+   "file": "city-0000021947-gotenyamapark2.jpeg",
+   "title": "御殿山公園2",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "御殿山公園2（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "1069597bfa",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": null,
+   "year": 2018,
+   "lat": 34.796203,
+   "lon": 135.648414,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "以楽公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/irakupark1.JPG",
+   "site": "city",
+   "file": "city-0000021947-irakupark1.JPG",
+   "title": "以楽公園1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "以楽公園1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 5184,
+   "height": 3456
+  },
+  {
+   "id": "b351ea8dfe",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2009-11-12",
+   "year": 2009,
+   "lat": 34.796203,
+   "lon": 135.648414,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "以楽公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/irakupark2.jpg",
+   "site": "city",
+   "file": "city-0000021947-irakupark2.jpg",
+   "title": "以楽公園2",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "以楽公園2（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3648,
+   "height": 2736
+  },
+  {
+   "id": "fc6f4e5c46",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2009-04-08",
+   "year": 2009,
+   "lat": 34.796203,
+   "lon": 135.648414,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "以楽公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/irakupark3.jpg",
+   "site": "city",
+   "file": "city-0000021947-irakupark3.jpg",
+   "title": "以楽公園3",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "以楽公園3（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3648,
+   "height": 2736
+  },
+  {
+   "id": "1c62287860",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2009-04-08",
+   "year": 2009,
+   "lat": 34.796203,
+   "lon": 135.648414,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "以楽公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/irakupark4.jpg",
+   "site": "city",
+   "file": "city-0000021947-irakupark4.jpg",
+   "title": "以楽公園4",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "以楽公園4（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3648,
+   "height": 2736
+  },
+  {
+   "id": "075f51f865",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2009-11-12",
+   "year": 2009,
+   "lat": 34.796203,
+   "lon": 135.648414,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "以楽公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/irakupark5.jpg",
+   "site": "city",
+   "file": "city-0000021947-irakupark5.jpg",
+   "title": "以楽公園5",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "以楽公園5（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3648,
+   "height": 2736
+  },
+  {
+   "id": "22e0c8d91a",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-09-18",
+   "year": 2012,
+   "lat": 34.867091,
+   "lon": 135.68963,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "神社公園",
+    "神社"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/jinjyapark1.jpg",
+   "site": "city",
+   "file": "city-0000021947-jinjyapark1.jpg",
+   "title": "神社公園1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "神社公園1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 1887,
+   "height": 1416
+  },
+  {
+   "id": "5031931089",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-09-18",
+   "year": 2012,
+   "lat": 34.867091,
+   "lon": 135.68963,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "神社公園",
+    "神社"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/jinjyapark2.jpg",
+   "site": "city",
+   "file": "city-0000021947-jinjyapark2.jpg",
+   "title": "神社公園2",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "神社公園2（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2048,
+   "height": 1536
+  },
+  {
+   "id": "1a6358760b",
+   "desc": "ひらかた市 オープンデータ画像集「観光ステーション」の画像",
+   "date": "2014-02-10",
+   "year": 2014,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "建物"
+   ],
+   "places": [
+    "観光ステーション"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kankostation1.jpg",
+   "site": "city",
+   "file": "city-0000021947-kankostation1.jpg",
+   "title": "観光ステーション1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "観光ステーション1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 640,
+   "height": 425
+  },
+  {
+   "id": "830d3c75f8",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-11-19",
+   "year": 2012,
+   "lat": 34.788893,
+   "lon": 135.653281,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "観音山公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kannonyamapark1.jpg",
+   "site": "city",
+   "file": "city-0000021947-kannonyamapark1.jpg",
+   "title": "観音山公園1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "観音山公園1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2048,
+   "height": 1536
+  },
+  {
+   "id": "673f266981",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2010-12-14",
+   "year": 2010,
+   "lat": 34.788893,
+   "lon": 135.653281,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "観音山公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kannonyamapark2.JPG",
+   "site": "city",
+   "file": "city-0000021947-kannonyamapark2.JPG",
+   "title": "観音山公園2",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "観音山公園2（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 4000,
+   "height": 3000
+  },
+  {
+   "id": "f28016b29a",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-11-21",
+   "year": 2012,
+   "lat": 34.810877,
+   "lon": 135.656891,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "禁野車塚公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kinyakurumadukapark1.jpg",
+   "site": "city",
+   "file": "city-0000021947-kinyakurumadukapark1.jpg",
+   "title": "禁野車塚公園1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "禁野車塚公園1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 1926,
+   "height": 1446
+  },
+  {
+   "id": "8900feafe7",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-09-18",
+   "year": 2012,
+   "lat": 34.844957,
+   "lon": 135.702999,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "北山公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kitayamapark1.jpg",
+   "site": "city",
+   "file": "city-0000021947-kitayamapark1.jpg",
+   "title": "北山公園1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "北山公園1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2048,
+   "height": 1536
+  },
+  {
+   "id": "1c57aad136",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-09-18",
+   "year": 2012,
+   "lat": 34.844957,
+   "lon": 135.702999,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "北山公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kitayamapark2.jpg",
+   "site": "city",
+   "file": "city-0000021947-kitayamapark2.jpg",
+   "title": "北山公園2",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "北山公園2（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2048,
+   "height": 1536
+  },
+  {
+   "id": "bc02e9b880",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-09-18",
+   "year": 2012,
+   "lat": 34.844957,
+   "lon": 135.702999,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "北山公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kitayamapark3.jpg",
+   "site": "city",
+   "file": "city-0000021947-kitayamapark3.jpg",
+   "title": "北山公園3",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "北山公園3（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2048,
+   "height": 1536
+  },
+  {
+   "id": "8ea244b18b",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-09-18",
+   "year": 2012,
+   "lat": 34.844957,
+   "lon": 135.702999,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "北山公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kitayamapark4.jpg",
+   "site": "city",
+   "file": "city-0000021947-kitayamapark4.jpg",
+   "title": "北山公園4",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "北山公園4（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2048,
+   "height": 1536
+  },
+  {
+   "id": "615ac7ecfe",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-09-18",
+   "year": 2012,
+   "lat": 34.844957,
+   "lon": 135.702999,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "北山公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kitayamapark5.jpg",
+   "site": "city",
+   "file": "city-0000021947-kitayamapark5.jpg",
+   "title": "北山公園5",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "北山公園5（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2048,
+   "height": 1536
+  },
+  {
+   "id": "926c940761",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-11-12",
+   "year": 2012,
+   "lat": 34.791406,
+   "lon": 135.652253,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "香里ヶ丘中央公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/koorigaokachuopark1.jpg",
+   "site": "city",
+   "file": "city-0000021947-koorigaokachuopark1.jpg",
+   "title": "香里ヶ丘中央公園1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "香里ヶ丘中央公園1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2048,
+   "height": 1536
+  },
+  {
+   "id": "12f1043ad5",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-10-29",
+   "year": 2012,
+   "lat": 34.807804,
+   "lon": 135.709995,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "くにみの丘公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kuniminookapark1.jpg",
+   "site": "city",
+   "file": "city-0000021947-kuniminookapark1.jpg",
+   "title": "くにみの丘公園1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "くにみの丘公園1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2048,
+   "height": 1536
+  },
+  {
+   "id": "cabc769dab",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-11-30",
+   "year": 2012,
+   "lat": 34.807804,
+   "lon": 135.709995,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "くにみの丘公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kuniminookapark2.jpg",
+   "site": "city",
+   "file": "city-0000021947-kuniminookapark2.jpg",
+   "title": "くにみの丘公園2",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "くにみの丘公園2（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2048,
+   "height": 1536
+  },
+  {
+   "id": "2edf8dd39d",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-09-18",
+   "year": 2012,
+   "lat": 34.859414,
+   "lon": 135.680746,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "楠葉中央公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kuzuhachuopark1.jpg",
+   "site": "city",
+   "file": "city-0000021947-kuzuhachuopark1.jpg",
+   "title": "楠葉中央公園1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "楠葉中央公園1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2048,
+   "height": 1536
+  },
+  {
+   "id": "86ca1ec75e",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-09-18",
+   "year": 2012,
+   "lat": 34.860729,
+   "lon": 135.691817,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "楠葉東公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kuzuhahigashipark1_s.jpg",
+   "site": "city",
+   "file": "city-0000021947-kuzuhahigashipark1_s.jpg",
+   "title": "楠葉東公園1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "楠葉東公園1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 360,
+   "height": 270
+  },
+  {
+   "id": "f942005c5c",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-09-18",
+   "year": 2012,
+   "lat": 34.860729,
+   "lon": 135.691817,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "楠葉東公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/kuzuhahigashipark2.jpg",
+   "site": "city",
+   "file": "city-0000021947-kuzuhahigashipark2.jpg",
+   "title": "楠葉東公園2",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "楠葉東公園2（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 1717,
+   "height": 1287
+  },
+  {
+   "id": "1032d725e3",
+   "desc": "ひらかた市 オープンデータ画像集「文化財」の画像",
+   "date": "2015-06-10",
+   "year": 2015,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "牧野車塚古墳"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/makinokurumadukakofun1.JPG",
+   "site": "city",
+   "file": "city-0000021947-makinokurumadukakofun1.JPG",
+   "title": "牧野車塚古墳1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "牧野車塚古墳1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3456,
+   "height": 2304
+  },
+  {
+   "id": "3c0428a07e",
+   "desc": "ひらかた市 オープンデータ画像集「文化財」の画像",
+   "date": "2016-10-31",
+   "year": 2016,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "牧野車塚古墳"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/makinokurumadukakofun2.JPG",
+   "site": "city",
+   "file": "city-0000021947-makinokurumadukakofun2.JPG",
+   "title": "牧野車塚古墳2",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "牧野車塚古墳2（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3456,
+   "height": 2304
+  },
+  {
+   "id": "91d485d86f",
+   "desc": "ひらかた市 オープンデータ画像集「文化財」の画像",
+   "date": "2016-10-31",
+   "year": 2016,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "牧野車塚古墳"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/makinokurumadukakofun3.JPG",
+   "site": "city",
+   "file": "city-0000021947-makinokurumadukakofun3.JPG",
+   "title": "牧野車塚古墳3",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "牧野車塚古墳3（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3456,
+   "height": 2304
+  },
+  {
+   "id": "1272ce8ad9",
+   "desc": "ひらかた市 オープンデータ画像集「文化財」の画像",
+   "date": "2016-10-31",
+   "year": 2016,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "牧野車塚古墳"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/makinokurumadukakofun4.JPG",
+   "site": "city",
+   "file": "city-0000021947-makinokurumadukakofun4.JPG",
+   "title": "牧野車塚古墳4",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "牧野車塚古墳4（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3456,
+   "height": 2304
+  },
+  {
+   "id": "8d856e9c7d",
+   "desc": "ひらかた市 オープンデータ画像集「文化財」の画像",
+   "date": "2016-10-31",
+   "year": 2016,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "牧野車塚古墳"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/makinokurumadukakofun5.JPG",
+   "site": "city",
+   "file": "city-0000021947-makinokurumadukakofun5.JPG",
+   "title": "牧野車塚古墳5",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "牧野車塚古墳5（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3456,
+   "height": 2304
+  },
+  {
+   "id": "a714d1befe",
+   "desc": "ひらかた市 オープンデータ画像集「文化財」の画像",
+   "date": "2016-10-31",
+   "year": 2016,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "牧野車塚古墳"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/makinokurumadukakofun6.JPG",
+   "site": "city",
+   "file": "city-0000021947-makinokurumadukakofun6.JPG",
+   "title": "牧野車塚古墳6",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "牧野車塚古墳6（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3456,
+   "height": 2304
+  },
+  {
+   "id": "e1eb8e14f1",
+   "desc": "ひらかた市 オープンデータ画像集「桜の主な名所」の画像",
+   "date": null,
+   "year": 2018,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "水面回廊"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/minamokairousakura1.JPG",
+   "site": "city",
+   "file": "city-0000021947-minamokairousakura1.JPG",
+   "title": "水面回廊1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "水面回廊1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 5184,
+   "height": 3456
+  },
+  {
+   "id": "cad4e9e454",
+   "desc": "ひらかた市 オープンデータ画像集「桜の主な名所」の画像",
+   "date": "2007-04-02",
+   "year": 2007,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "水面回廊"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/minamokairousakura2.JPG",
+   "site": "city",
+   "file": "city-0000021947-minamokairousakura2.JPG",
+   "title": "水面回廊2",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "水面回廊2（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2816,
+   "height": 1880
+  },
+  {
+   "id": "f7d0c963e5",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2016-04-14",
+   "year": 2016,
+   "lat": 34.814793,
+   "lon": 135.64217,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "三矢公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/mitsuyapark1.JPG",
+   "site": "city",
+   "file": "city-0000021947-mitsuyapark1.JPG",
+   "title": "三矢公園1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "三矢公園1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3456,
+   "height": 2304
+  },
+  {
+   "id": "7be160ad5f",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-09-18",
+   "year": 2012,
+   "lat": 34.84761,
+   "lon": 135.690254,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "中の池公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/nakanoikepark1.jpg",
+   "site": "city",
+   "file": "city-0000021947-nakanoikepark1.jpg",
+   "title": "中の池公園1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "中の池公園1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2048,
+   "height": 1536
+  },
+  {
+   "id": "2ade8d7845",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-11-30",
+   "year": 2012,
+   "lat": 34.814924,
+   "lon": 135.650098,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "岡東中央公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/okahigashichuopark1.jpg",
+   "site": "city",
+   "file": "city-0000021947-okahigashichuopark1.jpg",
+   "title": "岡東中央公園1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "岡東中央公園1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 1780,
+   "height": 1334
+  },
+  {
+   "id": "a93ee7fe71",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-11-30",
+   "year": 2012,
+   "lat": 34.814924,
+   "lon": 135.650098,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "岡東中央公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/okahigashichuopark2.jpg",
+   "site": "city",
+   "file": "city-0000021947-okahigashichuopark2.jpg",
+   "title": "岡東中央公園2",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "岡東中央公園2（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2048,
+   "height": 1536
+  },
+  {
+   "id": "5af80efb43",
+   "desc": "ひらかた市 オープンデータ画像集「桜の主な名所」の画像",
+   "date": "2011-04-05",
+   "year": 2011,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "楽寿荘"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/rakujyusousakura1.JPG",
+   "site": "city",
+   "file": "city-0000021947-rakujyusousakura1.JPG",
+   "title": "楽寿荘1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "楽寿荘1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 4592,
+   "height": 3056
+  },
+  {
+   "id": "d129bf1923",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2018-10-01",
+   "year": 2018,
+   "lat": 34.839784,
+   "lon": 135.664679,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "阪今池公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/sakaimaikepark1.jpeg",
+   "site": "city",
+   "file": "city-0000021947-sakaimaikepark1.jpeg",
+   "title": "阪今池公園1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "阪今池公園1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "519deb7ea6",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-11-12",
+   "year": 2012,
+   "lat": 34.794342,
+   "lon": 135.653644,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "桜公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/sakurapark1.jpg",
+   "site": "city",
+   "file": "city-0000021947-sakurapark1.jpg",
+   "title": "桜公園1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "桜公園1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2048,
+   "height": 1536
+  },
+  {
+   "id": "7e65a39015",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2013-01-11",
+   "year": 2013,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "市民の森（鏡伝池緑地）"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/shiminnomori1.jpg",
+   "site": "city",
+   "file": "city-0000021947-shiminnomori1.jpg",
+   "title": "市民の森（鏡伝池緑地）1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "市民の森（鏡伝池緑地）1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2048,
+   "height": 1536
+  },
+  {
+   "id": "48f845720b",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2016-01-18",
+   "year": 2016,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "市民の森（鏡伝池緑地）"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/shiminnomori2.JPG",
+   "site": "city",
+   "file": "city-0000021947-shiminnomori2.JPG",
+   "title": "市民の森（鏡伝池緑地）2",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "市民の森（鏡伝池緑地）2（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2816,
+   "height": 2112
+  },
+  {
+   "id": "45513124b3",
+   "desc": "ひらかた市 オープンデータ画像集「桜の主な名所」の画像",
+   "date": "2009-04-08",
+   "year": 2009,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "市民の森（鏡伝池緑地）"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/shiminnomorisakura1.JPG",
+   "site": "city",
+   "file": "city-0000021947-shiminnomorisakura1.JPG",
+   "title": "市民の森（鏡伝池緑地）1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "市民の森（鏡伝池緑地）1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3648,
+   "height": 2736
+  },
+  {
+   "id": "a9f9e3b2bf",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-10-29",
+   "year": 2012,
+   "lat": 34.803971,
+   "lon": 135.711816,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "空見の丘公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/soraminookapark1.jpg",
+   "site": "city",
+   "file": "city-0000021947-soraminookapark1.jpg",
+   "title": "空見の丘公園1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "空見の丘公園1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2048,
+   "height": 1536
+  },
+  {
+   "id": "177ed19207",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-10-29",
+   "year": 2012,
+   "lat": 34.803971,
+   "lon": 135.711816,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "空見の丘公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/soraminookapark2.jpg",
+   "site": "city",
+   "file": "city-0000021947-soraminookapark2.jpg",
+   "title": "空見の丘公園2",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "空見の丘公園2（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2048,
+   "height": 1536
+  },
+  {
+   "id": "9981441015",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-10-29",
+   "year": 2012,
+   "lat": 34.803971,
+   "lon": 135.711816,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "空見の丘公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/soraminookapark3_s.jpg",
+   "site": "city",
+   "file": "city-0000021947-soraminookapark3_s.jpg",
+   "title": "空見の丘公園3",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "空見の丘公園3（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 360,
+   "height": 270
+  },
+  {
+   "id": "a443775c5c",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2016-02-25",
+   "year": 2016,
+   "lat": 34.803971,
+   "lon": 135.711816,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "空見の丘公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/soraminookapark4.JPG",
+   "site": "city",
+   "file": "city-0000021947-soraminookapark4.JPG",
+   "title": "空見の丘公園4",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "空見の丘公園4（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 1024,
+   "height": 768
+  },
+  {
+   "id": "1c70d7fbf4",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2015-04-24",
+   "year": 2015,
+   "lat": 34.80133,
+   "lon": 135.745787,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "東部公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/tobupark1.jpg",
+   "site": "city",
+   "file": "city-0000021947-tobupark1.jpg",
+   "title": "東部公園1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "東部公園1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3813,
+   "height": 2859
+  },
+  {
+   "id": "cc23c9e8cb",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2017-06-02",
+   "year": 2017,
+   "lat": 34.80133,
+   "lon": 135.745787,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "東部公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/tobupark2.jpg",
+   "site": "city",
+   "file": "city-0000021947-tobupark2.jpg",
+   "title": "東部公園2",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "東部公園2（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3823,
+   "height": 2866
+  },
+  {
+   "id": "b86f086bbe",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2016-06-20",
+   "year": 2016,
+   "lat": 34.80133,
+   "lon": 135.745787,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "東部公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/tobupark3.JPG",
+   "site": "city",
+   "file": "city-0000021947-tobupark3.JPG",
+   "title": "東部公園3",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "東部公園3（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3264,
+   "height": 2448
+  },
+  {
+   "id": "e6a91818b3",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2016-06-20",
+   "year": 2016,
+   "lat": 34.80133,
+   "lon": 135.745787,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "東部公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/tobupark4.JPG",
+   "site": "city",
+   "file": "city-0000021947-tobupark4.JPG",
+   "title": "東部公園4",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "東部公園4（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3264,
+   "height": 2448
+  },
+  {
+   "id": "0f7b6a41c4",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-10-29",
+   "year": 2012,
+   "lat": 34.817968,
+   "lon": 135.706976,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "王仁公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/wanipark1.jpg",
+   "site": "city",
+   "file": "city-0000021947-wanipark1.jpg",
+   "title": "王仁公園1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "王仁公園1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2048,
+   "height": 1536
+  },
+  {
+   "id": "f21c0f01cb",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2015-05-29",
+   "year": 2015,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "山田池公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yamadaikepark1.JPG",
+   "site": "city",
+   "file": "city-0000021947-yamadaikepark1.JPG",
+   "title": "山田池公園（花しょうぶ）1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "山田池公園（花しょうぶ）1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3456,
+   "height": 2304
+  },
+  {
+   "id": "731b954306",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2017-06-02",
+   "year": 2017,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "山田池公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yamadaikepark2.JPG",
+   "site": "city",
+   "file": "city-0000021947-yamadaikepark2.JPG",
+   "title": "山田池公園（花しょうぶ）2",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "山田池公園（花しょうぶ）2（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3648,
+   "height": 2432
+  },
+  {
+   "id": "19b4b5a0ed",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2015-05-29",
+   "year": 2015,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "山田池公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yamadaikepark3.JPG",
+   "site": "city",
+   "file": "city-0000021947-yamadaikepark3.JPG",
+   "title": "山田池公園3",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "山田池公園3（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3456,
+   "height": 2304
+  },
+  {
+   "id": "d5d5733b4a",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2009-04-08",
+   "year": 2009,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "山田池公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yamadaikepark4.JPG",
+   "site": "city",
+   "file": "city-0000021947-yamadaikepark4.JPG",
+   "title": "山田池公園4",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "山田池公園4（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3648,
+   "height": 2736
+  },
+  {
+   "id": "3364f2f3b3",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2007-07-24",
+   "year": 2007,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "山田池公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yamadaikepark5.jpg",
+   "site": "city",
+   "file": "city-0000021947-yamadaikepark5.jpg",
+   "title": "山田池公園5",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "山田池公園5（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 1620,
+   "height": 1063
+  },
+  {
+   "id": "3fabdc7081",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2011-07-04",
+   "year": 2011,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "山田池公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yamadaikepark6.jpg",
+   "site": "city",
+   "file": "city-0000021947-yamadaikepark6.jpg",
+   "title": "山田池公園6",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "山田池公園6（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 800,
+   "height": 600
+  },
+  {
+   "id": "3bd2d9de33",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2010-12-14",
+   "year": 2010,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "山田池公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yamadaikepark7.JPG",
+   "site": "city",
+   "file": "city-0000021947-yamadaikepark7.JPG",
+   "title": "山田池公園7",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "山田池公園7（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 4000,
+   "height": 3000
+  },
+  {
+   "id": "9274935503",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2010-12-14",
+   "year": 2010,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "山田池公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yamadaikepark8.JPG",
+   "site": "city",
+   "file": "city-0000021947-yamadaikepark8.JPG",
+   "title": "山田池公園8",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "山田池公園8（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 4000,
+   "height": 3000
+  },
+  {
+   "id": "026cfa6499",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2010-12-14",
+   "year": 2010,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "山田池公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yamadaikepark9.JPG",
+   "site": "city",
+   "file": "city-0000021947-yamadaikepark9.JPG",
+   "title": "山田池公園9",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "山田池公園9（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 4000,
+   "height": 3000
+  },
+  {
+   "id": "52804e43b4",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2017-11-10",
+   "year": 2017,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "淀川河川公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yodogawakasenpark1.JPG",
+   "site": "city",
+   "file": "city-0000021947-yodogawakasenpark1.JPG",
+   "title": "淀川河川公園1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "淀川河川公園1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3648,
+   "height": 2432
+  },
+  {
+   "id": "a2ac81214c",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2017-11-10",
+   "year": 2017,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "淀川河川公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yodogawakasenpark2.JPG",
+   "site": "city",
+   "file": "city-0000021947-yodogawakasenpark2.JPG",
+   "title": "淀川河川公園2",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "淀川河川公園2（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 3648,
+   "height": 2432
+  },
+  {
+   "id": "70afb8c99b",
+   "desc": "ひらかた市 オープンデータ画像集「公園」の画像",
+   "date": "2012-11-12",
+   "year": 2012,
+   "lat": 34.793161,
+   "lon": 135.64312,
+   "groups": [
+    "公園"
+   ],
+   "places": [
+    "淀見公園"
+   ],
+   "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yodomipark1.jpg",
+   "site": "city",
+   "file": "city-0000021947-yodomipark1.jpg",
+   "title": "淀見公園1",
+   "author": {
+    "name": "枚方市",
+    "url": "https://www.city.hirakata.osaka.jp/0000021947.html"
+   },
+   "license": "CC BY 2.1 JP",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.1/jp/",
+   "source": "https://www.city.hirakata.osaka.jp/0000021947.html",
+   "sourceName": "枚方市「ひらかた市 オープンデータ画像集」",
+   "credit": "淀見公園1（ひらかた市 オープンデータ画像集）、枚方市、クリエイティブ・コモンズ・ライセンス 表示 2.1",
+   "width": 2048,
+   "height": 1536
+  }
+ ]
+}

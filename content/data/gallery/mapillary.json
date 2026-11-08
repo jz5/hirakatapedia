@@ -1,0 +1,371 @@
+{
+ "_source": "Mapillary（gallery-config.yaml の mapillary.images で選んだもの）",
+ "fetched": "2026-11-08",
+ "photos": [
+  {
+   "id": "b794931c8e",
+   "desc": "Mapillary の、樟葉駅前の近くで撮られた写真",
+   "date": "2026-08-19",
+   "year": 2026,
+   "lat": 34.860575,
+   "lon": 135.676834,
+   "groups": [
+    "駅"
+   ],
+   "places": [
+    "樟葉駅"
+   ],
+   "thumb": "https://scontent.fitm5-1.fna.fbcdn.net/m1/v/t6/AQPa0CE3tRoeoGx3xTY7yptE0l7FdzeJslfPZ6a-vpmGCFbcxYLHUlzwIyleefU5radnivTMOTCkGw8dOxsQaUSlirp9_aRKEufWOusm7gPlpCVATAZkUeP0PwX3TZYLKmDs2R51vgiYzQhBwP81NL4H7arexQC2OucFOzw1DOXzvTw?stp=s2048x1152&edm=ALXxkZ8EAAAA&_nc_gid=AjcvfNRtlNYSuDSi5IteIQ&_nc_oc=AdpsUCRy72tgUtyllOfJnnbn7DYuyUP-kyIg2bLzWhBRHDPL3YYTZjDf0woyLPkDNEA&ccb=10-5&oh=00_AQSPVxY1x6CLk4mWEFe52rPHn53bucH1QUTKCtM5Jtrz2w&oe=6B17CAE8&_nc_sid=201bca",
+   "site": "mapillary",
+   "file": "mapillary-1071665505222028.jpg",
+   "title": "樟葉駅前（2026年8月）",
+   "author": {
+    "name": "okadatsuneo",
+    "url": "https://www.mapillary.com/app/user/okadatsuneo"
+   },
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.ja",
+   "source": "https://www.mapillary.com/app/?pKey=1071665505222028&focus=photo",
+   "sourceName": "Mapillary",
+   "width": 5312,
+   "height": 2988
+  },
+  {
+   "id": "91faae33fa",
+   "desc": "Mapillary の、牧野駅前の近くで撮られた写真",
+   "date": "2026-08-19",
+   "year": 2026,
+   "lat": 34.844498,
+   "lon": 135.665945,
+   "groups": [
+    "駅"
+   ],
+   "places": [
+    "牧野駅"
+   ],
+   "thumb": "https://scontent.fitm5-1.fna.fbcdn.net/m1/v/t6/AQNa_g9YqfHf5vCN0wPxW9eRS1dKikN7YyReGuNmSEwDiB1RSWSzxqyIFESOnDyS1ryvyu4X_Vgtjq_leYOi6Xe-imHwHnaTLvYMQR34qK4e-uCbBZqn1JVZDn_e7X4lMyIfL1Zu64zS1iBe8grgZhxWJNGrw8zyiL4Czj_0tgWt1b8?stp=s2048x1152&edm=ALXxkZ8EAAAA&_nc_gid=l-08J3ehTC7ufMeSviW8QQ&_nc_oc=Adoswy9-v4HAzaRvMO73tX41AI-DvlMSWHoAjRTfDpLZsL4fmG17riEdP_GCeUo6CuQ&ccb=10-5&oh=00_AQTB8Tb2ZsU8t8LoV9iImRXYaualY0rkNawdOG4SAe_auQ&oe=6B17C783&_nc_sid=201bca",
+   "site": "mapillary",
+   "file": "mapillary-1090569977268883.jpg",
+   "title": "牧野駅前（2026年8月）",
+   "author": {
+    "name": "okadatsuneo",
+    "url": "https://www.mapillary.com/app/user/okadatsuneo"
+   },
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.ja",
+   "source": "https://www.mapillary.com/app/?pKey=1090569977268883&focus=photo",
+   "sourceName": "Mapillary",
+   "width": 5312,
+   "height": 2988
+  },
+  {
+   "id": "5372838b5b",
+   "desc": "Mapillary の、津田駅前の近くで撮られた写真",
+   "date": "2026-08-19",
+   "year": 2026,
+   "lat": 34.800926,
+   "lon": 135.697328,
+   "groups": [
+    "駅"
+   ],
+   "places": [
+    "津田駅"
+   ],
+   "thumb": "https://scontent.fitm5-1.fna.fbcdn.net/m1/v/t6/AQP6s1wsvaADxqN6rLSV7ePOsEl9cPWU6CzjUl2I3m9rXmC6dyEJqSBA9naWw0_P52voEmsJglGuXrWMvnTaj00OZ_oM69vTUy5LmgNwMVPc_Fjn21CVqhMuPLncC0PKgb5BPa4ZhkbnXMCNagRa0iYlUV86POy3RVOu00J1swEMfBk?stp=s2048x1152&edm=ALXxkZ8EAAAA&_nc_gid=sNO5aWvdTJUyyQrQ9xOubg&_nc_oc=AdqE81CjZXjixNi6m3pu4U4-kis8ZtaXnQUR0EXKynFGzJNPQWhgYAeL-MsYKXU06Uo&ccb=10-5&oh=00_AQT6ynENl_3GLMhzGgQYtjH-sd1c6sKq68HDMoFp3Fpvaw&oe=6B17A208&_nc_sid=201bca",
+   "site": "mapillary",
+   "file": "mapillary-1490798559473317.jpg",
+   "title": "津田駅前（2026年8月）",
+   "author": {
+    "name": "okadatsuneo",
+    "url": "https://www.mapillary.com/app/user/okadatsuneo"
+   },
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.ja",
+   "source": "https://www.mapillary.com/app/?pKey=1490798559473317&focus=photo",
+   "sourceName": "Mapillary",
+   "width": 5312,
+   "height": 2988
+  },
+  {
+   "id": "e2d68211e7",
+   "desc": "Mapillary の、樟葉駅前の近くで撮られた写真",
+   "date": "2026-08-19",
+   "year": 2026,
+   "lat": 34.861462,
+   "lon": 135.67576,
+   "groups": [
+    "駅"
+   ],
+   "places": [
+    "樟葉駅"
+   ],
+   "thumb": "https://scontent.fitm5-1.fna.fbcdn.net/m1/v/t6/AQPpgV7dU4GdPd-nH3I4BBgKBv6K9W7AV2MHn0ros07_DKhCtx_kTOYZLxyclRxI9EHEx1pGxBnp8A2NO9D6HTnI2A2p5kIqsup7X0IB4lYzUYwk4zWX6XCAMderA1eVmqmyy7gjsegNyuuGuNUlFdIJWFb3UWcOng_tbsc_j_shMVY?stp=s2048x1152&edm=ALXxkZ8EAAAA&_nc_gid=U4vPrhKmPfNnVEfRbTEYGg&_nc_oc=AdoBA5MNuoA8C0RWKqU4uV7HqOuLYoUsGJcgIjP_BQS_J6AJ-El-zEqemDbTVE_0q5E&ccb=10-5&oh=00_AQSvP8-p_kWu13eSE1Cx8eoY0qKpFt5g4nbz4SZeypHQSg&oe=6B17C65B&_nc_sid=201bca",
+   "site": "mapillary",
+   "file": "mapillary-1498455182049191.jpg",
+   "title": "樟葉駅前（2026年8月）",
+   "author": {
+    "name": "okadatsuneo",
+    "url": "https://www.mapillary.com/app/user/okadatsuneo"
+   },
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.ja",
+   "source": "https://www.mapillary.com/app/?pKey=1498455182049191&focus=photo",
+   "sourceName": "Mapillary",
+   "width": 5312,
+   "height": 2988
+  },
+  {
+   "id": "df8351f59d",
+   "desc": "Mapillary の、光善寺駅前の近くで撮られた写真",
+   "date": "2026-11-05",
+   "year": 2026,
+   "lat": 34.798399,
+   "lon": 135.630674,
+   "groups": [
+    "駅"
+   ],
+   "places": [
+    "光善寺駅",
+    "光善寺"
+   ],
+   "thumb": "https://scontent.fitm5-1.fna.fbcdn.net/m1/v/t6/AQN5MqBd84_vytxBOZi6kfcCJwpLuD9OMON_YXUYbtc6f4k7je6Ed0fyq39DhhlGiI0dYvgPQcf832hDb0faFPzpi85ae4UqMuVObKSYIK3-i69S71zAByuhxjMhY_mD9YroPyNf5ag7uGGTn1SXZvl3f8KfklS3pvQxCDkyx6-QpOc?stp=s2048x1536&edm=ALXxkZ8EAAAA&_nc_gid=YgUl7sHJzifE79iDcUso-Q&_nc_oc=Adrb62gjcy-56NA6vBcyau37gxHEdg29uvENefQBGWBcyuxw9h8LHLXg7G7HsE26fT4&ccb=10-5&oh=00_AQRwb1nQJ5bhn1FAr480WJpIJW8YehxPlarPDq6pdtxOmg&oe=6B17AA67&_nc_sid=201bca",
+   "site": "mapillary",
+   "file": "mapillary-1663984782033513.jpg",
+   "title": "光善寺駅前（2026年11月）",
+   "author": {
+    "name": "mzsn",
+    "url": "https://www.mapillary.com/app/user/mzsn"
+   },
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.ja",
+   "source": "https://www.mapillary.com/app/?pKey=1663984782033513&focus=photo",
+   "sourceName": "Mapillary",
+   "width": 4000,
+   "height": 3000
+  },
+  {
+   "id": "bbb5afab9d",
+   "desc": "Mapillary の、枚方公園駅前の近くで撮られた写真",
+   "date": "2026-08-19",
+   "year": 2026,
+   "lat": 34.811019,
+   "lon": 135.638979,
+   "groups": [
+    "駅"
+   ],
+   "places": [
+    "枚方公園駅"
+   ],
+   "thumb": "https://scontent.fitm5-1.fna.fbcdn.net/m1/v/t6/AQNK_rGyKOtsS-xkBjChX3RSG9DHgH3UcJV4C1nar0KO0-je2ufnB6Shap-dbpVr8l55Egl5m__qK96PlT_cm703j2CxO_m0lRuN3xxEpJMN8G6GZvHtzje1RDtv2UQEq-BNwumhbS5UZ-df2bAk5PO4Qw8G9VDboftb5OXnkok_OOk?stp=s2048x1152&edm=ALXxkZ8EAAAA&_nc_gid=z_XWFx00unMNdGNK0dTnkA&_nc_oc=Ado5tq93q3e4Bn5O96Je8ESIa-jnz8FiMq5bpxgBTz_LJzoS8A73RkpDf8vkn7AwcBw&ccb=10-5&oh=00_AQRjsxhHVVWHwKWkJnevMptv_f3ppqkosurNM7SEXRt6bw&oe=6B17CEE6&_nc_sid=201bca",
+   "site": "mapillary",
+   "file": "mapillary-1749593706381188.jpg",
+   "title": "枚方公園駅前（2026年8月）",
+   "author": {
+    "name": "okadatsuneo",
+    "url": "https://www.mapillary.com/app/user/okadatsuneo"
+   },
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.ja",
+   "source": "https://www.mapillary.com/app/?pKey=1749593706381188&focus=photo",
+   "sourceName": "Mapillary",
+   "width": 5312,
+   "height": 2988
+  },
+  {
+   "id": "92572b53df",
+   "desc": "Mapillary の、樟葉駅前の近くで撮られた写真",
+   "date": "2026-08-19",
+   "year": 2026,
+   "lat": 34.860806,
+   "lon": 135.676409,
+   "groups": [
+    "駅"
+   ],
+   "places": [
+    "樟葉駅"
+   ],
+   "thumb": "https://scontent.fitm5-1.fna.fbcdn.net/m1/v/t6/AQMyUQhXPeR6tBDPKvICN2OK40y2IAUAQHoz80ktg_3UORDWBN-_ckt7LjKppP7LToCloexQV_A8Au4g6XHz8K-LhVyCGI3giGxcaDBxjtDwvpCIaiWf5HxU3_CuqrUvHvcr5VowXyNV7LE-qg0Zgll_0OTRmbV0OjihVpo6xT6hxzo?stp=s2048x1152&edm=ALXxkZ8EAAAA&_nc_gid=C47nkXaOL0o5pql3CaeCOg&_nc_oc=Adr0OBkQyuguJJtUmj3UAKAxQXFoegvj8puSZBPGUM6-gfhSqgX1TBoIvbMooRQNHjU&ccb=10-5&oh=00_AQRydYcrCEng7LkFc3oFmy6wO9kMPUUv19suoGfYzMrb9A&oe=6B17CFA4&_nc_sid=201bca",
+   "site": "mapillary",
+   "file": "mapillary-1762559711607708.jpg",
+   "title": "樟葉駅前（2026年8月）",
+   "author": {
+    "name": "okadatsuneo",
+    "url": "https://www.mapillary.com/app/user/okadatsuneo"
+   },
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.ja",
+   "source": "https://www.mapillary.com/app/?pKey=1762559711607708&focus=photo",
+   "sourceName": "Mapillary",
+   "width": 5312,
+   "height": 2988
+  },
+  {
+   "id": "0f9a9f6b3d",
+   "desc": "Mapillary の、津田駅前の近くで撮られた写真",
+   "date": "2026-08-19",
+   "year": 2026,
+   "lat": 34.801215,
+   "lon": 135.697514,
+   "groups": [
+    "駅"
+   ],
+   "places": [
+    "津田駅"
+   ],
+   "thumb": "https://scontent.fitm5-1.fna.fbcdn.net/m1/v/t6/AQMRjR2lVN0uLmiN4tzHoZHeuKGIL-C0EHbzFMiL_spD4LPp59-DmoDZglDkWiZNu2xw70BZXO_gEoNZdUcguTk5jBQB804qDSJJj11Q-B3S-vn3pnBqi66zz738vcX7UYmycIcnQGB-cIKxtSolqRGbFbPqsAP_J3c36mn2TM8f018?stp=s2048x1152&edm=ALXxkZ8EAAAA&_nc_gid=k0LkOpgDRpxJKRbCt3bcow&_nc_oc=Adp8KNpZY1fVqYeCkwGvyZLFhEK1auyyS4QUlKLL94dPRvBUuIsVl21IlYpwKh8w_Gk&ccb=10-5&oh=00_AQT6txn6EUDaEwpsfRD2CCoWRyHOVbTUl5ph3IpFafnyHw&oe=6B17C569&_nc_sid=201bca",
+   "site": "mapillary",
+   "file": "mapillary-2020680573435425.jpg",
+   "title": "津田駅前（2026年8月）",
+   "author": {
+    "name": "okadatsuneo",
+    "url": "https://www.mapillary.com/app/user/okadatsuneo"
+   },
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.ja",
+   "source": "https://www.mapillary.com/app/?pKey=2020680573435425&focus=photo",
+   "sourceName": "Mapillary",
+   "width": 5312,
+   "height": 2988
+  },
+  {
+   "id": "c6c419e04e",
+   "desc": "Mapillary の、香里ケ丘の近くで撮られた写真",
+   "date": "2026-11-05",
+   "year": 2026,
+   "lat": 34.784323,
+   "lon": 135.645569,
+   "groups": [
+    "街なみ"
+   ],
+   "places": [
+    "香里ケ丘"
+   ],
+   "thumb": "https://scontent.fitm5-1.fna.fbcdn.net/m1/v/t6/AQOntV4m11TAdufuybJ-8WEu1ryWWpDifTkOAXjBdTFrh7HmhDR1SE3K4pvdlG5n1TqfGJ45--hj5DffRNrhmpI8n9nxpK1eDNB-juqZgnRJIxyKCTmbDcu3iF7ZwpxYj8yzCCtbAokB3b47BqQ6ZEctVtoN0IfGPa4ryBHMAzyTQLw?stp=s2048x1536&edm=ALXxkZ8EAAAA&_nc_gid=VkvTu6oYYsjr_7ntafXftw&_nc_oc=AdocF_SvYL0BdLlUPwnEyCs_ArlUfux9A13UNnhJF2reg62wHmOB2QlIvbMHPq7flo8&ccb=10-5&oh=00_AQSv-py13wM0IdaVz0v2VP8dRIbL0ueGraPfgn4NpX2qww&oe=6B179EC1&_nc_sid=201bca",
+   "site": "mapillary",
+   "file": "mapillary-2065680580768737.jpg",
+   "title": "香里ケ丘（2026年11月）",
+   "author": {
+    "name": "mzsn",
+    "url": "https://www.mapillary.com/app/user/mzsn"
+   },
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.ja",
+   "source": "https://www.mapillary.com/app/?pKey=2065680580768737&focus=photo",
+   "sourceName": "Mapillary",
+   "width": 4000,
+   "height": 3000
+  },
+  {
+   "id": "1c331e9892",
+   "desc": "Mapillary の、津田駅前の近くで撮られた写真",
+   "date": "2026-08-19",
+   "year": 2026,
+   "lat": 34.801806,
+   "lon": 135.697268,
+   "groups": [
+    "駅"
+   ],
+   "places": [
+    "津田駅"
+   ],
+   "thumb": "https://scontent.fitm5-1.fna.fbcdn.net/m1/v/t6/AQOPRBANzViGrkT1_hhvv25sKG1wPSZcXhE3RDZ91eX3fsoaH3_a2nwVhrpD_ai150Mg5yg4MlVLa99ty7BwAH0pIX7N-SFhC0vQn0tAk3oEYx5CAWHRfYPrNsJ2oCY5VfbgV23YuaOZY833JLEDooojNF4ksQy_3Wkv4iIUjTpemrQj?stp=s2048x1152&edm=ALXxkZ8EAAAA&_nc_gid=Kt46W91MM4BAt1w5g-_ipw&_nc_oc=Adp4oIaM8OiD1aW6t9I0l74fbSH3ARYMTRefWDvsgaceub2ma997eBNvw60ObBe_odI&ccb=10-5&oh=00_AQTsR5HcJSLLrveAZCt4SbMFiFCfoeXOFLJ-5h9C1dLABA&oe=6B17A010&_nc_sid=201bca",
+   "site": "mapillary",
+   "file": "mapillary-2069036593727369.jpg",
+   "title": "津田駅前（2026年8月）",
+   "author": {
+    "name": "okadatsuneo",
+    "url": "https://www.mapillary.com/app/user/okadatsuneo"
+   },
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.ja",
+   "source": "https://www.mapillary.com/app/?pKey=2069036593727369&focus=photo",
+   "sourceName": "Mapillary",
+   "width": 5312,
+   "height": 2988
+  },
+  {
+   "id": "e608b5245d",
+   "desc": "Mapillary の、牧野駅前の近くで撮られた写真",
+   "date": "2025-11-16",
+   "year": 2025,
+   "lat": 34.844053,
+   "lon": 135.665275,
+   "groups": [
+    "駅"
+   ],
+   "places": [
+    "牧野駅"
+   ],
+   "thumb": "https://scontent.fitm5-1.fna.fbcdn.net/m1/v/t6/AQOSGAP6NF6GBTxXJVOK8shfrLAV8icaskpiotExRXt7DP3fXokAsxUaozMYXt2G2fqdvq_meQQ3C_WD2Ys25s1hwPc7p9INNDLenj-4U0B81nr1XMVQ29wtP7r8obsqzfwMOVrB-MZMWgnfT2fnCBjoPamOYtJTvaB4DnTbtdT3Cg?stp=s2048x1537&edm=ALXxkZ8EAAAA&_nc_gid=rLYNuMj1tixNvdV2o4jM3w&_nc_oc=Adr2rJrAJGnfwlU39q7adz9OVVeeiZPG8BZo0oc998HkFPynZNtJaQ27IDP33QF88-0&ccb=10-5&oh=00_AQRFZq1alnvQ9fIr7OAG9L4CcSoFWpoyyKL-xYIX7G_vKg&oe=6B17B380&_nc_sid=201bca",
+   "site": "mapillary",
+   "file": "mapillary-2266951780449650.jpg",
+   "title": "牧野駅前（2025年11月）",
+   "author": {
+    "name": "yasunari",
+    "url": "https://www.mapillary.com/app/user/yasunari"
+   },
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.ja",
+   "source": "https://www.mapillary.com/app/?pKey=2266951780449650&focus=photo",
+   "sourceName": "Mapillary",
+   "width": 4624,
+   "height": 3472
+  },
+  {
+   "id": "498fb26d89",
+   "desc": "Mapillary の、枚方公園駅前の近くで撮られた写真",
+   "date": "2026-08-19",
+   "year": 2026,
+   "lat": 34.810992,
+   "lon": 135.638961,
+   "groups": [
+    "駅"
+   ],
+   "places": [
+    "枚方公園駅"
+   ],
+   "thumb": "https://scontent.fitm5-1.fna.fbcdn.net/m1/v/t6/AQMMOd1hGT6fO425gLcg_DifBb-GzBLU3koTO6GraBC5n1fOGi5SDAiyKy1RkLEqRPWQxpaqkvYkMBj0RRv9n53wFrrw6D3UUnzd0e1IJUQ7HHL6Zf0uhE3TZkRW1TxPrJcYt31QwChUlNYPqKEKzlV6l9TEpH9TZUkbrXUlpwOO--Q?stp=s2048x1152&edm=ALXxkZ8EAAAA&_nc_gid=lYTGg2Kw5v3VhaAqZG5tnA&_nc_oc=AdpGyLbXxkQoa4QySs182GDu0_ONwDChhF2R3jWjUk-EqgLww_6LvYYDpWMiN8GcQlM&ccb=10-5&oh=00_AQQceoKS2FZDPYwaJvKxfMxVROE88yx1CqJzwXcX82zBnQ&oe=6B17BA14&_nc_sid=201bca",
+   "site": "mapillary",
+   "file": "mapillary-29137930279130639.jpg",
+   "title": "枚方公園駅前（2026年8月）",
+   "author": {
+    "name": "okadatsuneo",
+    "url": "https://www.mapillary.com/app/user/okadatsuneo"
+   },
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.ja",
+   "source": "https://www.mapillary.com/app/?pKey=29137930279130639&focus=photo",
+   "sourceName": "Mapillary",
+   "width": 5312,
+   "height": 2988
+  },
+  {
+   "id": "7e7d3b3106",
+   "desc": "Mapillary の、枚方市駅前の近くで撮られた写真",
+   "date": "2019-06-24",
+   "year": 2019,
+   "lat": 34.815857,
+   "lon": 135.648439,
+   "groups": [
+    "駅"
+   ],
+   "places": [
+    "枚方市駅"
+   ],
+   "thumb": "https://scontent.fitm5-1.fna.fbcdn.net/m1/v/t6/AQOTvSM13yoFu9UiGkNwjO7gfLDpBxdXPTCrQ-Na5NLGb2VNo6QfF197uwzDXZX8SubcS2isrIejVIgaO7BL7dkfyaM5RA9MlB6tBSX8eSWCXD-T01OkOSJKr1Dq2R_Go_eYVK7RZzKRQXA4itIXWU1U0G5Mzhb4p5tcC__XuC9XnA?stp=s2048x1536&edm=ALXxkZ8EAAAA&_nc_gid=Pj_dtursOezavEp-Gg-g2A&_nc_oc=Adr9FUxzQ6LJ2hAGO4y84FabN_TDwi5BN_tGlYdAVS9FySCtyFMC3KoYaNWHy0hnm4g&ccb=10-5&oh=00_AQSCVOCU6wLQVet-yGvQx-mdorzuwhr0DUf2HU22CIwdug&oe=6B17A62F&_nc_sid=201bca",
+   "site": "mapillary",
+   "file": "mapillary-902779106936928.jpg",
+   "title": "枚方市駅前（2019年6月）",
+   "author": {
+    "name": "yasunari",
+    "url": "https://www.mapillary.com/app/user/yasunari"
+   },
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.ja",
+   "source": "https://www.mapillary.com/app/?pKey=902779106936928&focus=photo",
+   "sourceName": "Mapillary",
+   "width": 4608,
+   "height": 3456
+  }
+ ]
+}

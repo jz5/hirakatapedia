@@ -1,0 +1,298 @@
+{
+ "_source": "大阪市立図書館デジタルアーカイブで選んだ資料（gallery-config.yaml の omlib）",
+ "fetched": "2026-11-08",
+ "photos": [
+  {
+   "id": "2c20fa80bf",
+   "desc": "葉書帖の絵はがき。彩色。彩色 本体の書名:葉書帖。刊年：[刊年不明]",
+   "date": null,
+   "year": null,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "街なみ"
+   ],
+   "places": [
+    "枚方"
+   ],
+   "thumb": "https://image.oml.city.osaka.lg.jp/da/download/?id=0000000021-OSK0160069&size=view&type=image&file=%2F%E5%86%99%E7%9C%9F%E3%83%BB%E7%B5%B5%E3%81%AF%E3%81%8C%E3%81%8D%E3%83%BB%E5%8F%A4%E6%96%87%E6%9B%B8%E3%83%BB%E5%9C%B0%E5%9B%B3%2Fu3158001.jpg",
+   "site": "omlib",
+   "file": "omlib-0000000021-OSK0160069-0",
+   "title": "枚方全景（絵はがき）",
+   "author": {
+    "name": "大阪市立図書館所蔵",
+    "url": "https://image.oml.city.osaka.lg.jp/da/detail?tilcod=0000000021-OSK0160069"
+   },
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+   "source": "https://image.oml.city.osaka.lg.jp/da/detail?tilcod=0000000021-OSK0160069",
+   "sourceName": "大阪市立図書館デジタルアーカイブ",
+   "credit": "枚方全景（絵はがき）（大阪市立図書館デジタルアーカイブ）／CC0",
+   "width": 1280,
+   "height": 821
+  },
+  {
+   "id": "26deda8a4b",
+   "desc": "葉書帖の絵はがき。「枚方驛」の印。天野川。白黒 本体の書名:葉書帖。刊年：[刊年不明]",
+   "date": null,
+   "year": null,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "地理"
+   ],
+   "places": [
+    "天野川"
+   ],
+   "thumb": "https://image.oml.city.osaka.lg.jp/da/download/?id=0000000021-OSK0160095&size=view&type=image&file=%2F%E5%86%99%E7%9C%9F%E3%83%BB%E7%B5%B5%E3%81%AF%E3%81%8C%E3%81%8D%E3%83%BB%E5%8F%A4%E6%96%87%E6%9B%B8%E3%83%BB%E5%9C%B0%E5%9B%B3%2Fu3184001.jpg",
+   "site": "omlib",
+   "file": "omlib-0000000021-OSK0160095-0",
+   "title": "天の川（絵はがき）",
+   "author": {
+    "name": "大阪市立図書館所蔵",
+    "url": "https://image.oml.city.osaka.lg.jp/da/detail?tilcod=0000000021-OSK0160095"
+   },
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+   "source": "https://image.oml.city.osaka.lg.jp/da/detail?tilcod=0000000021-OSK0160095",
+   "sourceName": "大阪市立図書館デジタルアーカイブ",
+   "credit": "天の川（絵はがき）（大阪市立図書館デジタルアーカイブ）／CC0",
+   "width": 1280,
+   "height": 832
+  },
+  {
+   "id": "f52c758acc",
+   "desc": "葉書帖の絵はがき。「枚方驛」の印。白黒 本体の書名:葉書帖。刊年：[刊年不明]",
+   "date": null,
+   "year": null,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "地理"
+   ],
+   "places": [
+    "伊加賀"
+   ],
+   "thumb": "https://image.oml.city.osaka.lg.jp/da/download/?id=0000000021-OSK0160098&size=view&type=image&file=%2F%E5%86%99%E7%9C%9F%E3%83%BB%E7%B5%B5%E3%81%AF%E3%81%8C%E3%81%8D%E3%83%BB%E5%8F%A4%E6%96%87%E6%9B%B8%E3%83%BB%E5%9C%B0%E5%9B%B3%2Fu3187001.jpg",
+   "site": "omlib",
+   "file": "omlib-0000000021-OSK0160098-0",
+   "title": "伊加賀崎の月（絵はがき）",
+   "author": {
+    "name": "大阪市立図書館所蔵",
+    "url": "https://image.oml.city.osaka.lg.jp/da/detail?tilcod=0000000021-OSK0160098"
+   },
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+   "source": "https://image.oml.city.osaka.lg.jp/da/detail?tilcod=0000000021-OSK0160098",
+   "sourceName": "大阪市立図書館デジタルアーカイブ",
+   "credit": "伊加賀崎の月（絵はがき）（大阪市立図書館デジタルアーカイブ）／CC0",
+   "width": 1280,
+   "height": 823
+  },
+  {
+   "id": "b6dcc21a62",
+   "desc": "『河内名所図会』巻6（1801年）の挿絵。いまの蹉跎神社。帙入 和装。刊年：享和1.7序(1801)",
+   "date": null,
+   "year": 1801,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "蹉跎神社",
+    "神社"
+   ],
+   "thumb": "https://image.oml.city.osaka.lg.jp/da/download/?id=0000000021-OSK0186932&size=view&type=image&file=%2F%E5%86%99%E7%9C%9F%E3%83%BB%E7%B5%B5%E3%81%AF%E3%81%8C%E3%81%8D%E3%83%BB%E5%8F%A4%E6%96%87%E6%9B%B8%E3%83%BB%E5%9C%B0%E5%9B%B3%2F0z0006020.jpg",
+   "site": "omlib",
+   "file": "omlib-0000000021-OSK0186932-22",
+   "title": "河内名所図会「蹉跎山 天満宮」",
+   "author": {
+    "name": "秋里籬島 編・丹羽桃渓 画（大阪市立図書館所蔵）",
+    "url": "https://image.oml.city.osaka.lg.jp/da/detail?tilcod=0000000021-OSK0186932"
+   },
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+   "source": "https://image.oml.city.osaka.lg.jp/da/detail?tilcod=0000000021-OSK0186932",
+   "sourceName": "大阪市立図書館デジタルアーカイブ",
+   "credit": "河内名所図会「蹉跎山 天満宮」（大阪市立図書館デジタルアーカイブ）／CC0",
+   "width": 1280,
+   "height": 853
+  },
+  {
+   "id": "bf538685a4",
+   "desc": "『河内名所図会』巻6（1801年）の挿絵。帙入 和装。刊年：享和1.7序(1801)",
+   "date": null,
+   "year": 1801,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "光善寺"
+   ],
+   "thumb": "https://image.oml.city.osaka.lg.jp/da/download/?id=0000000021-OSK0186932&size=view&type=image&file=%2F%E5%86%99%E7%9C%9F%E3%83%BB%E7%B5%B5%E3%81%AF%E3%81%8C%E3%81%8D%E3%83%BB%E5%8F%A4%E6%96%87%E6%9B%B8%E3%83%BB%E5%9C%B0%E5%9B%B3%2F0z0006023.jpg",
+   "site": "omlib",
+   "file": "omlib-0000000021-OSK0186932-25",
+   "title": "河内名所図会「出口 光善寺」",
+   "author": {
+    "name": "秋里籬島 編・丹羽桃渓 画（大阪市立図書館所蔵）",
+    "url": "https://image.oml.city.osaka.lg.jp/da/detail?tilcod=0000000021-OSK0186932"
+   },
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+   "source": "https://image.oml.city.osaka.lg.jp/da/detail?tilcod=0000000021-OSK0186932",
+   "sourceName": "大阪市立図書館デジタルアーカイブ",
+   "credit": "河内名所図会「出口 光善寺」（大阪市立図書館デジタルアーカイブ）／CC0",
+   "width": 1280,
+   "height": 853
+  },
+  {
+   "id": "aaf08771a3",
+   "desc": "『河内名所図会』巻6（1801年）の挿絵。帙入 和装。刊年：享和1.7序(1801)",
+   "date": null,
+   "year": 1801,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "萬年寺"
+   ],
+   "thumb": "https://image.oml.city.osaka.lg.jp/da/download/?id=0000000021-OSK0186932&size=view&type=image&file=%2F%E5%86%99%E7%9C%9F%E3%83%BB%E7%B5%B5%E3%81%AF%E3%81%8C%E3%81%8D%E3%83%BB%E5%8F%A4%E6%96%87%E6%9B%B8%E3%83%BB%E5%9C%B0%E5%9B%B3%2F0z0006026.jpg",
+   "site": "omlib",
+   "file": "omlib-0000000021-OSK0186932-28",
+   "title": "河内名所図会「牧方 萬年寺」",
+   "author": {
+    "name": "秋里籬島 編・丹羽桃渓 画（大阪市立図書館所蔵）",
+    "url": "https://image.oml.city.osaka.lg.jp/da/detail?tilcod=0000000021-OSK0186932"
+   },
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+   "source": "https://image.oml.city.osaka.lg.jp/da/detail?tilcod=0000000021-OSK0186932",
+   "sourceName": "大阪市立図書館デジタルアーカイブ",
+   "credit": "河内名所図会「牧方 萬年寺」（大阪市立図書館デジタルアーカイブ）／CC0",
+   "width": 1280,
+   "height": 853
+  },
+  {
+   "id": "4373281536",
+   "desc": "『河内名所図会』巻6（1801年）の挿絵。枚方宿と淀川。帙入 和装。刊年：享和1.7序(1801)",
+   "date": null,
+   "year": 1801,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "枚方宿"
+   ],
+   "thumb": "https://image.oml.city.osaka.lg.jp/da/download/?id=0000000021-OSK0186932&size=view&type=image&file=%2F%E5%86%99%E7%9C%9F%E3%83%BB%E7%B5%B5%E3%81%AF%E3%81%8C%E3%81%8D%E3%83%BB%E5%8F%A4%E6%96%87%E6%9B%B8%E3%83%BB%E5%9C%B0%E5%9B%B3%2F0z0006027.jpg",
+   "site": "omlib",
+   "file": "omlib-0000000021-OSK0186932-29",
+   "title": "河内名所図会「牧方驛」",
+   "author": {
+    "name": "秋里籬島 編・丹羽桃渓 画（大阪市立図書館所蔵）",
+    "url": "https://image.oml.city.osaka.lg.jp/da/detail?tilcod=0000000021-OSK0186932"
+   },
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+   "source": "https://image.oml.city.osaka.lg.jp/da/detail?tilcod=0000000021-OSK0186932",
+   "sourceName": "大阪市立図書館デジタルアーカイブ",
+   "credit": "河内名所図会「牧方驛」（大阪市立図書館デジタルアーカイブ）／CC0",
+   "width": 1280,
+   "height": 853
+  },
+  {
+   "id": "7031fa8f12",
+   "desc": "『河内名所図会』巻6（1801年）の挿絵。天野川。帙入 和装。刊年：享和1.7序(1801)",
+   "date": null,
+   "year": 1801,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "天野川"
+   ],
+   "thumb": "https://image.oml.city.osaka.lg.jp/da/download/?id=0000000021-OSK0186932&size=view&type=image&file=%2F%E5%86%99%E7%9C%9F%E3%83%BB%E7%B5%B5%E3%81%AF%E3%81%8C%E3%81%8D%E3%83%BB%E5%8F%A4%E6%96%87%E6%9B%B8%E3%83%BB%E5%9C%B0%E5%9B%B3%2F0z0006039.jpg",
+   "site": "omlib",
+   "file": "omlib-0000000021-OSK0186932-41",
+   "title": "河内名所図会「天の川」",
+   "author": {
+    "name": "秋里籬島 編・丹羽桃渓 画（大阪市立図書館所蔵）",
+    "url": "https://image.oml.city.osaka.lg.jp/da/detail?tilcod=0000000021-OSK0186932"
+   },
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+   "source": "https://image.oml.city.osaka.lg.jp/da/detail?tilcod=0000000021-OSK0186932",
+   "sourceName": "大阪市立図書館デジタルアーカイブ",
+   "credit": "河内名所図会「天の川」（大阪市立図書館デジタルアーカイブ）／CC0",
+   "width": 1280,
+   "height": 853
+  },
+  {
+   "id": "6270c5a763",
+   "desc": "『河内名所図会』巻6（1801年）の挿絵。いまの片埜神社。帙入 和装。刊年：享和1.7序(1801)",
+   "date": null,
+   "year": 1801,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "片埜神社",
+    "神社"
+   ],
+   "thumb": "https://image.oml.city.osaka.lg.jp/da/download/?id=0000000021-OSK0186932&size=view&type=image&file=%2F%E5%86%99%E7%9C%9F%E3%83%BB%E7%B5%B5%E3%81%AF%E3%81%8C%E3%81%8D%E3%83%BB%E5%8F%A4%E6%96%87%E6%9B%B8%E3%83%BB%E5%9C%B0%E5%9B%B3%2F0z0006047.jpg",
+   "site": "omlib",
+   "file": "omlib-0000000021-OSK0186932-49",
+   "title": "河内名所図会「交野神社 一ノ宮」",
+   "author": {
+    "name": "秋里籬島 編・丹羽桃渓 画（大阪市立図書館所蔵）",
+    "url": "https://image.oml.city.osaka.lg.jp/da/detail?tilcod=0000000021-OSK0186932"
+   },
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+   "source": "https://image.oml.city.osaka.lg.jp/da/detail?tilcod=0000000021-OSK0186932",
+   "sourceName": "大阪市立図書館デジタルアーカイブ",
+   "credit": "河内名所図会「交野神社 一ノ宮」（大阪市立図書館デジタルアーカイブ）／CC0",
+   "width": 1280,
+   "height": 853
+  },
+  {
+   "id": "48bcc744fa",
+   "desc": "『河内名所図会』巻6（1801年）の挿絵。いまの王仁墓（伝王仁墓）。帙入 和装。刊年：享和1.7序(1801)",
+   "date": null,
+   "year": 1801,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "王仁墓"
+   ],
+   "thumb": "https://image.oml.city.osaka.lg.jp/da/download/?id=0000000021-OSK0186932&size=view&type=image&file=%2F%E5%86%99%E7%9C%9F%E3%83%BB%E7%B5%B5%E3%81%AF%E3%81%8C%E3%81%8D%E3%83%BB%E5%8F%A4%E6%96%87%E6%9B%B8%E3%83%BB%E5%9C%B0%E5%9B%B3%2F0z0006049.jpg",
+   "site": "omlib",
+   "file": "omlib-0000000021-OSK0186932-51",
+   "title": "河内名所図会「藤坂 王仁墳」",
+   "author": {
+    "name": "秋里籬島 編・丹羽桃渓 画（大阪市立図書館所蔵）",
+    "url": "https://image.oml.city.osaka.lg.jp/da/detail?tilcod=0000000021-OSK0186932"
+   },
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+   "source": "https://image.oml.city.osaka.lg.jp/da/detail?tilcod=0000000021-OSK0186932",
+   "sourceName": "大阪市立図書館デジタルアーカイブ",
+   "credit": "河内名所図会「藤坂 王仁墳」（大阪市立図書館デジタルアーカイブ）／CC0",
+   "width": 1280,
+   "height": 853
+  }
+ ]
+}

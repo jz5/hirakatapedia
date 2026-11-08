@@ -1,0 +1,115 @@
+---
+/**
+ * 写真ギャラリーの 1 枚（/gallery/<id>/）。撮影者・ライセンス・出典と、使うときの表記の例。
+ * 「前・次」は、一覧から来たときはその一覧の並び（sessionStorage の gallery-ctx）、そうでなければ既定の並び（撮った年の新しい順）
+ */
+import Base from "../../layouts/Base.astro";
+import { photos, caption, fit, credit, galleryPath, largeSrc, thumbSrc, siteName, licenseKind, type GalleryPhoto } from "../../lib/gallery";
+import { articlesUsing } from "../../lib/gallery-used";
+import { allArticles, articlePath } from "../../lib/articles";
+import type { GetStaticPaths } from "astro";
+
+export const getStaticPaths = (() =>
+  photos.map((p, i) => ({ params: { id: p.id }, props: { p, prev: photos[i - 1]?.id ?? null, next: photos[i + 1]?.id ?? null } }))) satisfies GetStaticPaths;
+
+const { p, prev, next } = Astro.props as { p: GalleryPhoto; prev: string | null; next: string | null };
+const cap = caption(p);
+const size = fit(p, 1600);
+const used = articlesUsing(p.file);
+const articles = used.length ? (await allArticles()).filter((a) => used.includes(a.id)) : [];
+const ymd = (s: string) => s.replace(/^(\d{4})-(\d{2})-(\d{2})$/, (_, y, m, d) => `${y}年${Number(m)}月${Number(d)}日`);
+const kind = licenseKind(p.license);
+const how =
+  p.site === "gsi"
+    ? "出典を表記してください（国土地理院の利用規約）。"
+    : kind === "sa"
+      ? "撮影者とライセンスを表記してください。改変したものは同じライセンスで公開してください。"
+      : kind === "nd"
+        ? "撮影者とライセンスを表記してください。改変はできません。"
+        : kind === "pd"
+          ? "表記は必須ではありませんが、書いておくと親切です。"
+          : "撮影者とライセンスを表記してください（改変してもかまいません）。";
+// SNS で共有したときの画像は、出どころの JPEG・PNG（AVIF は出ないサービスが多い）
+const ogImage = /^https?:\/\/.+\.(jpe?g|png)(\?|$)/i.test(p.thumb) || p.site === "mapillary" ? p.thumb : undefined;
+---
+
+<Base title={`${cap.slice(0, 60)}（枚方の写真）`} description={`${cap}。${p.author.name}、${p.license}。枚方の写真ギャラリー。`} path={galleryPath(p.id)} image={ogImage}>
+  <article class="entry gphoto">
+    <header class="entry-header">
+      <p class="gallery-back"><a href="/gallery/" data-back>← 枚方の写真</a></p>
+      <h1>{cap.length > 80 ? `${cap.slice(0, 80)}…` : cap}</h1>
+    </header>
+
+    <figure class="gphoto-figure">
+      <a href={p.source}><img src={largeSrc(p.id)} width={size.width} height={size.height} alt={cap} decoding="async" /></a>
+    </figure>
+
+    <div class="entry-body">
+      <dl class="gphoto-meta">
+        <dt>撮影日</dt><dd>{p.date ? ymd(p.date) : p.site === "gsi" ? p.title.match(/（(.+)）$/)?.[1] : p.year ? `${p.year}年` : "不明"}</dd>
+        {p.places.length > 0 && (<><dt>場所・被写体</dt><dd>{p.places.map((pl, i) => <>{i > 0 && "、"}<a href={`/gallery/?q=${encodeURIComponent(pl)}`}>{pl}</a></>)}</dd></>)}
+        {p.groups.length > 0 && (<><dt>分類</dt><dd>{p.groups.map((g, i) => <>{i > 0 && "、"}<a href={`/gallery/?g=${encodeURIComponent(g)}`}>{g}</a></>)}</dd></>)}
+        <dt>撮影者</dt><dd>{p.author.url ? <a href={p.author.url}>{p.author.name}</a> : p.author.name}</dd>
+        <dt>ライセンス</dt><dd>{p.licenseUrl ? <a href={p.licenseUrl}>{p.license}</a> : p.license}</dd>
+        <dt>出典</dt><dd><a href={p.source}>{siteName(p)}</a>{p.site !== "gsi" && "（元のサイズの画像もここからダウンロードできます）"}</dd>
+        {p.edited && <><dt>加工</dt><dd>{p.edited}（このサイトで加工）</dd></>}
+        {p.lat !== null && <><dt>撮影地</dt><dd><a href={`https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lon}`} rel="noopener">Google マップで開く</a></dd></>}
+        {articles.length > 0 && (<><dt>使用している記事</dt><dd>{articles.map((a, i) => <>{i > 0 && "、"}<a href={articlePath(a.id)}>{a.data.title}</a></>)}</dd></>)}
+      </dl>
+
+      <aside class="callout gphoto-use">
+        <p>この写真を使うときは、{how}</p>
+        <p class="gphoto-credit">表記の例：<code data-credit>{credit(p)}</code> <button type="button" class="copy-btn" data-copy>コピー</button></p>
+      </aside>
+
+      {p.desc && p.desc !== cap && <p class="gphoto-desc">{p.desc}</p>}
+
+      <nav class="gphoto-nav" aria-label="前後の写真（← → キーでも移動できます）" data-id={p.id}>
+        <a href={prev ? galleryPath(prev) : "#"} rel="prev" hidden={!prev}><img src={prev ? thumbSrc(prev) : ""} alt="" width="64" height="64" loading="lazy" />← 前の写真</a>
+        <a href={next ? galleryPath(next) : "#"} rel="next" hidden={!next}>次の写真 →<img src={next ? thumbSrc(next) : ""} alt="" width="64" height="64" loading="lazy" /></a>
+      </nav>
+    </div>
+  </article>
+</Base>
+
+<script>
+  // 一覧から来たときは、その一覧の並びで前・次をたどる。「← 枚方の写真」も、その一覧（絞り込み・ページ）へ戻る
+  const nav = document.querySelector<HTMLElement>(".gphoto-nav");
+  try {
+    const ctx = JSON.parse(sessionStorage.getItem("gallery-ctx") ?? "null") as { back: string; ids: string[] } | null;
+    const i = ctx && nav ? ctx.ids.indexOf(nav.dataset.id!) : -1;
+    if (ctx && nav && i >= 0) {
+      const thumb = (id: string) => `/gallery/i/${id.slice(0, 2)}/${id}-s.avif`;
+      for (const [rel, id] of [["prev", ctx.ids[i - 1]], ["next", ctx.ids[i + 1]]] as const) {
+        const a = nav.querySelector<HTMLAnchorElement>(`a[rel="${rel}"]`)!;
+        a.hidden = !id;
+        if (id) {
+          a.href = `/gallery/${id}/`;
+          a.querySelector("img")!.src = thumb(id);
+        }
+      }
+      const back = document.querySelector<HTMLAnchorElement>("[data-back]");
+      if (back && ctx.back.startsWith("/gallery/")) back.href = ctx.back;
+    }
+  } catch {}
+
+  // ← → キーで前・次の写真へ（入力欄にいるときと、修飾キーを押しているときは動かない）
+  addEventListener("keydown", (e) => {
+    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey || e.isComposing) return;
+    if ((e.target as HTMLElement).closest("input, textarea, select, [contenteditable]")) return;
+    const rel = e.key === "ArrowLeft" ? "prev" : e.key === "ArrowRight" ? "next" : "";
+    const a = rel && document.querySelector<HTMLAnchorElement>(`.gphoto-nav a[rel="${rel}"]:not([hidden])`);
+    if (a) location.href = a.href;
+  });
+
+  // 表記の例をコピーする
+  const b = document.querySelector<HTMLButtonElement>("[data-copy]");
+  b?.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(document.querySelector("[data-credit]")?.textContent ?? "");
+      b.textContent = "コピーしました";
+    } catch {
+      b.textContent = "コピーできませんでした";
+    }
+  });
+</script>

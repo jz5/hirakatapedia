@@ -1,0 +1,2502 @@
+{
+ "_source": "国土地理院の空中写真（地理院タイル）を年代・地区ごとにつなぎ合わせたもの（gallery-config.yaml の gsi）",
+ "fetched": "2026-11-08",
+ "photos": [
+  {
+   "id": "3fd4d95378",
+   "desc": "国土地理院の空中写真（1974〜1978年）。地理院タイルをつなぎ合わせて、御殿山駅周辺の範囲（北緯34.82354〜34.83436度、東経135.64517〜135.66273度）を切り抜いた画像",
+   "date": null,
+   "year": 1974,
+   "lat": 34.82895,
+   "lon": 135.65395,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "御殿山駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo1-gotenyama.png",
+   "title": "御殿山駅周辺の空中写真（1974〜1978年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.82895/135.65395/&base=std&ls=gazo1&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1974〜1978年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "gazo1",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.83436,
+    "south": 34.82354,
+    "west": 135.64517,
+    "east": 135.66273
+   }
+  },
+  {
+   "id": "aa2b6acdf7",
+   "desc": "国土地理院の空中写真（1974〜1978年）。地理院タイルをつなぎ合わせて、枚方公園駅周辺の範囲（北緯34.80599〜34.81681度、東経135.63061〜135.64817度）を切り抜いた画像",
+   "date": null,
+   "year": 1974,
+   "lat": 34.8114,
+   "lon": 135.63939,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "枚方公園駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo1-hirakatakoen.png",
+   "title": "枚方公園駅周辺の空中写真（1974〜1978年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.81140/135.63939/&base=std&ls=gazo1&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1974〜1978年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "gazo1",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.81681,
+    "south": 34.80599,
+    "west": 135.63061,
+    "east": 135.64817
+   }
+  },
+  {
+   "id": "8bf59fbf5d",
+   "desc": "国土地理院の空中写真（1974〜1978年）。地理院タイルをつなぎ合わせて、枚方市駅周辺の範囲（北緯34.81073〜34.82155度、東経135.63994〜135.6575度）を切り抜いた画像",
+   "date": null,
+   "year": 1974,
+   "lat": 34.81614,
+   "lon": 135.64872,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "枚方市駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo1-hirakatashi.png",
+   "title": "枚方市駅周辺の空中写真（1974〜1978年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.81614/135.64872/&base=std&ls=gazo1&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1974〜1978年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "gazo1",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.82155,
+    "south": 34.81073,
+    "west": 135.63994,
+    "east": 135.6575
+   }
+  },
+  {
+   "id": "8688f7ab74",
+   "desc": "国土地理院の空中写真（1974〜1978年）。地理院タイルをつなぎ合わせて、香里ケ丘（香里団地）周辺の範囲（北緯34.77963〜34.79045度、東経135.63652〜135.65408度）を切り抜いた画像",
+   "date": null,
+   "year": 1974,
+   "lat": 34.78504,
+   "lon": 135.6453,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "香里ケ丘（香里団地）"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo1-korigaoka.png",
+   "title": "香里ケ丘（香里団地）周辺の空中写真（1974〜1978年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.78504/135.64530/&base=std&ls=gazo1&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1974〜1978年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "gazo1",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.79045,
+    "south": 34.77963,
+    "west": 135.63652,
+    "east": 135.65408
+   }
+  },
+  {
+   "id": "37f988a606",
+   "desc": "国土地理院の空中写真（1974〜1978年）。地理院タイルをつなぎ合わせて、光善寺駅周辺の範囲（北緯34.79229〜34.80311度、東経135.62153〜135.63909度）を切り抜いた画像",
+   "date": null,
+   "year": 1974,
+   "lat": 34.7977,
+   "lon": 135.63031,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "光善寺駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo1-kozenji.png",
+   "title": "光善寺駅周辺の空中写真（1974〜1978年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.79770/135.63031/&base=std&ls=gazo1&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1974〜1978年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "gazo1",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.80311,
+    "south": 34.79229,
+    "west": 135.62153,
+    "east": 135.63909
+   }
+  },
+  {
+   "id": "117f3d30f9",
+   "desc": "国土地理院の空中写真（1974〜1978年）。地理院タイルをつなぎ合わせて、樟葉駅周辺の範囲（北緯34.85588〜34.8667度、東経135.66752〜135.68508度）を切り抜いた画像",
+   "date": null,
+   "year": 1974,
+   "lat": 34.86129,
+   "lon": 135.6763,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "樟葉駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo1-kuzuha.png",
+   "title": "樟葉駅周辺の空中写真（1974〜1978年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.86129/135.67630/&base=std&ls=gazo1&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1974〜1978年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "gazo1",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.8667,
+    "south": 34.85588,
+    "west": 135.66752,
+    "east": 135.68508
+   }
+  },
+  {
+   "id": "85677bc684",
+   "desc": "国土地理院の空中写真（1974〜1978年）。地理院タイルをつなぎ合わせて、牧野駅周辺の範囲（北緯34.83844〜34.84926度、東経135.65681〜135.67437度）を切り抜いた画像",
+   "date": null,
+   "year": 1974,
+   "lat": 34.84385,
+   "lon": 135.66559,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "牧野駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo1-makino.png",
+   "title": "牧野駅周辺の空中写真（1974〜1978年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.84385/135.66559/&base=std&ls=gazo1&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1974〜1978年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "gazo1",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.84926,
+    "south": 34.83844,
+    "west": 135.65681,
+    "east": 135.67437
+   }
+  },
+  {
+   "id": "5ce5dbd61c",
+   "desc": "国土地理院の空中写真（1974〜1978年）。地理院タイルをつなぎ合わせて、長尾駅周辺の範囲（北緯34.82086〜34.83168度、東経135.70431〜135.72187度）を切り抜いた画像",
+   "date": null,
+   "year": 1974,
+   "lat": 34.82627,
+   "lon": 135.71309,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "長尾駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo1-nagao.png",
+   "title": "長尾駅周辺の空中写真（1974〜1978年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.82627/135.71309/&base=std&ls=gazo1&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1974〜1978年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "gazo1",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.83168,
+    "south": 34.82086,
+    "west": 135.70431,
+    "east": 135.72187
+   }
+  },
+  {
+   "id": "d639165166",
+   "desc": "国土地理院の空中写真（1974〜1978年）。地理院タイルをつなぎ合わせて、津田駅周辺の範囲（北緯34.79569〜34.80651度、東経135.68886〜135.70642度）を切り抜いた画像",
+   "date": null,
+   "year": 1974,
+   "lat": 34.8011,
+   "lon": 135.69764,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "津田駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo1-tsuda.png",
+   "title": "津田駅周辺の空中写真（1974〜1978年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.80110/135.69764/&base=std&ls=gazo1&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1974〜1978年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "gazo1",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.80651,
+    "south": 34.79569,
+    "west": 135.68886,
+    "east": 135.70642
+   }
+  },
+  {
+   "id": "a218daeb6e",
+   "desc": "国土地理院の空中写真（1974〜1978年）。地理院タイルをつなぎ合わせて、枚方市の全体の範囲（北緯34.772〜34.882度、東経135.612〜135.748度）を切り抜いた画像",
+   "date": null,
+   "year": 1974,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "枚方市の全体"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo1-whole.png",
+   "title": "枚方市の全体の空中写真（1974〜1978年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#14/34.82700/135.68000/&base=std&ls=gazo1&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1974〜1978年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1585,
+   "height": 1561,
+   "gsi": {
+    "layer": "gazo1",
+    "ext": "jpg",
+    "zoom": 14,
+    "north": 34.882,
+    "south": 34.772,
+    "west": 135.612,
+    "east": 135.748
+   }
+  },
+  {
+   "id": "f34275c8ab",
+   "desc": "国土地理院の空中写真（1979〜1983年）。地理院タイルをつなぎ合わせて、御殿山駅周辺の範囲（北緯34.82354〜34.83436度、東経135.64517〜135.66273度）を切り抜いた画像",
+   "date": null,
+   "year": 1979,
+   "lat": 34.82895,
+   "lon": 135.65395,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "御殿山駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo2-gotenyama.png",
+   "title": "御殿山駅周辺の空中写真（1979〜1983年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.82895/135.65395/&base=std&ls=gazo2&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1979〜1983年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "gazo2",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.83436,
+    "south": 34.82354,
+    "west": 135.64517,
+    "east": 135.66273
+   }
+  },
+  {
+   "id": "c81739401d",
+   "desc": "国土地理院の空中写真（1979〜1983年）。地理院タイルをつなぎ合わせて、枚方公園駅周辺の範囲（北緯34.80599〜34.81681度、東経135.63061〜135.64817度）を切り抜いた画像",
+   "date": null,
+   "year": 1979,
+   "lat": 34.8114,
+   "lon": 135.63939,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "枚方公園駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo2-hirakatakoen.png",
+   "title": "枚方公園駅周辺の空中写真（1979〜1983年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.81140/135.63939/&base=std&ls=gazo2&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1979〜1983年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "gazo2",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.81681,
+    "south": 34.80599,
+    "west": 135.63061,
+    "east": 135.64817
+   }
+  },
+  {
+   "id": "163f9e0252",
+   "desc": "国土地理院の空中写真（1979〜1983年）。地理院タイルをつなぎ合わせて、枚方市駅周辺の範囲（北緯34.81073〜34.82155度、東経135.63994〜135.6575度）を切り抜いた画像",
+   "date": null,
+   "year": 1979,
+   "lat": 34.81614,
+   "lon": 135.64872,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "枚方市駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo2-hirakatashi.png",
+   "title": "枚方市駅周辺の空中写真（1979〜1983年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.81614/135.64872/&base=std&ls=gazo2&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1979〜1983年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "gazo2",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.82155,
+    "south": 34.81073,
+    "west": 135.63994,
+    "east": 135.6575
+   }
+  },
+  {
+   "id": "3e284c1614",
+   "desc": "国土地理院の空中写真（1979〜1983年）。地理院タイルをつなぎ合わせて、香里ケ丘（香里団地）周辺の範囲（北緯34.77963〜34.79045度、東経135.63652〜135.65408度）を切り抜いた画像",
+   "date": null,
+   "year": 1979,
+   "lat": 34.78504,
+   "lon": 135.6453,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "香里ケ丘（香里団地）"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo2-korigaoka.png",
+   "title": "香里ケ丘（香里団地）周辺の空中写真（1979〜1983年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.78504/135.64530/&base=std&ls=gazo2&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1979〜1983年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "gazo2",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.79045,
+    "south": 34.77963,
+    "west": 135.63652,
+    "east": 135.65408
+   }
+  },
+  {
+   "id": "e385cdcadb",
+   "desc": "国土地理院の空中写真（1979〜1983年）。地理院タイルをつなぎ合わせて、光善寺駅周辺の範囲（北緯34.79229〜34.80311度、東経135.62153〜135.63909度）を切り抜いた画像",
+   "date": null,
+   "year": 1979,
+   "lat": 34.7977,
+   "lon": 135.63031,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "光善寺駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo2-kozenji.png",
+   "title": "光善寺駅周辺の空中写真（1979〜1983年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.79770/135.63031/&base=std&ls=gazo2&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1979〜1983年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "gazo2",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.80311,
+    "south": 34.79229,
+    "west": 135.62153,
+    "east": 135.63909
+   }
+  },
+  {
+   "id": "6553dbaf20",
+   "desc": "国土地理院の空中写真（1979〜1983年）。地理院タイルをつなぎ合わせて、樟葉駅周辺の範囲（北緯34.85588〜34.8667度、東経135.66752〜135.68508度）を切り抜いた画像",
+   "date": null,
+   "year": 1979,
+   "lat": 34.86129,
+   "lon": 135.6763,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "樟葉駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo2-kuzuha.png",
+   "title": "樟葉駅周辺の空中写真（1979〜1983年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.86129/135.67630/&base=std&ls=gazo2&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1979〜1983年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "gazo2",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.8667,
+    "south": 34.85588,
+    "west": 135.66752,
+    "east": 135.68508
+   }
+  },
+  {
+   "id": "fa32c6a625",
+   "desc": "国土地理院の空中写真（1979〜1983年）。地理院タイルをつなぎ合わせて、牧野駅周辺の範囲（北緯34.83844〜34.84926度、東経135.65681〜135.67437度）を切り抜いた画像",
+   "date": null,
+   "year": 1979,
+   "lat": 34.84385,
+   "lon": 135.66559,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "牧野駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo2-makino.png",
+   "title": "牧野駅周辺の空中写真（1979〜1983年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.84385/135.66559/&base=std&ls=gazo2&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1979〜1983年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "gazo2",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.84926,
+    "south": 34.83844,
+    "west": 135.65681,
+    "east": 135.67437
+   }
+  },
+  {
+   "id": "fa577f8ee3",
+   "desc": "国土地理院の空中写真（1979〜1983年）。地理院タイルをつなぎ合わせて、長尾駅周辺の範囲（北緯34.82086〜34.83168度、東経135.70431〜135.72187度）を切り抜いた画像",
+   "date": null,
+   "year": 1979,
+   "lat": 34.82627,
+   "lon": 135.71309,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "長尾駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo2-nagao.png",
+   "title": "長尾駅周辺の空中写真（1979〜1983年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.82627/135.71309/&base=std&ls=gazo2&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1979〜1983年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "gazo2",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.83168,
+    "south": 34.82086,
+    "west": 135.70431,
+    "east": 135.72187
+   }
+  },
+  {
+   "id": "1bcf1794e1",
+   "desc": "国土地理院の空中写真（1979〜1983年）。地理院タイルをつなぎ合わせて、津田駅周辺の範囲（北緯34.79569〜34.80651度、東経135.68886〜135.70642度）を切り抜いた画像",
+   "date": null,
+   "year": 1979,
+   "lat": 34.8011,
+   "lon": 135.69764,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "津田駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo2-tsuda.png",
+   "title": "津田駅周辺の空中写真（1979〜1983年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.80110/135.69764/&base=std&ls=gazo2&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1979〜1983年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "gazo2",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.80651,
+    "south": 34.79569,
+    "west": 135.68886,
+    "east": 135.70642
+   }
+  },
+  {
+   "id": "f8d42704ea",
+   "desc": "国土地理院の空中写真（1979〜1983年）。地理院タイルをつなぎ合わせて、枚方市の全体の範囲（北緯34.772〜34.882度、東経135.612〜135.748度）を切り抜いた画像",
+   "date": null,
+   "year": 1979,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "枚方市の全体"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo2-whole.png",
+   "title": "枚方市の全体の空中写真（1979〜1983年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#14/34.82700/135.68000/&base=std&ls=gazo2&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1979〜1983年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1585,
+   "height": 1561,
+   "gsi": {
+    "layer": "gazo2",
+    "ext": "jpg",
+    "zoom": 14,
+    "north": 34.882,
+    "south": 34.772,
+    "west": 135.612,
+    "east": 135.748
+   }
+  },
+  {
+   "id": "464f78f403",
+   "desc": "国土地理院の空中写真（1984〜1986年）。地理院タイルをつなぎ合わせて、御殿山駅周辺の範囲（北緯34.82354〜34.83436度、東経135.64517〜135.66273度）を切り抜いた画像",
+   "date": null,
+   "year": 1984,
+   "lat": 34.82895,
+   "lon": 135.65395,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "御殿山駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo3-gotenyama.png",
+   "title": "御殿山駅周辺の空中写真（1984〜1986年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.82895/135.65395/&base=std&ls=gazo3&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1984〜1986年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "gazo3",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.83436,
+    "south": 34.82354,
+    "west": 135.64517,
+    "east": 135.66273
+   }
+  },
+  {
+   "id": "f4bdd46427",
+   "desc": "国土地理院の空中写真（1984〜1986年）。地理院タイルをつなぎ合わせて、枚方公園駅周辺の範囲（北緯34.80599〜34.81681度、東経135.63061〜135.64817度）を切り抜いた画像",
+   "date": null,
+   "year": 1984,
+   "lat": 34.8114,
+   "lon": 135.63939,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "枚方公園駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo3-hirakatakoen.png",
+   "title": "枚方公園駅周辺の空中写真（1984〜1986年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.81140/135.63939/&base=std&ls=gazo3&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1984〜1986年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "gazo3",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.81681,
+    "south": 34.80599,
+    "west": 135.63061,
+    "east": 135.64817
+   }
+  },
+  {
+   "id": "35f9324f35",
+   "desc": "国土地理院の空中写真（1984〜1986年）。地理院タイルをつなぎ合わせて、枚方市駅周辺の範囲（北緯34.81073〜34.82155度、東経135.63994〜135.6575度）を切り抜いた画像",
+   "date": null,
+   "year": 1984,
+   "lat": 34.81614,
+   "lon": 135.64872,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "枚方市駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo3-hirakatashi.png",
+   "title": "枚方市駅周辺の空中写真（1984〜1986年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.81614/135.64872/&base=std&ls=gazo3&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1984〜1986年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "gazo3",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.82155,
+    "south": 34.81073,
+    "west": 135.63994,
+    "east": 135.6575
+   }
+  },
+  {
+   "id": "1b3ee7b2b6",
+   "desc": "国土地理院の空中写真（1984〜1986年）。地理院タイルをつなぎ合わせて、香里ケ丘（香里団地）周辺の範囲（北緯34.77963〜34.79045度、東経135.63652〜135.65408度）を切り抜いた画像",
+   "date": null,
+   "year": 1984,
+   "lat": 34.78504,
+   "lon": 135.6453,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "香里ケ丘（香里団地）"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo3-korigaoka.png",
+   "title": "香里ケ丘（香里団地）周辺の空中写真（1984〜1986年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.78504/135.64530/&base=std&ls=gazo3&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1984〜1986年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "gazo3",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.79045,
+    "south": 34.77963,
+    "west": 135.63652,
+    "east": 135.65408
+   }
+  },
+  {
+   "id": "2d40b45c92",
+   "desc": "国土地理院の空中写真（1984〜1986年）。地理院タイルをつなぎ合わせて、光善寺駅周辺の範囲（北緯34.79229〜34.80311度、東経135.62153〜135.63909度）を切り抜いた画像",
+   "date": null,
+   "year": 1984,
+   "lat": 34.7977,
+   "lon": 135.63031,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "光善寺駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo3-kozenji.png",
+   "title": "光善寺駅周辺の空中写真（1984〜1986年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.79770/135.63031/&base=std&ls=gazo3&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1984〜1986年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "gazo3",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.80311,
+    "south": 34.79229,
+    "west": 135.62153,
+    "east": 135.63909
+   }
+  },
+  {
+   "id": "a0eddb3165",
+   "desc": "国土地理院の空中写真（1984〜1986年）。地理院タイルをつなぎ合わせて、長尾駅周辺の範囲（北緯34.82086〜34.83168度、東経135.70431〜135.72187度）を切り抜いた画像",
+   "date": null,
+   "year": 1984,
+   "lat": 34.82627,
+   "lon": 135.71309,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "長尾駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo3-nagao.png",
+   "title": "長尾駅周辺の空中写真（1984〜1986年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.82627/135.71309/&base=std&ls=gazo3&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1984〜1986年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "gazo3",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.83168,
+    "south": 34.82086,
+    "west": 135.70431,
+    "east": 135.72187
+   }
+  },
+  {
+   "id": "9520971443",
+   "desc": "国土地理院の空中写真（1984〜1986年）。地理院タイルをつなぎ合わせて、津田駅周辺の範囲（北緯34.79569〜34.80651度、東経135.68886〜135.70642度）を切り抜いた画像",
+   "date": null,
+   "year": 1984,
+   "lat": 34.8011,
+   "lon": 135.69764,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "津田駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-gazo3-tsuda.png",
+   "title": "津田駅周辺の空中写真（1984〜1986年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.80110/135.69764/&base=std&ls=gazo3&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1984〜1986年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "gazo3",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.80651,
+    "south": 34.79569,
+    "west": 135.68886,
+    "east": 135.70642
+   }
+  },
+  {
+   "id": "f0469aa911",
+   "desc": "国土地理院の空中写真（1961〜1969年）。地理院タイルをつなぎ合わせて、御殿山駅周辺の範囲（北緯34.82354〜34.83436度、東経135.64517〜135.66273度）を切り抜いた画像",
+   "date": null,
+   "year": 1961,
+   "lat": 34.82895,
+   "lon": 135.65395,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "御殿山駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_old10-gotenyama.png",
+   "title": "御殿山駅周辺の空中写真（1961〜1969年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.82895/135.65395/&base=std&ls=ort_old10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1961〜1969年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "ort_old10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.83436,
+    "south": 34.82354,
+    "west": 135.64517,
+    "east": 135.66273
+   }
+  },
+  {
+   "id": "8d69874b0c",
+   "desc": "国土地理院の空中写真（1961〜1969年）。地理院タイルをつなぎ合わせて、枚方公園駅周辺の範囲（北緯34.80599〜34.81681度、東経135.63061〜135.64817度）を切り抜いた画像",
+   "date": null,
+   "year": 1961,
+   "lat": 34.8114,
+   "lon": 135.63939,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "枚方公園駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_old10-hirakatakoen.png",
+   "title": "枚方公園駅周辺の空中写真（1961〜1969年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.81140/135.63939/&base=std&ls=ort_old10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1961〜1969年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "ort_old10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.81681,
+    "south": 34.80599,
+    "west": 135.63061,
+    "east": 135.64817
+   }
+  },
+  {
+   "id": "147daa31dd",
+   "desc": "国土地理院の空中写真（1961〜1969年）。地理院タイルをつなぎ合わせて、枚方市駅周辺の範囲（北緯34.81073〜34.82155度、東経135.63994〜135.6575度）を切り抜いた画像",
+   "date": null,
+   "year": 1961,
+   "lat": 34.81614,
+   "lon": 135.64872,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "枚方市駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_old10-hirakatashi.png",
+   "title": "枚方市駅周辺の空中写真（1961〜1969年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.81614/135.64872/&base=std&ls=ort_old10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1961〜1969年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "ort_old10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.82155,
+    "south": 34.81073,
+    "west": 135.63994,
+    "east": 135.6575
+   }
+  },
+  {
+   "id": "fb00744db7",
+   "desc": "国土地理院の空中写真（1961〜1969年）。地理院タイルをつなぎ合わせて、香里ケ丘（香里団地）周辺の範囲（北緯34.77963〜34.79045度、東経135.63652〜135.65408度）を切り抜いた画像",
+   "date": null,
+   "year": 1961,
+   "lat": 34.78504,
+   "lon": 135.6453,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "香里ケ丘（香里団地）"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_old10-korigaoka.png",
+   "title": "香里ケ丘（香里団地）周辺の空中写真（1961〜1969年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.78504/135.64530/&base=std&ls=ort_old10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1961〜1969年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "ort_old10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.79045,
+    "south": 34.77963,
+    "west": 135.63652,
+    "east": 135.65408
+   }
+  },
+  {
+   "id": "b1202f92a4",
+   "desc": "国土地理院の空中写真（1961〜1969年）。地理院タイルをつなぎ合わせて、光善寺駅周辺の範囲（北緯34.79229〜34.80311度、東経135.62153〜135.63909度）を切り抜いた画像",
+   "date": null,
+   "year": 1961,
+   "lat": 34.7977,
+   "lon": 135.63031,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "光善寺駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_old10-kozenji.png",
+   "title": "光善寺駅周辺の空中写真（1961〜1969年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.79770/135.63031/&base=std&ls=ort_old10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1961〜1969年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "ort_old10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.80311,
+    "south": 34.79229,
+    "west": 135.62153,
+    "east": 135.63909
+   }
+  },
+  {
+   "id": "8af7c29e7f",
+   "desc": "国土地理院の空中写真（1961〜1969年）。地理院タイルをつなぎ合わせて、樟葉駅周辺の範囲（北緯34.85588〜34.8667度、東経135.66752〜135.68508度）を切り抜いた画像",
+   "date": null,
+   "year": 1961,
+   "lat": 34.86129,
+   "lon": 135.6763,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "樟葉駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_old10-kuzuha.png",
+   "title": "樟葉駅周辺の空中写真（1961〜1969年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.86129/135.67630/&base=std&ls=ort_old10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1961〜1969年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "ort_old10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.8667,
+    "south": 34.85588,
+    "west": 135.66752,
+    "east": 135.68508
+   }
+  },
+  {
+   "id": "7a312ef5f2",
+   "desc": "国土地理院の空中写真（1961〜1969年）。地理院タイルをつなぎ合わせて、牧野駅周辺の範囲（北緯34.83844〜34.84926度、東経135.65681〜135.67437度）を切り抜いた画像",
+   "date": null,
+   "year": 1961,
+   "lat": 34.84385,
+   "lon": 135.66559,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "牧野駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_old10-makino.png",
+   "title": "牧野駅周辺の空中写真（1961〜1969年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.84385/135.66559/&base=std&ls=ort_old10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1961〜1969年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "ort_old10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.84926,
+    "south": 34.83844,
+    "west": 135.65681,
+    "east": 135.67437
+   }
+  },
+  {
+   "id": "614fddae9c",
+   "desc": "国土地理院の空中写真（1961〜1969年）。地理院タイルをつなぎ合わせて、長尾駅周辺の範囲（北緯34.82086〜34.83168度、東経135.70431〜135.72187度）を切り抜いた画像",
+   "date": null,
+   "year": 1961,
+   "lat": 34.82627,
+   "lon": 135.71309,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "長尾駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_old10-nagao.png",
+   "title": "長尾駅周辺の空中写真（1961〜1969年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.82627/135.71309/&base=std&ls=ort_old10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1961〜1969年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "ort_old10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.83168,
+    "south": 34.82086,
+    "west": 135.70431,
+    "east": 135.72187
+   }
+  },
+  {
+   "id": "a80fb3b815",
+   "desc": "国土地理院の空中写真（1961〜1969年）。地理院タイルをつなぎ合わせて、津田駅周辺の範囲（北緯34.79569〜34.80651度、東経135.68886〜135.70642度）を切り抜いた画像",
+   "date": null,
+   "year": 1961,
+   "lat": 34.8011,
+   "lon": 135.69764,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "津田駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_old10-tsuda.png",
+   "title": "津田駅周辺の空中写真（1961〜1969年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.80110/135.69764/&base=std&ls=ort_old10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1961〜1969年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "ort_old10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.80651,
+    "south": 34.79569,
+    "west": 135.68886,
+    "east": 135.70642
+   }
+  },
+  {
+   "id": "675d7ee2c8",
+   "desc": "国土地理院の空中写真（1961〜1969年）。地理院タイルをつなぎ合わせて、枚方市の全体の範囲（北緯34.772〜34.882度、東経135.612〜135.748度）を切り抜いた画像",
+   "date": null,
+   "year": 1961,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "枚方市の全体"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_old10-whole.png",
+   "title": "枚方市の全体の空中写真（1961〜1969年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#14/34.82700/135.68000/&base=std&ls=ort_old10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1961〜1969年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1585,
+   "height": 1561,
+   "gsi": {
+    "layer": "ort_old10",
+    "ext": "png",
+    "zoom": 14,
+    "north": 34.882,
+    "south": 34.772,
+    "west": 135.612,
+    "east": 135.748
+   }
+  },
+  {
+   "id": "e162711800",
+   "desc": "国土地理院の空中写真（1936〜1942年頃）。地理院タイルをつなぎ合わせて、御殿山駅周辺の範囲（北緯34.82354〜34.83436度、東経135.64517〜135.66273度）を切り抜いた画像",
+   "date": null,
+   "year": 1936,
+   "lat": 34.82895,
+   "lon": 135.65395,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "御殿山駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_riku10-gotenyama.png",
+   "title": "御殿山駅周辺の空中写真（1936〜1942年頃）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.82895/135.65395/&base=std&ls=ort_riku10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1936〜1942年頃）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "ort_riku10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.83436,
+    "south": 34.82354,
+    "west": 135.64517,
+    "east": 135.66273
+   }
+  },
+  {
+   "id": "4354c3f12b",
+   "desc": "国土地理院の空中写真（1936〜1942年頃）。地理院タイルをつなぎ合わせて、枚方公園駅周辺の範囲（北緯34.80599〜34.81681度、東経135.63061〜135.64817度）を切り抜いた画像",
+   "date": null,
+   "year": 1936,
+   "lat": 34.8114,
+   "lon": 135.63939,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "枚方公園駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_riku10-hirakatakoen.png",
+   "title": "枚方公園駅周辺の空中写真（1936〜1942年頃）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.81140/135.63939/&base=std&ls=ort_riku10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1936〜1942年頃）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "ort_riku10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.81681,
+    "south": 34.80599,
+    "west": 135.63061,
+    "east": 135.64817
+   }
+  },
+  {
+   "id": "5990fb51f4",
+   "desc": "国土地理院の空中写真（1936〜1942年頃）。地理院タイルをつなぎ合わせて、枚方市駅周辺の範囲（北緯34.81073〜34.82155度、東経135.63994〜135.6575度）を切り抜いた画像",
+   "date": null,
+   "year": 1936,
+   "lat": 34.81614,
+   "lon": 135.64872,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "枚方市駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_riku10-hirakatashi.png",
+   "title": "枚方市駅周辺の空中写真（1936〜1942年頃）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.81614/135.64872/&base=std&ls=ort_riku10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1936〜1942年頃）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "ort_riku10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.82155,
+    "south": 34.81073,
+    "west": 135.63994,
+    "east": 135.6575
+   }
+  },
+  {
+   "id": "03b3748558",
+   "desc": "国土地理院の空中写真（1936〜1942年頃）。地理院タイルをつなぎ合わせて、香里ケ丘（香里団地）周辺の範囲（北緯34.77963〜34.79045度、東経135.63652〜135.65408度）を切り抜いた画像",
+   "date": null,
+   "year": 1936,
+   "lat": 34.78504,
+   "lon": 135.6453,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "香里ケ丘（香里団地）"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_riku10-korigaoka.png",
+   "title": "香里ケ丘（香里団地）周辺の空中写真（1936〜1942年頃）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.78504/135.64530/&base=std&ls=ort_riku10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1936〜1942年頃）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "ort_riku10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.79045,
+    "south": 34.77963,
+    "west": 135.63652,
+    "east": 135.65408
+   }
+  },
+  {
+   "id": "67a63199a7",
+   "desc": "国土地理院の空中写真（1936〜1942年頃）。地理院タイルをつなぎ合わせて、光善寺駅周辺の範囲（北緯34.79229〜34.80311度、東経135.62153〜135.63909度）を切り抜いた画像",
+   "date": null,
+   "year": 1936,
+   "lat": 34.7977,
+   "lon": 135.63031,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "光善寺駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_riku10-kozenji.png",
+   "title": "光善寺駅周辺の空中写真（1936〜1942年頃）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.79770/135.63031/&base=std&ls=ort_riku10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1936〜1942年頃）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "ort_riku10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.80311,
+    "south": 34.79229,
+    "west": 135.62153,
+    "east": 135.63909
+   }
+  },
+  {
+   "id": "bf694eab65",
+   "desc": "国土地理院の空中写真（1936〜1942年頃）。地理院タイルをつなぎ合わせて、樟葉駅周辺の範囲（北緯34.85588〜34.8667度、東経135.66752〜135.68508度）を切り抜いた画像",
+   "date": null,
+   "year": 1936,
+   "lat": 34.86129,
+   "lon": 135.6763,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "樟葉駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_riku10-kuzuha.png",
+   "title": "樟葉駅周辺の空中写真（1936〜1942年頃）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.86129/135.67630/&base=std&ls=ort_riku10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1936〜1942年頃）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "ort_riku10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.8667,
+    "south": 34.85588,
+    "west": 135.66752,
+    "east": 135.68508
+   }
+  },
+  {
+   "id": "e24eed0779",
+   "desc": "国土地理院の空中写真（1936〜1942年頃）。地理院タイルをつなぎ合わせて、牧野駅周辺の範囲（北緯34.83844〜34.84926度、東経135.65681〜135.67437度）を切り抜いた画像",
+   "date": null,
+   "year": 1936,
+   "lat": 34.84385,
+   "lon": 135.66559,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "牧野駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_riku10-makino.png",
+   "title": "牧野駅周辺の空中写真（1936〜1942年頃）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.84385/135.66559/&base=std&ls=ort_riku10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1936〜1942年頃）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "ort_riku10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.84926,
+    "south": 34.83844,
+    "west": 135.65681,
+    "east": 135.67437
+   }
+  },
+  {
+   "id": "a0daed3c80",
+   "desc": "国土地理院の空中写真（1945〜1950年）。地理院タイルをつなぎ合わせて、御殿山駅周辺の範囲（北緯34.82354〜34.83436度、東経135.64517〜135.66273度）を切り抜いた画像",
+   "date": null,
+   "year": 1945,
+   "lat": 34.82895,
+   "lon": 135.65395,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "御殿山駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_USA10-gotenyama.png",
+   "title": "御殿山駅周辺の空中写真（1945〜1950年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.82895/135.65395/&base=std&ls=ort_USA10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1945〜1950年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "ort_USA10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.83436,
+    "south": 34.82354,
+    "west": 135.64517,
+    "east": 135.66273
+   }
+  },
+  {
+   "id": "17949ad458",
+   "desc": "国土地理院の空中写真（1945〜1950年）。地理院タイルをつなぎ合わせて、枚方公園駅周辺の範囲（北緯34.80599〜34.81681度、東経135.63061〜135.64817度）を切り抜いた画像",
+   "date": null,
+   "year": 1945,
+   "lat": 34.8114,
+   "lon": 135.63939,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "枚方公園駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_USA10-hirakatakoen.png",
+   "title": "枚方公園駅周辺の空中写真（1945〜1950年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.81140/135.63939/&base=std&ls=ort_USA10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1945〜1950年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "ort_USA10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.81681,
+    "south": 34.80599,
+    "west": 135.63061,
+    "east": 135.64817
+   }
+  },
+  {
+   "id": "925653aef4",
+   "desc": "国土地理院の空中写真（1945〜1950年）。地理院タイルをつなぎ合わせて、枚方市駅周辺の範囲（北緯34.81073〜34.82155度、東経135.63994〜135.6575度）を切り抜いた画像",
+   "date": null,
+   "year": 1945,
+   "lat": 34.81614,
+   "lon": 135.64872,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "枚方市駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_USA10-hirakatashi.png",
+   "title": "枚方市駅周辺の空中写真（1945〜1950年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.81614/135.64872/&base=std&ls=ort_USA10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1945〜1950年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "ort_USA10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.82155,
+    "south": 34.81073,
+    "west": 135.63994,
+    "east": 135.6575
+   }
+  },
+  {
+   "id": "901d41a15a",
+   "desc": "国土地理院の空中写真（1945〜1950年）。地理院タイルをつなぎ合わせて、香里ケ丘（香里団地）周辺の範囲（北緯34.77963〜34.79045度、東経135.63652〜135.65408度）を切り抜いた画像",
+   "date": null,
+   "year": 1945,
+   "lat": 34.78504,
+   "lon": 135.6453,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "香里ケ丘（香里団地）"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_USA10-korigaoka.png",
+   "title": "香里ケ丘（香里団地）周辺の空中写真（1945〜1950年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.78504/135.64530/&base=std&ls=ort_USA10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1945〜1950年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "ort_USA10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.79045,
+    "south": 34.77963,
+    "west": 135.63652,
+    "east": 135.65408
+   }
+  },
+  {
+   "id": "6597f9f1fd",
+   "desc": "国土地理院の空中写真（1945〜1950年）。地理院タイルをつなぎ合わせて、光善寺駅周辺の範囲（北緯34.79229〜34.80311度、東経135.62153〜135.63909度）を切り抜いた画像",
+   "date": null,
+   "year": 1945,
+   "lat": 34.7977,
+   "lon": 135.63031,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "光善寺駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_USA10-kozenji.png",
+   "title": "光善寺駅周辺の空中写真（1945〜1950年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.79770/135.63031/&base=std&ls=ort_USA10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1945〜1950年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "ort_USA10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.80311,
+    "south": 34.79229,
+    "west": 135.62153,
+    "east": 135.63909
+   }
+  },
+  {
+   "id": "9028b99d1c",
+   "desc": "国土地理院の空中写真（1945〜1950年）。地理院タイルをつなぎ合わせて、樟葉駅周辺の範囲（北緯34.85588〜34.8667度、東経135.66752〜135.68508度）を切り抜いた画像",
+   "date": null,
+   "year": 1945,
+   "lat": 34.86129,
+   "lon": 135.6763,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "樟葉駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_USA10-kuzuha.png",
+   "title": "樟葉駅周辺の空中写真（1945〜1950年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.86129/135.67630/&base=std&ls=ort_USA10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1945〜1950年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "ort_USA10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.8667,
+    "south": 34.85588,
+    "west": 135.66752,
+    "east": 135.68508
+   }
+  },
+  {
+   "id": "c465bf3b13",
+   "desc": "国土地理院の空中写真（1945〜1950年）。地理院タイルをつなぎ合わせて、牧野駅周辺の範囲（北緯34.83844〜34.84926度、東経135.65681〜135.67437度）を切り抜いた画像",
+   "date": null,
+   "year": 1945,
+   "lat": 34.84385,
+   "lon": 135.66559,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "牧野駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_USA10-makino.png",
+   "title": "牧野駅周辺の空中写真（1945〜1950年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.84385/135.66559/&base=std&ls=ort_USA10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1945〜1950年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "ort_USA10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.84926,
+    "south": 34.83844,
+    "west": 135.65681,
+    "east": 135.67437
+   }
+  },
+  {
+   "id": "8352356c8e",
+   "desc": "国土地理院の空中写真（1945〜1950年）。地理院タイルをつなぎ合わせて、長尾駅周辺の範囲（北緯34.82086〜34.83168度、東経135.70431〜135.72187度）を切り抜いた画像",
+   "date": null,
+   "year": 1945,
+   "lat": 34.82627,
+   "lon": 135.71309,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "長尾駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_USA10-nagao.png",
+   "title": "長尾駅周辺の空中写真（1945〜1950年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.82627/135.71309/&base=std&ls=ort_USA10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1945〜1950年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "ort_USA10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.83168,
+    "south": 34.82086,
+    "west": 135.70431,
+    "east": 135.72187
+   }
+  },
+  {
+   "id": "1fbbbb8207",
+   "desc": "国土地理院の空中写真（1945〜1950年）。地理院タイルをつなぎ合わせて、津田駅周辺の範囲（北緯34.79569〜34.80651度、東経135.68886〜135.70642度）を切り抜いた画像",
+   "date": null,
+   "year": 1945,
+   "lat": 34.8011,
+   "lon": 135.69764,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "津田駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_USA10-tsuda.png",
+   "title": "津田駅周辺の空中写真（1945〜1950年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.80110/135.69764/&base=std&ls=ort_USA10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1945〜1950年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "ort_USA10",
+    "ext": "png",
+    "zoom": 17,
+    "north": 34.80651,
+    "south": 34.79569,
+    "west": 135.68886,
+    "east": 135.70642
+   }
+  },
+  {
+   "id": "48587433e2",
+   "desc": "国土地理院の空中写真（1945〜1950年）。地理院タイルをつなぎ合わせて、枚方市の全体の範囲（北緯34.772〜34.882度、東経135.612〜135.748度）を切り抜いた画像",
+   "date": null,
+   "year": 1945,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "枚方市の全体"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-ort_USA10-whole.png",
+   "title": "枚方市の全体の空中写真（1945〜1950年）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#14/34.82700/135.68000/&base=std&ls=ort_USA10&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「空中写真（1945〜1950年）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1585,
+   "height": 1561,
+   "gsi": {
+    "layer": "ort_USA10",
+    "ext": "png",
+    "zoom": 14,
+    "north": 34.882,
+    "south": 34.772,
+    "west": 135.612,
+    "east": 135.748
+   }
+  },
+  {
+   "id": "c2bc35306c",
+   "desc": "国土地理院の全国最新写真（シームレス）。地理院タイルをつなぎ合わせて、御殿山駅周辺の範囲（北緯34.82354〜34.83436度、東経135.64517〜135.66273度）を切り抜いた画像",
+   "date": null,
+   "year": null,
+   "lat": 34.82895,
+   "lon": 135.65395,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "御殿山駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-seamlessphoto-gotenyama.png",
+   "title": "御殿山駅周辺の空中写真（最新）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.82895/135.65395/&base=std&ls=seamlessphoto&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「全国最新写真（シームレス）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "seamlessphoto",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.83436,
+    "south": 34.82354,
+    "west": 135.64517,
+    "east": 135.66273
+   }
+  },
+  {
+   "id": "869753af02",
+   "desc": "国土地理院の全国最新写真（シームレス）。地理院タイルをつなぎ合わせて、枚方公園駅周辺の範囲（北緯34.80599〜34.81681度、東経135.63061〜135.64817度）を切り抜いた画像",
+   "date": null,
+   "year": null,
+   "lat": 34.8114,
+   "lon": 135.63939,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "枚方公園駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-seamlessphoto-hirakatakoen.png",
+   "title": "枚方公園駅周辺の空中写真（最新）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.81140/135.63939/&base=std&ls=seamlessphoto&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「全国最新写真（シームレス）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "seamlessphoto",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.81681,
+    "south": 34.80599,
+    "west": 135.63061,
+    "east": 135.64817
+   }
+  },
+  {
+   "id": "561ccf8acd",
+   "desc": "国土地理院の全国最新写真（シームレス）。地理院タイルをつなぎ合わせて、枚方市駅周辺の範囲（北緯34.81073〜34.82155度、東経135.63994〜135.6575度）を切り抜いた画像",
+   "date": null,
+   "year": null,
+   "lat": 34.81614,
+   "lon": 135.64872,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "枚方市駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-seamlessphoto-hirakatashi.png",
+   "title": "枚方市駅周辺の空中写真（最新）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.81614/135.64872/&base=std&ls=seamlessphoto&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「全国最新写真（シームレス）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "seamlessphoto",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.82155,
+    "south": 34.81073,
+    "west": 135.63994,
+    "east": 135.6575
+   }
+  },
+  {
+   "id": "009ba79372",
+   "desc": "国土地理院の全国最新写真（シームレス）。地理院タイルをつなぎ合わせて、香里ケ丘（香里団地）周辺の範囲（北緯34.77963〜34.79045度、東経135.63652〜135.65408度）を切り抜いた画像",
+   "date": null,
+   "year": null,
+   "lat": 34.78504,
+   "lon": 135.6453,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "香里ケ丘（香里団地）"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-seamlessphoto-korigaoka.png",
+   "title": "香里ケ丘（香里団地）周辺の空中写真（最新）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.78504/135.64530/&base=std&ls=seamlessphoto&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「全国最新写真（シームレス）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "seamlessphoto",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.79045,
+    "south": 34.77963,
+    "west": 135.63652,
+    "east": 135.65408
+   }
+  },
+  {
+   "id": "5e32081058",
+   "desc": "国土地理院の全国最新写真（シームレス）。地理院タイルをつなぎ合わせて、光善寺駅周辺の範囲（北緯34.79229〜34.80311度、東経135.62153〜135.63909度）を切り抜いた画像",
+   "date": null,
+   "year": null,
+   "lat": 34.7977,
+   "lon": 135.63031,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "光善寺駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-seamlessphoto-kozenji.png",
+   "title": "光善寺駅周辺の空中写真（最新）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.79770/135.63031/&base=std&ls=seamlessphoto&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「全国最新写真（シームレス）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "seamlessphoto",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.80311,
+    "south": 34.79229,
+    "west": 135.62153,
+    "east": 135.63909
+   }
+  },
+  {
+   "id": "c61082ef7e",
+   "desc": "国土地理院の全国最新写真（シームレス）。地理院タイルをつなぎ合わせて、樟葉駅周辺の範囲（北緯34.85588〜34.8667度、東経135.66752〜135.68508度）を切り抜いた画像",
+   "date": null,
+   "year": null,
+   "lat": 34.86129,
+   "lon": 135.6763,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "樟葉駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-seamlessphoto-kuzuha.png",
+   "title": "樟葉駅周辺の空中写真（最新）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.86129/135.67630/&base=std&ls=seamlessphoto&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「全国最新写真（シームレス）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "seamlessphoto",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.8667,
+    "south": 34.85588,
+    "west": 135.66752,
+    "east": 135.68508
+   }
+  },
+  {
+   "id": "ac821f012c",
+   "desc": "国土地理院の全国最新写真（シームレス）。地理院タイルをつなぎ合わせて、牧野駅周辺の範囲（北緯34.83844〜34.84926度、東経135.65681〜135.67437度）を切り抜いた画像",
+   "date": null,
+   "year": null,
+   "lat": 34.84385,
+   "lon": 135.66559,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "牧野駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-seamlessphoto-makino.png",
+   "title": "牧野駅周辺の空中写真（最新）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.84385/135.66559/&base=std&ls=seamlessphoto&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「全国最新写真（シームレス）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "seamlessphoto",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.84926,
+    "south": 34.83844,
+    "west": 135.65681,
+    "east": 135.67437
+   }
+  },
+  {
+   "id": "ca4b32d15d",
+   "desc": "国土地理院の全国最新写真（シームレス）。地理院タイルをつなぎ合わせて、長尾駅周辺の範囲（北緯34.82086〜34.83168度、東経135.70431〜135.72187度）を切り抜いた画像",
+   "date": null,
+   "year": null,
+   "lat": 34.82627,
+   "lon": 135.71309,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "長尾駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-seamlessphoto-nagao.png",
+   "title": "長尾駅周辺の空中写真（最新）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.82627/135.71309/&base=std&ls=seamlessphoto&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「全国最新写真（シームレス）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1229,
+   "gsi": {
+    "layer": "seamlessphoto",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.83168,
+    "south": 34.82086,
+    "west": 135.70431,
+    "east": 135.72187
+   }
+  },
+  {
+   "id": "bd1df2266c",
+   "desc": "国土地理院の全国最新写真（シームレス）。地理院タイルをつなぎ合わせて、津田駅周辺の範囲（北緯34.79569〜34.80651度、東経135.68886〜135.70642度）を切り抜いた画像",
+   "date": null,
+   "year": null,
+   "lat": 34.8011,
+   "lon": 135.69764,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "津田駅"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-seamlessphoto-tsuda.png",
+   "title": "津田駅周辺の空中写真（最新）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#17/34.80110/135.69764/&base=std&ls=seamlessphoto&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「全国最新写真（シームレス）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1637,
+   "height": 1228,
+   "gsi": {
+    "layer": "seamlessphoto",
+    "ext": "jpg",
+    "zoom": 17,
+    "north": 34.80651,
+    "south": 34.79569,
+    "west": 135.68886,
+    "east": 135.70642
+   }
+  },
+  {
+   "id": "31c9643ad8",
+   "desc": "国土地理院の全国最新写真（シームレス）。地理院タイルをつなぎ合わせて、枚方市の全体の範囲（北緯34.772〜34.882度、東経135.612〜135.748度）を切り抜いた画像",
+   "date": null,
+   "year": null,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "空中写真"
+   ],
+   "places": [
+    "枚方市の全体"
+   ],
+   "thumb": "",
+   "site": "gsi",
+   "file": "gsi-seamlessphoto-whole.png",
+   "title": "枚方市の全体の空中写真（最新）",
+   "author": {
+    "name": "国土地理院",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html"
+   },
+   "license": "国土地理院コンテンツ利用規約",
+   "licenseUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+   "source": "https://maps.gsi.go.jp/#14/34.82700/135.68000/&base=std&ls=seamlessphoto&disp=1",
+   "sourceName": "国土地理院（地理院地図）",
+   "credit": "出典：国土地理院ウェブサイト（地理院タイル「全国最新写真（シームレス）」を加工して作成）",
+   "edited": "地理院タイルをつなぎ合わせて切り抜き",
+   "width": 1585,
+   "height": 1561,
+   "gsi": {
+    "layer": "seamlessphoto",
+    "ext": "jpg",
+    "zoom": 14,
+    "north": 34.882,
+    "south": 34.772,
+    "west": 135.612,
+    "east": 135.748
+   }
+  }
+ ]
+}

@@ -1,0 +1,309 @@
+{
+ "_source": "国立国会図書館デジタルコレクションの本から選んだ写真（gallery-config.yaml の ndl）",
+ "fetched": "2026-11-08",
+ "photos": [
+  {
+   "id": "4af2d5c470",
+   "desc": "『北河内郡史蹟史話』（1931年）に載っている写真。菅原村の項。いまの伝王仁墓",
+   "date": null,
+   "year": null,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "王仁墓"
+   ],
+   "thumb": "https://www.dl.ndl.go.jp/api/iiif/1187533/R0000121/pct:12.55,19.46,29.45,34.9/full/0/default.jpg",
+   "site": "ndl",
+   "file": "ndl-1187533-121",
+   "title": "王仁墳",
+   "author": {
+    "name": "平尾兵吾 編・大阪府北河内郡教育会（国立国会図書館所蔵）",
+    "url": "https://dl.ndl.go.jp/pid/1187533"
+   },
+   "license": "Public domain",
+   "licenseUrl": "https://dl.ndl.go.jp/pid/1187533/1/121",
+   "source": "https://dl.ndl.go.jp/pid/1187533/1/121",
+   "sourceName": "国立国会図書館デジタルコレクション",
+   "credit": "『北河内郡史蹟史話』（1931年）より（国立国会図書館デジタルコレクション）",
+   "edited": "本のページから写真の部分を切り抜き",
+   "width": 1380,
+   "height": 1147
+  },
+  {
+   "id": "de74371731",
+   "desc": "『北河内郡史蹟史話』（1931年）に載っている写真。牧野村の項",
+   "date": null,
+   "year": null,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "片埜神社",
+    "神社"
+   ],
+   "thumb": "https://www.dl.ndl.go.jp/api/iiif/1187533/R0000135/pct:52.91,17.9,29.45,36.32/full/0/default.jpg",
+   "site": "ndl",
+   "file": "ndl-1187533-135",
+   "title": "片埜神社",
+   "author": {
+    "name": "平尾兵吾 編・大阪府北河内郡教育会（国立国会図書館所蔵）",
+    "url": "https://dl.ndl.go.jp/pid/1187533"
+   },
+   "license": "Public domain",
+   "licenseUrl": "https://dl.ndl.go.jp/pid/1187533/1/135",
+   "source": "https://dl.ndl.go.jp/pid/1187533/1/135",
+   "sourceName": "国立国会図書館デジタルコレクション",
+   "credit": "『北河内郡史蹟史話』（1931年）より（国立国会図書館デジタルコレクション）",
+   "edited": "本のページから写真の部分を切り抜き",
+   "width": 1380,
+   "height": 1193
+  },
+  {
+   "id": "23debbaa8f",
+   "desc": "『北河内郡史蹟史話』（1931年）に載っている写真。牧野村の項。いまの牧野車塚古墳",
+   "date": null,
+   "year": null,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "牧野車塚古墳"
+   ],
+   "thumb": "https://www.dl.ndl.go.jp/api/iiif/1187533/R0000140/pct:14.73,33.46,29.45,20.75/full/0/default.jpg",
+   "site": "ndl",
+   "file": "ndl-1187533-140",
+   "title": "小倉の車塚",
+   "author": {
+    "name": "平尾兵吾 編・大阪府北河内郡教育会（国立国会図書館所蔵）",
+    "url": "https://dl.ndl.go.jp/pid/1187533"
+   },
+   "license": "Public domain",
+   "licenseUrl": "https://dl.ndl.go.jp/pid/1187533/1/140",
+   "source": "https://dl.ndl.go.jp/pid/1187533/1/140",
+   "sourceName": "国立国会図書館デジタルコレクション",
+   "credit": "『北河内郡史蹟史話』（1931年）より（国立国会図書館デジタルコレクション）",
+   "edited": "本のページから写真の部分を切り抜き",
+   "width": 1380,
+   "height": 682
+  },
+  {
+   "id": "4af1e154c7",
+   "desc": "『北河内郡史蹟史話』（1931年）に載っている写真。樟葉村の項",
+   "date": null,
+   "year": null,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "交野天神社",
+    "神社"
+   ],
+   "thumb": "https://www.dl.ndl.go.jp/api/iiif/1187533/R0000149/pct:51.82,17.9,29.45,34.76/full/0/default.jpg",
+   "site": "ndl",
+   "file": "ndl-1187533-149",
+   "title": "交野天神社",
+   "author": {
+    "name": "平尾兵吾 編・大阪府北河内郡教育会（国立国会図書館所蔵）",
+    "url": "https://dl.ndl.go.jp/pid/1187533"
+   },
+   "license": "Public domain",
+   "licenseUrl": "https://dl.ndl.go.jp/pid/1187533/1/149",
+   "source": "https://dl.ndl.go.jp/pid/1187533/1/149",
+   "sourceName": "国立国会図書館デジタルコレクション",
+   "credit": "『北河内郡史蹟史話』（1931年）より（国立国会図書館デジタルコレクション）",
+   "edited": "本のページから写真の部分を切り抜き",
+   "width": 1380,
+   "height": 1142
+  },
+  {
+   "id": "f7f08b782c",
+   "desc": "『北河内郡史蹟史話』（1931年）に載っている写真。樟葉村の項",
+   "date": null,
+   "year": null,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "久修園院"
+   ],
+   "thumb": "https://www.dl.ndl.go.jp/api/iiif/1187533/R0000152/pct:13.64,19.46,29.45,34.76/full/0/default.jpg",
+   "site": "ndl",
+   "file": "ndl-1187533-152",
+   "title": "久修園院",
+   "author": {
+    "name": "平尾兵吾 編・大阪府北河内郡教育会（国立国会図書館所蔵）",
+    "url": "https://dl.ndl.go.jp/pid/1187533"
+   },
+   "license": "Public domain",
+   "licenseUrl": "https://dl.ndl.go.jp/pid/1187533/1/152",
+   "source": "https://dl.ndl.go.jp/pid/1187533/1/152",
+   "sourceName": "国立国会図書館デジタルコレクション",
+   "credit": "『北河内郡史蹟史話』（1931年）より（国立国会図書館デジタルコレクション）",
+   "edited": "本のページから写真の部分を切り抜き",
+   "width": 1380,
+   "height": 1142
+  },
+  {
+   "id": "a762c50a18",
+   "desc": "『北河内郡史蹟史話』（1931年）に載っている写真。蹉跎村の項",
+   "date": null,
+   "year": null,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "光善寺"
+   ],
+   "thumb": "https://www.dl.ndl.go.jp/api/iiif/1187533/R0000043/pct:49.64,19.46,29.45,34/full/0/default.jpg",
+   "site": "ndl",
+   "file": "ndl-1187533-43",
+   "title": "光善寺泉庭",
+   "author": {
+    "name": "平尾兵吾 編・大阪府北河内郡教育会（国立国会図書館所蔵）",
+    "url": "https://dl.ndl.go.jp/pid/1187533"
+   },
+   "license": "Public domain",
+   "licenseUrl": "https://dl.ndl.go.jp/pid/1187533/1/43",
+   "source": "https://dl.ndl.go.jp/pid/1187533/1/43",
+   "sourceName": "国立国会図書館デジタルコレクション",
+   "credit": "『北河内郡史蹟史話』（1931年）より（国立国会図書館デジタルコレクション）",
+   "edited": "本のページから写真の部分を切り抜き",
+   "width": 1380,
+   "height": 1117
+  },
+  {
+   "id": "a653d32c23",
+   "desc": "『大阪府名所旧蹟案内』（1914年）に載っている写真。牧野村大字渚",
+   "date": null,
+   "year": null,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "渚院跡"
+   ],
+   "thumb": "https://www.dl.ndl.go.jp/api/iiif/952179/R0000105/pct:19.09,28.46,15.27,28.3/full/0/default.jpg",
+   "site": "ndl",
+   "file": "ndl-952179-105",
+   "title": "渚院址の鐘楼",
+   "author": {
+    "name": "大阪府 編（国立国会図書館所蔵）",
+    "url": "https://dl.ndl.go.jp/pid/952179"
+   },
+   "license": "Public domain",
+   "licenseUrl": "https://dl.ndl.go.jp/pid/952179/1/105",
+   "source": "https://dl.ndl.go.jp/pid/952179/1/105",
+   "sourceName": "国立国会図書館デジタルコレクション",
+   "credit": "『大阪府名所旧蹟案内』（1914年）より（国立国会図書館デジタルコレクション）",
+   "edited": "本のページから写真の部分を切り抜き",
+   "width": 621,
+   "height": 815
+  },
+  {
+   "id": "5fc6e50c4e",
+   "desc": "『大阪府名所旧蹟案内』（1914年）に載っている写真。蹉跎村大字中振",
+   "date": null,
+   "year": null,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [
+    "蹉跎神社",
+    "神社"
+   ],
+   "thumb": "https://www.dl.ndl.go.jp/api/iiif/952179/R0000107/pct:54,22.31,25.09,29/full/0/default.jpg",
+   "site": "ndl",
+   "file": "ndl-952179-107",
+   "title": "蹉跎神社",
+   "author": {
+    "name": "大阪府 編（国立国会図書館所蔵）",
+    "url": "https://dl.ndl.go.jp/pid/952179"
+   },
+   "license": "Public domain",
+   "licenseUrl": "https://dl.ndl.go.jp/pid/952179/1/107",
+   "source": "https://dl.ndl.go.jp/pid/952179/1/107",
+   "sourceName": "国立国会図書館デジタルコレクション",
+   "credit": "『大阪府名所旧蹟案内』（1914年）より（国立国会図書館デジタルコレクション）",
+   "edited": "本のページから写真の部分を切り抜き",
+   "width": 1020,
+   "height": 835
+  },
+  {
+   "id": "297004f26f",
+   "desc": "『大阪府名所旧蹟案内』（1914年）に載っている写真。見開きの 2 枚で「枚方全景」。淀川と枚方の町",
+   "date": null,
+   "year": null,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "街なみ"
+   ],
+   "places": [
+    "枚方"
+   ],
+   "thumb": "https://www.dl.ndl.go.jp/api/iiif/952179/R0000108/pct:13.3,64.6,28,19.6/full/0/default.jpg",
+   "site": "ndl",
+   "file": "ndl-952179-108L",
+   "title": "枚方全景（左）",
+   "author": {
+    "name": "大阪府 編（国立国会図書館所蔵）",
+    "url": "https://dl.ndl.go.jp/pid/952179"
+   },
+   "license": "Public domain",
+   "licenseUrl": "https://dl.ndl.go.jp/pid/952179/1/108",
+   "source": "https://dl.ndl.go.jp/pid/952179/1/108",
+   "sourceName": "国立国会図書館デジタルコレクション",
+   "credit": "『大阪府名所旧蹟案内』（1914年）より（国立国会図書館デジタルコレクション）",
+   "edited": "本のページから写真の部分を切り抜き",
+   "width": 1138,
+   "height": 564
+  },
+  {
+   "id": "e2c24e287f",
+   "desc": "『大阪府名所旧蹟案内』（1914年）に載っている写真。見開きの 2 枚で「枚方全景」。淀川と枚方の町",
+   "date": null,
+   "year": null,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "街なみ"
+   ],
+   "places": [
+    "枚方"
+   ],
+   "thumb": "https://www.dl.ndl.go.jp/api/iiif/952179/R0000108/pct:50.73,65.38,28.36,19.1/full/0/default.jpg",
+   "site": "ndl",
+   "file": "ndl-952179-108R",
+   "title": "枚方全景（右）",
+   "author": {
+    "name": "大阪府 編（国立国会図書館所蔵）",
+    "url": "https://dl.ndl.go.jp/pid/952179"
+   },
+   "license": "Public domain",
+   "licenseUrl": "https://dl.ndl.go.jp/pid/952179/1/108",
+   "source": "https://dl.ndl.go.jp/pid/952179/1/108",
+   "sourceName": "国立国会図書館デジタルコレクション",
+   "credit": "『大阪府名所旧蹟案内』（1914年）より（国立国会図書館デジタルコレクション）",
+   "edited": "本のページから写真の部分を切り抜き",
+   "width": 1153,
+   "height": 551
+  }
+ ]
+}

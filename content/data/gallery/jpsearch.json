@@ -1,0 +1,141 @@
+{
+ "_source": "Japan Search で選んだ資料（gallery-config.yaml の jpsearch）",
+ "fetched": "2026-11-08",
+ "photos": [
+  {
+   "id": "956ba76588",
+   "desc": "白雉塚古墳（枚方市）出土の埴輪。東京国立博物館（ColBase）。年代：古墳時代・6世紀。場所：大阪府枚方市 白雉塚古墳出土",
+   "date": null,
+   "year": null,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [],
+   "thumb": "https://colbase.nich.go.jp/media/tnm/J-7352/image/slideshow_l/J-7352_E0145630.jpg",
+   "site": "jpsearch",
+   "file": "jps-cobas-94822",
+   "title": "埴輪残欠",
+   "author": {
+    "name": "東京国立博物館（ColBase）",
+    "url": "https://colbase.nich.go.jp/collection_items/tnm/J-7352"
+   },
+   "license": "CC BY",
+   "licenseUrl": "https://colbase.nich.go.jp/collection_items/tnm/J-7352",
+   "source": "https://jpsearch.go.jp/item/cobas-94822",
+   "sourceName": "Japan Search（東京国立博物館（ColBase））",
+   "credit": "埴輪残欠、東京国立博物館（ColBase）所蔵（Japan Search）／CC BY",
+   "width": 515,
+   "height": 686
+  },
+  {
+   "id": "f8a109d0d0",
+   "desc": "田口山遺跡（枚方市）出土の磨製石剣。東京国立博物館（ColBase）。年代：弥生時代(前～中期)・前4～前1世紀。場所：大阪府枚方市 田口山遺跡、Found in Hirakata City, Osaka",
+   "date": null,
+   "year": null,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [],
+   "thumb": "https://colbase.nich.go.jp/media/tnm/J-8477/image/slideshow_l/J-8477_E0110620.jpg",
+   "site": "jpsearch",
+   "file": "jps-cobas-95891",
+   "title": "磨製石剣",
+   "author": {
+    "name": "東京国立博物館（ColBase）",
+    "url": "https://colbase.nich.go.jp/collection_items/tnm/J-8477"
+   },
+   "license": "CC BY",
+   "licenseUrl": "https://colbase.nich.go.jp/collection_items/tnm/J-8477",
+   "source": "https://jpsearch.go.jp/item/cobas-95891",
+   "sourceName": "Japan Search（東京国立博物館（ColBase））",
+   "credit": "磨製石剣、東京国立博物館（ColBase）所蔵（Japan Search）／CC BY",
+   "width": 256,
+   "height": 686
+  },
+  {
+   "id": "8dd06608ec",
+   "desc": "歌川広重「六十余州名所図会 河内 枚方男山」（1853年）。国立国会図書館。年代：1853",
+   "date": null,
+   "year": 1853,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [],
+   "thumb": "https://www.dl.ndl.go.jp/api/iiif/1308304/R0000001/full/1600,/0/default.jpg",
+   "site": "jpsearch",
+   "file": "jps-dignl-1308304",
+   "title": "六十余州名所図会 河内 枚方男山",
+   "author": {
+    "name": "広重、越平（国立国会図書館所蔵）",
+    "url": "http://dl.ndl.go.jp/info:ndljp/pid/1308304"
+   },
+   "license": "Public domain",
+   "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/deed.ja",
+   "source": "https://jpsearch.go.jp/item/dignl-1308304",
+   "sourceName": "Japan Search（国立国会図書館）",
+   "credit": "六十余州名所図会 河内 枚方男山、国立国会図書館所蔵（Japan Search）／Public domain",
+   "width": 1600,
+   "height": 2400
+  },
+  {
+   "id": "a93dcf8293",
+   "desc": "楠葉台場（楠葉村の関門）の敷地図。京都府立京都学・歴彩館",
+   "date": null,
+   "year": null,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [],
+   "thumb": "http://www.archives.kyoto.jp/websearchpe/rest/media/O?cls=150_media_old_books&pkey=0000270786",
+   "site": "jpsearch",
+   "file": "jps-kyoto-R100000124_I000001845_00",
+   "title": "河州楠葉村関門敷地図",
+   "author": {
+    "name": "京都府立京都学・歴彩館",
+    "url": "http://www.archives.kyoto.jp/websearchpe/detail?cls=152_old_books_catalog&pkey=0000001954"
+   },
+   "license": "CC BY",
+   "licenseUrl": "http://www.archives.kyoto.jp/websearchpe/detail?cls=152_old_books_catalog&pkey=0000001954",
+   "source": "https://jpsearch.go.jp/item/kyoto-R100000124_I000001845_00",
+   "sourceName": "Japan Search（京都府立京都学・歴彩館）",
+   "credit": "河州楠葉村関門敷地図、京都府立京都学・歴彩館所蔵（Japan Search）／CC BY",
+   "width": 3500,
+   "height": 2320
+  },
+  {
+   "id": "6d31eba388",
+   "desc": "楠葉台場（楠葉村の関門）の敷地構絵図。京都府立京都学・歴彩館",
+   "date": null,
+   "year": null,
+   "lat": null,
+   "lon": null,
+   "groups": [
+    "歴史"
+   ],
+   "places": [],
+   "thumb": "http://www.archives.kyoto.jp/websearchpe/rest/media/O?cls=150_media_old_books&pkey=0000270787",
+   "site": "jpsearch",
+   "file": "jps-kyoto-R100000124_I000001846_00",
+   "title": "河州楠葉村関門敷地構絵図",
+   "author": {
+    "name": "京都府立京都学・歴彩館",
+    "url": "http://www.archives.kyoto.jp/websearchpe/detail?cls=152_old_books_catalog&pkey=0000001955"
+   },
+   "license": "CC BY",
+   "licenseUrl": "http://www.archives.kyoto.jp/websearchpe/detail?cls=152_old_books_catalog&pkey=0000001955",
+   "source": "https://jpsearch.go.jp/item/kyoto-R100000124_I000001846_00",
+   "sourceName": "Japan Search（京都府立京都学・歴彩館）",
+   "credit": "河州楠葉村関門敷地構絵図、京都府立京都学・歴彩館所蔵（Japan Search）／CC BY",
+   "width": 3500,
+   "height": 2320
+  }
+ ]
+}

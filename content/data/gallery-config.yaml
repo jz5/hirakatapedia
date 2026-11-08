@@ -1,0 +1,434 @@
+# 枚方の写真ギャラリー（/gallery/）の集め方。scripts/gallery.mjs が読む。
+# Wikimedia Commons の「Hirakata, Osaka」の分類をたどって、写真を集める。
+# 使うのは CC BY・CC BY-SA・CC0・パブリックドメインだけ（スクリプトが確かめる）。
+
+root: "Hirakata, Osaka"
+
+# たどらない分類（枚方の外が混じるもの、人の写真）
+excludeCategories:
+  - "Kansai Science City" # 京都・奈良の部分も入る
+  - "People of Hirakata, Osaka" # 人の写真
+  - "Sewaritei" # 背割堤は京都府八幡市
+
+# 載せない写真（ファイル名: 理由）。見て決めたら足す
+excludeFiles:
+  # 分類の外から見つけた写真のうち、載せないもの（2026-11-08 に 85 枚を見て決めた）
+  "Cocculus laurifolius 0zz.jpg": マイアミの植物園の植物。枚方市ではない
+  "Cocculus laurifolius 10zz.jpg": マイアミの植物園の植物。枚方市ではない
+  "Cocculus laurifolius 1zz.jpg": マイアミの植物園の植物。枚方市ではない
+  "Cocculus laurifolius 2zz.jpg": マイアミの植物園の植物。枚方市ではない
+  "Cocculus laurifolius 3zz.jpg": マイアミの植物園の植物。枚方市ではない
+  "Cocculus laurifolius 4zz.jpg": マイアミの植物園の植物。枚方市ではない
+  "Cocculus laurifolius 5zz.jpg": マイアミの植物園の植物。枚方市ではない
+  "Cocculus laurifolius 6zz.jpg": マイアミの植物園の植物。枚方市ではない
+  "Cocculus laurifolius 7zz.jpg": マイアミの植物園の植物。枚方市ではない
+  "Cocculus laurifolius 8zz.jpg": マイアミの植物園の植物。枚方市ではない
+  "Cocculus laurifolius 9zz.jpg": マイアミの植物園の植物。枚方市ではない
+  "Flag of Hirakata, Osaka.png": 市旗の図
+  "Hirakata-joriku.png": 平潟（福島県）の地図
+  "HiroshiNakatsuka2019 (cropped).jpg": 人物が主役
+  "HiroshiNakatsuka2019.jpg": 人物が主役
+  "Hiroshige Kawachi Hirakata.jpg": 広重「六十余州名所図会 河内 枚方男山」の重複（Japan Search の国立国会図書館のものを載せている）
+  "ISS030-E-184126 - View of Earth.jpg": 宇宙ステーションから撮った写真。枚方は小さく写るだけ
+  "ISS030-E-184127 - View of Earth.jpg": 宇宙ステーションから撮った写真。枚方は小さく写るだけ
+  "ISS030-E-187353 - View of Earth.jpg": 宇宙ステーションから撮った写真。枚方は小さく写るだけ
+  "Ibarakikeihanbus.JPG": バス。撮影地が枚方か分からない
+  "Kantobus 150 Aero-king.jpg": バス。撮影地が枚方か分からない
+  "Kawachi Province, Mount Otoko in Hirakata (5765347007).jpg": 広重「六十余州名所図会 河内 枚方男山」の重複（Japan Search の国立国会図書館のものを載せている）
+  "Keihan Midnight Express-1.jpg": 淀屋橋駅で撮影。枚方市ではない
+  "Keihan Midnight Express-2.jpg": 淀屋橋駅で撮影。枚方市ではない
+  "Keihan2454 SubExpKuzuha Noe 19871021.jpg": 野江（大阪市）で撮影
+  "Keihan5553 SubExp Noe 19871021.jpg": 野江（大阪市）で撮影
+  "Keihanbus kyoto kumamoto queen M U-MS729S.jpg": バス。撮影地が枚方か分からない
+  "Keihanbustakatsukihirakata.JPG": バス。撮影地が枚方か分からない
+  "Kitakyushu Moji Kuzuha Post office.JPG": 北九州市門司区の葛葉郵便局
+  "Kuzuha Pass 001.JPG": 新潟県の葛葉峠
+  "Kuzuha River(KuzuhaKyokoku).JPG": 葛葉川（新潟県）
+  "Kuzuha River（小羽根橋より上流）.JPG": 葛葉川（新潟県）
+  "Kuzuha River（矢坪沢との合流）.JPG": 葛葉川（新潟県）
+  "Kuzuha.jpg": どこの葛葉神社か分からない
+  "NDL-DC 1308304-Utagawa Hiroshige-六十余州名所図会 河内 枚方男山-嘉永6-crd.jpg": 広重「六十余州名所図会 河内 枚方男山」の重複（Japan Search の国立国会図書館のものを載せている）
+  "NDL-DC 1308304-Utagawa Hiroshige-六十余州名所図会 河内 枚方男山-嘉永6.jpg": 広重「六十余州名所図会 河内 枚方男山」の重複（Japan Search の国立国会図書館のものを載せている）
+  "NDL-DC 762376 0133 0014crd-HirakataKo.jpg": 平潟港（茨城県）とみられる
+  "NDL1308304 六十余州名所図会 河内 枚方男山.jpg": 広重「六十余州名所図会 河内 枚方男山」の重複（Japan Search の国立国会図書館のものを載せている）
+  "Nagaseyuka lw1.jpg": ライブの出演者が主役
+  "Nagaseyuka lw2.jpg": ライブの出演者が主役
+  "Nitori Mall Maikata Logo.png": ロゴ
+  "O-suijyoubus IMG 2130.jpg-2.jpg": 菅原城北大橋（大阪市）から撮影
+  "Osaka Prefectural Route 020 001.JPG": 泉佐野市の府道
+  "Robochu-onstage-oct14-2013.jpg": 人物が主役
+  "Yūsaku Hirakata.jpg": 人物が主役
+  "京阪方向幕 普通私市.jpg": 車両の方向幕。場所が分からない
+  "京阪方向幕 普通私市英語.jpg": 車両の方向幕。場所が分からない
+  "2 Chome Ōyodokita, Kita-ku, Ōsaka-shi, Ōsaka-fu 531-0077, Japan - panoramio.jpg": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+  "Amanogawa-Tunnel.jpg": 交野市
+  "Kansai Medical University Hospital Garden at Asahi-ku Osaka.jpg": 大阪市旭区
+  "Kansai Medical University Kori Hospital IMG 0934 20130203.JPG": 寝屋川市
+  "Kansai Medical University Temmabashi General Clinic.jpg": 大阪市中央区
+  "Kansai Medical University medical center.jpg": 守口市
+  "Keihan Neyagawashi Station - panoramio (10).jpg": 寝屋川市駅
+  "Umeda Skylines from Yodo River 20240811.jpg": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+  "Yodogawa Kasen Park Juso area IMG 5195-2 20190114.jpg": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+  "Yodogawa Kasen Park Kema area (01) IMG 2454-2 20181202.jpg": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+  "Yodogawa Kasen Park Kema area (02) IMG 2456-3 20181202.jpg": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+  "Yodogawa Kasen Park Nagara area IMG 2460-4 20181202.jpg": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+  "Yodogawa Riverside Park Dainichi Chiku 20220507 013428105.MP.jpg": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+  "Yodogawa Riverside Park Koyamoto Chiku 20220507 005233372.jpg": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+  "Yodogawa Riverside Park Niwajiyaso Chiku 20220507 012157369.jpg": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+  "Yodogawa Riverside Park Niwakubokahan Chiku 20220507 015046060.MP.jpg": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+  "Yodogawa Riverside Park SataNishi Chiku (Neyagawa) 20220507 012414612.jpg": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+  "Yodogawa Riverside Park Shimenoyaso Chiku 20220507 011007575.jpg": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+  "Yodogawa Riverside Park Taima Chiku 20220507 005716448.jpg": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+  "Yodogawa Riverside Park Yakumo Chiku 20220507 015435886.jpg": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+  "Yodogawa Riverside Park Yakumoyaso Chiku 20220507 020040404.jpg": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+  "Yodogawa river park (Sewaritei district) Kyoto,JAPAN.jpg": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+  "Yodogawa-Kasen-Park-Ebie-01.jpg": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+  "Yodogawa-Kasen-Park-Ebie-02.jpg": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+  "Yodogawa-Kasen-Park-Oyodo-01.jpg": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+  "YodogawaSatanishi.JPG": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+  "淀川河川公園P4080030.JPG": 淀川河川公園の枚方市外の地区（大阪市・守口市・寝屋川市・八幡市）
+
+# 分類（いちばん上の分け方）。Commons の分類 → 表示する名前
+groups:
+  "Train stations in Hirakata, Osaka": 駅
+  "Transport in Hirakata, Osaka": 交通
+  "Buildings in Hirakata": 建物
+  "History of Hirakata, Osaka": 歴史
+  "Parks in Hirakata, Osaka": 公園
+  "Geography of Hirakata, Osaka": 地理
+  "Neighborhoods in Hirakata, Osaka": 街なみ
+  "Hirakata Hakkei": 枚方八景
+  "Hirakata Park": ひらかたパーク
+  # 枚方の分類の外の分類（分類の外の写真に付いているとき）
+  "Yodo River": 地理
+  "Keihan Main Line": 交通
+  "Keihan Katano Line": 交通
+  "Telephone booths in Japan": 交通
+  "Izumiya": 建物
+  "K's Denki": 建物
+  "Edion": 建物
+  "CoCo Ichibanya": 建物
+  "Mister Donut": 建物
+  "McDonald's restaurants in Japan": 建物
+  "Komatsu Limited": 建物
+  "Closed stores in Japan": 建物
+  "Building demolition in Japan": 建物
+  "Fireworks in Japan": 街なみ
+
+# 場所・もの（Commons の分類 → 日本語の名前）。写真の「場所」として出し、検索にも使う
+labels:
+  "Hirakata, Osaka": 枚方市
+  "Buildings in Hirakata": 建物
+  "Hospitals in Hirakata, Osaka": 病院
+  "Bank buildings in Hirakata, Osaka": 銀行
+  "Post offices in Hirakata, Osaka": 郵便局
+  "Hirakata Post Office": 枚方郵便局
+  "Schools in Hirakata, Osaka": 学校
+  "Elementary schools in Hirakata, Osaka": 小学校
+  "Hirakata city Koyo Elementary School": 香陽小学校
+  "High schools in Hirakata, Osaka": 高校
+  "Lower secondary schools in Hirakata, Osaka": 中学校
+  "Shops in Hirakata, Osaka": 店
+  "Foleo Hirakata": フォレオ枚方
+  "Kintetsu Department Store Hirakata store": 近鉄百貨店枚方店
+  "NITORI MALL Hirakata": ニトリモール枚方
+  "Tsutaya Books Hirakata": 枚方 蔦屋書店
+  "Shrines in Hirakata, Osaka": 神社
+  "Katano-jinja": 片埜神社
+  "Haiden, Katano-jinja": 片埜神社 拝殿
+  "Katanoamatsukami-no-yashiro": 交野天神社
+  "Kusuha Palace": 樟葉宮跡
+  "Kudarao-jinja": 百済王神社
+  "Kudarao-jinja (Ogaitocho, Hirakata-shi, Osaka)": 百済王神社（大垣内町）
+  "Okami-jinja": 意賀美神社
+  "Sada-jinja, Hirakata": 蹉跎神社
+  "Temples in Hirakata, Osaka": 寺
+  "Kozenji (Hirakata)": 光善寺
+  "Kudaraji Ruins": 百済寺跡
+  "Train stations in Hirakata, Osaka": 駅
+  "Fujisaka Station": 藤阪駅
+  "Gotenyama Station": 御殿山駅
+  "Hirakata-Koen Station": 枚方公園駅
+  "Hirakatashi Station": 枚方市駅
+  "Trains at Hirakatashi Station": 枚方市駅の電車
+  "Hoshigaoka Station (Osaka)": 星ヶ丘駅
+  "Kozenji Station": 光善寺駅
+  "Kuzuha Station": 樟葉駅
+  "Makino Station (Osaka)": 牧野駅
+  "Miyanosaka Station (Osaka)": 宮之阪駅
+  "Murano Station": 村野駅
+  "Nagao Station (Osaka)": 長尾駅
+  "Tsuda Station": 津田駅
+  "Universities and colleges in Hirakata, Osaka": 大学
+  "Kansai Gaidai University": 関西外国語大学
+  "Kansai Medical University": 関西医科大学
+  "Hirakata City Library": 枚方市立図書館
+  "Hirakata Police Station": 枚方警察署
+  "Hirakata Sun Plaza": 枚方サンプラザ
+  "Hirakata T-SITE": 枚方T-SITE
+  "Kori housing complex": 香里団地
+  "Irakuen": 以楽公園 # Commons の写真の説明から
+  "Kuzuha Mall": くずはモール
+  "Kuzuha Tower City": くずはタワーシティ
+  "VIE.ORNER": ビオルネ
+  "Geography of Hirakata, Osaka": 地理
+  "Amano River (Osaka)": 天野川
+  "Mount Kunimi (Hirakata, Osaka)": 国見山
+  "History of Hirakata, Osaka": 歴史
+  "Hirakata Dai Kiku-Ningyō": ひらかた大菊人形
+  "Hirakata-juku": 枚方宿
+  "Kin-ya Kurumazuka Kofun": 禁野車塚古墳
+  "Makino Kurumazuka Kofun": 牧野車塚古墳
+  "Makino Park, Osaka": 牧野公園
+  "Nagisa no In": 渚院跡
+  "Nagisa no In (The Tales of Ise)": 渚院（伊勢物語）
+  "Nasuzukuri Kiln Site": 茄子作の窯跡
+  "Wani Park": 王仁公園
+  "Neighborhoods in Hirakata, Osaka": 街なみ
+  "Parks in Hirakata, Osaka": 公園
+  "Okahigashi Central Park": 岡東中央公園
+  "Yodogawa Kasen Park": 淀川河川公園
+  # 枚方の分類の外の分類（分類の外の写真に付いているとき）
+  "Yodo River": 淀川
+  "Keihan Main Line": 京阪本線
+  "Keihan Katano Line": 京阪交野線
+  "Izumiya": イズミヤ
+  "K's Denki": ケーズデンキ
+  "Edion": エディオン
+  "CoCo Ichibanya": CoCo壱番屋
+  "Mister Donut": ミスタードーナツ
+  "McDonald's restaurants in Japan": マクドナルド
+  "Komatsu Limited": コマツ
+  "Closed stores in Japan": 閉店
+  "Building demolition in Japan": 解体
+  "Fireworks in Japan": 花火
+  "Night in Japan": 夜
+  "Floods in Japan": 洪水
+  "COVID-19 pandemic in Japan": 新型コロナウイルス
+  "Telephone booths in Japan": 電話ボックス
+  "Taxi stands in Japan": タクシー乗り場
+  "Transport in Hirakata, Osaka": 交通
+  "Roads in Hirakata, Osaka": 道路
+  "Trains in Hirakata, Osaka": 電車
+  "Kuzuha and Otokoyama Loop Community Bus": くずは・男山循環コミュニティバス
+  "Hirakata Hakkei": 枚方八景
+  "Hirakata Park": ひらかたパーク
+
+# Flickr（API キーは .env の FLICKR_API_KEY）。検索語と、載せない写真（写真の番号: 理由）
+flickr:
+  queries: ["枚方", "Hirakata"]
+  # 外す写真（Flickr の写真の番号: 理由）。2026-11-08 に 109 枚を見て決めた。
+  # 外すもの：枚方の外・人物（子ども）が主役・キャラクターが主役・場所が分からないもの（料理・飲み物・猫・接写）
+  excludePhotos:
+    "15424412794": 料理
+    "54100124015": 料理
+    "8348688032": 飲み物。場所が分からない
+    "32843431965": 花の接写。場所が分からない
+    "6198804573": 金網の接写。場所の様子が分からない
+    "450292412": 飲み物・食器。場所が分からない
+    "450292946": 飲み物・食器。場所が分からない
+    "450305835": 飲み物・食器。場所が分からない
+    "450306559": 飲み物・食器。場所が分からない
+    "450306859": 飲み物・食器。場所が分からない
+    "8289489135": 夜のビル街。枚方に見えない
+    "54091638607": 料理
+    "54098804602": 料理
+    "54099669286": 料理
+    "40320844000": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "40320844750": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "41407866374": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "41407866814": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "41407869894": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "41407870274": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "41407870694": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "41407870984": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "41407871394": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "41407876814": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "42081819242": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "42081819422": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "42081819632": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "42081819882": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "42081820302": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "42081823122": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "42081828292": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "42081830142": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "42081831002": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "42127899671": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "42127900121": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "42127902651": 米国の Hirakata 農場（米国農務省）。枚方市ではない
+    "3602410261": 埼玉県上尾市の丸山公園
+    "3603243368": 埼玉県上尾市の丸山公園
+    "17201481490": 木津川の鉄橋（枚方市の外）
+    "19729109492": 料理
+    "15427035223": 料理
+    "15859237708": 料理
+    "15859237908": 料理
+    "15860640719": 料理
+    "15860929867": 墓参り。人が写っている
+    "15860930917": 法要の部屋。場所が分からない
+    "16020913746": 買い物かご
+    "16046685135": 人物が主役
+    "7838045758": キャラクターが主役
+    "4215325173": 猫。場所が分からない
+    "4224673293": 猫。場所が分からない
+    "4236822044": 猫。場所が分からない
+    "9273270581": 園児の列。子どもが主役
+    "9273271237": 園児の列。子どもが主役
+    "9276057456": 人物が主役
+    "51755696585": 京都市営地下鉄の車内広告。人物が主役
+    "5609878623": 子どもが主役
+    "95164864": 飲み会。人物が主役
+    "95164887": 飲み会。人物が主役
+    "95164925": 飲み会。人物が主役
+    "95164949": 飲み会。人物が主役
+    "95164973": 飲み会。人物が主役
+    "95165012": 飲み会。人物が主役
+    "95165051": 飲み会。人物が主役
+    "95165120": 店内の似顔絵
+    "95165166": 飲み会。人物が主役
+    "95165205": 飲み会。人物が主役
+    "95165284": 飲み会。人物が主役
+
+# 枚方市のオープンデータの画像（CC BY のものだけ）。表示は市の表示例の形（credit に使う creditLicense）
+city:
+  - page: "0000021947"
+    name: ひらかた市 オープンデータ画像集
+    license: CC BY 2.1 JP
+    licenseUrl: https://creativecommons.org/licenses/by/2.1/jp/
+    creditLicense: クリエイティブ・コモンズ・ライセンス 表示 2.1
+    groups: { 文化財: 歴史, 桜の主な名所: 公園, 公園: 公園, 観光ステーション: 建物 }
+  # 「枚方市の文化財画像データ」（0000047672）は CC BY-ND（改変禁止）。サムネイル（縮小・切り抜き）も改変にあたるとみて使わない
+
+# 国土地理院の空中写真（地理院タイル）。年代ごと・地区ごとにつなぎ合わせる。
+# 地区は中心（緯度・経度。OpenStreetMap の駅などの位置）と、共通の幅・高さ（km）。whole は市の全体
+gsi:
+  zoom: 17
+  widthKm: 1.6
+  heightKm: 1.2
+  eras:
+    - { layer: ort_riku10, ext: png, name: "空中写真（1936〜1942年頃）", years: "1936〜1942年頃", from: 1936 }
+    - { layer: ort_USA10, ext: png, name: "空中写真（1945〜1950年）", years: "1945〜1950年", from: 1945 }
+    - { layer: ort_old10, ext: png, name: "空中写真（1961〜1969年）", years: "1961〜1969年", from: 1961 }
+    - { layer: gazo1, name: "空中写真（1974〜1978年）", years: "1974〜1978年", from: 1974 }
+    - { layer: gazo2, name: "空中写真（1979〜1983年）", years: "1979〜1983年", from: 1979 }
+    - { layer: gazo3, name: "空中写真（1984〜1986年）", years: "1984〜1986年", from: 1984 }
+    - { layer: seamlessphoto, name: "全国最新写真（シームレス）", years: "最新", from: null } # 撮影年は場所によって違うので書かない
+  areas:
+    - { id: hirakatashi, name: 枚方市駅周辺, center: [34.81614, 135.64872] }
+    - { id: hirakatakoen, name: 枚方公園駅周辺, center: [34.81140, 135.63939] }
+    - { id: kuzuha, name: 樟葉駅周辺, center: [34.86129, 135.67630] }
+    - { id: makino, name: 牧野駅周辺, center: [34.84385, 135.66559] }
+    - { id: gotenyama, name: 御殿山駅周辺, center: [34.82895, 135.65395] }
+    - { id: kozenji, name: 光善寺駅周辺, center: [34.79770, 135.63031] }
+    - { id: korigaoka, name: 香里ケ丘（香里団地）周辺, center: [34.78504, 135.64530] }
+    - { id: nagao, name: 長尾駅周辺, center: [34.82627, 135.71309] }
+    - { id: tsuda, name: 津田駅周辺, center: [34.80110, 135.69764] }
+  whole: { id: whole, name: 枚方市の全体, zoom: 14, north: 34.882, south: 34.772, west: 135.612, east: 135.748 }
+
+# Japan Search（https://jpsearch.go.jp/）で見つけた、自由に使える条件の資料。番号は Japan Search のアイテムの番号。
+# 1 件ずつ元のページで中身と条件を確かめてから足す。image は取ってくる画像（大きいもの）。lat・lon は場所が分かるときだけ
+jpsearch:
+  - id: cobas-94822
+    image: https://colbase.nich.go.jp/media/tnm/J-7352/image/slideshow_l/J-7352_E0145630.jpg
+    note: 白雉塚古墳（枚方市）出土の埴輪。東京国立博物館（ColBase）
+  - id: cobas-95891
+    image: https://colbase.nich.go.jp/media/tnm/J-8477/image/slideshow_l/J-8477_E0110620.jpg
+    note: 田口山遺跡（枚方市）出土の磨製石剣。東京国立博物館（ColBase）
+  - id: dignl-1308304
+    image: https://www.dl.ndl.go.jp/api/iiif/1308304/R0000001/full/1600,/0/default.jpg
+    note: 歌川広重「六十余州名所図会 河内 枚方男山」（1853年）。国立国会図書館
+  - id: kyoto-R100000124_I000001845_00
+    image: http://www.archives.kyoto.jp/websearchpe/rest/media/O?cls=150_media_old_books&pkey=0000270786
+    note: 楠葉台場（楠葉村の関門）の敷地図。京都府立京都学・歴彩館
+  - id: kyoto-R100000124_I000001846_00
+    image: http://www.archives.kyoto.jp/websearchpe/rest/media/O?cls=150_media_old_books&pkey=0000270787
+    note: 楠葉台場（楠葉村の関門）の敷地構絵図。京都府立京都学・歴彩館
+
+# Mapillary（CC BY-SA 4.0）。トークンは .env の MAPILLARY_TOKEN。載せるのは、見て選んだ images の写真だけ。
+# collect のたびに、points の場所の半径 radiusM の中から、まだ選んでも外してもいない写真を場所ごとに candidates 枚まで「候補」として出す
+# （全天球・長い辺が 1600px 未満は出さない・同じ撮影の続きからは 1 枚）。見て、使うものは images に、使わないものは excludeImages に理由つきで足す。
+# 電車の窓から撮ったぶれた写真・広告が主役の写真が多い。人の顔・車のナンバーが読める写真は使わない
+mapillary:
+  radiusM: 80
+  candidates: 3
+  # 載せる写真（Mapillary の写真の番号: 場所の名前。名前は points の name と同じにすると分類が付く）
+  images:
+    "902779106936928": 枚方市駅前 # 京阪の中央改札口の案内板（2019年）
+    "29137930279130639": 枚方公園駅前 # ホームの端から踏切と駅前
+    "1749593706381188": 枚方公園駅前 # ホームから駅前の町なみ
+    "1071665505222028": 樟葉駅前 # くずはモール
+    "1498455182049191": 樟葉駅前 # 駅前のバスターミナルとくずはモール
+    "1762559711607708": 樟葉駅前 # くずはモールのダイニングストリートの前の交差点
+    "1090569977268883": 牧野駅前 # 穂谷川沿いの道
+    "2266951780449650": 牧野駅前 # 駅の入口
+    "1663984782033513": 光善寺駅前 # 線路沿いの道
+    "2020680573435425": 津田駅前 # 駅舎
+    "1490798559473317": 津田駅前 # 駅前のビルとバス乗り場
+    "2069036593727369": 津田駅前 # 駅の近くの祠と店
+    "2065680580768737": 香里ケ丘 # 住宅地の道
+  points:
+    - { name: 枚方市駅前, center: [34.81614, 135.64872], group: 駅 }
+    - { name: 枚方公園駅前, center: [34.81140, 135.63939], group: 駅 }
+    - { name: 樟葉駅前, center: [34.86129, 135.67630], group: 駅 }
+    - { name: 牧野駅前, center: [34.84385, 135.66559], group: 駅 }
+    - { name: 御殿山駅前, center: [34.82895, 135.65395], group: 駅 }
+    - { name: 光善寺駅前, center: [34.79770, 135.63031], group: 駅 }
+    - { name: 長尾駅前, center: [34.82627, 135.71309], group: 駅 }
+    - { name: 津田駅前, center: [34.80110, 135.69764], group: 駅 }
+    - { name: 香里ケ丘, center: [34.78504, 135.64530] }
+    - { name: 星ヶ丘, center: [34.80742, 135.65988] }
+  # 見て外した写真（Mapillary の写真の番号: 理由）
+  excludeImages:
+    "1039718504114997": 電車の窓から撮ったもので、ぶれている（枚方市駅）
+    "980077483048780": 電車の窓から撮ったもので、ぶれている（枚方市駅）
+    "1865179237789296": 電車の窓から撮ったもので、ぶれている（光善寺駅）
+    "2305621526917863": 電車の窓から撮ったもので、ぶれている。広告が主役（枚方市駅）
+    "705357418156623": 電車の窓から撮った民家の壁（星ヶ丘）
+    "1503907820822250": 人の集団が手前に大きく写っている（牧野駅）
+    "1002939832778596": 電車の窓から撮ったもので、ぶれている（光善寺駅）
+    "1024201062361917": 電車の窓から撮ったもので、ぶれている（枚方市駅）
+    "258797579997723": 電車の窓から撮った民家（星ヶ丘）
+    "2626253894473729": 広告が主役（枚方市駅）
+    "774276652324112": 人が手前に大きく写っている（牧野駅）
+    "4729727730590511": 子どもが手前に写っている（樟葉駅）
+    "1008651065555309": 電車の窓から撮ったもので、ぶれている（光善寺駅）
+    "980942282995874": 電車の窓から撮ったもので、ぶれている（枚方市駅）
+    "1588745918938855": 人の集団が手前に大きく写っている（牧野駅）
+    "2973954759606506": 広告が主役（枚方市駅）
+    "857868362656244": 電車の窓から撮った民家（星ヶ丘）
+
+# 大阪市立図書館デジタルアーカイブ。CC0 のオープンデータのものだけ（取り込むときに詳細ページで確かめる）。
+# 「枚方」などで探した 900 件ほどの大半は住宅地図・地形図（非オープンデータ）。tilcod は資料の番号、page は 0 から数えた画像の番号
+omlib:
+  - { tilcod: 0000000021-OSK0160069, title: 枚方全景（絵はがき）, note: 葉書帖の絵はがき。彩色, places: [枚方], group: 街なみ }
+  - { tilcod: 0000000021-OSK0160098, title: 伊加賀崎の月（絵はがき）, note: 葉書帖の絵はがき。「枚方驛」の印, places: [伊加賀], group: 地理 }
+  - { tilcod: 0000000021-OSK0160095, title: 天の川（絵はがき）, note: 葉書帖の絵はがき。「枚方驛」の印。天野川, places: [天野川], group: 地理 }
+  - { tilcod: 0000000021-OSK0186932, page: 22, year: 1801, title: 河内名所図会「蹉跎山 天満宮」, author: 秋里籬島 編・丹羽桃渓 画（大阪市立図書館所蔵）, note: 『河内名所図会』巻6（1801年）の挿絵。いまの蹉跎神社, places: [蹉跎神社] }
+  - { tilcod: 0000000021-OSK0186932, page: 25, year: 1801, title: 河内名所図会「出口 光善寺」, author: 秋里籬島 編・丹羽桃渓 画（大阪市立図書館所蔵）, note: 『河内名所図会』巻6（1801年）の挿絵, places: [光善寺] }
+  - { tilcod: 0000000021-OSK0186932, page: 28, year: 1801, title: 河内名所図会「牧方 萬年寺」, author: 秋里籬島 編・丹羽桃渓 画（大阪市立図書館所蔵）, note: 『河内名所図会』巻6（1801年）の挿絵, places: [萬年寺] }
+  - { tilcod: 0000000021-OSK0186932, page: 29, year: 1801, title: 河内名所図会「牧方驛」, author: 秋里籬島 編・丹羽桃渓 画（大阪市立図書館所蔵）, note: 『河内名所図会』巻6（1801年）の挿絵。枚方宿と淀川, places: [枚方宿] }
+  - { tilcod: 0000000021-OSK0186932, page: 41, year: 1801, title: 河内名所図会「天の川」, author: 秋里籬島 編・丹羽桃渓 画（大阪市立図書館所蔵）, note: 『河内名所図会』巻6（1801年）の挿絵。天野川, places: [天野川] }
+  - { tilcod: 0000000021-OSK0186932, page: 49, year: 1801, title: 河内名所図会「交野神社 一ノ宮」, author: 秋里籬島 編・丹羽桃渓 画（大阪市立図書館所蔵）, note: 『河内名所図会』巻6（1801年）の挿絵。いまの片埜神社, places: [片埜神社] }
+  - { tilcod: 0000000021-OSK0186932, page: 51, year: 1801, title: 河内名所図会「藤坂 王仁墳」, author: 秋里籬島 編・丹羽桃渓 画（大阪市立図書館所蔵）, note: 『河内名所図会』巻6（1801年）の挿絵。いまの王仁墓（伝王仁墓）, places: [王仁墓] }
+
+# Commons の、上の分類（root）の外にある写真も探す（scripts/gallery/commons.mjs の extraNames）。
+# 市内の位置があるもの、または位置が無く word の語があって excludeCategoryWords を含む分類に入っていないもの。見て外すものは excludeFiles に足す
+commonsExtra:
+  queries: ["枚方", "Hirakata", "樟葉", "Kuzuha"]
+  word: "枚方|Hirakata|樟葉|楠葉|Kuzuha|くずは|ひらかた"
+  excludeCategoryWords: [Ageo, Saitama, Nara, Ikoma, Matsudo, Nagareyama, Koshigaya, Moriguchi, Kadoma, Katano, Higashiōsaka, Higashiosaka, Kizugawa, Hirakata Bay, Hirakata port, Iwaki, Colorado, USDA, Football kit, Locator maps, Seika, Kyoto Prefectural Road, Nara Prefectural Road, Neyagawa, Takatsuki, Yawata]
+
+# 国立国会図書館デジタルコレクション。インターネット公開（保護期間満了）で、1956 年までに発行された本に載っている写真。
+# pid は本の番号、koma はコマ、crop はページから写真を切り抜く範囲（左・上・幅・高さ、%）。year は本の発行年（撮影年は分からないので空ける）。
+# 2026-11-08 に、本の中の写真を 1 枚ずつ見て、今の枚方市の村（蹉跎・菅原・牧野・樟葉・枚方など）のものだけ選んだ
+ndl:
+  - { pid: "1187533", koma: 43, crop: [49.64, 19.46, 29.45, 34.0], title: 光善寺泉庭, book: 北河内郡史蹟史話, publisher: 平尾兵吾 編・大阪府北河内郡教育会, year: 1931, places: [光善寺], note: 蹉跎村の項 }
+  - { pid: "1187533", koma: 121, crop: [12.55, 19.46, 29.45, 34.9], title: 王仁墳, book: 北河内郡史蹟史話, publisher: 平尾兵吾 編・大阪府北河内郡教育会, year: 1931, places: [王仁墓], note: 菅原村の項。いまの伝王仁墓 }
+  - { pid: "1187533", koma: 135, crop: [52.91, 17.9, 29.45, 36.32], title: 片埜神社, book: 北河内郡史蹟史話, publisher: 平尾兵吾 編・大阪府北河内郡教育会, year: 1931, places: [片埜神社], note: 牧野村の項 }
+  - { pid: "1187533", koma: 140, crop: [14.73, 33.46, 29.45, 20.75], title: 小倉の車塚, book: 北河内郡史蹟史話, publisher: 平尾兵吾 編・大阪府北河内郡教育会, year: 1931, places: [牧野車塚古墳], note: 牧野村の項。いまの牧野車塚古墳 }
+  - { pid: "1187533", koma: 149, crop: [51.82, 17.9, 29.45, 34.76], title: 交野天神社, book: 北河内郡史蹟史話, publisher: 平尾兵吾 編・大阪府北河内郡教育会, year: 1931, places: [交野天神社], note: 樟葉村の項 }
+  - { pid: "1187533", koma: 152, crop: [13.64, 19.46, 29.45, 34.76], title: 久修園院, book: 北河内郡史蹟史話, publisher: 平尾兵吾 編・大阪府北河内郡教育会, year: 1931, places: [久修園院], note: 樟葉村の項 }
+  - { pid: "952179", koma: 105, crop: [19.09, 28.46, 15.27, 28.3], title: 渚院址の鐘楼, book: 大阪府名所旧蹟案内, publisher: 大阪府 編, year: 1914, places: [渚院跡], note: 牧野村大字渚 }
+  - { pid: "952179", koma: 107, crop: [54.0, 22.31, 25.09, 29.0], title: 蹉跎神社, book: 大阪府名所旧蹟案内, publisher: 大阪府 編, year: 1914, places: [蹉跎神社], note: 蹉跎村大字中振 }
+  - { pid: "952179", koma: 108, part: L, crop: [13.3, 64.6, 28.0, 19.6], title: 枚方全景（左）, book: 大阪府名所旧蹟案内, publisher: 大阪府 編, year: 1914, places: [枚方], group: 街なみ, note: 見開きの 2 枚で「枚方全景」。淀川と枚方の町 }
+  - { pid: "952179", koma: 108, part: R, crop: [50.73, 65.38, 28.36, 19.1], title: 枚方全景（右）, book: 大阪府名所旧蹟案内, publisher: 大阪府 編, year: 1914, places: [枚方], group: 街なみ, note: 見開きの 2 枚で「枚方全景」。淀川と枚方の町 }

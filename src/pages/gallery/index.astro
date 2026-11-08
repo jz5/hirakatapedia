@@ -1,0 +1,135 @@
+---
+/**
+ * 枚方の写真ギャラリー（/gallery/）。Wikimedia Commons・Flickr・枚方市・国土地理院・Japan Search・Mapillary の、商用利用できる条件の枚方の写真。
+ * 一覧は /gallery/index/meta.json と /gallery/index/<n>.json をブラウザが読んで並べる（src/scripts/gallery.ts）
+ */
+import Base from "../../layouts/Base.astro";
+import { photos, galleryFetched, licenseKind, SITE_NAMES, type GallerySite } from "../../lib/gallery";
+
+const count = <T,>(list: T[]) => list.reduce((m, x) => m.set(x, (m.get(x) ?? 0) + 1), new Map<T, number>());
+const groupN = count(photos.flatMap((p) => p.groups));
+const groups = [...groupN].map(([g, n]) => ({ g, n })).sort((a, b) => b.n - a.n);
+const decadeN = count(photos.map((p) => (p.year ? Math.floor(p.year / 10) * 10 : 0)));
+const decades = [...decadeN.keys()].filter(Boolean).sort((a, b) => b - a);
+const noYear = decadeN.get(0) ?? 0;
+const licN = count(photos.map((p) => licenseKind(p.license) as string));
+const lic = (k: string) => licN.get(k) ?? 0;
+const siteN = count(photos.map((p) => p.site));
+const sites = (Object.keys(SITE_NAMES) as GallerySite[]).map((s) => ({ s, name: SITE_NAMES[s], n: siteN.get(s) ?? 0 })).filter((x) => x.n);
+const has = (s: GallerySite) => (siteN.get(s) ?? 0) > 0;
+const geo = photos.filter((p) => p.lat !== null).length;
+const ymd = (s: string) => s.replace(/^(\d{4})-(\d{2})-(\d{2})$/, (_, y, m, d) => `${y}年${Number(m)}月${Number(d)}日`);
+const n = (x: number) => x.toLocaleString();
+const LINKS: Record<GallerySite, string> = {
+  commons: "https://commons.wikimedia.org/wiki/Category:Hirakata,_Osaka",
+  flickr: "https://www.flickr.com/",
+  city: "https://www.city.hirakata.osaka.jp/0000021947.html",
+  gsi: "https://maps.gsi.go.jp/",
+  jpsearch: "https://jpsearch.go.jp/",
+  omlib: "https://image.oml.city.osaka.lg.jp/da/top",
+  ndl: "https://dl.ndl.go.jp/",
+  mapillary: "https://www.mapillary.com/",
+};
+const description = `枚方市の写真 ${n(photos.length)} 枚。${sites.map((x) => x.name).join("・")}の、商用でも使える写真（CC BY・CC BY-SA・CC0 など）と空中写真を、場所・分類・年代・地図で探せる。`;
+---
+
+<Base wide title="枚方の写真" description={description} path="/gallery/">
+  <article class="entry">
+    <header class="entry-header">
+      <h1>枚方の写真</h1>
+      <p class="entry-meta">データ取得日 <time datetime={galleryFetched}>{ymd(galleryFetched)}</time></p>
+    </header>
+
+    <div class="entry-body">
+      <p class="gallery-lead">
+        枚方市の写真 {n(photos.length)} 枚です。どれも <strong>出典を書けば商用でも使える写真</strong>（CC BY・CC BY-SA・CC0・パブリックドメイン・Attribution・国土地理院の利用規約）で、{sites.map((x, i) => <>{i > 0 && "・"}<a href={LINKS[x.s]}>{x.name}</a>（{n(x.n)}）</>)}から集めました。写真を選ぶと、撮影者・ライセンスと、使うときの表記の例が出ます。
+      </p>
+
+      <div class="data-panel" data-gallery>
+        <div class="data-tools">
+          <label class="data-search">
+            <span class="visually-hidden">検索</span>
+            <input type="search" placeholder="場所や建物の名前で検索（例：くずはモール、枚方市駅、香里団地）" autocomplete="off" enterkeyhint="search" data-q />
+          </label>
+          <div class="data-filters">
+            <label>分類
+              <select data-g><option value="">すべて</option>{groups.map((x) => <option value={x.g}>{x.g}（{n(x.n)}）</option>)}</select>
+            </label>
+            <label>撮影年
+              <select data-d><option value="">すべて</option>{decades.map((d) => <option value={d}>{d}年代（{n(decadeN.get(d) ?? 0)}）</option>)}{noYear > 0 && <option value="none">撮影年不明（{n(noYear)}）</option>}</select>
+            </label>
+            <label>ライセンス
+              <select data-l>
+                <option value="">すべて</option>
+                <option value="pd">CC0・パブリックドメイン：表記不要（{n(lic("pd"))}）</option>
+                <option value="by">CC BY・Attribution・国土地理院の利用規約：表記すれば改変も可（{n(lic("by"))}）</option>
+                <option value="sa">CC BY-SA：表記・改変したら同じライセンスで公開（{n(lic("sa"))}）</option>
+                <hr />
+                <option value="free">改変可・継承不要：CC BY-SA 以外（{n(lic("pd") + lic("by"))}）</option>
+              </select>
+            </label>
+            <label>出典
+              <select data-s><option value="">すべて</option>{sites.map((x) => <option value={x.s}>{x.name}（{n(x.n)}）</option>)}</select>
+            </label>
+            <label class="chip-toggle"><input type="checkbox" data-geo /><span>位置情報あり（{n(geo)}）</span></label>
+          </div>
+          <div class="data-bar">
+            <p class="data-count" aria-live="polite" data-count>読み込み中…</p>
+            <span class="gallery-bar-right">
+              <label class="chip-toggle"><input type="checkbox" data-years /><span>年の見出し</span></label>
+              <select data-view aria-label="表示">
+                <option value="ratio">元の比率</option>
+                <option value="square">正方形</option>
+              </select>
+              <select data-tile aria-label="大きさ">
+                <option value="s">小</option>
+                <option value="m">中</option>
+                <option value="l">大</option>
+                <option value="xl">特大</option>
+              </select>
+              <select data-sort aria-label="並び">
+                <option value="new">撮影日の新しい順</option>
+                <option value="old">撮影日の古い順</option>
+                <option value="name">説明の五十音順</option>
+              </select>
+              <button type="button" class="data-mapbtn" aria-pressed="false" data-mapbtn>地図で見る</button>
+            </span>
+          </div>
+        </div>
+        <div class="data-map gallery-map" data-map hidden></div>
+        <ul class="gallery-grid-all is-ratio" data-size="m" data-grid></ul>
+        <nav class="gallery-pager" aria-label="ページ" data-pager></nav>
+        <noscript>
+          <p>写真の一覧は JavaScript を使います。写真は <a href="https://commons.wikimedia.org/wiki/Category:Hirakata,_Osaka">Wikimedia Commons</a> でも見られます。</p>
+        </noscript>
+      </div>
+
+      <section class="gallery-about" aria-labelledby="about-h">
+        <h2 id="about-h">このページについて</h2>
+        <ul>
+          <li>集め方：
+            Wikimedia Commons はカテゴリ「Hirakata, Osaka」とその下位カテゴリから。
+            {has("flickr") && "Flickr は「枚方」「Hirakata」の検索と、市内の位置情報で探しました（Commons に移されているものは Commons の方だけ）。"}
+            {has("city") && "枚方市は「ひらかた市 オープンデータ画像集」（CC BY 2.1）。"}
+            {has("gsi") && "国土地理院は、年代ごとの空中写真（地理院タイル）を、駅などの周りでつなぎ合わせて切り抜いたものです。"}
+            {has("jpsearch") && "Japan Search は、博物館・図書館の資料から、枚方のものを 1 件ずつ選びました。"}
+            {has("omlib") && "大阪市立図書館は、デジタルアーカイブの CC0 のオープンデータから、古い絵はがきと『河内名所図会』（1801年）の枚方の挿絵を選びました。"}
+            {has("ndl") && "国立国会図書館は、デジタルコレクションでインターネット公開されている昔の本（1956年までに発行され、著作権が切れたもの）から、枚方の写真をページから切り抜きました。"}
+            {has("mapillary") && "Mapillary は、駅などの近くで撮られた写真を 1 枚ずつ見て選びました。"}
+          </li>
+          <li>商用利用でき、改変もできるライセンス（CC BY・CC BY-SA・CC0・パブリックドメイン、表記すれば使える「Attribution」、国土地理院の利用規約）のものだけです。非営利（NC）と改変禁止（ND）のものは載せていません（一覧の縮小・切り抜きも改変にあたるため）</li>
+          <li>ライセンスの違い：CC BY は撮影者とライセンスを表記すれば、改変も商用利用もできます。CC BY-SA はそれに加えて、改変したものを同じ CC BY-SA で公開する必要があります（「継承」）。CC0・パブリックドメインは表記も不要です。「改変可・継承不要」は、改変したものを好きなライセンスで公開できる写真です</li>
+          <li>写真の説明と撮影日は、それぞれの出典に書かれているものです。誤りを含むことがあります</li>
+          <li>このサイトの画像は縮小したものです。元のサイズの画像は、写真のページの「出典」からダウンロードできます</li>
+          <li>枚方ではない写真や、載せないほうがよい写真があれば、<a href="/about/#contact">教えてください</a></li>
+          <li>「地図で見る」を押したときだけ、国土地理院から地図の画像を読み込みます</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+</Base>
+
+<script>
+  import { startGallery } from "../../scripts/gallery";
+  startGallery();
+</script>

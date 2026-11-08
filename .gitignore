@@ -2,3 +2,13 @@ node_modules/
 dist/
 .astro/
 .DS_Store
+
+# Playwright
+test-results/
+playwright-report/
+
+# 写真ギャラリーの画像（scripts/gallery.mjs images で取ってくる。数百MBになるので Git に入れない）
+public/gallery/
+
+# API キー（Flickr など）。scripts/gallery.mjs が読む
+.env
