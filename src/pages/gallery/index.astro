@@ -41,9 +41,7 @@ const description = `枚方市の写真 ${n(photos.length)} 枚。${sites.map((x
     </header>
 
     <div class="entry-body">
-      <p class="gallery-lead">
-        枚方市の写真 {n(photos.length)} 枚です。どれも <strong>出典を書けば商用でも使える写真</strong>（CC BY・CC BY-SA・CC0・パブリックドメイン・Attribution・国土地理院の利用規約）で、{sites.map((x, i) => <>{i > 0 && "・"}<a href={LINKS[x.s]}>{x.name}</a>（{n(x.n)}）</>)}から集めました。写真を選ぶと、撮影者・ライセンスと、使うときの表記の例が出ます。
-      </p>
+      <p class="gallery-lead">枚方市の写真 {n(photos.length)} 枚。どれも <strong>出典を書けば商用でも使える写真</strong>です。</p>
 
       <div class="data-panel" data-gallery>
         <div class="data-tools">
@@ -106,21 +104,34 @@ const description = `枚方市の写真 ${n(photos.length)} 枚。${sites.map((x
 
       <section class="gallery-about" aria-labelledby="about-h">
         <h2 id="about-h">このページについて</h2>
+
+        <h3>使うとき</h3>
+        <p>写真を選ぶと、撮影者・ライセンスと、使うときの表記の例が出ます。ライセンスごとの条件は次のとおりです。</p>
+        <table>
+          <thead><tr><th>ライセンス</th><th>表記</th><th>改変したものを公開するとき</th></tr></thead>
+          <tbody>
+            <tr><td>CC0・パブリックドメイン</td><td>不要</td><td>自由</td></tr>
+            <tr><td>CC BY・Attribution・国土地理院の利用規約</td><td>必要</td><td>好きなライセンスで公開できる</td></tr>
+            <tr><td>CC BY-SA</td><td>必要</td><td>同じ CC BY-SA で公開する（継承）</td></tr>
+          </tbody>
+        </table>
+        <p>どれも商用利用・改変ができます。非営利（NC）と改変禁止（ND）の写真は載せていません（一覧の縮小・切り抜きも改変にあたるため）。このサイトの画像は縮小したものなので、元の大きさの画像は写真のページの「出典」から取ってください。</p>
+
+        <h3>出どころ</h3>
         <ul>
-          <li>集め方：
-            Wikimedia Commons はカテゴリ「Hirakata, Osaka」とその下位カテゴリから。
-            {has("flickr") && "Flickr は「枚方」「Hirakata」の検索と、市内の位置情報で探しました（Commons に移されているものは Commons の方だけ）。"}
-            {has("city") && "枚方市は「ひらかた市 オープンデータ画像集」（CC BY 2.1）。"}
-            {has("gsi") && "国土地理院は、年代ごとの空中写真（地理院タイル）を、駅などの周りでつなぎ合わせて切り抜いたものです。"}
-            {has("jpsearch") && "Japan Search は、博物館・図書館の資料から、枚方のものを 1 件ずつ選びました。"}
-            {has("omlib") && "大阪市立図書館は、デジタルアーカイブの CC0 のオープンデータから、古い絵はがきと『河内名所図会』（1801年）の枚方の挿絵を選びました。"}
-            {has("ndl") && "国立国会図書館は、デジタルコレクションでインターネット公開されている昔の本（1956年までに発行され、著作権が切れたもの）から、枚方の写真をページから切り抜きました。"}
-            {has("mapillary") && "Mapillary は、駅などの近くで撮られた写真を 1 枚ずつ見て選びました。"}
-          </li>
-          <li>商用利用でき、改変もできるライセンス（CC BY・CC BY-SA・CC0・パブリックドメイン、表記すれば使える「Attribution」、国土地理院の利用規約）のものだけです。非営利（NC）と改変禁止（ND）のものは載せていません（一覧の縮小・切り抜きも改変にあたるため）</li>
-          <li>ライセンスの違い：CC BY は撮影者とライセンスを表記すれば、改変も商用利用もできます。CC BY-SA はそれに加えて、改変したものを同じ CC BY-SA で公開する必要があります（「継承」）。CC0・パブリックドメインは表記も不要です。「改変可・継承不要」は、改変したものを好きなライセンスで公開できる写真です</li>
+          {has("commons") && <li><a href={LINKS.commons}>Wikimedia Commons</a>：分類「Hirakata, Osaka」と、市内の位置・「枚方」などで探したもの</li>}
+          {has("flickr") && <li><a href={LINKS.flickr}>Flickr</a>：「枚方」「Hirakata」の検索と、市内の位置で探したもの（Commons に移されているものは Commons の方だけ）</li>}
+          {has("city") && <li><a href={LINKS.city}>枚方市</a>：「ひらかた市 オープンデータ画像集」（CC BY 2.1）</li>}
+          {has("gsi") && <li><a href={LINKS.gsi}>国土地理院</a>：年代ごとの空中写真を、駅などの周りでつなぎ合わせて切り抜いたもの</li>}
+          {has("jpsearch") && <li><a href={LINKS.jpsearch}>Japan Search</a>：博物館・図書館の資料から 1 件ずつ選んだもの</li>}
+          {has("omlib") && <li><a href={LINKS.omlib}>大阪市立図書館</a>：CC0 のオープンデータの古い絵はがきと、『河内名所図会』（1801年）の挿絵</li>}
+          {has("ndl") && <li><a href={LINKS.ndl}>国立国会図書館</a>：インターネット公開の昔の本（1956年までの発行）から、写真の部分を切り抜いたもの</li>}
+          {has("mapillary") && <li><a href={LINKS.mapillary}>Mapillary</a>：駅などの近くの写真を 1 枚ずつ見て選んだもの</li>}
+        </ul>
+
+        <h3>ご注意</h3>
+        <ul>
           <li>写真の説明と撮影日は、それぞれの出典に書かれているものです。誤りを含むことがあります</li>
-          <li>このサイトの画像は縮小したものです。元のサイズの画像は、写真のページの「出典」からダウンロードできます</li>
           <li>枚方ではない写真や、載せないほうがよい写真があれば、<a href="/about/#contact">教えてください</a></li>
           <li>「地図で見る」を押したときだけ、国土地理院から地図の画像を読み込みます</li>
         </ul>

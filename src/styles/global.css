@@ -921,6 +921,7 @@ tr[hidden] { display: none; }
 .gallery-pop-many .gallery-pop span { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .gallery-pop-more { margin: 6px 0 0; font-size: .75rem; color: var(--mut); }
 .entry-body .gallery-about { margin-top: var(--sp-7); }
+.entry-body .gallery-about table { margin-bottom: var(--sp-4); }
 
 /* 写真 1 枚のページ */
 .gphoto-figure { margin: 0 0 var(--sp-5); }
