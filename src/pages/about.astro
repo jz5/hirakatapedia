@@ -1,6 +1,11 @@
 ---
 import { SITE, OPERATOR, AUTHOR } from "../lib/site";
 import Base from "../layouts/Base.astro";
+import xSvg from "@fortawesome/fontawesome-free/svgs/brands/x-twitter.svg?raw";
+import discordSvg from "@fortawesome/fontawesome-free/svgs/brands/discord.svg?raw";
+// 連絡先のアイコン（Font Awesome Free、Icons: CC BY 4.0）
+const icon = (svg: string) => ({ viewBox: svg.match(/viewBox="([^"]+)"/)![1], d: svg.match(/<path d="([^"]+)"/)![1] });
+const xIcon = icon(xSvg), discordIcon = icon(discordSvg);
 ---
 
 <Base title="このサイトについて" path="/about/">
@@ -10,7 +15,7 @@ import Base from "../layouts/Base.astro";
     </header>
     <div class="entry-body">
       <p>
-        {SITE.title}（{SITE.reading}）は、枚方市のことを調べてまとめるサイトです。枚方市の人が、人に話すときに「ここに書いてある」と見せられるページを目指しています。
+        {SITE.title}（{SITE.reading}）は、枚方市のことを調べてまとめるサイトです。枚方市のことを人に話すときに、「ここに書いてある」と見せられるページを目指しています。
       </p>
 
       <h2 id="contact">写真・情報・要望の募集</h2>
@@ -20,9 +25,9 @@ import Base from "../layouts/Base.astro";
       <p>
         覚えていることや、記事の間違いの指摘、「こんなことを調べてほしい」という要望は、次の連絡先から教えてください。
       </p>
-      <ul>
-        <li>X：<a href="https://x.com/jz5">@jz5</a></li>
-        <li>Discord：準備中</li>
+      <ul class="contact-list">
+        <li><svg viewBox={xIcon.viewBox} aria-hidden="true" focusable="false"><path d={xIcon.d} /></svg><span class="visually-hidden">X：</span><a href="https://x.com/jz5">@jz5</a></li>
+        <li><svg viewBox={discordIcon.viewBox} aria-hidden="true" focusable="false"><path d={discordIcon.d} /></svg><span class="visually-hidden">Discord：</span>準備中</li>
       </ul>
 
       <h2 id="edit">記事の編集と変更の履歴</h2>
@@ -34,7 +39,7 @@ import Base from "../layouts/Base.astro";
       </p>
 
       <h2>運営者</h2>
-      <p><a href={OPERATOR.url}>{OPERATOR.name}</a>が運営しています。記事は {AUTHOR.name}（<a href={AUTHOR.url}>jz5.jp</a>）が書いています。</p>
+      <p><a href={OPERATOR.url}>{OPERATOR.name}</a>（枚方市）が運営しています。記事は {AUTHOR.name}（<a href={AUTHOR.url}>jz5.jp</a>）が書いています。</p>
 
       <h2>ほかのページ</h2>
       <ul>

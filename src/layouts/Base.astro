@@ -112,7 +112,7 @@ const jsonLd = article
       <div class="wrap site-header-inner">
         <a class="site-brand" href="/">
           <span class="site-name"><span class="site-name-ja">枚方</span><span class="site-name-en">pedia</span></span>
-          <span class="site-reading">{SITE.reading}</span>
+          <span class="site-reading" data-reading>{SITE.reading}</span>
         </a>
         <nav class="site-nav" aria-label="サイト">
           <a href="/gallery/">写真</a>
@@ -123,6 +123,16 @@ const jsonLd = article
         </nav>
       </div>
     </header>
+    <script is:inline>
+      // 4月1日（日本時間）だけ、ヘッダーの読みを「まいかたペディア」にする（エイプリルフール）
+      (() => {
+        const d = new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Tokyo", month: "numeric", day: "numeric" }).format(new Date());
+        if (d === "4/1") {
+          const el = document.querySelector("[data-reading]");
+          if (el) el.textContent = el.textContent.replace("ひらかた", "まいかた");
+        }
+      })();
+    </script>
 
     <div class:list={["wrap layout", { "layout-wide": wide }]}>
       <main id="main" class="layout-main">
