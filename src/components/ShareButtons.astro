@@ -1,6 +1,6 @@
 ---
 /**
- * このページを SNS で共有するボタン（右の列）。記念日ラボ（anniv.pronama.jp）と同じ 5 つ。
+ * このページを SNS で共有するボタン（右の列）。X・Misskey・Mastodon・Bluesky・Threads・LINE と、リンクのコピー。
  * アイコン：Font Awesome Free（Icons: CC BY 4.0）。Misskey は misskey-dev/assets の mi.svg（CC BY-SA 4.0）を色だけ変えて使う。
  * 表示は /license/ に書いている
  */
@@ -8,6 +8,8 @@ import xSvg from "@fortawesome/fontawesome-free/svgs/brands/x-twitter.svg?raw";
 import mastodonSvg from "@fortawesome/fontawesome-free/svgs/brands/mastodon.svg?raw";
 import blueskySvg from "@fortawesome/fontawesome-free/svgs/brands/bluesky.svg?raw";
 import threadsSvg from "@fortawesome/fontawesome-free/svgs/brands/threads.svg?raw";
+import lineSvg from "@fortawesome/fontawesome-free/svgs/brands/line.svg?raw";
+import linkSvg from "@fortawesome/fontawesome-free/svgs/solid/link.svg?raw";
 
 interface Props {
   title: string;
@@ -26,7 +28,9 @@ const items = [
   { name: "Mastodon", href: `https://pronama.jp/share-to-mastodon.html?${q({ text })}`, svg: icon(mastodonSvg) },
   { name: "Bluesky", href: `https://bsky.app/intent/compose?${q({ text })}`, svg: icon(blueskySvg) },
   { name: "Threads", href: `https://www.threads.net/intent/post?${q({ text })}`, svg: icon(threadsSvg) },
+  { name: "LINE", href: `https://social-plugins.line.me/lineit/share?${q({ url, text: title })}`, svg: icon(lineSvg) },
 ];
+const link = icon(linkSvg);
 ---
 
 <section class="share" aria-label="このページを共有">
@@ -45,5 +49,30 @@ const items = [
         </li>
       ))
     }
+    <li>
+      <button type="button" class="share-copy" data-url={url} aria-label="リンクをコピー" title="リンクをコピー">
+        <svg viewBox={link.viewBox} aria-hidden="true" focusable="false"><path d={link.d} /></svg>
+      </button>
+    </li>
   </ul>
+  <p class="share-copied" role="status" aria-live="polite" hidden>リンクをコピーしました</p>
 </section>
+
+<script>
+  // リンクをコピー（ページの URL）。できたら下に「コピーしました」を少しのあいだ出す
+  for (const b of document.querySelectorAll<HTMLButtonElement>(".share-copy")) {
+    const msg = b.closest(".share")?.querySelector<HTMLElement>(".share-copied");
+    b.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(b.dataset.url ?? location.href);
+        if (msg) msg.textContent = "リンクをコピーしました";
+      } catch {
+        if (msg) msg.textContent = "コピーできませんでした";
+      }
+      if (msg) {
+        msg.hidden = false;
+        setTimeout(() => (msg.hidden = true), 2500);
+      }
+    });
+  }
+</script>

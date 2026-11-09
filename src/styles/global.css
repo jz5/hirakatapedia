@@ -307,13 +307,15 @@ button { font: inherit; color: inherit; }
 /* このページを共有（右の列）。記念日ラボと同じく、淡い色の角丸にアイコンだけ */
 .share { flex: none; }
 .share .share-title { margin: 0 0 var(--sp-2); font-size: .8125rem; font-weight: 700; letter-spacing: .12em; color: var(--mut); }
-.share-list { list-style: none; margin: 0; padding: 0; display: flex; gap: 6px; }
-.share-list a {
+.share-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.share-list a, .share-copy {
+  border: 0; padding: 0; font: inherit; cursor: pointer;
   display: grid; place-items: center; width: 34px; height: 34px; border-radius: var(--radius);
   color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent);
 }
-.share-list a:hover { background: color-mix(in srgb, var(--accent) 22%, transparent); }
+.share-list a:hover, .share-copy:hover { background: color-mix(in srgb, var(--accent) 22%, transparent); }
 .share-list svg { width: 16px; height: 16px; fill: currentColor; }
+.share-copied { margin: var(--sp-2) 0 0; font-size: .8125rem; color: var(--mut); }
 .share-mi { display: block; width: 18px; height: 13px; background: currentColor; -webkit-mask: url(/img/misskey-mi.svg) center / contain no-repeat; mask: url(/img/misskey-mi.svg) center / contain no-repeat; }
 /* 「このサイトについて」の連絡先（アイコンつき） */
 .entry-body .contact-list { list-style: none; padding-left: 0; }
