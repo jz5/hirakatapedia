@@ -38,14 +38,15 @@ node scripts/popular.mjs
 echo "== ビルド"
 pnpm build
 
-RSYNC=(rsync -az --delete --human-readable --exclude=".DS_Store" -e ssh)
+# --checksum：ビルドのたびに日時が変わるので、中身で比べる（変わったファイルだけが一覧に出る）
+RSYNC=(rsync -az --checksum --delete --human-readable --exclude=".DS_Store" -e ssh)
 
 echo "== 変わるファイル（rsync --dry-run）"
 # 一覧を先にファイルへ書き切ってから見る（パイプで head すると、途中で切れる）
 LOG=/tmp/hirakatapedia-deploy.txt
 "${RSYNC[@]}" --dry-run --itemize-changes dist/ "$HOST:$DEST" > "$LOG"
 grep -E '^\*deleting' "$LOG" | head -20 || true
-grep -E '^<f' "$LOG" | grep -v '/index\.html$' | head -30 || true
+grep -E '^<f' "$LOG" | head -50 || true
 echo "（全部は $LOG）"
 echo "上げるファイル：$(grep -cE '^<f' "$LOG" || true) 件（新しい $(grep -cE '^<f\+' "$LOG" || true) 件）／サーバーから消すファイル：$(grep -cE '^\*deleting' "$LOG" || true) 件"
 
