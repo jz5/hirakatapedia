@@ -25,7 +25,7 @@ const description = `枚方市がサイトで公開しているデータ（CSV�
 <Base title="市が公開しているデータ" description={description} path="/data/city/">
   <article class="entry">
     <header class="entry-header">
-      <p class="gallery-back"><a href="/data/">← 枚方のデータ</a></p>
+      <p class="gallery-back"><a href="/data/">枚方のデータ</a></p>
       <h1>市が公開しているデータ</h1>
       <p class="entry-meta">調査日 <time datetime={catalog.generated}>{ymd(catalog.generated)}</time></p>
     </header>
@@ -59,7 +59,7 @@ const description = `枚方市がサイトで公開しているデータ（CSV�
             <li class="od-item" data-cat-item data-cat={d.category} data-terms={terms(d)} data-fmt={formatsOf(d).join(" ")} data-text={`${d.title} ${d.desc ?? ""} ${d.category} ${d.cityTitle ?? ""}`}>
               <p class="od-title">
                 <a href={d.page}>{d.title}</a>
-                {d.view && <a class="od-view" href={dataPath(d.view)}>{d.view === "gomi" ? "このサイトで検索" : "このサイトで表と地図"} →</a>}
+                {d.view && <a class="od-view ar-r" href={dataPath(d.view)}>{d.view === "gomi" ? "このサイトで検索" : "このサイトで表と地図"}</a>}
               </p>
               {d.desc && <p class="od-desc">{d.desc}</p>}
               {d.note && <p class="od-note">{d.note}</p>}

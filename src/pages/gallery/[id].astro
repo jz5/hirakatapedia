@@ -58,7 +58,7 @@ const imageLd = {
 <Base title={`${cap.slice(0, 60)}（枚方の写真）`} description={`${cap}。${p.author.name}、${p.license}。枚方の写真ギャラリー。`} path={galleryPath(p.id)} image={ogImage} jsonLd={imageLd}>
   <article class="entry gphoto">
     <header class="entry-header">
-      <p class="gallery-back"><a href="/gallery/" data-back>← 枚方の写真</a></p>
+      <p class="gallery-back"><a href="/gallery/" data-back>枚方の写真</a></p>
       <h1>{cap.length > 80 ? `${cap.slice(0, 80)}…` : cap}</h1>
     </header>
 
@@ -88,8 +88,8 @@ const imageLd = {
       {p.desc && p.desc !== cap && <p class="gphoto-desc">{p.desc}</p>}
 
       <nav class="gphoto-nav" aria-label="前後の写真（← → キーでも移動できます）" data-id={p.id}>
-        <a href={prev ? galleryPath(prev) : "#"} rel="prev" hidden={!prev}><img src={prev ? thumbSrc(prev) : ""} alt="" width="64" height="64" loading="lazy" />← 前の写真</a>
-        <a href={next ? galleryPath(next) : "#"} rel="next" hidden={!next}>次の写真 →<img src={next ? thumbSrc(next) : ""} alt="" width="64" height="64" loading="lazy" /></a>
+        <a href={prev ? galleryPath(prev) : "#"} rel="prev" hidden={!prev}><img src={prev ? thumbSrc(prev) : ""} alt="" width="64" height="64" loading="lazy" /><span class="ar-l">前の写真</span></a>
+        <a href={next ? galleryPath(next) : "#"} rel="next" hidden={!next}><span class="ar-r">次の写真</span><img src={next ? thumbSrc(next) : ""} alt="" width="64" height="64" loading="lazy" /></a>
       </nav>
     </div>
   </article>

@@ -114,12 +114,12 @@ export async function startGallery() {
     if (n <= 1) return "";
     const nums = new Set([1, n, page - 2, page - 1, page, page + 1, page + 2].filter((x) => x >= 1 && x <= n));
     const sorted = [...nums].sort((a, b) => a - b);
-    let html = `<button type="button" data-page="${page - 1}" ${page <= 1 ? "disabled" : ""}>← 前へ</button>`;
+    let html = `<button type="button" data-page="${page - 1}" ${page <= 1 ? "disabled" : ""}><span class="ar-l">前へ</span></button>`;
     sorted.forEach((x, i) => {
       if (i > 0 && x - sorted[i - 1] > 1) html += `<span class="gallery-pager-gap">…</span>`;
       html += `<button type="button" data-page="${x}" ${x === page ? 'aria-current="page"' : ""}>${x.toLocaleString()}</button>`;
     });
-    return html + `<button type="button" data-page="${page + 1}" ${page >= n ? "disabled" : ""}>次へ →</button>`;
+    return html + `<button type="button" data-page="${page + 1}" ${page >= n ? "disabled" : ""}><span class="ar-r">次へ</span></button>`;
   };
 
   const render = () => {

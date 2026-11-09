@@ -16,7 +16,7 @@ const { Content } = Astro.props;
 <Base title={`メモ: ${note}`} path={`/admin/notes/${note}/`} noindex>
   <article class="entry">
     <header class="entry-header">
-      <p class="entry-meta"><a href="/admin/">← 管理者ページ</a>（docs/notes/{note}.md）</p>
+      <p class="entry-meta"><a href="/admin/" class="ar-l">管理者ページ</a>（docs/notes/{note}.md）</p>
     </header>
     <div class="entry-body admin"><Content /></div>
   </article>
