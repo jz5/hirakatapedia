@@ -18,13 +18,13 @@ import Base from "../layouts/Base.astro";
       <div class="data-tools search-tools">
         <label class="data-search">
           <span class="visually-hidden">記事を検索</span>
-          <input type="search" placeholder="言葉で検索（例：香里団地、TSUTAYA、図書館）" autocomplete="off" enterkeyhint="search" data-search-q />
+          <input type="search" placeholder="例：香里団地、TSUTAYA、図書館" autocomplete="off" enterkeyhint="search" data-search-q />
         </label>
         <p class="data-count" aria-live="polite" data-search-count></p>
       </div>
       <ol class="search-results" data-search-results></ol>
       <p class="search-also" data-search-also hidden>
-        写真は<a href="/gallery/" data-search-gallery>写真ギャラリー</a>、ごみの出し方は<a href="/data/gomi/" data-search-gomi>ごみの分別</a>でも探せます。
+        <a href="/gallery/" data-search-gallery>写真ギャラリー</a>・<a href="/data/gomi/" data-search-gomi>ごみの分別</a>
       </p>
       <noscript><p>検索は JavaScript を使います。</p></noscript>
     </div>
@@ -62,8 +62,10 @@ import Base from "../layouts/Base.astro";
     const u = new URL(location.href);
     q ? u.searchParams.set("q", q) : u.searchParams.delete("q");
     history.replaceState(null, "", u);
-    $gallery.href = q ? `/gallery/?q=${encodeURIComponent(q)}` : "/gallery/";
-    $gomi.href = q ? `/data/gomi/?q=${encodeURIComponent(q)}` : "/data/gomi/";
+    $gallery.href = `/gallery/?q=${encodeURIComponent(q)}`;
+    $gallery.textContent = `写真ギャラリーで「${q}」を検索`;
+    $gomi.href = `/data/gomi/?q=${encodeURIComponent(q)}`;
+    $gomi.textContent = `ごみの分別で「${q}」を検索`;
     $also.hidden = !q;
     if (!pagefind) return;
     if (!q) {

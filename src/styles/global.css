@@ -1003,3 +1003,25 @@ tr[hidden] { display: none; }
 .gphoto-nav a[rel="next"] { margin-left: auto; }
 .gphoto-nav img { width: 64px; height: 64px; object-fit: cover; border-radius: var(--radius); background: var(--bg-sub); }
 .data-mapbtn { white-space: nowrap; }
+
+/* 記事の中の、写真ギャラリーの場所の写真（<div data-gallery="香里団地">。src/lib/rehype-gallery-strip.mjs） */
+.entry-body .gallery-strip { margin: var(--sp-5) 0; padding: var(--sp-4); border: 1px solid var(--line); border-radius: var(--radius); }
+.entry-body .gallery-strip-title { margin: 0 0 var(--sp-3); font-size: .875rem; font-weight: 700; color: var(--mut); }
+.entry-body .gallery-strip ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+.entry-body .gallery-strip li { margin: 0; }
+.entry-body .gallery-strip img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: calc(var(--radius) / 2); }
+.entry-body .gallery-strip-more { margin: var(--sp-3) 0 0; font-size: .875rem; text-align: right; }
+@media (max-width: 560px) { .entry-body .gallery-strip ul { grid-template-columns: repeat(3, 1fr); } }
+
+/* ヘッダーの検索のアイコン（リンクの並びの外。狭い画面ではロゴ・配色の切り替えと同じ 1 段目） */
+.site-search-link { display: grid; place-items: center; width: 30px; height: 30px; margin-right: calc(var(--sp-5) * -1 + var(--sp-2)); color: var(--mut); border-radius: 999px; }
+.site-search-link:hover { color: var(--accent); }
+.site-search-link svg { width: 15px; height: 15px; fill: currentColor; }
+@media (max-width: 640px) { .site-search-link { margin-right: calc(var(--sp-3) * -1 + var(--sp-1)); } }
+
+/* 記事の検索（/search/）。入力欄はデータの検索と同じ形（.data-tools） */
+.entry-body .search-results { list-style: none; padding: 0; margin: var(--sp-4) 0 0; }
+.entry-body .search-results li { margin: 0; padding: var(--sp-3) 0; border-bottom: 1px solid var(--line); }
+.entry-body .search-results a { font-weight: 700; }
+.entry-body .search-results p { margin: var(--sp-1) 0 0; font-size: .875rem; color: var(--mut); }
+.entry-body .search-also { margin-top: var(--sp-4); font-size: .875rem; color: var(--mut); }
