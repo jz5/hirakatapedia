@@ -1,12 +1,15 @@
 ---
+import { gitDate, jaYmd } from "../lib/git-date";
+const updated = gitDate("src/pages/license.astro");
 import { SITE, LICENSE } from "../lib/site";
 import Base from "../layouts/Base.astro";
 ---
 
-<Base title="ライセンス" path="/license/">
+<Base title="ライセンス" path="/license/" description="枚方pedia の記事の文章は CC BY-SA 4.0 で、条件を守ればだれでも使えます。対象外のもの（引用した資料・写真・リンク先）と、プログラム・データ・アイコン・地図のライセンス。">
   <article class="entry">
     <header class="entry-header">
       <h1>ライセンス</h1>
+      <p class="entry-meta">最終更新 <time datetime={updated}>{updated && jaYmd(updated)}</time></p>
     </header>
     <div class="entry-body">
       <p>

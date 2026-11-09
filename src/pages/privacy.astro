@@ -1,4 +1,6 @@
 ---
+import { gitDate, jaYmd } from "../lib/git-date";
+const updated = gitDate("src/pages/privacy.astro");
 import { SITE, OPERATOR } from "../lib/site";
 import Base from "../layouts/Base.astro";
 
@@ -7,10 +9,11 @@ import Base from "../layouts/Base.astro";
  *   Amazonのアソシエイトとして、合同会社プロ生は適格販売により収入を得ています。*/
 ---
 
-<Base title="プライバシーポリシー" path="/privacy/">
+<Base title="プライバシーポリシー" path="/privacy/" description="枚方pedia のプライバシーポリシー。Google アナリティクスによるアクセス解析、地図を表示したときの通信、広告、お問い合わせの扱い。">
   <article class="entry">
     <header class="entry-header">
       <h1>プライバシーポリシー</h1>
+      <p class="entry-meta">最終更新 <time datetime={updated}>{updated && jaYmd(updated)}</time></p>
     </header>
     <div class="entry-body">
       <p>{SITE.title}（{SITE.url.replace("https://", "")}）での、アクセス情報の扱いについて説明します。</p>

@@ -1,4 +1,12 @@
 {
-  "_note": "サイドバーの「よく読まれている記事」。記事のファイル名（slug）を上から順に並べる。アクセス解析の数字を見て手で直す",
-  "slugs": ["tsutaya"]
+  "_note": "サイドバーの「よく読まれている記事」（3 件）。slugs は scripts/popular.mjs が GA4 の直近 30 日の表示回数から作る（公開のたびに）。slugs が 3 件に足りないときは、fill の順で足す（fill は手で書く。popular.mjs は消さない）",
+  "slugs": [
+    "tsutaya"
+  ],
+  "fill": [
+    "tsutaya",
+    "jinko",
+    "kuzuha-mall",
+    "toshokan"
+  ]
 }

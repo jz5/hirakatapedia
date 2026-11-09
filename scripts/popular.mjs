@@ -103,9 +103,11 @@ writeFileSync(
   OUT,
   JSON.stringify(
     {
-      _note: "サイドバーの「よく読まれている記事」。scripts/popular.mjs が GA4 の直近 30 日の表示回数から作る（公開のたびに）。GA の設定が無いときは手で直してよい",
+      _note: prev._note,
       updated: new Date().toISOString().slice(0, 10),
       slugs: ranked.map(([s]) => s),
+      // 足りないときに足す記事（手で書く）。作り直しても消さない
+      ...(prev.fill ? { fill: prev.fill } : {}),
     },
     null,
     2,

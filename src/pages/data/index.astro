@@ -11,7 +11,7 @@ import Toc from "../../components/Toc.astro";
 import ArticleBody from "../../components/ArticleBody.astro";
 import { charts } from "../../lib/chart-defs.mjs";
 import catalog from "../../../content/data/opendata-catalog.json";
-import { datasets as sets, PAGES, dataPath, hasMap, jaDay } from "../../lib/datasets";
+import { datasets as sets, PAGES, dataPath, hasMap, jaDay, asOf } from "../../lib/datasets";
 import { allArticles, articlePath } from "../../lib/articles";
 
 
@@ -39,7 +39,7 @@ const headings = [
   <article class="entry">
     <header class="entry-header">
       <h1>枚方のデータ</h1>
-      <p class="entry-meta">データ取得日 <time datetime={sets[0]?.fetched}>{sets[0] && jaDay(sets[0].fetched)}</time></p>
+      <p class="entry-meta">このサイトでの取得 <time datetime={sets[0]?.fetched}>{sets[0] && jaDay(sets[0].fetched)}</time>（元のデータの時点は、それぞれのカードに）</p>
     </header>
 
     <div class="toc-inline"><Toc headings={headings} inline /></div>
@@ -63,7 +63,7 @@ const headings = [
                     <a href={dataPath(d.id)}>
                       <span class="data-card-title">{d.title}<span class="data-card-n">{d.count.toLocaleString()} 件</span></span>
                       <span class="data-card-desc">{PAGES[d.id]?.lead ?? ""}</span>
-                      <span class="data-card-meta">{hasMap(d) ? "表と地図" : d.id === "gomi" ? "品名で検索" : "表"}・{d.note?.match(/\d{4}年\d+月時点/)?.[0] ?? `データ取得日 ${jaDay(d.fetched)}`}</span>
+                      <span class="data-card-meta">{hasMap(d) ? "表と地図" : d.id === "gomi" ? "品名で検索" : "表"}・<span class="data-card-asof">{d.group === "city" ? "市のデータ " : ""}{asOf(d)}</span></span>
                     </a>
                   </li>
                 ))}

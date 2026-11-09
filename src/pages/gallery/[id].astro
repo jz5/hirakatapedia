@@ -8,6 +8,7 @@ import { photos, caption, aiDesc, fit, credit, galleryPath, largeSrc, thumbSrc, 
 import { articlesUsing } from "../../lib/gallery-used";
 import { allArticles, articlePath } from "../../lib/articles";
 import type { GetStaticPaths } from "astro";
+import { SITE } from "../../lib/site";
 import aiSvg from "@fortawesome/fontawesome-free/svgs/solid/comment-nodes.svg?raw";
 
 export const getStaticPaths = (() =>
@@ -33,11 +34,28 @@ const how =
         : kind === "pd"
           ? "表記は必須ではありませんが、書いておくと親切です。"
           : "撮影者とライセンスを表記してください（改変してもかまいません）。";
-// SNS で共有したときの画像は、出どころの JPEG・PNG（AVIF は出ないサービスが多い）
-const ogImage = /^https?:\/\/.+\.(jpe?g|png)(\?|$)/i.test(p.thumb) || p.site === "mapillary" ? p.thumb : undefined;
+// SNS で共有したときの画像は、出どころの JPEG・PNG（AVIF は出ないサービスが多い）。
+// Mapillary の画像の URL は期限つき（しばらくすると見られなくなる）なので使わず、サイト共通の画像にする
+const ogImage = /^https?:\/\/.+\.(jpe?g|png)(\?|$)/i.test(p.thumb) && p.site !== "mapillary" ? p.thumb : undefined;
+// 写真の構造化データ。撮影者・ライセンス・使うときの表記を書くと、Google 画像検索で「ライセンスあり」と出る
+const abs = (u: string) => new URL(u, SITE.url).href;
+const imageLd = {
+  "@type": "ImageObject",
+  name: cap,
+  ...(ai?.desc || p.desc ? { caption: ai?.desc ?? p.desc } : {}),
+  contentUrl: abs(largeSrc(p.id)),
+  thumbnailUrl: abs(thumbSrc(p.id)),
+  ...(p.licenseUrl ? { license: p.licenseUrl } : {}),
+  acquireLicensePage: abs(galleryPath(p.id)),
+  creditText: credit(p),
+  creator: { "@type": p.site === "commons" || p.site === "flickr" || p.site === "mapillary" ? "Person" : "Organization", name: p.author.name, ...(p.author.url ? { url: p.author.url } : {}) },
+  ...(kind !== "pd" ? { copyrightNotice: p.author.name } : {}),
+  ...(p.date ? { dateCreated: p.date } : {}),
+  ...(p.lat !== null ? { contentLocation: { "@type": "Place", geo: { "@type": "GeoCoordinates", latitude: p.lat, longitude: p.lon } } } : {}),
+};
 ---
 
-<Base title={`${cap.slice(0, 60)}（枚方の写真）`} description={`${cap}。${p.author.name}、${p.license}。枚方の写真ギャラリー。`} path={galleryPath(p.id)} image={ogImage}>
+<Base title={`${cap.slice(0, 60)}（枚方の写真）`} description={`${cap}。${p.author.name}、${p.license}。枚方の写真ギャラリー。`} path={galleryPath(p.id)} image={ogImage} jsonLd={imageLd}>
   <article class="entry gphoto">
     <header class="entry-header">
       <p class="gallery-back"><a href="/gallery/" data-back>← 枚方の写真</a></p>

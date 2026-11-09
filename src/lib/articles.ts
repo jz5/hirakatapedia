@@ -8,13 +8,14 @@ export async function allArticles() {
 }
 
 /**
- * よく読まれている記事。content/popular.json の順。
- * 載っていない記事やまだ無い slug は飛ばす
+ * よく読まれている記事（サイドバーは 3 件）。content/popular.json の slugs（GA の数字から）の順。
+ * 足りないときは fill（手で選んだ順）で足す。載っていない記事やまだ無い slug は飛ばす
  */
-export async function popularArticles(limit = 5) {
+export async function popularArticles(limit = 3) {
   const list = await allArticles();
   const byId = new Map(list.map((e) => [e.id, e]));
-  return popular.slugs.flatMap((s) => byId.get(s) ?? []).slice(0, limit);
+  const fill = (popular as { fill?: string[] }).fill ?? [];
+  return [...new Set([...popular.slugs, ...fill])].flatMap((s) => byId.get(s) ?? []).slice(0, limit);
 }
 
 export const lastModified = (e: { data: { published: Date; updated?: Date } }) =>

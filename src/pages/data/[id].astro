@@ -5,7 +5,7 @@
  */
 import Base from "../../layouts/Base.astro";
 import DataViewer from "../../components/DataViewer.astro";
-import { datasets, PAGES, dataPath, jaDay, type Meta } from "../../lib/datasets";
+import { datasets, PAGES, dataPath, jaDay, asOf, type Meta } from "../../lib/datasets";
 import type { GetStaticPaths } from "astro";
 import { charts } from "../../lib/chart-defs.mjs";
 const chart = (n: string) => (charts as Record<string, () => string>)[n]();
@@ -23,7 +23,7 @@ const placeholder = `${d.search.filter((c) => c !== "読み").join("・")}で検
     <header class="entry-header">
       <p class="gallery-back"><a href="/data/">← 枚方のデータ</a></p>
       <h1>{d.title}</h1>
-      <p class="entry-meta">データ取得日 <time datetime={d.fetched}>{jaDay(d.fetched)}</time></p>
+      <p class="entry-meta"><strong>{d.group === "other" ? "" : "市のデータ "}{asOf(d)}</strong>（このサイトでの取得 <time datetime={d.fetched}>{jaDay(d.fetched)}</time>）</p>
     </header>
 
     <div class="entry-body">

@@ -1,4 +1,6 @@
 ---
+import { gitDate, jaYmd } from "../lib/git-date";
+const updated = gitDate("src/pages/about.astro");
 import { SITE, OPERATOR, AUTHOR } from "../lib/site";
 import Base from "../layouts/Base.astro";
 import xSvg from "@fortawesome/fontawesome-free/svgs/brands/x-twitter.svg?raw";
@@ -8,10 +10,11 @@ const icon = (svg: string) => ({ viewBox: svg.match(/viewBox="([^"]+)"/)![1], d:
 const xIcon = icon(xSvg), discordIcon = icon(discordSvg);
 ---
 
-<Base title="このサイトについて" path="/about/">
+<Base title="このサイトについて" path="/about/" description="枚方pedia のねらい、写真・情報・要望の募集と連絡先（X・Discord）、記事の直し方と変更の履歴、運営者（合同会社プロ生）。">
   <article class="entry">
     <header class="entry-header">
       <h1>このサイトについて</h1>
+      <p class="entry-meta">最終更新 <time datetime={updated}>{updated && jaYmd(updated)}</time></p>
     </header>
     <div class="entry-body">
       <p>
@@ -27,7 +30,7 @@ const xIcon = icon(xSvg), discordIcon = icon(discordSvg);
       </p>
       <ul class="contact-list">
         <li><svg viewBox={xIcon.viewBox} aria-hidden="true" focusable="false"><path d={xIcon.d} /></svg><span class="visually-hidden">X：</span><a href="https://x.com/jz5">@jz5</a></li>
-        <li><svg viewBox={discordIcon.viewBox} aria-hidden="true" focusable="false"><path d={discordIcon.d} /></svg><span class="visually-hidden">Discord：</span>準備中</li>
+        <li><svg viewBox={discordIcon.viewBox} aria-hidden="true" focusable="false"><path d={discordIcon.d} /></svg><span class="visually-hidden">Discord：</span><a href="https://discord.gg/9YJqw9p8kd">枚方pedia の Discord</a></li>
       </ul>
 
       <h2 id="edit">記事の編集と変更の履歴</h2>

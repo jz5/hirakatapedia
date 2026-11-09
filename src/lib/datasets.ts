@@ -11,6 +11,7 @@
  */
 import meta from "../../content/data/opendata.json";
 import other from "../../content/data/datasets-other.json";
+import catalog from "../../content/data/opendata-catalog.json";
 
 export interface Link {
   title: string;
@@ -102,6 +103,8 @@ export type Meta = {
   creditHtml?: string;
   /** city：市のオープンデータ、other：そのほか */
   group?: "city" | "other";
+  /** 元のデータがいつ時点か（そのほかのデータで、手で書くとき。例「2026年11月調べ」） */
+  asOf?: string;
 };
 
 /** 並び順は、市のデータ（scripts/opendata-data.py の DATASETS の順）のあとに、そのほか */
@@ -115,4 +118,16 @@ export const hasMap = (d: Meta) => d.columns.some((c) => c[1] === "lat");
 export const jaDay = (s: string) => {
   const [y, m, d] = s.split("-").map(Number);
   return `${y}年${m}月${d}日`;
+};
+
+/**
+ * 元のデータがいつ時点か（このサイトが取ってきた日ではなく）。
+ * 市のデータに「◯年◯月時点」があればそれ、無ければ市のページの更新日（content/data/opendata-catalog.json の updated）。
+ * そのほかのデータは asOf に手で書く
+ */
+export const asOf = (d: Meta) => {
+  const t = d.note?.match(/\d{4}年\d+月時点/)?.[0] ?? d.asOf;
+  if (t) return t;
+  const u = (catalog.datasets as { page: string; updated?: string }[]).find((c) => c.page === d.page)?.updated;
+  return u ? `${jaDay(u)}更新` : `${jaDay(d.fetched)}取得`;
 };

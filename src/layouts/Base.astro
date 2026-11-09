@@ -17,15 +17,17 @@ interface Props {
   /** 記事のとき、構造化データと og:article:* に使う */
   article?: { published: Date; modified?: Date };
   noindex?: boolean;
-  /** og:image にする画像のパス（/photos/… の大きい jpg）。あれば twitter:card も大きい画像に */
+  /** og:image にする画像のパス（/photos/… の大きい jpg）か URL。無ければサイト共通の画像（/og.png） */
   image?: string;
   /** 右の列（サイドバー）なしの、広い 1 列。表の大きいページ（SNS・データ）に使う */
   wide?: boolean;
   /** このページのもとになっているファイル（リポジトリの中のパス）。フッターの GitHub のアイコンを、そのファイルの変更の履歴へのリンクにする */
   source?: string;
+  /** ページごとの構造化データ（写真のページの ImageObject など）。記事の Article とホームの WebSite はここで作る */
+  jsonLd?: Record<string, unknown>;
 }
 
-const { title, description, path, article, noindex = false, image, wide = false, source } = Astro.props;
+const { title, description, path, article, noindex = false, image, wide = false, source, jsonLd: pageLd } = Astro.props;
 const hasToc = Astro.slots.has("toc");
 
 const fullTitle = title ? `${title} | ${SITE.title}` : `${SITE.title}（${SITE.reading}）`;
@@ -52,6 +54,11 @@ const githubLabel = sourceFile ? "GitHub（このページの変更の履歴）"
 // アイコンは Font Awesome Free（Icons: CC BY 4.0）
 const github = { viewBox: githubSvg.match(/viewBox="([^"]+)"/)![1], d: githubSvg.match(/<path d="([^"]+)"/)![1] };
 
+// SNS で共有したときの画像。ページの画像（記事の cover・写真）が無いときは、サイト共通の画像（public/og.png。scripts/og-image.mjs で作る）
+const ogImage = new URL(image ?? "/og.png", SITE.url).href;
+// frontmatter の日付は「日本の日付」なので、日本時間の 0 時として書く（UTC の 0 時だと日本の朝 9 時になる）
+const jst = (d: Date) => `${d.toISOString().slice(0, 10)}T00:00:00+09:00`;
+const publisher = { "@type": "Organization", name: OPERATOR.name, alternateName: OPERATOR.nameEn, url: OPERATOR.url };
 const jsonLd = article
   ? {
       "@context": "https://schema.org",
@@ -59,13 +66,29 @@ const jsonLd = article
       mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
       headline: title,
       description: desc,
-      datePublished: article.published.toISOString(),
-      dateModified: (article.modified ?? article.published).toISOString(),
+      ...(image ? { image: ogImage } : {}),
+      datePublished: jst(article.published),
+      dateModified: jst(article.modified ?? article.published),
       author: { "@type": "Person", name: AUTHOR.name, url: AUTHOR.url },
-      publisher: { "@type": "Organization", name: OPERATOR.name, alternateName: OPERATOR.nameEn, url: OPERATOR.url },
+      publisher,
       license: LICENSE.url,
+      inLanguage: SITE.lang,
     }
-  : null;
+  : path === "/"
+    ? {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: SITE.title,
+        alternateName: SITE.reading,
+        url: SITE.url,
+        description: desc,
+        inLanguage: SITE.lang,
+        publisher,
+        license: LICENSE.url,
+      }
+    : pageLd
+      ? { "@context": "https://schema.org", ...pageLd }
+      : null;
 ---
 
 <!doctype html>
@@ -85,20 +108,21 @@ const jsonLd = article
 
     <title>{fullTitle}</title>
     <meta name="description" content={desc} />
-    <link rel="canonical" href={canonical} />
+    {!noindex && <link rel="canonical" href={canonical} />}
     {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="license" href={LICENSE.url} />
 
     <meta property="og:site_name" content={SITE.title} />
     <meta property="og:title" content={title || SITE.title} />
     <meta property="og:description" content={desc} />
-    <meta property="og:url" content={canonical} />
+    {!noindex && <meta property="og:url" content={canonical} />}
     <meta property="og:type" content={article ? "article" : "website"} />
     <meta property="og:locale" content="ja_JP" />
-    {article && <meta property="article:published_time" content={article.published.toISOString()} />}
-    {article?.modified && <meta property="article:modified_time" content={article.modified.toISOString()} />}
-    {image && <meta property="og:image" content={new URL(image, SITE.url).href} />}
-    <meta name="twitter:card" content={image ? "summary_large_image" : "summary"} />
+    {article && <meta property="article:published_time" content={jst(article.published)} />}
+    {article?.modified && <meta property="article:modified_time" content={jst(article.modified)} />}
+    <meta property="og:image" content={ogImage} />
+    {!image && <><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" /></>}
+    <meta name="twitter:card" content="summary_large_image" />
 
     {jsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 

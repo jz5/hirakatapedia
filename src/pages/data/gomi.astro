@@ -8,7 +8,7 @@
 import Base from "../../layouts/Base.astro";
 import DataViewer from "../../components/DataViewer.astro";
 import Toc from "../../components/Toc.astro";
-import { datasets, PAGES, dataPath, jaDay } from "../../lib/datasets";
+import { datasets, PAGES, dataPath, jaDay, asOf } from "../../lib/datasets";
 
 const d = datasets.find((x) => x.id === "gomi")!;
 const C = "https://www.city.hirakata.osaka.jp/";
@@ -33,7 +33,7 @@ const examples = ["電池", "フライパン", "スプレー", "ふとん", "パ
     <header class="entry-header">
       <p class="gallery-back"><a href="/data/">← 枚方のデータ</a></p>
       <h1>ごみの分別</h1>
-      <p class="entry-meta">データ取得日 <time datetime={d.fetched}>{jaDay(d.fetched)}</time></p>
+      <p class="entry-meta"><strong>{d.group === "other" ? "" : "市のデータ "}{asOf(d)}</strong>（このサイトでの取得 <time datetime={d.fetched}>{jaDay(d.fetched)}</time>）</p>
     </header>
 
     <div class="toc-inline"><Toc headings={headings} inline /></div>

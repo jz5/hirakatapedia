@@ -17,7 +17,7 @@ interface Props {
   shareUrl: string;
 }
 const { home = false, shareTitle, shareUrl } = Astro.props;
-const popular = await popularArticles(5);
+const popular = await popularArticles(3);
 // 写真のカードに並べる小さい写真（撮影日の新しいものから、位置情報のあるもの 3 枚）
 const strip = home ? photos.filter((p) => p.lat !== null).slice(0, 3) : [];
 ---
