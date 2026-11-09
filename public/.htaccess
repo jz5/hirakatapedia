@@ -3,6 +3,9 @@
 # 見つからないページ
 ErrorDocument 404 /404.html
 
+# 注意：/icons/ はサーバー全体の設定（Apache の Alias）で Apache のアイコンのフォルダーに向いていて、
+# ここに置いても見えない（.htaccess では変えられない）。サイトのアイコンは /img/ に置く
+
 # 親（public_html/）の .htaccess の書き換え（WordPress の「無ければ index.php へ」など）を、
 # このサイトに持ち込まない。ここで RewriteEngine を書くと、親の規則は引き継がれない
 <IfModule mod_rewrite.c>

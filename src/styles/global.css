@@ -314,7 +314,7 @@ button { font: inherit; color: inherit; }
 }
 .share-list a:hover { background: color-mix(in srgb, var(--accent) 22%, transparent); }
 .share-list svg { width: 16px; height: 16px; fill: currentColor; }
-.share-mi { display: block; width: 18px; height: 13px; background: currentColor; -webkit-mask: url(/icons/misskey-mi.svg) center / contain no-repeat; mask: url(/icons/misskey-mi.svg) center / contain no-repeat; }
+.share-mi { display: block; width: 18px; height: 13px; background: currentColor; -webkit-mask: url(/img/misskey-mi.svg) center / contain no-repeat; mask: url(/img/misskey-mi.svg) center / contain no-repeat; }
 /* 「このサイトについて」の連絡先（アイコンつき） */
 .entry-body .contact-list { list-style: none; padding-left: 0; }
 .entry-body .contact-list li { display: flex; align-items: center; gap: var(--sp-2); }
