@@ -80,9 +80,11 @@ const jsonLd = article
     ? {
         "@context": "https://schema.org",
         "@type": "WebSite",
+        // Google のサイト名は、ホームの正規の URL（末尾の / あり）と同じ url の WebSite から取る
+        "@id": `${SITE.url.replace(/\/$/, "")}/#website`,
         name: SITE.title,
         alternateName: SITE.reading,
-        url: SITE.url,
+        url: `${SITE.url.replace(/\/$/, "")}/`,
         description: desc,
         inLanguage: SITE.lang,
         publisher,
