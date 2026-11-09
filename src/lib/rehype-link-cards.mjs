@@ -106,7 +106,7 @@ export default function rehypeLinkCards() {
     const allLinks = file.data.astro?.frontmatter?.links ?? [];
     // 関連リンクはサイトの外へのリンクだけ。このサイトの記事は「関連記事」へ
     const links = allLinks.filter((l) => !internalSlug(l));
-    // この記事の写真（/<記事>/photos/）があれば、いちばん最後にそのカード
+    // 関連写真（/<記事>/photos/）があれば、いちばん最後にそのカード
     const slug = basename(file.path ?? "", ".md");
     const photos = publicGallery(slug);
     const galleryCard = photos.length
@@ -114,7 +114,7 @@ export default function rehypeLinkCards() {
           card(
             { url: galleryPath(slug), note: "自由なライセンスの写真。作者とライセンスを書けば、だれでも使えます" },
             {
-              title: `この記事の写真（${photos.length}枚）`,
+              title: `関連写真（${photos.length}枚）`,
               description: photos.slice(0, 4).map((p) => p.caption.replace(/（.*$/, "")).join("、"),
               image: photos[0].small,
             },

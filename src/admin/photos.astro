@@ -47,7 +47,7 @@ const count = groups.reduce((n, g) => n + g.list.length, 0);
         groups.map((g) => (
           <section id={g.slug}>
             <h2>{g.label ? g.label : <a href={articlePath(g.slug)}>{titles[g.slug] ?? g.slug}</a>}</h2>
-            {!g.label && <p><a href={galleryPath(g.slug)}>公開している「この記事の写真」</a></p>}
+            {!g.label && <p><a href={galleryPath(g.slug)}>公開している「関連写真」</a></p>}
             <ul class="cc-grid">
               {g.list.map((p) => (
                 <li class:list={["cc-card", { "cc-pick": p.pick, "cc-hide": p.hide }]}>
