@@ -169,14 +169,15 @@ button { font: inherit; color: inherit; }
 .site-nav > a:hover { color: var(--accent); }
 /* 狭い画面：1 段目にロゴと配色の切り替え、2 段目にリンク（折り返さず、入りきらなければ横に送る） */
 @media (max-width: 640px) {
-  .site-header-inner { gap: var(--sp-2) var(--sp-3); padding-block: var(--sp-3) var(--sp-2); }
-  .site-name { font-size: 1.375rem; }
+  .site-header-inner { gap: var(--sp-1) var(--sp-3); padding-block: var(--sp-2) var(--sp-1); }
+  .site-name { font-size: 1.25rem; }
   .site-nav {
-    order: 3; width: 100%; gap: var(--sp-5); font-size: .9375rem;
+    order: 3; width: 100%; gap: var(--sp-5); font-size: .875rem;
     overflow-x: auto; scrollbar-width: none;
   }
   .site-nav::-webkit-scrollbar { display: none; }
-  .site-nav > a { padding-block: 6px; }
+  .site-nav { line-height: 1.4; }
+  .site-nav > a { padding-block: 4px; }
 }
 
 .theme-select {
@@ -197,6 +198,11 @@ button { font: inherit; color: inherit; }
   cursor: pointer;
 }
 .theme-select button svg { width: 14px; height: 14px; }
+@media (max-width: 640px) {
+  .theme-select button { width: 24px; height: 24px; }
+  .theme-select button svg { width: 13px; height: 13px; }
+  .site-search-link { height: 26px; }
+}
 .theme-select button:hover { color: var(--fg); }
 .theme-select button[aria-pressed="true"] { color: var(--fg-strong); background: var(--bg-sub); }
 
