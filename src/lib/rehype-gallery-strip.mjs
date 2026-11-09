@@ -31,7 +31,7 @@ function stripHtml(place) {
   return `<div class="gallery-strip">
 <p class="gallery-strip-title">${esc(place)}の写真</p>
 <ul>${items}</ul>
-<p class="gallery-strip-more"><a href="/gallery/?q=${encodeURIComponent(place)}">${esc(place)}の写真をもっと見る（${list.length}枚）→</a></p>
+<p class="gallery-strip-more"><a href="/gallery/?q=${encodeURIComponent(place)}">${esc(place)}の写真をもっと見る（${list.length}枚）</a></p>
 </div>`;
 }
 

@@ -517,7 +517,13 @@ mark {
 .entry-body .link-card-desc { font-size: .8125rem; line-height: 1.6; color: var(--mut); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .entry-body .link-card-site { font-size: .75rem; color: var(--mut-soft); overflow-wrap: anywhere; }
 .entry-body .link-card-note { margin-top: var(--sp-1); font-size: .875rem; line-height: 1.6; color: var(--fg); }
-.entry-body .link-card-note::before { content: "→ "; color: var(--accent); }
+/* 矢印は文字（→）にしない（端末の書体によって形が変わる）。Font Awesome Free の arrow-right（Icons: CC BY 4.0）を色だけ変えて描く */
+.entry-body .link-card-note::before, .entry-body .gallery-strip-more a::after {
+  content: ""; display: inline-block; width: .8em; height: .8em; vertical-align: -.02em; background: var(--accent);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 448 512%22%3E%3Cpath d=%22M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z%22/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 448 512%22%3E%3Cpath d=%22M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z%22/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.entry-body .link-card-note::before { margin-right: .4em; }
+.entry-body .gallery-strip-more a::after { margin-left: .3em; }
 @media (max-width: 520px) {
   .entry-body .link-card-img { width: 96px; }
   .entry-body .link-card-img-tall { width: 56px; }
@@ -1035,5 +1041,5 @@ tr[hidden] { display: none; }
 /* ホームの記事のカードの更新日 */
 .card-date { display: block; margin-top: var(--sp-1); font-size: .75rem; color: var(--mut); }
 /* 記事のいちばん下の、公開日・最終更新 */
-.entry-footer { margin-top: var(--sp-6); padding-top: var(--sp-3); border-top: 1px solid var(--line); font-size: .8125rem; color: var(--mut); }
+.entry-footer { margin-top: var(--sp-7); font-size: .8125rem; color: var(--mut); }
 .entry-footer p { margin: 0; }

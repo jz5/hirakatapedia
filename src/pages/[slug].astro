@@ -45,10 +45,7 @@ const cover = d.cover ? photo(entry.id, d.cover) : undefined;
     <ArticleBody><Content /></ArticleBody>
 
     <footer class="entry-footer" data-pagefind-ignore>
-      <p>
-        公開 <time datetime={d.published.toISOString().slice(0, 10)}>{jaDate(d.published)}</time>
-        {d.updated && <>・最終更新 <time datetime={d.updated.toISOString().slice(0, 10)}>{jaDate(d.updated)}</time></>}
-      </p>
+      <p>公開 <time datetime={d.published.toISOString().slice(0, 10)}>{jaDate(d.published)}</time>・最終更新 <time datetime={last.toISOString().slice(0, 10)}>{jaDate(last)}</time></p>
     </footer>
   </article>
 
