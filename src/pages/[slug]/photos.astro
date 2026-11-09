@@ -1,7 +1,7 @@
 ---
 /**
  * 記事の写真ギャラリー（/<記事>/photos/）。記事に使った写真も、使わなかった写真も並べる。
- * 写真は Wikimedia Commons の自由ライセンスのもの。一覧は content/galleries/<記事>.yaml（hide のものは出さない）
+ * 一覧は content/galleries/<記事>.yaml（hide のものは出さない）。使うときの条件の説明は /gallery/#use にまとめている
  */
 import { allArticles, articlePath } from "../../lib/articles";
 import { publicGallery, galleryPath, licenseLabel, creditText, sourceName } from "../../lib/photos.mjs";
@@ -24,7 +24,7 @@ const title = `写真ギャラリー：${d.title}`;
 
 <Base
   title={title}
-  description={`記事「${d.title}」に関係する写真 ${photos.length}枚。Wikimedia Commons の自由なライセンスの写真で、条件を守ればだれでも使えます。`}
+  description={`記事「${d.title}」に関係する写真 ${photos.length}枚。条件を守ればだれでも使える写真です。`}
   path={galleryPath(entry.id)}
   image={photos[0].large.src}
   source={`content/galleries/${entry.id}.yaml`}
@@ -38,7 +38,7 @@ const title = `写真ギャラリー：${d.title}`;
 
     <div class="entry-body">
       <p class="gallery-note">
-        ここの写真は、撮った人や国の機関が、だれでも使える条件で公開しているものです。Wikimedia Commons や Flickr の写真のほか、国土地理院の空中写真などもあります。<strong>それぞれの条件を守れば、だれでも使えます</strong>。CC BY・CC BY-SA は「作者名とライセンスを書く」ことが条件で、CC BY-SA は手を加えた画像も同じライセンスで公開します。CC0 とパブリックドメインは条件なし、国土地理院の画像は出典を書けば使えます。このサイトで傾きや明るさを調整したり、つなぎ合わせたりした画像には「加工あり」と書いています。元の画像とくわしい条件は、それぞれの「〜で見る」から確かめてください。
+        どれも、条件を守ればだれでも使える写真です（<a href="/gallery/#use">使うときの条件</a>）。それぞれの「〜で見る」から、元の画像とくわしい条件を確かめてください。
       </p>
 
       <ul class="gallery-grid">
