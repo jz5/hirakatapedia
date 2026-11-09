@@ -92,6 +92,8 @@ links:
 
 分館8つは、市が選んだ会社などが運営する「指定管理者制度」です。中央図書館と分室は、市の職員が運営しています[^nenpo2025]。
 
+<div data-gallery="枚方市立図書館"></div>
+
 ## どれくらい借りられている？
 
 <div data-chart="library-lending"></div>

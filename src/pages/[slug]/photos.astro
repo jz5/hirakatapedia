@@ -1,6 +1,7 @@
 ---
 /**
- * 記事の写真ギャラリー（/<記事>/photos/）。記事に使った写真も、使わなかった写真も並べる。
+ * この記事の写真（/<記事>/photos/）。記事のために選んだ写真（記事に使った写真も、使わなかった写真も）を、記事に合わせた説明つきで並べる。
+ * サイト全体の写真ギャラリー（/gallery/、「枚方の写真」）とは別。記事の中の場所の写真の欄（<div data-gallery>）は、そちらへつなぐ。
  * 一覧は content/galleries/<記事>.yaml（hide のものは出さない）。使うときの条件の説明は /gallery/#use にまとめている
  */
 import { allArticles, articlePath } from "../../lib/articles";
@@ -20,7 +21,7 @@ export const getStaticPaths = (async () => {
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { entry, photos } = Astro.props as Props;
 const d = entry.data;
-const title = `写真ギャラリー：${d.title}`;
+const title = `この記事の写真：${d.title}`;
 ---
 
 <Base
@@ -33,7 +34,7 @@ const title = `写真ギャラリー：${d.title}`;
   <article class="entry">
     <header class="entry-header">
       <p class="gallery-back"><a href={articlePath(entry.id)}>← 記事に戻る</a></p>
-      <h1>写真ギャラリー（{photos.length}枚）</h1>
+      <h1>この記事の写真（{photos.length}枚）</h1>
       <p class="entry-meta">記事「<a href={articlePath(entry.id)}>{d.title}</a>」に関係する写真です。</p>
     </header>
 

@@ -43,6 +43,13 @@ const cover = d.cover ? photo(entry.id, d.cover) : undefined;
     <div class="toc-inline" data-pagefind-ignore><Toc headings={headings} inline /></div>
 
     <ArticleBody><Content /></ArticleBody>
+
+    <footer class="entry-footer" data-pagefind-ignore>
+      <p>
+        公開 <time datetime={d.published.toISOString().slice(0, 10)}>{jaDate(d.published)}</time>
+        {d.updated && <>・最終更新 <time datetime={d.updated.toISOString().slice(0, 10)}>{jaDate(d.updated)}</time></>}
+      </p>
+    </footer>
   </article>
 
   <Toc slot="toc" headings={headings} />

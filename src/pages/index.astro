@@ -1,5 +1,5 @@
 ---
-import { allArticles, articlePath } from "../lib/articles";
+import { allArticles, articlePath, lastModified, jaDate } from "../lib/articles";
 import { SITE } from "../lib/site";
 import Base from "../layouts/Base.astro";
 import { photo } from "../lib/photos.mjs";
@@ -32,6 +32,7 @@ const thumb = (e: (typeof list)[number]) => {
             <span class="card-text">
               <span class="card-title">{e.data.title}</span>
               <span class="card-desc">{e.data.description}</span>
+              <span class="card-date">更新 <time datetime={lastModified(e).toISOString().slice(0, 10)}>{jaDate(lastModified(e))}</time></span>
             </span>
           </a>
         </li>

@@ -486,7 +486,7 @@ mark {
 .photo .photo-credit { display: block; font-size: .75rem; color: var(--mut-soft); }
 .photo .photo-credit a { color: inherit; }
 
-/* 写真ギャラリー（/<記事>/photos/） */
+/* この記事の写真（/<記事>/photos/） */
 .gallery-back { margin: 0 0 var(--sp-2); font-size: .875rem; }
 .gallery-note { font-size: .875rem; line-height: 1.7; color: var(--mut); }
 .entry-body .gallery-grid { list-style: none; padding: 0; margin: var(--sp-5) 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--sp-5) var(--sp-4); }
@@ -1031,3 +1031,9 @@ tr[hidden] { display: none; }
 .entry-body .search-results a { font-weight: 700; }
 .entry-body .search-results p { margin: var(--sp-1) 0 0; font-size: .875rem; color: var(--mut); }
 .entry-body .search-also { margin-top: var(--sp-4); font-size: .875rem; color: var(--mut); }
+
+/* ホームの記事のカードの更新日 */
+.card-date { display: block; margin-top: var(--sp-1); font-size: .75rem; color: var(--mut); }
+/* 記事のいちばん下の、公開日・最終更新 */
+.entry-footer { margin-top: var(--sp-6); padding-top: var(--sp-3); border-top: 1px solid var(--line); font-size: .8125rem; color: var(--mut); }
+.entry-footer p { margin: 0; }
