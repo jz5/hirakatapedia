@@ -2,7 +2,7 @@
  * 記事の frontmatter の links を、「出典・注釈」の前に「関連リンク」のカードとして並べる。
  * カードの中身（題名・説明・サムネイル）は content/data/link-cards.json（node scripts/link-cards.mjs で作る）。
  * 関連リンクはサイトの外へのリンクだけ（と写真ギャラリー）。links に書いたこのサイトの記事（url が「/」で始まる）は、
- * そのあとの「関連する記事」に、なぜリンクするか（note）つきで出す。3 件に足りないときは
+ * そのあとの「関連記事」に、なぜリンクするか（note）つきで出す。3 件に足りないときは
  *   1. この記事にリンクしている記事（ほかの記事の links にこの記事がある） 2. よく読まれている記事（content/popular.json） 3. 最近更新した記事
  * の順に足す。見出しは要素で入れるので、目次にも出る。
  */
@@ -41,7 +41,8 @@ function card(link, c) {
         el("span", { className: ["link-card-text"] }, [
           el("span", { className: ["link-card-title"] }, [text(c.title)]),
           ...(c.description ? [el("span", { className: ["link-card-desc"] }, [text(c.description)])] : []),
-          el("span", { className: ["link-card-site"] }, [text(host)]),
+          // どこのサイトか（このサイトの中へのリンクには出さない）
+          ...(host ? [el("span", { className: ["link-card-site"] }, [text(host)])] : []),
           // なぜリンクしたか（リンク先に何があるか）。カードの中のいちばん下に
           ...(link.note ? [el("span", { className: ["link-card-note"] }, [text(link.note)])] : []),
         ]),
@@ -64,7 +65,7 @@ function articles() {
 
 const internalSlug = (l) => l.url?.match(/^\/([^/]+)\/$/)?.[1];
 
-/** 「関連する記事」に出す記事。links に書いた記事（note つき）と、足りない分（MORE 件まで） */
+/** 「関連記事」に出す記事。links に書いた記事（note つき）と、足りない分（MORE 件まで） */
 function moreArticles(slug, links) {
   const all = articles();
   const notes = new Map(links.filter(internalSlug).map((l) => [internalSlug(l), l.note]));
@@ -92,10 +93,10 @@ function moreSection(slug, links) {
     try {
       image = a.cover ? photo(a.slug, a.cover).small : undefined;
     } catch {}
-    return card({ url: `/${a.slug}/`, note: a.note }, { title: a.title, description: a.description, site: "枚方pedia", image });
+    return card({ url: `/${a.slug}/`, note: a.note }, { title: a.title, description: a.description, image });
   });
-  return el("section", { className: ["link-cards", "more-articles"], ariaLabelledby: "関連する記事" }, [
-    el("h2", { id: "関連する記事" }, [text("関連する記事")]),
+  return el("section", { className: ["link-cards", "more-articles"], ariaLabelledby: "関連記事", dataPagefindIgnore: "" }, [
+    el("h2", { id: "関連記事" }, [text("関連記事")]),
     el("ul", { className: ["link-card-list"] }, items),
   ]);
 }
@@ -103,7 +104,7 @@ function moreSection(slug, links) {
 export default function rehypeLinkCards() {
   return (tree, file) => {
     const allLinks = file.data.astro?.frontmatter?.links ?? [];
-    // 関連リンクはサイトの外へのリンクだけ。このサイトの記事は「関連する記事」へ
+    // 関連リンクはサイトの外へのリンクだけ。このサイトの記事は「関連記事」へ
     const links = allLinks.filter((l) => !internalSlug(l));
     // 写真ギャラリーがあれば、いちばん最後にそのカード
     const slug = basename(file.path ?? "", ".md");
@@ -115,7 +116,6 @@ export default function rehypeLinkCards() {
             {
               title: `写真ギャラリー（${photos.length}枚）`,
               description: photos.slice(0, 4).map((p) => p.caption.replace(/（.*$/, "")).join("、"),
-              site: "枚方pedia",
               image: photos[0].small,
             },
           ),
@@ -125,6 +125,8 @@ export default function rehypeLinkCards() {
     const insert = (sections) => {
       // 「出典・注釈」（脚注の section）の前に入れる。脚注がなければいちばん最後
       const i = tree.children.findIndex((n) => n.type === "element" && n.tagName === "section" && n.properties?.dataFootnotes !== undefined);
+      // サイトの検索（Pagefind）には、関連リンク・関連記事・出典を入れない（本文だけ）
+      if (i >= 0) tree.children[i].properties.dataPagefindIgnore = "";
       if (i < 0) tree.children.push(...sections);
       else tree.children.splice(i, 0, ...sections);
     };
@@ -139,7 +141,7 @@ export default function rehypeLinkCards() {
       if (!c) file.fail(`リンク「${key}」のカードがありません。node scripts/link-cards.mjs を回してください`);
       return card(link, c);
     });
-    const section = el("section", { className: ["link-cards"], ariaLabelledby: "関連リンク" }, [
+    const section = el("section", { className: ["link-cards"], ariaLabelledby: "関連リンク", dataPagefindIgnore: "" }, [
       el("h2", { id: "関連リンク" }, [text("関連リンク")]),
       el("ul", { className: ["link-card-list"] }, [...items, ...galleryCard]),
     ]);

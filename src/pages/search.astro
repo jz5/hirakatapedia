@@ -1,0 +1,87 @@
+---
+/**
+ * サイトの検索（/search/、?q=言葉）。記事の本文だけを探す。
+ * 索引は Pagefind（pnpm build のあと pagefind --site dist で dist/pagefind/ に作る）。索引に入れるのは記事の本文（data-pagefind-body）だけで、
+ * 目次・関連リンク・関連記事・出典は入れない。写真とごみの出し方は、それぞれの検索（/gallery/?q=・/data/gomi/?q=）へ案内する。
+ * 画面は Pagefind の API（pagefind.js）で自分で組む（既定の画面は大きく、サイトの見た目と合わないので使わない）。
+ * 開発サーバー（pnpm dev）では索引が無いので、pnpm build と pnpm preview で確かめる
+ */
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="記事の検索" description="枚方pedia の記事を検索します。" path="/search/" noindex>
+  <article class="entry">
+    <header class="entry-header">
+      <h1>記事の検索</h1>
+    </header>
+    <div class="entry-body">
+      <div class="data-tools search-tools">
+        <label class="data-search">
+          <span class="visually-hidden">記事を検索</span>
+          <input type="search" placeholder="言葉で検索（例：香里団地、TSUTAYA、図書館）" autocomplete="off" enterkeyhint="search" data-search-q />
+        </label>
+        <p class="data-count" aria-live="polite" data-search-count></p>
+      </div>
+      <ol class="search-results" data-search-results></ol>
+      <p class="search-also" data-search-also hidden>
+        写真は<a href="/gallery/" data-search-gallery>写真ギャラリー</a>、ごみの出し方は<a href="/data/gomi/" data-search-gomi>ごみの分別</a>でも探せます。
+      </p>
+      <noscript><p>検索は JavaScript を使います。</p></noscript>
+    </div>
+  </article>
+</Base>
+
+<script>
+  type Result = { url: string; excerpt: string; meta: { title?: string } };
+  type Pagefind = {
+    init: () => Promise<void>;
+    debouncedSearch: (q: string, opts?: object, ms?: number) => Promise<{ results: { data: () => Promise<Result> }[] } | null>;
+  };
+
+  const $q = document.querySelector<HTMLInputElement>("[data-search-q]")!;
+  const $count = document.querySelector<HTMLElement>("[data-search-count]")!;
+  const $list = document.querySelector<HTMLOListElement>("[data-search-results]")!;
+  const $also = document.querySelector<HTMLElement>("[data-search-also]")!;
+  const $gallery = document.querySelector<HTMLAnchorElement>("[data-search-gallery]")!;
+  const $gomi = document.querySelector<HTMLAnchorElement>("[data-search-gomi]")!;
+  const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+  let pagefind: Pagefind | undefined;
+  try {
+    // 索引はビルドのあとにできるファイルなので、Vite にまとめさせない
+    const path = "/pagefind/pagefind.js";
+    pagefind = (await import(/* @vite-ignore */ path)) as Pagefind;
+    await pagefind.init();
+  } catch {
+    $count.textContent = "検索の索引がありません（pnpm build のあとに使えます）";
+  }
+
+  async function run() {
+    const q = $q.value.trim();
+    // 戻るで同じ結果に戻れるように、言葉を URL に残す
+    const u = new URL(location.href);
+    q ? u.searchParams.set("q", q) : u.searchParams.delete("q");
+    history.replaceState(null, "", u);
+    $gallery.href = q ? `/gallery/?q=${encodeURIComponent(q)}` : "/gallery/";
+    $gomi.href = q ? `/data/gomi/?q=${encodeURIComponent(q)}` : "/data/gomi/";
+    $also.hidden = !q;
+    if (!pagefind) return;
+    if (!q) {
+      $list.innerHTML = "";
+      $count.textContent = "";
+      return;
+    }
+    const r = await pagefind.debouncedSearch(q, {}, 200);
+    if (!r) return; // あとから打った言葉の検索に置き換わった
+    const items = await Promise.all(r.results.slice(0, 20).map((x) => x.data()));
+    $count.textContent = items.length ? `${r.results.length} 件の記事` : "見つかりませんでした";
+    $list.innerHTML = items
+      .map((d) => `<li><a href="${esc(d.url)}">${esc(d.meta.title ?? d.url)}</a><p>${d.excerpt}</p></li>`)
+      .join("");
+  }
+
+  $q.addEventListener("input", run);
+  $q.value = new URLSearchParams(location.search).get("q") ?? "";
+  if ($q.value) run();
+  else $q.focus();
+</script>

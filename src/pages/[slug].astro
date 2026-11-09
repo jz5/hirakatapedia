@@ -31,16 +31,16 @@ const cover = d.cover ? photo(entry.id, d.cover) : undefined;
   image={cover?.large.src}
   source={`content/articles/${entry.id}.md`}
 >
-  <article class="entry">
+  <article class="entry" data-pagefind-body>
     <header class="entry-header">
       <h1>{d.title}</h1>
-      <p class="entry-meta">最終更新 <time datetime={last.toISOString()}>{jaDate(last)}</time></p>
+      <p class="entry-meta" data-pagefind-ignore>最終更新 <time datetime={last.toISOString()}>{jaDate(last)}</time></p>
     </header>
 
 
 
     {/* 目次は 2 か所に置く。広い画面では右の列（slot="toc"）、それ以外は題名の下 */}
-    <div class="toc-inline"><Toc headings={headings} inline /></div>
+    <div class="toc-inline" data-pagefind-ignore><Toc headings={headings} inline /></div>
 
     <ArticleBody><Content /></ArticleBody>
   </article>

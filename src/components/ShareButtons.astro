@@ -1,6 +1,6 @@
 ---
 /**
- * このページを SNS で共有するボタン（右の列）。X・Misskey・Mastodon・Bluesky・Threads・LINE と、リンクのコピー。
+ * このページを SNS で共有するボタン（右の列）。X・Misskey・Mastodon・Bluesky・Threads・LINE と、題名とリンクのコピー。
  * アイコン：Font Awesome Free（Icons: CC BY 4.0）。Misskey は misskey-dev/assets の mi.svg（CC BY-SA 4.0）を色だけ変えて使う。
  * LINE のアイコンは枠いっぱいの形で小さく見えるので、ほかより大きく出す（share-big）。表示は /license/ に書いている
  */
@@ -50,22 +50,22 @@ const link = icon(linkSvg);
       ))
     }
     <li>
-      <button type="button" class="share-copy" data-url={url} aria-label="リンクをコピー" title="リンクをコピー">
+      <button type="button" class="share-copy" data-text={text} aria-label="題名とリンクをコピー" title="題名とリンクをコピー">
         <svg viewBox={link.viewBox} aria-hidden="true" focusable="false"><path d={link.d} /></svg>
       </button>
     </li>
   </ul>
-  <p class="share-copied" role="status" aria-live="polite" hidden>リンクをコピーしました</p>
+  <p class="share-copied" role="status" aria-live="polite" hidden>コピーしました</p>
 </section>
 
 <script>
-  // リンクをコピー（ページの URL）。できたら下に「コピーしました」を少しのあいだ出す
+  // SNS で共有するときと同じ文（題名と URL）をコピー。できたら下に「コピーしました」を少しのあいだ出す
   for (const b of document.querySelectorAll<HTMLButtonElement>(".share-copy")) {
     const msg = b.closest(".share")?.querySelector<HTMLElement>(".share-copied");
     b.addEventListener("click", async () => {
       try {
-        await navigator.clipboard.writeText(b.dataset.url ?? location.href);
-        if (msg) msg.textContent = "リンクをコピーしました";
+        await navigator.clipboard.writeText(b.dataset.text ?? location.href);
+        if (msg) msg.textContent = "コピーしました";
       } catch {
         if (msg) msg.textContent = "コピーできませんでした";
       }

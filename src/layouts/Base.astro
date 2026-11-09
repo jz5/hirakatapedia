@@ -3,6 +3,7 @@ import { SITE, LICENSE, OPERATOR, AUTHOR } from "../lib/site";
 import ThemeSelect from "../components/ThemeSelect.astro";
 import Sidebar from "../components/Sidebar.astro";
 import githubSvg from "@fortawesome/fontawesome-free/svgs/brands/github.svg?raw";
+import searchSvg from "@fortawesome/fontawesome-free/svgs/solid/magnifying-glass.svg?raw";
 import Analytics from "../components/Analytics.astro";
 // 本文の書体（LINE Seed JP）。自分のサーバーから配る（Google Fonts から読まない）
 import "@fontsource/line-seed-jp/400.css";
@@ -53,6 +54,7 @@ const githubUrl = sourceFile ? `${REPO}/commits/main/${sourceFile}` : REPO;
 const githubLabel = sourceFile ? "GitHub（このページの変更の履歴）" : "GitHub（記事とプログラム）";
 // アイコンは Font Awesome Free（Icons: CC BY 4.0）
 const github = { viewBox: githubSvg.match(/viewBox="([^"]+)"/)![1], d: githubSvg.match(/<path d="([^"]+)"/)![1] };
+const searchIcon = { viewBox: searchSvg.match(/viewBox="([^"]+)"/)![1], d: searchSvg.match(/<path d="([^"]+)"/)![1] };
 
 // SNS で共有したときの画像。ページの画像（記事の cover・写真）が無いときは、サイト共通の画像（public/og.png。scripts/og-image.mjs で作る）
 const ogImage = new URL(image ?? "/og.png", SITE.url).href;
@@ -85,6 +87,11 @@ const jsonLd = article
         inLanguage: SITE.lang,
         publisher,
         license: LICENSE.url,
+        potentialAction: {
+          "@type": "SearchAction",
+          target: { "@type": "EntryPoint", urlTemplate: `${SITE.url.replace(/\/$/, "")}/search/?q={search_term_string}` },
+          "query-input": "required name=search_term_string",
+        },
       }
     : pageLd
       ? { "@context": "https://schema.org", ...pageLd }
@@ -143,6 +150,7 @@ const jsonLd = article
           <a href="/data/">データ</a>
           <a href="/sns/">SNS</a>
           <a href="/about/">このサイトについて</a>
+          <a href="/search/" class="site-nav-search" aria-label="記事の検索" title="記事の検索"><svg viewBox={searchIcon.viewBox} aria-hidden="true" focusable="false"><path d={searchIcon.d} /></svg></a>
         </nav>
         <ThemeSelect />
       </div>
