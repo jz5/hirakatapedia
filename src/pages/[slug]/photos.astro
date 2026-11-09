@@ -4,7 +4,8 @@
  * 一覧は content/galleries/<記事>.yaml（hide のものは出さない）。使うときの条件の説明は /gallery/#use にまとめている
  */
 import { allArticles, articlePath } from "../../lib/articles";
-import { publicGallery, galleryPath, licenseLabel, creditText, sourceName } from "../../lib/photos.mjs";
+import { publicGallery, galleryPath } from "../../lib/photos.mjs";
+import PhotoCard from "../../components/PhotoCard.astro";
 import Base from "../../layouts/Base.astro";
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 
@@ -42,27 +43,7 @@ const title = `写真ギャラリー：${d.title}`;
       </p>
 
       <ul class="gallery-grid">
-        {
-          photos.map((p) => (
-            <li class="gallery-item" id={p.file}>
-              <a class="gallery-img" href={p.large.src}>
-                <img src={p.small.src} width={p.small.width} height={p.small.height} alt={p.caption} loading="lazy" decoding="async" />
-              </a>
-              <p class="gallery-caption">{p.caption}</p>
-              <p class="gallery-credit">
-                {p.kind ?? "写真"}：{p.author} / {p.licenseUrl ? <a href={p.licenseUrl} rel="license noopener">{licenseLabel(p)}</a> : licenseLabel(p)}
-                {p.edited && <>（加工あり）</>}
-              </p>
-              <p class="gallery-links">
-                <a href={p.page} rel="noopener">{sourceName(p)}で見る</a>{p.original.width > 0 && <>（元の大きさ {p.original.width}×{p.original.height}）</>}
-              </p>
-              <details class="gallery-howto">
-                <summary>使うときの表記の例</summary>
-                <p><code>{creditText(p)}</code></p>
-              </details>
-            </li>
-          ))
-        }
+        {photos.map((p) => <PhotoCard p={p} />)}
       </ul>
     </div>
   </article>

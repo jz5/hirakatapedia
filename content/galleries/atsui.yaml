@@ -15,6 +15,7 @@
   seen: true
 - file: "gsi-sansen.jpg"
   caption: "桂川・宇治川・木津川が合わさって淀川になるあたり。真ん中の山は男山（石清水八幡宮）。左下へ流れるのが淀川で、この先に枚方がある"
+  seen: true
   gsi:
     layer: seamlessphoto
     name: 全国最新写真（シームレス）
@@ -25,6 +26,7 @@
     east: 135.735
 - file: "gsi-osakawan-hirakata.jpg"
   caption: "大阪湾から枚方まで。淀川の河口から枚方までは25kmほどある（ランドサットの衛星画像）"
+  seen: true
   gsi:
     layer: lndst
     name: 全国ランドサットモザイク画像

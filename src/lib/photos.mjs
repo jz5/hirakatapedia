@@ -9,6 +9,7 @@ import { parse } from "yaml";
 /**
  * @typedef {{ src: string, width: number, height: number }} Img
  * @typedef {{
+ *   galleryId?: string, authorUrl?: string,
  *   file: string, caption: string, pick?: boolean, seen?: boolean, hide?: boolean, note?: string,
  *   page: string, author: string, license: string, licenseUrl: string, date: string, description: string,
  *   original: { width: number, height: number }, small: Img, large: Img, fetched: string, edited?: string, sourceName?: string, kind?: string
@@ -17,6 +18,35 @@ import { parse } from "yaml";
 
 const root = process.cwd();
 const data = () => JSON.parse(readFileSync(join(root, "content/data/photos.json"), "utf8"));
+
+/**
+ * 写真ギャラリー（content/data/gallery/*.json）に入っている写真。ファイル名（Commons の「_」と空白はそろえる）→ 写真
+ * 撮影者・ライセンス・出典は、写真ギャラリーにある写真はそちらを使う（記事と写真ギャラリーで表記をそろえる）。
+ * 画像は記事用のもの（public/photos/。SNS で出る JPEG と、傾きなどを直したもの）を使う
+ */
+const key = (file) => file.replace(/_/g, " ").trim();
+let galleryIndex;
+const inGallery = (file) => {
+  if (!galleryIndex) {
+    galleryIndex = new Map();
+    const dir = join(root, "content/data/gallery");
+    for (const f of readdirSync(dir).filter((f) => f.endsWith(".json")))
+      for (const g of JSON.parse(readFileSync(join(dir, f), "utf8")).photos) galleryIndex.set(key(g.file), g);
+  }
+  return galleryIndex.get(key(file));
+};
+
+/** 写真ギャラリーで外している写真（gallery-config.yaml の excludeFiles）。記事で使っていたら知らせる */
+let excluded;
+const isExcluded = (file) => {
+  excluded ??= new Set(Object.keys(parse(readFileSync(join(root, "content/data/gallery-config.yaml"), "utf8")).excludeFiles ?? {}).map(key));
+  return excluded.has(key(file));
+};
+const warned = new Set();
+const warnOnce = (msg) => {
+  if (!warned.has(msg)) console.warn(`[写真] ${msg}`);
+  warned.add(msg);
+};
 
 /**
  * 写真の一覧がある記事（content/galleries/*.yaml）
@@ -39,7 +69,12 @@ export function gallery(slug) {
   return (parse(readFileSync(path, "utf8")) ?? []).map((p) => {
     const info = d[p.file];
     if (!info) throw new Error(`写真「${p.file}」のデータがありません。node scripts/photos.mjs を回してください`);
-    return { ...p, ...info };
+    if (!p.hide && !p.seen) warnOnce(`${slug}.yaml の「${p.file}」は seen: true が無い（画像を見て説明を確かめる）`);
+    if (!p.hide && isExcluded(p.file)) warnOnce(`${slug}.yaml の「${p.file}」は、写真ギャラリーで外している写真（gallery-config.yaml の excludeFiles）`);
+    const g = inGallery(p.file);
+    if (!g) return { ...p, ...info };
+    // 写真ギャラリーにある写真は、撮影者・ライセンス・出典をそちらから。写真のページ（/gallery/<番号>/）へもつなぐ
+    return { ...p, ...info, galleryId: g.id, author: g.author.name, authorUrl: g.author.url, license: g.license, licenseUrl: g.licenseUrl, page: g.source, sourceName: g.sourceName };
   });
 }
 
@@ -59,6 +94,7 @@ export const publicGallery = (slug) => gallery(slug).filter((p) => !p.hide);
 export function photo(slug, file) {
   const p = gallery(slug).find((x) => x.file === file);
   if (!p) throw new Error(`写真「${file}」は content/galleries/${slug}.yaml にありません`);
+  if (p.hide) throw new Error(`写真「${file}」は ${slug}.yaml で hide なのに、本文かアイキャッチで使っている`);
   return p;
 }
 

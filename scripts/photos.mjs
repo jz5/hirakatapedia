@@ -1,5 +1,7 @@
 /**
- * 記事の写真（Wikimedia Commons の自由ライセンスの写真）を取ってきて、サイトの中に置く。
+ * 記事の写真（Wikimedia Commons・Flickr・国土地理院など、だれでも使える条件の写真）を取ってきて、サイトの中に置く。
+ * 写真ギャラリーにも入っている写真は、ページに出す撮影者・ライセンス・出典は写真ギャラリーの情報を使う（src/lib/photos.mjs）。
+ * Commons の撮影者の取り出し方は scripts/lib/commons-author.mjs（写真ギャラリーと共通）。
  *
  *   node scripts/photos.mjs            新しい写真だけ取りにいく
  *   node scripts/photos.mjs --refresh  全部取り直す（ライセンスや作者が変わっていないかの確認にも）
@@ -59,6 +61,7 @@ import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { gsiImage, GSI_LIST } from "./lib/gsi-image.mjs";
+import { commonsAuthor, firstUploader } from "./lib/commons-author.mjs";
 import sharp from "sharp";
 import { parse } from "yaml";
 
@@ -104,12 +107,6 @@ for (let i = 0; i < todo.length; i += 50) {
   }
 }
 
-async function firstUploader(file) {
-  const url = `https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=user&iilimit=50&titles=${encodeURIComponent(`File:${file}`)}`;
-  const q = (await (await fetch(url, { headers: { "User-Agent": UA } })).json()).query;
-  const list = Object.values(q.pages)[0].imageinfo ?? [];
-  return list[list.length - 1]?.user ?? "";
-}
 
 const errors = [];
 for (const file of todo) {
@@ -119,16 +116,14 @@ for (const file of todo) {
     continue;
   }
   const m = ii.extmetadata ?? {};
-  // 作者の欄が「Own work」だけのことがある。そのときは最初にアップロードした人
-  // （いまの版はボットが変換し直したものもあるので、いちばん古い版の人）
-  let author = strip(m.Artist?.value);
-  if (!author || /^own work$/i.test(author)) author = await firstUploader(file);
-  // 「(talk)」「User:」は、Commons の利用者ページへのリンクの名残り
-  author = author.replace(/\s*\(talk\)/gi, "").replace(/^User:/, "").trim();
+  // 撮影者（scripts/lib/commons-author.mjs。写真ギャラリーと同じ取り出し方）。「Own work」だけのときは最初にアップロードした人
+  const au = commonsAuthor(m.Artist?.value) ?? (await firstUploader(file, async (u) => (await fetch(u, { headers: { "User-Agent": UA } })).json()));
+  const author = au?.name ?? "";
   cache[file] = {
     source: ii.thumburl ?? ii.url,
     page: ii.descriptionurl,
     author,
+    authorUrl: au?.url ?? "",
     license: strip(m.LicenseShortName?.value),
     licenseUrl: m.LicenseUrl?.value ?? "",
     date: strip(m.DateTimeOriginal?.value).slice(0, 10),

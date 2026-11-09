@@ -3,6 +3,7 @@
  * 外す分類・写真、分類の日本語の名前は gallery-config.yaml（root・excludeCategories・excludeFiles・groups・labels）
  */
 import { BBOX, CONFIG, getJson, inside, photo, placesIn, strip, when } from "./common.mjs";
+import { commonsAuthor, firstUploader } from "../lib/commons-author.mjs";
 
 const API = "https://commons.wikimedia.org/w/api.php";
 const api = (params) => getJson(`${API}?${new URLSearchParams({ ...params, format: "json", formatversion: "2" })}`, { gap: 200 });
@@ -40,12 +41,9 @@ async function walk() {
   return files;
 }
 
-function author(html = "") {
-  const a = html.match(/<a[^>]+href="([^"]+)"[^>]*>(.*?)<\/a>/);
-  const name = strip(html) || "不明";
-  const url = a ? (a[1].startsWith("//") ? `https:${a[1]}` : a[1].startsWith("/") ? `https://commons.wikimedia.org${a[1]}` : a[1]) : "";
-  return { name: name.length > 80 ? strip(a?.[2] ?? name).slice(0, 80) : name, url };
-}
+/** 撮影者（scripts/lib/commons-author.mjs。記事の写真と同じ取り出し方）。自作の決まり文句だけのときは、最初にアップロードした人 */
+const author = async (file, html) =>
+  commonsAuthor(html) ?? (await firstUploader(file, (u) => getJson(u, { gap: 200 }))) ?? { name: "不明", url: "" };
 
 /** 商用利用でき、改変もできるもの：CC BY・CC BY-SA（バージョン問わず）・CC0・パブリックドメイン・Attribution。NC・ND は使わない */
 const okLicense = (s = "") => (/^(CC BY(-SA)? [\d.]+|CC0|Public domain|PD)/i.test(s.trim()) || s.trim() === "Attribution") && !/NC|ND/.test(s);
@@ -132,7 +130,7 @@ export async function collect() {
           file,
           title: file.replace(/\.[^.]+$/, "").replace(/_/g, " "),
           desc: strip(m.ImageDescription?.value).slice(0, 400) || null,
-          author: author(m.Artist?.value),
+          author: await author(file, m.Artist?.value),
           license: lic,
           licenseUrl: m.LicenseUrl?.value ?? "",
           source: `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file.replace(/ /g, "_"))}`,

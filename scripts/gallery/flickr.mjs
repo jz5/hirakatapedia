@@ -86,11 +86,24 @@ export async function collect({ commonsFlickrIds = new Set() } = {}) {
       }),
     );
   }
+  // 撮影者の名前は、本人が設定している表示名（realname）。無ければアカウント名。記事の写真（content/galleries の source.author）とそろえる
+  const names = new Map();
+  for (const p of [...out, ...(readSite("flickr")?.photos ?? [])]) {
+    const owner = p.author.url.match(/people\/([^/]+)\//)?.[1];
+    if (!owner || names.has(owner)) continue;
+    const d = await call({ method: "flickr.people.getInfo", user_id: owner }).catch(() => null);
+    names.set(owner, strip(d?.person?.realname?._content ?? "") || null);
+  }
+  const named = (p) => {
+    const real = names.get(p.author.url.match(/people\/([^/]+)\//)?.[1]);
+    return real ? { ...p, author: { ...p.author, name: real } } : p;
+  };
+  out.splice(0, out.length, ...out.map(named));
   // Flickr の検索は、同じ条件でも毎回少しずつ結果が違う。前に集めた写真で、今回見つからなかったもの（外す一覧に無いもの）も残す
   const prev = readSite("flickr")?.photos ?? [];
   const now = new Set(out.map((p) => p.file));
   const kept = prev.filter((p) => !now.has(p.file) && !(p.file.replace(/^flickr-|\.jpg$/g, "") in ex) && !commonsFlickrIds.has(p.file.replace(/^flickr-|\.jpg$/g, "")));
-  out.push(...kept);
+  out.push(...kept.map(named));
   if (kept.length) console.log(`\nFlickr：今回の検索に出なかったが、前に集めた写真を残す ${kept.length} 枚`);
   // 前に集めたときに無かった写真（見て、外すものは excludePhotos に足す）
   const before = new Set(prev.map((p) => p.file));

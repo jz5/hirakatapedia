@@ -1,0 +1,37 @@
+---
+/**
+ * 記事の写真ページ（/<記事>/photos/）の写真 1 枚。どの記事も、この部品で同じ形に並べる。
+ * 写真ギャラリーにある写真（galleryId がある）は、写真のページ（/gallery/<番号>/）へつなぐ。撮影者・ライセンス・表記の例は、そちらと同じ
+ * 写真ギャラリーに無い写真（料理・枚方の外・地図・このサイトで作った画像など）は、表記の例をここに出す
+ */
+import { licenseLabel, creditText, sourceName, type Photo } from "../lib/photos.mjs";
+
+interface Props {
+  p: Photo;
+}
+const { p } = Astro.props;
+const detail = p.galleryId ? `/gallery/${p.galleryId}/` : undefined;
+---
+
+<li class="gallery-item" id={p.file}>
+  <a class="gallery-img" href={detail ?? p.large.src}>
+    <img src={p.small.src} width={p.small.width} height={p.small.height} alt={p.caption} loading="lazy" decoding="async" />
+  </a>
+  <p class="gallery-caption">{p.caption}</p>
+  <p class="gallery-credit">
+    {p.kind ?? "写真"}：{p.authorUrl ? <a href={p.authorUrl} rel="noopener">{p.author}</a> : p.author} / {p.licenseUrl ? <a href={p.licenseUrl} rel="license noopener">{licenseLabel(p)}</a> : licenseLabel(p)}
+    {p.edited && <>（加工あり）</>}
+  </p>
+  <p class="gallery-links">
+    {detail && <><a href={detail}>写真のページ</a>・</>}
+    <a href={p.page} rel="noopener">{sourceName(p)}で見る</a>{p.original.width > 0 && <>（元の大きさ {p.original.width}×{p.original.height}）</>}
+  </p>
+  {
+    !detail && (
+      <details class="gallery-howto">
+        <summary>使うときの表記の例</summary>
+        <p><code>{creditText(p)}</code></p>
+      </details>
+    )
+  }
+</li>

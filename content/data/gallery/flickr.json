@@ -1,6 +1,6 @@
 {
  "_source": "Flickr の検索（gallery-config.yaml の flickr）",
- "fetched": "2026-11-08",
+ "fetched": "2026-11-09",
  "photos": [
   {
    "id": "ad7bd00eda",
@@ -9,14 +9,18 @@
    "year": 2006,
    "lat": null,
    "lon": null,
-   "groups": [],
-   "places": [],
+   "groups": [
+    "地理"
+   ],
+   "places": [
+    "淀川"
+   ],
    "thumb": "https://live.staticflickr.com/39/115008925_e6fe8d621d_h.jpg",
    "site": "flickr",
    "file": "flickr-115008925.jpg",
    "title": "Yodo River",
    "author": {
-    "name": "Hyougushi",
+    "name": "Hideyuki KAMON",
     "url": "https://www.flickr.com/people/71481771@N00/"
    },
    "license": "CC BY-SA 2.0",
@@ -88,7 +92,7 @@
    "file": "flickr-136254525.jpg",
    "title": "Construction and a Purple Truck",
    "author": {
-    "name": "mmq",
+    "name": "Mark Quinn",
     "url": "https://www.flickr.com/people/23455926@N00/"
    },
    "license": "CC BY-SA 2.0",
@@ -112,7 +116,7 @@
    "file": "flickr-144291711.jpg",
    "title": "DSCN2814",
    "author": {
-    "name": "thorner",
+    "name": "Todd Horner",
     "url": "https://www.flickr.com/people/59932634@N00/"
    },
    "license": "CC BY 2.0",
@@ -136,7 +140,7 @@
    "file": "flickr-14743991281.jpg",
    "title": "Day 72/365 - On the other side of the fence",
    "author": {
-    "name": "natasia.causse",
+    "name": "Natasia Causse",
     "url": "https://www.flickr.com/people/123012464@N05/"
    },
    "license": "CC BY-SA 2.0",
@@ -228,15 +232,18 @@
    "lat": null,
    "lon": null,
    "groups": [
+    "地理",
     "ひらかたパーク"
    ],
-   "places": [],
+   "places": [
+    "淀川"
+   ],
    "thumb": "https://live.staticflickr.com/82/235017032_ee588f1d6e_h.jpg",
    "site": "flickr",
    "file": "flickr-235017032.jpg",
    "title": "Yodo River",
    "author": {
-    "name": "Hyougushi",
+    "name": "Hideyuki KAMON",
     "url": "https://www.flickr.com/people/71481771@N00/"
    },
    "license": "CC BY-SA 2.0",
@@ -419,30 +426,6 @@
    "height": 1067
   },
   {
-   "id": "21ae33e040",
-   "desc": null,
-   "date": "2007-03-16",
-   "year": 2007,
-   "lat": 34.861991,
-   "lon": 135.675415,
-   "groups": [],
-   "places": [],
-   "thumb": "https://live.staticflickr.com/192/443545365_54042675c1_b.jpg",
-   "site": "flickr",
-   "file": "flickr-443545365.jpg",
-   "title": "Sunset",
-   "author": {
-    "name": "yukihiro.m",
-    "url": "https://www.flickr.com/people/21248474@N00/"
-   },
-   "license": "CC BY 2.0",
-   "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-   "source": "https://www.flickr.com/photos/21248474@N00/443545365/",
-   "sourceName": "Flickr",
-   "width": 1024,
-   "height": 768
-  },
-  {
    "id": "bf2a0499fd",
    "desc": "Free to use when crediting to www.goattreedesigns.com with a do-follow hyperlink. Hirakata Park near Osaka on a quiet weekday in spring with cherry blossoms in full bloom.",
    "date": "2017-04-14",
@@ -458,7 +441,7 @@
    "file": "flickr-49867942008.jpg",
    "title": "Japanese Amusement Park in Spring with Cherry Blossoms",
    "author": {
-    "name": "kyotocollection.com",
+    "name": "Gary",
     "url": "https://www.flickr.com/people/88932354@N06/"
    },
    "license": "CC BY 2.0",
@@ -482,7 +465,7 @@
    "file": "flickr-54689223272.jpg",
    "title": "20250726_133558",
    "author": {
-    "name": "ivanscvh",
+    "name": "Ivan P",
     "url": "https://www.flickr.com/people/200118688@N04/"
    },
    "license": "CC0",
@@ -506,7 +489,7 @@
    "file": "flickr-54689223307.jpg",
    "title": "20250726_124623",
    "author": {
-    "name": "ivanscvh",
+    "name": "Ivan P",
     "url": "https://www.flickr.com/people/200118688@N04/"
    },
    "license": "CC0",
@@ -530,7 +513,7 @@
    "file": "flickr-54690040776.jpg",
    "title": "20250726_134132",
    "author": {
-    "name": "ivanscvh",
+    "name": "Ivan P",
     "url": "https://www.flickr.com/people/200118688@N04/"
    },
    "license": "CC0",
@@ -554,7 +537,7 @@
    "file": "flickr-54690267113.jpg",
    "title": "20250726_122300",
    "author": {
-    "name": "ivanscvh",
+    "name": "Ivan P",
     "url": "https://www.flickr.com/people/200118688@N04/"
    },
    "license": "CC0",
@@ -578,7 +561,7 @@
    "file": "flickr-54690290944.jpg",
    "title": "20250726_132542",
    "author": {
-    "name": "ivanscvh",
+    "name": "Ivan P",
     "url": "https://www.flickr.com/people/200118688@N04/"
    },
    "license": "CC0",
@@ -604,7 +587,7 @@
    "file": "flickr-6051443663.jpg",
    "title": "picplz_upload",
    "author": {
-    "name": "adelie33_Asako",
+    "name": "Asako",
     "url": "https://www.flickr.com/people/41031482@N04/"
    },
    "license": "CC BY-SA 2.0",
@@ -628,7 +611,7 @@
    "file": "flickr-6590996895.jpg",
    "title": "わず",
    "author": {
-    "name": "khf_fjs",
+    "name": "Kohei Fujii",
     "url": "https://www.flickr.com/people/43894128@N02/"
    },
    "license": "CC BY-SA 2.0",
@@ -724,7 +707,7 @@
    "file": "flickr-7919668972.jpg",
    "title": "Hirakata-Eki",
    "author": {
-    "name": "philmoyer",
+    "name": "Phil Moyer",
     "url": "https://www.flickr.com/people/86395215@N08/"
    },
    "license": "CC BY 2.0",
@@ -748,7 +731,7 @@
    "file": "flickr-8341484410.jpg",
    "title": "なんか空が広いと思ったら松坂屋がなくなってた。",
    "author": {
-    "name": "adelie33_Asako",
+    "name": "Asako",
     "url": "https://www.flickr.com/people/41031482@N04/"
    },
    "license": "CC BY-SA 2.0",
@@ -772,7 +755,7 @@
    "file": "flickr-8341527344.jpg",
    "title": "京阪の新型特急車両入線。10分に一本くるからあんまり有り難みもないw",
    "author": {
-    "name": "adelie33_Asako",
+    "name": "Asako",
     "url": "https://www.flickr.com/people/41031482@N04/"
    },
    "license": "CC BY-SA 2.0",
@@ -798,7 +781,7 @@
    "file": "flickr-9273252185.jpg",
    "title": "Hirakata Park",
    "author": {
-    "name": "milst1",
+    "name": "Martin Lewison",
     "url": "https://www.flickr.com/people/9036889@N06/"
    },
    "license": "CC BY-SA 2.0",
@@ -824,7 +807,7 @@
    "file": "flickr-9273261849.jpg",
    "title": "Hirakata Park",
    "author": {
-    "name": "milst1",
+    "name": "Martin Lewison",
     "url": "https://www.flickr.com/people/9036889@N06/"
    },
    "license": "CC BY-SA 2.0",
@@ -850,7 +833,7 @@
    "file": "flickr-9273267433.jpg",
    "title": "Hirakata Park",
    "author": {
-    "name": "milst1",
+    "name": "Martin Lewison",
     "url": "https://www.flickr.com/people/9036889@N06/"
    },
    "license": "CC BY-SA 2.0",
@@ -876,7 +859,7 @@
    "file": "flickr-9273268067.jpg",
    "title": "Hirakata Park",
    "author": {
-    "name": "milst1",
+    "name": "Martin Lewison",
     "url": "https://www.flickr.com/people/9036889@N06/"
    },
    "license": "CC BY-SA 2.0",
@@ -902,7 +885,7 @@
    "file": "flickr-9273269257.jpg",
    "title": "Hirakata Park",
    "author": {
-    "name": "milst1",
+    "name": "Martin Lewison",
     "url": "https://www.flickr.com/people/9036889@N06/"
    },
    "license": "CC BY-SA 2.0",
@@ -928,7 +911,7 @@
    "file": "flickr-9273269913.jpg",
    "title": "Hirakata Park",
    "author": {
-    "name": "milst1",
+    "name": "Martin Lewison",
     "url": "https://www.flickr.com/people/9036889@N06/"
    },
    "license": "CC BY-SA 2.0",
@@ -954,7 +937,7 @@
    "file": "flickr-9273271795.jpg",
    "title": "Hirakata Park",
    "author": {
-    "name": "milst1",
+    "name": "Martin Lewison",
     "url": "https://www.flickr.com/people/9036889@N06/"
    },
    "license": "CC BY-SA 2.0",
@@ -980,7 +963,7 @@
    "file": "flickr-9276048054.jpg",
    "title": "Hirakata Park",
    "author": {
-    "name": "milst1",
+    "name": "Martin Lewison",
     "url": "https://www.flickr.com/people/9036889@N06/"
    },
    "license": "CC BY-SA 2.0",
@@ -1006,7 +989,7 @@
    "file": "flickr-9276048876.jpg",
    "title": "Hirakata Park",
    "author": {
-    "name": "milst1",
+    "name": "Martin Lewison",
     "url": "https://www.flickr.com/people/9036889@N06/"
    },
    "license": "CC BY-SA 2.0",
@@ -1032,7 +1015,7 @@
    "file": "flickr-9276049656.jpg",
    "title": "Hirakata Park",
    "author": {
-    "name": "milst1",
+    "name": "Martin Lewison",
     "url": "https://www.flickr.com/people/9036889@N06/"
    },
    "license": "CC BY-SA 2.0",
@@ -1058,7 +1041,7 @@
    "file": "flickr-9276050506.jpg",
    "title": "Hirakata Park",
    "author": {
-    "name": "milst1",
+    "name": "Martin Lewison",
     "url": "https://www.flickr.com/people/9036889@N06/"
    },
    "license": "CC BY-SA 2.0",
@@ -1084,7 +1067,7 @@
    "file": "flickr-9276051178.jpg",
    "title": "Hirakata Park",
    "author": {
-    "name": "milst1",
+    "name": "Martin Lewison",
     "url": "https://www.flickr.com/people/9036889@N06/"
    },
    "license": "CC BY-SA 2.0",
@@ -1110,7 +1093,7 @@
    "file": "flickr-9276051788.jpg",
    "title": "Hirakata Park",
    "author": {
-    "name": "milst1",
+    "name": "Martin Lewison",
     "url": "https://www.flickr.com/people/9036889@N06/"
    },
    "license": "CC BY-SA 2.0",
@@ -1136,7 +1119,7 @@
    "file": "flickr-9276053668.jpg",
    "title": "Hirakata Park",
    "author": {
-    "name": "milst1",
+    "name": "Martin Lewison",
     "url": "https://www.flickr.com/people/9036889@N06/"
    },
    "license": "CC BY-SA 2.0",
