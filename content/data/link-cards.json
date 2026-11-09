@@ -47,6 +47,18 @@
   "image": null,
   "fetched": "2026-11-09"
  },
+ "https://hp.kmu.ac.jp/facility/related/kmu_towerhotel/": {
+  "url": "https://hp.kmu.ac.jp/facility/related/kmu_towerhotel/",
+  "title": "関医タワーホテル | 関西医科大学附属病院",
+  "description": "関西医科大学附属病院（旧関西医科大学附属枚方病院）のWebサイトです。",
+  "site": "関西医科大学附属病院",
+  "image": {
+   "src": "/link-thumbs/626456ac14914872.webp",
+   "width": 480,
+   "height": 252
+  },
+  "fetched": "2026-11-09"
+ },
  "https://ja.wikipedia.org/wiki/くずはモール": {
   "url": "https://ja.wikipedia.org/wiki/くずはモール",
   "title": "くずはモール",
@@ -239,6 +251,18 @@
   },
   "fetched": "2026-11-06"
  },
+ "https://ja.wikipedia.org/wiki/関西医科大学": {
+  "url": "https://ja.wikipedia.org/wiki/関西医科大学",
+  "title": "関西医科大学",
+  "description": "関西医科大学 は、大阪府枚方市新町二丁目5番1号に本部を置く日本の私立大学。1928年創立、1947年大学設置。略称は関医（かんい）、関医大、関西医大。",
+  "site": "ウィキペディア",
+  "image": {
+   "src": "/link-thumbs/1dd281b9470b20bb.webp",
+   "width": 330,
+   "height": 220
+  },
+  "fetched": "2026-11-09"
+ },
  "https://ja.wikipedia.org/wiki/関西外国語大学": {
   "url": "https://ja.wikipedia.org/wiki/関西外国語大学",
   "title": "関西外国語大学",
@@ -286,6 +310,18 @@
   "site": "www.data.jma.go.jp",
   "image": null,
   "fetched": "2026-11-06"
+ },
+ "https://www.hira2.jp/open-close/idai-20220712.html": {
+  "url": "https://www.hira2.jp/open-close/idai-20220712.html",
+  "title": "市駅ちかくにできた116mに迫る「関医タワー」の中にある患者用のホテルを見せてもらった - 枚方つーしん",
+  "description": "旧1号線沿いの関西医科大学附属病院の側にできた建物「関医タワーホテル」の中を見せてもらってきました。 関医タワーホテルに関しては何度も記事にして完成まで追い続けてきたひらつー。 これまでの関医タワーホテルの変わり具合（ス [&hellip…",
+  "site": "枚方つーしん",
+  "image": {
+   "src": "/link-thumbs/1e68a729cd550750.webp",
+   "width": 480,
+   "height": 360
+  },
+  "fetched": "2026-11-09"
  },
  "https://www.hirakatapark.co.jp/shops/pomunoki/": {
   "url": "https://www.hirakatapark.co.jp/shops/pomunoki/",

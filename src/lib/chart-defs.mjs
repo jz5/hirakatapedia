@@ -75,6 +75,22 @@ export const charts = {
     });
   },
 
+  /** 枚方と近くの市の高い建物（/kmu-tower/）。枚方市の建物だけ色、ほかは灰色 */
+  "kmu-tower-heights": () => {
+    const d = data("tall-buildings.json");
+    const rows = d.buildings.map((b) => ({ label: `${b.city.replace(/(市|府)$/, "")} ${b.short}`, value: b.height, kind: b.city === "枚方市" ? "hl" : "ref" }));
+    return barChart({
+      id: "chart-kmu-tower-heights",
+      title: "枚方と近くの市の高い建物（高さ）",
+      desc: "枚方市でいちばん高いのはくずはタワーシティ T棟の136.80m。関医タワー（115.95m）は枚方市で3番目。近くの市では、データベースの値で、高槻市のジオタワー高槻の2棟と門真市のシティタワー古川橋がくずはタワーシティより高い。ニデックが京都で一番高いとする本社ビル（100.6m）は関医タワーより低い。",
+      // 高さは資料どおりの桁で（136.80m など）
+      format: (n) => `${d.buildings.find((b) => b.height === n)?.heightText ?? n}m`,
+      left: 176,
+      rows,
+      table: { head: ["市など", "建物", "高さ（m）", "階数", "完成"], rows: d.buildings.map((b) => [b.city, b.name, b.heightText, `${b.floors}階`, `${b.year}年`]) },
+    });
+  },
+
   /** 枚方市の人口の移り変わり（1947〜2025年）と、市の推計（〜2053年） */
   "jinko-population": () => {
     const d = data("jinko.json");

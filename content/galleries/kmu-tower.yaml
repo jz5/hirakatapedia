@@ -1,0 +1,24 @@
+# /kmu-tower/ の写真（Wikimedia Commons）。node scripts/photos.mjs で取ってくる。書き方は scripts/photos.mjs の先頭
+- file: "関医タワー（2023年9月）.jpg"
+  caption: "関医タワー（2023年9月）。上に行くほど、4段に細くなる"
+  pick: true
+  seen: true
+- file: "淀川河川公園から見た関医タワー.jpg"
+  caption: "淀川河川公園から見た関医タワー（2025年1月）"
+  pick: true
+  seen: true
+- file: "天津橋から見た枚方市駅方面と関医タワー.jpg"
+  caption: "天津橋から見た枚方市駅の方（2021年10月）。奥の細い塔が、建てている途中の関医タワー"
+  seen: true
+- file: "くずはタワーシティ.jpg"
+  caption: "くずはタワーシティの T棟（2022年）。枚方でいちばん高い建物"
+  seen: true
+- file: "Station_hill_Hirakata_20240911.jpg"
+  caption: "ステーションヒル枚方（2024年9月）。右がオフィス・ホテル棟、左が住宅棟"
+  seen: true
+- file: "Kansai_Medical_University_Hirakata_Campus.jpg"
+  caption: "関西医科大学の枚方キャンパス（2017年）"
+  seen: true
+- file: "Kansai_Medical_University_Hospital.jpg"
+  caption: "関西医科大学附属病院（2017年）"
+  seen: true

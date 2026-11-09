@@ -1039,6 +1039,60 @@
   "edited": "",
   "editKey": "null"
  },
+ "Kansai_Medical_University_Hirakata_Campus.jpg": {
+  "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Kansai_Medical_University_Hirakata_Campus.jpg/1280px-Kansai_Medical_University_Hirakata_Campus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "page": "https://commons.wikimedia.org/wiki/File:Kansai_Medical_University_Hirakata_Campus.jpg",
+  "author": "KishujiRapid",
+  "authorUrl": "https://commons.wikimedia.org/wiki/User:KishujiRapid",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "date": "2017-10-08",
+  "description": "関西医科大学枚方キャンパス",
+  "original": {
+   "width": 5013,
+   "height": 3581
+  },
+  "fetched": "2026-11-09",
+  "small": {
+   "src": "/photos/a9a8984a77cf-480.webp",
+   "width": 480,
+   "height": 343
+  },
+  "large": {
+   "src": "/photos/a9a8984a77cf-1200.jpg",
+   "width": 1200,
+   "height": 857
+  },
+  "edited": "",
+  "editKey": "null"
+ },
+ "Kansai_Medical_University_Hospital.jpg": {
+  "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Kansai_Medical_University_Hospital.jpg/1280px-Kansai_Medical_University_Hospital.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "page": "https://commons.wikimedia.org/wiki/File:Kansai_Medical_University_Hospital.jpg",
+  "author": "KishujiRapid",
+  "authorUrl": "https://commons.wikimedia.org/wiki/User:KishujiRapid",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "date": "2017-10-08",
+  "description": "関西医科大学附属病院",
+  "original": {
+   "width": 4760,
+   "height": 3174
+  },
+  "fetched": "2026-11-09",
+  "small": {
+   "src": "/photos/a9b1693405f7-480.webp",
+   "width": 480,
+   "height": 320
+  },
+  "large": {
+   "src": "/photos/a9b1693405f7-1200.jpg",
+   "width": 1200,
+   "height": 801
+  },
+  "edited": "",
+  "editKey": "null"
+ },
  "Keihan2600_FrontCut.jpg": {
   "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Keihan2600_FrontCut.jpg/1280px-Keihan2600_FrontCut.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "page": "https://commons.wikimedia.org/wiki/File:Keihan2600_FrontCut.jpg",
@@ -2401,6 +2455,33 @@
   },
   "edited": "地理院タイルをつなぎ合わせて切り抜き"
  },
+ "くずはタワーシティ.jpg": {
+  "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/%E3%81%8F%E3%81%9A%E3%81%AF%E3%82%BF%E3%83%AF%E3%83%BC%E3%82%B7%E3%83%86%E3%82%A3.jpg/1280px-%E3%81%8F%E3%81%9A%E3%81%AF%E3%82%BF%E3%83%AF%E3%83%BC%E3%82%B7%E3%83%86%E3%82%A3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "page": "https://commons.wikimedia.org/wiki/File:%E3%81%8F%E3%81%9A%E3%81%AF%E3%82%BF%E3%83%AF%E3%83%BC%E3%82%B7%E3%83%86%E3%82%A3.jpg",
+  "author": "Yama0904",
+  "authorUrl": "https://commons.wikimedia.org/wiki/User:Yama0904",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "date": "2022-04-17",
+  "description": "くずはタワーシティ Tコート",
+  "original": {
+   "width": 1280,
+   "height": 1920
+  },
+  "fetched": "2026-11-09",
+  "small": {
+   "src": "/photos/a1b142c7b7c8-480.webp",
+   "width": 320,
+   "height": 480
+  },
+  "large": {
+   "src": "/photos/a1b142c7b7c8-1200.jpg",
+   "width": 800,
+   "height": 1200
+  },
+  "edited": "",
+  "editKey": "null"
+ },
  "中振交差点空中写真01.jpg": {
   "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/%E4%B8%AD%E6%8C%AF%E4%BA%A4%E5%B7%AE%E7%82%B9%E7%A9%BA%E4%B8%AD%E5%86%99%E7%9C%9F01.jpg/1280px-%E4%B8%AD%E6%8C%AF%E4%BA%A4%E5%B7%AE%E7%82%B9%E7%A9%BA%E4%B8%AD%E5%86%99%E7%9C%9F01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "page": "https://commons.wikimedia.org/wiki/File:%E4%B8%AD%E6%8C%AF%E4%BA%A4%E5%B7%AE%E7%82%B9%E7%A9%BA%E4%B8%AD%E5%86%99%E7%9C%9F01.jpg",
@@ -2501,6 +2582,33 @@
    "src": "/photos/9be0f30a3eca-1200.jpg",
    "width": 1036,
    "height": 1200
+  },
+  "edited": "",
+  "editKey": "null"
+ },
+ "天津橋から見た枚方市駅方面と関医タワー.jpg": {
+  "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/%E5%A4%A9%E6%B4%A5%E6%A9%8B%E3%81%8B%E3%82%89%E8%A6%8B%E3%81%9F%E6%9E%9A%E6%96%B9%E5%B8%82%E9%A7%85%E6%96%B9%E9%9D%A2%E3%81%A8%E9%96%A2%E5%8C%BB%E3%82%BF%E3%83%AF%E3%83%BC.jpg/1280px-%E5%A4%A9%E6%B4%A5%E6%A9%8B%E3%81%8B%E3%82%89%E8%A6%8B%E3%81%9F%E6%9E%9A%E6%96%B9%E5%B8%82%E9%A7%85%E6%96%B9%E9%9D%A2%E3%81%A8%E9%96%A2%E5%8C%BB%E3%82%BF%E3%83%AF%E3%83%BC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "page": "https://commons.wikimedia.org/wiki/File:%E5%A4%A9%E6%B4%A5%E6%A9%8B%E3%81%8B%E3%82%89%E8%A6%8B%E3%81%9F%E6%9E%9A%E6%96%B9%E5%B8%82%E9%A7%85%E6%96%B9%E9%9D%A2%E3%81%A8%E9%96%A2%E5%8C%BB%E3%82%BF%E3%83%AF%E3%83%BC.jpg",
+  "author": "jz5",
+  "authorUrl": "https://commons.wikimedia.org/wiki/User:Jz5ver1",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "date": "2021-10-10",
+  "description": "View toward Hirakatashi Station from Amatsu Bridge, with the KMU Tower of Kansai Medical University (October 2021)",
+  "original": {
+   "width": 4032,
+   "height": 3024
+  },
+  "fetched": "2026-11-09",
+  "small": {
+   "src": "/photos/67a2ebc2eaba-480.webp",
+   "width": 480,
+   "height": 360
+  },
+  "large": {
+   "src": "/photos/67a2ebc2eaba-1200.jpg",
+   "width": 1200,
+   "height": 900
   },
   "edited": "",
   "editKey": "null"
@@ -2635,6 +2743,33 @@
   "edited": "",
   "editKey": "null"
  },
+ "淀川河川公園から見た関医タワー.jpg": {
+  "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/%E6%B7%80%E5%B7%9D%E6%B2%B3%E5%B7%9D%E5%85%AC%E5%9C%92%E3%81%8B%E3%82%89%E8%A6%8B%E3%81%9F%E9%96%A2%E5%8C%BB%E3%82%BF%E3%83%AF%E3%83%BC.jpg/1280px-%E6%B7%80%E5%B7%9D%E6%B2%B3%E5%B7%9D%E5%85%AC%E5%9C%92%E3%81%8B%E3%82%89%E8%A6%8B%E3%81%9F%E9%96%A2%E5%8C%BB%E3%82%BF%E3%83%AF%E3%83%BC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "page": "https://commons.wikimedia.org/wiki/File:%E6%B7%80%E5%B7%9D%E6%B2%B3%E5%B7%9D%E5%85%AC%E5%9C%92%E3%81%8B%E3%82%89%E8%A6%8B%E3%81%9F%E9%96%A2%E5%8C%BB%E3%82%BF%E3%83%AF%E3%83%BC.jpg",
+  "author": "jz5",
+  "authorUrl": "https://commons.wikimedia.org/wiki/User:Jz5ver1",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "date": "12 January",
+  "description": "KMU Tower of Kansai Medical University seen from Yodogawa Kasen Park (January 2025)",
+  "original": {
+   "width": 4032,
+   "height": 3024
+  },
+  "fetched": "2026-11-09",
+  "small": {
+   "src": "/photos/866eafacf131-480.webp",
+   "width": 480,
+   "height": 360
+  },
+  "large": {
+   "src": "/photos/866eafacf131-1200.jpg",
+   "width": 1200,
+   "height": 900
+  },
+  "edited": "",
+  "editKey": "null"
+ },
  "王仁公園.jpg": {
   "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/%E7%8E%8B%E4%BB%81%E5%85%AC%E5%9C%92.jpg/1280px-%E7%8E%8B%E4%BB%81%E5%85%AC%E5%9C%92.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "page": "https://commons.wikimedia.org/wiki/File:%E7%8E%8B%E4%BB%81%E5%85%AC%E5%9C%92.jpg",
@@ -2657,6 +2792,33 @@
    "src": "/photos/11d85e033fb8-1200.jpg",
    "width": 1200,
    "height": 900
+  },
+  "edited": "",
+  "editKey": "null"
+ },
+ "関医タワー（2023年9月）.jpg": {
+  "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/%E9%96%A2%E5%8C%BB%E3%82%BF%E3%83%AF%E3%83%BC%EF%BC%882023%E5%B9%B49%E6%9C%88%EF%BC%89.jpg/1280px-%E9%96%A2%E5%8C%BB%E3%82%BF%E3%83%AF%E3%83%BC%EF%BC%882023%E5%B9%B49%E6%9C%88%EF%BC%89.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "page": "https://commons.wikimedia.org/wiki/File:%E9%96%A2%E5%8C%BB%E3%82%BF%E3%83%AF%E3%83%BC%EF%BC%882023%E5%B9%B49%E6%9C%88%EF%BC%89.jpg",
+  "author": "jz5",
+  "authorUrl": "https://commons.wikimedia.org/wiki/User:Jz5ver1",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "date": "2023-09-21",
+  "description": "KMU Tower of Kansai Medical University (September 2023)",
+  "original": {
+   "width": 3024,
+   "height": 4032
+  },
+  "fetched": "2026-11-09",
+  "small": {
+   "src": "/photos/5f4f37e74ab9-480.webp",
+   "width": 360,
+   "height": 480
+  },
+  "large": {
+   "src": "/photos/5f4f37e74ab9-1200.jpg",
+   "width": 900,
+   "height": 1200
   },
   "edited": "",
   "editKey": "null"
