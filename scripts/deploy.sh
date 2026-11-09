@@ -27,7 +27,7 @@ case "$DEST" in
 esac
 
 echo "== 上げる先：$HOST:$DEST"
-ssh -o BatchMode=yes "$HOST" "test -d '$DEST'" || { echo "サーバーにフォルダーが無い（サブドメインを作ったか確かめる）：$DEST" >&2; exit 1; }
+ssh -n -o BatchMode=yes "$HOST" "test -d '$DEST'" || { echo "サーバーにフォルダーが無い（サブドメインを作ったか確かめる）：$DEST" >&2; exit 1; }
 
 echo "== 写真ギャラリーの画像（まだ無いものだけ取ってくる）"
 node scripts/gallery.mjs images
