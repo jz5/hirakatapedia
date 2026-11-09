@@ -139,7 +139,8 @@ ${table}
  */
 export function barChart(o) {
   const W = 640, rowH = 28, barH = 16;
-  const m = { top: 8, right: 64, bottom: 8, left: 92 };
+  // left：左の名前の欄の幅（名前が長いときに広げる）
+  const m = { top: 8, right: 64, bottom: 8, left: o.left ?? 92 };
   const H = m.top + m.bottom + o.rows.length * rowH;
   const max = Math.max(...o.rows.map((r) => r.value));
   const sx = (v) => (v / max) * (W - m.left - m.right);

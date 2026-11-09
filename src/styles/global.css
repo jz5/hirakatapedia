@@ -481,6 +481,8 @@ mark {
 /* 写真（rehype-photos.mjs）。説明と、作者・ライセンスの表記 */
 .photo { margin: var(--sp-5) 0; }
 .photo img { display: block; width: 100%; height: auto; border-radius: var(--radius); background: var(--bg-sub); }
+/* 縦長の写真は、画面の高さの 7 割まで（幅を縮めて真ん中に）。横長の写真は今までどおり幅いっぱい */
+.photo img { max-height: 70vh; width: auto; max-width: 100%; margin-inline: auto; }
 .photo figcaption { margin-top: var(--sp-2); font-size: .875rem; line-height: 1.6; color: var(--mut); }
 .photo .photo-caption { display: block; color: var(--fg); }
 .photo .photo-credit { display: block; font-size: .75rem; color: var(--mut-soft); }
