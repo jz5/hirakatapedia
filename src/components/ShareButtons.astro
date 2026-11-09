@@ -2,7 +2,7 @@
 /**
  * このページを SNS で共有するボタン（右の列）。X・Misskey・Mastodon・Bluesky・Threads・LINE と、リンクのコピー。
  * アイコン：Font Awesome Free（Icons: CC BY 4.0）。Misskey は misskey-dev/assets の mi.svg（CC BY-SA 4.0）を色だけ変えて使う。
- * 表示は /license/ に書いている
+ * LINE のアイコンは枠いっぱいの形で小さく見えるので、ほかより大きく出す（share-big）。表示は /license/ に書いている
  */
 import xSvg from "@fortawesome/fontawesome-free/svgs/brands/x-twitter.svg?raw";
 import mastodonSvg from "@fortawesome/fontawesome-free/svgs/brands/mastodon.svg?raw";
@@ -28,7 +28,7 @@ const items = [
   { name: "Mastodon", href: `https://pronama.jp/share-to-mastodon.html?${q({ text })}`, svg: icon(mastodonSvg) },
   { name: "Bluesky", href: `https://bsky.app/intent/compose?${q({ text })}`, svg: icon(blueskySvg) },
   { name: "Threads", href: `https://www.threads.net/intent/post?${q({ text })}`, svg: icon(threadsSvg) },
-  { name: "LINE", href: `https://social-plugins.line.me/lineit/share?${q({ url, text: title })}`, svg: icon(lineSvg) },
+  { name: "LINE", href: `https://social-plugins.line.me/lineit/share?${q({ url, text: title })}`, svg: icon(lineSvg), big: true },
 ];
 const link = icon(linkSvg);
 ---
@@ -43,7 +43,7 @@ const link = icon(linkSvg);
             {it.mi ? (
               <span class="share-mi" aria-hidden="true" />
             ) : (
-              <svg viewBox={it.svg!.viewBox} aria-hidden="true" focusable="false"><path d={it.svg!.d} /></svg>
+              <svg class={it.big ? "share-big" : undefined} viewBox={it.svg!.viewBox} aria-hidden="true" focusable="false"><path d={it.svg!.d} /></svg>
             )}
           </a>
         </li>
