@@ -39,7 +39,6 @@ const headings = [
   <article class="entry">
     <header class="entry-header">
       <h1>枚方のデータ</h1>
-      <p class="entry-meta">このサイトでの取得 <time datetime={sets[0]?.fetched}>{sets[0] && jaDay(sets[0].fetched)}</time>（元のデータの時点は、それぞれのカードに）</p>
     </header>
 
     <div class="toc-inline"><Toc headings={headings} inline /></div>
@@ -63,7 +62,7 @@ const headings = [
                     <a href={dataPath(d.id)}>
                       <span class="data-card-title">{d.title}<span class="data-card-n">{d.count.toLocaleString()} 件</span></span>
                       <span class="data-card-desc">{PAGES[d.id]?.lead ?? ""}</span>
-                      <span class="data-card-meta">{hasMap(d) ? "表と地図" : d.id === "gomi" ? "品名で検索" : "表"}・<span class="data-card-asof">{d.group === "city" ? "市のデータ " : ""}{asOf(d)}</span></span>
+                      <span class="data-card-meta">{hasMap(d) ? "表と地図" : d.id === "gomi" ? "品名で検索" : "表"}・<span class="data-card-asof">{asOf(d)}</span></span>
                     </a>
                   </li>
                 ))}
@@ -111,7 +110,7 @@ const headings = [
         <h2 id="notes-h">このページについて</h2>
         <ul>
           <li>表と地図のデータは、枚方市のオープンデータ（<a href="https://creativecommons.org/licenses/by/2.1/jp/">CC BY 2.1 JP</a>）です。このサイトの記事のライセンス（CC BY-SA 4.0）とは別です。使うときは、もとのデータの出典を書いてください</li>
-          <li>市のデータは更新されることがあります。古いデータ（データ取得日・データの日付）のまま載っていることがあるので、大事なことは市のページで確かめてください。とくに避難所は、市の<a href="https://www.city.hirakata.osaka.jp/0000017941.html">防災ガイド</a>を見てください</li>
+          <li>市のデータは更新されることがあります。古いデータ（カードとページの上の「◯年◯月時点」）のまま載っていることがあるので、大事なことは市のページで確かめてください。とくに避難所は、市の<a href="https://www.city.hirakata.osaka.jp/0000017941.html">防災ガイド</a>を見てください</li>
           <li>表の見出しは、分かりやすいように言い換えています（たとえば「施設名称」を「名前」に）。遊具の数やバリアフリーの項目は、市のデータの列をまとめたものです</li>
           <li>地図は国土地理院の地理院タイル（淡色地図）です。「地図で見る」を押したときだけ、国土地理院のサーバーから地図の画像を読み込みます</li>
           <li>表の「地図」のリンクは、Google マップでその場所（緯度・経度）を開きます</li>

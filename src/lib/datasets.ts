@@ -122,12 +122,13 @@ export const jaDay = (s: string) => {
 
 /**
  * 元のデータがいつ時点か（このサイトが取ってきた日ではなく）。
- * 市のデータに「◯年◯月時点」があればそれ、無ければ市のページの更新日（content/data/opendata-catalog.json の updated）。
+ * 市のデータに「◯年◯月時点」があればそれ、無ければ市のページの更新日（content/data/opendata-catalog.json の updated）を「◯年◯月◯日時点」で。
+ * このサイトが取ってきた日は、ページの下の出典に出している（見出しの下には出さない）。
  * そのほかのデータは asOf に手で書く
  */
 export const asOf = (d: Meta) => {
   const t = d.note?.match(/\d{4}年\d+月時点/)?.[0] ?? d.asOf;
   if (t) return t;
   const u = (catalog.datasets as { page: string; updated?: string }[]).find((c) => c.page === d.page)?.updated;
-  return u ? `${jaDay(u)}更新` : `${jaDay(d.fetched)}取得`;
+  return `${jaDay(u ?? d.fetched)}時点`;
 };

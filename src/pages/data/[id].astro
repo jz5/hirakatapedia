@@ -23,7 +23,7 @@ const placeholder = `${d.search.filter((c) => c !== "読み").join("・")}で検
     <header class="entry-header">
       <p class="gallery-back"><a href="/data/">← 枚方のデータ</a></p>
       <h1>{d.title}</h1>
-      <p class="entry-meta"><strong>{d.group === "other" ? "" : "市のデータ "}{asOf(d)}</strong>（このサイトでの取得 <time datetime={d.fetched}>{jaDay(d.fetched)}</time>）</p>
+      <p class="entry-meta"><mark>{asOf(d)}</mark></p>
     </header>
 
     <div class="entry-body">
