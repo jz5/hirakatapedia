@@ -81,7 +81,7 @@ test("地図を開いてほかのページへ行き、「戻る」で戻って�
   await loaded(page);
   await page.locator("[data-mapbtn]").click();
   await expectMap(page, geoRows("aed").geo);
-  await page.getByRole("link", { name: "← 枚方のデータ" }).click();
+  await page.getByRole("link", { name: "枚方のデータ", exact: true }).click();
   await expect(page).toHaveURL(/\/data\/$/);
   await page.goBack();
   await expect(page).toHaveURL(/\/data\/aed\/$/);
