@@ -994,6 +994,8 @@ tr[hidden] { display: none; }
 .entry-body .gphoto-credit code { font-family: inherit; font-size: inherit; white-space: normal; overflow-wrap: anywhere; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 2px 8px; }
 .copy-btn { font: inherit; font-size: .8125rem; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 4px var(--sp-3); cursor: pointer; white-space: nowrap; }
 .copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+.gphoto-ai { margin-top: var(--sp-2); font-size: .9375rem; }
+.gphoto-ai-icon { width: 1.1em; height: 1em; margin-right: .4em; vertical-align: -.12em; fill: var(--mut); cursor: help; }
 .entry-body .gphoto-desc { font-size: .875rem; color: var(--mut); }
 .gphoto-nav { display: flex; justify-content: space-between; gap: var(--sp-4); margin-top: var(--sp-6); font-size: .875rem; }
 .gphoto-nav a { display: inline-flex; align-items: center; gap: var(--sp-2); text-decoration: none; }

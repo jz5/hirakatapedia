@@ -4,16 +4,20 @@
  * 「前・次」は、一覧から来たときはその一覧の並び（sessionStorage の gallery-ctx）、そうでなければ既定の並び（撮った年の新しい順）
  */
 import Base from "../../layouts/Base.astro";
-import { photos, caption, fit, credit, galleryPath, largeSrc, thumbSrc, siteName, licenseKind, type GalleryPhoto } from "../../lib/gallery";
+import { photos, caption, aiDesc, fit, credit, galleryPath, largeSrc, thumbSrc, siteName, licenseKind, type GalleryPhoto } from "../../lib/gallery";
 import { articlesUsing } from "../../lib/gallery-used";
 import { allArticles, articlePath } from "../../lib/articles";
 import type { GetStaticPaths } from "astro";
+import aiSvg from "@fortawesome/fontawesome-free/svgs/solid/comment-nodes.svg?raw";
 
 export const getStaticPaths = (() =>
   photos.map((p, i) => ({ params: { id: p.id }, props: { p, prev: photos[i - 1]?.id ?? null, next: photos[i + 1]?.id ?? null } }))) satisfies GetStaticPaths;
 
 const { p, prev, next } = Astro.props as { p: GalleryPhoto; prev: string | null; next: string | null };
 const cap = caption(p);
+const ai = aiDesc(p.id);
+// AI が書いた説明の印（Font Awesome Free の comment-nodes。Icons: CC BY 4.0）
+const aiIcon = { viewBox: aiSvg.match(/viewBox="([^"]+)"/)![1], d: aiSvg.match(/<path d="([^"]+)"/)![1] };
 const size = fit(p, 1600);
 const used = articlesUsing(p.file);
 const articles = used.length ? (await allArticles()).filter((a) => used.includes(a.id)) : [];
@@ -41,7 +45,8 @@ const ogImage = /^https?:\/\/.+\.(jpe?g|png)(\?|$)/i.test(p.thumb) || p.site ===
     </header>
 
     <figure class="gphoto-figure">
-      <a href={p.source}><img src={largeSrc(p.id)} width={size.width} height={size.height} alt={cap} decoding="async" /></a>
+      <a href={p.source}><img src={largeSrc(p.id)} width={size.width} height={size.height} alt={ai?.alt ?? cap} decoding="async" /></a>
+      {ai && <figcaption class="gphoto-ai"><svg class="gphoto-ai-icon" viewBox={aiIcon.viewBox} role="img" aria-label="画像を見て AI が書いた説明"><title>画像を見て AI が書いた説明</title><path d={aiIcon.d} /></svg>{ai.desc}</figcaption>}
     </figure>
 
     <div class="entry-body">

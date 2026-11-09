@@ -67,6 +67,14 @@ export const caption = (p: GalleryPhoto) => {
   return d && d.length >= 2 ? d : p.title.replace(/\s*-\s*panoramio$/i, "");
 };
 
+/**
+ * 画像を見て AI が書いた説明（content/data/gallery-ai.json）。alt は画像の代わりの文、desc は写真のページの説明。
+ * 出どころの説明が弱い（空・英語だけ・題名と同じ）写真から順に足している
+ */
+type AiDesc = { alt: string; desc: string };
+const ai = (Object.values(import.meta.glob("../../content/data/gallery-ai.json", { eager: true, import: "default" }))[0] as { photos: Record<string, AiDesc> } | undefined)?.photos ?? {};
+export const aiDesc = (id: string): AiDesc | undefined => ai[id];
+
 /** 縮小したときの大きさ（縦横の比はそのまま） */
 export const fit = (p: GalleryPhoto, max: number) => {
   const s = Math.min(1, max / Math.max(p.width, p.height));
