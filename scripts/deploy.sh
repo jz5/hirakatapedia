@@ -4,7 +4,7 @@
 #   pnpm run deploy            写真・サムネイルを取ってきて、ビルドして、変わるファイルを見せてから上げる（確認あり）
 #   pnpm run deploy --dry-run  上げずに、変わるファイルだけ見せる
 #
-# 上げる先は .env の DEPLOY_HOST（~/.ssh/config の Host 名）と DEPLOY_PATH（サーバーのフォルダー）。
+# 上げる先は .env の DEPLOY_HOST（~/.ssh/config の Host 名）と DEPLOY_PATH（サーバーのフォルダー）。どちらも書いておく。
 #   DEPLOY_HOST=your-ssh-host
 #   DEPLOY_PATH=/path/to/hirakata.pronama.jp/
 # rsync の --delete で、手元に無いファイルはサーバーからも消す。間違ったフォルダーを消さないよう、
@@ -15,12 +15,11 @@ cd "$(dirname "$0")/.."
 DRY=0
 for a in "$@"; do [ "$a" = "--dry-run" ] && DRY=1; done
 
-# .env から読む（無ければ既定）
+# .env から読む
 env_get() { grep -E "^$1=" .env 2>/dev/null | tail -1 | cut -d= -f2- || true; }
 HOST="${DEPLOY_HOST:-$(env_get DEPLOY_HOST)}"
 DEST="${DEPLOY_PATH:-$(env_get DEPLOY_PATH)}"
-HOST="${HOST:-your-ssh-host}"
-DEST="${DEST:-/path/to/hirakata.pronama.jp/}"
+[ -n "$HOST" ] && [ -n "$DEST" ] || { echo ".env に DEPLOY_HOST と DEPLOY_PATH を書く" >&2; exit 1; }
 case "$DEST" in
   */hirakata.pronama.jp/) ;;
   *) echo "DEPLOY_PATH が hirakata.pronama.jp/ で終わっていない：$DEST" >&2; exit 1 ;;

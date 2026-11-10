@@ -18,8 +18,6 @@
 - 記事の本文は、資料をそのまま書き写さず、引用は短くします
 - 記事のファイル名（URL）は変えません
 
-くわしい決まりは、記事を書くときの手引き [CLAUDE.md](CLAUDE.md) にあります。
-
 ### ライセンス
 
 記事の文章は [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.ja) です。Pull Request で送られた文章も、同じ CC BY-SA 4.0 で公開されることに同意したものとします。

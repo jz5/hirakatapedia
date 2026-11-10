@@ -13,6 +13,9 @@ public/gallery/
 # API キー（Flickr など）。scripts/gallery.mjs が読む
 .env
 
+# Claude Code の作業の手引き。中身は docs/ の記事の書き方と作業メモを読み込むだけ
+CLAUDE.md
+
 # 調べもののメモと確認リスト（有料・館内限定の資料の書き写しや、確かめていない下書きを含むので公開しない）。
 # docs/ は手元だけの別の Git リポジトリ（ここでコミットする）
 docs/
