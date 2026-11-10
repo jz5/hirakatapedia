@@ -200,7 +200,7 @@ links:
 
 [^keihan-2021]: 京阪ホールディングス・京阪電気鉄道・京阪電鉄不動産「『枚方市駅周辺地区第一種市街地再開発事業』権利変換計画認可のお知らせ」2021年2月10日（[Web アーカイブ](https://web.archive.org/web/20210225214317/https://www.keihan-kiss.co.jp/info/wp-content/uploads/2021/02/20210210_hirakatasaikaihatu.pdf)）… 「高層棟地上26 階建(最高部約126ｍ)」「住宅棟地上29 階建(最高部約109ｍ)」
 
-[^shinsakai]: 枚方市「令和6年度(2024年度)第3回枚方市建築審査会 会議録」2024年12月26日（[Web アーカイブ](https://web.archive.org/web/20250815123932/https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000051/51724/R6_3_kenchikushinsakai_kaigiroku.pdf)。いまの市のページには無い）… 議案「楠葉花園町における建築基準法第59条の２第１項の規定による許可について」（総合設計）。「階数は地上43階建て」「建築物の高さは147.10メートル」「最上部の高さは147.90メートル」（屋上の手すりまで）。同意された。現地の「総合設計に係る建築計画のお知らせ」（2024年11月7日設置）も 147.10m
+[^shinsakai]: 枚方市「令和6年度(2024年度)第3回枚方市建築審査会 会議録」2024年12月26日（[Web アーカイブ](https://web.archive.org/web/20250815123932/https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000051/51724/R6_3_kenchikushinsakai_kaigiroku.pdf)。現在の市のページには無い）… 議案「楠葉花園町における建築基準法第59条の２第１項の規定による許可について」（総合設計）。「階数は地上43階建て」「建築物の高さは147.10メートル」「最上部の高さは147.90メートル」（屋上の手すりまで）。同意された。現地の「総合設計に係る建築計画のお知らせ」（2024年11月7日設置）も 147.10m
 
 [^takatsuki]: 阪急不動産・関電不動産「[2015年度グッドデザイン賞を受賞『ジオタワー高槻ミューズガーデン』](https://www.hhp.co.jp/images/corp/awards/2015_01.pdf)」2015年 …「地上42 階建」「竣工引渡し 2014 年12 月」。高槻市「[都市再生事業に関する計画書](https://www.city.takatsuki.osaka.jp/uploaded/attachment/10533.pdf)」（JR高槻駅北東地区、2008年ごろ）… 集合住宅B「42 階」「144ｍ」（着工前の計画）。高槻市「[市街地整備促進特別委員会資料](https://www.city.takatsuki.osaka.jp/uploaded/attachment/10462.pdf)」（2011年ごろ）… 集合住宅A（ジオタワー高槻ミューズフロント）「地上41 階」、工期「平成21 年11 月～平成24 年６月」
 
