@@ -1,7 +1,7 @@
 ---
 /**
  * 管理者用ページ（/admin/）。`pnpm dev` のときだけある（astro.config.mjs の admin インテグレーション）。
- * 公開用のビルドには入らない。docs/checklist.md と docs/notes/ をそのまま見せる。
+ * 公開用のビルドには入らない。docs/checklist.md と docs/notes/ をそのまま見せる（docs/ndl.md は /admin/ndl/）。
  */
 import Base from "../layouts/Base.astro";
 
@@ -27,7 +27,7 @@ const notes = Object.keys(import.meta.glob("../../docs/notes/*.md"))
       <p class="entry-meta">開発サーバーだけで見えるページです（公開されません）。まだ {open} 件、済み {done} 件。</p>
     </header>
     <div class="entry-body admin">
-      <p><a href="/admin/photos/">写真の候補（自由ライセンス）</a></p>
+      <p><a href="/admin/ndl/">図書館で見るもの（国立国会図書館・枚方市立図書館。docs/ndl.md）</a> ／ <a href="/admin/photos/">写真の候補（自由ライセンス）</a></p>
       <h2>調べもののメモ</h2>
       <ul>
         {notes.map((n) => <li><a href={`/admin/notes/${n}/`}>{n}</a></li>)}

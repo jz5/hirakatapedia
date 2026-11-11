@@ -7,7 +7,7 @@ import rehypePhotos from "./src/lib/rehype-photos.mjs";
 import rehypeGalleryStrip from "./src/lib/rehype-gallery-strip.mjs";
 
 /**
- * 管理者ページ（/admin/）。調べもののメモと確認リスト、写真の候補を見る。
+ * 管理者ページ（/admin/）。調べもののメモと確認リスト、図書館で見るもの、写真の候補を見る。
  * 開発サーバー（pnpm dev）のときだけ足すので、公開用のビルドには入らない
  */
 /** @type {import("astro").AstroIntegration} */
@@ -19,6 +19,7 @@ const admin = {
       injectRoute({ pattern: "/admin", entrypoint: "./src/admin/index.astro" });
       injectRoute({ pattern: "/admin/notes/[note]", entrypoint: "./src/admin/note.astro" });
       injectRoute({ pattern: "/admin/photos", entrypoint: "./src/admin/photos.astro" });
+      injectRoute({ pattern: "/admin/ndl", entrypoint: "./src/admin/ndl.astro" });
     },
   },
 };
