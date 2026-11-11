@@ -155,10 +155,12 @@ button { font: inherit; color: inherit; }
   gap: var(--sp-3) var(--sp-5);
   padding-block: var(--sp-4);
 }
-/* ロゴは文字だけ。「枚方」を太く、「pedia」は細く */
+/* ロゴ。「枚方」は字形の SVG で太く、「pedia」は細い文字 */
 .site-brand { display: flex; align-items: baseline; gap: var(--sp-3); text-decoration: none; color: var(--fg-strong); }
 .site-name { font-size: 1.5rem; line-height: 1; letter-spacing: .02em; }
-.site-name-ja { font-weight: 700; }
+/* 「枚方」は文字ではなく字形の SVG（src/assets/logo-hirakata.svg） */
+/* 寸法は LINE Seed JP Bold の「枚方」の字面（幅 1.917em・高さ .912em・下へ .075em）に合わせ、文字のときと同じ位置・幅にする */
+.site-name-ja svg { display: inline-block; height: .912em; width: auto; aspect-ratio: 488.5 / 232.25; vertical-align: -.075em; margin: 0 .088em 0 .035em; }
 .site-name-en { font-weight: 400; color: var(--mut); margin-left: .08em; }
 .site-reading { font-size: .6875rem; letter-spacing: .12em; color: var(--mut); }
 .site-brand:hover { color: var(--accent); }
@@ -371,6 +373,8 @@ button { font: inherit; color: inherit; }
 .toc-inline .toc-list { border-left: 0; }
 .toc-inline .toc-list li a { border-left: 0; padding-left: 0; margin-left: 0; }
 .toc-inline .toc-list li.d3 a { padding-left: 1em; }
+/* 冒頭の読み方の案内（rehype-summary.mjs が入れる）。あまり重要ではないので、目次くらいの小ささ・薄さに */
+.entry-body .entry-guide { font-size: .875rem; line-height: 1.6; color: var(--mut); }
 
 /* =========================================================================
    トップ
