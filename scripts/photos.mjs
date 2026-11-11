@@ -222,7 +222,8 @@ for (const file of files) {
   const outs = [join(DIR, `${id}-480.webp`), join(DIR, `${id}-1200.jpg`)];
   if (!refresh && c.editKey === editKey && c.small && outs.every((o) => existsSync(o))) continue;
   const origPath = join(ORIG, id);
-  if (refresh || !existsSync(origPath)) {
+  // 地理院タイルの元の画像は、上でつなぎ合わせて作ったもの（取りにいく URL は無い）
+  if (!gsiSpec[file] && (refresh || !existsSync(origPath))) {
     const res = await fetch(c.source, { headers: { "User-Agent": UA } });
     if (!res.ok) {
       errors.push(`${res.status} ${file}`);
