@@ -1,0 +1,39 @@
+---
+/**
+ * 手元で見ているときだけ、ヘッダーのサイト名の横に印を出す（本番では何も出ない）。
+ * - 開発サーバー（pnpm dev、4321）：「開発」。管理者ページ（手元の docs/admin/）があれば、そこへのリンクも
+ * - ビルドしたもの（pnpm preview、4336）：「プレビュー」。プレビューは dist/ をそのまま出すので、
+ *   ビルドした HTML の中で、ブラウザーが localhost を開いているかどうかを見て決める
+ */
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+
+const dev = import.meta.env.DEV;
+const admin = dev && existsSync(join(process.cwd(), "docs/admin/integration.mjs"));
+const label = dev ? "開発" : "プレビュー";
+---
+
+<script is:inline define:vars={{ dev, admin, label }}>
+  if (dev || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+    const brand = document.querySelector(".site-brand");
+    if (brand) {
+      // サイト名と印をひとまとめにして、サイト名のすぐ右に置く（.site-brand の margin-right: auto は外側へ）
+      const wrap = document.createElement("div");
+      wrap.style.cssText = "display:flex;align-items:center;gap:.5rem;margin-right:auto";
+      brand.replaceWith(wrap);
+      wrap.append(brand);
+      const pill = "font-size:.75rem;line-height:1;padding:.3em .6em;border-radius:999px;white-space:nowrap;text-decoration:none;";
+      const badge = document.createElement("span");
+      badge.textContent = label;
+      badge.style.cssText = pill + "background:#b45309;color:#fff;font-weight:700";
+      wrap.append(badge);
+      if (admin) {
+        const a = document.createElement("a");
+        a.href = "/admin/";
+        a.textContent = "管理者ページ";
+        a.style.cssText = pill + "border:1px solid #b45309;color:#b45309";
+        wrap.append(a);
+      }
+    }
+  }
+</script>

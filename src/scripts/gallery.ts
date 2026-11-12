@@ -202,7 +202,8 @@ export async function startGallery() {
   for (let n = 0; n < meta.chunks; n++) {
     let chunk: Row[];
     try {
-      const r = await fetch(`/gallery/index/${n}.json`);
+      // 開発サーバーは、trailingSlash: "always" のため、名前に [n] のある .json にも末尾の / が要る（ビルドしたものは要らない）
+      const r = await fetch(`/gallery/index/${n}.json${import.meta.env.DEV ? "/" : ""}`);
       if (!r.ok) throw new Error(String(r.status));
       chunk = await r.json();
     } catch {

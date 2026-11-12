@@ -7,7 +7,9 @@ import searchSvg from "@fortawesome/fontawesome-free/svgs/solid/magnifying-glass
 // ロゴの「枚方」の字形（src/assets/logo-hirakata.svg。色は currentColor で文字色に合わせる）
 import logoSvg from "../assets/logo-hirakata.svg?raw";
 const logoPath = logoSvg.match(/ d="([^"]+)"/)![1];
+const logoViewBox = logoSvg.match(/viewBox="([^"]+)"/)![1];
 import Analytics from "../components/Analytics.astro";
+import EnvBadge from "../components/EnvBadge.astro";
 // 本文の書体（LINE Seed JP）。自分のサーバーから配る（Google Fonts から読まない）
 import "@fontsource/line-seed-jp/400.css";
 import "@fontsource/line-seed-jp/700.css";
@@ -147,7 +149,7 @@ const jsonLd = article
     <header class="site-header">
       <div class="wrap site-header-inner">
         <a class="site-brand" href="/">
-          <span class="site-name"><span class="site-name-ja"><svg viewBox="0 0 488.5 232.25" role="img" aria-label="枚方"><path fill="currentColor" d={logoPath} /></svg></span><span class="site-name-en">pedia</span></span>
+          <span class="site-name"><span class="site-name-ja"><svg viewBox={logoViewBox} role="img" aria-label="枚方"><path fill="currentColor" d={logoPath} /></svg></span><span class="site-name-en">pedia</span></span>
           <span class="site-reading" data-reading>{SITE.reading}</span>
         </a>
         <nav class="site-nav" aria-label="サイト">
@@ -160,6 +162,7 @@ const jsonLd = article
         <ThemeSelect />
       </div>
     </header>
+    <EnvBadge />
     <script is:inline>
       // 4月1日（日本時間）だけ、ヘッダーの読みを「まいかたペディア」にする（エイプリルフール）
       (() => {
