@@ -103,6 +103,8 @@ function moreSection(slug, links) {
 
 export default function rehypeLinkCards() {
   return (tree, file) => {
+    // 記事（content/articles/）だけ。管理者ページで読み込むメモ（docs/）には付けない
+    if (!/[\\/]content[\\/]articles[\\/]/.test(file.path ?? "")) return;
     const allLinks = file.data.astro?.frontmatter?.links ?? [];
     // 関連リンクはサイトの外へのリンクだけ。このサイトの記事は「関連記事」へ
     const links = allLinks.filter((l) => !internalSlug(l));

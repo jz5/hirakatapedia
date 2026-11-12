@@ -1,4 +1,5 @@
 // @ts-check
+import { existsSync } from "node:fs";
 import { defineConfig } from "astro/config";
 import rehypeSummary from "./src/lib/rehype-summary.mjs";
 import rehypeCharts from "./src/lib/rehype-charts.mjs";
@@ -6,26 +7,12 @@ import rehypeLinkCards from "./src/lib/rehype-link-cards.mjs";
 import rehypePhotos from "./src/lib/rehype-photos.mjs";
 import rehypeGalleryStrip from "./src/lib/rehype-gallery-strip.mjs";
 
-/**
- * 管理者ページ（/admin/）。調べもののメモと確認リスト、図書館で見るもの、写真の候補を見る。
- * 開発サーバー（pnpm dev）のときだけ足すので、公開用のビルドには入らない
- */
-/** @type {import("astro").AstroIntegration} */
-const admin = {
-  name: "hirakatapedia-admin",
-  hooks: {
-    "astro:config:setup": ({ command, injectRoute }) => {
-      if (command !== "dev") return;
-      injectRoute({ pattern: "/admin", entrypoint: "./src/admin/index.astro" });
-      injectRoute({ pattern: "/admin/notes/[note]", entrypoint: "./src/admin/note.astro" });
-      injectRoute({ pattern: "/admin/photos", entrypoint: "./src/admin/photos.astro" });
-      injectRoute({ pattern: "/admin/ndl", entrypoint: "./src/admin/ndl.astro" });
-    },
-  },
-};
+// 管理者ページ（開発サーバーだけ）。中身は公開しない手元のリポジトリ（docs/）にあり、あるときだけ読み込む
+const adminIntegration = new URL("./docs/admin/integration.mjs", import.meta.url);
+const admin = existsSync(adminIntegration) ? [(await import(adminIntegration.href)).default] : [];
 
 export default defineConfig({
-  integrations: [admin],
+  integrations: [...admin],
   site: "https://hirakata.pronama.jp",
 
   // 記事の URL は /slug/ で末尾スラッシュあり。一度出したら変えない（CLAUDE.md）
