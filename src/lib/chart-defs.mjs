@@ -24,7 +24,7 @@ export const charts = {
     return pyramidChart({
       id: "chart-data-age",
       title: `枚方市の年齢ごとの人口（${y}年${mo}月1日）`,
-      desc: `5歳ごとの男女の人口。いちばん多いのは${top[0].label}（${(top[0].male + top[0].female).toLocaleString("ja-JP")}人）、次が${top[1].label}。65歳以上は${d.groups["65+"].toLocaleString("ja-JP")}人で${pct(d.groups["65+"])}%、15歳未満は${d.groups["0-14"].toLocaleString("ja-JP")}人で${pct(d.groups["0-14"])}%。`,
+      desc: `5歳ごとの男女の人口。最も多いのは${top[0].label}（${(top[0].male + top[0].female).toLocaleString("ja-JP")}人）、次が${top[1].label}。65歳以上は${d.groups["65+"].toLocaleString("ja-JP")}人で${pct(d.groups["65+"])}%、15歳未満は${d.groups["0-14"].toLocaleString("ja-JP")}人で${pct(d.groups["0-14"])}%。`,
       leftName: "男性",
       rightName: "女性",
       unit: "人",
@@ -68,7 +68,7 @@ export const charts = {
     return barChart({
       id: "chart-data-sakura",
       title: "桜の多い市の公園（上位10）",
-      desc: `市の都市公園${d.rows.length}か所の桜は合わせて${all.toLocaleString("ja-JP")}本。いちばん多いのは${top[0][0]}の${top[0][si]}本で、2番目の${top[1][0]}（${top[1][si]}本）の4倍以上。`,
+      desc: `市の都市公園${d.rows.length}か所の桜は合わせて${all.toLocaleString("ja-JP")}本。最も多いのは${top[0][0]}の${top[0][si]}本で、2番目の${top[1][0]}（${top[1][si]}本）の4倍以上。`,
       format: (n) => `${n}本`,
       rows: top.map((r) => ({ label: r[0].replace(/（.*）/, ""), value: r[si], kind: "hl" })),
       table: { head: ["公園名", "桜の本数"], rows: top.map((r) => [r[0], r[si]]) },
@@ -82,7 +82,7 @@ export const charts = {
     return barChart({
       id: "chart-kmu-tower-heights",
       title: "枚方と近くの市の高い建物（高さ）",
-      desc: "枚方市でいちばん高いのはくずはタワーシティ T棟の136.80m。関医タワー（115.95m）は枚方市で3番目。近くの市では、データベースの値で、高槻市のジオタワー高槻の2棟と門真市のシティタワー古川橋がくずはタワーシティより高い。ニデックが京都で一番高いとする本社ビル（100.6m）は関医タワーより低い。",
+      desc: "枚方市で最も高いのはくずはタワーシティ T棟の136.80m。関医タワー（115.95m）は枚方市で3番目。近くの市では、データベースの値で、高槻市のジオタワー高槻の2棟と門真市のシティタワー古川橋がくずはタワーシティより高い。ニデックが京都で一番高いとする本社ビル（100.6m）は関医タワーより低い。",
       // 高さは資料どおりの桁で（136.80m など）
       format: (n) => `${d.buildings.find((b) => b.height === n)?.heightText ?? n}m`,
       left: 176,
@@ -103,7 +103,7 @@ export const charts = {
       id: "chart-jinko-population",
       title: "枚方市の人口（1947〜2025年）と、市の推計（2053年まで）",
       desc:
-        "1947年の約4万2千人から、1958年ごろを境に急に増え、1969年には1年で2万8千人増えた。1995年に40万人を超え、2009年末の41万1777人がいちばん多い。そのあと減り続け、2025年末は39万926人。市の推計では2053年に約30万6千人。",
+        "1947年の約4万2千人から、1958年ごろを境に急に増え、1969年には1年で2万8千人増えた。1995年に40万人を超え、2009年末の41万1777人がピーク。そのあと減り続け、2025年末は39万926人。市の推計では2053年に約30万6千人。",
       x: { min: 1945, max: 2056, ticks: [1950, 1960, 1970, 1980, 1990, 2000, 2010, 2020, 2030, 2040, 2050] },
       y: { min: 0, max: 480000, ticks: [0, 100000, 200000, 300000, 400000], format: man },
       unit: "人",
@@ -268,7 +268,7 @@ export const charts = {
     return lineChart({
       id: "chart-library-lending",
       title: `枚方市立図書館の1年の貸出冊数（${d.lending[0].year}〜${last.year}年度）`,
-      desc: `${d.lending[0].year}年度は約${Math.round(d.lending[0].books / 10000)}万冊。2005年度に中央図書館が開館して増え、${peak.year}年度の${peak.books.toLocaleString("ja-JP")}冊がいちばん多い。2020年度は新型コロナで約${Math.round(at(2020) / 10000)}万冊に減り、${last.year}年度は${last.books.toLocaleString("ja-JP")}冊。`,
+      desc: `${d.lending[0].year}年度は約${Math.round(d.lending[0].books / 10000)}万冊。2005年度に中央図書館が開館して増え、${peak.year}年度の${peak.books.toLocaleString("ja-JP")}冊が過去最多。2020年度は新型コロナで約${Math.round(at(2020) / 10000)}万冊に減り、${last.year}年度は${last.books.toLocaleString("ja-JP")}冊。`,
       x: { min: 1987, max: 2027, ticks: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2025] },
       y: { min: 0, max: 5000000, ticks: [0, 1000000, 2000000, 3000000, 4000000, 5000000], format: man },
       unit: "冊",
