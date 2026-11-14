@@ -6,13 +6,15 @@ import rehypeCharts from "./src/lib/rehype-charts.mjs";
 import rehypeLinkCards from "./src/lib/rehype-link-cards.mjs";
 import rehypePhotos from "./src/lib/rehype-photos.mjs";
 import rehypeGalleryStrip from "./src/lib/rehype-gallery-strip.mjs";
+// 開発サーバーで、記事のページに本番との差分を出す（pnpm dev のときだけ。/__diff/ に変わった記事の一覧）
+import articleDiff from "./scripts/article-diff/integration.mjs";
 
 // 管理者ページ（開発サーバーだけ）。中身は公開しない手元のリポジトリ（docs/）にあり、あるときだけ読み込む
 const adminIntegration = new URL("./docs/admin/integration.mjs", import.meta.url);
 const admin = existsSync(adminIntegration) ? [(await import(adminIntegration.href)).default] : [];
 
 export default defineConfig({
-  integrations: [...admin],
+  integrations: [...admin, articleDiff],
   site: "https://hirakata.pronama.jp",
 
   // 記事の URL は /slug/ で末尾スラッシュあり。一度出したら変えない（CLAUDE.md）
