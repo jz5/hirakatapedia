@@ -2,11 +2,10 @@
 import { gitDate, jaYmd } from "../lib/git-date";
 const updated = gitDate("src/pages/privacy.astro");
 import { SITE, OPERATOR } from "../lib/site";
+import { AMAZON_TAG } from "../lib/affiliate.mjs";
 import Base from "../layouts/Base.astro";
 
-/*
- * Amazon アソシエイトを始めたら、「広告について」に次の一文を足す（規約で表示が必要）:
- *   Amazonのアソシエイトとして、合同会社プロ生は適格販売により収入を得ています。*/
+/* Amazon アソシエイトの一文（規約で表示が必要）は、src/lib/affiliate.mjs の AMAZON_TAG を入れると「広告について」に出る */
 ---
 
 <Base title="プライバシーポリシー" path="/privacy/" description="枚方pedia のプライバシーポリシー。Google アナリティクスによるアクセス解析、地図を表示したときの通信、広告、お問い合わせの扱い。">
@@ -38,6 +37,7 @@ import Base from "../layouts/Base.astro";
       <p>
         記事の中で紹介する本や商品へのリンクに、アフィリエイトのリンクを使うことがあります。リンクから商品が購入されると、このサイトに紹介料が支払われることがあります。
       </p>
+      {AMAZON_TAG && <p>Amazonのアソシエイトとして、{OPERATOR.name}は適格販売により収入を得ています。</p>}
 
       <h2>お問い合わせ</h2>
       <p>このポリシーについてのお問い合わせは、<a href="/about/#contact">連絡先</a>までお願いします。</p>

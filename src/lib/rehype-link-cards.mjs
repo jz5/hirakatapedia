@@ -10,6 +10,7 @@ import { readFileSync, readdirSync } from "node:fs";
 import { basename, join } from "node:path";
 import { parse } from "yaml";
 import { publicGallery, galleryPath, photo } from "./photos.mjs";
+import { AMAZON_TAG, amazonUrl } from "./affiliate.mjs";
 
 const MORE = 3;
 
@@ -35,7 +36,12 @@ function card(link, c) {
   return el("li", { className: ["link-card"] }, [
     el(
       "a",
-      { href: c.url ?? link.url, className: ["link-card-main"], ...(external ? { rel: ["noopener"] } : {}) },
+      {
+        href: c.book ? amazonUrl(c.url) : (c.url ?? link.url),
+        className: ["link-card-main"],
+        // アソシエイトのリンクは rel="sponsored"（src/lib/affiliate.mjs）
+        ...(external ? { rel: c.book && AMAZON_TAG ? ["sponsored", "noopener"] : ["noopener"] } : {}),
+      },
       [
         ...img,
         el("span", { className: ["link-card-text"] }, [
@@ -43,7 +49,7 @@ function card(link, c) {
           ...(c.description ? [el("span", { className: ["link-card-desc"] }, [text(c.description)])] : []),
           // どこのサイトか（このサイトの中へのリンクには出さない）
           ...(host ? [el("span", { className: ["link-card-site"] }, [text(host)])] : []),
-          // なぜリンクしたか（リンク先に何があるか）。カードの中のいちばん下に
+          // なぜリンクしたか（リンク先に何があるか）。カードの中の最後に
           ...(link.note ? [el("span", { className: ["link-card-note"] }, [text(link.note)])] : []),
         ]),
       ],
@@ -108,7 +114,7 @@ export default function rehypeLinkCards() {
     const allLinks = file.data.astro?.frontmatter?.links ?? [];
     // 関連リンクはサイトの外へのリンクだけ。このサイトの記事は「関連記事」へ
     const links = allLinks.filter((l) => !internalSlug(l));
-    // 関連写真（/<記事>/photos/）があれば、いちばん最後にそのカード
+    // 関連写真（/<記事>/photos/）があれば、最後にそのカード
     const slug = basename(file.path ?? "", ".md");
     const photos = publicGallery(slug);
     const galleryCard = photos.length
@@ -125,7 +131,7 @@ export default function rehypeLinkCards() {
       : [];
     const more = moreSection(slug, allLinks);
     const insert = (sections) => {
-      // 「出典・注釈」（脚注の section）の前に入れる。脚注がなければいちばん最後
+      // 「出典・注釈」（脚注の section）の前に入れる。脚注がなければ最後
       const i = tree.children.findIndex((n) => n.type === "element" && n.tagName === "section" && n.properties?.dataFootnotes !== undefined);
       // サイトの検索（Pagefind）には、関連リンク・関連記事・出典を入れない（本文だけ）
       if (i >= 0) tree.children[i].properties.dataPagefindIgnore = "";
