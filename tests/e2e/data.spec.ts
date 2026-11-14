@@ -119,7 +119,7 @@ test("ページを読み込み直しても地図が出る", async ({ page }) => 
   await expectMap(page, geoRows("kosodate").geo);
 });
 
-test("公園：「桜の多い順」で、いちばん上が桜のいちばん多い公園", async ({ page }) => {
+test("公園：「桜の多い順」で、先頭が桜の最も多い公園", async ({ page }) => {
   const d = JSON.parse(readFileSync("public/opendata/park.json", "utf8"));
   const si = d.columns.findIndex((c: string[]) => c[0] === "桜の本数");
   const top = [...d.rows].sort((a, b) => b[si] - a[si])[0];
@@ -279,7 +279,7 @@ test.describe("写真ギャラリー", () => {
     await expect(cluster).toBeVisible();
     const before = await page.evaluate(() => document.querySelectorAll(".gmap-cluster").length);
     expect(before).toBeGreaterThan(0);
-    // いちばん大きい印を押すと寄る（印が分かれる）
+    // 最も大きい印を押すと寄る（印が分かれる）
     const nums = await map.locator(".gmap-cluster").allInnerTexts();
     const big = nums.map((t) => Number(t.replace(/,/g, ""))).reduce((m, x, i, a) => (x > a[m] ? i : m), 0);
     await map.locator(".gmap-cluster").nth(big).click();

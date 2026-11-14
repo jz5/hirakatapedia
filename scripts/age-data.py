@@ -1,7 +1,7 @@
 """
 データのページ（/data/）の「年齢ごとの人口」のグラフ用データ content/data/age.json を作る。
 
-  1. 枚方市「性別年齢別人口（2026年・月別）」の、いちばん新しい月の PDF を落とす
+  1. 枚方市「性別年齢別人口（2026年・月別）」の、最新の月の PDF を落とす
      https://www.city.hirakata.osaka.jp/0000053215.html
   2. python3 scripts/age-data.py <PDF> content/data/age.json
 

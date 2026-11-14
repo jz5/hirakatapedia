@@ -9,7 +9,7 @@
  * 写真の一覧は content/galleries/<記事>.yaml。1枚ずつ Commons のファイル名（file）と、説明（caption）を書く。
  *   - file: "HIRAKATA_T-SITE.jpg"
  *     caption: "枚方T-SITE（2018年）"
- *     pick: true      管理者ページで目立たせる（いちばん使えそうなもの）
+ *     pick: true      管理者ページで目立たせる（最も使えそうなもの）
  *     seen: true      画像を見て確かめた
  *     note: "…"       管理者ページだけに出すメモ（使う前に気をつけること）
  *     hide: true      写真ギャラリーに出さない（枚方ではない写真など）

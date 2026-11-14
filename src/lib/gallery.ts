@@ -47,7 +47,7 @@ export interface GalleryPhoto {
 const files = import.meta.glob("../../content/data/gallery/*.json", { eager: true, import: "default" }) as Record<string, { fetched: string; photos: GalleryPhoto[] }>;
 const all = Object.values(files);
 
-/** いちばん新しく集めた日 */
+/** 最後に集めた日 */
 export const galleryFetched: string = all.map((f) => f.fetched).sort().pop() ?? "";
 
 /** 撮った年の新しい順（年の無いものは最後）。同じ年は撮った日の新しい順、そのあとは番号の順 */

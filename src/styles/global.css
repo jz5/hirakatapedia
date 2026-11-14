@@ -272,7 +272,7 @@ button { font: inherit; color: inherit; }
 .side-rank li::before { content: counter(rank); color: var(--mut-soft); font-variant-numeric: tabular-nums; }
 
 /* --- 追いかけてくる塊（目次と情報募集） ---
-   右の列のいちばん下に置いて、そこだけ追いかけてくる。下に何も無いので重ならない。
+   右の列の最下部に置いて、そこだけ追いかけてくる。下に何も無いので重ならない。
    目次が長いときは目次の中だけスクロールして、情報募集はいつも見えるようにする。
    狭い画面では右の列ごと本文の下に回る。目次は代わりに題名の下に出し、
    情報募集は本文のすぐ下に来るよう右の列の先頭に出す */
@@ -1047,6 +1047,6 @@ tr[hidden] { display: none; }
 
 /* ホームの記事のカードの更新日 */
 .card-date { display: block; margin-top: var(--sp-1); font-size: .75rem; color: var(--mut); }
-/* 記事のいちばん下の、公開日・最終更新 */
+/* 記事の末尾の、公開日・最終更新 */
 .entry-footer { margin-top: var(--sp-7); font-size: .8125rem; color: var(--mut); }
 .entry-footer p { margin: 0; }

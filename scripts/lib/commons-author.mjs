@@ -49,7 +49,7 @@ export function commonsAuthor(html = "") {
 }
 
 /**
- * 最初にアップロードした人（いまの版はボットが変換し直したものもあるので、いちばん古い版の人）
+ * 最初にアップロードした人（いまの版はボットが変換し直したものもあるので、最も古い版の人）
  * @param {string} file Commons のファイル名
  * @param {(url: string) => Promise<any>} getJson
  * @returns {Promise<{ name: string, url: string } | null>}
