@@ -42,6 +42,14 @@ const strip = home ? photos.filter((p) => p.lat !== null).slice(0, 3) : [];
             </a>
           </li>
           <li>
+            <a href="/data/chikei/">
+              {/* サムネイルは /data/chikei/ の 3D の画面を撮って縮小した（地名と左下の表示を消し、高さ 3 倍で「枚方市に寄る」を押した画面） */}
+              <img class="side-card-wide" src="/maps/chikei/thumb.webp" alt="" width="480" height="220" loading="lazy" decoding="async" />
+              <strong>枚方の地形を 3D で</strong>
+              <span>淀川から生駒山地まで、市とまわりの地形を回して見られる</span>
+            </a>
+          </li>
+          <li>
             <a href="/sns/">
               <strong>枚方の SNS</strong>
               <span>市議会議員や市・施設・地域メディアの SNS アカウントの一覧</span>

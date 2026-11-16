@@ -15,6 +15,7 @@ export const GET: APIRoute = async () => {
     ...datasets.map((d) => ({ loc: dataPath(d.id) })),
     { loc: "/data/city/" },
     { loc: "/data/links/" },
+    { loc: "/data/chikei/" },
     { loc: "/sns/" },
     { loc: "/about/" },
     { loc: "/privacy/" },

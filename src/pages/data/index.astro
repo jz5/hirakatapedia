@@ -30,6 +30,7 @@ const extCount = catalog.external.length;
 const headings = [
   { depth: 2, slug: "view", text: "検索できるデータ" },
   { depth: 2, slug: "graphs", text: "グラフで見る" },
+  { depth: 2, slug: "chikei", text: "地形を見る" },
   { depth: 2, slug: "more", text: "提供されているデータの一覧" },
   { depth: 2, slug: "notes", text: "このページについて" },
 ];
@@ -85,6 +86,19 @@ const headings = [
               </a>
             </li>
           ))}
+        </ul>
+      </section>
+
+      <section id="chikei" aria-labelledby="chikei-h">
+        <h2 id="chikei-h">地形を見る</h2>
+        <ul class="data-cards">
+          <li>
+            <a href="/data/chikei/">
+              <span class="data-card-title">枚方市の地形を 3D で見る</span>
+              <span class="data-card-desc">枚方市とまわりの地形を、立体の模型のように回して見られます。空中写真・地図・標高の色分けを切り替えられ、高さを強調できます</span>
+              <span class="data-card-meta">3D・国土地理院の標高のデータから</span>
+            </a>
+          </li>
         </ul>
       </section>
 

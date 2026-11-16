@@ -344,6 +344,7 @@ button { font: inherit; color: inherit; }
 .side-cards strong { color: var(--fg-strong); }
 .side-cards a:hover strong { color: var(--accent); }
 .side-card-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-bottom: var(--sp-2); }
+.side-card-wide { display: block; width: 100%; height: auto; aspect-ratio: 480 / 220; object-fit: cover; margin-bottom: var(--sp-2); border-radius: 2px; background: var(--line-soft); }
 .side-card-strip img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 2px; background: var(--line-soft); }
 
 .toc { font-size: .875rem; line-height: 1.5; }
@@ -1050,3 +1051,56 @@ tr[hidden] { display: none; }
 /* 記事の末尾の、公開日・最終更新 */
 .entry-footer { margin-top: var(--sp-7); font-size: .8125rem; color: var(--mut); }
 .entry-footer p { margin: 0; }
+
+/* 地形を 3D で見るページ（/data/chikei/） */
+.chikei { display: grid; gap: var(--sp-3); }
+.chikei-bar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2) var(--sp-5); font-size: .875rem; }
+.chikei-seg, .chikei-views { display: flex; gap: var(--sp-1); }
+.chikei-exag { display: flex; align-items: center; gap: var(--sp-2); }
+.chikei-exag input[type="range"] { width: 130px; accent-color: var(--accent); }
+.chikei-times { display: inline-flex; align-items: center; gap: 2px; white-space: nowrap; }
+.chikei-times input { width: 4.2em; font: inherit; font-variant-numeric: tabular-nums; text-align: right; padding: 1px 4px; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); }
+.chikei-checks { display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-4); }
+.chikei-checks label { display: inline-flex; align-items: center; gap: .35em; cursor: pointer; }
+.chikei-checks input { accent-color: var(--accent); margin: 0; }
+.chikei-view { position: relative; height: min(72vh, 640px); min-height: 320px; overflow: hidden; background: var(--bg-sub); border: 1px solid var(--line); border-radius: var(--radius); }
+.chikei-view canvas { display: block; width: 100%; height: 100%; cursor: crosshair; touch-action: pan-y; }
+.chikei-view canvas:active { cursor: grabbing; }
+.chikei-loading { position: absolute; inset: 0; margin: 0; display: grid; place-items: center; color: var(--mut); background: var(--bg-sub); }
+.chikei-labels { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.chikei-lb { position: absolute; left: 0; top: 0; display: flex; flex-direction: column; align-items: center; white-space: nowrap; font-size: .75rem; line-height: 1.3; }
+.chikei-lb span { padding: 1px 6px; border-radius: 2px; color: var(--fg-strong); background: color-mix(in srgb, var(--bg) 88%, transparent); }
+.chikei-lb i { width: 1px; height: 16px; background: var(--fg-strong); opacity: .7; }
+.chikei-lb-peak span { color: var(--chart-2); font-weight: 700; }
+.chikei-lb-peak i { background: var(--chart-2); }
+.chikei-lb-town span { padding: 0; background: none; color: #fff; font-weight: 700; letter-spacing: .2em; font-size: .8125rem; text-shadow: 0 0 3px #000, 0 0 6px rgba(0,0,0,.8); }
+.chikei-lb-river span { color: var(--chart-1); font-weight: 700; letter-spacing: .3em; }
+.chikei-lb-town i, .chikei-lb-river i { display: none; }
+.chikei-zoom { position: absolute; top: var(--sp-2); right: var(--sp-2); display: grid; gap: 2px; }
+.chikei-zoom button { width: 34px; height: 34px; font: inherit; font-size: 1.125rem; line-height: 1; color: var(--fg-strong); background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); cursor: pointer; }
+.chikei-zoom button:hover { border-color: var(--accent); color: var(--accent); }
+.chikei-hud { position: absolute; left: var(--sp-2); right: var(--sp-2); bottom: var(--sp-2); display: flex; align-items: flex-end; justify-content: space-between; gap: var(--sp-2); pointer-events: none; }
+.chikei-readout { min-width: 0; padding: 3px 10px; font-size: .8125rem; font-variant-numeric: tabular-nums; background: color-mix(in srgb, var(--bg) 88%, transparent); border: 1px solid var(--line); border-radius: var(--radius); }
+.chikei-readout b { color: var(--chart-2); font-size: .9375rem; }
+/* 数字の字の幅がそろっていない書体なので、数字の枠の幅を決めて、欄の幅が変わらないようにする */
+.chikei-num { display: inline-block; width: 5.6em; white-space: nowrap; }
+.chikei-num-h { width: 4.8em; }
+.chikei-num-lon { width: 6em; }
+.chikei-pin { position: absolute; left: -7px; top: -7px; width: 14px; height: 14px; border: 2px solid #fff; border-radius: 50%; background: var(--chart-2); box-shadow: 0 0 0 1px rgba(0,0,0,.6), 0 1px 4px rgba(0,0,0,.5); }
+.chikei-full { position: fixed; inset: 0; z-index: 1000; height: 100dvh; min-height: 0; border: 0; border-radius: 0; }
+.chikei-noscroll, .chikei-noscroll body { overflow: hidden; }
+.chikei-zoom button svg { display: block; margin: auto; }
+.chikei-close { position: absolute; top: var(--sp-2); left: var(--sp-2); padding: 8px 14px; font: inherit; font-size: .9375rem; font-weight: 700; color: var(--fg-strong); background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 1px 4px rgba(0,0,0,.25); cursor: pointer; }
+.chikei-touchhint { text-align: center; line-height: 1.8; position: absolute; inset: 0; margin: 0; display: grid; place-items: center; color: #fff; font-weight: 700; background: rgba(0,0,0,.45); pointer-events: none; }
+@media (max-width: 480px) { .chikei-ll { display: block; } }
+.chikei-compass { flex: none; margin-left: auto; width: 48px; height: 48px; border-radius: 50%; background: color-mix(in srgb, var(--bg) 88%, transparent); border: 1px solid var(--line); }
+.chikei-n { fill: var(--chart-2); }
+.chikei-s { fill: var(--mut-soft); opacity: .6; }
+.chikei-legend { max-width: 420px; font-size: .75rem; color: var(--mut); }
+.chikei-ramp { display: block; width: 100%; height: 12px; border: 1px solid var(--line); }
+.chikei-ticks { position: relative; height: 1.5em; font-variant-numeric: tabular-nums; }
+.chikei-ticks span { position: absolute; transform: translateX(-50%); white-space: nowrap; }
+.chikei-ticks span:first-child { transform: none; }
+.chikei-ticks span:last-child { transform: translateX(-100%); }
+.chikei-legend p { margin: 0; }
+.chikei [hidden] { display: none !important; }
