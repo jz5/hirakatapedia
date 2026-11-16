@@ -100,6 +100,9 @@ function similarity(a, b) {
 
 // ---- ブロック ----
 
+/** ボタンや 3D の画面などが入ったブロック。中身を書き換えると動かなくなるので、字の単位の色付けはせず、枠の色だけ付ける */
+const hasLiveUi = (el) => !!el.querySelector("button, input, select, textarea, canvas, iframe, video");
+
 /** 比べる単位のブロックを並べる */
 function blocks(doc) {
   const out = [];
@@ -284,7 +287,7 @@ async function main() {
       if (best >= 0) {
         for (; j < best; j++) (L(adds[j]).classList.add("adiff-add"), marks.push(L(adds[j])), added.push([adds[j], L(adds[j])]), nAdd++);
         const a = L(adds[best]);
-        a.innerHTML = inlineDiff(d.innerHTML, adds[best].innerHTML);
+        if (!hasLiveUi(a)) a.innerHTML = inlineDiff(d.innerHTML, adds[best].innerHTML);
         a.classList.add("adiff-mod");
         marks.push(a);
         nMod++;
@@ -320,7 +323,7 @@ async function main() {
     const [a, el] = added[best];
     el.classList.replace("adiff-add", "adiff-move");
     el.title = "本番では別の場所にあったブロック";
-    if (score < 1) el.innerHTML = inlineDiff(d.innerHTML, a.innerHTML);
+    if (score < 1 && !hasLiveUi(el)) el.innerHTML = inlineDiff(d.innerHTML, a.innerHTML);
     ghost.remove();
     marks.splice(marks.indexOf(ghost), 1);
     nAdd--;
