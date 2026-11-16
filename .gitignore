@@ -23,3 +23,6 @@ docs/
 # 関連リンクのカードのサムネイル（ほかのサイトの画像・本の書影を縮小したもの。配り直さない）。
 # node scripts/link-cards.mjs で作り直せる
 public/link-thumbs/
+# 地形の 3D の、近づいたときの空中写真・古い空中写真・細かい標高（地理院タイルから作る。約 90MB）。
+# python3 scripts/chikei-tiles.py で作り直せる
+public/maps/chikei/t/

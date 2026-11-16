@@ -2,22 +2,25 @@
 /**
  * 枚方市とまわりの地形を 3D で見るページ（/data/chikei/）。
  * 標高・空中写真・地図・市の境界・地名は scripts/chikei-data.py で作る（public/maps/chikei/ と content/data/chikei.json）。
+ * 近づいたときの細かい空中写真・古い空中写真・細かい標高は scripts/chikei-tiles.py で作る（public/maps/chikei/t/。Git に入れない）。
  * 3D の本体は src/scripts/chikei-3d.ts（three.js）。ページを開いたあとで読み込む。
  * 画像は自分のサーバーに置いたので、開いても国土地理院のサーバーには何も送らない。
  */
 import Base from "../../layouts/Base.astro";
 import meta from "../../../content/data/chikei.json";
+import tiles from "../../../content/data/chikei-layers.json";
 
 const title = "枚方市の地形を 3D で見る";
 const km = Math.round(meta.sizeM / 1000);
 const lo = Math.round(meta.cityMin);
 const hi = Math.round(meta.cityMax);
 const peaks = meta.labels.filter((l) => l.k === "peak");
+const olds = tiles.photos.filter((p) => p.old).map((p) => p.name);
 ---
 
 <Base
   title={title}
-  description={`枚方市とまわり約${km}km四方の地形を、立体の模型のように回して見られるページ。空中写真・地図・標高の色分けを切り替えられ、高さを20倍まで強調できます。`}
+  description={`枚方市とまわり約${km}km四方の地形を、立体の模型のように回して見られるページ。空中写真（1936年ごろからの古い写真も）・地図・標高の色分けを切り替えられ、高さを20倍まで強調できます。`}
   path="/data/chikei/"
   source="src/pages/data/chikei.astro"
   wide
@@ -30,7 +33,7 @@ const peaks = meta.labels.filter((l) => l.k === "peak");
 
     <div class="entry-body">
       <p>
-        枚方市と、まわり約{km}km 四方の地形を、立体の模型のように回して見られます。国土地理院の標高のデータでは、<mark>市内の標高は約{lo}m〜{hi}m</mark>です。西の淀川ぞいが低く、南東の端で高くなります。
+        枚方市と、まわり約{km}km 四方の地形を、立体の模型のように回して見られます。国土地理院の標高のデータでは、<mark>市内の標高は約{lo}m〜{hi}m</mark>です。西の淀川ぞいが低く、南東の端で高くなります。空中写真は、{olds[olds.length - 1].slice(0, 4)}年ごろからの古い写真にも切り替えられます。
       </p>
 
       <div class="chikei" id="chikei">
@@ -40,6 +43,9 @@ const peaks = meta.labels.filter((l) => l.k === "peak");
             <button type="button" class="data-mapbtn" data-layer="pale" aria-pressed="false">地図</button>
             <button type="button" class="data-mapbtn" data-layer="elev" aria-pressed="false">標高</button>
           </div>
+          <label class="chikei-year">写真の年
+            <select id="chikei-year">{tiles.photos.map((p) => <option value={p.key}>{p.name}</option>)}</select>
+          </label>
           <div class="chikei-exag">
             <label for="chikei-exag">高さ</label>
             <input type="range" id="chikei-exag" min="1" max="10" step="0.1" value="2" />
@@ -48,11 +54,12 @@ const peaks = meta.labels.filter((l) => l.k === "peak");
           <div class="chikei-checks">
             <label><input type="checkbox" id="chikei-border" checked />市の境界</label>
             <label><input type="checkbox" id="chikei-names" checked />地名</label>
+            <label><input type="checkbox" id="chikei-fine" />地形を細かく</label>
             <label><input type="checkbox" id="chikei-spin" />自動で回す</label>
           </div>
           <div class="chikei-views">
             <button type="button" class="data-mapbtn" id="chikei-all">全体</button>
-            <button type="button" class="data-mapbtn" id="chikei-city">枚方市に寄る</button>
+            <button type="button" class="data-mapbtn" id="chikei-city">枚方市</button>
           </div>
         </div>
 
@@ -77,6 +84,8 @@ const peaks = meta.labels.filter((l) => l.k === "peak");
           </div>
         </div>
 
+        <p class="chikei-oldnote" hidden>古い空中写真を、現在の地形の上に貼っています。丘を削って造った住宅地などは、写真と起伏が合いません。写真の無い所は灰色です。</p>
+
         <div class="chikei-legend" hidden>
           <canvas class="chikei-ramp" width="256" height="12"></canvas>
           <div class="chikei-ticks">
@@ -91,20 +100,24 @@ const peaks = meta.labels.filter((l) => l.k === "peak");
         <li>ドラッグで回り、右ドラッグで動きます。拡大は「＋」「−」か、3D の上を 1 度押してからホイールです</li>
         <li>スマートフォンは、2 本の指で回し、ピンチで拡大します（1 本の指では、ページがスクロールします）。右上の全画面のボタンを押すと、1 本の指で回せます。元に戻るときは「閉じる」か、ブラウザの「戻る」です</li>
         <li>「高さ」は、高さだけを何倍かに引きのばします</li>
+        <li>空中写真は、近づくと細かくなります（最新の写真は約 2m、古い写真は約 4m ごと）。「写真の年」で、古い空中写真（{olds.join("・")}）に切り替えられます</li>
+        <li>「地形を細かく」にすると、地形の起伏を約 16m ごとに表し（ふだんは約 31m ごと）、谷や段丘がはっきりします。データが 4 倍になるので、スマートフォンでは重くなることがあります</li>
+        <li>「全体」「枚方市」で、範囲全体・枚方市を見渡す位置に戻ります</li>
         <li>「標高」は、高さで色を分け、等高線を引いた表示です。低い土地の差が分かるように、低いほど色を細かく変えています</li>
         <li>地表をマウスでなぞる（スマートフォンは軽く押す）と、その地点に印が付き、標高と緯度・経度が左下に出ます</li>
       </ul>
 
       <h2>このデータについて</h2>
       <ul>
-        <li>標高は約 31m 四方のマスごとの平均です。細い谷やがけ、建物の高さは表せません。高さを大きく強調すると、山の斜面がぎざぎざに見えます</li>
+        <li>標高は約 31m 四方のマスごとの平均です（「地形を細かく」では約 16m 四方。5m メッシュのデータの平均で、無い所は 10m メッシュで埋めています）。細い谷やがけ、建物の高さは表せません。高さを大きく強調すると、山の斜面がぎざぎざに見えます</li>
         <li>山の高さ（{peaks.map((p) => `${p.n} ${p.e}m`).join("、")}）は、標高のデータから読んだ値で、三角点などの標高と少し違うことがあります</li>
-        <li>空中写真は、撮った年が場所によって違います</li>
+        <li>最新の空中写真は、場所によって撮った時期が違います。市内は 2021〜2022年、まわりもほとんどが 2020〜2022年の写真です（国土地理院「全国最新写真（シームレス）撮影期間」）。季節が違う写真をつないでいるので、区画によって色が違って見えます。古い空中写真も、年の幅の中で場所によって撮った年が違います</li>
+        <li>古い空中写真は、現在の地形の上に貼っています。昔の地形のデータは無いため、丘を削って造った住宅地や、埋め立てた池・川などでは、写真と起伏が合いません。1936〜1942年頃の写真は、範囲の 4 割ほどしかありません</li>
       </ul>
 
       <h2>出典</h2>
       <ul>
-        <li>標高・空中写真・地図：国土地理院の<a href="https://maps.gsi.go.jp/development/ichiran.html">地理院タイル</a>（標高タイル、シームレス空中写真、淡色地図）を加工して作成</li>
+        <li>標高・空中写真・地図：国土地理院の<a href="https://maps.gsi.go.jp/development/ichiran.html">地理院タイル</a>（標高タイル、標高タイル 5A、シームレス空中写真、空中写真 {olds.join("・")}、淡色地図）を加工して作成</li>
         <li>市の境界：© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors（ODbL）</li>
         <li>地名の位置：地理院地図の地名検索で調べた位置</li>
       </ul>

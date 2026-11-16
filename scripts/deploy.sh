@@ -30,6 +30,8 @@ ssh -n -o BatchMode=yes "$HOST" "test -d '$DEST'" || { echo "サーバーにフ�
 
 echo "== 写真ギャラリーの画像（まだ無いものだけ取ってくる）"
 node scripts/gallery.mjs images
+echo "== 地形の 3D の細かい画像（まだ無いものだけ作る）"
+python3 scripts/chikei-tiles.py
 echo "== 関連リンクのカード（サムネイルが無ければ取り直す）"
 node scripts/link-cards.mjs
 echo "== よく読まれている記事（GA の設定があれば作り直す）"

@@ -1,0 +1,47 @@
+{
+ "_source": "scripts/chikei-tiles.py で作る。画像は public/maps/chikei/t/（Git に入れない）",
+ "chunks": 16,
+ "photos": [
+  {
+   "key": "photo",
+   "name": "最新（2020〜2022年）",
+   "zooms": [
+    15,
+    16
+   ],
+   "old": false
+  },
+  {
+   "key": "y1974",
+   "name": "1974〜1978年",
+   "zooms": [
+    15
+   ],
+   "old": true
+  },
+  {
+   "key": "y1961",
+   "name": "1961〜1969年",
+   "zooms": [
+    15
+   ],
+   "old": true
+  },
+  {
+   "key": "y1945",
+   "name": "1945〜1950年",
+   "zooms": [
+    15
+   ],
+   "old": true
+  },
+  {
+   "key": "y1936",
+   "name": "1936〜1942年頃",
+   "zooms": [
+    15
+   ],
+   "old": true
+  }
+ ]
+}

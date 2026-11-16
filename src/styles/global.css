@@ -1104,3 +1104,6 @@ tr[hidden] { display: none; }
 .chikei-ticks span:last-child { transform: translateX(-100%); }
 .chikei-legend p { margin: 0; }
 .chikei [hidden] { display: none !important; }
+.chikei-year { display: inline-flex; align-items: center; gap: .4em; white-space: nowrap; }
+.chikei-year select { font: inherit; padding: 2px 4px; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); }
+.chikei-oldnote { margin: 0; font-size: .8125rem; color: var(--mut); }

@@ -1,18 +1,26 @@
 /**
  * 地形を 3D で見るページ（/data/chikei/）の本体。ページを開いたあとで読み込む。
  * three.js は自分のサーバーから配り、標高・空中写真・地図の画像も自分のサーバー（public/maps/chikei/）から読む。
- * 標高は 768×768 のマス（約 31m ごと）。画像の赤と緑の 2 バイトに (標高 + 100) × 50 が入っている（scripts/chikei-data.py）。
+ * 標高は 768×768 のマス（約 31m ごと）。「細かい標高」では 1536×1536（約 16m ごと）。
+ * 画像の赤と緑の 2 バイトに (標高 + 100) × 50 が入っている（scripts/chikei-data.py・chikei-tiles.py）。
+ * 地表は 16×16 の区画に分けた。空中写真は、ふだんは範囲全体の画像（3072 ドット四方）を貼り、
+ * 近づいた区画だけ細かい画像（public/maps/chikei/t/。最新の写真はズーム 16 まで、古い写真は 15 まで）に差し替える。
  * 市の境界と市の外の薄い影は、地表に貼る画像に描き込む。地名は HTML を重ねて、重なったら後の地名を隠す。
  */
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import meta from "../../content/data/chikei.json";
+import tiles from "../../content/data/chikei-layers.json";
 
 type Layer = "photo" | "pale" | "elev";
+type Photo = (typeof tiles.photos)[number];
+type Patch = { ci: number; cj: number; mesh: THREE.Mesh; cx: number; cz: number; h0: number; h1: number; want: number };
+type Chunk = { id: string; key: string; z: number; ci: number; cj: number; img?: HTMLImageElement; tex?: THREE.CanvasTexture; mat?: THREE.MeshLambertMaterial; loading?: boolean; failed?: boolean; used: number };
 type Label = { n: string; k: string; u: number; v: number; e?: number };
 
-const N = meta.n;
 const S = meta.sizeM / 100; // 100m を 1 とする
+const P = tiles.chunks; // 区画の数（1 辺）
+const BASE_PX = 3072; // 範囲全体の画像の大きさ
 const BASE = "/maps/chikei/";
 const MAX_EXAG = 20;
 
@@ -46,19 +54,27 @@ export async function makeChikei(root: HTMLElement) {
   const readout = q<HTMLElement>(".chikei-readout");
   const loading = q<HTMLElement>(".chikei-loading");
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const state = { layer: "photo" as Layer, exag: 2, border: true, labels: true };
+  const state = { layer: "photo" as Layer, photo: tiles.photos[0] as Photo, exag: 2, border: true, labels: true, fine: false };
 
   const [imgH, imgPhoto] = await Promise.all([loadImg(`${BASE}heights.png`), loadImg(`${BASE}photo.jpg`)]);
   let imgPale: HTMLImageElement | null = null;
+  const baseImgs = new Map<string, HTMLImageElement>([["photo", imgPhoto]]);
+  let imgFine: HTMLImageElement | null = null;
 
   // 標高のマスを画像から取り出す
-  const hc = document.createElement("canvas");
-  hc.width = hc.height = N;
-  const hx = hc.getContext("2d", { willReadFrequently: true })!;
-  hx.drawImage(imgH, 0, 0);
-  const px = hx.getImageData(0, 0, N, N).data;
-  const H = new Float32Array(N * N);
-  for (let i = 0; i < N * N; i++) H[i] = (px[i * 4] * 256 + px[i * 4 + 1]) / 50 - 100;
+  let N = 0;
+  let H = new Float32Array(0);
+  function setHeights(img: HTMLImageElement) {
+    N = img.width;
+    const hc = document.createElement("canvas");
+    hc.width = hc.height = N;
+    const hx = hc.getContext("2d", { willReadFrequently: true })!;
+    hx.drawImage(img, 0, 0);
+    const px = hx.getImageData(0, 0, N, N).data;
+    H = new Float32Array(N * N);
+    for (let i = 0; i < N * N; i++) H[i] = (px[i * 4] * 256 + px[i * 4 + 1]) / 50 - 100;
+  }
+  setHeights(imgH);
   const hGrid = (ix: number, iy: number) => H[Math.min(N - 1, Math.max(0, iy)) * N + Math.min(N - 1, Math.max(0, ix))];
   /** 位置（0〜1）の標高 m。まわりの 4 マスからなめらかに求める */
   function hAt(u: number, v: number) {
@@ -93,65 +109,92 @@ export async function makeChikei(root: HTMLElement) {
   const world = new THREE.Group();
   scene.add(world);
 
-  // 地表
-  const pos = new Float32Array(N * N * 3), uvs = new Float32Array(N * N * 2);
-  for (let j = 0; j < N; j++) {
-    for (let i = 0; i < N; i++) {
-      const k = j * N + i, u = (i + 0.5) / N, v = (j + 0.5) / N;
-      pos[k * 3] = (u - 0.5) * S;
-      pos[k * 3 + 1] = H[k] / 100;
-      pos[k * 3 + 2] = (v - 0.5) * S;
-      uvs[k * 2] = u;
-      uvs[k * 2 + 1] = 1 - v;
-    }
-  }
-  const idx = new Uint32Array((N - 1) * (N - 1) * 6);
-  let p = 0;
-  for (let j = 0; j < N - 1; j++) {
-    for (let i = 0; i < N - 1; i++) {
-      const a = j * N + i, b = a + 1, c = a + N, d = c + 1;
-      idx[p++] = a; idx[p++] = c; idx[p++] = b; idx[p++] = b; idx[p++] = c; idx[p++] = d;
-    }
-  }
-  const geo = new THREE.BufferGeometry();
-  geo.setAttribute("position", new THREE.BufferAttribute(pos, 3));
-  geo.setAttribute("uv", new THREE.BufferAttribute(uvs, 2));
-  geo.setIndex(new THREE.BufferAttribute(idx, 1));
-  geo.computeVertexNormals();
+  // 地表。区画ごとの形を作る。法線は区画をまたいで同じになるように、標高のマスから求める
   const maxTex = Math.min(renderer.capabilities.maxTextureSize, 4096);
   const texCanvas = document.createElement("canvas");
   const tex = new THREE.CanvasTexture(texCanvas);
   tex.colorSpace = THREE.SRGBColorSpace;
   tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
-  world.add(new THREE.Mesh(geo, new THREE.MeshLambertMaterial({ map: tex })));
-
-  // 模型の側面
+  const baseMat = new THREE.MeshLambertMaterial({ map: tex });
+  const patches: Patch[] = [];
   const FLOOR = -4;
-  const sidePos: number[] = [], sideIdx: number[] = [];
-  function wall(cells: [number, number][]) {
-    const o = sidePos.length / 3;
-    for (const [i, j] of cells) {
-      const k = (j * N + i) * 3;
-      sidePos.push(pos[k], pos[k + 1], pos[k + 2], pos[k], FLOOR, pos[k + 2]);
-    }
-    for (let n = 0; n < cells.length - 1; n++) {
-      const a = o + n * 2;
-      sideIdx.push(a, a + 1, a + 2, a + 2, a + 1, a + 3);
-    }
-  }
-  const rng = [...Array(N).keys()], rev = rng.slice().reverse();
-  wall(rng.map((i) => [i, N - 1]));
-  wall(rev.map((j) => [N - 1, j]));
-  wall(rev.map((i) => [i, 0]));
-  wall(rng.map((j) => [0, j]));
-  const sideGeo = new THREE.BufferGeometry();
-  sideGeo.setAttribute("position", new THREE.Float32BufferAttribute(sidePos, 3));
-  sideGeo.setIndex(sideIdx);
-  sideGeo.computeVertexNormals();
   const sideMat = new THREE.MeshLambertMaterial({ side: THREE.DoubleSide });
-  world.add(new THREE.Mesh(sideGeo, sideMat));
+  const side = new THREE.Mesh(new THREE.BufferGeometry(), sideMat);
+  world.add(side);
+  function buildTerrain() {
+    for (const p of patches) {
+      world.remove(p.mesh);
+      p.mesh.geometry.dispose();
+    }
+    patches.length = 0;
+    const m = N / P, cell = S / N;
+    const vx = (i: number) => ((i + 0.5) / N - 0.5) * S;
+    for (let cj = 0; cj < P; cj++) {
+      for (let ci = 0; ci < P; ci++) {
+        const i0 = ci * m, j0 = cj * m, i1 = Math.min(N - 1, i0 + m), j1 = Math.min(N - 1, j0 + m);
+        const w = i1 - i0 + 1, h = j1 - j0 + 1;
+        const pos = new Float32Array(w * h * 3), nor = new Float32Array(w * h * 3), uvs = new Float32Array(w * h * 2);
+        let lo = Infinity, hi = -Infinity;
+        for (let j = 0; j < h; j++) {
+          for (let i = 0; i < w; i++) {
+            const gi = i0 + i, gj = j0 + j, k = j * w + i, e = H[gj * N + gi];
+            lo = Math.min(lo, e);
+            hi = Math.max(hi, e);
+            pos[k * 3] = vx(gi);
+            pos[k * 3 + 1] = e / 100;
+            pos[k * 3 + 2] = vx(gj);
+            const dx = (hGrid(gi + 1, gj) - hGrid(gi - 1, gj)) / 100 / (2 * cell), dz = (hGrid(gi, gj + 1) - hGrid(gi, gj - 1)) / 100 / (2 * cell);
+            const l = Math.hypot(dx, 1, dz);
+            nor[k * 3] = -dx / l;
+            nor[k * 3 + 1] = 1 / l;
+            nor[k * 3 + 2] = -dz / l;
+            uvs[k * 2] = (gi + 0.5) / N;
+            uvs[k * 2 + 1] = 1 - (gj + 0.5) / N;
+          }
+        }
+        const idx = new Uint32Array((w - 1) * (h - 1) * 6);
+        let q = 0;
+        for (let j = 0; j < h - 1; j++) {
+          for (let i = 0; i < w - 1; i++) {
+            const a = j * w + i, b = a + 1, c = a + w, d = c + 1;
+            idx[q++] = a; idx[q++] = c; idx[q++] = b; idx[q++] = b; idx[q++] = c; idx[q++] = d;
+          }
+        }
+        const geo = new THREE.BufferGeometry();
+        geo.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+        geo.setAttribute("normal", new THREE.BufferAttribute(nor, 3));
+        geo.setAttribute("uv", new THREE.BufferAttribute(uvs, 2));
+        geo.setIndex(new THREE.BufferAttribute(idx, 1));
+        const mesh = new THREE.Mesh(geo, baseMat);
+        world.add(mesh);
+        patches.push({ ci, cj, mesh, cx: ((ci + 0.5) / P - 0.5) * S, cz: ((cj + 0.5) / P - 0.5) * S, h0: lo / 100, h1: hi / 100, want: 14 });
+      }
+    }
+    // 模型の側面
+    const sidePos: number[] = [], sideIdx: number[] = [];
+    const wall = (cells: [number, number][]) => {
+      const o = sidePos.length / 3;
+      for (const [i, j] of cells) sidePos.push(vx(i), H[j * N + i] / 100, vx(j), vx(i), FLOOR, vx(j));
+      for (let n = 0; n < cells.length - 1; n++) {
+        const a = o + n * 2;
+        sideIdx.push(a, a + 1, a + 2, a + 2, a + 1, a + 3);
+      }
+    };
+    const rng = [...Array(N).keys()], rev = rng.slice().reverse();
+    wall(rng.map((i) => [i, N - 1]));
+    wall(rev.map((j) => [N - 1, j]));
+    wall(rev.map((i) => [i, 0]));
+    wall(rng.map((j) => [0, j]));
+    side.geometry.dispose();
+    side.geometry = new THREE.BufferGeometry();
+    side.geometry.setAttribute("position", new THREE.Float32BufferAttribute(sidePos, 3));
+    side.geometry.setIndex(sideIdx);
+    side.geometry.computeVertexNormals();
+    lodDirty = true;
+  }
 
   let dirty = true;
+  let lodDirty = true;
 
   // 地表に貼る画像。標高の色分けは、選んだときに 1 度だけ作る（等高線は 10m ごと、50m ごとに濃く）
   let elevCanvas: HTMLCanvasElement | null = null;
@@ -177,40 +220,168 @@ export async function makeChikei(root: HTMLElement) {
     x.putImageData(im, 0, 0);
     return c;
   }
+  /** 地表に貼る画像に、市の境界と市の外の薄い影を描く。k×k に分けた区画 (ci, cj) の画像なら、その区画の部分だけ */
+  function decorate(x: CanvasRenderingContext2D, size: number, dark: boolean, ci = 0, cj = 0, k = 1) {
+    if (!state.border) return;
+    x.save();
+    x.setTransform(size * k, 0, 0, size * k, -ci * size, -cj * size);
+    const path = new Path2D();
+    for (const r of meta.rings) {
+      r.forEach(([u, v], n) => (n ? path.lineTo(u, v) : path.moveTo(u, v)));
+      path.closePath();
+    }
+    // 市の外を少し暗くする
+    const veil = new Path2D();
+    veil.rect(0, 0, 1, 1);
+    veil.addPath(path);
+    x.fillStyle = dark ? "rgba(10,20,25,.16)" : "rgba(40,55,60,.16)";
+    x.fill(veil, "evenodd");
+    // 線の太さは、範囲全体の画像でも区画の画像でも、地面の上で同じ幅にする
+    x.lineJoin = "round";
+    x.strokeStyle = "rgba(0,0,0,.55)";
+    x.lineWidth = 1 / 340;
+    x.stroke(path);
+    x.strokeStyle = dark ? "#ffe9a8" : "#c9541a";
+    x.lineWidth = 1 / 680;
+    x.stroke(path);
+    x.restore();
+  }
   async function paint() {
-    const layer = state.layer;
+    const layer = state.layer, photo = state.photo;
     let src: CanvasImageSource;
-    if (layer === "photo") src = imgPhoto;
-    else if (layer === "pale") src = imgPale ?? (imgPale = await loadImg(`${BASE}pale.jpg`));
+    if (layer === "photo") {
+      let im = baseImgs.get(photo.key);
+      if (!im) {
+        loading.textContent = "空中写真を読み込んでいます…";
+        loading.hidden = false;
+        try {
+          im = await loadImg(`${BASE}t/${photo.key}/base.avif`);
+        } catch {
+          loading.textContent = "空中写真を読み込めませんでした。";
+          setTimeout(() => (loading.hidden = true), 2500);
+          return;
+        }
+        loading.hidden = true;
+        baseImgs.set(photo.key, im);
+      }
+      src = im;
+    } else if (layer === "pale") src = imgPale ?? (imgPale = await loadImg(`${BASE}pale.jpg`));
     else src = elevCanvas ?? (elevCanvas = buildElev());
-    if (layer !== state.layer) return; // 読み込む間に切り替わった
+    if (layer !== state.layer || photo !== state.photo) return; // 読み込む間に切り替わった
     // 画像の大きさは表示を切り替えても変えない（three.js は、貼った画像の大きさをあとから変えられない）
-    const size = Math.min(3072, maxTex);
+    const size = Math.min(BASE_PX, maxTex);
     if (texCanvas.width !== size) texCanvas.width = texCanvas.height = size;
     const x = texCanvas.getContext("2d")!;
     x.drawImage(src, 0, 0, size, size);
-    if (state.border) {
-      const path = new Path2D();
-      for (const r of meta.rings) {
-        r.forEach(([u, v], n) => (n ? path.lineTo(u * size, v * size) : path.moveTo(u * size, v * size)));
-        path.closePath();
-      }
-      // 市の外を少し暗くする
-      const veil = new Path2D();
-      veil.rect(0, 0, size, size);
-      veil.addPath(path);
-      x.fillStyle = layer === "photo" ? "rgba(10,20,25,.16)" : "rgba(40,55,60,.16)";
-      x.fill(veil, "evenodd");
-      x.lineJoin = "round";
-      x.strokeStyle = "rgba(0,0,0,.55)";
-      x.lineWidth = size / 340;
-      x.stroke(path);
-      x.strokeStyle = layer === "photo" ? "#ffe9a8" : "#c9541a";
-      x.lineWidth = size / 680;
-      x.stroke(path);
-    }
+    decorate(x, size, layer === "photo");
     tex.needsUpdate = true;
+    // 区画の細かい画像も描き直す（境界の表示を切り替えたとき）。別の写真の画像は使わなくなる
+    for (const c of chunks.values()) if (c.tex && c.key === photo.key) drawChunk(c);
+    lodDirty = true;
     dirty = true;
+  }
+
+  // 区画の細かい画像。近い区画から読み、使わなくなった画像は、数が多くなったら古いものから捨てる
+  const chunks = new Map<string, Chunk>();
+  const MAX_CHUNKS = matchMedia("(pointer: coarse)").matches || maxTex < 4096 ? 24 : 96;
+  let busy = 0;
+  function drawChunk(c: Chunk) {
+    const img = c.img!, size = img.naturalWidth;
+    const cv = c.tex!.image as HTMLCanvasElement;
+    const x = cv.getContext("2d")!;
+    x.drawImage(img, 0, 0);
+    decorate(x, size, true, c.ci, c.cj, P);
+    c.tex!.needsUpdate = true;
+  }
+  function loadChunk(c: Chunk) {
+    c.loading = true;
+    busy++;
+    loadImg(`${BASE}t/${c.key}/${c.z}/${c.ci}-${c.cj}.avif`)
+      .then((img) => {
+        c.img = img;
+        const cv = document.createElement("canvas");
+        cv.width = cv.height = img.naturalWidth;
+        const t = new THREE.CanvasTexture(cv);
+        t.colorSpace = THREE.SRGBColorSpace;
+        t.anisotropy = tex.anisotropy;
+        t.wrapS = t.wrapT = THREE.ClampToEdgeWrapping;
+        // 区画の形は範囲全体の位置（0〜1）を持っているので、この区画の画像に合わせてずらす
+        t.repeat.set(P, P);
+        t.offset.set(-c.ci, -(P - 1 - c.cj));
+        c.tex = t;
+        c.mat = new THREE.MeshLambertMaterial({ map: t });
+        drawChunk(c);
+      })
+      .catch(() => (c.failed = true))
+      .finally(() => {
+        c.loading = false;
+        busy--;
+        lodDirty = true;
+      });
+  }
+  function dropChunk(c: Chunk) {
+    c.tex?.dispose();
+    c.mat?.dispose();
+    chunks.delete(c.id);
+  }
+  const frustum = new THREE.Frustum(), pm = new THREE.Matrix4(), ctr = new THREE.Vector3(), sph = new THREE.Sphere();
+  let lodAt = 0;
+  function updateLod(now: number) {
+    if (!lodDirty || now - lodAt < 150) return;
+    lodAt = now;
+    lodDirty = false;
+    const photo = state.photo, zs = state.layer === "photo" ? photo.zooms : [];
+    camera.updateMatrixWorld();
+    frustum.setFromProjectionMatrix(pm.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse));
+    // 画面の 1 ドットに入る地面の長さが、範囲全体の画像の 1 ドットより細かくなったら、細かい画像にする
+    const pxH = view.clientHeight * renderer.getPixelRatio(), tanH = Math.tan(((camera.fov / 2) * Math.PI) / 180);
+    const half = S / P / 2, todo: [number, Chunk][] = [];
+    for (const p of patches) {
+      p.want = 14;
+      if (zs.length) {
+        ctr.set(p.cx, ((p.h0 + p.h1) / 2) * state.exag, p.cz);
+        sph.set(ctr, Math.hypot(half, half, ((p.h1 - p.h0) / 2) * state.exag));
+        if (frustum.intersectsSphere(sph)) {
+          const d = Math.max(1, camera.position.distanceTo(ctr) - sph.radius);
+          const ratio = pxH / (2 * d * tanH) / (BASE_PX / S);
+          for (const z of zs) if (ratio > 1.3 * 2 ** (z - 15)) p.want = z;
+          if (p.want > 14) {
+            const id = `${photo.key}/${p.want}/${p.ci}-${p.cj}`;
+            let c = chunks.get(id);
+            if (!c) chunks.set(id, (c = { id, key: photo.key, z: p.want, ci: p.ci, cj: p.cj, used: now }));
+            c.used = now;
+            if (!c.img && !c.loading && !c.failed) todo.push([d, c]);
+          }
+        }
+      }
+      // 読めている中で、求める細かさまでで最も細かい画像を貼る
+      let mat: THREE.Material = baseMat;
+      for (let z = p.want; z > 14; z--) {
+        const c = chunks.get(`${photo.key}/${z}/${p.ci}-${p.cj}`);
+        if (c?.mat) {
+          c.used = now;
+          mat = c.mat;
+          break;
+        }
+      }
+      if (p.mesh.material !== mat) {
+        p.mesh.material = mat;
+        dirty = true;
+      }
+    }
+    todo.sort((a, b) => a[0] - b[0]);
+    for (const [, c] of todo) {
+      if (busy >= 6) break;
+      loadChunk(c);
+    }
+    if (todo.length) lodDirty = true;
+    // 捨てる：別の写真の画像と、いま使っていない古い画像
+    const live = [...chunks.values()].filter((c) => c.img);
+    const inUse = new Set(patches.map((p) => p.mesh.material));
+    if (live.length > MAX_CHUNKS) {
+      live.filter((c) => !inUse.has(c.mat!)).sort((a, b) => a.used - b.used).slice(0, live.length - MAX_CHUNKS).forEach(dropChunk);
+    }
+    for (const c of chunks.values()) if (!c.img && !c.loading && !c.failed && c.used < now) chunks.delete(c.id);
   }
 
   // 地名。山・駅など・川・まわりの市と町の順に置き、重なる地名は出さない
@@ -225,7 +396,7 @@ export async function makeChikei(root: HTMLElement) {
       s.textContent = l.k === "peak" ? `▲ ${l.n} ${l.e}m` : l.n;
       el.append(s, document.createElement("i"));
       labelsEl.append(el);
-      return { el, x: (l.u - 0.5) * S, z: (l.v - 0.5) * S, h: hAt(l.u, l.v) / 100, w: 0, hgt: 0 };
+      return { el, u: l.u, v: l.v, x: (l.u - 0.5) * S, z: (l.v - 0.5) * S, h: hAt(l.u, l.v) / 100, w: 0, hgt: 0 };
     });
   const v3 = new THREE.Vector3();
   function placeLabels() {
@@ -262,6 +433,7 @@ export async function makeChikei(root: HTMLElement) {
       camera.position.copy(to);
       controls.update();
       dirty = true;
+      lodDirty = true;
       return;
     }
     fly = { t: 0, p0: camera.position.clone(), p1: to, t0: controls.target.clone(), t1: target };
@@ -370,14 +542,42 @@ export async function makeChikei(root: HTMLElement) {
   // 操作
   const layerBtns = [...root.querySelectorAll<HTMLButtonElement>("[data-layer]")];
   const legend = q<HTMLElement>(".chikei-legend");
-  for (const b of layerBtns) {
-    b.addEventListener("click", () => {
-      state.layer = b.dataset.layer as Layer;
-      for (const o of layerBtns) o.setAttribute("aria-pressed", String(o === b));
-      legend.hidden = state.layer !== "elev";
-      paint();
-    });
+  const yearSel = q<HTMLSelectElement>("#chikei-year"), oldNote = q<HTMLElement>(".chikei-oldnote");
+  function setLayer(layer: Layer) {
+    state.layer = layer;
+    for (const o of layerBtns) o.setAttribute("aria-pressed", String(o.dataset.layer === layer));
+    legend.hidden = layer !== "elev";
+    oldNote.hidden = !(layer === "photo" && state.photo.old);
+    paint();
   }
+  for (const b of layerBtns) b.addEventListener("click", () => setLayer(b.dataset.layer as Layer));
+  // 写真の年を選んだら、空中写真の表示にする
+  yearSel.addEventListener("change", () => {
+    state.photo = tiles.photos.find((p) => p.key === yearSel.value) ?? tiles.photos[0];
+    setLayer("photo");
+  });
+  // 細かい標高（約 16m ごと）。データが 4 倍になるので、選んだときだけ読む
+  const fineBox = q<HTMLInputElement>("#chikei-fine");
+  fineBox.addEventListener("change", async () => {
+    const on = fineBox.checked;
+    loading.textContent = "標高を読み込んでいます…";
+    loading.hidden = false;
+    try {
+      const img = on ? (imgFine ??= await loadImg(`${BASE}t/heights-fine.png`)) : imgH;
+      if (fineBox.checked !== on) return;
+      state.fine = on;
+      setHeights(img);
+      buildTerrain();
+      for (const l of labels) l.h = hAt(l.u, l.v) / 100;
+      elevCanvas = null;
+      if (state.layer === "elev") await paint();
+      dirty = true;
+    } catch {
+      fineBox.checked = state.fine;
+    } finally {
+      loading.hidden = true;
+    }
+  });
   const range = q<HTMLInputElement>("#chikei-exag"), num = q<HTMLInputElement>("#chikei-exag-n");
   function setExag(n: number, from?: "range" | "num") {
     if (!isFinite(n)) return;
@@ -386,6 +586,7 @@ export async function makeChikei(root: HTMLElement) {
     if (from !== "num") num.value = String(+state.exag.toFixed(1));
     world.scale.y = state.exag;
     dirty = true;
+    lodDirty = true;
   }
   range.addEventListener("input", () => setExag(Number(range.value), "range"));
   num.addEventListener("input", () => { if (num.value !== "") setExag(Number(num.value), "num"); });
@@ -440,7 +641,7 @@ export async function makeChikei(root: HTMLElement) {
     t.style.left = `${Math.sqrt(Number(t.dataset.h) / 680) * 100}%`;
   });
 
-  controls.addEventListener("change", () => { dirty = true; });
+  controls.addEventListener("change", () => { dirty = true; lodDirty = true; });
   function resize() {
     const w = view.clientWidth, h = view.clientHeight;
     if (!w || !h) return;
@@ -448,10 +649,11 @@ export async function makeChikei(root: HTMLElement) {
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
     dirty = true;
+    lodDirty = true;
   }
   new ResizeObserver(resize).observe(view);
   const needle = q<HTMLElement>(".chikei-needle");
-  function frame() {
+  function frame(now: number) {
     requestAnimationFrame(frame);
     if (fly) {
       fly.t = Math.min(1, fly.t + 1 / 45);
@@ -460,6 +662,7 @@ export async function makeChikei(root: HTMLElement) {
       controls.target.lerpVectors(fly.t0, fly.t1, e);
       if (fly.t >= 1) fly = null;
       dirty = true;
+      lodDirty = true;
     }
     controls.update();
     if (dirty) {
@@ -469,13 +672,15 @@ export async function makeChikei(root: HTMLElement) {
       needle.setAttribute("transform", `rotate(${((controls.getAzimuthalAngle() * 180) / Math.PI).toFixed(1)})`);
     }
     showProbe();
+    updateLod(now);
   }
 
+  buildTerrain();
   world.scale.y = state.exag;
   applyTheme();
   resize();
   await paint();
   viewAll(true);
   loading.hidden = true;
-  frame();
+  requestAnimationFrame(frame);
 }
