@@ -120,14 +120,14 @@ const description = `枚方市の写真 ${n(photos.length)} 枚。${sites.map((x
 
         <h3>出どころ</h3>
         <ul>
-          {has("commons") && <li><a href={LINKS.commons}>Wikimedia Commons</a>：分類「Hirakata, Osaka」と、市内の位置・「枚方」などで探したもの</li>}
-          {has("flickr") && <li><a href={LINKS.flickr}>Flickr</a>：「枚方」「Hirakata」の検索と、市内の位置で探したもの（Commons に移されているものは Commons の方だけ）</li>}
+          {has("commons") && <li><a href={LINKS.commons}>Wikimedia Commons</a>：分類「Hirakata, Osaka」と、市内の位置・「枚方」などで探した写真</li>}
+          {has("flickr") && <li><a href={LINKS.flickr}>Flickr</a>：「枚方」「Hirakata」の検索と、市内の位置で探した写真（Commons に移されている写真は Commons の方だけ）</li>}
           {has("city") && <li><a href={LINKS.city}>枚方市</a>：「ひらかた市 オープンデータ画像集」（CC BY 2.1）</li>}
-          {has("gsi") && <li><a href={LINKS.gsi}>国土地理院</a>：年代ごとの空中写真を、駅などの周りでつなぎ合わせて切り抜いたもの</li>}
-          {has("jpsearch") && <li><a href={LINKS.jpsearch}>Japan Search</a>：博物館・図書館の資料から 1 件ずつ選んだもの</li>}
+          {has("gsi") && <li><a href={LINKS.gsi}>国土地理院</a>：年代ごとの空中写真を、駅などの周りでつなぎ合わせて切り抜いた画像</li>}
+          {has("jpsearch") && <li><a href={LINKS.jpsearch}>Japan Search</a>：博物館・図書館の資料から 1 件ずつ選んだ写真・絵</li>}
           {has("omlib") && <li><a href={LINKS.omlib}>大阪市立図書館</a>：CC0 のオープンデータの古い絵はがきと、『河内名所図会』（1801年）の挿絵</li>}
-          {has("ndl") && <li><a href={LINKS.ndl}>国立国会図書館</a>：インターネット公開の昔の本（1956年までの発行）から、写真の部分を切り抜いたもの</li>}
-          {has("mapillary") && <li><a href={LINKS.mapillary}>Mapillary</a>：駅などの近くの写真を 1 枚ずつ見て選んだもの</li>}
+          {has("ndl") && <li><a href={LINKS.ndl}>国立国会図書館</a>：インターネット公開の昔の本（1956年までの発行）から、写真の部分を切り抜いた画像</li>}
+          {has("mapillary") && <li><a href={LINKS.mapillary}>Mapillary</a>：駅などの近くの写真を 1 枚ずつ見て選んだ写真</li>}
         </ul>
 
         <h3>写真を増やすには</h3>
@@ -135,7 +135,7 @@ const description = `枚方市の写真 ${n(photos.length)} 枚。${sites.map((x
 
         <h3>ご注意</h3>
         <ul>
-          <li>写真の説明と撮影日は、それぞれの出典に書かれているものです。誤りを含むことがあります</li>
+          <li>写真の説明と撮影日は、それぞれの出典の記載です。誤りを含むことがあります</li>
           <li>枚方ではない写真や、載せないほうがよい写真があれば、<a href="/about/#contact">教えてください</a></li>
           <li>「地図で見る」を押したときだけ、国土地理院から地図の画像を読み込みます</li>
         </ul>
