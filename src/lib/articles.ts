@@ -1,5 +1,6 @@
 import { getCollection } from "astro:content";
 import popular from "../../content/popular.json";
+import { articleLastModified } from "./article-date.mjs";
 
 /** 下書きを除いた記事。更新日（なければ公開日）の新しい順 */
 export async function allArticles() {
@@ -18,8 +19,9 @@ export async function popularArticles(limit = 3) {
   return [...new Set([...popular.slugs, ...fill])].flatMap((s) => byId.get(s) ?? []).slice(0, limit);
 }
 
-export const lastModified = (e: { data: { published: Date; updated?: Date } }) =>
-  e.data.updated ?? e.data.published;
+/** 最終更新日。Git でその記事を最後にコミットした日（src/lib/article-date.mjs） */
+export const lastModified = (e: { id: string; data: { published: Date; updated?: Date } }): Date =>
+  articleLastModified(e.id, e.data.published, e.data.updated);
 
 export const articlePath = (id: string) => `/${id}/`;
 

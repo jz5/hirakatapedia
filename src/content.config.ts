@@ -14,7 +14,7 @@ const articles = defineCollection({
     /** 一覧と検索結果に出す説明。1〜2 文で */
     description: z.string(),
     published: z.coerce.date(),
-    /** 中身を足したり直したりした日。公開日と同じなら書かない */
+    /** 最終更新は Git の最後のコミットの日から自動で出す（src/lib/article-date.mjs）。それより新しい日にしたいときだけ書く */
     updated: z.coerce.date().optional(),
     /**
      * 「出典・注釈」の前に並べるリンクのカード。url（ほかの記事は /slug/）か isbn と、なぜリンクするかの note。

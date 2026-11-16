@@ -1,6 +1,6 @@
 ---
 import { render } from "astro:content";
-import { allArticles, articlePath, jaDate } from "../lib/articles";
+import { allArticles, articlePath, jaDate, lastModified } from "../lib/articles";
 import Base from "../layouts/Base.astro";
 import ArticleBody from "../components/ArticleBody.astro";
 import Toc from "../components/Toc.astro";
@@ -18,7 +18,7 @@ const { entry } = Astro.props as Props;
 const d = entry.data;
 const { Content, headings } = await render(entry);
 // 事典なので、いつ書いたかより、いつの情報かを出す
-const last = d.updated ?? d.published;
+const last = lastModified(entry);
 // frontmatter の cover は og:image にだけ使う（本文には出さない）
 const cover = d.cover ? photo(entry.id, d.cover) : undefined;
 ---
@@ -27,7 +27,7 @@ const cover = d.cover ? photo(entry.id, d.cover) : undefined;
   title={d.title}
   description={d.description}
   path={articlePath(entry.id)}
-  article={{ published: d.published, modified: d.updated }}
+  article={{ published: d.published, modified: last > d.published ? last : undefined }}
   image={cover?.large.src}
   source={`content/articles/${entry.id}.md`}
 >

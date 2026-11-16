@@ -11,6 +11,7 @@ import { basename, join } from "node:path";
 import { parse } from "yaml";
 import { publicGallery, galleryPath, photo } from "./photos.mjs";
 import { AMAZON_TAG, amazonUrl } from "./affiliate.mjs";
+import { articleLastModified } from "./article-date.mjs";
 
 const MORE = 3;
 
@@ -76,7 +77,7 @@ function moreArticles(slug, links) {
   const all = articles();
   const notes = new Map(links.filter(internalSlug).map((l) => [internalSlug(l), l.note]));
   const popular = JSON.parse(readFileSync(join(process.cwd(), "content/popular.json"), "utf8"));
-  const date = (a) => new Date(a.updated ?? a.published).getTime();
+  const date = (a) => articleLastModified(a.slug, a.published, a.updated).getTime();
   const order = [
     ...notes.keys(),
     ...all.filter((a) => (a.links ?? []).some((l) => l.url === `/${slug}/`)).map((a) => a.slug),
