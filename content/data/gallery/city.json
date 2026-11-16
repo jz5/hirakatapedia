@@ -1,6 +1,6 @@
 {
  "_source": "枚方市のオープンデータの画像（gallery-config.yaml の city）",
- "fetched": "2026-11-08",
+ "fetched": "2026-11-16",
  "photos": [
   {
    "id": "a3e427d7df",
@@ -1752,10 +1752,12 @@
    "lat": null,
    "lon": null,
    "groups": [
-    "公園"
+    "公園",
+    "地理"
    ],
    "places": [
-    "淀川河川公園"
+    "淀川河川公園",
+    "淀川"
    ],
    "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yodogawakasenpark1.JPG",
    "site": "city",
@@ -1781,10 +1783,12 @@
    "lat": null,
    "lon": null,
    "groups": [
-    "公園"
+    "公園",
+    "地理"
    ],
    "places": [
-    "淀川河川公園"
+    "淀川河川公園",
+    "淀川"
    ],
    "thumb": "https://www.city.hirakata.osaka.jp/cmsfiles/contents/0000021/21947/yodogawakasenpark2.JPG",
    "site": "city",
