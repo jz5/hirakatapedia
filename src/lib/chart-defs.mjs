@@ -269,11 +269,12 @@ export const charts = {
       id: "chart-library-lending",
       title: `枚方市立図書館の1年の貸出冊数（${d.lending[0].year}〜${last.year}年度）`,
       desc: `${d.lending[0].year}年度は約${Math.round(d.lending[0].books / 10000)}万冊。2005年度に中央図書館が開館して増え、${peak.year}年度の${peak.books.toLocaleString("ja-JP")}冊が過去最多。2020年度は新型コロナで約${Math.round(at(2020) / 10000)}万冊に減り、${last.year}年度は${last.books.toLocaleString("ja-JP")}冊。`,
-      x: { min: 1987, max: 2027, ticks: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2025] },
+      x: { min: 1971, max: 2027, ticks: [1975, 1985, 1995, 2005, 2015, 2025] },
       y: { min: 0, max: 5000000, ticks: [0, 1000000, 2000000, 3000000, 4000000, 5000000], format: man },
       unit: "冊",
       series: [{ name: "貸出冊数", color: 1, points: pts }],
       notes: [
+        { x: 1973, y: at(1973), text: "1973年度\n市立図書館が発足", dx: 6, dy: -40, anchor: "start" },
         { x: 2005, y: at(2005), text: "2005年\n中央図書館が開館", dx: -10, dy: 46, anchor: "end" },
         { x: peak.year, y: peak.books, text: `${peak.year}年度 ${peak.books.toLocaleString("ja-JP")}冊`, dx: -20, dy: -24, anchor: "end" },
         { x: 2020, y: at(2020), text: "2020年度\n新型コロナ", dx: 0, dy: 44, anchor: "middle" },
