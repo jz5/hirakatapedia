@@ -4,7 +4,7 @@
  * /privacy/ の「広告について」に規約で必要な一文が出る。
  * rehype のプラグイン（.mjs）からも読むので、site.ts ではなくここに置く。
  */
-export const AMAZON_TAG = "";
+export const AMAZON_TAG = "ks04-22";
 
 /** Amazon の URL に、トラッキング ID があれば付ける */
 export function amazonUrl(url) {
