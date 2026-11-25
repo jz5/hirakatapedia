@@ -1,8 +1,22 @@
 import { parse } from "yaml";
 import snsRaw from "../../content/data/sns.yaml?raw";
+import mapQuizNotesRaw from "../../content/data/map-quiz-notes.yaml?raw";
 
 /** content/data/sns.yaml（ビルドのときに読む） */
 export const readSns = <T>(): T => parse(snsRaw) as T;
+
+export interface MapQuizNote {
+  tag: string;
+  text: string;
+  source?: string;
+}
+
+/** content/data/map-quiz-notes.yaml（地図クイズの地区ごとのひとこと） */
+export const readMapQuizNotes = (): Record<string, MapQuizNote> =>
+  parse(mapQuizNotesRaw) as Record<string, MapQuizNote>;
+
+/** 開発サーバー（pnpm dev）のときだけ true */
+export const IS_DEV = import.meta.env.DEV;
 
 /** SNS の種類と、画面に出す名前。並び順もこの順 */
 export const SNS_TYPES = {
