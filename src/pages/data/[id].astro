@@ -5,7 +5,8 @@
  */
 import Base from "../../layouts/Base.astro";
 import DataViewer from "../../components/DataViewer.astro";
-import { datasets, PAGES, dataPath, jaDay, asOf, type Meta } from "../../lib/datasets";
+import { datasets, PAGES, dataPath, asOf, type Meta } from "../../lib/datasets";
+import { SITE } from "../../lib/site";
 import type { GetStaticPaths } from "astro";
 import { charts } from "../../lib/chart-defs.mjs";
 const chart = (n: string) => (charts as Record<string, () => string>)[n]();
@@ -16,9 +17,30 @@ export const getStaticPaths = (() =>
 const { d } = Astro.props as { d: Meta };
 const p = PAGES[d.id] ?? { lead: d.title, links: [] };
 const placeholder = `${d.search.filter((c) => c !== "読み").join("・")}で検索`;
+const path = dataPath(d.id);
+const datasetLd = {
+  "@type": "Dataset",
+  name: `${d.title}（枚方市）`,
+  description: p.lead,
+  url: new URL(path, SITE.url).href,
+  inLanguage: SITE.lang,
+  ...(d.group === "city"
+    ? {
+        creator: { "@type": "Organization", name: "枚方市", url: "https://www.city.hirakata.osaka.jp/" },
+        license: "https://creativecommons.org/licenses/by/2.1/jp/",
+      }
+    : {}),
+  dateModified: d.fetched,
+  isBasedOn: d.page,
+};
+const breadcrumbs = [
+  { name: "ホーム", path: "/" },
+  { name: "枚方のデータ", path: "/data/" },
+  { name: d.title, path },
+];
 ---
 
-<Base wide title={`${d.title}（枚方市）`} description={p.lead} path={dataPath(d.id)}>
+<Base wide title={`${d.title}（枚方市）`} description={p.lead} path={path} source="src/lib/datasets.ts" jsonLd={datasetLd} breadcrumbs={breadcrumbs}>
   <article class="entry">
     <header class="entry-header">
       <p class="gallery-back"><a href="/data/">枚方のデータ</a></p>

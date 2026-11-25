@@ -564,6 +564,7 @@ mark {
 }
 .footnote-tip[hidden] { display: none; }
 .footnote-tip p { margin: 0; }
+.footnote-tip .footnote-tip-jump { margin-top: var(--sp-2); padding-top: var(--sp-1); border-top: 1px solid var(--line-soft); font-size: .75rem; }
 
 /* 記事の中のお知らせ（情報募集など）。<aside class="callout"> で囲む */
 .entry-body .callout {
@@ -1107,3 +1108,14 @@ tr[hidden] { display: none; }
 .chikei-year { display: inline-flex; align-items: center; gap: .4em; white-space: nowrap; }
 .chikei-year select { font: inherit; padding: 2px 4px; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); }
 .chikei-oldnote { margin: 0; font-size: .8125rem; color: var(--mut); }
+
+/* 印刷時：ナビ・サイドバーを隠し、本文と出典を読みやすくする */
+@media print {
+  .site-header, .site-footer, .sidebar, .toc-inline, .skip, .share { display: none !important; }
+  .layout { display: block; padding-block: 0; }
+  .wrap { max-width: none; padding-inline: 0; }
+  body { background: #fff; color: #000; font-size: 10.5pt; line-height: 1.7; }
+  mark { background: none; font-weight: 700; }
+  .entry-body h2, .entry-body h3 { break-after: avoid; }
+  .photo, .chart, .summary { break-inside: avoid; }
+}

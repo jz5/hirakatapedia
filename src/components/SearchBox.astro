@@ -1,0 +1,105 @@
+---
+/**
+ * 記事のインクリメンタル検索（Pagefind）。/search/ と /404.html で共通利用する。
+ * 索引はビルド後に dist/pagefind/ へ作られるため、開発サーバー（pnpm dev）では使えない。
+ */
+interface Props {
+  /** 入力した言葉を URL（?q=）と同期し、初期表示でフォーカスするか（/search/ 用） */
+  syncUrl?: boolean;
+}
+const { syncUrl = false } = Astro.props;
+---
+
+<div data-search-box data-sync-url={syncUrl ? "1" : "0"}>
+  <div class="data-tools search-tools">
+    <label class="data-search">
+      <span class="visually-hidden">記事を検索</span>
+      <input type="search" placeholder="例：香里団地、TSUTAYA、図書館" autocomplete="off" enterkeyhint="search" data-search-q />
+    </label>
+    <p class="data-count" aria-live="polite" data-search-count></p>
+  </div>
+  <ol class="search-results" data-search-results></ol>
+  <p class="search-also" data-search-also hidden>
+    <a href="/gallery/" data-search-gallery>写真ギャラリー</a>・<a href="/data/gomi/" data-search-gomi>ごみの分別</a>
+  </p>
+  <noscript><p>検索は JavaScript を使います。</p></noscript>
+</div>
+
+<script>
+  type Result = { url: string; excerpt: string; meta: { title?: string } };
+  type Pagefind = {
+    init: () => Promise<void>;
+    debouncedSearch: (q: string, opts?: object, ms?: number) => Promise<{ results: { data: () => Promise<Result> }[] } | null>;
+  };
+
+  const esc = (s: string) =>
+    s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]!);
+
+  let pagefindPromise: Promise<Pagefind | null> | null = null;
+  const loadPagefind = () => {
+    pagefindPromise ??= (async () => {
+      try {
+        // 索引はビルドのあとにできるファイルなので、Vite にまとめさせない
+        const path = "/pagefind/pagefind.js";
+        const pf = (await import(/* @vite-ignore */ path)) as Pagefind;
+        await pf.init();
+        return pf;
+      } catch {
+        return null;
+      }
+    })();
+    return pagefindPromise;
+  };
+
+  for (const box of document.querySelectorAll<HTMLElement>("[data-search-box]")) {
+    const syncUrl = box.dataset.syncUrl === "1";
+    const $q = box.querySelector<HTMLInputElement>("[data-search-q]")!;
+    const $count = box.querySelector<HTMLElement>("[data-search-count]")!;
+    const $list = box.querySelector<HTMLOListElement>("[data-search-results]")!;
+    const $also = box.querySelector<HTMLElement>("[data-search-also]")!;
+    const $gallery = box.querySelector<HTMLAnchorElement>("[data-search-gallery]")!;
+    const $gomi = box.querySelector<HTMLAnchorElement>("[data-search-gomi]")!;
+
+    async function run() {
+      const q = $q.value.trim();
+      if (syncUrl) {
+        // 戻るで同じ結果に戻れるように、言葉を URL に残す
+        const u = new URL(location.href);
+        q ? u.searchParams.set("q", q) : u.searchParams.delete("q");
+        history.replaceState(null, "", u);
+      }
+      $gallery.href = `/gallery/?q=${encodeURIComponent(q)}`;
+      $gallery.textContent = `写真ギャラリーで「${q}」を検索`;
+      $gomi.href = `/data/gomi/?q=${encodeURIComponent(q)}`;
+      $gomi.textContent = `ごみの分別で「${q}」を検索`;
+      $also.hidden = !q;
+      if (!q) {
+        $list.innerHTML = "";
+        $count.textContent = "";
+        return;
+      }
+      const pagefind = await loadPagefind();
+      if (!pagefind) {
+        $count.textContent = "検索の索引がありません（pnpm build のあとに使えます）";
+        return;
+      }
+      const r = await pagefind.debouncedSearch(q, {}, 200);
+      if (!r) return; // あとから打った言葉の検索に置き換わった
+      const items = await Promise.all(r.results.slice(0, 20).map((x) => x.data()));
+      $count.textContent = items.length ? `${r.results.length} 件の記事` : "見つかりませんでした";
+      $list.innerHTML = items
+        .map((d) => `<li><a href="${esc(d.url)}">${esc(d.meta.title ?? d.url)}</a><p>${d.excerpt}</p></li>`)
+        .join("");
+    }
+
+    $q.addEventListener("input", run);
+    if (syncUrl) {
+      loadPagefind().then((pf) => {
+        if (!pf && !$q.value.trim()) $count.textContent = "検索の索引がありません（pnpm build のあとに使えます）";
+      });
+      $q.value = new URLSearchParams(location.search).get("q") ?? "";
+      if ($q.value) run();
+      else $q.focus();
+    }
+  }
+</script>

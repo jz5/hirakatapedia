@@ -27,6 +27,12 @@ AddType application/manifest+json .webmanifest
 # （FilesMatch の中の Header は外の Header より後に効くので、/_astro/ の分も同じ FilesMatch の中で分ける）
 SetEnvIf Request_URI "^/_astro/" ASTRO_ASSET
 <IfModule mod_headers.c>
+  # セキュリティヘッダー
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+
   <FilesMatch "\.(html|xml|json|txt)$">
     Header set Cache-Control "public, max-age=600"
   </FilesMatch>

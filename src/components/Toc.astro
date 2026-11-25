@@ -42,3 +42,42 @@ const inline = Astro.props.inline ?? false;
       </nav>
     ))
 }
+
+<script>
+  /* 目次で、いま読んでいる見出しに印を付ける。見出しが画面の上から 120px を
+     過ぎたら、その節を読んでいるとみなす。目次は 2 か所（右の列と題名の下）にあるので両方に付ける */
+  const tocLinks = [...document.querySelectorAll<HTMLAnchorElement>(".toc a[href^='#']")];
+  const heads = [...new Set(tocLinks.map((a) => decodeURIComponent(a.hash.slice(1))))]
+    .map((id) => document.getElementById(id))
+    .filter((h): h is HTMLElement => h !== null);
+  if (heads.length > 0) {
+    let current = "";
+    const update = () => {
+      let id = "";
+      for (const h of heads) {
+        if (h.getBoundingClientRect().top <= 120) id = h.id;
+        else break;
+      }
+      if (id === current) return;
+      current = id;
+      for (const a of tocLinks) {
+        const on = decodeURIComponent(a.hash.slice(1)) === id;
+        if (on) a.setAttribute("aria-current", "location");
+        else a.removeAttribute("aria-current");
+        // 右の列の目次は、長いと中でスクロールする。印の付いた項目が見えるように動かす
+        const box = a.closest<HTMLElement>(".side-toc");
+        if (on && box && box.scrollHeight > box.clientHeight) {
+          const top = a.offsetTop - box.offsetTop;
+          if (top < box.scrollTop || top > box.scrollTop + box.clientHeight - 40) box.scrollTop = top - box.clientHeight / 3;
+        }
+      }
+    };
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => { ticking = false; update(); });
+    }, { passive: true });
+    update();
+  }
+</script>

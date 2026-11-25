@@ -9,7 +9,7 @@ import Base from "../layouts/Base.astro";
   <article class="entry">
     <header class="entry-header">
       <h1>ライセンス</h1>
-      <p class="entry-meta">最終更新 <time datetime={updated}>{updated && jaYmd(updated)}</time></p>
+      {updated && <p class="entry-meta">最終更新 <time datetime={updated}>{jaYmd(updated)}</time></p>}
     </header>
     <div class="entry-body">
       <p>

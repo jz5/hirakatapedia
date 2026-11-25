@@ -8,7 +8,8 @@
 import Base from "../../layouts/Base.astro";
 import DataViewer from "../../components/DataViewer.astro";
 import Toc from "../../components/Toc.astro";
-import { datasets, PAGES, dataPath, jaDay, asOf } from "../../lib/datasets";
+import { datasets, PAGES, dataPath, asOf } from "../../lib/datasets";
+import { SITE } from "../../lib/site";
 
 const d = datasets.find((x) => x.id === "gomi")!;
 const C = "https://www.city.hirakata.osaka.jp/";
@@ -25,10 +26,27 @@ const headings = [
   { depth: 2, slug: "others", text: "ほかの検索方法" },
 ];
 const examples = ["電池", "フライパン", "スプレー", "ふとん", "パソコン", "傘"];
-
+const path = dataPath("gomi");
+const description = `枚方市のごみの分別を品名で調べられるページ。${d.count.toLocaleString()} の品目の出し方と注意、粗ごみ・大型ごみの申し込み、収集日程表へのリンク。`;
+const datasetLd = {
+  "@type": "Dataset",
+  name: "ごみの分別（枚方市）",
+  description,
+  url: new URL(path, SITE.url).href,
+  inLanguage: SITE.lang,
+  creator: { "@type": "Organization", name: "枚方市", url: C },
+  license: "https://creativecommons.org/licenses/by/2.1/jp/",
+  dateModified: d.fetched,
+  isBasedOn: d.page,
+};
+const breadcrumbs = [
+  { name: "ホーム", path: "/" },
+  { name: "枚方のデータ", path: "/data/" },
+  { name: "ごみの分別", path },
+];
 ---
 
-<Base title="ごみの分別（枚方市）" description={`枚方市のごみの分別を品名で調べられるページ。${d.count.toLocaleString()} の品目の出し方と注意、粗ごみ・大型ごみの申し込み、収集日程表へのリンク。`} path={dataPath("gomi")}>
+<Base title="ごみの分別（枚方市）" description={description} path={path} jsonLd={datasetLd} breadcrumbs={breadcrumbs}>
   <article class="entry">
     <header class="entry-header">
       <p class="gallery-back"><a href="/data/">枚方のデータ</a></p>

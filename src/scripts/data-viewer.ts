@@ -94,9 +94,20 @@ export async function startViewer() {
   const hasGeo = la >= 0 && lo >= 0;
   const visibleCols = ds.columns.map((c, i) => [c, i] as const).filter(([c]) => !["hidden", "lat", "lon"].includes(c[1]));
 
+  const defaultSortCol = ds.sort ? idx[ds.sort[0]] : -1;
+  const defaultSortDir: 1 | -1 = ds.sort?.[1] === "desc" ? -1 : 1;
   const syncUrl = () => {
     const u = new URL(location.href);
     $q.value ? u.searchParams.set("q", $q.value) : u.searchParams.delete("q");
+    for (const col of ds.filters) {
+      const k = `f_${col}`;
+      filterVals[col] ? u.searchParams.set(k, filterVals[col]) : u.searchParams.delete(k);
+    }
+    if (sortCol >= 0 && (sortCol !== defaultSortCol || sortDir !== defaultSortDir)) {
+      u.searchParams.set("sort", `${ds.columns[sortCol][0]}:${sortDir === -1 ? "desc" : "asc"}`);
+    } else {
+      u.searchParams.delete("sort");
+    }
     history.replaceState(null, "", u);
   };
 
@@ -222,6 +233,7 @@ export async function startViewer() {
     filterVals[col] = el instanceof HTMLInputElement ? (el.checked ? el.value : "") : el.value;
     shown = PAGE;
     render();
+    syncUrl();
   });
   $out.addEventListener("click", (e) => {
     const b = (e.target as HTMLElement).closest<HTMLButtonElement>("[data-sort]");
@@ -234,6 +246,7 @@ export async function startViewer() {
       sortDir = ds.columns[i][1] === "num" ? -1 : 1;
     }
     render();
+    syncUrl();
     $out.querySelector<HTMLButtonElement>(`[data-sort="${i}"]`)?.focus();
   });
   $more.addEventListener("click", () => {
@@ -251,8 +264,31 @@ export async function startViewer() {
     render();
     syncUrl();
   };
-  // URL の ?q= で検索した状態から始める（ボタンが先に押されていたら、その言葉を残す）
-  if (!$q.value) $q.value = new URLSearchParams(location.search).get("q") ?? "";
+  // URL の ?q=・絞り込み・並べ替えから始める（ボタンが先に押されていたら、その操作を優先する）
+  const initParams = new URLSearchParams(location.search);
+  if (!$q.value) $q.value = initParams.get("q") ?? "";
+  for (const col of ds.filters) {
+    const v = initParams.get(`f_${col}`);
+    if (!v) continue;
+    const el = $filters.querySelector<HTMLInputElement | HTMLSelectElement>(`[data-filter-col="${CSS.escape(col)}"]`);
+    if (!el) continue;
+    if (el instanceof HTMLInputElement) {
+      if (v === el.value) {
+        el.checked = true;
+        filterVals[col] = v;
+      }
+    } else if ([...el.options].some((o) => o.value === v)) {
+      el.value = v;
+      filterVals[col] = v;
+    }
+  }
+  if (!wantSort) {
+    const sp = initParams.get("sort");
+    if (sp) {
+      const [c, dir] = sp.split(":");
+      if (idx[c] !== undefined) wantSort = [c, dir === "desc" ? "desc" : "asc"];
+    }
+  }
   applySort();
   render();
 }

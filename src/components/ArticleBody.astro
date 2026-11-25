@@ -5,9 +5,12 @@
 <div class="entry-body"><slot /></div>
 
 <script>
-  /* 脚注の番号にマウスを乗せたら、出典の中身を吹き出しで出す。飾りなので、
-     押せばいつもどおり下の一覧へ飛ぶ。吹き出しの中のリンクも押せるよう、
-     番号から吹き出しへマウスを動かすあいだは少し待ってから消す（jz5.jp と同じ作り） */
+  const esc = (s: unknown) =>
+    String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]!);
+
+  /* 脚注の番号にマウスを乗せたら、出典の中身を吹き出しで出す。
+     PC では押せば下の一覧へ飛ぶ。タッチ端末では 1 回目のタップで吹き出しを出し、
+     吹き出しの中のリンクから一覧へ飛べるようにする（その場で出典を読めるように） */
   const refs = document.querySelectorAll<HTMLAnchorElement>(".entry-body a[data-footnote-ref]");
   if (refs.length > 0) {
     const tip = document.createElement("div");
@@ -17,17 +20,38 @@
     document.body.append(tip);
 
     let timer: number | undefined;
-    const hide = () => { timer = window.setTimeout(() => { tip.hidden = true; }, 200); };
+    let activeRef: HTMLAnchorElement | null = null;
+    const isTouch = () => matchMedia("(hover: none), (pointer: coarse)").matches;
+    const hideNow = () => {
+      window.clearTimeout(timer);
+      tip.hidden = true;
+      activeRef = null;
+    };
+    const hide = () => {
+      timer = window.setTimeout(hideNow, 200);
+    };
     const keep = () => window.clearTimeout(timer);
 
-    const show = (ref: HTMLAnchorElement) => {
+    const show = (ref: HTMLAnchorElement, touchMode = false) => {
       keep();
-      const li = document.getElementById(decodeURIComponent(ref.hash.slice(1)));
+      const targetId = decodeURIComponent(ref.hash.slice(1));
+      const li = document.getElementById(targetId);
       if (!li) return;
       const body = li.cloneNode(true) as HTMLElement;
       body.querySelectorAll("[data-footnote-backref]").forEach((a) => a.remove());
       tip.innerHTML = body.innerHTML;
+      if (touchMode) {
+        const jump = document.createElement("p");
+        jump.className = "footnote-tip-jump";
+        const a = document.createElement("a");
+        a.href = ref.hash;
+        a.textContent = "出典・注釈の一覧へ移動";
+        a.addEventListener("click", hideNow);
+        jump.append(a);
+        tip.append(jump);
+      }
       tip.hidden = false;
+      activeRef = ref;
 
       // 番号の下に出す。画面の下にはみ出すなら上に出す
       const r = ref.getBoundingClientRect();
@@ -40,58 +64,34 @@
     };
 
     for (const ref of refs) {
-      ref.addEventListener("mouseenter", () => show(ref));
-      ref.addEventListener("focus", () => show(ref));
-      ref.addEventListener("mouseleave", hide);
-      ref.addEventListener("blur", hide);
+      ref.addEventListener("mouseenter", () => { if (!isTouch()) show(ref, false); });
+      ref.addEventListener("focus", () => { if (!isTouch()) show(ref, false); });
+      ref.addEventListener("mouseleave", () => { if (!isTouch()) hide(); });
+      ref.addEventListener("blur", () => { if (!isTouch()) hide(); });
+      ref.addEventListener("click", (e) => {
+        if (!isTouch()) return;
+        e.preventDefault();
+        if (!tip.hidden && activeRef === ref) hideNow();
+        else show(ref, true);
+      });
     }
     tip.addEventListener("mouseenter", keep);
-    tip.addEventListener("mouseleave", hide);
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape") tip.hidden = true; });
+    tip.addEventListener("mouseleave", () => { if (!isTouch()) hide(); });
+    document.addEventListener("click", (e) => {
+      if (tip.hidden) return;
+      const t = e.target as Node;
+      if (tip.contains(t) || (activeRef && activeRef.contains(t))) return;
+      hideNow();
+    });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") hideNow(); });
   }
 
-  /* 目次で、いま読んでいる見出しに印を付ける。見出しが画面の上から 120px を
-     過ぎたら、その節を読んでいるとみなす。目次は 2 か所（右の列と題名の下）にあるので両方に付ける */
-  const tocLinks = [...document.querySelectorAll<HTMLAnchorElement>(".toc a[href^='#']")];
-  const heads = [...new Set(tocLinks.map((a) => decodeURIComponent(a.hash.slice(1))))]
-    .map((id) => document.getElementById(id))
-    .filter((h): h is HTMLElement => h !== null);
-  if (heads.length > 0) {
-    let current = "";
-    const update = () => {
-      let id = "";
-      for (const h of heads) {
-        if (h.getBoundingClientRect().top <= 120) id = h.id;
-        else break;
-      }
-      if (id === current) return;
-      current = id;
-      for (const a of tocLinks) {
-        const on = decodeURIComponent(a.hash.slice(1)) === id;
-        if (on) a.setAttribute("aria-current", "location");
-        else a.removeAttribute("aria-current");
-        // 右の列の目次は、長いと中でスクロールする。印の付いた項目が見えるように動かす
-        const box = a.closest<HTMLElement>(".side-toc");
-        if (on && box && box.scrollHeight > box.clientHeight) {
-          const top = a.offsetTop - box.offsetTop;
-          if (top < box.scrollTop || top > box.scrollTop + box.clientHeight - 40) box.scrollTop = top - box.clientHeight / 3;
-        }
-      }
-    };
-    let ticking = false;
-    window.addEventListener("scroll", () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => { ticking = false; update(); });
-    }, { passive: true });
-    update();
-  }
-
-  /* グラフにマウスを乗せたら、最も近い年に縦線を引いて、その年の数字を吹き出しで出す。
+  /* グラフにマウスを乗せたら（タッチ端末ではタップ）、最も近い年に縦線を引いて、その年の数字を吹き出しで出す。
      データは SVG の data-chart（src/lib/charts.mjs が埋め込む） */
   for (const svg of document.querySelectorAll<SVGSVGElement>("svg[data-chart]")) {
     type Row = { x: number; px: number; v: { n: string; c: string | number; y: number; t?: string }[] };
     const d = JSON.parse(svg.dataset.chart!) as { unit: string; plot: { top: number; bottom: number; width: number; height: number }; rows: Row[] };
+    if (!d.rows?.length) continue;
     const box = svg.parentElement!;
     const ns = "http://www.w3.org/2000/svg";
     const cursor = document.createElementNS(ns, "line");
@@ -104,10 +104,11 @@
     tip.className = "chart-tip";
     tip.hidden = true;
     box.appendChild(tip);
-    const color = (c: string | number) => (c === "mut" ? "var(--mut)" : `var(--chart-${c})`);
+    const color = (c: string | number) => (c === "mut" ? "var(--mut)" : `var(--chart-${Number(c) === 2 ? 2 : 1})`);
 
     const show = (clientX: number) => {
       const rect = svg.getBoundingClientRect();
+      if (!rect.width) return;
       const px = ((clientX - rect.left) / rect.width) * d.plot.width;
       let best = d.rows[0];
       for (const r of d.rows) if (Math.abs(r.px - px) < Math.abs(best.px - px)) best = r;
@@ -115,19 +116,25 @@
       cursor.setAttribute("x2", String(best.px));
       cursor.style.display = "";
       tip.innerHTML =
-        `<b>${best.x}年</b>` +
-        best.v.map((v) => `<br><i style="background:${color(v.c)}"></i>${v.n}　${v.t ?? v.y.toLocaleString("ja-JP") + d.unit}`).join("");
+        `<b>${esc(best.x)}年</b>` +
+        best.v
+          .map((v) => `<br><i style="background:${color(v.c)}"></i>${esc(v.n)}　${esc(v.t ?? v.y.toLocaleString("ja-JP") + d.unit)}`)
+          .join("");
       tip.hidden = false;
       const x = (best.px / d.plot.width) * rect.width + rect.left - box.getBoundingClientRect().left + box.scrollLeft;
       const left = x + 12 + tip.offsetWidth > box.scrollLeft + box.clientWidth ? x - 12 - tip.offsetWidth : x + 12;
-      tip.style.left = `${left}px`;
+      tip.style.left = `${Math.max(0, left)}px`;
       tip.style.top = `${(d.plot.top / d.plot.height) * rect.height}px`;
     };
     const hide = () => {
       cursor.style.display = "none";
       tip.hidden = true;
     };
-    svg.addEventListener("pointermove", (e) => show(e.clientX));
-    svg.addEventListener("pointerleave", hide);
+    svg.addEventListener("pointermove", (e) => { if (e.pointerType !== "touch") show(e.clientX); });
+    svg.addEventListener("pointerdown", (e) => { if (e.pointerType === "touch") show(e.clientX); });
+    svg.addEventListener("pointerleave", (e) => { if (e.pointerType !== "touch") hide(); });
+    document.addEventListener("pointerdown", (e) => {
+      if (!tip.hidden && !box.contains(e.target as Node)) hide();
+    });
   }
 </script>

@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import SearchBox from "../components/SearchBox.astro";
 ---
 
 <Base title="ページが見つかりません" path="/404.html" noindex>
@@ -8,7 +9,8 @@ import Base from "../layouts/Base.astro";
       <h1>ページが見つかりません</h1>
     </header>
     <div class="entry-body">
-      <p>URL が変わったか、まだ無いページです。<a href="/">トップ</a>から探してください。</p>
+      <p>URL が変わったか、まだ無いページです。記事を検索するか、<a href="/">トップ</a>・<a href="/gallery/">枚方の写真</a>・<a href="/data/">枚方のデータ</a>・<a href="/sns/">SNS</a> から探してみてください。</p>
+      <SearchBox />
     </div>
   </article>
 </Base>

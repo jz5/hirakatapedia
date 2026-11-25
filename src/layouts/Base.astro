@@ -29,11 +29,13 @@ interface Props {
   wide?: boolean;
   /** このページのもとになっているファイル（リポジトリの中のパス）。フッターの GitHub のアイコンを、そのファイルの変更の履歴へのリンクにする */
   source?: string;
-  /** ページごとの構造化データ（写真のページの ImageObject など）。記事の Article とホームの WebSite はここで作る */
+  /** ページごとの構造化データ（写真のページの ImageObject や Dataset など）。記事の Article とホームの WebSite はここで作る */
   jsonLd?: Record<string, unknown>;
+  /** パンくずリスト（BreadcrumbList の構造化データ用） */
+  breadcrumbs?: { name: string; path: string }[];
 }
 
-const { title, description, path, article, noindex = false, image, wide = false, source, jsonLd: pageLd } = Astro.props;
+const { title, description, path, article, noindex = false, image, wide = false, source, jsonLd: pageLd, breadcrumbs } = Astro.props;
 const hasToc = Astro.slots.has("toc");
 
 const fullTitle = title ? `${title} | ${SITE.title}` : `${SITE.title}（${SITE.reading}）`;
@@ -53,6 +55,7 @@ const SOURCES: Record<string, string> = {
   "/data/gomi/": "src/pages/data/gomi.astro",
   "/data/city/": "src/pages/data/city.astro",
   "/data/links/": "src/pages/data/links.astro",
+  "/search/": "src/pages/search.astro",
 };
 const sourceFile = source ?? SOURCES[path];
 const githubUrl = sourceFile ? `${REPO}/commits/main/${sourceFile}` : REPO;
@@ -66,14 +69,13 @@ const ogImage = new URL(image ?? "/og.png", SITE.url).href;
 // frontmatter の日付は「日本の日付」なので、日本時間の 0 時として書く（UTC の 0 時だと日本の朝 9 時になる）
 const jst = (d: Date) => `${d.toISOString().slice(0, 10)}T00:00:00+09:00`;
 const publisher = { "@type": "Organization", name: OPERATOR.name, alternateName: OPERATOR.nameEn, url: OPERATOR.url };
-const jsonLd = article
+const mainLd = article
   ? {
-      "@context": "https://schema.org",
       "@type": "Article",
       mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
       headline: title,
       description: desc,
-      ...(image ? { image: ogImage } : {}),
+      image: ogImage,
       datePublished: jst(article.published),
       dateModified: jst(article.modified ?? article.published),
       author: { "@type": "Person", name: AUTHOR.name, url: AUTHOR.url },
@@ -83,7 +85,6 @@ const jsonLd = article
     }
   : path === "/"
     ? {
-        "@context": "https://schema.org",
         "@type": "WebSite",
         // Google のサイト名は、ホームの正規の URL（末尾の / あり）と同じ url の WebSite から取る
         "@id": `${SITE.url.replace(/\/$/, "")}/#website`,
@@ -100,9 +101,27 @@ const jsonLd = article
           "query-input": "required name=search_term_string",
         },
       }
-    : pageLd
-      ? { "@context": "https://schema.org", ...pageLd }
-      : null;
+    : pageLd ?? null;
+const breadcrumbLd = breadcrumbs?.length
+  ? {
+      "@type": "BreadcrumbList",
+      itemListElement: breadcrumbs.map((b, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: b.name,
+        item: new URL(b.path, SITE.url).href,
+      })),
+    }
+  : null;
+const ldNodes = [mainLd, breadcrumbLd].filter((x): x is Record<string, unknown> => x !== null);
+const jsonLd =
+  ldNodes.length === 0
+    ? null
+    : ldNodes.length === 1
+      ? { "@context": "https://schema.org", ...ldNodes[0] }
+      : { "@context": "https://schema.org", "@graph": ldNodes };
+// JSON-LD 内に </script> が混ざってもタグを脱出しないよう < をエスケープする
+const jsonLdScript = jsonLd ? JSON.stringify(jsonLd).replace(/</g, "\\u003c") : null;
 ---
 
 <!doctype html>
@@ -138,9 +157,10 @@ const jsonLd = article
     {!image && <><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" /></>}
     <meta name="twitter:card" content="summary_large_image" />
 
-    {jsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    {jsonLdScript && <script is:inline type="application/ld+json" set:html={jsonLdScript} />}
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title={SITE.title} href="/feed.xml" />
     <Analytics />
   </head>
   <body>

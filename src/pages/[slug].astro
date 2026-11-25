@@ -19,22 +19,29 @@ const d = entry.data;
 const { Content, headings } = await render(entry);
 // 事典なので、いつ書いたかより、いつの情報かを出す
 const last = lastModified(entry);
-// frontmatter の cover は og:image にだけ使う（本文には出さない）
-const cover = d.cover ? photo(entry.id, d.cover) : undefined;
+// frontmatter の cover は og:image にだけ使う（本文には出さない）。無ければ本文の最初の写真を使う
+const coverFile = d.cover ?? entry.body?.match(/<div\b[^>]*\bdata-photo="([^"]+)"/)?.[1]?.split("|")[0];
+const cover = coverFile ? photo(entry.id, coverFile) : undefined;
+const path = articlePath(entry.id);
+const breadcrumbs = [
+  { name: "ホーム", path: "/" },
+  { name: d.title, path },
+];
 ---
 
 <Base
   title={d.title}
   description={d.description}
-  path={articlePath(entry.id)}
+  path={path}
   article={{ published: d.published, modified: last > d.published ? last : undefined }}
   image={cover?.large.src}
   source={`content/articles/${entry.id}.md`}
+  breadcrumbs={breadcrumbs}
 >
   <article class="entry" data-pagefind-body>
     <header class="entry-header">
       <h1>{d.title}</h1>
-      <p class="entry-meta" data-pagefind-ignore>最終更新 <time datetime={last.toISOString()}>{jaDate(last)}</time></p>
+      <p class="entry-meta" data-pagefind-ignore>最終更新 <time datetime={last.toISOString().slice(0, 10)}>{jaDate(last)}</time></p>
     </header>
 
 

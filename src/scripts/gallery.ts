@@ -68,6 +68,8 @@ export async function startGallery() {
   $d.value = u.get("d") ?? "";
   $l.value = u.get("l") ?? "";
   $s.value = u.get("s") ?? "";
+  $geo.checked = u.get("geo") === "1";
+  if (["new", "old", "name"].includes(u.get("sort") ?? "")) $sort.value = u.get("sort")!;
   let page = Math.max(1, Number(u.get("p")) || 1);
 
   let meta: Meta;
@@ -109,26 +111,28 @@ export async function startGallery() {
   };
 
   const pages = () => Math.max(1, Math.ceil(list.length / PER));
-  const pagerHtml = () => {
+  const pagerHtml = (cur: number) => {
     const n = pages();
     if (n <= 1) return "";
-    const nums = new Set([1, n, page - 2, page - 1, page, page + 1, page + 2].filter((x) => x >= 1 && x <= n));
+    const nums = new Set([1, n, cur - 2, cur - 1, cur, cur + 1, cur + 2].filter((x) => x >= 1 && x <= n));
     const sorted = [...nums].sort((a, b) => a - b);
-    let html = `<button type="button" data-page="${page - 1}" ${page <= 1 ? "disabled" : ""}><span class="ar-l">前へ</span></button>`;
+    let html = `<button type="button" data-page="${cur - 1}" ${cur <= 1 ? "disabled" : ""}><span class="ar-l">前へ</span></button>`;
     sorted.forEach((x, i) => {
       if (i > 0 && x - sorted[i - 1] > 1) html += `<span class="gallery-pager-gap">…</span>`;
-      html += `<button type="button" data-page="${x}" ${x === page ? 'aria-current="page"' : ""}>${x.toLocaleString()}</button>`;
+      html += `<button type="button" data-page="${x}" ${x === cur ? 'aria-current="page"' : ""}>${x.toLocaleString()}</button>`;
     });
-    return html + `<button type="button" data-page="${page + 1}" ${page >= n ? "disabled" : ""}><span class="ar-r">次へ</span></button>`;
+    return html + `<button type="button" data-page="${cur + 1}" ${cur >= n ? "disabled" : ""}><span class="ar-r">次へ</span></button>`;
   };
 
   const render = () => {
     list = matched();
-    page = Math.min(page, pages());
+    // 読み込み中は後のチャンクでページ数が増えるので、URL で指定された page を上書きしない
+    const cur = Math.min(page, pages());
+    if (!loading) page = cur;
     const years = $years.checked && $sort.value !== "name";
     let last: number | null | undefined;
     $grid.innerHTML = list
-      .slice((page - 1) * PER, page * PER)
+      .slice((cur - 1) * PER, cur * PER)
       .map(
         (r) =>
           (years && r[2] !== last
@@ -139,8 +143,8 @@ export async function startGallery() {
       .join("");
     const total = loading ? meta.total : rows.length;
     const now = list.length === rows.length && !loading ? `${total.toLocaleString()} 枚` : `${list.length.toLocaleString()} 枚（全 ${total.toLocaleString()} 枚）`;
-    $count.textContent = (pages() > 1 ? `${now}・${page.toLocaleString()} / ${pages().toLocaleString()} ページ` : now) + (loading ? `・読み込み中（${rows.length.toLocaleString()} 枚まで）` : "");
-    $pager.innerHTML = pagerHtml();
+    $count.textContent = (pages() > 1 ? `${now}・${cur.toLocaleString()} / ${pages().toLocaleString()} ページ` : now) + (loading ? `・読み込み中（${rows.length.toLocaleString()} 枚まで）` : "");
+    $pager.innerHTML = pagerHtml(cur);
     $map.hidden = !mapOn;
     if (mapOn) {
       mapP ??= import("./gallery-map").then((m) => m.makeGalleryMap($map));
@@ -149,7 +153,16 @@ export async function startGallery() {
   };
   const syncUrl = () => {
     const p = new URL(location.href);
-    const set: [string, string][] = [["q", $q.value], ["g", $g.value], ["d", $d.value], ["l", $l.value], ["s", $s.value], ["p", page > 1 ? String(page) : ""]];
+    const set: [string, string][] = [
+      ["q", $q.value],
+      ["g", $g.value],
+      ["d", $d.value],
+      ["l", $l.value],
+      ["s", $s.value],
+      ["geo", $geo.checked ? "1" : ""],
+      ["sort", $sort.value !== "new" ? $sort.value : ""],
+      ["p", page > 1 ? String(page) : ""],
+    ];
     for (const [k, v] of set) v ? p.searchParams.set(k, v) : p.searchParams.delete(k);
     history.replaceState(null, "", p);
   };
