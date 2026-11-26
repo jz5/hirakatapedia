@@ -42,7 +42,7 @@ const fullTitle = title ? `${title} | ${SITE.title}` : `${SITE.title}（${SITE.r
 const desc = description || SITE.description;
 const canonical = new URL(path, SITE.url).href;
 // フッターの GitHub のアイコン。ページのもとのファイルが分かれば、そのファイルの変更の履歴へ、分からなければリポジトリへ
-const REPO = "https://github.com/jz5/hirakatapedia";
+const REPO = SITE.repo;
 const SOURCES: Record<string, string> = {
   "/": "src/pages/index.astro",
   "/about/": "src/pages/about.astro",
@@ -68,7 +68,13 @@ const searchIcon = { viewBox: searchSvg.match(/viewBox="([^"]+)"/)![1], d: searc
 const ogImage = new URL(image ?? "/og.png", SITE.url).href;
 // frontmatter の日付は「日本の日付」なので、日本時間の 0 時として書く（UTC の 0 時だと日本の朝 9 時になる）
 const jst = (d: Date) => `${d.toISOString().slice(0, 10)}T00:00:00+09:00`;
-const publisher = { "@type": "Organization", name: OPERATOR.name, alternateName: OPERATOR.nameEn, url: OPERATOR.url };
+const publisherLogo = {
+  "@type": "ImageObject",
+  url: new URL("/apple-touch-icon.png", SITE.url).href,
+  width: 180,
+  height: 180,
+};
+const publisher = { "@type": "Organization", name: OPERATOR.name, alternateName: OPERATOR.nameEn, url: OPERATOR.url, logo: publisherLogo };
 const mainLd = article
   ? {
       "@type": "Article",
@@ -78,7 +84,7 @@ const mainLd = article
       image: ogImage,
       datePublished: jst(article.published),
       dateModified: jst(article.modified ?? article.published),
-      author: { "@type": "Person", name: AUTHOR.name, url: AUTHOR.url },
+      author: { "@type": "Person", name: AUTHOR.name, url: AUTHOR.url, sameAs: [...AUTHOR.sameAs] },
       publisher,
       license: LICENSE.url,
       inLanguage: SITE.lang,
@@ -93,6 +99,7 @@ const mainLd = article
         url: `${SITE.url.replace(/\/$/, "")}/`,
         description: desc,
         inLanguage: SITE.lang,
+        sameAs: [SITE.repo],
         publisher,
         license: LICENSE.url,
         potentialAction: {
@@ -160,6 +167,8 @@ const jsonLdScript = jsonLd ? JSON.stringify(jsonLd).replace(/</g, "\\u003c") : 
     {jsonLdScript && <script is:inline type="application/ld+json" set:html={jsonLdScript} />}
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
     <link rel="alternate" type="application/rss+xml" title={SITE.title} href="/feed.xml" />
     <Analytics />
   </head>

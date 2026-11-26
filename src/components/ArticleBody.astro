@@ -8,6 +8,23 @@
   const esc = (s: unknown) =>
     String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]!);
 
+  /* マーカーだけくっきり読むトグル（本文に <mark> と読み方の案内がある記事だけ表示） */
+  const entryBody = document.querySelector<HTMLElement>(".entry-body");
+  const entryGuide = entryBody?.querySelector<HTMLElement>(".entry-guide");
+  if (entryBody && entryGuide && entryBody.querySelector("mark")) {
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "mark-toggle";
+    toggle.setAttribute("aria-pressed", "false");
+    toggle.textContent = "マーカーだけくっきり読む";
+    toggle.addEventListener("click", () => {
+      const on = entryBody.classList.toggle("is-mark-focus");
+      toggle.setAttribute("aria-pressed", String(on));
+      toggle.textContent = on ? "通常表示に戻す" : "マーカーだけくっきり読む";
+    });
+    entryGuide.append(document.createTextNode(" "), toggle);
+  }
+
   /* 脚注の番号にマウスを乗せたら、出典の中身を吹き出しで出す。
      PC では押せば下の一覧へ飛ぶ。タッチ端末では 1 回目のタップで吹き出しを出し、
      吹き出しの中のリンクから一覧へ飛べるようにする（その場で出典を読めるように） */
