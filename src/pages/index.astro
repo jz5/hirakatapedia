@@ -36,7 +36,7 @@ const thumb = (e: (typeof list)[number]) => {
               <span class="card-text">
                 <span class="card-title">{e.data.title}</span>
                 <span class="card-desc">{e.data.description}</span>
-                <span class="card-date"><span class="meta-item">更新 <time datetime={lastModified(e).toISOString().slice(0, 10)}>{jaDate(lastModified(e))}</time></span>{stats.sources > 0 && <span class="meta-item">・出典 {stats.sources}件</span>}{stats.charts > 0 && <span class="meta-item">・グラフ {stats.charts}件</span>}</span>
+                <span class="card-date"><span class="meta-item">更新 <time datetime={lastModified(e).toISOString().slice(0, 10)}>{jaDate(lastModified(e))}</time></span>{stats.sources > 0 && <span class="meta-item">・出典・注釈 {stats.sources}件</span>}{stats.charts > 0 && <span class="meta-item">・グラフ {stats.charts}件</span>}</span>
               </span>
             </a>
           </li>

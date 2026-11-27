@@ -101,6 +101,8 @@ const breadcrumbs = [
 </Base>
 
 <script>
+  import { bindCopyButton } from "../../lib/copy-button";
+
   // 一覧から来たときは、その一覧の並びで前・次をたどる。「← 枚方の写真」も、その一覧（絞り込み・ページ）へ戻る
   const nav = document.querySelector<HTMLElement>(".gphoto-nav");
   try {
@@ -131,13 +133,5 @@ const breadcrumbs = [
   });
 
   // 表記の例をコピーする
-  const b = document.querySelector<HTMLButtonElement>("[data-copy]");
-  b?.addEventListener("click", async () => {
-    try {
-      await navigator.clipboard.writeText(document.querySelector("[data-credit]")?.textContent ?? "");
-      b.textContent = "コピーしました";
-    } catch {
-      b.textContent = "コピーできませんでした";
-    }
-  });
+  bindCopyButton("[data-copy]", "[data-credit]");
 </script>

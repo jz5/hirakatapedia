@@ -68,13 +68,7 @@ const searchIcon = { viewBox: searchSvg.match(/viewBox="([^"]+)"/)![1], d: searc
 const ogImage = new URL(image ?? "/og.png", SITE.url).href;
 // frontmatter の日付は「日本の日付」なので、日本時間の 0 時として書く（UTC の 0 時だと日本の朝 9 時になる）
 const jst = (d: Date) => `${d.toISOString().slice(0, 10)}T00:00:00+09:00`;
-const publisherLogo = {
-  "@type": "ImageObject",
-  url: new URL("/apple-touch-icon.png", SITE.url).href,
-  width: 180,
-  height: 180,
-};
-const publisher = { "@type": "Organization", name: OPERATOR.name, alternateName: OPERATOR.nameEn, url: OPERATOR.url, logo: publisherLogo };
+const publisher = { "@type": "Organization", name: OPERATOR.name, alternateName: OPERATOR.nameEn, url: OPERATOR.url };
 const mainLd = article
   ? {
       "@type": "Article",

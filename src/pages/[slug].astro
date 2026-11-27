@@ -2,7 +2,7 @@
 import { render } from "astro:content";
 import { allArticles, articlePath, jaDate, lastModified } from "../lib/articles";
 import { articleStats } from "../lib/article-stats";
-import { SITE, OPERATOR, LICENSE } from "../lib/site";
+import { SITE, LICENSE } from "../lib/site";
 import Base from "../layouts/Base.astro";
 import ArticleBody from "../components/ArticleBody.astro";
 import Toc from "../components/Toc.astro";
@@ -27,7 +27,7 @@ const coverFile = d.cover ?? entry.body?.match(/<div\b[^>]*\bdata-photo="([^"]+)
 const cover = coverFile ? photo(entry.id, coverFile) : undefined;
 const path = articlePath(entry.id);
 const canonical = new URL(path, SITE.url).href;
-const citation = `「${d.title}」${SITE.title}（${OPERATOR.name}、最終更新 ${jaDate(last)}） ${canonical}（${LICENSE.name}）`;
+const attribution = `${SITE.title}「${d.title}」 ${canonical}`;
 const breadcrumbs = [
   { name: "ホーム", path: "/" },
   { name: d.title, path },
@@ -59,8 +59,8 @@ const breadcrumbs = [
     <footer class="entry-footer" data-pagefind-ignore>
       <p>公開 <time datetime={d.published.toISOString().slice(0, 10)}>{jaDate(d.published)}</time>・最終更新 <time datetime={last.toISOString().slice(0, 10)}>{jaDate(last)}</time></p>
       <div class="entry-cite">
-        <p class="entry-cite-label">出典として引用する（<a href="/license/" rel="license">{LICENSE.name}</a>）</p>
-        <p class="entry-cite-row"><code data-cite>{citation}</code> <button type="button" class="copy-btn" data-copy-cite>コピー</button></p>
+        <p class="entry-cite-label">このページの文章を使うときの表記の例（<a href="/license/" rel="license">{LICENSE.name}</a>）</p>
+        <p class="entry-cite-row"><code data-cite>{attribution}</code> <button type="button" class="copy-btn" data-copy-cite>コピー</button></p>
       </div>
     </footer>
   </article>
@@ -69,17 +69,6 @@ const breadcrumbs = [
 </Base>
 
 <script>
-  const btn = document.querySelector<HTMLButtonElement>("[data-copy-cite]");
-  const code = document.querySelector<HTMLElement>("[data-cite]");
-  let resetTimer: number | undefined;
-  btn?.addEventListener("click", async () => {
-    window.clearTimeout(resetTimer);
-    try {
-      await navigator.clipboard.writeText(code?.textContent ?? "");
-      btn.textContent = "コピーしました";
-      resetTimer = window.setTimeout(() => { btn.textContent = "コピー"; }, 2500);
-    } catch {
-      btn.textContent = "コピーできませんでした";
-    }
-  });
+  import { bindCopyButton } from "../lib/copy-button";
+  bindCopyButton("[data-copy-cite]", "[data-cite]");
 </script>

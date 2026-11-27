@@ -207,9 +207,9 @@ button { font: inherit; color: inherit; }
   .theme-select button svg { width: 13px; height: 13px; }
   .site-search-link { height: 26px; }
 }
-/* タッチ端末・狭い画面では見た目を保ったまま押しやすい当たり判定（約 40px）に広げる */
+/* タッチ端末・狭い画面では見た目を保ったまま押しやすい当たり判定に広げる（隣ボタン・2段目ナビと干渉しない範囲） */
 @media (pointer: coarse), (max-width: 640px) {
-  .theme-select button::after { content: ""; position: absolute; inset: -9px -3px; }
+  .theme-select button::after { content: ""; position: absolute; inset: -5px -1px; }
 }
 .theme-select button:hover { color: var(--fg); }
 .theme-select button[aria-pressed="true"] { color: var(--fg-strong); background: var(--bg-sub); }
@@ -1046,7 +1046,10 @@ tr[hidden] { display: none; }
 .site-search-link::after { content: ""; position: absolute; inset: -7px; }
 .site-search-link:hover { color: var(--accent); }
 .site-search-link svg { width: 15px; height: 15px; fill: currentColor; }
-@media (max-width: 640px) { .site-search-link { margin-right: calc(var(--sp-3) * -1 + var(--sp-1)); } }
+@media (max-width: 640px) {
+  .site-search-link { margin-right: calc(var(--sp-3) * -1 + var(--sp-1)); }
+  .site-search-link::after { inset: -5px; }
+}
 
 /* 記事の検索（/search/）。入力欄はデータの検索と同じ形（.data-tools） */
 .entry-body .search-results { list-style: none; padding: 0; margin: var(--sp-4) 0 0; }
@@ -1076,20 +1079,23 @@ tr[hidden] { display: none; }
 }
 .mark-toggle:hover { border-color: var(--accent); }
 .mark-toggle[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 700; }
-.entry-body.is-mark-focus > p:not(.entry-guide),
-.entry-body.is-mark-focus > ul,
-.entry-body.is-mark-focus > ol,
-.entry-body.is-mark-focus > blockquote,
-.entry-body.is-mark-focus > table,
-.entry-body.is-mark-focus .summary li {
-  color: color-mix(in srgb, var(--fg) 36%, var(--bg));
+/* 画面表示時のみ地の文を少し抑えてマーカーを目立たせる（ライト 4.75:1・ダーク 6.09:1）。印刷時は常に通常表示 */
+@media screen {
+  .entry-body.is-mark-focus > p:not(.entry-guide),
+  .entry-body.is-mark-focus > ul,
+  .entry-body.is-mark-focus > ol,
+  .entry-body.is-mark-focus > blockquote,
+  .entry-body.is-mark-focus > table,
+  .entry-body.is-mark-focus .summary li {
+    color: color-mix(in srgb, var(--fg) 65%, var(--bg));
+  }
+  .entry-body.is-mark-focus mark {
+    color: var(--fg-strong);
+    background-color: var(--mark);
+  }
+  .entry-body.is-mark-focus a[data-footnote-ref] { opacity: .65; }
+  .entry-body.is-mark-focus mark a[data-footnote-ref] { opacity: 1; }
 }
-.entry-body.is-mark-focus mark {
-  color: var(--fg-strong);
-  background-color: var(--mark);
-}
-.entry-body.is-mark-focus a[data-footnote-ref] { opacity: .55; }
-.entry-body.is-mark-focus mark a[data-footnote-ref] { opacity: 1; }
 
 /* 記事の末尾の、公開日・最終更新・引用例 */
 .entry-footer { margin-top: var(--sp-7); font-size: .8125rem; color: var(--mut); }
@@ -1177,12 +1183,6 @@ tr[hidden] { display: none; }
   .layout { display: block; padding-block: 0; }
   .wrap { max-width: none; padding-inline: 0; }
   body { background: #fff; color: #000; font-size: 10.5pt; line-height: 1.7; }
-  .entry-body.is-mark-focus > p:not(.entry-guide),
-  .entry-body.is-mark-focus > ul,
-  .entry-body.is-mark-focus > ol,
-  .entry-body.is-mark-focus > blockquote,
-  .entry-body.is-mark-focus > table,
-  .entry-body.is-mark-focus .summary li { color: #000; }
   mark { background: none; font-weight: 700; }
   .entry-body h2, .entry-body h3 { break-after: avoid; }
   .photo, .chart, .summary { break-inside: avoid; }
