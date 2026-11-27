@@ -15,9 +15,6 @@ export interface MapQuizNote {
 export const readMapQuizNotes = (): Record<string, MapQuizNote> =>
   parse(mapQuizNotesRaw) as Record<string, MapQuizNote>;
 
-/** 開発サーバー（pnpm dev）のときだけ true */
-export const IS_DEV = import.meta.env.DEV;
-
 /** SNS の種類と、画面に出す名前。並び順もこの順 */
 export const SNS_TYPES = {
   x: "X",

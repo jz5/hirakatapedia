@@ -11,6 +11,7 @@ import Toc from "../../components/Toc.astro";
 import ArticleBody from "../../components/ArticleBody.astro";
 import { charts } from "../../lib/chart-defs.mjs";
 import catalog from "../../../content/data/opendata-catalog.json";
+import mapQuizMeta from "../../../content/data/map-quiz-meta.json";
 import { datasets as sets, PAGES, dataPath, hasMap, asOf } from "../../lib/datasets";
 import { allArticles, articlePath } from "../../lib/articles";
 
@@ -130,7 +131,7 @@ const usefulLinks = [
           <li>
             <a href="/data/map-quiz/">
               <span class="data-card-title">枚方市地図クイズ</span>
-              <span class="data-card-desc">枚方市の全 211 地区を白地図からクリックして当てるクイズ。間違えると人口・高齢化率・標高・公園数・写真などの統計ヒントが出ます</span>
+              <span class="data-card-desc">枚方市の全 {mapQuizMeta.count} 地区を白地図からクリックして当てるクイズ。間違えると人口・高齢化率・標高・公園数・写真などの統計ヒントが出ます</span>
               <span class="data-card-meta">クイズ＆地区統計・e-Stat と市のオープンデータから</span>
             </a>
           </li>

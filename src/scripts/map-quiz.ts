@@ -5,10 +5,14 @@
  * 地図と統計は自サーバーの JSON だけで完結するため、外部サーバーには通信しない。
  */
 
+import { buildShareUrls, type ShareKey } from "../lib/share";
+
 interface ArticleLink {
   slug: string;
   title: string;
 }
+
+type DistrictPhoto = [id: string, year: number | null, author?: string, license?: string];
 
 interface District {
   id: string;
@@ -38,7 +42,7 @@ interface District {
   toilet: number;
   shisetsu: number;
   st: [string, string, number];
-  photos: [string, number | null][];
+  photos: DistrictPhoto[];
   articles: ArticleLink[];
   neighbors: string[];
 }
@@ -75,6 +79,12 @@ const esc = (s: unknown) =>
   String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]!);
 const fmt = (n: number) => n.toLocaleString("ja-JP");
 const thumbOf = (id: string) => `/gallery/i/${id.slice(0, 2)}/${id}-s.avif`;
+/** 検索用：NFKC 正規化＋小文字化＋カタカナをひらがなへそろえる */
+const normalizeKana = (s: string) =>
+  s
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[\u30a1-\u30f6]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0x60));
 /** 地区名にふりがな（ルビ）を付けて返す */
 const rubyOf = (d: Pick<District, "name" | "yomi">) =>
   d.yomi ? `<ruby class="mq-ruby">${esc(d.name)}<rp>（</rp><rt>${esc(d.yomi)}</rt><rp>）</rp></ruby>` : esc(d.name);
@@ -251,7 +261,11 @@ function buildHints(d: District, city: QuizData["city"], byName: Map<string, Dis
     d.photos.length > 0
       ? `<div class="mq-hint-photos">${d.photos
           .slice(0, 2)
-          .map(([id, yr]) => `<img src="${thumbOf(id)}" alt="ヒントの写真" width="120" height="90" loading="lazy" />${yr ? `<span class="visually-hidden">${yr}年撮影</span>` : ""}`)
+          .map(([id, yr, author, license]) => {
+            const creditParts = [author, license].filter(Boolean);
+            const creditHtml = creditParts.length ? `<figcaption class="mq-hint-credit">${esc(creditParts.join(" / "))}</figcaption>` : "";
+            return `<figure class="mq-hint-photo"><img src="${thumbOf(id)}" alt="ヒントの写真" width="120" height="90" loading="lazy" />${yr ? `<span class="visually-hidden">${yr}年撮影</span>` : ""}${creditHtml}</figure>`;
+          })
           .join("")}</div>`
       : "";
   if (nbrsToShow.length > 0 || photoHtml) {
@@ -268,9 +282,9 @@ function buildHints(d: District, city: QuizData["city"], byName: Map<string, Dis
   return hints;
 }
 
-/** 先頭のキャッチーな一文（！・？まで）だけ太字にして読みやすくする */
+/** 先頭の 1 文（。・！・？まで）だけ太字にして読みやすくする */
 function formatNoteText(text: string): string {
-  const m = text.match(/^([^！？]+[！？])\s*([\s\S]*)$/);
+  const m = text.match(/^([^。！？]+[。！？])\s*([\s\S]*)$/);
   if (!m) return esc(text);
   return `<strong class="mq-note-lead">${esc(m[1])}</strong>${m[2] ? ` ${esc(m[2])}` : ""}`;
 }
@@ -319,10 +333,10 @@ function renderStatsBodyHtml(d: District, city: QuizData["city"], note?: Distric
   if (d.toilet > 0) fac.push(`公衆トイレ ${d.toilet}`);
   const photosHtml = d.photos.length
     ? `<div class="mq-card-photos">${d.photos
-        .map(
-          ([id, yr]) =>
-            `<a href="/gallery/${esc(id)}/"><img src="${thumbOf(id)}" alt="${esc(d.name)}の写真" width="112" height="84" loading="lazy" />${yr ? `<span>${yr}年</span>` : ""}</a>`,
-        )
+        .map(([id, yr, author, license]) => {
+          const titleAttr = [author, license].filter(Boolean).join(" / ");
+          return `<a href="/gallery/${esc(id)}/"${titleAttr ? ` title="${esc(titleAttr)}"` : ""}><img src="${thumbOf(id)}" alt="${esc(d.name)}の写真" width="112" height="84" loading="lazy" />${yr ? `<span>${yr}年</span>` : ""}</a>`;
+        })
         .join("")}</div>`
     : "";
   const articlesHtml = d.articles.length
@@ -354,20 +368,6 @@ function renderCardHtml(d: District, city: QuizData["city"], note?: DistrictNote
     </div>
     ${renderStatsBodyHtml(d, city, note)}
   `;
-}
-
-/** サイト共通の ShareButtons.astro と同じ 6 サービス分の共有 URL を組む */
-function buildShareUrls(textOnly: string, url: string): Record<string, string> {
-  const q = (o: Record<string, string>) => new URLSearchParams(o).toString();
-  const full = `${textOnly}\n${url}`;
-  return {
-    x: `https://x.com/intent/post?${q({ text: textOnly, url })}`,
-    misskey: `https://misskey-hub.net/share/?${q({ text: full, visibility: "public", localOnly: "0" })}`,
-    mastodon: `https://pronama.jp/share-to-mastodon.html?${q({ text: full })}`,
-    bluesky: `https://bsky.app/intent/compose?${q({ text: full })}`,
-    threads: `https://www.threads.net/intent/post?${q({ text: full })}`,
-    line: `https://social-plugins.line.me/lineit/share?${q({ url, text: textOnly })}`,
-  };
 }
 
 const arrowSvg = (deg: number) =>
@@ -442,7 +442,18 @@ export async function startMapQuiz() {
   try {
     const r = await fetch("/maps/quiz-districts.json");
     if (!r.ok) throw new Error(String(r.status));
-    data = await r.json();
+    const parsed: unknown = await r.json();
+    if (
+      !parsed ||
+      typeof parsed !== "object" ||
+      !Array.isArray((parsed as Partial<QuizData>).districts) ||
+      !Array.isArray((parsed as Partial<QuizData>).viewBox) ||
+      (parsed as Partial<QuizData>).viewBox!.length !== 4 ||
+      !(parsed as Partial<QuizData>).city
+    ) {
+      throw new Error("Invalid quiz payload");
+    }
+    data = parsed as QuizData;
   } catch {
     $loading.textContent = "地図データを読み込めませんでした。";
     return;
@@ -476,7 +487,9 @@ export async function startMapQuiz() {
 
   const pathById = new Map<string, SVGPathElement>();
   const bringToFront = (poly: SVGPathElement) => {
+    const hadFocus = document.activeElement === poly;
     gDistricts.append(poly);
+    if (hadFocus) poly.focus({ preventScroll: true });
   };
 
   for (const d of data.districts) {
@@ -574,15 +587,15 @@ export async function startMapQuiz() {
     { passive: false },
   );
 
-  let dragStart: { x: number; y: number; cx: number; cy: number; moved: boolean } | null = null;
+  let dragStart: { pointerId: number; x: number; y: number; cx: number; cy: number; moved: boolean } | null = null;
   svg.addEventListener("pointerdown", (e) => {
-    if (e.button !== 0) return;
+    if (e.button !== 0 || dragStart) return;
     wheelActive = true;
-    dragStart = { x: e.clientX, y: e.clientY, cx: cam.x, cy: cam.y, moved: false };
+    dragStart = { pointerId: e.pointerId, x: e.clientX, y: e.clientY, cx: cam.x, cy: cam.y, moved: false };
     svg.setPointerCapture(e.pointerId);
   });
   svg.addEventListener("pointermove", (e) => {
-    if (!dragStart) return;
+    if (!dragStart || e.pointerId !== dragStart.pointerId) return;
     const dx = e.clientX - dragStart.x;
     const dy = e.clientY - dragStart.y;
     if (!dragStart.moved && Math.hypot(dx, dy) > 6) dragStart.moved = true;
@@ -593,13 +606,18 @@ export async function startMapQuiz() {
     applyCam();
   });
   svg.addEventListener("pointerup", (e) => {
-    if (!dragStart) return;
+    if (!dragStart || e.pointerId !== dragStart.pointerId) return;
     const wasDrag = dragStart.moved;
     dragStart = null;
     if (wasDrag) return;
     const target = document.elementFromPoint(e.clientX, e.clientY)?.closest<SVGPathElement>(".mq-poly");
     if (target?.dataset.id) onPickDistrict(target.dataset.id);
   });
+  const cancelDrag = (e: PointerEvent) => {
+    if (dragStart && e.pointerId === dragStart.pointerId) dragStart = null;
+  };
+  svg.addEventListener("pointercancel", cancelDrag);
+  svg.addEventListener("lostpointercapture", cancelDrag);
   svg.addEventListener("pointerleave", () => {
     wheelActive = false;
   });
@@ -608,7 +626,10 @@ export async function startMapQuiz() {
     const target = (e.target as Element).closest<SVGPathElement>(".mq-poly");
     if (!target?.dataset.id) return;
     e.preventDefault();
+    const wasSolved = solved;
     onPickDistrict(target.dataset.id);
+    // 解答を確定させた Enter がそのまま document の「次の問題へ」へ届かないように止める
+    if (!wasSolved && solved) e.stopPropagation();
   });
 
   // --- 地図上のラベル・エフェクト・トースト・ダイアログ ---
@@ -706,7 +727,7 @@ export async function startMapQuiz() {
   const poolFor = (lv: Level) => {
     if (lv === "easy") return data.districts.filter((d) => d.tier === 1);
     if (lv === "normal") return data.districts.filter((d) => d.tier <= 2);
-    return data.districts;
+    return data.districts.filter((d) => !d.name.startsWith("大字"));
   };
 
   /** 新しいヒントが先頭に出るように降順で描画する */
@@ -866,7 +887,10 @@ function evaluateResult(records: RecordItem[], level: Level) {
   } else if (score >= 75) {
     grade = "A";
     title = "枚方ツウ";
-    comment = "細かいエリアまでよくご存じです。＋3問延長で S ランクも狙えます！";
+    comment =
+      gaveUpCount === 0
+        ? "細かいエリアまでよくご存じです。＋3問延長で S ランクも狙えます。"
+        : "細かいエリアまでよくご存じです。次は「答えを見る」なしで S ランクを目指してみてください。";
   } else if (score >= 55) {
     grade = "B";
     title = "枚方ウォーカー";
@@ -901,8 +925,8 @@ function evaluateResult(records: RecordItem[], level: Level) {
 
     const urls = buildShareUrls(shareTitle, QUIZ_URL);
     for (const a of $shareLinks) {
-      const k = a.dataset.shareLink!;
-      if (urls[k]) a.href = urls[k];
+      const k = a.dataset.shareLink as ShareKey | undefined;
+      if (k && urls[k]) a.href = urls[k];
     }
 
     for (const r of records) {
@@ -973,8 +997,10 @@ function evaluateResult(records: RecordItem[], level: Level) {
   };
 
   const renderExploreList = () => {
-    const q = $exploreQ.value.trim();
-    const matched = q ? data.districts.filter((d) => d.name.includes(q) || d.yomi.includes(q)) : data.districts.slice(0, 20);
+    const q = normalizeKana($exploreQ.value.trim());
+    const matched = q
+      ? data.districts.filter((d) => normalizeKana(d.name).includes(q) || normalizeKana(d.yomi).includes(q))
+      : data.districts.slice(0, 20);
     $exploreList.innerHTML = matched
       .slice(0, 24)
       .map((d) => `<li><button type="button" data-pick="${d.id}">${rubyOf(d)}</button></li>`)
@@ -1068,10 +1094,10 @@ function evaluateResult(records: RecordItem[], level: Level) {
 
   const renderNotesList = () => {
     if (!$notesView || !$notesQ || !$notesFilter || !$notesCount || !$notesList) return;
-    const q = $notesQ.value.trim().normalize("NFKC").toLowerCase();
+    const q = normalizeKana($notesQ.value.trim());
     const flt = $notesFilter.value;
     if (flt === "__empty__") {
-      const missing = data.districts.filter((d) => !notes[d.name] && (!q || `${d.name} ${d.yomi}`.normalize("NFKC").toLowerCase().includes(q)));
+      const missing = data.districts.filter((d) => !notes[d.name] && (!q || normalizeKana(`${d.name} ${d.yomi}`).includes(q)));
       $notesCount.textContent = `未記入 ${missing.length} 地区`;
       $notesList.innerHTML = missing
         .map(
@@ -1088,7 +1114,7 @@ function evaluateResult(records: RecordItem[], level: Level) {
       if (flt && n.tag !== flt) return false;
       if (!q) return true;
       const yomi = byName.get(name)?.yomi ?? "";
-      return `${name} ${yomi} ${n.text} ${n.source ?? ""}`.normalize("NFKC").toLowerCase().includes(q);
+      return normalizeKana(`${name} ${yomi} ${n.text} ${n.source ?? ""}`).includes(q);
     });
     const total = Object.keys(notes).length;
     $notesCount.textContent = entries.length === total ? `${total} 地区` : `${entries.length} 地区（全 ${total} 地区）`;

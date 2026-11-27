@@ -7,15 +7,10 @@
  */
 import Base from "../../layouts/Base.astro";
 import meta from "../../../content/data/map-quiz-meta.json";
-import { readMapQuizNotes, IS_DEV } from "../../lib/yaml-data";
-import xSvg from "@fortawesome/fontawesome-free/svgs/brands/x-twitter.svg?raw";
-import mastodonSvg from "@fortawesome/fontawesome-free/svgs/brands/mastodon.svg?raw";
-import blueskySvg from "@fortawesome/fontawesome-free/svgs/brands/bluesky.svg?raw";
-import threadsSvg from "@fortawesome/fontawesome-free/svgs/brands/threads.svg?raw";
-import lineSvg from "@fortawesome/fontawesome-free/svgs/brands/line.svg?raw";
-import linkSvg from "@fortawesome/fontawesome-free/svgs/solid/link.svg?raw";
+import { readMapQuizNotes } from "../../lib/yaml-data";
+import { SHARE_ICONS, SHARE_LINK_ICON } from "../../lib/share-icons";
 
-const isDev = IS_DEV;
+const isDev = import.meta.env.DEV;
 const notesData = readMapQuizNotes();
 const notesCount = Object.keys(notesData).length;
 // 本番ビルドでは管理用一覧でしか使わない tag を出力しない
@@ -24,19 +19,8 @@ const notesPayload = isDev
   : Object.fromEntries(Object.entries(notesData).map(([k, v]) => [k, { text: v.text, source: v.source }]));
 const notesJson = JSON.stringify(notesPayload).replace(/</g, "\\u003c");
 
-const icon = (svg: string) => ({
-  viewBox: svg.match(/viewBox="([^"]+)"/)![1],
-  d: [...svg.matchAll(/<path d="([^"]+)"/g)].map((m) => m[1]).join(" "),
-});
-const shareIcons = [
-  { key: "x", name: "X", svg: icon(xSvg) },
-  { key: "misskey", name: "Misskey", mi: true },
-  { key: "mastodon", name: "Mastodon", svg: icon(mastodonSvg) },
-  { key: "bluesky", name: "Bluesky", svg: icon(blueskySvg) },
-  { key: "threads", name: "Threads", svg: icon(threadsSvg) },
-  { key: "line", name: "LINE", svg: icon(lineSvg), big: true },
-];
-const linkIcon = icon(linkSvg);
+const shareIcons = SHARE_ICONS;
+const linkIcon = SHARE_LINK_ICON;
 
 const title = "枚方市地図クイズ";
 const description = `枚方市の全${meta.count}地区から出題する白地図クイズ。3問から気軽に遊べて延長も可能。間違えると距離・方角に加え、国勢調査の人口・面積・高齢化率や標高・公園数・写真などの統計ヒントが出ます。`;
@@ -79,7 +63,7 @@ const breadcrumbs = [
             <select data-level>
               <option value="easy">入門（主な{meta.tier1}地区）</option>
               <option value="normal">標準（{meta.tier2}地区）</option>
-              <option value="hard">上級（全{meta.count}地区）</option>
+              <option value="hard">上級（{meta.quizCount}地区）</option>
             </select>
           </label>
 
@@ -221,7 +205,7 @@ const breadcrumbs = [
       <h2>遊び方とヒントの見方</h2>
       <ul>
         <li>1回 3問で区切られ、結果画面から 3問ずつ延長して続けられます（延長中も同じ地区は重複しません）</li>
-        <li>町名は、丁目（例：宮之阪1〜5丁目）を1つの地区にまとめています。市の統計上、人口 0 人の地区（枚方公園町・山田池公園・招提田近など）も出題対象に含まれます</li>
+        <li>町名は、丁目（例：宮之阪1〜5丁目）を1つの地区にまとめています。市の統計上、人口 0 人の地区（枚方公園町・山田池公園・招提田近など）も出題対象に含まれます（同名地区と紛らわしい「大字〜」はクイズ出題から除き、「地図で調べる」で確認できます）</li>
         <li>間違えて選んだ地区は、正解に近いほど濃いオレンジ色で塗られ、そこからの距離と方角が出ます</li>
         <li>ミスするたびに、<strong>①人口・面積 → ②年齢構成・標高 → ③公園・避難所・沿線 → ④隣接地区・写真</strong> の順に新しいヒントが上に追加されます</li>
         <li>このページの地図と統計データはすべて自サーバーから配信しており、開いても外部の地図サーバーには通信しません</li>

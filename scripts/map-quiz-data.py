@@ -29,6 +29,7 @@ import json
 import math
 import re
 import struct
+import sys
 import urllib.request
 import zipfile
 from collections import defaultdict
@@ -100,9 +101,7 @@ DISTRICT_ARTICLES: dict[str, list[str]] = {
     "田口山": ["pomunoki"],
     "車塚": ["toshokan"],
     "北山": ["kokkai"],
-    "長尾台": ["kokkai"],
     "星丘": ["atsui"],
-    "大垣内町": ["atsui"],
 }
 
 # 枚方市内の主な鉄道駅（緯度・経度、路線名）
@@ -116,7 +115,7 @@ STATIONS = [
     {"name": "宮之阪", "line": "京阪交野線", "lat": 34.8147, "lon": 135.6606},
     {"name": "星ヶ丘", "line": "京阪交野線", "lat": 34.8089, "lon": 135.6647},
     {"name": "村野", "line": "京阪交野線", "lat": 34.7999, "lon": 135.6660},
-    {"name": "津田", "line": "JR学研都市線", "lat": 34.8058, "lon": 135.7069},
+    {"name": "津田", "line": "JR学研都市線", "lat": 34.8013, "lon": 135.6979},
     {"name": "藤阪", "line": "JR学研都市線", "lat": 34.8169, "lon": 135.7082},
     {"name": "長尾", "line": "JR学研都市線", "lat": 34.8315, "lon": 135.7147},
 ]
@@ -149,8 +148,8 @@ RAIL_LINES = [
     {
         "name": "JR学研都市線",
         "pts": [
-            (34.7950, 135.7020),
-            (34.8058, 135.7069),
+            (34.7945, 135.6935),
+            (34.8013, 135.6979),
             (34.8169, 135.7082),
             (34.8315, 135.7147),
             (34.8400, 135.7240),
@@ -507,11 +506,12 @@ def main():
         pat = re.compile(rf"^(?:大阪府)?(?:枚方市)?{re.escape(name)}(?:[0-9０-９一二三四五六七八九十\-−丁目]|$)")
         shisetsu_n = sum(1 for a in shisetsu_addrs if pat.search(a))
 
-        # 写真ギャラリー（ポリゴン内の位置情報つき写真から最大 2 枚）
+        # 写真ギャラリー（ポリゴン内の位置情報つき写真から最大 2 枚。ヒント表示時のクレジット表記用に撮影者・ライセンスも保持）
         photos_in = []
         for p in gallery_photos:
             if raw_geom.contains(Point(p["lon"], p["lat"])):
-                photos_in.append([p["id"], p.get("year")])
+                author_name = (p.get("author") or {}).get("name", "") if isinstance(p.get("author"), dict) else ""
+                photos_in.append([p["id"], p.get("year"), author_name, p.get("license", "")])
                 if len(photos_in) >= 2:
                     break
 
@@ -533,7 +533,7 @@ def main():
             {
                 "id": f"d{idx:03d}",
                 "name": name,
-                "yomi": yomi_map.get(name, ""),
+                "yomi": str(yomi_map.get(name, "")).strip(),
                 "chome": chome_n,
                 "d": geom_to_svg_path(simp_geom),
                 "cx": cx,
@@ -615,12 +615,22 @@ def main():
         "districts": districts,
     }
 
+    # 読み仮名（yomi）の欠落・空文字があれば書き出さずに終了する
+    missing_yomi = [d["name"] for d in districts if not d["yomi"]]
+    if missing_yomi:
+        print(
+            f"ERROR: 読み仮名（content/data/map-quiz-yomi.json）が未設定の地区があります（{len(missing_yomi)}件）: {', '.join(missing_yomi)}",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
     out_path = ROOT / "public/maps/quiz-districts.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), "utf-8")
 
     meta = {
         "count": len(districts),
+        "quizCount": sum(1 for d in districts if not d["name"].startswith("大字")),
         "tier1": sum(1 for d in districts if d["tier"] == 1),
         "tier2": sum(1 for d in districts if d["tier"] <= 2),
         "withPhotos": sum(1 for d in districts if d["photos"]),

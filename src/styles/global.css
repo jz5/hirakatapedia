@@ -1301,8 +1301,10 @@ tr[hidden] { display: none; }
   font-style: normal; font-size: .625rem; letter-spacing: .06em; padding: 0 5px; border-radius: 999px;
   background: var(--accent); color: var(--bg); line-height: 1.6;
 }
-.mq-hint-photos { display: flex; gap: 6px; margin-top: var(--sp-2); }
-.mq-hint-photos img { width: 112px; height: 84px; object-fit: cover; border-radius: 2px; background: var(--bg); }
+.mq-hint-photos { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--sp-2); }
+.mq-hint-photo { margin: 0; width: 116px; }
+.mq-hint-photo img { display: block; width: 116px; height: 87px; object-fit: cover; border-radius: 2px; background: var(--bg); }
+.mq-hint-credit { margin-top: 2px; font-size: .625rem; line-height: 1.35; color: var(--mut); overflow-wrap: anywhere; }
 
 .mq-explore { display: grid; gap: var(--sp-2); }
 .mq-explore input {

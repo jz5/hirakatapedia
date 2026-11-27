@@ -1,6 +1,7 @@
 ---
 import { popularArticles, articlePath } from "../lib/articles";
 import { photos, thumbSrc } from "../lib/gallery";
+import mapQuizMeta from "../../content/data/map-quiz-meta.json";
 import ShareButtons from "./ShareButtons.astro";
 
 /**
@@ -52,7 +53,7 @@ const strip = home ? photos.filter((p) => p.lat !== null).slice(0, 3) : [];
           <li>
             <a href="/data/map-quiz/">
               <strong>枚方市地図クイズ</strong>
-              <span>全 211 地区を当てる白地図クイズ。人口・標高・公園数などの統計ヒントつき</span>
+              <span>全 {mapQuizMeta.count} 地区の白地図クイズ。人口・標高・公園数などの統計ヒントつき</span>
             </a>
           </li>
           <li>
