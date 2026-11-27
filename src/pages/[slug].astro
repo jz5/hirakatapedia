@@ -1,6 +1,8 @@
 ---
 import { render } from "astro:content";
 import { allArticles, articlePath, jaDate, lastModified } from "../lib/articles";
+import { articleStats } from "../lib/article-stats";
+import { SITE, LICENSE } from "../lib/site";
 import Base from "../layouts/Base.astro";
 import ArticleBody from "../components/ArticleBody.astro";
 import Toc from "../components/Toc.astro";
@@ -19,10 +21,13 @@ const d = entry.data;
 const { Content, headings } = await render(entry);
 // 事典なので、いつ書いたかより、いつの情報かを出す
 const last = lastModified(entry);
+const stats = articleStats(entry.body);
 // frontmatter の cover は og:image にだけ使う（本文には出さない）。無ければ本文の最初の写真を使う
 const coverFile = d.cover ?? entry.body?.match(/<div\b[^>]*\bdata-photo="([^"]+)"/)?.[1]?.split("|")[0];
 const cover = coverFile ? photo(entry.id, coverFile) : undefined;
 const path = articlePath(entry.id);
+const canonical = new URL(path, SITE.url).href;
+const attribution = `${SITE.title}「${d.title}」 ${canonical}`;
 const breadcrumbs = [
   { name: "ホーム", path: "/" },
   { name: d.title, path },
@@ -41,7 +46,7 @@ const breadcrumbs = [
   <article class="entry" data-pagefind-body>
     <header class="entry-header">
       <h1>{d.title}</h1>
-      <p class="entry-meta" data-pagefind-ignore>最終更新 <time datetime={last.toISOString().slice(0, 10)}>{jaDate(last)}</time></p>
+      <p class="entry-meta" data-pagefind-ignore><span class="meta-item">最終更新 <time datetime={last.toISOString().slice(0, 10)}>{jaDate(last)}</time></span>{stats.sources > 0 && <span class="meta-item">・<a href="#footnote-label">出典・注釈 {stats.sources}件</a></span>}{stats.charts > 0 && <span class="meta-item">・グラフ {stats.charts}件</span>}</p>
     </header>
 
 
@@ -53,8 +58,17 @@ const breadcrumbs = [
 
     <footer class="entry-footer" data-pagefind-ignore>
       <p>公開 <time datetime={d.published.toISOString().slice(0, 10)}>{jaDate(d.published)}</time>・最終更新 <time datetime={last.toISOString().slice(0, 10)}>{jaDate(last)}</time></p>
+      <div class="entry-cite">
+        <p class="entry-cite-label">このページの文章を使うときの表記の例（<a href="/license/" rel="license">{LICENSE.name}</a>）</p>
+        <p class="entry-cite-row"><code data-cite>{attribution}</code> <button type="button" class="copy-btn" data-copy-cite>コピー</button></p>
+      </div>
     </footer>
   </article>
 
   <Toc slot="toc" headings={headings} />
 </Base>
+
+<script>
+  import { bindCopyButton } from "../lib/copy-button";
+  bindCopyButton("[data-copy-cite]", "[data-cite]");
+</script>

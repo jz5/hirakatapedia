@@ -1,5 +1,6 @@
 ---
 import { allArticles, articlePath, lastModified, jaDate } from "../lib/articles";
+import { articleStats } from "../lib/article-stats";
 import { SITE } from "../lib/site";
 import Base from "../layouts/Base.astro";
 import { photo } from "../lib/photos.mjs";
@@ -23,20 +24,24 @@ const thumb = (e: (typeof list)[number]) => {
   <h2 class="visually-hidden">記事</h2>
   <ul class="card-list">
     {
-      list.map((e) => (
-        <li>
-          <a href={articlePath(e.id)} class:list={[{ "has-thumb": !!thumb(e) }]}>
-            {thumb(e) && (
-              <img class="card-thumb" src={thumb(e)!.small.src} width={thumb(e)!.small.width} height={thumb(e)!.small.height} alt="" loading="lazy" decoding="async" />
-            )}
-            <span class="card-text">
-              <span class="card-title">{e.data.title}</span>
-              <span class="card-desc">{e.data.description}</span>
-              <span class="card-date">更新 <time datetime={lastModified(e).toISOString().slice(0, 10)}>{jaDate(lastModified(e))}</time></span>
-            </span>
-          </a>
-        </li>
-      ))
+      list.map((e) => {
+        const stats = articleStats(e.body);
+        const t = thumb(e);
+        return (
+          <li>
+            <a href={articlePath(e.id)} class:list={[{ "has-thumb": !!t }]}>
+              {t && (
+                <img class="card-thumb" src={t.small.src} width={t.small.width} height={t.small.height} alt="" loading="lazy" decoding="async" />
+              )}
+              <span class="card-text">
+                <span class="card-title">{e.data.title}</span>
+                <span class="card-desc">{e.data.description}</span>
+                <span class="card-date"><span class="meta-item">更新 <time datetime={lastModified(e).toISOString().slice(0, 10)}>{jaDate(lastModified(e))}</time></span>{stats.sources > 0 && <span class="meta-item">・出典・注釈 {stats.sources}件</span>}{stats.charts > 0 && <span class="meta-item">・グラフ {stats.charts}件</span>}</span>
+              </span>
+            </a>
+          </li>
+        );
+      })
     }
   </ul>
 </Base>

@@ -3,6 +3,7 @@ export const SITE = {
   reading: "ひらかたペディア",
   description: "枚方市のことを、昔の雑誌や新聞までさかのぼって、出典つきでくわしくまとめるサイトです。",
   url: "https://hirakata.pronama.jp",
+  repo: "https://github.com/jz5/hirakatapedia",
   lang: "ja",
 } as const;
 
@@ -20,6 +21,7 @@ export const OPERATOR = {
 export const AUTHOR = {
   name: "jz5",
   url: "https://jz5.jp/",
+  sameAs: ["https://x.com/jz5", "https://github.com/jz5"],
 } as const;
 
 /** 記事のライセンス。Wikipedia と同じ CC BY-SA 4.0 */
