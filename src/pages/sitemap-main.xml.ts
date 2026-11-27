@@ -27,6 +27,7 @@ export const GET: APIRoute = async () => {
     { loc: "/data/city/", lastmod: toDate(catalog.generated) },
     { loc: "/data/links/", lastmod: toDate(catalog.generated) },
     { loc: "/data/chikei/", lastmod: toDate(gitDate("src/pages/data/chikei.astro")) },
+    { loc: "/data/map-quiz/", lastmod: toDate(gitDate("src/pages/data/map-quiz.astro")) },
     { loc: "/sns/", lastmod: toDate(sns.checked) },
     { loc: "/about/", lastmod: toDate(gitDate("src/pages/about.astro")) },
     { loc: "/privacy/", lastmod: toDate(gitDate("src/pages/privacy.astro")) },

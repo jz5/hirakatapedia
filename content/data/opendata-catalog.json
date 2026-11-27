@@ -4054,7 +4054,7 @@
    "title": "財政状況資料集（全国の市町村）",
    "publisher": "総務省",
    "url": "https://www.soumu.go.jp/iken/zaisei/jyoukyou_shiryou/index.html",
-   "desc": "全国の市町村の決算を同じ形でまとめたもの。ほかの市と比べるならこちら"
+   "desc": "全国の市町村の決算を同じ形でまとめた表。ほかの市と比べるならこちら"
   },
   {
    "title": "RESAS 地域経済分析システム",
@@ -4090,7 +4090,7 @@
    "title": "大阪府の毎月推計人口",
    "publisher": "大阪府",
    "url": "https://www.pref.osaka.lg.jp/fuseiunei/toukeijouhou/toukeikajisshinochousa/maitsukisuikeijinkou/index.html",
-   "desc": "府内の市町村の人口を毎月推計したもの。ほかの市と比べられる"
+   "desc": "府内の市町村の人口を毎月推計した数。ほかの市と比べられる"
   },
   {
    "title": "大阪府の統計（分野別）",
@@ -4109,12 +4109,6 @@
    "publisher": "法務省",
    "url": "https://www.geospatial.jp/ckan/dataset/houmusyouchizu-2026-1-1303",
    "desc": "法務局の地図（公図）のデータ（G空間情報センター）"
-  },
-  {
-   "title": "きてみてひらかたマップ",
-   "publisher": "枚方市",
-   "url": "https://www2.wagmap.jp/hirakata/Portal",
-   "desc": "市の地図のサイト。都市計画・道路・上下水道などの地図"
   }
  ]
 }

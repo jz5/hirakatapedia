@@ -1,6 +1,7 @@
 ---
 import { popularArticles, articlePath } from "../lib/articles";
 import { photos, thumbSrc } from "../lib/gallery";
+import mapQuizMeta from "../../content/data/map-quiz-meta.json";
 import ShareButtons from "./ShareButtons.astro";
 
 /**
@@ -47,6 +48,12 @@ const strip = home ? photos.filter((p) => p.lat !== null).slice(0, 3) : [];
               <img class="side-card-wide" src="/maps/chikei/thumb.webp" alt="" width="480" height="220" loading="lazy" decoding="async" />
               <strong>枚方の地形を 3D で</strong>
               <span>淀川から生駒山地まで、市とまわりの地形を回して見られる</span>
+            </a>
+          </li>
+          <li>
+            <a href="/data/map-quiz/">
+              <strong>枚方市地図クイズ</strong>
+              <span>全 {mapQuizMeta.count} 地区の白地図クイズ。人口・標高・公園数などの統計ヒントつき</span>
             </a>
           </li>
           <li>

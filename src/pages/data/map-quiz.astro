@@ -1,0 +1,229 @@
+---
+/**
+ * 枚方市地図クイズ（/data/map-quiz/）。
+ * e-Stat（2020年国勢調査・小地域境界＆年齢別人口）と枚方市オープンデータ、国土地理院の標高タイル、
+ * サイト内の写真ギャラリーから作った 211 地区の白地図上で、お題の地区を当てるクイズ＆地区データ図鑑。
+ * 地図も統計も自サーバーのデータだけで描画するため、開いても外部サーバーに通信しない。
+ */
+import Base from "../../layouts/Base.astro";
+import meta from "../../../content/data/map-quiz-meta.json";
+import { readMapQuizNotes } from "../../lib/yaml-data";
+import { SHARE_ICONS, SHARE_LINK_ICON } from "../../lib/share-icons";
+
+const isDev = import.meta.env.DEV;
+const notesData = readMapQuizNotes();
+const notesCount = Object.keys(notesData).length;
+// 本番ビルドでは管理用一覧でしか使わない tag を出力しない
+const notesPayload = isDev
+  ? notesData
+  : Object.fromEntries(Object.entries(notesData).map(([k, v]) => [k, { text: v.text, source: v.source }]));
+const notesJson = JSON.stringify(notesPayload).replace(/</g, "\\u003c");
+
+const shareIcons = SHARE_ICONS;
+const linkIcon = SHARE_LINK_ICON;
+
+const title = "枚方市地図クイズ";
+const description = `枚方市の全${meta.count}地区から出題する白地図クイズ。3問から気軽に遊べて延長も可能。間違えると距離・方角に加え、国勢調査の人口・面積・高齢化率や標高・公園数・写真などの統計ヒントが出ます。`;
+const breadcrumbs = [
+  { name: "ホーム", path: "/" },
+  { name: "枚方のデータ", path: "/data/" },
+  { name: title, path: "/data/map-quiz/" },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  path="/data/map-quiz/"
+  source="src/pages/data/map-quiz.astro"
+  breadcrumbs={breadcrumbs}
+  wide
+>
+  <article class="entry">
+    <header class="entry-header">
+      <p class="gallery-back"><a href="/data/">枚方のデータ</a></p>
+      <h1>{title}</h1>
+    </header>
+
+    <div class="entry-body">
+      <p>
+        枚方市の{meta.count}の地区（町名）から出題する地図クイズです（1回 3問・延長もできます）。間違えたときは、選んだ場所からの距離・方角に加えて、<strong>国勢調査の人口・面積・年齢構成、標高、公園や避難所の数、現地の写真</strong>がヒントとして段階的に出ます。「地図で調べる」に切り替えると、各地区の統計カルテを自由に確認できます。
+      </p>
+
+      <div class="mq" data-map-quiz>
+        <div class="mq-bar">
+          <div class="mq-seg" role="group" aria-label="モードの切り替え">
+            <button type="button" class="data-mapbtn" data-mode="quiz" aria-pressed="true">クイズ（3問）</button>
+            <button type="button" class="data-mapbtn" data-mode="explore" aria-pressed="false">地図で調べる</button>
+            {isDev && <button type="button" class="data-mapbtn mq-dev-btn" data-mode="notes" aria-pressed="false">小ネタ一覧（管理：{notesCount}/{meta.count}）</button>}
+          </div>
+
+          <label class="mq-level" data-level-wrap>
+            難易度
+            <select data-level>
+              <option value="easy">入門（主な{meta.tier1}地区）</option>
+              <option value="normal">標準（{meta.tier2}地区）</option>
+              <option value="hard">上級（{meta.quizCount}地区）</option>
+            </select>
+          </label>
+
+          <div class="mq-checks">
+            <label><input type="checkbox" data-opt-guides checked />川と線路</label>
+            <label><input type="checkbox" data-opt-stations />駅の位置（名前なし）</label>
+            <label><input type="checkbox" data-opt-sound checked />効果音</label>
+          </div>
+        </div>
+
+        <div class="mq-stage" data-stage>
+          <div class="mq-map-panel">
+            <div class="mq-map-wrap" data-map-wrap>
+              <p class="mq-loading" data-loading>地図データを読み込んでいます…</p>
+              <div class="mq-toast" data-toast hidden aria-hidden="true"></div>
+              <div class="mq-zoom">
+                <button type="button" data-zoom-in aria-label="拡大">＋</button>
+                <button type="button" data-zoom-out aria-label="縮小">−</button>
+                <button type="button" data-zoom-reset aria-label="全体表示" title="全体表示">全</button>
+              </div>
+              <div class="mq-legend" aria-hidden="true">
+                <span>近</span>
+                <i class="mq-sw is-heat-0"></i>
+                <i class="mq-sw is-heat-1"></i>
+                <i class="mq-sw is-heat-2"></i>
+                <i class="mq-sw is-heat-3"></i>
+                <span>遠</span>
+              </div>
+
+              {/* 正解・解答時に地図の下側へ重ねる地区情報ダイアログ */}
+              <div class="mq-dialog" role="dialog" aria-label="地区の情報" data-dialog hidden>
+                <div class="mq-dialog-head">
+                  <div class="mq-dialog-title" data-dialog-title></div>
+                  <button type="button" class="mq-dialog-close" data-dialog-close aria-label="ダイアログを閉じる" title="閉じる">✕</button>
+                </div>
+                <div class="mq-dialog-body" data-dialog-body></div>
+                <div class="mq-dialog-foot">
+                  <button type="button" class="data-mapbtn mq-next-btn" data-dialog-next>次の問題へ</button>
+                  <button type="button" class="copy-btn" data-dialog-hide>地図だけ見る</button>
+                </div>
+              </div>
+            </div>
+            <p class="mq-map-note">細かい町名は「＋」で拡大し、ドラッグで動かして選べます（地図をクリックするとホイールでも拡大できます）。</p>
+          </div>
+
+          <div class="mq-side">
+            <div class="mq-prompt" data-prompt-box>
+              <div class="mq-prompt-top">
+                <p class="mq-progress" data-progress></p>
+                <p class="mq-hint-meter" data-hint-meter></p>
+              </div>
+              <p class="mq-question">「<strong data-target-name>…</strong>」はどこ？</p>
+
+              <div class="mq-feedback" role="status" aria-live="polite" data-feedback>
+                地図上の地区をクリック（またはタップ）して選んでください。
+              </div>
+
+              <div class="mq-actions">
+                <button type="button" class="data-mapbtn mq-next-btn" data-next-btn hidden>次の問題へ</button>
+                <button type="button" class="copy-btn" data-reopen-dialog hidden>地区の情報を見る</button>
+                <button type="button" class="copy-btn" data-hint-btn>統計ヒントを見る</button>
+                <button type="button" class="copy-btn" data-giveup-btn>答えを見る</button>
+              </div>
+
+              <ol class="mq-hints" data-hints hidden></ol>
+            </div>
+
+            <div class="mq-explore" data-explore-box hidden>
+              <label class="data-search">
+                <span class="visually-hidden">地区名・よみで探す</span>
+                <input type="search" placeholder="地区名・よみで検索（例：星丘、めぐり、なすづくり）" autocomplete="off" data-explore-q />
+              </label>
+              <ul class="mq-explore-list" data-explore-list></ul>
+            </div>
+
+            <section class="mq-card" data-card hidden aria-live="polite"></section>
+
+            <section class="mq-summary" data-summary hidden aria-live="polite">
+              <div data-summary-body></div>
+              <div class="mq-summary-actions">
+                <button type="button" class="data-mapbtn mq-next-btn" data-extend>＋3問 延長する</button>
+                <button type="button" class="copy-btn" data-retry>最初から 3問遊ぶ</button>
+              </div>
+              <section class="share mq-share" aria-label="結果を SNS で共有">
+                <p class="share-title">結果を SNS で共有</p>
+                <ul class="share-list">
+                  {
+                    shareIcons.map((it) => (
+                      <li>
+                        <a href="#" target="_blank" rel="noopener" data-share-link={it.key} aria-label={`${it.name}で結果を共有`} title={`${it.name}で結果を共有`}>
+                          {it.mi ? (
+                            <span class="share-mi" aria-hidden="true" />
+                          ) : (
+                            <svg class={it.big ? "share-big" : undefined} viewBox={it.svg!.viewBox} aria-hidden="true" focusable="false"><path d={it.svg!.d} /></svg>
+                          )}
+                        </a>
+                      </li>
+                    ))
+                  }
+                  <li>
+                    <button type="button" class="share-copy" data-share-copy aria-label="結果とリンクをコピー" title="結果とリンクをコピー">
+                      <svg viewBox={linkIcon.viewBox} aria-hidden="true" focusable="false"><path d={linkIcon.d} /></svg>
+                    </button>
+                  </li>
+                </ul>
+                <p class="share-copied" role="status" aria-live="polite" data-share-copied hidden>コピーしました</p>
+              </section>
+            </section>
+          </div>
+        </div>
+
+        {isDev && (
+          <section class="mq-notes-view" data-notes-view hidden aria-label="地区の小ネタ一覧（管理用）">
+            <div class="mq-notes-tools">
+              <label class="data-search">
+                <span class="visually-hidden">小ネタを検索</span>
+                <input type="search" placeholder="地区名・本文・出典で検索（例：御殿山、象、国勢調査）" autocomplete="off" data-notes-q />
+              </label>
+              <label class="mq-level">
+                種別
+                <select data-notes-filter>
+                  <option value="">記入済みすべて（{notesCount}）</option>
+                  <option value="記事あり">記事あり</option>
+                  <option value="小ネタ">小ネタ</option>
+                  <option value="伝承・噂">伝承・噂</option>
+                  <option value="__empty__">未記入の地区</option>
+                </select>
+              </label>
+              <p class="data-count" aria-live="polite" data-notes-count></p>
+            </div>
+            <ul class="mq-notes-list" data-notes-list></ul>
+          </section>
+        )}
+
+        <noscript><p>地図クイズは JavaScript を使います。</p></noscript>
+      </div>
+      <script is:inline type="application/json" id="mq-notes" set:html={notesJson} />
+
+      <h2>遊び方とヒントの見方</h2>
+      <ul>
+        <li>1回 3問で区切られ、結果画面から 3問ずつ延長して続けられます（延長中も同じ地区は重複しません）</li>
+        <li>町名は、丁目（例：宮之阪1〜5丁目）を1つの地区にまとめています。市の統計上、人口 0 人の地区（枚方公園町・山田池公園・招提田近など）も出題対象に含まれます（同名地区と紛らわしい「大字〜」はクイズ出題から除き、「地図で調べる」で確認できます）</li>
+        <li>間違えて選んだ地区は、正解に近いほど濃いオレンジ色で塗られ、そこからの距離と方角が出ます</li>
+        <li>ミスするたびに、<strong>①人口・面積 → ②年齢構成・標高 → ③公園・避難所・沿線 → ④隣接地区・写真</strong> の順に新しいヒントが上に追加されます</li>
+        <li>このページの地図と統計データはすべて自サーバーから配信しており、開いても外部の地図サーバーには通信しません</li>
+      </ul>
+
+      <h2>出典</h2>
+      <ul>
+        <li>地区の境界・人口・世帯数・面積・年齢別人口：総務省統計局「令和2年（2020年）国勢調査 小地域境界データ・小地域集計」（<a href="https://www.e-stat.go.jp/">政府統計の総合窓口 e-Stat</a>）を加工して作成</li>
+        <li>地区名の読み方（ルビ）：日本郵便「<a href="https://www.post.japanpost.jp/cgi-zip/zipcode.php?pref=27&city=1272100&cmp=1">大阪府 枚方市の郵便番号一覧</a>」と枚方市「<a href="https://www.city.hirakata.osaka.jp/0000049306.html">住居表示台帳について</a>」をもとに作成</li>
+        <li>地区ごとの標高：国土地理院の<a href="https://maps.gsi.go.jp/development/ichiran.html">地理院タイル</a>（標高タイル）を加工して集計</li>
+        <li>都市公園（桜の本数）・避難所・子育て施設・AED・公衆トイレ・公共施設：枚方市オープンデータ（<a href="https://creativecommons.org/licenses/by/2.1/jp/">CC BY 2.1 JP</a>）を各地区の境界で集計</li>
+        <li>地区の写真：<a href="/gallery/">枚方の写真</a>（位置情報つき写真 {meta.withPhotos} 地区分）</li>
+      </ul>
+    </div>
+  </article>
+</Base>
+
+<script>
+  import { startMapQuiz } from "../../scripts/map-quiz";
+  startMapQuiz();
+</script>

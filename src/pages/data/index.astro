@@ -11,6 +11,7 @@ import Toc from "../../components/Toc.astro";
 import ArticleBody from "../../components/ArticleBody.astro";
 import { charts } from "../../lib/chart-defs.mjs";
 import catalog from "../../../content/data/opendata-catalog.json";
+import mapQuizMeta from "../../../content/data/map-quiz-meta.json";
 import { datasets as sets, PAGES, dataPath, hasMap, asOf } from "../../lib/datasets";
 import { allArticles, articlePath } from "../../lib/articles";
 
@@ -30,9 +31,37 @@ const extCount = catalog.external.length;
 const headings = [
   { depth: 2, slug: "view", text: "検索できるデータ" },
   { depth: 2, slug: "graphs", text: "グラフで見る" },
-  { depth: 2, slug: "chikei", text: "地形を見る" },
+  { depth: 2, slug: "chikei", text: "地形を見る・地図クイズ" },
+  { depth: 2, slug: "useful", text: "役立つ公式データ" },
   { depth: 2, slug: "more", text: "提供されているデータの一覧" },
   { depth: 2, slug: "notes", text: "このページについて" },
+];
+
+const usefulLinks = [
+  {
+    title: "郵便番号・町名の読み方（枚方市）",
+    url: "https://www.post.japanpost.jp/cgi-zip/zipcode.php?pref=27&city=1272100&cmp=1",
+    desc: "枚方市の町名ごとの郵便番号と読み方（カタカナ）を五十音順で調べられます",
+    meta: "日本郵便（外部サイト）",
+  },
+  {
+    title: "住居表示台帳（町丁名の一覧・地図）",
+    url: "https://www.city.hirakata.osaka.jp/0000049306.html",
+    desc: "住居表示が実施されている町丁名を五十音順で調べられ、街区・住居番号の地図（PDF）を見られます",
+    meta: "枚方市（外部サイト）",
+  },
+  {
+    title: "きてみてひらかたマップ",
+    url: "https://www2.wagmap.jp/hirakata/Portal",
+    desc: "都市計画・道路・上下水道・ハザードマップなどを重ねて見られる市の地図サイトです",
+    meta: "枚方市（外部サイト）",
+  },
+  {
+    title: "防災ガイド（ハザードマップ）",
+    url: "https://www.city.hirakata.osaka.jp/0000017941.html",
+    desc: "洪水・土砂災害の危ないところと、最新の避難所をまとめた市の地図（PDF）です",
+    meta: "枚方市（外部サイト）",
+  },
 ];
 ---
 
@@ -90,7 +119,7 @@ const headings = [
       </section>
 
       <section id="chikei" aria-labelledby="chikei-h">
-        <h2 id="chikei-h">地形を見る</h2>
+        <h2 id="chikei-h">地形を見る・地図クイズ</h2>
         <ul class="data-cards">
           <li>
             <a href="/data/chikei/">
@@ -99,6 +128,29 @@ const headings = [
               <span class="data-card-meta">3D・国土地理院の標高のデータから</span>
             </a>
           </li>
+          <li>
+            <a href="/data/map-quiz/">
+              <span class="data-card-title">枚方市地図クイズ</span>
+              <span class="data-card-desc">枚方市の全 {mapQuizMeta.count} 地区を白地図からクリックして当てるクイズ。間違えると人口・高齢化率・標高・公園数・写真などの統計ヒントが出ます</span>
+              <span class="data-card-meta">クイズ＆地区統計・e-Stat と市のオープンデータから</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="useful" aria-labelledby="useful-h">
+        <h2 id="useful-h">役立つ公式データ</h2>
+        <p>町名や郵便番号、市の地図・ハザードマップをすぐ調べられる公式ページです。</p>
+        <ul class="data-cards">
+          {usefulLinks.map((u) => (
+            <li>
+              <a href={u.url}>
+                <span class="data-card-title">{u.title}</span>
+                <span class="data-card-desc">{u.desc}</span>
+                <span class="data-card-meta">{u.meta}</span>
+              </a>
+            </li>
+          ))}
         </ul>
       </section>
 

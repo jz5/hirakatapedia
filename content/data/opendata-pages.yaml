@@ -385,7 +385,3 @@ external:
     publisher: 法務省
     url: https://www.geospatial.jp/ckan/dataset/houmusyouchizu-2026-1-1303
     desc: 法務局の地図（公図）のデータ（G空間情報センター）
-  - title: きてみてひらかたマップ
-    publisher: 枚方市
-    url: https://www2.wagmap.jp/hirakata/Portal
-    desc: 市の地図のサイト。都市計画・道路・上下水道などの地図
